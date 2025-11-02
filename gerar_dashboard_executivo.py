@@ -48,20 +48,66 @@ def obter_tipo_turno(turno_text, horario_text=""):
         except:
             pass
 
-    # PRIORIDADE 2: Detecta SOBREAVISO (on-call)
+    # PRIORIDADE 2: Detecta SOBREAVISO + FIM DE SEMANA (se entrada != saída, é só sobreaviso, não 24h)
+    # Exemplos: "Ultrassonografia - Sobreaviso Final de Semana" com horário real
     if 'sobreaviso' in turno or 'sobre aviso' in turno:
-        return "sobreaviso"
-
-    # PRIORIDADE 3: Detecta FINAL DE SEMANA
-    if 'final' in turno or 'finais' in turno or 'fim de semana' in turno or 'fds' in turno:
-        # Se for final de semana mas tem período específico
+        # Se tem horário e entrada == saída, já foi detectado como 24h acima
+        # Se não, é sobreaviso normal com fim de semana como contexto
+        # Mas detectar o período se disponível
         if any(x in turno for x in ['matutino', 'manhã', '07:00', '08:00', '06:00']):
             return "matutino"
         elif any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
             return "vespertino"
         elif any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
             return "noturno"
-        return "fimdesemana"
+        # Sobreaviso sem período específico
+        if horario and "/" in horario:
+            try:
+                entrada, saida = horario.split("/")
+                entrada_h = int(entrada.split(":")[0])
+                if entrada_h >= 6 and entrada_h < 12:
+                    return "matutino"
+                elif entrada_h >= 12 and entrada_h < 18:
+                    return "vespertino"
+                elif entrada_h >= 18 or entrada_h < 6:
+                    return "noturno"
+            except:
+                pass
+        return "sobreaviso"
+
+    # PRIORIDADE 3: Detecta FINAL DE SEMANA (sem sobreaviso)
+    # "Rotina Vespertino - Final de Semana" → vespertino (não cria badge própria)
+    if 'final' in turno or 'finais' in turno or 'fim de semana' in turno or 'fds' in turno:
+        # Se for final de semana, retorna o período específico
+        if any(x in turno for x in ['matutino', 'manhã', '07:00', '08:00', '06:00']):
+            return "matutino"
+        elif any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
+            return "vespertino"
+        elif any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
+            return "noturno"
+
+        # Se não tem período explícito, detecta pelo horário
+        if horario and "/" in horario:
+            try:
+                entrada, saida = horario.split("/")
+                entrada_h = int(entrada.split(":")[0])
+                # Matutino (6:00-13:00)
+                if entrada_h >= 6 and entrada_h < 12:
+                    return "matutino"
+                # Vespertino (13:00-19:00)
+                elif entrada_h >= 12 and entrada_h < 18:
+                    return "vespertino"
+                # Noturno (19:00-06:00)
+                elif entrada_h >= 18 or entrada_h < 6:
+                    return "noturno"
+            except:
+                pass
+
+        # Se é rotina sem período específico
+        if 'rotina' in turno:
+            return "rotina"
+        # Fallback
+        return "outro"
 
     # PRIORIDADE 4: Detecta turnos específicos por horário/nome
     # Detecta por abreviações (P1, P2, P3, P4, DIA, NOITE) + horário
@@ -656,28 +702,24 @@ def gerar_dashboard():
         }
 
         .turno-badge.24h {
-            background: #ff6b6b;
+            background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
             color: #ffffff;
-            border: 1px solid #ff5252;
+            border: 1px solid #a4161a;
             font-weight: 800;
+            box-shadow: 0 2px 4px rgba(230, 57, 70, 0.3);
         }
 
         .turno-badge.sobreaviso {
-            background: #ff9999;
+            background: linear-gradient(135deg, #ff8fab 0%, #ff6b7a 100%);
             color: #ffffff;
-            border: 1px solid #ff7777;
-        }
-
-        .turno-badge.fimdesemana {
-            background: #a67c52;
-            color: #ffffff;
-            border: 1px solid #8b6637;
+            border: 1px solid #f72585;
+            font-weight: 600;
         }
 
         .turno-badge.rotina {
-            background: #b399cc;
+            background: linear-gradient(135deg, #b5a7f5 0%, #8e7cc3 100%);
             color: #ffffff;
-            border: 1px solid #9977bb;
+            border: 1px solid #6c5bb0;
         }
 
         /* ===== ABAS DE DATA ===== */
@@ -925,7 +967,7 @@ def gerar_dashboard():
 
         function obterTipoTurno(turnoText, horarioText = '') {
             // Identifica o tipo de turno com detecção hierárquica
-            // Prioridade: 24H → SOBREAVISO → FIM SEMANA → Específico → ROTINA → OUTRO
+            // Prioridade: 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
             if (!turnoText) return 'outro';
 
             const turno = turnoText.toLowerCase();
@@ -944,17 +986,44 @@ def gerar_dashboard():
                 } catch (e) {}
             }
 
-            // PRIORIDADE 2: Detecta SOBREAVISO
+            // PRIORIDADE 2: Detecta SOBREAVISO (com ou sem fim de semana)
             if (turno.includes('sobreaviso') || turno.includes('sobre aviso')) {
+                // Se tem período específico, retorna esse período
+                if (['matutino', 'manhã', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) return 'matutino';
+                if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) return 'vespertino';
+                if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) return 'noturno';
+                // Se não tem período, detecta pelo horário
+                if (horario && horario.includes('/')) {
+                    try {
+                        const [entrada] = horario.split('/')[0].split(':');
+                        const entradaH = parseInt(entrada);
+                        if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                        if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                        if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                    } catch (e) {}
+                }
                 return 'sobreaviso';
             }
 
-            // PRIORIDADE 3: Detecta FINAL DE SEMANA
+            // PRIORIDADE 3: Detecta FINAL DE SEMANA (sem sobreaviso)
             if (turno.includes('final') || turno.includes('finais') || turno.includes('fim de semana') || turno.includes('fds')) {
                 if (['matutino', 'manhã', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) return 'matutino';
                 if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) return 'vespertino';
                 if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) return 'noturno';
-                return 'fimdesemana';
+
+                // Se não tem período explícito, detecta pelo horário
+                if (horario && horario.includes('/')) {
+                    try {
+                        const [entrada] = horario.split('/')[0].split(':');
+                        const entradaH = parseInt(entrada);
+                        if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                        if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                        if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                    } catch (e) {}
+                }
+
+                if (turno.includes('rotina')) return 'rotina';
+                return 'outro';
             }
 
             // PRIORIDADE 4: Detecta turnos específicos
