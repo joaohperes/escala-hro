@@ -2,10 +2,47 @@
 """
 Dashboard Executivo - Visual Premium
 Com banner ALVF e design sofisticado
+
+MELHORIAS V2:
+- Abas de navegação para 3 dias (anterior/atual/próxima)
+- Badges coloridas para tipos de turno
+- Indicadores visuais melhorados
+- Melhor usabilidade e leitura
 """
 
 import json
 from datetime import datetime
+
+def obter_tipo_turno(turno_text):
+    """Identifica o tipo de turno para aplicar cor correta: matutino, vespertino ou noturno"""
+    if not turno_text:
+        return "outro"
+
+    turno = turno_text.lower()
+
+    # Matutino (Verde)
+    if any(x in turno for x in ['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00']):
+        return "matutino"
+
+    # Vespertino (Laranja)
+    if any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
+        return "vespertino"
+
+    # Noturno (Azul Escuro)
+    if any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
+        return "noturno"
+
+    # Plantão (Amarelo)
+    if 'plantão' in turno or 'plantao' in turno:
+        if 'noturno' in turno or 'noite' in turno or '19:00' in turno:
+            return "noturno"
+        elif 'vespertino' in turno or 'tarde' in turno or '13:00' in turno:
+            return "vespertino"
+        elif 'matutino' in turno or 'manhã' in turno or '07:00' in turno:
+            return "matutino"
+        return "plantao"
+
+    return "outro"
 
 def normalizar_turno(turno_text):
     """Normaliza nomes de turnos para ordem cronológica padrão"""
@@ -488,6 +525,105 @@ def gerar_dashboard():
             display: inline;
         }
 
+        /* ===== BADGES DE TURNO ===== */
+        .turno-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        .turno-badge.matutino {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .turno-badge.vespertino {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .turno-badge.noturno {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .turno-badge.plantao {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .turno-badge.outro {
+            background: #e2e3e5;
+            color: #383d41;
+            border: 1px solid #d6d8db;
+        }
+
+        /* ===== ABAS DE DATA ===== */
+        .data-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e0e0e0;
+            overflow-x: auto;
+            padding-bottom: 0;
+        }
+
+        .data-tab {
+            padding: 14px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+            white-space: nowrap;
+            position: relative;
+            bottom: -2px;
+        }
+
+        .data-tab:hover {
+            color: #0d3b66;
+        }
+
+        .data-tab.active {
+            color: #0d3b66;
+            border-bottom-color: #0d3b66;
+        }
+
+        .data-tab.inactive {
+            opacity: 0.6;
+        }
+
+        .data-content {
+            display: none;
+        }
+
+        .data-content.ativo {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         /* Responsivo */
         @media (max-width: 768px) {
             .header-content {
@@ -675,6 +811,38 @@ def gerar_dashboard():
             return especialidadesComTurno.some(esp => setorLower.includes(esp));
         }
 
+        function obterTipoTurno(turnoText) {
+            // Identifica o tipo de turno para aplicar cor: matutino, vespertino, noturno
+            if (!turnoText) return 'outro';
+
+            const turno = turnoText.toLowerCase();
+
+            // Matutino (Verde)
+            if (['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
+                return 'matutino';
+            }
+
+            // Vespertino (Laranja)
+            if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) {
+                return 'vespertino';
+            }
+
+            // Noturno (Azul)
+            if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) {
+                return 'noturno';
+            }
+
+            // Plantão
+            if (turno.includes('plantão') || turno.includes('plantao')) {
+                if (turno.includes('noturno') || turno.includes('noite') || turno.includes('19:00')) return 'noturno';
+                if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return 'vespertino';
+                if (turno.includes('matutino') || turno.includes('manhã') || turno.includes('07:00')) return 'matutino';
+                return 'plantao';
+            }
+
+            return 'outro';
+        }
+
         function selecionarDia(dia) {
             diaSelecionado = dia;
             document.querySelectorAll('.date-btn').forEach(btn => btn.classList.remove('active'));
@@ -734,6 +902,7 @@ def gerar_dashboard():
                                                     <div class="profissional-nome">${prof.profissional}</div>
                                                     <div class="profissional-info">
                                                         <span class="info-label">Horário:</span> ${prof.horario}
+                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno).toUpperCase()}</span>
                                                     </div>
                                                 </div>
                                             `).join('')}
@@ -760,7 +929,8 @@ def gerar_dashboard():
                                     <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()}">
                                         <div class="profissional-nome">${prof.profissional}</div>
                                         <div class="profissional-info">
-                                            <span class="info-label">Turno:</span> ${prof.tipo_turno}<br>
+                                            <span class="info-label">Turno:</span> ${prof.tipo_turno}
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno).toUpperCase()}</span><br>
                                             <span class="info-label">Horário:</span> ${prof.horario}
                                         </div>
                                     </div>
