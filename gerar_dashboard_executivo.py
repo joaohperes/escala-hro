@@ -327,7 +327,7 @@ def gerar_dashboard():
             background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
             padding: 30px 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: box-shadow 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), background 1s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .header-banner:hover {
@@ -556,19 +556,17 @@ def gerar_dashboard():
 
         /* Descrição do Dashboard */
         .dashboard-description {
-            background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);
-            border-left: 4px solid #0d3b66;
+            background: transparent;
             border-radius: 8px;
-            padding: 16px 20px;
+            padding: 12px 0;
             margin-bottom: 25px;
             font-size: 0.95em;
-            color: #333;
+            color: #555;
             line-height: 1.6;
         }
 
         .dashboard-description p {
             margin: 0;
-            font-style: italic;
             color: #555;
         }
 
@@ -1335,11 +1333,13 @@ def gerar_dashboard():
         function filtrarProfissionais() {
             const searchText = document.getElementById('search').value.toLowerCase();
             const profissionais = document.querySelectorAll('.profissional');
+            let totalVistos = 0;
 
             profissionais.forEach(prof => {
                 const texto = prof.getAttribute('data-search');
                 if (searchText === '' || texto.includes(searchText)) {
                     prof.style.display = 'block';
+                    totalVistos++;
                 } else {
                     prof.style.display = 'none';
                 }
@@ -1362,6 +1362,22 @@ def gerar_dashboard():
                     }
                 }
             });
+
+            // Mostrar mensagem se não encontrar nada
+            let emptyMessageDiv = document.getElementById('empty-search-message');
+            if (!emptyMessageDiv) {
+                emptyMessageDiv = document.createElement('div');
+                emptyMessageDiv.id = 'empty-search-message';
+                emptyMessageDiv.style.cssText = 'text-align: center; padding: 40px 20px; color: #999; font-size: 1em; margin-top: 20px;';
+                document.getElementById('categorias').parentNode.insertBefore(emptyMessageDiv, document.getElementById('categorias'));
+            }
+
+            if (searchText !== '' && totalVistos === 0) {
+                emptyMessageDiv.textContent = `Nenhum resultado encontrado para "${searchText}"`;
+                emptyMessageDiv.style.display = 'block';
+            } else {
+                emptyMessageDiv.style.display = 'none';
+            }
         }
 
         renderizarEscala();
