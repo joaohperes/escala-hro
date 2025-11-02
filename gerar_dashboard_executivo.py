@@ -40,11 +40,11 @@ def obter_tipo_turno(turno_text, horario_text=""):
 
             # Se entrada == saída, é plantão de 24h
             if entrada == saida:
-                return "sobreaviso-24h"
+                return "badge-24h"
 
             # Se está explícito como sobreaviso, marca como 24h
             if 'sobreaviso' in turno or '24h' in turno:
-                return "sobreaviso-24h"
+                return "badge-24h"
         except:
             pass
 
@@ -596,27 +596,60 @@ def gerar_dashboard():
         }
 
         .turno-coluna {
-            background: linear-gradient(135deg, #f8fbff 0%, #f0f5fa 100%);
-            border-radius: 10px;
-            padding: 18px;
-            border: 1px solid #e8eef7;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-left: 5px solid #0d3b66;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
         .turno-coluna:hover {
-            border-color: #0d3b66;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateX(4px);
+        }
+
+        /* Cores da barra lateral por tipo de turno */
+        .turno-coluna[data-turno-tipo="matutino"] {
+            border-left-color: #155724;
+        }
+
+        .turno-coluna[data-turno-tipo="vespertino"] {
+            border-left-color: #856404;
+        }
+
+        .turno-coluna[data-turno-tipo="noturno"] {
+            border-left-color: #0c5460;
+        }
+
+        .turno-coluna[data-turno-tipo="badge-24h"] {
+            border-left-color: #e63946;
+        }
+
+        .turno-coluna[data-turno-tipo="sobreaviso"] {
+            border-left-color: #f72585;
         }
 
         .turno-title {
             font-weight: 700;
             color: #0d3b66;
-            margin-bottom: 15px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #0d3b66;
-            text-align: center;
+            margin-bottom: 10px;
             font-size: 0.95em;
             letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .turno-title::before {
+            content: attr(data-count);
+            font-size: 0.85em;
+            background: #e8eef7;
+            color: #0d3b66;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
         }
 
         .profissionais-list {
@@ -701,7 +734,7 @@ def gerar_dashboard():
             border: 1px solid #d6d8db;
         }
 
-        .turno-badge.sobreaviso-24h {
+        .turno-badge.badge-24h {
             background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
             color: #ffffff;
             border: 1px solid #a4161a;
@@ -978,10 +1011,10 @@ def gerar_dashboard():
                 try {
                     const [entrada, saida] = horario.split('/').map(x => x.trim());
                     if (entrada === saida) {
-                        return 'sobreaviso-24h';
+                        return 'badge-24h';
                     }
                     if (turno.includes('sobreaviso') || turno.includes('24h')) {
-                        return 'sobreaviso-24h';
+                        return 'badge-24h';
                     }
                 } catch (e) {}
             }
@@ -1130,11 +1163,14 @@ def gerar_dashboard():
                         </div>
                         <div class="categoria-content">
                             <div class="turnos-container">
-                                ${turnosOrdenados.map(turno => `
-                                    <div class="turno-coluna">
-                                        <div class="turno-title">${turno}</div>
+                                ${turnosOrdenados.map(turno => {
+                                    const profs = porTurno[turno];
+                                    const tipoBadge = profs.length > 0 ? obterTipoTurno(profs[0].tipo_turno, profs[0].horario) : 'outro';
+                                    return `
+                                    <div class="turno-coluna" data-turno-tipo="${tipoBadge}">
+                                        <div class="turno-title" data-count="${profs.length}">${turno}</div>
                                         <div class="profissionais-list">
-                                            ${porTurno[turno].map(prof => `
+                                            ${profs.map(prof => `
                                                 <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()}">
                                                     <div class="profissional-nome">${prof.profissional}</div>
                                                     <div class="profissional-info">
@@ -1145,7 +1181,8 @@ def gerar_dashboard():
                                             `).join('')}
                                         </div>
                                     </div>
-                                `).join('')}
+                                    `;
+                                }).join('')}
                             </div>
                         </div>
                     </div>
