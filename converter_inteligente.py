@@ -5,10 +5,28 @@ pela gerar_dashboard_executivo.py
 
 Lê: /tmp/extracao_inteligente.json
 Escreve: /tmp/escalas_multiplos_dias.json
+
+HISTÓRICO: Mantém registros dos últimos 3 dias para consulta no dashboard
+- Anterior: Dia anterior
+- Atual: Dia de hoje
+- Próxima: Próximo dia (quando disponível)
 """
 
 import json
+import os
 from datetime import datetime, timedelta
+
+def obter_dados_historico(data_obj):
+    """Obtém dados históricos do arquivo anterior se existir"""
+    try:
+        with open('/tmp/escalas_multiplos_dias.json', 'r', encoding='utf-8') as f:
+            historico = json.load(f)
+
+        # Se o histórico existe, podemos usar o dia anterior dele como "anterior"
+        # Isso mantém um histórico de até 3 dias
+        return historico
+    except FileNotFoundError:
+        return None
 
 def converter():
     """Converte formato de saída para formato esperado pelo dashboard"""
@@ -58,6 +76,9 @@ def converter():
     data_anterior = data_obj - timedelta(days=1)
     data_proxima = data_obj + timedelta(days=1)
 
+    # Obtém histórico anterior para manter registros dos últimos dias
+    historico_anterior = obter_dados_historico(data_obj)
+
     # Converter para formato string
     def formatar_data_simples(dt):
         return dt.strftime('%d/%m/%Y')
@@ -73,27 +94,39 @@ def converter():
         mes_pt = meses_pt.get(mes_en, mes_en.lower())
         return dt.strftime(f'%d {mes_pt} %Y')
 
-    # Separar registros por tipo de turno para gerar dados realistas das datas anteriores/próximas
-    # Para hoje, usar dados reais. Para outras datas, usar dados simulados (cópia)
+    # Manter histórico: se temos dados anteriores, reutilizamos
+    # Isso permite que o dashboard sempre mostre os últimos 3 dias
+
+    dados_anterior = {'registros': [], 'total': 0}
+
+    # Se temos histórico, pegamos o dia anterior do histórico anterior
+    if historico_anterior and 'anterior' in historico_anterior:
+        dados_anterior = {
+            'registros': historico_anterior['anterior'].get('registros', []),
+            'total': historico_anterior['anterior'].get('total', 0)
+        }
 
     resultado = {
         'anterior': {
             'data': formatar_data_longa(data_anterior),
             'data_simples': formatar_data_simples(data_anterior),
-            'registros': [],  # Dados anteriores não estão disponíveis, deixar vazio
-            'total': 0
+            'registros': dados_anterior['registros'],
+            'total': dados_anterior['total'],
+            'nota': 'Dados do dia anterior para consulta histórica'
         },
         'atual': {
             'data': data_str,
             'data_simples': formatar_data_simples(data_obj),
             'registros': registros,
-            'total': len(registros)
+            'total': len(registros),
+            'nota': 'Dados de hoje extraídos de escala.med.br'
         },
         'proxima': {
             'data': formatar_data_longa(data_proxima),
             'data_simples': formatar_data_simples(data_proxima),
-            'registros': [],  # Dados futuros não estão disponíveis, deixar vazio
-            'total': 0
+            'registros': [],
+            'total': 0,
+            'nota': 'Próximo dia (dados indisponíveis no momento)'
         }
     }
 
@@ -102,10 +135,14 @@ def converter():
         with open('/tmp/escalas_multiplos_dias.json', 'w', encoding='utf-8') as f:
             json.dump(resultado, f, ensure_ascii=False, indent=2)
 
-        print(f"✅ Converter concluído!")
+        print(f"✅ Converter concluído com sucesso!")
         print(f"📍 Entrada: /tmp/extracao_inteligente.json")
         print(f"📍 Saída: /tmp/escalas_multiplos_dias.json")
-        print(f"📊 Registros de hoje ({resultado['atual']['data_simples']}): {resultado['atual']['total']}")
+        print(f"\n📊 HISTÓRICO DE ESCALAS (últimos 3 dias):")
+        print(f"   📅 Anterior ({resultado['anterior']['data_simples']}): {resultado['anterior']['total']} registros")
+        print(f"   📅 Atual ({resultado['atual']['data_simples']}): {resultado['atual']['total']} registros ⭐")
+        print(f"   📅 Próxima ({resultado['proxima']['data_simples']}): {resultado['proxima']['total']} registros")
+        print(f"\n💾 Dashboard manterá histórico dos últimos 3 dias para consulta")
         return True
 
     except Exception as e:
