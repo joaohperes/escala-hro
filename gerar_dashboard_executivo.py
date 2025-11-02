@@ -545,6 +545,15 @@ def gerar_dashboard():
             letter-spacing: 0.5px;
         }
 
+        /* Última atualização */
+        .last-update {
+            text-align: right;
+            font-size: 0.85em;
+            color: #999;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
         /* Descrição do Dashboard */
         .dashboard-description {
             background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);
@@ -927,6 +936,9 @@ def gerar_dashboard():
         <!-- Data selecionada -->
         <div class="date-display" id="data-selecionada"></div>
 
+        <!-- Última atualização -->
+        <div class="last-update" id="ultima-atualizacao"></div>
+
         <!-- Descrição do Dashboard -->
         <div class="dashboard-description">
             <p>Dashboard para visualização da escala médica da HRO. Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos.</p>
@@ -1186,6 +1198,13 @@ def gerar_dashboard():
         function renderizarEscala() {
             const dados = escalas[diaSelecionado];
             document.getElementById('data-selecionada').textContent = dados.data;
+
+            // Mostrar última atualização
+            const agora = new Date();
+            const horas = String(agora.getHours()).padStart(2, '0');
+            const minutos = String(agora.getMinutes()).padStart(2, '0');
+            const dataAtualizacao = agora.toLocaleDateString('pt-BR');
+            document.getElementById('ultima-atualizacao').textContent = `Atualizado em ${dataAtualizacao} às ${horas}:${minutos}`;
 
             const porSetor = {};
             dados.registros.forEach(reg => {
