@@ -327,7 +327,7 @@ def gerar_dashboard():
             background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
             padding: 30px 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
+            transition: box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .header-banner:hover {
@@ -355,7 +355,7 @@ def gerar_dashboard():
         .header-right {
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
             gap: 8px;
         }
 
@@ -379,10 +379,6 @@ def gerar_dashboard():
         .header-info {
             color: white;
             text-align: left;
-        }
-
-        .header-info.right {
-            text-align: right;
         }
 
         .header-info h2 {
@@ -511,24 +507,25 @@ def gerar_dashboard():
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: 15px;
+            margin-bottom: 20px;
+            opacity: 0.85;
         }
 
         .stat-card {
             background: white;
-            padding: 25px;
+            padding: 18px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #0d3b66;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            border-left: 3px solid #0d3b66;
             text-align: center;
         }
 
         .stat-number {
-            font-size: 2.8em;
+            font-size: 2.2em;
             font-weight: 700;
             color: #0d3b66;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .stat-label {
@@ -562,6 +559,8 @@ def gerar_dashboard():
 
         .dashboard-description p {
             margin: 0;
+            font-style: italic;
+            color: #555;
         }
 
         .dashboard-description strong {
@@ -921,7 +920,7 @@ def gerar_dashboard():
             </div>
             <div class="action-buttons">
                 <button class="btn btn-primary" onclick="expandirTodas()">Expandir</button>
-                <button class="btn btn-secondary" onclick="colapsoTodas()">Fechar</button>
+                <button class="btn btn-secondary" onclick="colapsoTodas()">Colapsar</button>
             </div>
         </div>
 
@@ -930,7 +929,7 @@ def gerar_dashboard():
 
         <!-- Descrição do Dashboard -->
         <div class="dashboard-description">
-            <p><strong>Sobre este Dashboard:</strong> Visualização em tempo real da escala médica da HRO (Associação Hospitalar Lenoir Vargas Ferreira). Atualizações diárias às 07h01 (horário de Brasília) com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos.</p>
+            <p>Dashboard para visualização da escala médica da HRO. Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos.</p>
         </div>
 
         <!-- Estatísticas -->
