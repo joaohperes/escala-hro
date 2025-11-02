@@ -600,7 +600,6 @@ def gerar_dashboard():
             border-radius: 8px;
             padding: 16px;
             margin-bottom: 12px;
-            border-left: 5px solid #0d3b66;
             transition: all 0.3s ease;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
@@ -608,27 +607,6 @@ def gerar_dashboard():
         .turno-coluna:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
             transform: translateX(4px);
-        }
-
-        /* Cores da barra lateral por tipo de turno */
-        .turno-coluna[data-turno-tipo="matutino"] {
-            border-left-color: #155724;
-        }
-
-        .turno-coluna[data-turno-tipo="vespertino"] {
-            border-left-color: #856404;
-        }
-
-        .turno-coluna[data-turno-tipo="noturno"] {
-            border-left-color: #0c5460;
-        }
-
-        .turno-coluna[data-turno-tipo="badge-24h"] {
-            border-left-color: #e63946;
-        }
-
-        .turno-coluna[data-turno-tipo="sobreaviso"] {
-            border-left-color: #f72585;
         }
 
         .turno-title {
@@ -1113,6 +1091,21 @@ def gerar_dashboard():
             return 'outro';
         }
 
+        function formatarTipoBadge(tipoBadge) {
+            // Converte o tipo de turno em texto legível para a badge
+            const mapping = {
+                'badge-24h': '24H',
+                'matutino': 'MATUTINO',
+                'vespertino': 'VESPERTINO',
+                'noturno': 'NOTURNO',
+                'sobreaviso': 'SOBREAVISO',
+                'rotina': 'ROTINA',
+                'plantao': 'PLANTÃO',
+                'outro': 'OUTRO'
+            };
+            return mapping[tipoBadge] || tipoBadge.toUpperCase();
+        }
+
         function selecionarDia(dia) {
             diaSelecionado = dia;
             document.querySelectorAll('.date-btn').forEach(btn => btn.classList.remove('active'));
@@ -1175,7 +1168,7 @@ def gerar_dashboard():
                                                     <div class="profissional-nome">${prof.profissional}</div>
                                                     <div class="profissional-info">
                                                         <span class="info-label">Horário:</span> ${prof.horario}
-                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno, prof.horario).toUpperCase()}</span>
+                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
                                                     </div>
                                                 </div>
                                             `).join('')}
@@ -1204,7 +1197,7 @@ def gerar_dashboard():
                                         <div class="profissional-nome">${prof.profissional}</div>
                                         <div class="profissional-info">
                                             <span class="info-label">Turno:</span> ${prof.tipo_turno}
-                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno, prof.horario).toUpperCase()}</span><br>
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span><br>
                                             <span class="info-label">Horário:</span> ${prof.horario}
                                         </div>
                                     </div>
