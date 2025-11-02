@@ -326,8 +326,13 @@ def gerar_dashboard():
         .header-banner {
             background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
             padding: 30px 20px;
-            text-align: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .header-banner:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            background: linear-gradient(135deg, #1a5f8f 0%, #0d3b66 100%);
         }
 
         .header-content {
@@ -336,8 +341,22 @@ def gerar_dashboard():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 30px;
+            gap: 60px;
             flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
         }
 
         .header-logo {
@@ -349,23 +368,36 @@ def gerar_dashboard():
             text-transform: uppercase;
         }
 
+        .header-logo.hro {
+            font-size: 1.8em;
+        }
+
+        .header-logo.alvf {
+            font-size: 2.5em;
+        }
+
         .header-info {
             color: white;
             text-align: left;
         }
 
+        .header-info.right {
+            text-align: right;
+        }
+
         .header-info h2 {
             font-family: 'Merriweather', serif;
-            font-size: 1.8em;
+            font-size: 1.3em;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin: 0;
             letter-spacing: 0.5px;
         }
 
         .header-info p {
-            font-size: 0.95em;
+            font-size: 0.85em;
             opacity: 0.95;
             letter-spacing: 0.3px;
+            margin: 0;
         }
 
         /* Container Principal */
@@ -514,6 +546,27 @@ def gerar_dashboard():
             font-weight: 600;
             margin-bottom: 25px;
             letter-spacing: 0.5px;
+        }
+
+        /* Descrição do Dashboard */
+        .dashboard-description {
+            background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);
+            border-left: 4px solid #0d3b66;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .dashboard-description p {
+            margin: 0;
+        }
+
+        .dashboard-description strong {
+            color: #0d3b66;
+            font-weight: 700;
         }
 
         /* Categoria */
@@ -840,10 +893,17 @@ def gerar_dashboard():
     <!-- Header com Banner -->
     <div class="header-banner">
         <div class="header-content">
-            <div class="header-logo">ALVF</div>
-            <div class="header-info">
-                <h2>Escala Médica</h2>
-                <p>Associação Hospitalar Lenoir Vargas Ferreira</p>
+            <div class="header-left">
+                <div class="header-logo hro">HRO</div>
+                <div class="header-info">
+                    <h2>Escala Médica</h2>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-logo alvf">ALVF</div>
+                <div class="header-info right">
+                    <p>Associação Hospitalar<br>Lenoir Vargas Ferreira</p>
+                </div>
             </div>
         </div>
     </div>
@@ -867,6 +927,11 @@ def gerar_dashboard():
 
         <!-- Data selecionada -->
         <div class="date-display" id="data-selecionada"></div>
+
+        <!-- Descrição do Dashboard -->
+        <div class="dashboard-description">
+            <p><strong>Sobre este Dashboard:</strong> Visualização em tempo real da escala médica da HRO (Associação Hospitalar Lenoir Vargas Ferreira). Atualizações diárias às 07h01 (horário de Brasília) com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos.</p>
+        </div>
 
         <!-- Estatísticas -->
         <div class="stats" id="stats"></div>
@@ -1106,6 +1171,11 @@ def gerar_dashboard():
             return mapping[tipoBadge] || tipoBadge.toUpperCase();
         }
 
+        function pluralizarProfissional(count) {
+            // Retorna singular ou plural corretamente
+            return count === 1 ? `${count} profissional` : `${count} profissionais`;
+        }
+
         function selecionarDia(dia) {
             diaSelecionado = dia;
             document.querySelectorAll('.date-btn').forEach(btn => btn.classList.remove('active'));
@@ -1150,7 +1220,7 @@ def gerar_dashboard():
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${setor}</div>
-                                <div class="categoria-count">${profissionais.length} profissionais</div>
+                                <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▼</div>
                         </div>
@@ -1186,7 +1256,7 @@ def gerar_dashboard():
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${setor}</div>
-                                <div class="categoria-count">${profissionais.length} profissionais</div>
+                                <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▼</div>
                         </div>
