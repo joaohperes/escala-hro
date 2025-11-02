@@ -327,7 +327,7 @@ def gerar_dashboard():
             background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
             padding: 30px 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), background 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: box-shadow 1.8s ease-out, background 2s ease-out;
         }
 
         .header-banner:hover {
@@ -556,18 +556,18 @@ def gerar_dashboard():
 
         /* Descrição do Dashboard */
         .dashboard-description {
-            background: transparent;
+            background: #f0f5fa;
             border-radius: 8px;
-            padding: 12px 0;
+            padding: 16px 20px;
             margin-bottom: 25px;
             font-size: 0.95em;
-            color: #555;
+            color: #333;
             line-height: 1.6;
         }
 
         .dashboard-description p {
             margin: 0;
-            color: #555;
+            color: #333;
         }
 
         .dashboard-description strong {
