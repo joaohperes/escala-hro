@@ -13,12 +13,77 @@ MELHORIAS V2:
 import json
 from datetime import datetime
 
-def obter_tipo_turno(turno_text):
-    """Identifica o tipo de turno para aplicar cor correta: matutino, vespertino ou noturno"""
+def obter_tipo_turno(turno_text, horario_text=""):
+    """Identifica o tipo de turno para aplicar cor correta com detecção hierárquica
+
+    Prioridade:
+    1. Detecta 24H (Sobreaviso/On-call que dura o dia inteiro)
+    2. Detecta SOBREAVISO explícito
+    3. Detecta FINAL DE SEMANA
+    4. Detecta turnos específicos por horário
+    5. Detecta ROTINA com horários
+    6. Retorna OUTRO como fallback
+    """
     if not turno_text:
         return "outro"
 
     turno = turno_text.lower()
+    horario = horario_text.lower() if horario_text else ""
+
+    # PRIORIDADE 1: Detecta 24H (entrada = saída ou diferença grande)
+    # Exemplos: "24:00/08:00", "07:00/07:00", "13:00/13:00" (on-call que dura o dia inteiro)
+    if horario and "/" in horario:
+        try:
+            entrada, saida = horario.split("/")
+            entrada = entrada.strip()
+            saida = saida.strip()
+
+            # Se entrada == saída, é plantão de 24h
+            if entrada == saida:
+                return "24h"
+
+            # Se está explícito como sobreaviso, marca como 24h
+            if 'sobreaviso' in turno or '24h' in turno:
+                return "24h"
+        except:
+            pass
+
+    # PRIORIDADE 2: Detecta SOBREAVISO (on-call)
+    if 'sobreaviso' in turno or 'sobre aviso' in turno:
+        return "sobreaviso"
+
+    # PRIORIDADE 3: Detecta FINAL DE SEMANA
+    if 'final' in turno or 'finais' in turno or 'fim de semana' in turno or 'fds' in turno:
+        # Se for final de semana mas tem período específico
+        if any(x in turno for x in ['matutino', 'manhã', '07:00', '08:00', '06:00']):
+            return "matutino"
+        elif any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
+            return "vespertino"
+        elif any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
+            return "noturno"
+        return "fimdesemana"
+
+    # PRIORIDADE 4: Detecta turnos específicos por horário/nome
+    # Detecta por abreviações (P1, P2, P3, P4, DIA, NOITE) + horário
+    if turno in ['p1', 'p2', 'p3', 'p4', 'dia', 'noite'] or (len(turno) <= 3 and turno.isalnum()):
+        # P1, P2, P3 geralmente são matutino/vespertino, P4 é noturno
+        if horario and "/" in horario:
+            try:
+                entrada, saida = horario.split("/")
+                entrada_h = int(entrada.split(":")[0])
+                saida_h = int(saida.split(":")[0])
+
+                # Matutino (6:00-13:00)
+                if entrada_h >= 6 and entrada_h < 12:
+                    return "matutino"
+                # Vespertino (13:00-19:00)
+                elif entrada_h >= 12 and entrada_h < 18:
+                    return "vespertino"
+                # Noturno (19:00-06:00)
+                elif entrada_h >= 18 or entrada_h < 6:
+                    return "noturno"
+            except:
+                pass
 
     # Matutino (Verde)
     if any(x in turno for x in ['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00']):
@@ -32,7 +97,7 @@ def obter_tipo_turno(turno_text):
     if any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
         return "noturno"
 
-    # Plantão (Amarelo)
+    # Plantão (Coral)
     if 'plantão' in turno or 'plantao' in turno:
         if 'noturno' in turno or 'noite' in turno or '19:00' in turno:
             return "noturno"
@@ -42,6 +107,28 @@ def obter_tipo_turno(turno_text):
             return "matutino"
         return "plantao"
 
+    # PRIORIDADE 5: Detecta ROTINA com horário específico
+    if 'rotina' in turno:
+        if horario and "/" in horario:
+            try:
+                entrada, saida = horario.split("/")
+                entrada_h = int(entrada.split(":")[0])
+                saida_h = int(saida.split(":")[0])
+
+                # Matutino (6:00-13:00)
+                if entrada_h >= 6 and entrada_h < 12:
+                    return "matutino"
+                # Vespertino (13:00-19:00)
+                elif entrada_h >= 12 and entrada_h < 18:
+                    return "vespertino"
+                # Noturno (19:00-06:00)
+                elif entrada_h >= 18 or entrada_h < 6:
+                    return "noturno"
+            except:
+                pass
+        return "rotina"
+
+    # FALLBACK: Retorna outro para casos não identificados
     return "outro"
 
 def normalizar_turno(turno_text):
@@ -568,6 +655,31 @@ def gerar_dashboard():
             border: 1px solid #d6d8db;
         }
 
+        .turno-badge.24h {
+            background: #ff6b6b;
+            color: #ffffff;
+            border: 1px solid #ff5252;
+            font-weight: 800;
+        }
+
+        .turno-badge.sobreaviso {
+            background: #ff9999;
+            color: #ffffff;
+            border: 1px solid #ff7777;
+        }
+
+        .turno-badge.fimdesemana {
+            background: #a67c52;
+            color: #ffffff;
+            border: 1px solid #8b6637;
+        }
+
+        .turno-badge.rotina {
+            background: #b399cc;
+            color: #ffffff;
+            border: 1px solid #9977bb;
+        }
+
         /* ===== ABAS DE DATA ===== */
         .data-tabs {
             display: flex;
@@ -811,11 +923,53 @@ def gerar_dashboard():
             return especialidadesComTurno.some(esp => setorLower.includes(esp));
         }
 
-        function obterTipoTurno(turnoText) {
-            // Identifica o tipo de turno para aplicar cor: matutino, vespertino, noturno
+        function obterTipoTurno(turnoText, horarioText = '') {
+            // Identifica o tipo de turno com detecção hierárquica
+            // Prioridade: 24H → SOBREAVISO → FIM SEMANA → Específico → ROTINA → OUTRO
             if (!turnoText) return 'outro';
 
             const turno = turnoText.toLowerCase();
+            const horario = horarioText ? horarioText.toLowerCase() : '';
+
+            // PRIORIDADE 1: Detecta 24H (entrada == saída)
+            if (horario && horario.includes('/')) {
+                try {
+                    const [entrada, saida] = horario.split('/').map(x => x.trim());
+                    if (entrada === saida) {
+                        return '24h';
+                    }
+                    if (turno.includes('sobreaviso') || turno.includes('24h')) {
+                        return '24h';
+                    }
+                } catch (e) {}
+            }
+
+            // PRIORIDADE 2: Detecta SOBREAVISO
+            if (turno.includes('sobreaviso') || turno.includes('sobre aviso')) {
+                return 'sobreaviso';
+            }
+
+            // PRIORIDADE 3: Detecta FINAL DE SEMANA
+            if (turno.includes('final') || turno.includes('finais') || turno.includes('fim de semana') || turno.includes('fds')) {
+                if (['matutino', 'manhã', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) return 'matutino';
+                if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) return 'vespertino';
+                if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) return 'noturno';
+                return 'fimdesemana';
+            }
+
+            // PRIORIDADE 4: Detecta turnos específicos
+            // Detecta por abreviações (P1, P2, P3, P4, DIA, NOITE) + horário
+            if (['p1', 'p2', 'p3', 'p4', 'dia', 'noite'].includes(turno) || (turno.length <= 3 && /^[a-z0-9]+$/.test(turno))) {
+                if (horario && horario.includes('/')) {
+                    try {
+                        const [entrada] = horario.split('/')[0].split(':');
+                        const entradaH = parseInt(entrada);
+                        if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                        if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                        if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                    } catch (e) {}
+                }
+            }
 
             // Matutino (Verde)
             if (['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
@@ -832,12 +986,26 @@ def gerar_dashboard():
                 return 'noturno';
             }
 
-            // Plantão
+            // Plantão (Coral)
             if (turno.includes('plantão') || turno.includes('plantao')) {
                 if (turno.includes('noturno') || turno.includes('noite') || turno.includes('19:00')) return 'noturno';
                 if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return 'vespertino';
                 if (turno.includes('matutino') || turno.includes('manhã') || turno.includes('07:00')) return 'matutino';
                 return 'plantao';
+            }
+
+            // PRIORIDADE 5: Detecta ROTINA com horário
+            if (turno.includes('rotina')) {
+                if (horario && horario.includes('/')) {
+                    try {
+                        const [entrada] = horario.split('/')[0].split(':');
+                        const entradaH = parseInt(entrada);
+                        if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                        if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                        if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                    } catch (e) {}
+                }
+                return 'rotina';
             }
 
             return 'outro';
@@ -902,7 +1070,7 @@ def gerar_dashboard():
                                                     <div class="profissional-nome">${prof.profissional}</div>
                                                     <div class="profissional-info">
                                                         <span class="info-label">Horário:</span> ${prof.horario}
-                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno).toUpperCase()}</span>
+                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno, prof.horario).toUpperCase()}</span>
                                                     </div>
                                                 </div>
                                             `).join('')}
@@ -930,7 +1098,7 @@ def gerar_dashboard():
                                         <div class="profissional-nome">${prof.profissional}</div>
                                         <div class="profissional-info">
                                             <span class="info-label">Turno:</span> ${prof.tipo_turno}
-                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno).toUpperCase()}</span><br>
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${obterTipoTurno(prof.tipo_turno, prof.horario).toUpperCase()}</span><br>
                                             <span class="info-label">Horário:</span> ${prof.horario}
                                         </div>
                                     </div>
