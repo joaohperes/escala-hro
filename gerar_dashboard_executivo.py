@@ -40,11 +40,11 @@ def obter_tipo_turno(turno_text, horario_text=""):
 
             # Se entrada == saída, é plantão de 24h
             if entrada == saida:
-                return "24h"
+                return "sobreaviso-24h"
 
             # Se está explícito como sobreaviso, marca como 24h
             if 'sobreaviso' in turno or '24h' in turno:
-                return "24h"
+                return "sobreaviso-24h"
         except:
             pass
 
@@ -701,7 +701,7 @@ def gerar_dashboard():
             border: 1px solid #d6d8db;
         }
 
-        .turno-badge.24h {
+        .turno-badge.sobreaviso-24h {
             background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
             color: #ffffff;
             border: 1px solid #a4161a;
@@ -978,10 +978,10 @@ def gerar_dashboard():
                 try {
                     const [entrada, saida] = horario.split('/').map(x => x.trim());
                     if (entrada === saida) {
-                        return '24h';
+                        return 'sobreaviso-24h';
                     }
                     if (turno.includes('sobreaviso') || turno.includes('24h')) {
-                        return '24h';
+                        return 'sobreaviso-24h';
                     }
                 } catch (e) {}
             }
