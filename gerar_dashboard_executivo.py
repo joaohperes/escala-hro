@@ -2327,12 +2327,18 @@ def gerar_dashboard():
             document.querySelectorAll('.category').forEach(category => {
                 const content = category.querySelector('.categoria-content');
                 const header = category.querySelector('.categoria-header');
+
+                // Check for visible turno-coluna elements (for multi-turno sectors)
                 const colunas = Array.from(content.querySelectorAll('.turno-coluna')).filter(c => c.style.display !== 'none').length;
+
+                // Also check for visible professionals directly in content (for single-turno sectors)
+                const profissionaisVisiveis = Array.from(content.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
 
                 if (searchText === '') {
                     category.style.display = 'block';
                 } else {
-                    if (colunas > 0) {
+                    // Show category if there are visible turno-colunas OR visible professionals
+                    if (colunas > 0 || profissionaisVisiveis > 0) {
                         category.style.display = 'block';
                         content.classList.remove('collapsed');
                         header.classList.add('expanded');
