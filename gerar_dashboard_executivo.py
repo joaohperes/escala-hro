@@ -2226,14 +2226,12 @@ def gerar_dashboard():
                 const prof_val = prof.getAttribute('data-prof') || '';
                 const setor_val = prof.getAttribute('data-setor') || '';
                 const turno_val = prof.getAttribute('data-turno') || '';
-                const tipo_val = prof.getAttribute('data-tipo') || '';
-                const hora_val = prof.getAttribute('data-hora') || '';
 
                 if (attrCount < 3) {
                     console.log(`Prof ${attrCount}: prof="${prof_val}" setor="${setor_val}"`);
                 }
 
-                const searchText = [prof_val, setor_val, turno_val, tipo_val, hora_val]
+                const searchText = [prof_val, setor_val, turno_val]
                     .join(' ').toLowerCase();
                 prof.setAttribute('data-search', searchText);
                 attrCount++;
