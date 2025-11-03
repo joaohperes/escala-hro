@@ -2290,6 +2290,15 @@ def gerar_dashboard():
             let totalVistos = 0;
 
             console.log('Filtrando por:', searchText);
+            console.log('Total profissionais encontrados:', profissionais.length);
+
+            // Log first few data-search values for debugging
+            if (searchText !== '' && profissionais.length > 0) {
+                for (let i = 0; i < Math.min(3, profissionais.length); i++) {
+                    const dataSearch = profissionais[i].getAttribute('data-search');
+                    console.log(`Prof ${i}: data-search="${dataSearch}"`);
+                }
+            }
 
             profissionais.forEach(prof => {
                 // Read the combined data-search attribute that was populated by renderizarEscala
