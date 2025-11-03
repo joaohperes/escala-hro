@@ -689,13 +689,19 @@ def gerar_dashboard():
             background: #e0e8f5;
         }
 
-        /* Triângulo dinâmico nos botões */
+        /* Triângulo dinâmico nos botões - usando mesmo do categoria-toggle */
         .btn-toggle-sections::before {
-            content: '▲';
+            content: '';
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
             display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 10px solid #0d3b66;
+            margin-right: 8px;
         }
 
         .btn-toggle-sections.collapsed::before {
@@ -710,12 +716,17 @@ def gerar_dashboard():
 
         /* Triângulo para botão anterior (apontando para esquerda) */
         .date-btn[data-dia="anterior"]::before {
-            content: '▲';
+            content: '';
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
             display: inline-block;
-            transform: rotate(-90deg);
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-right: 10px solid #0d3b66;
+            margin-right: 8px;
         }
 
         /* Modal de Contatos */
