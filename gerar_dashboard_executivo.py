@@ -481,22 +481,27 @@ def gerar_dashboard():
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 60px;
+            gap: 40px;
             flex-wrap: wrap;
+            padding: 0 20px;
         }
 
         .header-left {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 250px;
         }
 
         .header-right {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+            align-items: center;
+            gap: 16px;
+            text-align: right;
+            flex: 1;
+            min-width: 250px;
+            justify-content: flex-end;
         }
 
         .header-logo {
@@ -519,6 +524,13 @@ def gerar_dashboard():
         .header-info {
             color: white;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-info.right {
+            text-align: right;
         }
 
         .header-info h2 {
@@ -650,6 +662,20 @@ def gerar_dashboard():
 
         .btn-contacts:hover {
             background: #0d3b66;
+        }
+
+        .btn-toggle-sections {
+            background: #f0f5fa;
+            color: #0d3b66;
+            transition: all 0.3s ease;
+        }
+
+        .btn-toggle-sections:hover {
+            background: #e0e8f5;
+        }
+
+        .btn-toggle-sections.collapsed {
+            background: #e0e8f5;
         }
 
         /* Modal de Contatos */
@@ -1369,8 +1395,7 @@ def gerar_dashboard():
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-primary" onclick="expandirTodas()">Expandir</button>
-                <button class="btn btn-secondary" onclick="colapsoTodas()">Colapsar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▼ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1796,18 +1821,31 @@ def gerar_dashboard():
             content.classList.toggle('collapsed');
         }
 
-        function expandirTodas() {
-            document.querySelectorAll('.categoria-header').forEach(h => {
-                h.classList.add('expanded');
-                h.nextElementSibling.classList.remove('collapsed');
-            });
-        }
+        let seccoesExpandidas = true;
 
-        function colapsoTodas() {
-            document.querySelectorAll('.categoria-header').forEach(h => {
-                h.classList.remove('expanded');
-                h.nextElementSibling.classList.add('collapsed');
-            });
+        function alternarSeccoes() {
+            const btn = document.getElementById('toggle-btn');
+            const categorias = document.querySelectorAll('.categoria-header');
+
+            if (seccoesExpandidas) {
+                // Colapsar todas
+                categorias.forEach(h => {
+                    h.classList.remove('expanded');
+                    h.nextElementSibling.classList.add('collapsed');
+                });
+                btn.textContent = '▶ Expandir';
+                btn.classList.add('collapsed');
+                seccoesExpandidas = false;
+            } else {
+                // Expandir todas
+                categorias.forEach(h => {
+                    h.classList.add('expanded');
+                    h.nextElementSibling.classList.remove('collapsed');
+                });
+                btn.textContent = '▼ Minimizar';
+                btn.classList.remove('collapsed');
+                seccoesExpandidas = true;
+            }
         }
 
         function filtrarProfissionais() {
@@ -1972,7 +2010,9 @@ def gerar_dashboard():
 
         function renderizarContatos() {
           const contactsList = document.getElementById('contacts-list');
-          const profissionais = profissionaisData.professionals;
+          const profissionais = [...profissionaisData.professionals].sort((a, b) =>
+            a.name.localeCompare(b.name, 'pt-BR')
+          );
 
           contactsList.innerHTML = profissionais.map(prof => {
             const telefoneLimpo = prof.phone.replace(/\D/g, '');
