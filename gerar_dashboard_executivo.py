@@ -2154,7 +2154,7 @@ def gerar_dashboard():
                                                 const telefoneLimpo = telefone.replace(/\D/g, '');
                                                 const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                                 return `
-                                                <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()} shift:${prof.tipo_turno.toLowerCase()}">
+                                                <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()}">
                                                     <div class="profissional-nome">
                                                         ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                                         <div class="profissional-nome-wrapper">
@@ -2193,7 +2193,7 @@ def gerar_dashboard():
                                     const telefoneLimpo = telefone.replace(/\D/g, '');
                                     const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                     return `
-                                    <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${prof.tipo_turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} shift:${prof.tipo_turno.toLowerCase()}">
+                                    <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${prof.tipo_turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()}">
                                         <div class="profissional-nome">
                                             ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                             <div class="profissional-nome-wrapper">
@@ -2304,17 +2304,7 @@ def gerar_dashboard():
                 // Read the combined data-search attribute that was populated by renderizarEscala
                 const texto = prof.getAttribute('data-search') || '';
 
-                let matches = false;
-                if (searchText === '') {
-                    matches = true;
-                } else {
-                    // Use word boundary matching to avoid false matches like "uti" in "matutino"
-                    // Split texto into words and check if any word contains the search text
-                    const palavras = texto.split(/\s+/);
-                    matches = palavras.some(palavra => palavra.includes(searchText));
-                }
-
-                if (matches) {
+                if (searchText === '' || texto.includes(searchText)) {
                     prof.style.display = 'block';
                     totalVistos++;
                 } else {
