@@ -1632,7 +1632,6 @@ def gerar_dashboard():
             <div class="action-buttons">
                 <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
-                <button class="btn btn-print" onclick="window.print()">🖨️ Imprimir</button>
             </div>
         </div>
 
