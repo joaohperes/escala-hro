@@ -2342,6 +2342,8 @@ def gerar_dashboard():
                 }
             });
 
+            console.log('Categorias visíveis após filtro:', Array.from(document.querySelectorAll('.category')).filter(c => c.style.display !== 'none').length);
+
             // Mostrar mensagem se não encontrar nada
             let emptyMessageDiv = document.getElementById('empty-search-message');
             if (!emptyMessageDiv) {
