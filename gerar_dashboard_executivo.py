@@ -691,7 +691,7 @@ def gerar_dashboard():
 
         /* Triângulo dinâmico nos botões */
         .btn-toggle-sections::before {
-            content: '▼';
+            content: '▲';
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
@@ -710,7 +710,7 @@ def gerar_dashboard():
 
         /* Triângulo para botão anterior (apontando para esquerda) */
         .date-btn[data-dia="anterior"]::before {
-            content: '▼';
+            content: '▲';
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
@@ -1802,7 +1802,7 @@ def gerar_dashboard():
                                 <div class="categoria-nome">${setor}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
-                            <div class="categoria-toggle">▼</div>
+                            <div class="categoria-toggle">▲</div>
                         </div>
                         <div class="categoria-content">
                             <div class="turnos-container">
@@ -1848,7 +1848,7 @@ def gerar_dashboard():
                                 <div class="categoria-nome">${setor}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
-                            <div class="categoria-toggle">▼</div>
+                            <div class="categoria-toggle">▲</div>
                         </div>
                         <div class="categoria-content">
                             <div class="profissionais-list">
