@@ -105,11 +105,52 @@ class ExtractorInteligente:
             }
 
             // 2. Extrai profissionais com suas posições X
+            // Tenta múltiplas estratégias de seleção para compatibilidade com atualizações do site
             var profissionais = document.querySelectorAll('[class*="fjdhpX"]');
             var turnos = document.querySelectorAll('[class*="jzJRlG"]');
             var horarios = document.querySelectorAll('[class*="cSHVUG"]');
 
+            // Fallback 1: Se os seletores originais não funcionam, tenta procurar por estrutura
+            if (profissionais.length === 0) {
+                console.log("DEBUG: Seletores originais falharam, tentando fallback...");
+
+                // Tenta encontrar elementos que contêm nomes profissionais (em qualquer lugar)
+                var allElements = document.querySelectorAll('[class*="Name"], [class*="name"], [class*="professional"], [class*="Professional"]');
+
+                if (allElements.length > 0) {
+                    console.log("DEBUG: Encontrados " + allElements.length + " elementos com 'name' na classe");
+                    profissionais = allElements;
+                } else {
+                    // Fallback 2: Procura por divs com conteúdo que parece nome
+                    var divs = document.querySelectorAll('div');
+                    var nomesEncontrados = [];
+
+                    for (var d = 0; d < divs.length; d++) {
+                        var text = (divs[d].textContent || "").trim();
+                        // Procura por padrão de nome: 2-3 palavras, começa com maiúscula
+                        if (text && text.match(/^[A-Z][a-z]+(\\s+[A-Z][a-z]+){1,3}$/) && text.length > 3 && text.length < 80) {
+                            nomesEncontrados.push(divs[d]);
+                        }
+                    }
+
+                    if (nomesEncontrados.length > 0) {
+                        console.log("DEBUG: Encontrados " + nomesEncontrados.length + " elementos com padrão de nome");
+                        profissionais = nomesEncontrados;
+                    }
+                }
+            }
+
+            // Fallback para turnos e horários
+            if (turnos.length === 0) {
+                turnos = document.querySelectorAll('[class*="shift"], [class*="turno"], [class*="Turno"], span:contains("Plantão")');
+            }
+
+            if (horarios.length === 0) {
+                horarios = document.querySelectorAll('[class*="time"], [class*="hora"], [class*="horario"], [class*="Horario"]');
+            }
+
             console.log("Profissionais encontrados: " + profissionais.length);
+            console.log("DEBUG: turnos=" + turnos.length + ", horarios=" + horarios.length);
 
             for (var i = 0; i < Math.min(profissionais.length, turnos.length, horarios.length); i++) {
                 var prof = profissionais[i].textContent.trim();
@@ -210,7 +251,13 @@ class ExtractorInteligente:
                 data: data,
                 setores_encontrados: totalSetores,
                 registros: registros,
-                headers_encontrados: setoresComPosicao.length
+                headers_encontrados: setoresComPosicao.length,
+                debug: {
+                    profissionais_selecionados: profissionais.length,
+                    turnos_selecionados: turnos.length,
+                    horarios_selecionados: horarios.length,
+                    setores_com_posicao: setoresComPosicao.length
+                }
             };
         })();
         """
@@ -234,12 +281,25 @@ def main():
         setores_count = resultado['setores_encontrados']
         headers_encontrados = resultado['headers_encontrados']
 
+        # Debug info do JavaScript
+        debug_info = resultado.get('debug', {})
+
         print(f"\n{'='*100}")
         print(f"📅 DATA: {data}")
         print(f"📊 TOTAL DE REGISTROS: {len(registros)}")
         print(f"📂 SETORES DETECTADOS: {setores_count}")
         print(f"🔍 HEADERS ENCONTRADOS: {headers_encontrados}")
-        print(f"{'='*100}\n")
+        print(f"{'='*100}")
+
+        if debug_info:
+            print(f"\n🔧 DEBUG INFO:")
+            print(f"   - Profissionais selecionados: {debug_info.get('profissionais_selecionados', 'N/A')}")
+            print(f"   - Turnos selecionados: {debug_info.get('turnos_selecionados', 'N/A')}")
+            print(f"   - Horários selecionados: {debug_info.get('horarios_selecionados', 'N/A')}")
+            print(f"   - Setores com posição: {debug_info.get('setores_com_posicao', 'N/A')}")
+            print(f"{'='*100}\n")
+        else:
+            print(f"{'='*100}\n")
 
         # Conta setores
         setores_dict = {}
