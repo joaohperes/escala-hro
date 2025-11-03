@@ -200,7 +200,26 @@ def obter_tipo_turno(turno_text, horario_text=""):
                 pass
         return "rotina"
 
-    # FALLBACK: Retorna outro para casos não identificados
+    # FALLBACK: Detecta por horário como último recurso antes de retornar "outro"
+    # Importante para turnos que não têm palavras-chave específicas (ex: Ambulatório, etc)
+    if horario and "/" in horario:
+        try:
+            entrada, saida = horario.split("/")
+            entrada_h = int(entrada.split(":")[0])
+            saida_h = int(saida.split(":")[0])
+
+            # Matutino (6:00-13:00)
+            if entrada_h >= 6 and entrada_h < 12:
+                return "matutino"
+            # Vespertino (13:00-19:00)
+            elif entrada_h >= 12 and entrada_h < 18:
+                return "vespertino"
+            # Noturno (19:00-06:00)
+            elif entrada_h >= 18 or entrada_h < 6:
+                return "noturno"
+        except:
+            pass
+
     return "outro"
 
 def normalizar_turno(turno_text):
@@ -2392,7 +2411,7 @@ def gerar_dashboard():
                 <div class="contact-name">${prof.name}</div>
                 <div class="contact-info">
                   <a href="${whatsappUrl}" target="_blank" class="contact-phone">
-                    <span class="phone-icon">📱</span> ${prof.phone}
+                    ${prof.phone}
                   </a>
                 </div>
               </div>
