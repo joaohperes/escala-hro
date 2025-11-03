@@ -988,6 +988,7 @@ def gerar_dashboard():
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
+            display: inline-block;
         }
 
         .categoria-header.expanded .categoria-toggle {
@@ -1401,14 +1402,14 @@ def gerar_dashboard():
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
-                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">▶ Dia Anterior</button>
+                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">❮ Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▶ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">⌄ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1458,13 +1459,14 @@ def gerar_dashboard():
             if (turno.includes('res.') || turno.includes('residência') || turno.includes('residencia')) {
                 if (horario && horario.includes('/')) {
                     try {
-                        const [entrada] = horario.split('/')[0].split(':');
-                        const entradaH = parseInt(entrada);
-                        // Detectar diurno (07:00-19:00)
-                        if (horario.includes('07:00') && horario.includes('19:00')) {
+                        const [entrada, saida] = horario.split('/');
+                        const entradaH = parseInt(entrada.split(':')[0]);
+                        const saidaH = parseInt(saida.split(':')[0]);
+                        // Detectar diurno (07:00-19:00) - entrada 07, saída 19
+                        if (entradaH === 7 && saidaH === 19) {
                             return { ordem: 1, nome: 'Plantão Diurno' };
                         }
-                        // Detectar por hora
+                        // Detectar por hora de entrada
                         if (entradaH >= 6 && entradaH < 12) return { ordem: 1, nome: 'Plantão Matutino' };
                         if (entradaH >= 12 && entradaH < 18) return { ordem: 2, nome: 'Plantão Vespertino' };
                         if (entradaH >= 18 || entradaH < 6) return { ordem: 3, nome: 'Plantão Noturno' };
@@ -1768,7 +1770,7 @@ def gerar_dashboard():
                                 <div class="categoria-nome">${setor}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
-                            <div class="categoria-toggle">▶</div>
+                            <div class="categoria-toggle">▼</div>
                         </div>
                         <div class="categoria-content">
                             <div class="turnos-container">
@@ -1814,7 +1816,7 @@ def gerar_dashboard():
                                 <div class="categoria-nome">${setor}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
-                            <div class="categoria-toggle">▶</div>
+                            <div class="categoria-toggle">▼</div>
                         </div>
                         <div class="categoria-content">
                             <div class="profissionais-list">
@@ -1878,7 +1880,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.innerHTML = '▶ Expandir';
+                btn.innerHTML = '⌄ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1887,7 +1889,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.innerHTML = '▶ Minimizar';
+                btn.innerHTML = '⌄ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
