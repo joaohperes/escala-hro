@@ -45,6 +45,16 @@ def obter_tipo_turno(turno_text, horario_text=""):
             # Se está explícito como sobreaviso, marca como 24h
             if 'sobreaviso' in turno or '24h' in turno:
                 return "badge-24h"
+
+            # Detecta Plantão Diurno (07:00-19:00) - típico de residência
+            try:
+                entrada_h = int(entrada.split(":")[0])
+                saida_h = int(saida.split(":")[0])
+                # Se é 07:00/19:00, é plantão/diurno
+                if entrada_h == 7 and saida_h == 19:
+                    return "plantao"
+            except:
+                pass
         except:
             pass
 
@@ -527,6 +537,19 @@ def gerar_dashboard():
             font-weight: 700;
             margin: 0;
             letter-spacing: 0.5px;
+        }
+
+        .header-description {
+            color: white;
+            font-size: 0.85em;
+            opacity: 0.95;
+            text-align: right;
+        }
+
+        .header-description p {
+            margin: 0;
+            line-height: 1.3;
+            letter-spacing: 0.3px;
         }
 
         /* Container Principal */
@@ -1178,11 +1201,11 @@ def gerar_dashboard():
         }
 
         .turno-badge.badge-24h {
-            background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
-            color: #ffffff;
-            border: 1px solid #a4161a;
+            background: linear-gradient(135deg, #ffcdd2 0%, #f8bbd0 100%);
+            color: #c2185b;
+            border: 1px solid #e91e63;
             font-weight: 800;
-            box-shadow: 0 2px 4px rgba(230, 57, 70, 0.3);
+            box-shadow: 0 2px 4px rgba(233, 30, 99, 0.2);
         }
 
         .turno-badge.sobreaviso {
@@ -1356,6 +1379,9 @@ def gerar_dashboard():
             </div>
             <div class="header-right">
                 <div class="header-logo">ALVF</div>
+                <div class="header-description">
+                    <p>Associação Hospitalar<br>Lenoir Vargas Ferreira</p>
+                </div>
             </div>
         </div>
     </div>
@@ -1365,14 +1391,14 @@ def gerar_dashboard():
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
-                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">← Anterior</button>
+                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">‹ Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">⌄ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▼ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1517,6 +1543,14 @@ def gerar_dashboard():
                     if (turno.includes('sobreaviso') || turno.includes('24h')) {
                         return 'badge-24h';
                     }
+                    // Detecta Plantão Diurno (07:00-19:00) - típico de residência
+                    try {
+                        const entradaH = parseInt(entrada.split(':')[0]);
+                        const saidaH = parseInt(saida.split(':')[0]);
+                        if (entradaH === 7 && saidaH === 19) {
+                            return 'plantao';
+                        }
+                    } catch (e) {}
                 } catch (e) {}
             }
 
@@ -1810,7 +1844,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.textContent = '‣ Expandir';
+                btn.textContent = '▶ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1819,7 +1853,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.textContent = '⌄ Minimizar';
+                btn.textContent = '▼ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
