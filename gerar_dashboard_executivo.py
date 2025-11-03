@@ -1387,134 +1387,154 @@ def gerar_dashboard():
             }
         }
 
-        /* Estilos para Impressão - A4 otimizado */
+        /* Estilos para Impressão - 1 página A4 */
         @media print {
-            * {
-                box-shadow: none !important;
+            @page {
+                size: A4;
+                margin: 5mm;
             }
 
-            body {
-                margin: 0;
-                padding: 0;
+            * {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            html, body {
+                height: 100%;
                 background: white;
-                font-size: 10pt;
+                font-family: Arial, sans-serif;
+                font-size: 7pt;
+                line-height: 1.1;
             }
 
             .container {
                 max-width: 100%;
-                margin: 0;
-                padding: 10mm;
+                width: 100%;
             }
 
-            /* Ocultar elementos de navegação na impressão */
+            /* Ocultar tudo exceto conteúdo */
             .controls-bar,
             .header,
             .dashboard-description,
             .contacts-modal,
-            .date-display {
+            .date-display,
+            .category > .categoria-header,
+            .categoria-toggle,
+            .stats,
+            #categorias {
                 display: none !important;
             }
 
-            /* Otimizar para A4 */
-            .stats {
-                display: block;
-                margin-bottom: 20pt;
-                page-break-inside: avoid;
-            }
-
-            .stat-item {
-                display: inline-block;
-                margin-right: 30pt;
-                margin-bottom: 10pt;
-            }
-
-            /* Títulos dos setores */
-            .categoria-header {
-                background: #f0f0f0 !important;
-                border-left: 3pt solid #0d3b66 !important;
-                padding: 8pt !important;
-                margin-top: 15pt !important;
-                margin-bottom: 8pt !important;
-                page-break-inside: avoid;
-                font-size: 11pt !important;
-                font-weight: bold !important;
-            }
-
-            /* Conteúdo dos setores */
-            .categoria-content {
+            /* Mostrar apenas conteúdo das categorias */
+            .category {
+                display: block !important;
+                margin: 0 !important;
                 padding: 0 !important;
+                page-break-inside: avoid;
+            }
+
+            .categoria-content {
                 display: block !important;
                 max-height: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
-            /* Colunas de turno */
+            .turnos-container {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 2mm !important;
+                padding: 1mm !important;
+            }
+
+            /* Colunas de turno ultra compactas */
             .turno-coluna {
                 page-break-inside: avoid;
-                margin-bottom: 12pt;
-                display: block;
+                margin: 0 !important;
+                padding: 1mm !important;
+                border: 0.5pt solid #ccc;
+                background: #fafafa;
+                display: block !important;
             }
 
             .turno-title {
                 font-weight: bold;
-                font-size: 10pt;
-                margin-bottom: 6pt;
+                font-size: 6pt;
+                margin: 0 0 1mm 0 !important;
+                padding: 0.5mm 0 !important;
                 color: #0d3b66;
                 page-break-inside: avoid;
+                border-bottom: 0.5pt solid #999;
             }
 
-            /* Profissionais */
+            .profissionais-list {
+                display: block !important;
+            }
+
+            /* Profissionais ultra compactos */
             .profissional {
                 page-break-inside: avoid;
-                margin-bottom: 8pt;
-                padding: 6pt;
-                border-left: 2pt solid #0d3b66;
-                padding-left: 10pt;
-                font-size: 9pt;
+                margin: 0.5mm 0 !important;
+                padding: 0.5mm 0.5mm !important;
+                border: none !important;
+                font-size: 6pt;
+                line-height: 1;
             }
 
             .profissional-nome {
                 font-weight: bold;
-                margin-bottom: 3pt;
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 6pt;
+            }
+
+            .profissional-nome-wrapper {
+                display: inline !important;
             }
 
             .profissional-nome-text {
                 color: #000;
+                margin: 0 !important;
             }
 
             .profissional-info {
-                font-size: 9pt;
+                font-size: 5pt;
                 color: #333;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: inline;
             }
 
-            .telefone-tooltip {
+            .telefone-tooltip,
+            .telefone-icon,
+            a.telefone-tooltip {
                 display: none !important;
             }
 
             .turno-badge {
-                font-size: 8pt !important;
-                padding: 2pt 6pt !important;
-                margin-left: 5pt;
+                font-size: 5pt !important;
+                padding: 0.5pt 2pt !important;
+                margin: 0 2pt !important;
+                display: inline-block;
+                border-radius: 2pt;
             }
 
-            /* Triângulos dos headers */
-            .categoria-toggle {
+            /* Remover todos os espaçamentos extras */
+            .info-label {
+                display: none;
+            }
+
+            /* Mostrar apenas o essencial: nome e horário */
+            .profissional-info::before {
+                content: ' | ';
+                margin: 0 2pt;
+            }
+
+            /* Ocultar elementos flutuantes */
+            .contacts-modal-overlay,
+            .contacts-modal {
                 display: none !important;
-            }
-
-            /* Linha de separação de páginas */
-            .category {
-                page-break-inside: avoid;
-            }
-
-            /* Remover modal e outros elementos flutuantes */
-            .contacts-modal-overlay {
-                display: none !important;
-            }
-
-            /* Ajustar cores para impressão em preto e branco */
-            @page {
-                size: A4;
-                margin: 10mm;
             }
         }
     </style>
