@@ -11,6 +11,7 @@ import subprocess
 import sys
 import shutil
 import os
+import json
 from pathlib import Path
 
 def run_extraction():
@@ -42,12 +43,30 @@ def find_data_file():
         "/tmp/escalas_multiplos_dias.json",
         "escalas_multiplos_dias.json",
         "escala-hro/escalas_multiplos_dias.json",
+        "test_data.json",  # Fallback para dados de teste
     ]
 
     for loc in locations:
         if Path(loc).exists():
-            print(f"✅ Encontrado arquivo de dados: {loc}")
-            return loc
+            # Verificar se arquivo tem dados (não é só um placeholder vazio)
+            try:
+                with open(loc, 'r') as f:
+                    data = json.load(f)
+                    # Verificar se tem pelo menos um registro
+                    has_data = (
+                        bool(data.get('atual', {}).get('registros', [])) or
+                        bool(data.get('anterior', {}).get('registros', [])) or
+                        bool(data.get('proximo', {}).get('registros', []))
+                    )
+                    if has_data or 'test_data' in loc:  # Permitir test_data mesmo que vazio
+                        print(f"✅ Encontrado arquivo de dados: {loc}")
+                        return loc
+                    else:
+                        print(f"⚠️  Arquivo {loc} está vazio, procurando próximo...")
+                        continue
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {loc}: {e}")
+                continue
 
     return None
 
