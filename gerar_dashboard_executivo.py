@@ -676,6 +676,9 @@ def gerar_dashboard():
             background: #f0f5fa;
             color: #0d3b66;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-toggle-sections:hover {
@@ -684,6 +687,35 @@ def gerar_dashboard():
 
         .btn-toggle-sections.collapsed {
             background: #e0e8f5;
+        }
+
+        /* Triângulo dinâmico nos botões */
+        .btn-toggle-sections::before {
+            content: '▼';
+            color: #0d3b66;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-toggle-sections.collapsed::before {
+            transform: rotate(180deg);
+        }
+
+        .date-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Triângulo para botão anterior (apontando para esquerda) */
+        .date-btn[data-dia="anterior"]::before {
+            content: '▼';
+            color: #0d3b66;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            transform: rotate(-90deg);
         }
 
         /* Modal de Contatos */
@@ -1402,14 +1434,14 @@ def gerar_dashboard():
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
-                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">❮ Dia Anterior</button>
+                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▾ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1425,7 +1457,7 @@ def gerar_dashboard():
 
         <!-- Descrição do Dashboard -->
         <div class="dashboard-description">
-            <p><strong>Dashboard para visualização da escala médica da HRO.</strong> Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos. Passe o mouse sobre o nome de qualquer profissional para ver seu telefone e iniciar uma conversa via WhatsApp.</p>
+            <p><strong>Dashboard para visualização da escala médica do HRO.</strong> Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos. Passe o mouse sobre o nome de qualquer profissional para ver seu telefone e iniciar uma conversa via WhatsApp.</p>
         </div>
 
         <!-- Estatísticas -->
@@ -1880,7 +1912,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.innerHTML = '▾ Expandir';
+                btn.innerHTML = 'Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1889,7 +1921,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.innerHTML = '▾ Minimizar';
+                btn.innerHTML = 'Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
