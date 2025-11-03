@@ -1080,14 +1080,14 @@
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
-                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">◄ Dia Anterior</button>
+                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">◀ Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▲ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▼ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1168,8 +1168,11 @@
                 return { ordem: 3, nome: 'Plantão Noturno' };
             }
 
-            // DIA / NOITE
-            if (turno === 'dia') return { ordem: 1, nome: 'Período Diurno' };
+            // DIURNO (07:00-19:00)
+            if (turno === 'diurno') return { ordem: 1, nome: 'Plantão Diurno' };
+
+            // DIA / NOITE (legacy)
+            if (turno === 'dia') return { ordem: 1, nome: 'Plantão Diurno' };
             if (turno === 'noite') return { ordem: 3, nome: 'Período Noturno' };
 
             // P1, P2, P3, P4
@@ -1533,7 +1536,7 @@
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.textContent = '▼ Expandir';
+                btn.textContent = '▶ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1542,7 +1545,7 @@
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.textContent = '▲ Minimizar';
+                btn.textContent = '▼ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
@@ -1563,15 +1566,25 @@
                 }
             });
 
+            // Ocultar turno-coluna vazia (sem profissionais vistos)
+            document.querySelectorAll('.turno-coluna').forEach(turnoColuna => {
+                const vistosTurno = turnoColuna.querySelectorAll('.profissional[style*="display: block"]').length;
+                if (searchText === '') {
+                    turnoColuna.style.display = 'block';
+                } else {
+                    turnoColuna.style.display = vistosTurno > 0 ? 'block' : 'none';
+                }
+            });
+
             document.querySelectorAll('.category').forEach(category => {
                 const content = category.querySelector('.categoria-content');
                 const header = category.querySelector('.categoria-header');
-                const vistos = content.querySelectorAll('.profissional[style*="display: block"]').length;
+                const colunas = content.querySelectorAll('.turno-coluna[style*="display: block"]').length;
 
                 if (searchText === '') {
                     category.style.display = 'block';
                 } else {
-                    if (vistos > 0) {
+                    if (colunas > 0) {
                         category.style.display = 'block';
                         content.classList.remove('collapsed');
                         header.classList.add('expanded');
