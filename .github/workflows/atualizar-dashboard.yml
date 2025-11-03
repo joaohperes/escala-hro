@@ -33,19 +33,18 @@ jobs:
 
     - name: Extrair dados do Escala
       run: |
-        cd /home/runner/work/escala-hro/escala-hro
+        pwd
+        ls -la
         python3 extracao_inteligente.py 2>&1 | tee /tmp/extracao.log
       continue-on-error: true
 
     - name: Converter dados
       run: |
-        cd /home/runner/work/escala-hro/escala-hro
         python3 converter_inteligente.py 2>&1 | tee /tmp/converter.log
       continue-on-error: true
 
     - name: Gerar dashboard
       run: |
-        cd /home/runner/work/escala-hro/escala-hro
         python3 gerar_dashboard_executivo.py 2>&1 | tee /tmp/dashboard.log
       continue-on-error: true
 
@@ -57,8 +56,9 @@ jobs:
     - name: Copiar dashboard para publicação
       run: |
         if [ -f /tmp/dashboard_executivo.html ]; then
-          cp /tmp/dashboard_executivo.html /home/runner/work/escala-hro/escala-hro/index.html
+          cp /tmp/dashboard_executivo.html index.html
           echo "✅ Dashboard copiado com sucesso"
+          ls -lah index.html
         else
           echo "❌ Erro: arquivo dashboard não foi gerado"
           exit 1
@@ -67,7 +67,6 @@ jobs:
 
     - name: Commit e Push
       run: |
-        cd /home/runner/work/escala-hro/escala-hro
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add index.html
