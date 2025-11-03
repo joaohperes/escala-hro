@@ -1021,10 +1021,11 @@ def gerar_dashboard():
             font-size: 1.2em;
             transition: transform 0.3s ease;
             display: inline-block;
+            transform: rotate(180deg);
         }
 
         .categoria-header.expanded .categoria-toggle {
-            transform: rotate(180deg);
+            transform: rotate(0deg);
         }
 
         .categoria-content {
