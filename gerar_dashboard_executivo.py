@@ -881,6 +881,21 @@ def gerar_dashboard():
             border-color: #0d3b66;
         }
 
+        .contacts-warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: #856404;
+        }
+
+        .contacts-warning p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
         .contacts-list {
             display: flex;
             flex-direction: column;
@@ -1706,6 +1721,9 @@ def gerar_dashboard():
                 <button class="contacts-modal-close" onclick="fecharListaContatos()">✕</button>
             </div>
             <input type="text" class="contacts-search" id="contacts-search" placeholder="Buscar por nome ou telefone..." onkeyup="filtrarContatos()">
+            <div class="contacts-warning">
+                <p>⚠️ <strong>Aviso:</strong> Os números de telefone são obtidos do cadastro do app Escalas e podem estar desatualizados. Recomenda-se fazer uma verificação antes de contatar.</p>
+            </div>
             <div class="contacts-list" id="contacts-list"></div>
         </div>
     </div>
