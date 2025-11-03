@@ -14,3 +14,4 @@ venv/
 /tmp/
 *.json
 !profissionais_autenticacao.json
+rodar_diariamente.sh
