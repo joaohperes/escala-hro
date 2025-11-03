@@ -304,19 +304,54 @@ def normalizar_turno(turno_text):
 def gerar_dashboard():
     """Gera dashboard executivo com visual premium"""
 
-    try:
-        with open('/tmp/escalas_multiplos_dias.json', 'r', encoding='utf-8') as f:
-            escalas = json.load(f)
-    except FileNotFoundError:
-        print("❌ Arquivo de escalas não encontrado.")
+    # Procurar pelos arquivos em múltiplos locais
+    import os
+    from pathlib import Path
+
+    # Procurar arquivo de escalas
+    escala_paths = [
+        '/tmp/escalas_multiplos_dias.json',
+        'escalas_multiplos_dias.json',
+        os.path.expanduser('~/escalaHRO/escalas_multiplos_dias.json'),
+    ]
+
+    escalas = None
+    for path in escala_paths:
+        if Path(path).exists():
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    escalas = json.load(f)
+                print(f"✅ Escalas carregadas de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+                continue
+
+    if escalas is None:
+        print("❌ Arquivo de escalas não encontrado em nenhum local.")
         return
 
-    # Carregar dados de profissionais para autenticação
-    try:
-        with open('/Users/joaoperes/escalaHRO/profissionais_autenticacao.json', 'r', encoding='utf-8') as f:
-            profissionais_data = json.load(f)
-    except FileNotFoundError:
-        print("❌ Arquivo de profissionais não encontrado.")
+    # Procurar arquivo de profissionais
+    prof_paths = [
+        'profissionais_autenticacao.json',
+        os.path.expanduser('~/escalaHRO/profissionais_autenticacao.json'),
+        '/Users/joaoperes/escalaHRO/profissionais_autenticacao.json',
+    ]
+
+    profissionais_data = None
+    for path in prof_paths:
+        if Path(path).exists():
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    profissionais_data = json.load(f)
+                print(f"✅ Profissionais carregados de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+                continue
+
+    if profissionais_data is None:
+        print("❌ Arquivo de profissionais não encontrado em nenhum local.")
         return
 
     html = """<!DOCTYPE html>
