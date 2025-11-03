@@ -415,6 +415,7 @@ def main():
         data_simples = extrair_data_simples(data)
 
         # Formata a resposta no formato esperado pelo dashboard
+        # Formato: { "atual": {...}, "anterior": {...} } para dia atual e consulta histórica
         output = {
             'atual': {
                 'data': data,
@@ -423,12 +424,6 @@ def main():
                 'total': len(registros)
             },
             'anterior': {
-                'data': 'N/A',
-                'data_simples': '00/00/0000',
-                'registros': [],
-                'total': 0
-            },
-            'proximo': {
                 'data': 'N/A',
                 'data_simples': '00/00/0000',
                 'registros': [],
