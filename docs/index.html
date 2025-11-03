@@ -1908,7 +1908,17 @@
                 // Read the combined data-search attribute that was populated by renderizarEscala
                 const texto = prof.getAttribute('data-search') || '';
 
-                if (searchText === '' || texto.includes(searchText)) {
+                let matches = false;
+                if (searchText === '') {
+                    matches = true;
+                } else {
+                    // Use word boundary matching to avoid false matches like "uti" in "matutino"
+                    // Split texto into words and check if any word contains the search text
+                    const palavras = texto.split(/\s+/);
+                    matches = palavras.some(palavra => palavra.includes(searchText));
+                }
+
+                if (matches) {
                     prof.style.display = 'block';
                     totalVistos++;
                 } else {
