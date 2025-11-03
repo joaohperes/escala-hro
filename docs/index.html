@@ -530,47 +530,39 @@
         }
 
         .update-status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 600;
-            font-style: normal;
-            min-width: 120px;
-            justify-content: center;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .update-status-indicator:hover {
+            transform: scale(1.3);
         }
 
         .update-status-indicator.sucesso {
-            background: #e8f5e9;
-            color: #2e7d32;
-            border: 1px solid #a5d6a7;
-        }
-
-        .update-status-indicator.sucesso::before {
-            content: "✓ ";
-            font-size: 1em;
-            font-weight: bold;
-            margin-right: 3px;
+            background: #4caf50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
         }
 
         .update-status-indicator.erro {
-            background: #ffebee;
-            color: #c62828;
-            border: 1px solid #ef9a9a;
-            animation: pulse-error 2s infinite;
+            background: #f44336;
+            box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+            animation: pulse-error 1.5s infinite;
         }
 
-        .update-status-indicator.erro::before {
-            content: "⚠ ";
-            font-size: 1em;
-            margin-right: 3px;
+        .update-status-indicator.aviso {
+            background: #ff9800;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
         }
 
         @keyframes pulse-error {
             0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.4; }
         }
 
         /* Descrição do Dashboard */
@@ -1348,21 +1340,17 @@
 
             document.getElementById('ultima-atualizacao').textContent = `Atualizado em ${dataAtualizacao} às ${horaAtualizacao}`;
 
-            // Mostrar indicador de status
+            // Mostrar indicador de status (dot colorido)
             const statusIndicator = document.getElementById('status-indicator');
-            console.log('Status:', statusAtualizacao, 'Indicator:', statusIndicator);
             statusIndicator.className = 'update-status-indicator';
+
             if (statusAtualizacao === 'sucesso') {
                 statusIndicator.classList.add('sucesso');
-                statusIndicator.textContent = 'Atualizado com sucesso';
-                statusIndicator.title = 'Dados foram atualizados corretamente';
-                console.log('Status set to sucesso', statusIndicator);
+                statusIndicator.title = 'Atualização bem-sucedida';
             } else {
                 statusIndicator.classList.add('erro');
-                statusIndicator.textContent = 'Erro na atualização';
                 const erro = escalas.mensagem_erro || 'Erro desconhecido';
                 statusIndicator.title = `Erro na atualização: ${erro}`;
-                console.log('Status set to erro', statusIndicator);
             }
 
             const porSetor = {};
