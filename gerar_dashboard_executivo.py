@@ -344,9 +344,14 @@ def gerar_dashboard():
     from pathlib import Path
 
     # Procurar arquivo de escalas
+    # Prioritize extracao_inteligente.json (direct output from extraction)
+    # Fallback to escalas_multiplos_dias.json for backward compatibility
     escala_paths = [
-        '/tmp/escalas_multiplos_dias.json',
+        '/tmp/extracao_inteligente.json',  # Primary: fresh from extraction
+        '/tmp/escalas_multiplos_dias.json',  # Fallback: legacy intermediate file
+        'extracao_inteligente.json',
         'escalas_multiplos_dias.json',
+        os.path.expanduser('~/escalaHRO/extracao_inteligente.json'),
         os.path.expanduser('~/escalaHRO/escalas_multiplos_dias.json'),
     ]
 
@@ -2149,7 +2154,7 @@ def gerar_dashboard():
                                                 const telefoneLimpo = telefone.replace(/\D/g, '');
                                                 const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                                 return `
-                                                <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()} ${prof.tipo_turno.toLowerCase()} ${prof.horario.toLowerCase()}">
+                                                <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}">
                                                     <div class="profissional-nome">
                                                         ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                                         <div class="profissional-nome-wrapper">
@@ -2188,7 +2193,7 @@ def gerar_dashboard():
                                     const telefoneLimpo = telefone.replace(/\D/g, '');
                                     const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                     return `
-                                    <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${prof.tipo_turno.toLowerCase()} ${prof.horario.toLowerCase()}">
+                                    <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${prof.tipo_turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}">
                                         <div class="profissional-nome">
                                             ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                             <div class="profissional-nome-wrapper">
@@ -2210,6 +2215,28 @@ def gerar_dashboard():
             });
 
             document.getElementById('categorias').innerHTML = html;
+
+            // Populate data-search attributes from individual data attributes
+            // This ensures search works with rendered elements
+            console.log('Populando data-search...');
+            let attrCount = 0;
+            document.querySelectorAll('.profissional').forEach(prof => {
+                const prof_val = prof.getAttribute('data-prof') || '';
+                const setor_val = prof.getAttribute('data-setor') || '';
+                const turno_val = prof.getAttribute('data-turno') || '';
+                const tipo_val = prof.getAttribute('data-tipo') || '';
+                const hora_val = prof.getAttribute('data-hora') || '';
+
+                if (attrCount < 3) {
+                    console.log(`Prof ${attrCount}: prof="${prof_val}" setor="${setor_val}"`);
+                }
+
+                const searchText = [prof_val, setor_val, turno_val, tipo_val, hora_val]
+                    .join(' ').toLowerCase();
+                prof.setAttribute('data-search', searchText);
+                attrCount++;
+            });
+            console.log(`Total profissionais processados: ${attrCount}`);
 
             const totalSetores = Object.keys(porSetor).length;
             document.getElementById('stats').innerHTML = `
@@ -2262,8 +2289,12 @@ def gerar_dashboard():
             const profissionais = document.querySelectorAll('.profissional');
             let totalVistos = 0;
 
+            console.log('Filtrando por:', searchText);
+
             profissionais.forEach(prof => {
-                const texto = prof.getAttribute('data-search');
+                // Read the combined data-search attribute that was populated by renderizarEscala
+                const texto = prof.getAttribute('data-search') || '';
+
                 if (searchText === '' || texto.includes(searchText)) {
                     prof.style.display = 'block';
                     totalVistos++;
@@ -2272,9 +2303,11 @@ def gerar_dashboard():
                 }
             });
 
+            console.log('Profissionais vistos:', totalVistos);
+
             // Ocultar turno-coluna vazia (sem profissionais vistos)
             document.querySelectorAll('.turno-coluna').forEach(turnoColuna => {
-                const vistosTurno = turnoColuna.querySelectorAll('.profissional[style*="display: block"]').length;
+                const vistosTurno = Array.from(turnoColuna.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
                 if (searchText === '') {
                     turnoColuna.style.display = 'block';
                 } else {
@@ -2285,7 +2318,7 @@ def gerar_dashboard():
             document.querySelectorAll('.category').forEach(category => {
                 const content = category.querySelector('.categoria-content');
                 const header = category.querySelector('.categoria-header');
-                const colunas = content.querySelectorAll('.turno-coluna[style*="display: block"]').length;
+                const colunas = Array.from(content.querySelectorAll('.turno-coluna')).filter(c => c.style.display !== 'none').length;
 
                 if (searchText === '') {
                     category.style.display = 'block';
