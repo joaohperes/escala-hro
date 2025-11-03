@@ -1,0 +1,76 @@
+name: Atualizar Escala Diária HRO
+
+on:
+  # Executa todos os dias às 7h (horário de Brasília = 10h UTC)
+  schedule:
+    - cron: '0 10 * * *'
+
+  # Permite execução manual para testes
+  workflow_dispatch:
+
+jobs:
+  update-escala:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Instalar dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Instalar Chrome e ChromeDriver
+      uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: stable
+
+    - name: Executar scraper
+      env:
+        ESCALA_USERNAME: ${{ secrets.ESCALA_USERNAME }}
+        ESCALA_PASSWORD: ${{ secrets.ESCALA_PASSWORD }}
+        NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      run: |
+        python scraper.py
+
+    - name: Gerar Dashboard
+      run: |
+        python gerar_dashboard_executivo.py
+
+    - name: Configurar Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Actions"
+
+    - name: Commit e Push
+      run: |
+        if [ -f /tmp/dashboard_executivo.html ]; then
+          cp /tmp/dashboard_executivo.html index.html
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "📊 Atualizar dashboard - $(date '+%d/%m/%Y %H:%M')"
+            git push origin main
+          else
+            echo "Nenhuma mudança no dashboard"
+          fi
+        else
+          echo "❌ Erro: arquivo dashboard não foi gerado"
+          exit 1
+        fi
+
+    - name: Upload de logs em caso de erro
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: error-logs
+        path: /tmp/*.png
+        retention-days: 7
