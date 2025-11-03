@@ -25,6 +25,8 @@ class ExtractorInteligente:
         if headless:
             chrome_options.add_argument('--headless=new')
         chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--no-sandbox')  # Necessário para GitHub Actions
+        chrome_options.add_argument('--disable-dev-shm-usage')  # Evita problemas de memória
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
 
