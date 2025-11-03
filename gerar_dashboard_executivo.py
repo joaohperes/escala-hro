@@ -399,6 +399,7 @@ def gerar_dashboard():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="version" content="{datetime.now().strftime('%Y%m%d_%H%M%S')}">
     <title>Escala - ALVF</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -2080,6 +2081,7 @@ def gerar_dashboard():
         }
 
         function renderizarEscala() {
+            console.log('🔄 Dashboard v3f40038 renderizado');
             const dados = escalas[diaSelecionado];
             document.getElementById('data-selecionada').textContent = dados.data;
 
