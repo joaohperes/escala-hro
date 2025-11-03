@@ -6,6 +6,7 @@ Extração INTELIGENTE baseada em POSIÇÃO VISUAL das colunas (coordenada X)
 import os
 import json
 import time
+import shutil
 from datetime import datetime
 from dotenv import load_dotenv
 from selenium import webdriver
@@ -30,9 +31,42 @@ class ExtractorInteligente:
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
 
-        # Use webdriver-manager para compatibilidade multiplataforma
+        # Tenta usar chromedriver já instalado, se não, baixa via webdriver-manager
+        chrome_driver_path = None
+
+        # Procura por chromedriver em locais comuns
+        common_paths = [
+            '/usr/bin/chromedriver',
+            '/usr/local/bin/chromedriver',
+            shutil.which('chromedriver'),
+        ]
+
+        for path in common_paths:
+            if path and os.path.isfile(path) and os.access(path, os.X_OK):
+                chrome_driver_path = path
+                print(f"✅ ChromeDriver encontrado em: {path}")
+                break
+
+        # Se não encontrou, tenta baixar via webdriver-manager
+        if not chrome_driver_path:
+            print("⚠️  ChromeDriver não encontrado nos caminhos comuns, tentando webdriver-manager...")
+            try:
+                # Limpa cache corrompido do webdriver-manager
+                cache_dir = os.path.expanduser('~/.wdm')
+                if os.path.exists(cache_dir):
+                    print(f"🗑️  Limpando cache em {cache_dir}...")
+                    shutil.rmtree(cache_dir, ignore_errors=True)
+
+                chrome_driver_path = ChromeDriverManager().install()
+                # Garante que é executável
+                os.chmod(chrome_driver_path, 0o755)
+                print(f"✅ ChromeDriver baixado via webdriver-manager: {chrome_driver_path}")
+            except Exception as e:
+                print(f"❌ Erro ao usar webdriver-manager: {e}")
+                raise
+
         self.driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager().install()),
+            service=Service(chrome_driver_path),
             options=chrome_options
         )
 
