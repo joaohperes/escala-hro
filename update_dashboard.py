@@ -2,8 +2,9 @@
 """
 Script de atualização da escala e dashboard
 Orquestra:
-1. Extração dos dados da escala (extracao_inteligente.py)
-2. Geração do dashboard (gerar_dashboard_executivo.py)
+1. Tenta extrair dados da escala (extracao_inteligente.py)
+2. Se falhar, usa o último arquivo JSON conhecido
+3. Gera o dashboard
 """
 
 import subprocess
@@ -12,48 +13,62 @@ import shutil
 import os
 from pathlib import Path
 
-def run_command(cmd, description):
-    """Execute um comando e retorna o status com output completo"""
-    print(f"\n📋 {description}...")
+def run_extraction():
+    """Tenta executar a extração de dados"""
+    print("\n📋 Tentando extrair dados de escala.med.br...")
     try:
-        # Não redirecionar output para que possamos ver logs em tempo real
-        result = subprocess.run(cmd, shell=True, check=True)
-        print(f"✅ {description} - OK")
-        return True
-    except subprocess.CalledProcessError as e:
-        print(f"❌ {description} - ERRO (código de saída: {e.returncode})")
+        result = subprocess.run("python3 extracao_inteligente.py",
+                              shell=True,
+                              check=False,
+                              timeout=300)
+        if result.returncode == 0:
+            print("✅ Extração bem-sucedida")
+            return True
+        else:
+            print(f"⚠️  Extração falhou (código: {result.returncode})")
+            return False
+    except subprocess.TimeoutExpired:
+        print("⚠️  Extração expirou (timeout)")
         return False
+    except Exception as e:
+        print(f"⚠️  Erro na extração: {e}")
+        return False
+
+def find_data_file():
+    """Procura pelo arquivo JSON de dados"""
+    # Locais a procurar em ordem de preferência
+    locations = [
+        "/tmp/extracao_inteligente.json",
+        "/tmp/escalas_multiplos_dias.json",
+        "escalas_multiplos_dias.json",
+        "escala-hro/escalas_multiplos_dias.json",
+    ]
+
+    for loc in locations:
+        if Path(loc).exists():
+            print(f"✅ Encontrado arquivo de dados: {loc}")
+            return loc
+
+    return None
 
 def main():
     print("🚀 Iniciando atualização da escala e dashboard...")
 
-    # Passo 1: Executar extração
-    if not run_command("python3 extracao_inteligente.py", "Extração de dados"):
-        print("❌ Falha na extração - abortando")
+    # Passo 1: Tentar extração
+    extraction_ok = run_extraction()
+
+    # Passo 2: Encontrar arquivo de dados
+    print(f"\n📁 Procurando arquivo de dados...")
+    data_file = find_data_file()
+
+    if not data_file:
+        print("❌ Nenhum arquivo de dados encontrado")
         return 1
 
-    # Passo 2: Verificar se arquivo foi criado
-    source = "/tmp/extracao_inteligente.json"
+    # Passo 3: Copiar para local esperado
+    source = data_file
     dest = "/tmp/escalas_multiplos_dias.json"
 
-    print(f"\n📁 Verificando se arquivo foi criado...")
-    print(f"   Procurando por: {source}")
-
-    if not Path(source).exists():
-        print(f"❌ Arquivo de origem não encontrado: {source}")
-        # Listar arquivos em /tmp para debug
-        print(f"\n📂 Conteúdo de /tmp:")
-        try:
-            result = subprocess.run("ls -la /tmp/ | grep -E 'escala|extracao|dashboard'",
-                                  shell=True, capture_output=True, text=True)
-            print(result.stdout)
-        except:
-            pass
-        return 1
-
-    print(f"✅ Arquivo encontrado: {source}")
-
-    # Passo 3: Copiar arquivo de dados para o local esperado
     print(f"\n📁 Copiando dados para {dest}...")
     try:
         shutil.copy(source, dest)
@@ -63,14 +78,26 @@ def main():
         return 1
 
     # Passo 4: Gerar dashboard
-    if not run_command("python3 gerar_dashboard_executivo.py", "Geração do dashboard"):
-        print("❌ Falha na geração do dashboard - abortando")
+    print(f"\n📋 Gerando dashboard...")
+    try:
+        result = subprocess.run("python3 gerar_dashboard_executivo.py",
+                              shell=True,
+                              check=True,
+                              timeout=60)
+        print(f"✅ Dashboard gerado com sucesso")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Erro ao gerar dashboard (código: {e.returncode})")
+        return 1
+    except subprocess.TimeoutExpired:
+        print(f"❌ Geração de dashboard expirou")
+        return 1
+    except Exception as e:
+        print(f"❌ Erro ao gerar dashboard: {e}")
         return 1
 
     # Passo 5: Verificar se dashboard foi gerado
     dashboard_file = "/tmp/dashboard_executivo.html"
-    print(f"\n📁 Verificando se dashboard foi gerado...")
-    print(f"   Procurando por: {dashboard_file}")
+    print(f"\n📁 Verificando dashboard...")
 
     if not Path(dashboard_file).exists():
         print(f"❌ Dashboard não foi gerado: {dashboard_file}")
@@ -78,7 +105,12 @@ def main():
 
     print(f"✅ Dashboard encontrado: {dashboard_file}")
 
-    print("\n✅ Atualização concluída com sucesso!")
+    # Status final
+    if extraction_ok:
+        print("\n✅ Atualização completa com dados FRESCOS da escala!")
+    else:
+        print("\n✅ Atualização completa com dados em CACHE (extração falhou, mas dashboard foi regenerado)")
+
     return 0
 
 if __name__ == "__main__":
