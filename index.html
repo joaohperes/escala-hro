@@ -1758,7 +1758,7 @@
                                                 const telefoneLimpo = telefone.replace(/\D/g, '');
                                                 const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                                 return `
-                                                <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()}">
+                                                <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()} ${prof.tipo_turno.toLowerCase()} ${prof.horario.toLowerCase()}">
                                                     <div class="profissional-nome">
                                                         ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                                         <div class="profissional-nome-wrapper">
@@ -1797,7 +1797,7 @@
                                     const telefoneLimpo = telefone.replace(/\D/g, '');
                                     const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                     return `
-                                    <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()}">
+                                    <div class="profissional" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${prof.tipo_turno.toLowerCase()} ${prof.horario.toLowerCase()}">
                                         <div class="profissional-nome">
                                             ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-tooltip" title="Clique para enviar WhatsApp"><span class="telefone-icon"></span>${telefone}</a>` : ''}
                                             <div class="profissional-nome-wrapper">
