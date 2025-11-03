@@ -533,11 +533,15 @@
             display: inline-block;
             width: 12px;
             height: 12px;
+            min-width: 12px;
+            min-height: 12px;
             border-radius: 50%;
             margin-left: 8px;
             cursor: pointer;
             transition: transform 0.2s ease;
             vertical-align: middle;
+            background: #ccc;
+            box-shadow: 0 0 4px rgba(0,0,0,0.2);
         }
 
         .update-status-indicator:hover {
@@ -545,19 +549,19 @@
         }
 
         .update-status-indicator.sucesso {
-            background: #4caf50;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+            background: #4caf50 !important;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6) !important;
         }
 
         .update-status-indicator.erro {
-            background: #f44336;
-            box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+            background: #f44336 !important;
+            box-shadow: 0 0 8px rgba(244, 67, 54, 0.6) !important;
             animation: pulse-error 1.5s infinite;
         }
 
         .update-status-indicator.aviso {
-            background: #ff9800;
-            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+            background: #ff9800 !important;
+            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6) !important;
         }
 
         @keyframes pulse-error {
