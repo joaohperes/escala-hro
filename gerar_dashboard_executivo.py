@@ -46,13 +46,13 @@ def obter_tipo_turno(turno_text, horario_text=""):
             if 'sobreaviso' in turno or '24h' in turno:
                 return "badge-24h"
 
-            # Detecta Plantão Diurno (07:00-19:00) - típico de residência
+            # Detecta Diurno (07:00-19:00) - típico de residência
             try:
                 entrada_h = int(entrada.split(":")[0])
                 saida_h = int(saida.split(":")[0])
-                # Se é 07:00/19:00, é plantão/diurno
+                # Se é 07:00/19:00, é diurno
                 if entrada_h == 7 and saida_h == 19:
-                    return "plantao"
+                    return "diurno"
             except:
                 pass
         except:
@@ -1201,11 +1201,17 @@ def gerar_dashboard():
         }
 
         .turno-badge.badge-24h {
-            background: linear-gradient(135deg, #ffcdd2 0%, #f8bbd0 100%);
-            color: #c2185b;
-            border: 1px solid #e91e63;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
             font-weight: 800;
-            box-shadow: 0 2px 4px rgba(233, 30, 99, 0.2);
+        }
+
+        .turno-badge.diurno {
+            background: linear-gradient(135deg, #ffe0b2 0%, #ffd699 100%);
+            color: #e65100;
+            border: 1px solid #ffb74d;
+            font-weight: 600;
         }
 
         .turno-badge.sobreaviso {
@@ -1391,14 +1397,14 @@ def gerar_dashboard():
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
-                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">‹ Dia Anterior</button>
+                <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">◄ Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▼ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▲ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1543,12 +1549,12 @@ def gerar_dashboard():
                     if (turno.includes('sobreaviso') || turno.includes('24h')) {
                         return 'badge-24h';
                     }
-                    // Detecta Plantão Diurno (07:00-19:00) - típico de residência
+                    // Detecta Diurno (07:00-19:00) - típico de residência
                     try {
                         const entradaH = parseInt(entrada.split(':')[0]);
                         const saidaH = parseInt(saida.split(':')[0]);
                         if (entradaH === 7 && saidaH === 19) {
-                            return 'plantao';
+                            return 'diurno';
                         }
                     } catch (e) {}
                 } catch (e) {}
@@ -1844,7 +1850,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.textContent = '▶ Expandir';
+                btn.textContent = '▼ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1853,7 +1859,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.textContent = '▼ Minimizar';
+                btn.textContent = '▲ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
