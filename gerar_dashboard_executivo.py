@@ -1419,10 +1419,8 @@ def gerar_dashboard():
             .dashboard-description,
             .contacts-modal,
             .date-display,
-            .category > .categoria-header,
             .categoria-toggle,
-            .stats,
-            #categorias {
+            .stats {
                 display: none !important;
             }
 
