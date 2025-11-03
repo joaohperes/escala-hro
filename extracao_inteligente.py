@@ -58,31 +58,36 @@ class ExtractorInteligente:
                     shutil.rmtree(cache_dir, ignore_errors=True)
 
                 downloaded_path = ChromeDriverManager().install()
+                print(f"⚠️  WebDriver-Manager retornou: {downloaded_path}")
 
-                # ChromeDriverManager às vezes retorna o diretório em vez do executável
+                # webdriver-manager às vezes retorna o diretório em vez do executável
+                # ou retorna o arquivo errado (THIRD_PARTY_NOTICES.chromedriver)
                 # Procura pelo executável real
-                if os.path.isdir(downloaded_path):
-                    print(f"⚠️  ChromeDriverManager retornou diretório: {downloaded_path}")
-                    # Procura pelo executável no diretório
-                    for root, dirs, files in os.walk(downloaded_path):
-                        for file in files:
-                            if file == 'chromedriver' or file.startswith('chromedriver-'):
-                                if not file.endswith('.zip') and not 'THIRD_PARTY' in file:
-                                    chrome_driver_path = os.path.join(root, file)
-                                    print(f"✅ Executável encontrado: {chrome_driver_path}")
-                                    break
-                        if chrome_driver_path:
-                            break
-                else:
-                    chrome_driver_path = downloaded_path
+                search_dir = downloaded_path if os.path.isdir(downloaded_path) else os.path.dirname(downloaded_path)
+                print(f"🔍 Procurando chromedriver em: {search_dir}")
 
-                # Garante que é executável
-                if chrome_driver_path and os.path.isfile(chrome_driver_path):
-                    os.chmod(chrome_driver_path, 0o755)
-                    print(f"✅ ChromeDriver pronto: {chrome_driver_path}")
-                else:
-                    print(f"❌ Não conseguiu encontrar executável válido")
+                # Procura pelo executável no diretório
+                # IMPORTANTE: Busca especificamente pelo arquivo 'chromedriver' sem extensão
+                for root, dirs, files in os.walk(search_dir):
+                    for file in files:
+                        # Apenas o arquivo 'chromedriver' simples é o executável real
+                        # Ignore THIRD_PARTY, LICENSE, .zip, .dmg, etc
+                        if file == 'chromedriver' and not file.endswith(('.zip', '.dmg', '.exe')):
+                            full_path = os.path.join(root, file)
+                            # Garante que é executável
+                            if not os.access(full_path, os.X_OK):
+                                os.chmod(full_path, 0o755)
+                            chrome_driver_path = full_path
+                            print(f"✅ Executável encontrado: {chrome_driver_path}")
+                            break
+                    if chrome_driver_path:
+                        break
+
+                if not chrome_driver_path:
+                    print(f"❌ Não conseguiu encontrar arquivo 'chromedriver' em {search_dir}")
                     raise FileNotFoundError("ChromeDriver executável não encontrado")
+
+                print(f"✅ ChromeDriver pronto: {chrome_driver_path}")
 
             except Exception as e:
                 print(f"❌ Erro ao usar webdriver-manager: {e}")
@@ -383,15 +388,59 @@ def main():
         print(f"✅ Extração salva em: /tmp/extracao_inteligente.json")
         print(f"{'='*100}\n")
 
-        # Salva JSON
-        with open('/tmp/extracao_inteligente.json', 'w') as f:
-            json.dump({
+        # Salva JSON no formato esperado pelo dashboard (com chave 'atual')
+        # O dashboard espera: { "anterior": {...}, "atual": {...}, "proximo": {...} }
+        from datetime import datetime
+
+        # Extrai data simples (DD/MM/YYYY) a partir da data em português
+        def extrair_data_simples(data_texto):
+            try:
+                # Tenta converter "03 novembro 2025" para "03/11/2025"
+                partes = data_texto.split()
+                if len(partes) >= 3:
+                    dia = partes[0].zfill(2)
+                    ano = partes[2]
+
+                    meses = {
+                        'janeiro': '01', 'fevereiro': '02', 'março': '03', 'abril': '04',
+                        'maio': '05', 'junho': '06', 'julho': '07', 'agosto': '08',
+                        'setembro': '09', 'outubro': '10', 'novembro': '11', 'dezembro': '12'
+                    }
+                    mes = meses.get(partes[1].lower(), '01')
+                    return f"{dia}/{mes}/{ano}"
+            except:
+                pass
+            return "00/00/0000"
+
+        data_simples = extrair_data_simples(data)
+
+        # Formata a resposta no formato esperado pelo dashboard
+        output = {
+            'atual': {
                 'data': data,
+                'data_simples': data_simples,
                 'registros': registros,
-                'setores_encontrados': setores_count,
-                'total': len(registros),
-                'headers_encontrados': headers_encontrados
-            }, f, ensure_ascii=False, indent=2)
+                'total': len(registros)
+            },
+            'anterior': {
+                'data': 'N/A',
+                'data_simples': '00/00/0000',
+                'registros': [],
+                'total': 0
+            },
+            'proximo': {
+                'data': 'N/A',
+                'data_simples': '00/00/0000',
+                'registros': [],
+                'total': 0
+            },
+            'data_atualizacao': datetime.now().strftime('%d/%m/%Y'),
+            'hora_atualizacao': datetime.now().strftime('%H:%M'),
+            'status_atualizacao': 'sucesso'
+        }
+
+        with open('/tmp/extracao_inteligente.json', 'w') as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
 
     except Exception as e:
         print(f"❌ ERRO: {e}")
