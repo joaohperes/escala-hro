@@ -17,12 +17,13 @@ def obter_tipo_turno(turno_text, horario_text=""):
     """Identifica o tipo de turno para aplicar cor correta com detecção hierárquica
 
     Prioridade:
-    1. Detecta 24H (Sobreaviso/On-call que dura o dia inteiro)
-    2. Detecta SOBREAVISO explícito
-    3. Detecta FINAL DE SEMANA
-    4. Detecta turnos específicos por horário
-    5. Detecta ROTINA com horários
-    6. Retorna OUTRO como fallback
+    1. Detecta NOTURNO por horário (19:00-00:00 ou 19:00+) - IMPORTANTE para residências
+    2. Detecta 24H (Sobreaviso/On-call que dura o dia inteiro)
+    3. Detecta SOBREAVISO explícito
+    4. Detecta FINAL DE SEMANA
+    5. Detecta turnos específicos por horário
+    6. Detecta ROTINA com horários
+    7. Retorna OUTRO como fallback
     """
     if not turno_text:
         return "outro"
@@ -30,7 +31,22 @@ def obter_tipo_turno(turno_text, horario_text=""):
     turno = turno_text.lower()
     horario = horario_text.lower() if horario_text else ""
 
-    # PRIORIDADE 1: Detecta 24H (entrada = saída ou diferença grande)
+    # PRIORIDADE 1: Detecta NOTURNO por horário ANTES de 24H
+    # Importante porque 19:00/00:00 é noturno, não 24h
+    if horario and "/" in horario:
+        try:
+            entrada, saida = horario.split("/")
+            entrada_h = int(entrada.split(":")[0])
+            saida_h = int(saida.split(":")[0])
+
+            # Noturno: entrada >= 19 (19:00 até 06:00 ou 00:00)
+            # Exemplos: 19:00/00:00, 19:00/07:00, 20:00/06:00, 18:30/07:30
+            if entrada_h >= 18:
+                return "noturno"
+        except:
+            pass
+
+    # PRIORIDADE 2: Detecta 24H (entrada = saída ou diferença grande)
     # Exemplos: "24:00/08:00", "07:00/07:00", "13:00/13:00" (on-call que dura o dia inteiro)
     if horario and "/" in horario:
         try:
@@ -58,7 +74,7 @@ def obter_tipo_turno(turno_text, horario_text=""):
         except:
             pass
 
-    # PRIORIDADE 2: Detecta SOBREAVISO + FIM DE SEMANA (se entrada != saída, é só sobreaviso, não 24h)
+    # PRIORIDADE 3: Detecta SOBREAVISO + FIM DE SEMANA (se entrada != saída, é só sobreaviso, não 24h)
     # Exemplos: "Ultrassonografia - Sobreaviso Final de Semana" com horário real
     if 'sobreaviso' in turno or 'sobre aviso' in turno:
         # Se tem horário e entrada == saída, já foi detectado como 24h acima
@@ -85,7 +101,7 @@ def obter_tipo_turno(turno_text, horario_text=""):
                 pass
         return "sobreaviso"
 
-    # PRIORIDADE 3: Detecta FINAL DE SEMANA (sem sobreaviso)
+    # PRIORIDADE 4: Detecta FINAL DE SEMANA (sem sobreaviso)
     # "Rotina Vespertino - Final de Semana" → vespertino (não cria badge própria)
     if 'final' in turno or 'finais' in turno or 'fim de semana' in turno or 'fds' in turno:
         # Se for final de semana, retorna o período específico
@@ -119,7 +135,7 @@ def obter_tipo_turno(turno_text, horario_text=""):
         # Fallback
         return "outro"
 
-    # PRIORIDADE 4: Detecta turnos específicos por horário/nome
+    # PRIORIDADE 5: Detecta turnos específicos por horário/nome
     # Detecta por abreviações (P1, P2, P3, P4, DIA, NOITE) + horário
     if turno in ['p1', 'p2', 'p3', 'p4', 'dia', 'noite'] or (len(turno) <= 3 and turno.isalnum()):
         # P1, P2, P3 geralmente são matutino/vespertino, P4 é noturno
@@ -163,7 +179,7 @@ def obter_tipo_turno(turno_text, horario_text=""):
             return "matutino"
         return "plantao"
 
-    # PRIORIDADE 5: Detecta ROTINA com horário específico
+    # PRIORIDADE 6: Detecta ROTINA com horário específico
     if 'rotina' in turno:
         if horario and "/" in horario:
             try:
@@ -1381,11 +1397,33 @@ def gerar_dashboard():
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .header-left {
+                flex: none;
+                min-width: auto;
+                width: 100%;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .header-right {
+                flex: none;
+                min-width: auto;
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+                gap: 8px;
             }
 
             .header-logo {
-                font-size: 2em;
+                font-size: 1.5em;
+            }
+
+            .header-separator {
+                display: none;
             }
 
             .header-info {
@@ -1393,24 +1431,38 @@ def gerar_dashboard():
             }
 
             .header-info h2 {
-                font-size: 1.4em;
+                font-size: 1.2em;
+            }
+
+            .header-description p {
+                font-size: 0.85em;
+                line-height: 1.2;
             }
 
             .controls-bar {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
             }
 
             .search-section {
                 min-width: auto;
+                width: 100%;
             }
 
             .action-buttons {
                 width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: center;
             }
 
             .action-buttons .btn {
                 flex: 1;
+                min-width: 120px;
+                font-size: 0.95em;
+                padding: 10px 8px;
             }
 
             .turnos-container {
@@ -1419,6 +1471,11 @@ def gerar_dashboard():
 
             .stats {
                 grid-template-columns: 1fr;
+            }
+
+            .date-btn {
+                padding: 8px 12px;
+                font-size: 0.9em;
             }
         }
 
@@ -2334,10 +2391,8 @@ def gerar_dashboard():
               <div class="contact-item">
                 <div class="contact-name">${prof.name}</div>
                 <div class="contact-info">
-                  <span class="contact-email">${prof.email}</span>
-                  <span class="contact-separator">|</span>
                   <a href="${whatsappUrl}" target="_blank" class="contact-phone">
-                    ${prof.phone}
+                    <span class="phone-icon">📱</span> ${prof.phone}
                   </a>
                 </div>
               </div>
