@@ -331,6 +331,25 @@ class ExtractorInteligente:
         self.driver.quit()
 
 
+def corrigir_portugues(texto):
+    """Corrige erros comuns de ortografia em textos extraídos do website"""
+    if not texto:
+        return texto
+
+    # Mapa de correções (errado → correto)
+    correcoes = {
+        'Residencia': 'Residência',
+        'Clinica': 'Clínica',
+        'Clinica Médica': 'Clínica Médica',
+        'Obstetrícia': 'Obstetrícia',  # Já está certo, mas por segurança
+    }
+
+    resultado = texto
+    for errado, correto in correcoes.items():
+        resultado = resultado.replace(errado, correto)
+
+    return resultado
+
 def main():
     extractor = None
     try:
@@ -342,6 +361,10 @@ def main():
         registros = resultado['registros']
         setores_count = resultado['setores_encontrados']
         headers_encontrados = resultado['headers_encontrados']
+
+        # Corrige erros de português nos registros
+        for reg in registros:
+            reg['setor'] = corrigir_portugues(reg['setor'])
 
         # Debug info do JavaScript
         debug_info = resultado.get('debug', {})

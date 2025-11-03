@@ -2013,6 +2013,18 @@ def gerar_dashboard():
                 return 'rotina';
             }
 
+            // FALLBACK: Detecta por horário como último recurso antes de retornar 'outro'
+            // Importante para turnos que não têm palavras-chave específicas (ex: Ambulatório, etc)
+            if (horario && horario.includes('/')) {
+                try {
+                    const [entrada] = horario.split('/')[0].split(':');
+                    const entradaH = parseInt(entrada);
+                    if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                    if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                    if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                } catch (e) {}
+            }
+
             return 'outro';
         }
 
