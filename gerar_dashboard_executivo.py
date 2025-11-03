@@ -507,45 +507,26 @@ def gerar_dashboard():
         .header-logo {
             font-family: 'Merriweather', serif;
             color: white;
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        .header-logo.hro {
-            font-size: 1.8em;
-        }
-
-        .header-logo.alvf {
-            font-size: 2.5em;
-        }
-
-        .header-info {
+        .header-separator {
             color: white;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            font-size: 1.8em;
+            opacity: 0.6;
+            margin: 0 12px;
         }
 
-        .header-info.right {
-            text-align: right;
-        }
-
-        .header-info h2 {
+        .header-title {
             font-family: 'Merriweather', serif;
-            font-size: 1.3em;
+            color: white;
+            font-size: 1.5em;
             font-weight: 700;
             margin: 0;
             letter-spacing: 0.5px;
-        }
-
-        .header-info p {
-            font-size: 0.85em;
-            opacity: 0.95;
-            letter-spacing: 0.3px;
-            margin: 0;
         }
 
         /* Container Principal */
@@ -1369,16 +1350,12 @@ def gerar_dashboard():
     <div class="header-banner">
         <div class="header-content">
             <div class="header-left">
-                <div class="header-logo hro">HRO</div>
-                <div class="header-info">
-                    <h2>Escala Médica</h2>
-                </div>
+                <div class="header-logo">HRO</div>
+                <div class="header-separator">|</div>
+                <h2 class="header-title">Escala Médica</h2>
             </div>
             <div class="header-right">
-                <div class="header-logo alvf">ALVF</div>
-                <div class="header-info right">
-                    <p>Associação Hospitalar<br>Lenoir Vargas Ferreira</p>
-                </div>
+                <div class="header-logo">ALVF</div>
             </div>
         </div>
     </div>
@@ -1395,7 +1372,7 @@ def gerar_dashboard():
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▼ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">⌄ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1833,7 +1810,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.textContent = '▶ Expandir';
+                btn.textContent = '‣ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1842,7 +1819,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.textContent = '▼ Minimizar';
+                btn.textContent = '⌄ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
