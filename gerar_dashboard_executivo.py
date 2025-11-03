@@ -1409,7 +1409,7 @@ def gerar_dashboard():
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">⌄ Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">▾ Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
             </div>
         </div>
@@ -1880,7 +1880,7 @@ def gerar_dashboard():
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
                 });
-                btn.innerHTML = '⌄ Expandir';
+                btn.innerHTML = '▾ Expandir';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -1889,7 +1889,7 @@ def gerar_dashboard():
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
                 });
-                btn.innerHTML = '⌄ Minimizar';
+                btn.innerHTML = '▾ Minimizar';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
