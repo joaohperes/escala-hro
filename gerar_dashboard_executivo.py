@@ -1391,7 +1391,7 @@ def gerar_dashboard():
         @media print {
             @page {
                 size: A4;
-                margin: 2mm;
+                margin: 1mm;
             }
 
             * {
@@ -1404,14 +1404,14 @@ def gerar_dashboard():
                 height: 100%;
                 background: white;
                 font-family: Arial, sans-serif;
-                font-size: 6pt;
+                font-size: 5pt;
                 line-height: 1;
             }
 
             .container {
                 max-width: 100%;
                 width: 100%;
-                padding: 2mm !important;
+                padding: 1mm !important;
             }
 
             /* Ocultar tudo exceto conteúdo */
@@ -1437,11 +1437,11 @@ def gerar_dashboard():
             }
 
             .categoria-header {
-                background: #f0f0f0 !important;
-                border-left: 1pt solid #0d3b66 !important;
-                padding: 0.5mm !important;
-                margin: 0.5mm 0 !important;
-                font-size: 5.5pt !important;
+                background: transparent !important;
+                border-left: none !important;
+                padding: 0.3mm !important;
+                margin: 0.3mm 0 !important;
+                font-size: 4.5pt !important;
                 font-weight: bold !important;
                 display: block !important;
             }
@@ -1455,8 +1455,8 @@ def gerar_dashboard():
 
             .turnos-container {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
-                gap: 1mm !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 0.5mm !important;
                 padding: 0 !important;
             }
 
@@ -1465,21 +1465,21 @@ def gerar_dashboard():
                 page-break-inside: avoid;
                 break-inside: avoid;
                 margin: 0 !important;
-                padding: 0.5mm !important;
-                border: 0.5pt solid #ddd;
+                padding: 0.3mm !important;
+                border: 0.5pt solid #e0e0e0;
                 background: white;
                 display: block !important;
             }
 
             .turno-title {
                 font-weight: bold;
-                font-size: 5pt;
-                margin: 0 0 0.3mm 0 !important;
+                font-size: 4.5pt;
+                margin: 0 0 0.2mm 0 !important;
                 padding: 0 !important;
                 color: #0d3b66;
                 page-break-inside: avoid;
                 break-inside: avoid;
-                border-bottom: 0.5pt solid #ddd;
+                border-bottom: 0.5pt solid #e0e0e0;
             }
 
             .profissionais-list {
@@ -1490,10 +1490,10 @@ def gerar_dashboard():
             .profissional {
                 page-break-inside: avoid;
                 break-inside: avoid;
-                margin: 0.2mm 0 !important;
-                padding: 0.2mm !important;
+                margin: 0.1mm 0 !important;
+                padding: 0.1mm 0 !important;
                 border: none !important;
-                font-size: 4.5pt;
+                font-size: 4pt;
                 line-height: 1;
                 display: block;
             }
@@ -1502,7 +1502,7 @@ def gerar_dashboard():
                 font-weight: bold;
                 margin: 0 !important;
                 padding: 0 !important;
-                font-size: 4.5pt;
+                font-size: 4pt;
                 display: inline;
             }
 
@@ -1516,7 +1516,7 @@ def gerar_dashboard():
             }
 
             .profissional-info {
-                font-size: 4pt;
+                font-size: 3.5pt;
                 color: #333;
                 margin: 0 !important;
                 padding: 0 !important;
@@ -1530,9 +1530,9 @@ def gerar_dashboard():
             }
 
             .turno-badge {
-                font-size: 3.5pt !important;
-                padding: 0.2pt 1.5pt !important;
-                margin: 0 1pt !important;
+                font-size: 3pt !important;
+                padding: 0.1pt 1pt !important;
+                margin: 0 0.5pt !important;
                 display: inline-block;
                 border-radius: 1pt;
             }
