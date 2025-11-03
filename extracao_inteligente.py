@@ -12,6 +12,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 load_dotenv()
 
@@ -27,8 +28,11 @@ class ExtractorInteligente:
         chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
 
-        chromedriver_path = os.path.expanduser('~/.wdm/drivers/chromedriver/mac64/141.0.7390.122/chromedriver-mac-x64/chromedriver')
-        self.driver = webdriver.Chrome(service=Service(chromedriver_path), options=chrome_options)
+        # Use webdriver-manager para compatibilidade multiplataforma
+        self.driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=chrome_options
+        )
 
     def login(self):
         print(f"[{datetime.now()}] 🔐 Fazendo login...")
