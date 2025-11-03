@@ -1387,11 +1387,11 @@ def gerar_dashboard():
             }
         }
 
-        /* Estilos para Impressão - 1 página A4 */
+        /* Estilos para Impressão - 1 página A4 máxima compactação */
         @media print {
             @page {
                 size: A4;
-                margin: 5mm;
+                margin: 2mm;
             }
 
             * {
@@ -1404,13 +1404,14 @@ def gerar_dashboard():
                 height: 100%;
                 background: white;
                 font-family: Arial, sans-serif;
-                font-size: 7pt;
-                line-height: 1.1;
+                font-size: 6pt;
+                line-height: 1;
             }
 
             .container {
                 max-width: 100%;
                 width: 100%;
+                padding: 2mm !important;
             }
 
             /* Ocultar tudo exceto conteúdo */
@@ -1420,7 +1421,9 @@ def gerar_dashboard():
             .contacts-modal,
             .date-display,
             .categoria-toggle,
-            .stats {
+            .stats,
+            .categoria-header-text,
+            .categoria-count {
                 display: none !important;
             }
 
@@ -1430,6 +1433,17 @@ def gerar_dashboard():
                 margin: 0 !important;
                 padding: 0 !important;
                 page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .categoria-header {
+                background: #f0f0f0 !important;
+                border-left: 1pt solid #0d3b66 !important;
+                padding: 0.5mm !important;
+                margin: 0.5mm 0 !important;
+                font-size: 5.5pt !important;
+                font-weight: bold !important;
+                display: block !important;
             }
 
             .categoria-content {
@@ -1441,50 +1455,55 @@ def gerar_dashboard():
 
             .turnos-container {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr 1fr !important;
-                gap: 2mm !important;
-                padding: 1mm !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1mm !important;
+                padding: 0 !important;
             }
 
-            /* Colunas de turno ultra compactas */
+            /* Colunas de turno extremamente compactas */
             .turno-coluna {
                 page-break-inside: avoid;
+                break-inside: avoid;
                 margin: 0 !important;
-                padding: 1mm !important;
-                border: 0.5pt solid #ccc;
-                background: #fafafa;
+                padding: 0.5mm !important;
+                border: 0.5pt solid #ddd;
+                background: white;
                 display: block !important;
             }
 
             .turno-title {
                 font-weight: bold;
-                font-size: 6pt;
-                margin: 0 0 1mm 0 !important;
-                padding: 0.5mm 0 !important;
+                font-size: 5pt;
+                margin: 0 0 0.3mm 0 !important;
+                padding: 0 !important;
                 color: #0d3b66;
                 page-break-inside: avoid;
-                border-bottom: 0.5pt solid #999;
+                break-inside: avoid;
+                border-bottom: 0.5pt solid #ddd;
             }
 
             .profissionais-list {
                 display: block !important;
             }
 
-            /* Profissionais ultra compactos */
+            /* Profissionais extremamente compactos */
             .profissional {
                 page-break-inside: avoid;
-                margin: 0.5mm 0 !important;
-                padding: 0.5mm 0.5mm !important;
+                break-inside: avoid;
+                margin: 0.2mm 0 !important;
+                padding: 0.2mm !important;
                 border: none !important;
-                font-size: 6pt;
+                font-size: 4.5pt;
                 line-height: 1;
+                display: block;
             }
 
             .profissional-nome {
                 font-weight: bold;
                 margin: 0 !important;
                 padding: 0 !important;
-                font-size: 6pt;
+                font-size: 4.5pt;
+                display: inline;
             }
 
             .profissional-nome-wrapper {
@@ -1497,7 +1516,7 @@ def gerar_dashboard():
             }
 
             .profissional-info {
-                font-size: 5pt;
+                font-size: 4pt;
                 color: #333;
                 margin: 0 !important;
                 padding: 0 !important;
@@ -1511,11 +1530,11 @@ def gerar_dashboard():
             }
 
             .turno-badge {
-                font-size: 5pt !important;
-                padding: 0.5pt 2pt !important;
-                margin: 0 2pt !important;
+                font-size: 3.5pt !important;
+                padding: 0.2pt 1.5pt !important;
+                margin: 0 1pt !important;
                 display: inline-block;
-                border-radius: 2pt;
+                border-radius: 1pt;
             }
 
             /* Remover todos os espaçamentos extras */
@@ -1525,8 +1544,8 @@ def gerar_dashboard():
 
             /* Mostrar apenas o essencial: nome e horário */
             .profissional-info::before {
-                content: ' | ';
-                margin: 0 2pt;
+                content: ' ';
+                margin: 0;
             }
 
             /* Ocultar elementos flutuantes */
