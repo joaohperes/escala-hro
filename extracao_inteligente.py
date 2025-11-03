@@ -57,10 +57,33 @@ class ExtractorInteligente:
                     print(f"🗑️  Limpando cache em {cache_dir}...")
                     shutil.rmtree(cache_dir, ignore_errors=True)
 
-                chrome_driver_path = ChromeDriverManager().install()
+                downloaded_path = ChromeDriverManager().install()
+
+                # ChromeDriverManager às vezes retorna o diretório em vez do executável
+                # Procura pelo executável real
+                if os.path.isdir(downloaded_path):
+                    print(f"⚠️  ChromeDriverManager retornou diretório: {downloaded_path}")
+                    # Procura pelo executável no diretório
+                    for root, dirs, files in os.walk(downloaded_path):
+                        for file in files:
+                            if file == 'chromedriver' or file.startswith('chromedriver-'):
+                                if not file.endswith('.zip') and not 'THIRD_PARTY' in file:
+                                    chrome_driver_path = os.path.join(root, file)
+                                    print(f"✅ Executável encontrado: {chrome_driver_path}")
+                                    break
+                        if chrome_driver_path:
+                            break
+                else:
+                    chrome_driver_path = downloaded_path
+
                 # Garante que é executável
-                os.chmod(chrome_driver_path, 0o755)
-                print(f"✅ ChromeDriver baixado via webdriver-manager: {chrome_driver_path}")
+                if chrome_driver_path and os.path.isfile(chrome_driver_path):
+                    os.chmod(chrome_driver_path, 0o755)
+                    print(f"✅ ChromeDriver pronto: {chrome_driver_path}")
+                else:
+                    print(f"❌ Não conseguiu encontrar executável válido")
+                    raise FileNotFoundError("ChromeDriver executável não encontrado")
+
             except Exception as e:
                 print(f"❌ Erro ao usar webdriver-manager: {e}")
                 raise
