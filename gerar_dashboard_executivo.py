@@ -2126,9 +2126,11 @@ def gerar_dashboard():
         function filtrarProfissionais() {
             const search = document.getElementById('search').value.toLowerCase().trim();
             const profissionais = document.querySelectorAll('.profissional');
+            const categorias = document.querySelectorAll('.category');
 
             if (!search) {
                 profissionais.forEach(prof => prof.style.display = 'block');
+                categorias.forEach(cat => cat.style.display = 'block');
                 return;
             }
 
@@ -2140,6 +2142,29 @@ def gerar_dashboard():
                     visibleCount++;
                 } else {
                     prof.style.display = 'none';
+                }
+            });
+
+            // Hide categories with no visible professionals
+            categorias.forEach(categoria => {
+                const visibleProfs = categoria.querySelectorAll('.profissional[style="display: block"], .profissional:not([style*="display"])');
+                const hasVisibleProfessionals = Array.from(visibleProfs).some(prof =>
+                    prof.parentElement === categoria || prof.closest('.category') === categoria
+                );
+
+                // Count visible professionals in this category
+                const professionalsInCategory = categoria.querySelectorAll('.profissional');
+                let visibleInCategory = 0;
+                professionalsInCategory.forEach(prof => {
+                    if (prof.style.display !== 'none') {
+                        visibleInCategory++;
+                    }
+                });
+
+                if (visibleInCategory === 0) {
+                    categoria.style.display = 'none';
+                } else {
+                    categoria.style.display = 'block';
                 }
             });
 
