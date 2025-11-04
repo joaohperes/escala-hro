@@ -986,8 +986,7 @@ def gerar_dashboard():
 
         .contact-item {
             padding: 12px 15px;
-            padding-bottom: 15px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             border-left: 4px solid #0d3b66;
             transition: background 0.2s ease;
         }
