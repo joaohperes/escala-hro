@@ -1503,9 +1503,24 @@ def gerar_dashboard():
             transform: scale(1.1);
         }
 
+        .telefone-icon-btn:hover::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-top: 6px solid #0d3b66;
+            pointer-events: none;
+            z-index: 10001;
+        }
+
         .telefone-icon-btn:hover::after {
             content: attr(data-phone);
-            position: fixed;
+            position: absolute;
             background: #0d3b66;
             color: white;
             padding: 8px 12px;
@@ -1515,13 +1530,9 @@ def gerar_dashboard():
             z-index: 10000;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             pointer-events: none;
-            bottom: auto;
-            top: 0;
-            left: 0;
-            margin-top: -50px;
-            margin-left: -999px;
-            width: 1998px;
-            text-align: center;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .telefone-icon {
