@@ -1336,10 +1336,10 @@ def gerar_dashboard():
         }
 
         .turno-coluna {
-            background: #f8fbff;
+            background: white;
             border-radius: 8px;
             padding: 15px;
-            border: 2px solid #e8eef7;
+            border: 1px solid #e8eef7;
             transition: all 0.3s ease;
         }
 
