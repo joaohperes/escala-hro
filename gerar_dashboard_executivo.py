@@ -3,11 +3,13 @@
 Dashboard Executivo - Visual Premium
 Com banner ALVF e design sofisticado
 
-MELHORIAS V2:
+MELHORIAS V3:
 - Abas de navegação para 3 dias (anterior/atual/próxima)
 - Badges coloridas para tipos de turno
 - Indicadores visuais melhorados
 - Melhor usabilidade e leitura
+- Integração de ramais hospitalares nos setores
+- Diretório telefônico com busca de ramais
 """
 
 import json
@@ -336,6 +338,91 @@ def normalizar_turno(turno_text):
     # Manter o original para casos não identificados
     return (99, turno_original)
 
+def carregar_ramais_data():
+    """Carrega dados de ramais e mapeamento de setores"""
+    import os
+    from pathlib import Path
+
+    # Tentar carregar ramais_hro.json
+    ramais_paths = [
+        'ramais_hro.json',
+        os.path.expanduser('~/escalaHRO/ramais_hro.json'),
+        '/Users/joaoperes/escalaHRO/ramais_hro.json',
+    ]
+
+    ramais_data = None
+    for path in ramais_paths:
+        if Path(path).exists():
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    ramais_data = json.load(f)
+                print(f"✅ Ramais carregados de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+                continue
+
+    # Tentar carregar setor_ramais_mapping.json
+    mapping_paths = [
+        'setor_ramais_mapping.json',
+        os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
+        '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
+    ]
+
+    mapping_data = None
+    for path in mapping_paths:
+        if Path(path).exists():
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    mapping_data = json.load(f)
+                print(f"✅ Mapeamento de setores carregado de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+                continue
+
+    return ramais_data, mapping_data
+
+def obter_ramais_setor(setor_nome, ramais_data, mapping_data):
+    """Obtém os ramais de um setor baseado no mapeamento"""
+    if not ramais_data or not mapping_data:
+        return []
+
+    # Procurar o setor no mapeamento
+    for mapping in mapping_data.get('sector_mappings', []):
+        if mapping['dashboard_sector'] == setor_nome:
+            # Encontrou o mapeamento, buscar os ramais
+            extensions = []
+            for dept_name in mapping['ramais_departments']:
+                # Procurar o departamento nos ramais
+                for dept in ramais_data.get('departments', []):
+                    if dept['name'] == dept_name:
+                        extensions.extend(dept['extensions'])
+            return extensions
+
+    return []
+
+def formatar_ramais_display(extensions):
+    """Formata ramais para exibição no cabeçalho do setor"""
+    if not extensions:
+        return ""
+
+    # Remover duplicatas mantendo ordem
+    unique_exts = []
+    seen = set()
+    for ext in extensions:
+        if ext not in seen:
+            unique_exts.append(ext)
+            seen.add(ext)
+
+    # Limitar exibição a 5 ramais para não poluir o cabeçalho
+    if len(unique_exts) > 5:
+        exts_str = ", ".join(unique_exts[:5])
+        return f' <span class="setor-ramais" title="{", ".join(unique_exts)}">({exts_str}...)</span>'
+    else:
+        exts_str = ", ".join(unique_exts)
+        return f' <span class="setor-ramais">({exts_str})</span>'
+
 def gerar_dashboard():
     """Gera dashboard executivo com visual premium"""
 
@@ -393,6 +480,14 @@ def gerar_dashboard():
     if profissionais_data is None:
         print("❌ Arquivo de profissionais não encontrado em nenhum local.")
         return
+
+    # Carregar dados de ramais
+    ramais_data, mapping_data = carregar_ramais_data()
+
+    if ramais_data is None:
+        print("⚠️  Ramais não carregados - funcionalidade de extensões desabilitada")
+    if mapping_data is None:
+        print("⚠️  Mapeamento de setores não carregado - funcionalidade de extensões desabilitada")
 
     html = """<!DOCTYPE html>
 <html lang="pt-BR">
@@ -500,33 +595,49 @@ def gerar_dashboard():
         }
 
         .auth-btn:hover {
-            background: #0a2c4d;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
+            background: #0a2f52;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(13, 59, 102, 0.2);
+        }
+
+        .auth-btn:active {
+            transform: translateY(0);
+        }
+
+        .auth-error {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .auth-error.show {
+            display: block;
         }
 
         .auth-tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #e8eef7;
         }
 
         .auth-tab-btn {
+            flex: 1;
+            padding: 10px;
             background: none;
             border: none;
-            padding: 12px 20px;
-            font-size: 1em;
-            font-weight: 600;
-            color: #999;
-            cursor: pointer;
             border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1em;
+            color: #666;
             transition: all 0.3s ease;
-            margin-bottom: -2px;
         }
 
         .auth-tab-btn.active {
             color: #0d3b66;
             border-bottom-color: #0d3b66;
+            font-weight: 600;
         }
 
         .auth-tab-btn:hover {
@@ -539,140 +650,149 @@ def gerar_dashboard():
 
         .auth-tab-content.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        .auth-error {
-            color: #e63946;
-            margin-top: 15px;
-            font-size: 0.9em;
-            display: none;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .auth-error.show {
-            display: block;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Header com banner */
-        .header-banner {
-            background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
-            padding: 30px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 1.8s ease-out, background 2s ease-out;
+        .header {
+            background: linear-gradient(135deg, #0d3b66 0%, #1a5490 100%);
+            padding: 25px 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 24px rgba(13, 59, 102, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-banner:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-            background: linear-gradient(135deg, #1a5f8f 0%, #0d3b66 100%);
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 0 20px;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
             flex: 1;
-            min-width: 250px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-align: right;
-            flex: 1;
-            min-width: 250px;
-            justify-content: flex-end;
+            min-width: 0;
         }
 
         .header-logo {
             font-family: 'Merriweather', serif;
-            color: white;
             font-size: 2em;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
         }
 
         .header-separator {
-            color: white;
-            font-size: 1.8em;
-            opacity: 0.6;
-            margin: 0 12px;
+            width: 2px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
         }
 
-        .header-title {
-            font-family: 'Merriweather', serif;
+        .header-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .header-info h2 {
             color: white;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: 0.5px;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .header-description {
-            color: white;
-            font-size: 0.85em;
-            opacity: 0.95;
-            text-align: right;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95em;
+            line-height: 1.4;
         }
 
         .header-description p {
-            margin: 0;
-            line-height: 1.3;
-            letter-spacing: 0.3px;
+            margin: 2px 0;
         }
 
-        /* Container Principal */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        .header-right {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9em;
+            flex-shrink: 0;
         }
 
-        /* Controles */
+        .header-date {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
         .controls-bar {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .date-selector {
             display: flex;
-            gap: 12px;
-            align-items: center;
+            gap: 10px;
         }
 
         .date-btn {
-            padding: 10px 20px;
-            border: 2px solid #e0e0e0;
+            padding: 10px 18px;
             background: white;
-            color: #0d3b66;
+            border: 2px solid #e8eef7;
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.95em;
-            font-weight: 600;
+            font-weight: 500;
+            color: #666;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .date-btn:hover {
             border-color: #0d3b66;
-            background: #f0f5fa;
+            color: #0d3b66;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
         .date-btn.active {
@@ -689,8 +809,8 @@ def gerar_dashboard():
 
         .search-input {
             width: 100%;
-            padding: 12px 18px;
-            border: 2px solid #e0e0e0;
+            padding: 12px 20px;
+            border: 2px solid #e8eef7;
             border-radius: 8px;
             font-size: 0.95em;
             transition: all 0.3s ease;
@@ -715,96 +835,64 @@ def gerar_dashboard():
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.9em;
-            font-weight: 600;
+            font-weight: 500;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
         }
 
-        .btn-primary {
+        .btn-toggle-sections {
+            background: white;
+            color: #0d3b66;
+            border: 2px solid #0d3b66;
+        }
+
+        .btn-toggle-sections:hover {
+            background: #0d3b66;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.15);
+        }
+
+        .btn-toggle-sections.collapsed {
             background: #0d3b66;
             color: white;
         }
 
-        .btn-primary:hover {
-            background: #0a2c4d;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
-        }
-
-        .btn-secondary {
-            background: #e8eef7;
-            color: #0d3b66;
-        }
-
-        .btn-secondary:hover {
-            background: #d8e2f0;
-        }
-
         .btn-contacts {
-            background: #1a5f8f;
+            background: #28a745;
             color: white;
         }
 
         .btn-contacts:hover {
-            background: #0d3b66;
+            background: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-ramais {
+            background: #6610f2;
+            color: white;
+        }
+
+        .btn-ramais:hover {
+            background: #520dc2;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(102, 16, 242, 0.3);
         }
 
         .btn-print {
-            background: #1a5f8f;
+            background: #6c757d;
             color: white;
         }
 
         .btn-print:hover {
-            background: #0d3b66;
+            background: #5a6268;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
         }
 
-        .btn-toggle-sections {
-            background: #f0f5fa;
-            color: #0d3b66;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-toggle-sections:hover {
-            background: #e0e8f5;
-        }
-
-        .btn-toggle-sections.collapsed {
-            background: #e0e8f5;
-        }
-
-        /* Triângulo dinâmico nos botões - usando mesmo do categoria-toggle */
-        .btn-toggle-sections::before {
+        .btn-print::before {
             content: '';
-            color: #0d3b66;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 10px solid #0d3b66;
-            margin-right: 8px;
-        }
-
-        .btn-toggle-sections.collapsed::before {
-            transform: rotate(180deg);
-        }
-
-        .date-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Triângulo para botão anterior (apontando para esquerda) */
-        .date-btn[data-dia="anterior"]::before {
-            content: '';
-            color: #0d3b66;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
             display: inline-block;
             width: 0;
             height: 0;
@@ -879,251 +967,290 @@ def gerar_dashboard():
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        .contacts-search:focus {
-            outline: none;
-            border-color: #0d3b66;
         }
 
         .contacts-warning {
-            background-color: #fff3cd;
+            background: #fff3cd;
             border: 1px solid #ffc107;
-            border-radius: 6px;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-            color: #856404;
-        }
-
-        .contacts-warning p {
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .contacts-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
         }
 
         .contact-item {
-            background: #f8f9fb;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #0d3b66;
-            transition: all 0.3s ease;
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
         }
 
         .contact-item:hover {
-            background: #e8eef7;
-            transform: translateX(4px);
+            background: #f8f9fa;
         }
 
         .contact-name {
-            font-weight: 700;
-            color: #1a1a1a;
-            font-size: 0.95em;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 5px;
         }
 
         .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.85em;
             color: #666;
-            margin-top: 6px;
-        }
-
-        .contact-email {
-            color: #666;
-        }
-
-        .contact-separator {
-            color: #ccc;
-            font-weight: 300;
+            font-size: 0.95em;
         }
 
         .contact-phone {
-            color: #0d3b66;
+            color: #28a745;
             text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: color 0.2s ease;
         }
 
         .contact-phone:hover {
-            color: #1a5f8f;
+            text-decoration: underline;
         }
 
-        /* Estatísticas */
+        /* Modal de Ramais */
+        .ramais-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5000;
+            display: none;
+        }
+
+        .ramais-modal.active {
+            display: flex;
+        }
+
+        .ramais-modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .ramais-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8eef7;
+            padding-bottom: 15px;
+        }
+
+        .ramais-modal-header h2 {
+            color: #0d3b66;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .ramais-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .ramais-modal-close:hover {
+            color: #0d3b66;
+        }
+
+        .ramais-search {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .ramais-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 12px;
+        }
+
+        .ramal-item {
+            padding: 12px 15px;
+            border: 1px solid #e8eef7;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .ramal-item:hover {
+            background: #f8fbff;
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+        }
+
+        .ramal-dept {
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .ramal-exts {
+            color: #28a745;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .ramal-exts-label {
+            color: #666;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        /* Estilo dos ramais no cabeçalho do setor */
+        .setor-ramais {
+            color: #6610f2;
+            font-weight: 500;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+        .date-display {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+        }
+
+        .last-update {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .update-status-indicator.sucesso {
+            background: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.4);
+        }
+
+        .update-status-indicator.pendente {
+            background: #ffc107;
+            box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+        }
+
+        .update-status-indicator.erro {
+            background: #dc3545;
+            box-shadow: 0 0 8px rgba(220, 53, 69, 0.4);
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-bottom: 20px;
-            opacity: 0.85;
+            margin-bottom: 25px;
         }
 
         .stat-card {
             background: white;
-            padding: 18px;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-            border-left: 3px solid #0d3b66;
             text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0d3b66;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         .stat-number {
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: 700;
             color: #0d3b66;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 0.9em;
             color: #666;
-            font-weight: 500;
+            font-size: 0.9em;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Data Display */
-        .date-display {
-            text-align: center;
-            font-size: 1.2em;
-            color: #0d3b66;
-            font-weight: 600;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Última atualização */
-        .last-update {
-            text-align: right;
-            font-size: 0.85em;
-            color: #999;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 8px;
-            font-style: italic;
-        }
-
-        .update-status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            min-width: 12px;
-            min-height: 12px;
-            border-radius: 50%;
-            margin-left: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            vertical-align: middle;
-            background: #ccc;
-            box-shadow: 0 0 4px rgba(0,0,0,0.2);
-        }
-
-        .update-status-indicator:hover {
-            transform: scale(1.3);
-        }
-
-        .update-status-indicator.sucesso {
-            background: #4caf50 !important;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6) !important;
-        }
-
-        .update-status-indicator.erro {
-            background: #f44336 !important;
-            box-shadow: 0 0 8px rgba(244, 67, 54, 0.6) !important;
-            animation: pulse-error 1.5s infinite;
-        }
-
-        .update-status-indicator.aviso {
-            background: #ff9800 !important;
-            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6) !important;
-        }
-
-        @keyframes pulse-error {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        /* Descrição do Dashboard */
-        .dashboard-description {
-            background: #f0f5fa;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .dashboard-description p {
-            margin: 0;
-            color: #333;
-        }
-
-        .dashboard-description strong {
-            color: #0d3b66;
-            font-weight: 700;
-        }
-
-        /* Categoria */
         .category {
             background: white;
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .category:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         .categoria-header {
-            padding: 20px 25px;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8eef7 100%);
+            padding: 18px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            user-select: none;
             border-left: 4px solid #0d3b66;
-            background: linear-gradient(90deg, #f8fbff 0%, white 100%);
             transition: all 0.3s ease;
         }
 
         .categoria-header:hover {
-            background: linear-gradient(90deg, #f0f5fa 0%, #f8fbff 100%);
-        }
-
-        .categoria-header.expanded {
-            background: linear-gradient(90deg, #e8eef7 0%, #f0f5fa 100%);
+            background: linear-gradient(135deg, #e8eef7 0%, #d8dfe7 100%);
         }
 
         .categoria-header-text {
             display: flex;
-            flex-direction: column;
-            text-align: left;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
         }
 
         .categoria-nome {
+            font-size: 1.15em;
+            font-weight: 600;
             color: #0d3b66;
-            font-size: 1.1em;
-            margin-bottom: 3px;
         }
 
         .categoria-count {
-            color: #999;
-            font-size: 0.85em;
+            color: #666;
+            font-size: 0.9em;
             font-weight: 500;
         }
 
@@ -1131,272 +1258,206 @@ def gerar_dashboard():
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
-            display: inline-block;
-            transform: rotate(180deg);
         }
 
-        .categoria-header.expanded .categoria-toggle {
-            transform: rotate(0deg);
+        .categoria-header:not(.expanded) .categoria-toggle {
+            transform: rotate(180deg);
         }
 
         .categoria-content {
             padding: 20px;
-            transition: max-height 0.3s ease;
+            transition: all 0.3s ease;
+            max-height: 10000px;
+            overflow: hidden;
         }
 
         .categoria-content.collapsed {
-            display: none;
+            max-height: 0;
+            padding: 0 20px;
         }
 
-        /* Layout de colunas para turnos */
         .turnos-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
         }
 
         .turno-coluna {
-            background: #ffffff;
+            background: #f8fbff;
             border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 15px;
+            border: 2px solid #e8eef7;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
         .turno-coluna:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            transform: translateX(4px);
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
         .turno-title {
-            font-weight: 700;
+            font-weight: 600;
             color: #0d3b66;
-            margin-bottom: 10px;
-            font-size: 0.95em;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8eef7;
+            font-size: 1em;
         }
 
-        .turno-title::before {
-            content: attr(data-count);
-            font-size: 0.85em;
-            background: #e8eef7;
-            color: #0d3b66;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-weight: 600;
+        .turno-title::after {
+            content: ' (' attr(data-count) ')';
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
         .profissionais-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .profissional {
+            padding: 12px;
             background: white;
-            padding: 14px;
-            border-radius: 8px;
-            border-left: 3px solid #0d3b66;
-            transition: all 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: relative;
+            border-radius: 6px;
+            border: 1px solid #e8eef7;
+            transition: all 0.2s ease;
         }
 
         .profissional:hover {
-            transform: translateX(3px);
-            box-shadow: 0 4px 10px rgba(13, 59, 102, 0.1);
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            transform: translateX(2px);
         }
 
         .profissional-nome {
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 6px;
-            color: #1a1a1a;
-            font-size: 0.95em;
-            display: inline-block;
-            position: relative;
         }
 
         .profissional-nome-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            flex: 1;
         }
 
         .profissional-nome-text {
-            cursor: pointer;
-        }
-
-        .whatsapp-icon {
-            display: none;
-        }
-
-        .profissional-nome:hover .whatsapp-icon {
-            display: block;
-        }
-
-        .telefone-tooltip {
-            position: absolute;
-            background: #0d3b66;
-            color: white;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 0.8em;
             font-weight: 600;
-            white-space: nowrap;
-            pointer-events: auto;
-            cursor: pointer;
-            z-index: 1000;
-            bottom: 100%;
-            left: 0;
-            margin-bottom: 0;
-            padding-bottom: 15px;
-            opacity: 0;
-            transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.2);
-            user-select: none;
-            text-decoration: none;
-        }
-
-        .telefone-tooltip:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 12px rgba(13, 59, 102, 0.5), 0 2px 8px rgba(13, 59, 102, 0.2);
-            filter: drop-shadow(0 0 6px rgba(13, 59, 102, 0.4));
-        }
-
-        .profissional-nome:hover .telefone-tooltip,
-        .telefone-tooltip:hover {
-            opacity: 1;
-        }
-
-        .telefone-tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 14px;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid #0d3b66;
-        }
-
-        .telefone-icon {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>') no-repeat center / contain;
+            color: #1a1a1a;
+            font-size: 0.95em;
         }
 
         .profissional-info {
             font-size: 0.85em;
             color: #666;
-            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .info-label {
-            font-weight: 600;
-            color: #0d3b66;
-            display: inline;
+            font-weight: 500;
+            color: #999;
         }
 
-        /* ===== BADGES DE TURNO ===== */
         .turno-badge {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
+            padding: 3px 8px;
+            border-radius: 4px;
             font-size: 0.75em;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin-left: 6px;
-            vertical-align: middle;
         }
 
         .turno-badge.matutino {
             background: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
         }
 
         .turno-badge.vespertino {
             background: #fff3cd;
             color: #856404;
-            border: 1px solid #ffeaa7;
         }
 
         .turno-badge.noturno {
             background: #d1ecf1;
             color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-
-        .turno-badge.plantao {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .turno-badge.outro {
-            background: #e2e3e5;
-            color: #383d41;
-            border: 1px solid #d6d8db;
         }
 
         .turno-badge.badge-24h {
             background: #f8d7da;
             color: #721c24;
-            border: 1px solid #f5c6cb;
-            font-weight: 800;
-        }
-
-        .turno-badge.diurno {
-            background: linear-gradient(135deg, #ffe0b2 0%, #ffd699 100%);
-            color: #e65100;
-            border: 1px solid #ffb74d;
-            font-weight: 600;
         }
 
         .turno-badge.sobreaviso {
-            background: linear-gradient(135deg, #ff8fab 0%, #ff6b7a 100%);
-            color: #ffffff;
-            border: 1px solid #f72585;
-            font-weight: 600;
+            background: #e7e7ff;
+            color: #4a4a8a;
         }
 
         .turno-badge.rotina {
-            background: linear-gradient(135deg, #b5a7f5 0%, #8e7cc3 100%);
-            color: #ffffff;
-            border: 1px solid #6c5bb0;
+            background: #e2e3e5;
+            color: #383d41;
         }
 
-        /* ===== ABAS DE DATA ===== */
+        .turno-badge.plantao {
+            background: #ffdab9;
+            color: #8b4513;
+        }
+
+        .turno-badge.diurno {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .turno-badge.outro {
+            background: #e2e3e5;
+            color: #6c757d;
+        }
+
+        .telefone-tooltip {
+            color: #28a745;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .telefone-tooltip:hover {
+            color: #218838;
+            text-decoration: underline;
+        }
+
+        .telefone-icon {
+            width: 16px;
+            height: 16px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2328a745"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>') center/contain no-repeat;
+        }
+
         .data-tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e0e0e0;
-            overflow-x: auto;
-            padding-bottom: 0;
+            gap: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8eef7;
+            padding-bottom: 5px;
         }
 
         .data-tab {
-            padding: 14px 20px;
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: white;
             border: none;
-            background: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #666;
             border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            color: #666;
             transition: all 0.3s ease;
-            font-size: 0.95em;
-            white-space: nowrap;
+            border-radius: 8px 8px 0 0;
             position: relative;
             bottom: -2px;
         }
@@ -1551,6 +1612,7 @@ def gerar_dashboard():
             .header,
             .dashboard-description,
             .contacts-modal,
+            .ramais-modal,
             .date-display,
             .categoria-toggle,
             .stats,
@@ -1682,7 +1744,13 @@ def gerar_dashboard():
 
             /* Ocultar elementos flutuantes */
             .contacts-modal-overlay,
-            .contacts-modal {
+            .contacts-modal,
+            .ramais-modal {
+                display: none !important;
+            }
+
+            /* Ocultar ramais no print */
+            .setor-ramais {
                 display: none !important;
             }
         }
@@ -1700,16 +1768,16 @@ def gerar_dashboard():
                 <button class="auth-tab-btn" onclick="trocarAbaAuth('outro')">Outro Usuário</button>
             </div>
 
-            <!-- Aba Profissional -->
-            <div id="auth-tab-profissional" class="auth-tab-content active">
-                <p>Digite seu email ou os últimos 4 dígitos do seu telefone:</p>
-                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
+            <!-- Conteúdo: Profissional -->
+            <div id="auth-content-profissional" class="auth-tab-content active">
+                <p>Entre com seu email ou últimos 4 dígitos do telefone cadastrado no app.</p>
+                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos do telefone" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
                 <button onclick="autenticarProfissional()" class="auth-btn">Acessar</button>
                 <p id="auth-error-prof" class="auth-error"></p>
             </div>
 
-            <!-- Aba Outro Usuário -->
-            <div id="auth-tab-outro" class="auth-tab-content">
+            <!-- Conteúdo: Outro Usuário -->
+            <div id="auth-content-outro" class="auth-tab-content">
                 <p>Acesso para administrativo, enfermagem e outros usuários.</p>
                 <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se você não possui acesso, entre em contato conosco para solicitar a senha.</p>
                 <input type="password" id="auth-input-outro" placeholder="Digite a senha" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarOutro()">
@@ -1734,27 +1802,42 @@ def gerar_dashboard():
         </div>
     </div>
 
-    <!-- Main content wrapper for blur effect -->
-    <div id="main-content">
-    <!-- Header com Banner -->
-    <div class="header-banner">
-        <div class="header-content">
-            <div class="header-left">
-                <div class="header-logo">HRO</div>
-                <div class="header-separator">|</div>
-                <h2 class="header-title">Escala Médica</h2>
+    <!-- Modal de Ramais -->
+    <div id="ramais-modal" class="ramais-modal">
+        <div class="ramais-modal-content">
+            <div class="ramais-modal-header">
+                <h2>📞 Diretório Telefônico HRO</h2>
+                <button class="ramais-modal-close" onclick="fecharDiretorioRamais()">✕</button>
             </div>
-            <div class="header-right">
-                <div class="header-logo">ALVF</div>
-                <div class="header-description">
-                    <p>Associação Hospitalar<br>Lenoir Vargas Ferreira</p>
-                </div>
-            </div>
+            <input type="text" class="ramais-search" id="ramais-search" placeholder="Buscar por departamento ou ramal..." onkeyup="filtrarRamais()">
+            <div class="ramais-list" id="ramais-list"></div>
         </div>
     </div>
 
-    <!-- Container Principal -->
+    <!-- Main content wrapper for blur effect -->
+    <div id="main-content" class="blurred">
     <div class="container">
+        <!-- Header Banner -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="header-logo">ALVF</div>
+                    <div class="header-separator"></div>
+                    <div class="header-info">
+                        <h2>Hospital Regional de Ourinhos</h2>
+                        <div class="header-description">
+                            <p>Escalas Médicas e Profissionais de Saúde</p>
+                            <p>Gestão Humanizada · Excelência no Cuidado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-date" id="data-atual-header"></div>
+                    <div>Atualização em tempo real</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
@@ -1767,6 +1850,7 @@ def gerar_dashboard():
             <div class="action-buttons">
                 <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
+                <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">📞 Ramais</button>
             </div>
         </div>
 
@@ -1775,13 +1859,8 @@ def gerar_dashboard():
 
         <!-- Última atualização -->
         <div class="last-update">
-            <div id="ultima-atualizacao"></div>
-            <div class="update-status-indicator" id="status-indicator" title="Status da última atualização automática"></div>
-        </div>
-
-        <!-- Descrição do Dashboard -->
-        <div class="dashboard-description">
-            <p><strong>Dashboard para visualização da escala médica do HRO.</strong> Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos. Passe o mouse sobre o nome de qualquer profissional para ver seu telefone e iniciar uma conversa via WhatsApp.</p>
+            <span class="update-status-indicator" id="status-indicator"></span>
+            <span id="ultima-atualizacao">Carregando...</span>
         </div>
 
         <!-- Estatísticas -->
@@ -1799,101 +1878,261 @@ def gerar_dashboard():
 
         // Especialidades que devem ser divididas por turno
         const especialidadesComTurno = [
-            'ginecologia', 'obstet', 'hospitalista', 'pronto', 'urgência',
-            'plantão', 'clínica', 'comanejo', 'ucin', 'cuidados', 'uti', 'residência'
+            'plantão', 'sobreaviso', 'residência', 'uti', 'pronto', 'urgência',
+            'emergência', 'on-call', 'clinica', 'cirurgia', 'pediatria'
         ];
 
-        // Função para normalizar turnos
-        function normalizarTurno(turnoText, horarioText = '') {
+        // Dados de ramais e mapeamento
+        const ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
+        const setorRamaisMapping = """ + json.dumps(mapping_data if mapping_data else {}, ensure_ascii=False) + """;
+
+        // Função para obter ramais de um setor
+        function obterRamaisSetor(setorNome) {
+            if (!ramaisData.departments || !setorRamaisMapping.sector_mappings) {
+                return [];
+            }
+
+            // Procurar o setor no mapeamento
+            const mapping = setorRamaisMapping.sector_mappings.find(m => m.dashboard_sector === setorNome);
+            if (!mapping) {
+                return [];
+            }
+
+            // Coletar todos os ramais dos departamentos mapeados
+            const extensions = [];
+            mapping.ramais_departments.forEach(deptName => {
+                const dept = ramaisData.departments.find(d => d.name === deptName);
+                if (dept) {
+                    extensions.push(...dept.extensions);
+                }
+            });
+
+            return extensions;
+        }
+
+        // Função para formatar ramais para exibição
+        function formatarRamaisDisplay(extensions) {
+            if (!extensions || extensions.length === 0) {
+                return '';
+            }
+
+            // Remover duplicatas
+            const uniqueExts = [...new Set(extensions)];
+
+            // Limitar exibição a 5 ramais
+            if (uniqueExts.length > 5) {
+                const extsStr = uniqueExts.slice(0, 5).join(', ');
+                const allExtsStr = uniqueExts.join(', ');
+                return ` <span class="setor-ramais" title="${allExtsStr}">(${extsStr}...)</span>`;
+            } else {
+                const extsStr = uniqueExts.join(', ');
+                return ` <span class="setor-ramais">(${extsStr})</span>`;
+            }
+        }
+
+        // Funções para o modal de ramais
+        function abrirDiretorioRamais() {
+            const modal = document.getElementById('ramais-modal');
+            modal.classList.add('active');
+            renderizarDiretorioRamais();
+        }
+
+        function fecharDiretorioRamais() {
+            const modal = document.getElementById('ramais-modal');
+            modal.classList.remove('active');
+        }
+
+        function renderizarDiretorioRamais() {
+            const ramaisList = document.getElementById('ramais-list');
+
+            if (!ramaisData.departments) {
+                ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
+                return;
+            }
+
+            const departamentos = [...ramaisData.departments].sort((a, b) =>
+                a.name.localeCompare(b.name, 'pt-BR')
+            );
+
+            ramaisList.innerHTML = departamentos.map(dept => {
+                const extsStr = dept.extensions.join(', ');
+                return `
+                    <div class="ramal-item" data-search="${dept.name.toLowerCase()} ${extsStr}">
+                        <div class="ramal-dept">${dept.name}</div>
+                        <div class="ramal-exts">
+                            <span class="ramal-exts-label">Ramais:</span>
+                            ${extsStr}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filtrarRamais() {
+            const searchText = document.getElementById('ramais-search').value.toLowerCase();
+            const ramalItems = document.querySelectorAll('.ramal-item');
+
+            ramalItems.forEach(item => {
+                const searchData = item.getAttribute('data-search');
+                if (searchData.includes(searchText)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Fechar modal de ramais ao clicar fora
+        document.getElementById('ramais-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharDiretorioRamais();
+            }
+        });
+
+        function trocarAbaAuth(aba) {
+            // Trocar aba ativa
+            document.querySelectorAll('.auth-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.auth-tab-content').forEach(content => content.classList.remove('active'));
+
+            if (aba === 'profissional') {
+                document.querySelector('.auth-tab-btn:first-child').classList.add('active');
+                document.getElementById('auth-content-profissional').classList.add('active');
+            } else {
+                document.querySelector('.auth-tab-btn:last-child').classList.add('active');
+                document.getElementById('auth-content-outro').classList.add('active');
+            }
+
+            // Limpar mensagens de erro
+            document.querySelectorAll('.auth-error').forEach(err => err.classList.remove('show'));
+        }
+
+        function filtrarProfissionais() {
+            const search = document.getElementById('search').value.toLowerCase().trim();
+            const profissionais = document.querySelectorAll('.profissional');
+
+            if (!search) {
+                profissionais.forEach(prof => prof.style.display = 'block');
+                return;
+            }
+
+            let visibleCount = 0;
+            profissionais.forEach(prof => {
+                const searchText = prof.getAttribute('data-search') || '';
+                if (searchText.includes(search)) {
+                    prof.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    prof.style.display = 'none';
+                }
+            });
+
+            console.log(`Busca: "${search}" - ${visibleCount} resultados`);
+        }
+
+        function normalizarTurno(turnoText) {
             if (!turnoText) return { ordem: 99, nome: 'Outro' };
 
             const turno = turnoText.toLowerCase().trim();
             const turnoOriginal = turnoText.trim();
-            const horario = horarioText ? horarioText.toLowerCase() : '';
 
-            // Se o turno for genérico (tipo "Res. Clínica Médica") e temos horário, detectar pelo horário
-            if (turno.includes('res.') || turno.includes('residência') || turno.includes('residencia')) {
-                if (horario && horario.includes('/')) {
-                    try {
-                        const [entrada, saida] = horario.split('/');
-                        const entradaH = parseInt(entrada.split(':')[0]);
-                        const saidaH = parseInt(saida.split(':')[0]);
-                        // Detectar diurno (07:00-19:00) - entrada 07, saída 19
-                        if (entradaH === 7 && saidaH === 19) {
-                            return { ordem: 1, nome: 'Plantão Diurno' };
-                        }
-                        // Detectar por hora de entrada
-                        if (entradaH >= 6 && entradaH < 12) return { ordem: 1, nome: 'Plantão Matutino' };
-                        if (entradaH >= 12 && entradaH < 18) return { ordem: 2, nome: 'Plantão Vespertino' };
-                        if (entradaH >= 18 || entradaH < 6) return { ordem: 3, nome: 'Plantão Noturno' };
-                    } catch (e) {}
-                }
-                // Fallback: retorna como genérico
-                return { ordem: 1, nome: turnoOriginal };
-            }
-
-            // HOSPITALISTA - COMANEJO vs URGÊNCIA
+            // HOSPITALISTA - COMANEJO vs URGÊNCIA (especial)
             if (turno.includes('hospitalista')) {
                 if (turno.includes('comanejo')) {
-                    if (turno.includes('matutino') || turno.includes('07:00')) return { ordem: 1, nome: 'Comanejo Matutino' };
-                    if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return { ordem: 2, nome: 'Comanejo Vespertino' };
-                    if (turno.includes('noturno') || turno.includes('19:00')) return { ordem: 3, nome: 'Comanejo Noturno' };
+                    if (turno.includes('matutino') || turno.includes('07:00')) {
+                        return { ordem: 1, nome: 'Comanejo Matutino' };
+                    } else if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) {
+                        return { ordem: 2, nome: 'Comanejo Vespertino' };
+                    } else if (turno.includes('noturno') || turno.includes('19:00')) {
+                        return { ordem: 3, nome: 'Comanejo Noturno' };
+                    }
                 } else if (turno.includes('urgência') || turno.includes('urgencia')) {
-                    if (turno.includes('matutino') || turno.includes('07:00')) return { ordem: 1, nome: 'Urgência Matutino' };
-                    if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return { ordem: 2, nome: 'Urgência Vespertino' };
-                    if (turno.includes('noturno') || turno.includes('19:00')) return { ordem: 3, nome: 'Urgência Noturno' };
+                    if (turno.includes('matutino') || turno.includes('07:00')) {
+                        return { ordem: 1, nome: 'Urgência Matutino' };
+                    } else if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) {
+                        return { ordem: 2, nome: 'Urgência Vespertino' };
+                    } else if (turno.includes('noturno') || turno.includes('19:00')) {
+                        return { ordem: 3, nome: 'Urgência Noturno' };
+                    }
                 }
             }
 
-            // MATUTINO
-            if (['matutino', 'matutina', 'manhã', 'madrugada'].some(x => turno.includes(x)) || ['07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
-                if (turno.includes('final')) return { ordem: 1, nome: 'Manhã - Final de Semana' };
-                if (turno.includes('p1')) return { ordem: 1, nome: 'Plantão Matutino - P1' };
-                if (turno.includes('p2')) return { ordem: 1, nome: 'Plantão Matutino - P2' };
+            // MATUTINO (Ordem 1)
+            if (['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
+                if (turno.includes('final')) {
+                    return { ordem: 1, nome: 'Manhã - Final de Semana' };
+                }
+                if (turno.includes('p1')) {
+                    return { ordem: 1, nome: 'Plantão Matutino - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 1, nome: 'Plantão Matutino - P2' };
+                }
                 return { ordem: 1, nome: 'Plantão Matutino' };
             }
 
-            // VESPERTINO
-            if (['vespertino', 'vespertina', 'tarde'].some(x => turno.includes(x)) || ['13:00', '14:00'].some(x => turno.includes(x))) {
-                if (turno.includes('final')) return { ordem: 2, nome: 'Tarde - Final de Semana' };
-                if (turno.includes('p1')) return { ordem: 2, nome: 'Plantão Vespertino - P1' };
-                if (turno.includes('p2')) return { ordem: 2, nome: 'Plantão Vespertino - P2' };
+            // VESPERTINO (Ordem 2)
+            if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) {
+                if (turno.includes('final')) {
+                    return { ordem: 2, nome: 'Tarde - Final de Semana' };
+                }
+                if (turno.includes('p1')) {
+                    return { ordem: 2, nome: 'Plantão Vespertino - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 2, nome: 'Plantão Vespertino - P2' };
+                }
                 return { ordem: 2, nome: 'Plantão Vespertino' };
             }
 
-            // NOTURNO
-            if (['noturno', 'noturna', 'noite'].some(x => turno.includes(x)) || turno.includes('19:00')) {
-                if (turno.includes('p1')) return { ordem: 3, nome: 'Plantão Noturno - P1' };
-                if (turno.includes('p2')) return { ordem: 3, nome: 'Plantão Noturno - P2' };
+            // NOTURNO (Ordem 3)
+            if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) {
+                if (turno.includes('p1')) {
+                    return { ordem: 3, nome: 'Plantão Noturno - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 3, nome: 'Plantão Noturno - P2' };
+                }
                 return { ordem: 3, nome: 'Plantão Noturno' };
             }
 
-            // DIURNO (07:00-19:00)
-            if (turno === 'diurno') return { ordem: 1, nome: 'Plantão Diurno' };
+            // DIURNO (07:00-19:00) - Residência
+            if (turno === 'diurno') {
+                return { ordem: 1, nome: 'Plantão Diurno' };
+            }
 
-            // DIA / NOITE (legacy)
-            if (turno === 'dia') return { ordem: 1, nome: 'Plantão Diurno' };
-            if (turno === 'noite') return { ordem: 3, nome: 'Período Noturno' };
+            // DIA / NOITE (Residência - legacy)
+            if (turno === 'dia') {
+                return { ordem: 1, nome: 'Plantão Diurno' };
+            } else if (turno === 'noite') {
+                return { ordem: 3, nome: 'Período Noturno' };
+            }
 
-            // P1, P2, P3, P4
-            if (['p1', 'p2', 'p3', 'p4'].includes(turno)) return { ordem: 2, nome: 'Plantão ' + turno.toUpperCase() };
+            // P1, P2, P3, P4 (Plantões standalone)
+            if (['p1', 'p2', 'p3', 'p4'].includes(turno)) {
+                return { ordem: 2, nome: `Plantão ${turno.toUpperCase()}` };
+            }
 
-            // ROTINA
+            // ROTINA (Ordem 4)
             if (['rotina', 'regular', 'alojamento'].some(x => turno.includes(x))) {
-                if (turno.includes('matutino')) return { ordem: 1, nome: 'Rotina Matutino' };
-                if (turno.includes('vespertino') || turno.includes('tarde')) return { ordem: 2, nome: 'Rotina Vespertino' };
-                if (turno.includes('noturno') || turno.includes('noite')) return { ordem: 3, nome: 'Rotina Noturno' };
-                if (turno.includes('final')) return { ordem: 4, nome: 'Rotina - Final de Semana' };
+                if (turno.includes('matutino')) {
+                    return { ordem: 1, nome: 'Rotina Matutino' };
+                } else if (turno.includes('vespertino') || turno.includes('tarde')) {
+                    return { ordem: 2, nome: 'Rotina Vespertino' };
+                } else if (turno.includes('noturno') || turno.includes('noite')) {
+                    return { ordem: 3, nome: 'Rotina Noturno' };
+                } else if (turno.includes('final')) {
+                    return { ordem: 4, nome: 'Rotina - Final de Semana' };
+                }
                 return { ordem: 4, nome: 'Rotina' };
             }
 
-            // SOBREAVISO
+            // SOBREAVISO (Ordem 5)
             if (turno.includes('sobreaviso')) {
                 if (turno.includes('cardiologia')) return { ordem: 5, nome: 'Sobreaviso Cardiologia' };
                 if (turno.includes('urologia')) return { ordem: 5, nome: 'Sobreaviso Urologia' };
                 if (turno.includes('cirurgia')) {
-                    if (turno.includes('equipe 1') || turno.includes(' 1')) return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
-                    if (turno.includes('equipe 2') || turno.includes(' 2')) return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 2' };
+                    if (turno.includes('equipe 1') || turno.includes(' 1')) {
+                        return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
+                    } else if (turno.includes('equipe 2') || turno.includes(' 2')) {
+                        return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 2' };
+                    }
                     return { ordem: 5, nome: 'Sobreaviso Cirurgia' };
                 }
                 if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
@@ -2081,7 +2320,7 @@ def gerar_dashboard():
         }
 
         function renderizarEscala() {
-            console.log('🔄 Dashboard v3f40038 renderizado');
+            console.log('🔄 Dashboard v3-ramais renderizado');
             const dados = escalas[diaSelecionado];
             document.getElementById('data-selecionada').textContent = dados.data;
 
@@ -2098,34 +2337,37 @@ def gerar_dashboard():
 
             if (statusAtualizacao === 'sucesso') {
                 statusIndicator.classList.add('sucesso');
-                statusIndicator.title = 'Atualização bem-sucedida';
+            } else if (statusAtualizacao === 'pendente') {
+                statusIndicator.classList.add('pendente');
             } else {
                 statusIndicator.classList.add('erro');
-                const erro = escalas.mensagem_erro || 'Erro desconhecido';
-                statusIndicator.title = `Erro na atualização: ${erro}`;
             }
 
             const porSetor = {};
-            dados.registros.forEach(reg => {
-                if (!porSetor[reg.setor]) porSetor[reg.setor] = [];
-                porSetor[reg.setor].push(reg);
+            dados.profissionais.forEach(prof => {
+                if (!porSetor[prof.setor]) {
+                    porSetor[prof.setor] = [];
+                }
+                porSetor[prof.setor].push(prof);
             });
 
+            const setores = Object.keys(porSetor).sort();
             let html = '';
-            Object.keys(porSetor).sort().forEach(setor => {
+
+            setores.forEach(setor => {
                 const profissionais = porSetor[setor];
+                const ramaisSetor = obterRamaisSetor(setor);
+                const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
 
                 if (temMultiplosTurnos(setor)) {
                     const porTurno = {};
                     const turnoOrdem = {};
 
                     profissionais.forEach(prof => {
-                        const turnoOriginal = prof.tipo_turno || 'Outro';
-                        const { ordem, nome } = normalizarTurno(turnoOriginal, prof.horario);
-
+                        const { ordem, nome } = normalizarTurno(prof.tipo_turno);
+                        turnoOrdem[nome] = ordem;
                         if (!porTurno[nome]) {
                             porTurno[nome] = [];
-                            turnoOrdem[nome] = ordem;
                         }
                         porTurno[nome].push(prof);
                     });
@@ -2136,7 +2378,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
@@ -2182,7 +2424,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
@@ -2283,88 +2525,12 @@ def gerar_dashboard():
             }
         }
 
-        function filtrarProfissionais() {
-            const searchText = document.getElementById('search').value.toLowerCase();
-            const profissionais = document.querySelectorAll('.profissional');
-            let totalVistos = 0;
-
-            console.log('Filtrando por:', searchText);
-            console.log('Total profissionais encontrados:', profissionais.length);
-
-            // Log first few data-search values for debugging
-            if (searchText !== '' && profissionais.length > 0) {
-                for (let i = 0; i < Math.min(3, profissionais.length); i++) {
-                    const dataSearch = profissionais[i].getAttribute('data-search');
-                    console.log(`Prof ${i}: data-search="${dataSearch}"`);
-                }
-            }
-
-            profissionais.forEach(prof => {
-                // Read the combined data-search attribute that was populated by renderizarEscala
-                const texto = prof.getAttribute('data-search') || '';
-
-                if (searchText === '' || texto.includes(searchText)) {
-                    prof.style.display = 'block';
-                    totalVistos++;
-                } else {
-                    prof.style.display = 'none';
-                }
-            });
-
-            console.log('Profissionais vistos:', totalVistos);
-
-            // Ocultar turno-coluna vazia (sem profissionais vistos)
-            document.querySelectorAll('.turno-coluna').forEach(turnoColuna => {
-                const vistosTurno = Array.from(turnoColuna.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
-                if (searchText === '') {
-                    turnoColuna.style.display = 'block';
-                } else {
-                    turnoColuna.style.display = vistosTurno > 0 ? 'block' : 'none';
-                }
-            });
-
-            document.querySelectorAll('.category').forEach(category => {
-                const content = category.querySelector('.categoria-content');
-                const header = category.querySelector('.categoria-header');
-
-                // Check for visible turno-coluna elements (for multi-turno sectors)
-                const colunas = Array.from(content.querySelectorAll('.turno-coluna')).filter(c => c.style.display !== 'none').length;
-
-                // Also check for visible professionals directly in content (for single-turno sectors)
-                const profissionaisVisiveis = Array.from(content.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
-
-                if (searchText === '') {
-                    category.style.display = 'block';
-                } else {
-                    // Show category if there are visible turno-colunas OR visible professionals
-                    if (colunas > 0 || profissionaisVisiveis > 0) {
-                        category.style.display = 'block';
-                        content.classList.remove('collapsed');
-                        header.classList.add('expanded');
-                    } else {
-                        category.style.display = 'none';
-                    }
-                }
-            });
-
-            console.log('Categorias visíveis após filtro:', Array.from(document.querySelectorAll('.category')).filter(c => c.style.display !== 'none').length);
-
-            // Mostrar mensagem se não encontrar nada
-            let emptyMessageDiv = document.getElementById('empty-search-message');
-            if (!emptyMessageDiv) {
-                emptyMessageDiv = document.createElement('div');
-                emptyMessageDiv.id = 'empty-search-message';
-                emptyMessageDiv.style.cssText = 'text-align: center; padding: 40px 20px; color: #999; font-size: 1em; margin-top: 20px;';
-                document.getElementById('categorias').parentNode.insertBefore(emptyMessageDiv, document.getElementById('categorias'));
-            }
-
-            if (searchText !== '' && totalVistos === 0) {
-                emptyMessageDiv.textContent = `Nenhum resultado encontrado para "${searchText}"`;
-                emptyMessageDiv.style.display = 'block';
-            } else {
-                emptyMessageDiv.style.display = 'none';
-            }
-        }
+        // Mostrar data atual no header
+        const hoje = new Date();
+        const diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+        const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+        const dataFormatada = `${diasSemana[hoje.getDay()]}, ${hoje.getDate()} ${meses[hoje.getMonth()]} ${hoje.getFullYear()}`;
+        document.getElementById('data-atual-header').textContent = dataFormatada;
 
         // Dados de autenticação
         const profissionaisData = PROFISSIONAIS_JSON;
@@ -2374,28 +2540,6 @@ def gerar_dashboard():
         profissionaisData.professionals.forEach(prof => {
             mapaProfissionais[prof.name.toLowerCase()] = prof;
         });
-
-        // Função de autenticação
-        // Trocar entre abas
-        function trocarAbaAuth(aba) {
-          // Esconder todas as abas
-          document.getElementById('auth-tab-profissional').classList.remove('active');
-          document.getElementById('auth-tab-outro').classList.remove('active');
-
-          // Remover classe active de todos os botões
-          document.querySelectorAll('.auth-tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-          });
-
-          // Mostrar aba selecionada
-          if (aba === 'profissional') {
-            document.getElementById('auth-tab-profissional').classList.add('active');
-            document.querySelectorAll('.auth-tab-btn')[0].classList.add('active');
-          } else {
-            document.getElementById('auth-tab-outro').classList.add('active');
-            document.querySelectorAll('.auth-tab-btn')[1].classList.add('active');
-          }
-        }
 
         // Autenticar como Profissional
         function autenticarProfissional() {
@@ -2540,6 +2684,8 @@ def gerar_dashboard():
 
     print(f"✅ Dashboard executivo criado!")
     print(f"📍 Arquivo: {output_file}")
+    if ramais_data and mapping_data:
+        print(f"📞 Funcionalidade de ramais integrada com sucesso!")
 
 if __name__ == '__main__':
     gerar_dashboard()

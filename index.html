@@ -104,33 +104,49 @@
         }
 
         .auth-btn:hover {
-            background: #0a2c4d;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
+            background: #0a2f52;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(13, 59, 102, 0.2);
+        }
+
+        .auth-btn:active {
+            transform: translateY(0);
+        }
+
+        .auth-error {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .auth-error.show {
+            display: block;
         }
 
         .auth-tabs {
             display: flex;
             gap: 10px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 2px solid #e8eef7;
         }
 
         .auth-tab-btn {
+            flex: 1;
+            padding: 10px;
             background: none;
             border: none;
-            padding: 12px 20px;
-            font-size: 1em;
-            font-weight: 600;
-            color: #999;
-            cursor: pointer;
             border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1em;
+            color: #666;
             transition: all 0.3s ease;
-            margin-bottom: -2px;
         }
 
         .auth-tab-btn.active {
             color: #0d3b66;
             border-bottom-color: #0d3b66;
+            font-weight: 600;
         }
 
         .auth-tab-btn:hover {
@@ -143,140 +159,149 @@
 
         .auth-tab-content.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
-        .auth-error {
-            color: #e63946;
-            margin-top: 15px;
-            font-size: 0.9em;
-            display: none;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .auth-error.show {
-            display: block;
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Header com banner */
-        .header-banner {
-            background: linear-gradient(135deg, #0d3b66 0%, #1a5f8f 100%);
-            padding: 30px 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 1.8s ease-out, background 2s ease-out;
+        .header {
+            background: linear-gradient(135deg, #0d3b66 0%, #1a5490 100%);
+            padding: 25px 30px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 24px rgba(13, 59, 102, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-banner:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-            background: linear-gradient(135deg, #1a5f8f 0%, #0d3b66 100%);
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-            padding: 0 20px;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
             flex: 1;
-            min-width: 250px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            text-align: right;
-            flex: 1;
-            min-width: 250px;
-            justify-content: flex-end;
+            min-width: 0;
         }
 
         .header-logo {
             font-family: 'Merriweather', serif;
-            color: white;
             font-size: 2em;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
         }
 
         .header-separator {
-            color: white;
-            font-size: 1.8em;
-            opacity: 0.6;
-            margin: 0 12px;
+            width: 2px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
         }
 
-        .header-title {
-            font-family: 'Merriweather', serif;
+        .header-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .header-info h2 {
             color: white;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: 0.5px;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 0 0 5px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .header-description {
-            color: white;
-            font-size: 0.85em;
-            opacity: 0.95;
-            text-align: right;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.95em;
+            line-height: 1.4;
         }
 
         .header-description p {
-            margin: 0;
-            line-height: 1.3;
-            letter-spacing: 0.3px;
+            margin: 2px 0;
         }
 
-        /* Container Principal */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        .header-right {
+            text-align: right;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.9em;
+            flex-shrink: 0;
         }
 
-        /* Controles */
+        .header-date {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
         .controls-bar {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             display: flex;
-            gap: 20px;
+            justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .date-selector {
             display: flex;
-            gap: 12px;
-            align-items: center;
+            gap: 10px;
         }
 
         .date-btn {
-            padding: 10px 20px;
-            border: 2px solid #e0e0e0;
+            padding: 10px 18px;
             background: white;
-            color: #0d3b66;
+            border: 2px solid #e8eef7;
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.95em;
-            font-weight: 600;
+            font-weight: 500;
+            color: #666;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         .date-btn:hover {
             border-color: #0d3b66;
-            background: #f0f5fa;
+            color: #0d3b66;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
         .date-btn.active {
@@ -293,8 +318,8 @@
 
         .search-input {
             width: 100%;
-            padding: 12px 18px;
-            border: 2px solid #e0e0e0;
+            padding: 12px 20px;
+            border: 2px solid #e8eef7;
             border-radius: 8px;
             font-size: 0.95em;
             transition: all 0.3s ease;
@@ -319,96 +344,64 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.9em;
-            font-weight: 600;
+            font-weight: 500;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
         }
 
-        .btn-primary {
+        .btn-toggle-sections {
+            background: white;
+            color: #0d3b66;
+            border: 2px solid #0d3b66;
+        }
+
+        .btn-toggle-sections:hover {
+            background: #0d3b66;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.15);
+        }
+
+        .btn-toggle-sections.collapsed {
             background: #0d3b66;
             color: white;
         }
 
-        .btn-primary:hover {
-            background: #0a2c4d;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
-        }
-
-        .btn-secondary {
-            background: #e8eef7;
-            color: #0d3b66;
-        }
-
-        .btn-secondary:hover {
-            background: #d8e2f0;
-        }
-
         .btn-contacts {
-            background: #1a5f8f;
+            background: #28a745;
             color: white;
         }
 
         .btn-contacts:hover {
-            background: #0d3b66;
+            background: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        }
+
+        .btn-ramais {
+            background: #6610f2;
+            color: white;
+        }
+
+        .btn-ramais:hover {
+            background: #520dc2;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(102, 16, 242, 0.3);
         }
 
         .btn-print {
-            background: #1a5f8f;
+            background: #6c757d;
             color: white;
         }
 
         .btn-print:hover {
-            background: #0d3b66;
+            background: #5a6268;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
         }
 
-        .btn-toggle-sections {
-            background: #f0f5fa;
-            color: #0d3b66;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-toggle-sections:hover {
-            background: #e0e8f5;
-        }
-
-        .btn-toggle-sections.collapsed {
-            background: #e0e8f5;
-        }
-
-        /* Triângulo dinâmico nos botões - usando mesmo do categoria-toggle */
-        .btn-toggle-sections::before {
+        .btn-print::before {
             content: '';
-            color: #0d3b66;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 10px solid #0d3b66;
-            margin-right: 8px;
-        }
-
-        .btn-toggle-sections.collapsed::before {
-            transform: rotate(180deg);
-        }
-
-        .date-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Triângulo para botão anterior (apontando para esquerda) */
-        .date-btn[data-dia="anterior"]::before {
-            content: '';
-            color: #0d3b66;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
             display: inline-block;
             width: 0;
             height: 0;
@@ -483,251 +476,290 @@
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        .contacts-search:focus {
-            outline: none;
-            border-color: #0d3b66;
         }
 
         .contacts-warning {
-            background-color: #fff3cd;
+            background: #fff3cd;
             border: 1px solid #ffc107;
-            border-radius: 6px;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-            color: #856404;
-        }
-
-        .contacts-warning p {
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .contacts-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
         }
 
         .contact-item {
-            background: #f8f9fb;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #0d3b66;
-            transition: all 0.3s ease;
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
         }
 
         .contact-item:hover {
-            background: #e8eef7;
-            transform: translateX(4px);
+            background: #f8f9fa;
         }
 
         .contact-name {
-            font-weight: 700;
-            color: #1a1a1a;
-            font-size: 0.95em;
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 5px;
         }
 
         .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 0.85em;
             color: #666;
-            margin-top: 6px;
-        }
-
-        .contact-email {
-            color: #666;
-        }
-
-        .contact-separator {
-            color: #ccc;
-            font-weight: 300;
+            font-size: 0.95em;
         }
 
         .contact-phone {
-            color: #0d3b66;
+            color: #28a745;
             text-decoration: none;
-            font-weight: 600;
-            cursor: pointer;
-            transition: color 0.2s ease;
         }
 
         .contact-phone:hover {
-            color: #1a5f8f;
+            text-decoration: underline;
         }
 
-        /* Estatísticas */
+        /* Modal de Ramais */
+        .ramais-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5000;
+            display: none;
+        }
+
+        .ramais-modal.active {
+            display: flex;
+        }
+
+        .ramais-modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .ramais-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8eef7;
+            padding-bottom: 15px;
+        }
+
+        .ramais-modal-header h2 {
+            color: #0d3b66;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .ramais-modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #666;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .ramais-modal-close:hover {
+            color: #0d3b66;
+        }
+
+        .ramais-search {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .ramais-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 12px;
+        }
+
+        .ramal-item {
+            padding: 12px 15px;
+            border: 1px solid #e8eef7;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .ramal-item:hover {
+            background: #f8fbff;
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+        }
+
+        .ramal-dept {
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .ramal-exts {
+            color: #28a745;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .ramal-exts-label {
+            color: #666;
+            font-size: 0.85em;
+            margin-right: 5px;
+        }
+
+        /* Estilo dos ramais no cabeçalho do setor */
+        .setor-ramais {
+            color: #6610f2;
+            font-weight: 500;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+
+        .date-display {
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #0d3b66;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+        }
+
+        .last-update {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .update-status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .update-status-indicator.sucesso {
+            background: #28a745;
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.4);
+        }
+
+        .update-status-indicator.pendente {
+            background: #ffc107;
+            box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+        }
+
+        .update-status-indicator.erro {
+            background: #dc3545;
+            box-shadow: 0 0 8px rgba(220, 53, 69, 0.4);
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin-bottom: 20px;
-            opacity: 0.85;
+            margin-bottom: 25px;
         }
 
         .stat-card {
             background: white;
-            padding: 18px;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-            border-left: 3px solid #0d3b66;
             text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #0d3b66;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         .stat-number {
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: 700;
             color: #0d3b66;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .stat-label {
-            font-size: 0.9em;
             color: #666;
-            font-weight: 500;
+            font-size: 0.9em;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Data Display */
-        .date-display {
-            text-align: center;
-            font-size: 1.2em;
-            color: #0d3b66;
-            font-weight: 600;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Última atualização */
-        .last-update {
-            text-align: right;
-            font-size: 0.85em;
-            color: #999;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 8px;
-            font-style: italic;
-        }
-
-        .update-status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            min-width: 12px;
-            min-height: 12px;
-            border-radius: 50%;
-            margin-left: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            vertical-align: middle;
-            background: #ccc;
-            box-shadow: 0 0 4px rgba(0,0,0,0.2);
-        }
-
-        .update-status-indicator:hover {
-            transform: scale(1.3);
-        }
-
-        .update-status-indicator.sucesso {
-            background: #4caf50 !important;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.6) !important;
-        }
-
-        .update-status-indicator.erro {
-            background: #f44336 !important;
-            box-shadow: 0 0 8px rgba(244, 67, 54, 0.6) !important;
-            animation: pulse-error 1.5s infinite;
-        }
-
-        .update-status-indicator.aviso {
-            background: #ff9800 !important;
-            box-shadow: 0 0 8px rgba(255, 152, 0, 0.6) !important;
-        }
-
-        @keyframes pulse-error {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        /* Descrição do Dashboard */
-        .dashboard-description {
-            background: #f0f5fa;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .dashboard-description p {
-            margin: 0;
-            color: #333;
-        }
-
-        .dashboard-description strong {
-            color: #0d3b66;
-            font-weight: 700;
-        }
-
-        /* Categoria */
         .category {
             background: white;
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .category:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         .categoria-header {
-            padding: 20px 25px;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8eef7 100%);
+            padding: 18px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            user-select: none;
             border-left: 4px solid #0d3b66;
-            background: linear-gradient(90deg, #f8fbff 0%, white 100%);
             transition: all 0.3s ease;
         }
 
         .categoria-header:hover {
-            background: linear-gradient(90deg, #f0f5fa 0%, #f8fbff 100%);
-        }
-
-        .categoria-header.expanded {
-            background: linear-gradient(90deg, #e8eef7 0%, #f0f5fa 100%);
+            background: linear-gradient(135deg, #e8eef7 0%, #d8dfe7 100%);
         }
 
         .categoria-header-text {
             display: flex;
-            flex-direction: column;
-            text-align: left;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1;
         }
 
         .categoria-nome {
+            font-size: 1.15em;
+            font-weight: 600;
             color: #0d3b66;
-            font-size: 1.1em;
-            margin-bottom: 3px;
         }
 
         .categoria-count {
-            color: #999;
-            font-size: 0.85em;
+            color: #666;
+            font-size: 0.9em;
             font-weight: 500;
         }
 
@@ -735,272 +767,206 @@
             color: #0d3b66;
             font-size: 1.2em;
             transition: transform 0.3s ease;
-            display: inline-block;
-            transform: rotate(180deg);
         }
 
-        .categoria-header.expanded .categoria-toggle {
-            transform: rotate(0deg);
+        .categoria-header:not(.expanded) .categoria-toggle {
+            transform: rotate(180deg);
         }
 
         .categoria-content {
             padding: 20px;
-            transition: max-height 0.3s ease;
+            transition: all 0.3s ease;
+            max-height: 10000px;
+            overflow: hidden;
         }
 
         .categoria-content.collapsed {
-            display: none;
+            max-height: 0;
+            padding: 0 20px;
         }
 
-        /* Layout de colunas para turnos */
         .turnos-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
         }
 
         .turno-coluna {
-            background: #ffffff;
+            background: #f8fbff;
             border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 12px;
+            padding: 15px;
+            border: 2px solid #e8eef7;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
         .turno-coluna:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            transform: translateX(4px);
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
         .turno-title {
-            font-weight: 700;
+            font-weight: 600;
             color: #0d3b66;
-            margin-bottom: 10px;
-            font-size: 0.95em;
-            letter-spacing: 0.3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8eef7;
+            font-size: 1em;
         }
 
-        .turno-title::before {
-            content: attr(data-count);
-            font-size: 0.85em;
-            background: #e8eef7;
-            color: #0d3b66;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-weight: 600;
+        .turno-title::after {
+            content: ' (' attr(data-count) ')';
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
         .profissionais-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .profissional {
+            padding: 12px;
             background: white;
-            padding: 14px;
-            border-radius: 8px;
-            border-left: 3px solid #0d3b66;
-            transition: all 0.3s ease;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            position: relative;
+            border-radius: 6px;
+            border: 1px solid #e8eef7;
+            transition: all 0.2s ease;
         }
 
         .profissional:hover {
-            transform: translateX(3px);
-            box-shadow: 0 4px 10px rgba(13, 59, 102, 0.1);
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            transform: translateX(2px);
         }
 
         .profissional-nome {
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 6px;
-            color: #1a1a1a;
-            font-size: 0.95em;
-            display: inline-block;
-            position: relative;
         }
 
         .profissional-nome-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            flex: 1;
         }
 
         .profissional-nome-text {
-            cursor: pointer;
-        }
-
-        .whatsapp-icon {
-            display: none;
-        }
-
-        .profissional-nome:hover .whatsapp-icon {
-            display: block;
-        }
-
-        .telefone-tooltip {
-            position: absolute;
-            background: #0d3b66;
-            color: white;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 0.8em;
             font-weight: 600;
-            white-space: nowrap;
-            pointer-events: auto;
-            cursor: pointer;
-            z-index: 1000;
-            bottom: 100%;
-            left: 0;
-            margin-bottom: 0;
-            padding-bottom: 15px;
-            opacity: 0;
-            transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.2);
-            user-select: none;
-            text-decoration: none;
-        }
-
-        .telefone-tooltip:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 12px rgba(13, 59, 102, 0.5), 0 2px 8px rgba(13, 59, 102, 0.2);
-            filter: drop-shadow(0 0 6px rgba(13, 59, 102, 0.4));
-        }
-
-        .profissional-nome:hover .telefone-tooltip,
-        .telefone-tooltip:hover {
-            opacity: 1;
-        }
-
-        .telefone-tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 14px;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid #0d3b66;
-        }
-
-        .telefone-icon {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>') no-repeat center / contain;
+            color: #1a1a1a;
+            font-size: 0.95em;
         }
 
         .profissional-info {
             font-size: 0.85em;
             color: #666;
-            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .info-label {
-            font-weight: 600;
-            color: #0d3b66;
-            display: inline;
+            font-weight: 500;
+            color: #999;
         }
 
-        /* ===== BADGES DE TURNO ===== */
         .turno-badge {
             display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
+            padding: 3px 8px;
+            border-radius: 4px;
             font-size: 0.75em;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin-left: 6px;
-            vertical-align: middle;
         }
 
         .turno-badge.matutino {
             background: #d4edda;
             color: #155724;
-            border: 1px solid #c3e6cb;
         }
 
         .turno-badge.vespertino {
             background: #fff3cd;
             color: #856404;
-            border: 1px solid #ffeaa7;
         }
 
         .turno-badge.noturno {
             background: #d1ecf1;
             color: #0c5460;
-            border: 1px solid #bee5eb;
-        }
-
-        .turno-badge.plantao {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-        .turno-badge.outro {
-            background: #e2e3e5;
-            color: #383d41;
-            border: 1px solid #d6d8db;
         }
 
         .turno-badge.badge-24h {
             background: #f8d7da;
             color: #721c24;
-            border: 1px solid #f5c6cb;
-            font-weight: 800;
-        }
-
-        .turno-badge.diurno {
-            background: linear-gradient(135deg, #ffe0b2 0%, #ffd699 100%);
-            color: #e65100;
-            border: 1px solid #ffb74d;
-            font-weight: 600;
         }
 
         .turno-badge.sobreaviso {
-            background: linear-gradient(135deg, #ff8fab 0%, #ff6b7a 100%);
-            color: #ffffff;
-            border: 1px solid #f72585;
-            font-weight: 600;
+            background: #e7e7ff;
+            color: #4a4a8a;
         }
 
         .turno-badge.rotina {
-            background: linear-gradient(135deg, #b5a7f5 0%, #8e7cc3 100%);
-            color: #ffffff;
-            border: 1px solid #6c5bb0;
+            background: #e2e3e5;
+            color: #383d41;
         }
 
-        /* ===== ABAS DE DATA ===== */
+        .turno-badge.plantao {
+            background: #ffdab9;
+            color: #8b4513;
+        }
+
+        .turno-badge.diurno {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .turno-badge.outro {
+            background: #e2e3e5;
+            color: #6c757d;
+        }
+
+        .telefone-tooltip {
+            color: #28a745;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .telefone-tooltip:hover {
+            color: #218838;
+            text-decoration: underline;
+        }
+
+        .telefone-icon {
+            width: 16px;
+            height: 16px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2328a745"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>') center/contain no-repeat;
+        }
+
         .data-tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e0e0e0;
-            overflow-x: auto;
-            padding-bottom: 0;
+            gap: 5px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e8eef7;
+            padding-bottom: 5px;
         }
 
         .data-tab {
-            padding: 14px 20px;
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: white;
             border: none;
-            background: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #666;
             border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            color: #666;
             transition: all 0.3s ease;
-            font-size: 0.95em;
-            white-space: nowrap;
+            border-radius: 8px 8px 0 0;
             position: relative;
             bottom: -2px;
         }
@@ -1155,6 +1121,7 @@
             .header,
             .dashboard-description,
             .contacts-modal,
+            .ramais-modal,
             .date-display,
             .categoria-toggle,
             .stats,
@@ -1286,7 +1253,13 @@
 
             /* Ocultar elementos flutuantes */
             .contacts-modal-overlay,
-            .contacts-modal {
+            .contacts-modal,
+            .ramais-modal {
+                display: none !important;
+            }
+
+            /* Ocultar ramais no print */
+            .setor-ramais {
                 display: none !important;
             }
         }
@@ -1304,16 +1277,16 @@
                 <button class="auth-tab-btn" onclick="trocarAbaAuth('outro')">Outro Usuário</button>
             </div>
 
-            <!-- Aba Profissional -->
-            <div id="auth-tab-profissional" class="auth-tab-content active">
-                <p>Digite seu email ou os últimos 4 dígitos do seu telefone:</p>
-                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
+            <!-- Conteúdo: Profissional -->
+            <div id="auth-content-profissional" class="auth-tab-content active">
+                <p>Entre com seu email ou últimos 4 dígitos do telefone cadastrado no app.</p>
+                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos do telefone" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
                 <button onclick="autenticarProfissional()" class="auth-btn">Acessar</button>
                 <p id="auth-error-prof" class="auth-error"></p>
             </div>
 
-            <!-- Aba Outro Usuário -->
-            <div id="auth-tab-outro" class="auth-tab-content">
+            <!-- Conteúdo: Outro Usuário -->
+            <div id="auth-content-outro" class="auth-tab-content">
                 <p>Acesso para administrativo, enfermagem e outros usuários.</p>
                 <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se você não possui acesso, entre em contato conosco para solicitar a senha.</p>
                 <input type="password" id="auth-input-outro" placeholder="Digite a senha" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarOutro()">
@@ -1338,27 +1311,42 @@
         </div>
     </div>
 
-    <!-- Main content wrapper for blur effect -->
-    <div id="main-content">
-    <!-- Header com Banner -->
-    <div class="header-banner">
-        <div class="header-content">
-            <div class="header-left">
-                <div class="header-logo">HRO</div>
-                <div class="header-separator">|</div>
-                <h2 class="header-title">Escala Médica</h2>
+    <!-- Modal de Ramais -->
+    <div id="ramais-modal" class="ramais-modal">
+        <div class="ramais-modal-content">
+            <div class="ramais-modal-header">
+                <h2>📞 Diretório Telefônico HRO</h2>
+                <button class="ramais-modal-close" onclick="fecharDiretorioRamais()">✕</button>
             </div>
-            <div class="header-right">
-                <div class="header-logo">ALVF</div>
-                <div class="header-description">
-                    <p>Associação Hospitalar<br>Lenoir Vargas Ferreira</p>
-                </div>
-            </div>
+            <input type="text" class="ramais-search" id="ramais-search" placeholder="Buscar por departamento ou ramal..." onkeyup="filtrarRamais()">
+            <div class="ramais-list" id="ramais-list"></div>
         </div>
     </div>
 
-    <!-- Container Principal -->
+    <!-- Main content wrapper for blur effect -->
+    <div id="main-content" class="blurred">
     <div class="container">
+        <!-- Header Banner -->
+        <div class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="header-logo">ALVF</div>
+                    <div class="header-separator"></div>
+                    <div class="header-info">
+                        <h2>Hospital Regional de Ourinhos</h2>
+                        <div class="header-description">
+                            <p>Escalas Médicas e Profissionais de Saúde</p>
+                            <p>Gestão Humanizada · Excelência no Cuidado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-date" id="data-atual-header"></div>
+                    <div>Atualização em tempo real</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Controles -->
         <div class="controls-bar">
             <div class="date-selector">
@@ -1371,6 +1359,7 @@
             <div class="action-buttons">
                 <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
+                <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">📞 Ramais</button>
             </div>
         </div>
 
@@ -1379,13 +1368,8 @@
 
         <!-- Última atualização -->
         <div class="last-update">
-            <div id="ultima-atualizacao"></div>
-            <div class="update-status-indicator" id="status-indicator" title="Status da última atualização automática"></div>
-        </div>
-
-        <!-- Descrição do Dashboard -->
-        <div class="dashboard-description">
-            <p><strong>Dashboard para visualização da escala médica do HRO.</strong> Atualizações diárias com manutenção do registro do dia anterior para consultas. Use as ferramentas de busca, filtros e expansão/colapso para navegar facilmente pelos profissionais e turnos. Passe o mouse sobre o nome de qualquer profissional para ver seu telefone e iniciar uma conversa via WhatsApp.</p>
+            <span class="update-status-indicator" id="status-indicator"></span>
+            <span id="ultima-atualizacao">Carregando...</span>
         </div>
 
         <!-- Estatísticas -->
@@ -1403,101 +1387,261 @@
 
         // Especialidades que devem ser divididas por turno
         const especialidadesComTurno = [
-            'ginecologia', 'obstet', 'hospitalista', 'pronto', 'urgência',
-            'plantão', 'clínica', 'comanejo', 'ucin', 'cuidados', 'uti', 'residência'
+            'plantão', 'sobreaviso', 'residência', 'uti', 'pronto', 'urgência',
+            'emergência', 'on-call', 'clinica', 'cirurgia', 'pediatria'
         ];
 
-        // Função para normalizar turnos
-        function normalizarTurno(turnoText, horarioText = '') {
+        // Dados de ramais e mapeamento
+        const ramaisData = {"departments": [{"name": "Adm Ger. de Operações - Diretor Técnico", "extensions": ["6569", "6510"]}, {"name": "Adm Ger. Assistencial - Ger. Financeiro", "extensions": ["6515", "6513"]}, {"name": "Adm Recepção - Secretaria - Aquário", "extensions": ["6517", "6511", "6613"]}, {"name": "Adm Sala de Reuniões - Jurídico", "extensions": ["6516", "6514", "6506"]}, {"name": "AFHRO Associação Funcionários", "extensions": ["6787"]}, {"name": "Almoxarifado", "extensions": ["6520", "6519"]}, {"name": "Assessoria de Imprensa", "extensions": ["6705"]}, {"name": "Ambulatório de Pele", "extensions": ["6755"]}, {"name": "Banco de Sangue", "extensions": ["6528", "6576"]}, {"name": "Banco de Leite - Manipulação", "extensions": ["8087", "8088"]}, {"name": "Berçário UCINCO", "extensions": ["6542"]}, {"name": "Cartório", "extensions": ["6594"]}, {"name": "Captação de Recursos", "extensions": ["6512"]}, {"name": "Central de Captação de Órgãos", "extensions": ["6523", "8097", "8096", "8095", "8060", "8098", "6534", "8093", "8094", "8059", "8066"]}, {"name": "Centro de Estudos", "extensions": ["6770"]}, {"name": "Centro Especialidades", "extensions": ["6708", "6546", "6543", "6544"]}, {"name": "CME", "extensions": ["6551", "6532", "6524"]}, {"name": "Caixa - Custos", "extensions": ["6530", "6778"]}, {"name": "C.C 4º Anestesistas - Arsenal", "extensions": ["8097", "8536"]}, {"name": "C.C 4º Coordenação - Escrituração", "extensions": ["8096", "8095"]}, {"name": "C.C 4º Farmácia - OPME", "extensions": ["8098", "6753"]}, {"name": "C.C 4º Recepção - Recuperação 1 - 2", "extensions": ["6534", "8093", "8094"]}, {"name": "C.C 5º Anestesia - Sala 01 – Sala 02", "extensions": ["8061", "8062", "8075"]}, {"name": "C.C 5º Recepção - Farmácia", "extensions": ["6654"]}, {"name": "C.C 5º Órteses Prótese - Arsenal", "extensions": ["8075", "8083"]}, {"name": "C.C 5º Prescrição Multiprofissional", "extensions": ["8077", "8078"]}, {"name": "C.C 5º Recuperação - Sala de Troca", "extensions": ["8076", "8085"]}, {"name": "C.C 5º Sala Cirúrgica 03 - Sala 04", "extensions": ["8081", "8082"]}, {"name": "C.O - Triagem - Obstetra", "extensions": ["6670", "6672", "6671"]}, {"name": "C.O Coordenação", "extensions": ["6540"]}, {"name": "Clínica Médica - Copa - Coordenação", "extensions": ["6560", "6561", "6559", "6564"]}, {"name": "Compras - Coordenação", "extensions": ["6509", "6508", "6507"]}, {"name": "Contabilidade - Contas - Coordenação", "extensions": ["6738", "6570", "6759"]}, {"name": "Convênios Posto Enf. - Copa", "extensions": ["6649", "6650"]}, {"name": "Cozinha - Refeitório", "extensions": ["6648", "6602"]}, {"name": "Cozinha Nutrição - Depósito", "extensions": ["6546", "6789"]}, {"name": "Dep. Pessoal - Recepção", "extensions": ["6715", "6718", "6716"]}, {"name": "Dep. Pessoal - Gerência – Entrevista", "extensions": ["6714", "6558"]}, {"name": "Direção de Enfermagem - Gerência", "extensions": ["6580", "6581"]}, {"name": "Emergência Farmácia - Plantão Médico", "extensions": ["6604", "6599"]}, {"name": "Emergência Gesso – Triagem – Posto", "extensions": ["6719", "6737", "6597"]}, {"name": "Emergência Intern. – Oftalmo - Apoio", "extensions": ["6739", "6623", "6539"]}, {"name": "Emergência Coordenação - Prescrição", "extensions": ["8058", "6598"]}, {"name": "Emergência Recepção - Escrituração", "extensions": ["6700", "6702", "6603"]}, {"name": "Endoscopia - Recepção - Coordenação", "extensions": ["6601", "6668", "6667"]}, {"name": "Ecocardiograma - Enfermeira", "extensions": ["6620", "6667"]}, {"name": "Estomaterepia", "extensions": ["6525"]}, {"name": "Farmácia Balcão - Farmácia Clinica", "extensions": ["8047", "8030"]}, {"name": "Farmácia Balcão Retirada - CAF", "extensions": ["8039", "8068"]}, {"name": "Farmácia Coordenação - Farmacêuticos", "extensions": ["8046", "6726", "6760"]}, {"name": "Faturamento Coordenação - AIH", "extensions": ["6606", "6607", "6521"]}, {"name": "Faturamento Recepção - Ambulatório", "extensions": ["6720", "6557"]}, {"name": "Faturamento Convênios", "extensions": ["6608", "6522", "6550"]}, {"name": "Faturamento Auditoria - Auditoria Externa", "extensions": ["6706", "6567", "6588"]}, {"name": "Financeiro", "extensions": ["6313", "6775"]}, {"name": "Financeiro Contas - Coordenação", "extensions": ["6792", "6626"]}, {"name": "Fiscal", "extensions": ["8043"]}, {"name": "Fisioterapia - Fonoaudiologia", "extensions": ["8050", "8074"]}, {"name": "GEDI Arquivo - GEDI Judicial", "extensions": ["6621", "8026"]}, {"name": "Gerente de Operações", "extensions": ["6566"]}, {"name": "Hemodinâmica - Laudos - Procedimentos", "extensions": ["8049", "8048", "8080"]}, {"name": "Hemodinâmica Enf. - Recuperação", "extensions": ["6761", "8037"]}, {"name": "IML", "extensions": ["6644"]}, {"name": "Internação - Segurança - Sisreg", "extensions": ["6617", "6619", "6616"]}, {"name": "Internação Coord. - Regulação - Supervisão", "extensions": ["6553", "6568", "6618"]}, {"name": "Lactário", "extensions": ["6647"]}, {"name": "Laboratório Secretaria - Triagem", "extensions": ["8060", "6773", "8065"]}, {"name": "Laboratório Coord. - Microbiologia", "extensions": ["8064", "8063"]}, {"name": "Laboratório Produção Laboratorial", "extensions": ["8059", "8066"]}, {"name": "Lavanderia - Coordenação", "extensions": ["6628", "6627", "6592"]}, {"name": "Limpeza", "extensions": ["6629"]}, {"name": "Manutenção Secretária - Gerência", "extensions": ["6634", "6655"]}, {"name": "Manutenção - Mecânica - Elétrica", "extensions": ["6666", "6656", "6632"]}, {"name": "Manutenção Caldeira - Marcenaria", "extensions": ["6630", "6633"]}, {"name": "Maternidade - Coordenação", "extensions": ["6636", "6637", "6638"]}, {"name": "Maternidade Higiene RN - Copa", "extensions": ["6570"]}, {"name": "Neurologia - Copa", "extensions": ["6670", "6672", "6671"]}, {"name": "Neurologia Ambulatório", "extensions": ["6658"]}, {"name": "NIR Oncologia 8º Andar", "extensions": ["8024", "8008"]}, {"name": "NIR Ortopedia / Neurologia - Exames", "extensions": ["6779", "6764"]}, {"name": "NIR Cirúrgico - Coordenação", "extensions": ["6537", "6645", "6625"]}, {"name": "Núcleo Epidemiologia", "extensions": ["8044"]}, {"name": "Nutricionista Coordenação", "extensions": ["6639"]}, {"name": "Onco Posto 1 Posto 2 - Onco Fisioterapia", "extensions": ["8003", "8004", "8055"]}, {"name": "Onco Escrituraria - Copa - Prescrição", "extensions": ["8002", "8054", "8032"]}, {"name": "Onco Recepção 1º Andar", "extensions": ["8027", "6533"]}, {"name": "Onco Ped. Recep. - Aplicação - Dentista", "extensions": ["6582", "8090"]}, {"name": "Onco Ped. Enfermagem - Consultório", "extensions": ["8092", "8089", "8091"]}, {"name": "Ortopedia Recepção - Ambulatório", "extensions": ["6614", "6624"]}, {"name": "Ortopedia Consultórios Ambulatório", "extensions": ["6783", "6774"]}, {"name": "Orçamentos - Convênios", "extensions": ["6653"]}, {"name": "Patrimônio - Pastoral - Psicologia", "extensions": ["6586", "6784", "6767"]}, {"name": "Posto A - Copa - Coordenação", "extensions": ["6547", "6549", "6548"]}, {"name": "Posto A/B Escrituração", "extensions": ["6746"]}, {"name": "Posto B - Copa", "extensions": ["6573", "6574", "6572"]}, {"name": "Posto - Prescrição", "extensions": ["6681", "6682"]}, {"name": "Pronto Atendimento - Consultório", "extensions": ["6760"]}, {"name": "Quimio - APAC - Prescrição", "extensions": ["8024", "8008"]}, {"name": "Quimio Atenção Farmacêutica", "extensions": ["8009"]}, {"name": "Quimio Administrativo - Nutrição", "extensions": ["6797", "8015"]}, {"name": "Quimio Farmácia", "extensions": ["8010", "8011", "8012"]}, {"name": "Quimio Recepção - Internação", "extensions": ["6524", "8069"]}, {"name": "Quimio Enf. - Coord. - Triagem", "extensions": ["8016", "8014", "8022"]}, {"name": "Quimio Tratamento 01 - 02", "extensions": ["8013", "8051"]}, {"name": "Qualidade e Seg. Paciente - Coord", "extensions": ["6609", "8067"]}, {"name": "Radioterapia - Enfermagem", "extensions": ["6766", "6704"]}, {"name": "Radioterapia Técnicos", "extensions": ["6765", "6504"]}, {"name": "Radioterapia Sala Multi", "extensions": ["6758", "6772"]}, {"name": "Radioterapia Físico - Simulador", "extensions": ["6771", "6577"]}, {"name": "Radioterapia Oficina - Braquiterapia", "extensions": ["6754"]}, {"name": "Ressonância Recepção", "extensions": ["6661"]}, {"name": "Ressonância Técnicos", "extensions": ["6662"]}, {"name": "Residência Orto - Pedi - Médica", "extensions": ["6762", "6731", "6554"]}, {"name": "Residências Obstetra Anestesia Neuro", "extensions": ["6523", "6734", "6679"]}, {"name": "RX Recepção - Coordenação", "extensions": ["6723", "6585"]}, {"name": "RX Laudos - Técnicos", "extensions": ["6722", "6721"]}, {"name": "Sala Uno - Sala de Vacina", "extensions": ["6592", "6724"]}, {"name": "Segurança Coordenador", "extensions": ["6701"]}, {"name": "Serviço Social - Ouvidoria", "extensions": ["6578"]}, {"name": "Sesmt Medicina do Trabalho", "extensions": ["6751", "8001"]}, {"name": "Sesmt Enfermeiro - Sesmt Médica", "extensions": ["6752", "6643"]}, {"name": "Sesmt Segurança - Engenheiro", "extensions": ["6750", "8025", "6531"]}, {"name": "STI Sistemas", "extensions": ["6763", "6611"]}, {"name": "STI Suporte Técnico", "extensions": ["6591", "6590"]}, {"name": "SAC/Ouvidoria", "extensions": ["8078"]}, {"name": "Tomografia - Técnicos", "extensions": ["6664"]}, {"name": "TRR", "extensions": ["6593"]}, {"name": "Ultrassom 01 - Ultrassom 02", "extensions": ["6761", "6728"]}, {"name": "UTI Geral", "extensions": ["8041", "8040", "8038"]}, {"name": "UTI Geral III - Plantão Médico", "extensions": ["8029", "8028"]}, {"name": "UTI - Plantão Médico", "extensions": ["8034", "8005"]}, {"name": "UTI Escrituraria - Coordenação", "extensions": ["6615", "8033"]}, {"name": "UTI Neo - Escrituraria - Plantão Med.", "extensions": ["8036"]}, {"name": "UTI Pediátrica - Plantão Médico", "extensions": ["8092", "8089", "8091"]}]};
+        const setorRamaisMapping = {"sector_mappings": [{"dashboard_sector": "Alojamento Conjunto", "ramais_departments": ["Maternidade - Coordenação"]}, {"dashboard_sector": "Ambulatório De Oncologia Pediátrica", "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista", "Onco Ped. Enfermagem - Consultório"]}, {"dashboard_sector": "Ambulatório Oncologia - Triagem", "ramais_departments": ["Endoscopia - Recepção - Coordenação"]}, {"dashboard_sector": "Atendimento Pediátrico - Plantão", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Bucomaxilo Sobreaviso", "ramais_departments": ["Estomaterepia"]}, {"dashboard_sector": "Cardiologia - Sobreaviso", "ramais_departments": ["Ecocardiograma - Enfermeira"]}, {"dashboard_sector": "Cirurgia Geral - Sobreaviso", "ramais_departments": ["Residências Obstetra Anestesia Neuro"]}, {"dashboard_sector": "Cirurgia Pediátrica - Sobreaviso", "ramais_departments": ["C.C 4º Anestesistas - Arsenal"]}, {"dashboard_sector": "Cirurgia Torácica - Sobreaviso", "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]}, {"dashboard_sector": "Cirurgia Vascular - Sobreaviso", "ramais_departments": ["C.C 5º Sala Cirúrgica 03 - Sala 04"]}, {"dashboard_sector": "Clínica Médica", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Endoscopia - Sobreaviso", "ramais_departments": ["Endoscopia - Recepção - Coordenação"]}, {"dashboard_sector": "Ginecologia e Obstetrícia - Plantão", "ramais_departments": ["Maternidade - Coordenação", "C.O - Triagem - Obstetra"]}, {"dashboard_sector": "Hemodinâmica - Sobreaviso Cardiologia", "ramais_departments": ["Hemodinâmica - Laudos - Procedimentos"]}, {"dashboard_sector": "Hospitalista", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Nefrologia - Sobreaviso", "ramais_departments": ["Laboratório Secretaria - Triagem"]}, {"dashboard_sector": "Neurocirurgia - Sobreaviso", "ramais_departments": ["Neurologia - Copa"]}, {"dashboard_sector": "Neurologia/U-AVC Integral - Sobreaviso", "ramais_departments": ["Neurologia Ambulatório"]}, {"dashboard_sector": "Núcleo Interno de Regulação (NIR) Médico Regulador", "ramais_departments": ["NIR Cirúrgico - Coordenação"]}, {"dashboard_sector": "Oftalmologia Sobreaviso", "ramais_departments": ["Emergência Intern. – Oftalmo - Apoio"]}, {"dashboard_sector": "Oncologia Pediátrica - Sobreaviso", "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista"]}, {"dashboard_sector": "Ortopedia e Traumatologia - Sobreaviso", "ramais_departments": ["Ortopedia Recepção - Ambulatório", "Ortopedia Consultórios Ambulatório"]}, {"dashboard_sector": "Pronto Socorro HRO - Plantão", "ramais_departments": ["Emergência Farmácia - Plantão Médico", "Emergência Coordenação - Prescrição"]}, {"dashboard_sector": "R2 Clínica Médica UTI", "ramais_departments": ["UTI Geral"]}, {"dashboard_sector": "Residência de Cirurgia Geral", "ramais_departments": ["C.C 4º Coordenação - Escrituração"]}, {"dashboard_sector": "Residência de Clínica Médica", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Residência de Ginecologia e Obstetrícia", "ramais_departments": ["Maternidade - Coordenação"]}, {"dashboard_sector": "Transplante - Sobreaviso Cirurgia", "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]}, {"dashboard_sector": "Ultrassonografia - Sobreaviso", "ramais_departments": ["Ultrassom 01 - Ultrassom 02"]}, {"dashboard_sector": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "ramais_departments": ["Berçário UCINCO"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto I", "ramais_departments": ["UTI Geral"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto II", "ramais_departments": ["UTI Geral III - Plantão Médico"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto III", "ramais_departments": ["UTI Geral III - Plantão Médico"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "ramais_departments": ["Berçário UCINCO"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Pediátrica", "ramais_departments": ["UTI Pediátrica - Plantão Médico"]}, {"dashboard_sector": "Urologia Sobreaviso", "ramais_departments": ["Ortopedia Consultórios Ambulatório"]}]};
+
+        // Função para obter ramais de um setor
+        function obterRamaisSetor(setorNome) {
+            if (!ramaisData.departments || !setorRamaisMapping.sector_mappings) {
+                return [];
+            }
+
+            // Procurar o setor no mapeamento
+            const mapping = setorRamaisMapping.sector_mappings.find(m => m.dashboard_sector === setorNome);
+            if (!mapping) {
+                return [];
+            }
+
+            // Coletar todos os ramais dos departamentos mapeados
+            const extensions = [];
+            mapping.ramais_departments.forEach(deptName => {
+                const dept = ramaisData.departments.find(d => d.name === deptName);
+                if (dept) {
+                    extensions.push(...dept.extensions);
+                }
+            });
+
+            return extensions;
+        }
+
+        // Função para formatar ramais para exibição
+        function formatarRamaisDisplay(extensions) {
+            if (!extensions || extensions.length === 0) {
+                return '';
+            }
+
+            // Remover duplicatas
+            const uniqueExts = [...new Set(extensions)];
+
+            // Limitar exibição a 5 ramais
+            if (uniqueExts.length > 5) {
+                const extsStr = uniqueExts.slice(0, 5).join(', ');
+                const allExtsStr = uniqueExts.join(', ');
+                return ` <span class="setor-ramais" title="${allExtsStr}">(${extsStr}...)</span>`;
+            } else {
+                const extsStr = uniqueExts.join(', ');
+                return ` <span class="setor-ramais">(${extsStr})</span>`;
+            }
+        }
+
+        // Funções para o modal de ramais
+        function abrirDiretorioRamais() {
+            const modal = document.getElementById('ramais-modal');
+            modal.classList.add('active');
+            renderizarDiretorioRamais();
+        }
+
+        function fecharDiretorioRamais() {
+            const modal = document.getElementById('ramais-modal');
+            modal.classList.remove('active');
+        }
+
+        function renderizarDiretorioRamais() {
+            const ramaisList = document.getElementById('ramais-list');
+
+            if (!ramaisData.departments) {
+                ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
+                return;
+            }
+
+            const departamentos = [...ramaisData.departments].sort((a, b) =>
+                a.name.localeCompare(b.name, 'pt-BR')
+            );
+
+            ramaisList.innerHTML = departamentos.map(dept => {
+                const extsStr = dept.extensions.join(', ');
+                return `
+                    <div class="ramal-item" data-search="${dept.name.toLowerCase()} ${extsStr}">
+                        <div class="ramal-dept">${dept.name}</div>
+                        <div class="ramal-exts">
+                            <span class="ramal-exts-label">Ramais:</span>
+                            ${extsStr}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filtrarRamais() {
+            const searchText = document.getElementById('ramais-search').value.toLowerCase();
+            const ramalItems = document.querySelectorAll('.ramal-item');
+
+            ramalItems.forEach(item => {
+                const searchData = item.getAttribute('data-search');
+                if (searchData.includes(searchText)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Fechar modal de ramais ao clicar fora
+        document.getElementById('ramais-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharDiretorioRamais();
+            }
+        });
+
+        function trocarAbaAuth(aba) {
+            // Trocar aba ativa
+            document.querySelectorAll('.auth-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.auth-tab-content').forEach(content => content.classList.remove('active'));
+
+            if (aba === 'profissional') {
+                document.querySelector('.auth-tab-btn:first-child').classList.add('active');
+                document.getElementById('auth-content-profissional').classList.add('active');
+            } else {
+                document.querySelector('.auth-tab-btn:last-child').classList.add('active');
+                document.getElementById('auth-content-outro').classList.add('active');
+            }
+
+            // Limpar mensagens de erro
+            document.querySelectorAll('.auth-error').forEach(err => err.classList.remove('show'));
+        }
+
+        function filtrarProfissionais() {
+            const search = document.getElementById('search').value.toLowerCase().trim();
+            const profissionais = document.querySelectorAll('.profissional');
+
+            if (!search) {
+                profissionais.forEach(prof => prof.style.display = 'block');
+                return;
+            }
+
+            let visibleCount = 0;
+            profissionais.forEach(prof => {
+                const searchText = prof.getAttribute('data-search') || '';
+                if (searchText.includes(search)) {
+                    prof.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    prof.style.display = 'none';
+                }
+            });
+
+            console.log(`Busca: "${search}" - ${visibleCount} resultados`);
+        }
+
+        function normalizarTurno(turnoText) {
             if (!turnoText) return { ordem: 99, nome: 'Outro' };
 
             const turno = turnoText.toLowerCase().trim();
             const turnoOriginal = turnoText.trim();
-            const horario = horarioText ? horarioText.toLowerCase() : '';
 
-            // Se o turno for genérico (tipo "Res. Clínica Médica") e temos horário, detectar pelo horário
-            if (turno.includes('res.') || turno.includes('residência') || turno.includes('residencia')) {
-                if (horario && horario.includes('/')) {
-                    try {
-                        const [entrada, saida] = horario.split('/');
-                        const entradaH = parseInt(entrada.split(':')[0]);
-                        const saidaH = parseInt(saida.split(':')[0]);
-                        // Detectar diurno (07:00-19:00) - entrada 07, saída 19
-                        if (entradaH === 7 && saidaH === 19) {
-                            return { ordem: 1, nome: 'Plantão Diurno' };
-                        }
-                        // Detectar por hora de entrada
-                        if (entradaH >= 6 && entradaH < 12) return { ordem: 1, nome: 'Plantão Matutino' };
-                        if (entradaH >= 12 && entradaH < 18) return { ordem: 2, nome: 'Plantão Vespertino' };
-                        if (entradaH >= 18 || entradaH < 6) return { ordem: 3, nome: 'Plantão Noturno' };
-                    } catch (e) {}
-                }
-                // Fallback: retorna como genérico
-                return { ordem: 1, nome: turnoOriginal };
-            }
-
-            // HOSPITALISTA - COMANEJO vs URGÊNCIA
+            // HOSPITALISTA - COMANEJO vs URGÊNCIA (especial)
             if (turno.includes('hospitalista')) {
                 if (turno.includes('comanejo')) {
-                    if (turno.includes('matutino') || turno.includes('07:00')) return { ordem: 1, nome: 'Comanejo Matutino' };
-                    if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return { ordem: 2, nome: 'Comanejo Vespertino' };
-                    if (turno.includes('noturno') || turno.includes('19:00')) return { ordem: 3, nome: 'Comanejo Noturno' };
+                    if (turno.includes('matutino') || turno.includes('07:00')) {
+                        return { ordem: 1, nome: 'Comanejo Matutino' };
+                    } else if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) {
+                        return { ordem: 2, nome: 'Comanejo Vespertino' };
+                    } else if (turno.includes('noturno') || turno.includes('19:00')) {
+                        return { ordem: 3, nome: 'Comanejo Noturno' };
+                    }
                 } else if (turno.includes('urgência') || turno.includes('urgencia')) {
-                    if (turno.includes('matutino') || turno.includes('07:00')) return { ordem: 1, nome: 'Urgência Matutino' };
-                    if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) return { ordem: 2, nome: 'Urgência Vespertino' };
-                    if (turno.includes('noturno') || turno.includes('19:00')) return { ordem: 3, nome: 'Urgência Noturno' };
+                    if (turno.includes('matutino') || turno.includes('07:00')) {
+                        return { ordem: 1, nome: 'Urgência Matutino' };
+                    } else if (turno.includes('vespertino') || turno.includes('tarde') || turno.includes('13:00')) {
+                        return { ordem: 2, nome: 'Urgência Vespertino' };
+                    } else if (turno.includes('noturno') || turno.includes('19:00')) {
+                        return { ordem: 3, nome: 'Urgência Noturno' };
+                    }
                 }
             }
 
-            // MATUTINO
-            if (['matutino', 'matutina', 'manhã', 'madrugada'].some(x => turno.includes(x)) || ['07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
-                if (turno.includes('final')) return { ordem: 1, nome: 'Manhã - Final de Semana' };
-                if (turno.includes('p1')) return { ordem: 1, nome: 'Plantão Matutino - P1' };
-                if (turno.includes('p2')) return { ordem: 1, nome: 'Plantão Matutino - P2' };
+            // MATUTINO (Ordem 1)
+            if (['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00'].some(x => turno.includes(x))) {
+                if (turno.includes('final')) {
+                    return { ordem: 1, nome: 'Manhã - Final de Semana' };
+                }
+                if (turno.includes('p1')) {
+                    return { ordem: 1, nome: 'Plantão Matutino - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 1, nome: 'Plantão Matutino - P2' };
+                }
                 return { ordem: 1, nome: 'Plantão Matutino' };
             }
 
-            // VESPERTINO
-            if (['vespertino', 'vespertina', 'tarde'].some(x => turno.includes(x)) || ['13:00', '14:00'].some(x => turno.includes(x))) {
-                if (turno.includes('final')) return { ordem: 2, nome: 'Tarde - Final de Semana' };
-                if (turno.includes('p1')) return { ordem: 2, nome: 'Plantão Vespertino - P1' };
-                if (turno.includes('p2')) return { ordem: 2, nome: 'Plantão Vespertino - P2' };
+            // VESPERTINO (Ordem 2)
+            if (['vespertino', 'vespertina', 'tarde', '13:00', '14:00'].some(x => turno.includes(x))) {
+                if (turno.includes('final')) {
+                    return { ordem: 2, nome: 'Tarde - Final de Semana' };
+                }
+                if (turno.includes('p1')) {
+                    return { ordem: 2, nome: 'Plantão Vespertino - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 2, nome: 'Plantão Vespertino - P2' };
+                }
                 return { ordem: 2, nome: 'Plantão Vespertino' };
             }
 
-            // NOTURNO
-            if (['noturno', 'noturna', 'noite'].some(x => turno.includes(x)) || turno.includes('19:00')) {
-                if (turno.includes('p1')) return { ordem: 3, nome: 'Plantão Noturno - P1' };
-                if (turno.includes('p2')) return { ordem: 3, nome: 'Plantão Noturno - P2' };
+            // NOTURNO (Ordem 3)
+            if (['noturno', 'noturna', 'noite', '19:00'].some(x => turno.includes(x))) {
+                if (turno.includes('p1')) {
+                    return { ordem: 3, nome: 'Plantão Noturno - P1' };
+                } else if (turno.includes('p2')) {
+                    return { ordem: 3, nome: 'Plantão Noturno - P2' };
+                }
                 return { ordem: 3, nome: 'Plantão Noturno' };
             }
 
-            // DIURNO (07:00-19:00)
-            if (turno === 'diurno') return { ordem: 1, nome: 'Plantão Diurno' };
+            // DIURNO (07:00-19:00) - Residência
+            if (turno === 'diurno') {
+                return { ordem: 1, nome: 'Plantão Diurno' };
+            }
 
-            // DIA / NOITE (legacy)
-            if (turno === 'dia') return { ordem: 1, nome: 'Plantão Diurno' };
-            if (turno === 'noite') return { ordem: 3, nome: 'Período Noturno' };
+            // DIA / NOITE (Residência - legacy)
+            if (turno === 'dia') {
+                return { ordem: 1, nome: 'Plantão Diurno' };
+            } else if (turno === 'noite') {
+                return { ordem: 3, nome: 'Período Noturno' };
+            }
 
-            // P1, P2, P3, P4
-            if (['p1', 'p2', 'p3', 'p4'].includes(turno)) return { ordem: 2, nome: 'Plantão ' + turno.toUpperCase() };
+            // P1, P2, P3, P4 (Plantões standalone)
+            if (['p1', 'p2', 'p3', 'p4'].includes(turno)) {
+                return { ordem: 2, nome: `Plantão ${turno.toUpperCase()}` };
+            }
 
-            // ROTINA
+            // ROTINA (Ordem 4)
             if (['rotina', 'regular', 'alojamento'].some(x => turno.includes(x))) {
-                if (turno.includes('matutino')) return { ordem: 1, nome: 'Rotina Matutino' };
-                if (turno.includes('vespertino') || turno.includes('tarde')) return { ordem: 2, nome: 'Rotina Vespertino' };
-                if (turno.includes('noturno') || turno.includes('noite')) return { ordem: 3, nome: 'Rotina Noturno' };
-                if (turno.includes('final')) return { ordem: 4, nome: 'Rotina - Final de Semana' };
+                if (turno.includes('matutino')) {
+                    return { ordem: 1, nome: 'Rotina Matutino' };
+                } else if (turno.includes('vespertino') || turno.includes('tarde')) {
+                    return { ordem: 2, nome: 'Rotina Vespertino' };
+                } else if (turno.includes('noturno') || turno.includes('noite')) {
+                    return { ordem: 3, nome: 'Rotina Noturno' };
+                } else if (turno.includes('final')) {
+                    return { ordem: 4, nome: 'Rotina - Final de Semana' };
+                }
                 return { ordem: 4, nome: 'Rotina' };
             }
 
-            // SOBREAVISO
+            // SOBREAVISO (Ordem 5)
             if (turno.includes('sobreaviso')) {
                 if (turno.includes('cardiologia')) return { ordem: 5, nome: 'Sobreaviso Cardiologia' };
                 if (turno.includes('urologia')) return { ordem: 5, nome: 'Sobreaviso Urologia' };
                 if (turno.includes('cirurgia')) {
-                    if (turno.includes('equipe 1') || turno.includes(' 1')) return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
-                    if (turno.includes('equipe 2') || turno.includes(' 2')) return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 2' };
+                    if (turno.includes('equipe 1') || turno.includes(' 1')) {
+                        return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
+                    } else if (turno.includes('equipe 2') || turno.includes(' 2')) {
+                        return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 2' };
+                    }
                     return { ordem: 5, nome: 'Sobreaviso Cirurgia' };
                 }
                 if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
@@ -1685,7 +1829,7 @@
         }
 
         function renderizarEscala() {
-            console.log('🔄 Dashboard v3f40038 renderizado');
+            console.log('🔄 Dashboard v3-ramais renderizado');
             const dados = escalas[diaSelecionado];
             document.getElementById('data-selecionada').textContent = dados.data;
 
@@ -1702,34 +1846,37 @@
 
             if (statusAtualizacao === 'sucesso') {
                 statusIndicator.classList.add('sucesso');
-                statusIndicator.title = 'Atualização bem-sucedida';
+            } else if (statusAtualizacao === 'pendente') {
+                statusIndicator.classList.add('pendente');
             } else {
                 statusIndicator.classList.add('erro');
-                const erro = escalas.mensagem_erro || 'Erro desconhecido';
-                statusIndicator.title = `Erro na atualização: ${erro}`;
             }
 
             const porSetor = {};
-            dados.registros.forEach(reg => {
-                if (!porSetor[reg.setor]) porSetor[reg.setor] = [];
-                porSetor[reg.setor].push(reg);
+            dados.profissionais.forEach(prof => {
+                if (!porSetor[prof.setor]) {
+                    porSetor[prof.setor] = [];
+                }
+                porSetor[prof.setor].push(prof);
             });
 
+            const setores = Object.keys(porSetor).sort();
             let html = '';
-            Object.keys(porSetor).sort().forEach(setor => {
+
+            setores.forEach(setor => {
                 const profissionais = porSetor[setor];
+                const ramaisSetor = obterRamaisSetor(setor);
+                const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
 
                 if (temMultiplosTurnos(setor)) {
                     const porTurno = {};
                     const turnoOrdem = {};
 
                     profissionais.forEach(prof => {
-                        const turnoOriginal = prof.tipo_turno || 'Outro';
-                        const { ordem, nome } = normalizarTurno(turnoOriginal, prof.horario);
-
+                        const { ordem, nome } = normalizarTurno(prof.tipo_turno);
+                        turnoOrdem[nome] = ordem;
                         if (!porTurno[nome]) {
                             porTurno[nome] = [];
-                            turnoOrdem[nome] = ordem;
                         }
                         porTurno[nome].push(prof);
                     });
@@ -1740,7 +1887,7 @@
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
@@ -1786,7 +1933,7 @@
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                                 <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
@@ -1887,88 +2034,12 @@
             }
         }
 
-        function filtrarProfissionais() {
-            const searchText = document.getElementById('search').value.toLowerCase();
-            const profissionais = document.querySelectorAll('.profissional');
-            let totalVistos = 0;
-
-            console.log('Filtrando por:', searchText);
-            console.log('Total profissionais encontrados:', profissionais.length);
-
-            // Log first few data-search values for debugging
-            if (searchText !== '' && profissionais.length > 0) {
-                for (let i = 0; i < Math.min(3, profissionais.length); i++) {
-                    const dataSearch = profissionais[i].getAttribute('data-search');
-                    console.log(`Prof ${i}: data-search="${dataSearch}"`);
-                }
-            }
-
-            profissionais.forEach(prof => {
-                // Read the combined data-search attribute that was populated by renderizarEscala
-                const texto = prof.getAttribute('data-search') || '';
-
-                if (searchText === '' || texto.includes(searchText)) {
-                    prof.style.display = 'block';
-                    totalVistos++;
-                } else {
-                    prof.style.display = 'none';
-                }
-            });
-
-            console.log('Profissionais vistos:', totalVistos);
-
-            // Ocultar turno-coluna vazia (sem profissionais vistos)
-            document.querySelectorAll('.turno-coluna').forEach(turnoColuna => {
-                const vistosTurno = Array.from(turnoColuna.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
-                if (searchText === '') {
-                    turnoColuna.style.display = 'block';
-                } else {
-                    turnoColuna.style.display = vistosTurno > 0 ? 'block' : 'none';
-                }
-            });
-
-            document.querySelectorAll('.category').forEach(category => {
-                const content = category.querySelector('.categoria-content');
-                const header = category.querySelector('.categoria-header');
-
-                // Check for visible turno-coluna elements (for multi-turno sectors)
-                const colunas = Array.from(content.querySelectorAll('.turno-coluna')).filter(c => c.style.display !== 'none').length;
-
-                // Also check for visible professionals directly in content (for single-turno sectors)
-                const profissionaisVisiveis = Array.from(content.querySelectorAll('.profissional')).filter(p => p.style.display !== 'none').length;
-
-                if (searchText === '') {
-                    category.style.display = 'block';
-                } else {
-                    // Show category if there are visible turno-colunas OR visible professionals
-                    if (colunas > 0 || profissionaisVisiveis > 0) {
-                        category.style.display = 'block';
-                        content.classList.remove('collapsed');
-                        header.classList.add('expanded');
-                    } else {
-                        category.style.display = 'none';
-                    }
-                }
-            });
-
-            console.log('Categorias visíveis após filtro:', Array.from(document.querySelectorAll('.category')).filter(c => c.style.display !== 'none').length);
-
-            // Mostrar mensagem se não encontrar nada
-            let emptyMessageDiv = document.getElementById('empty-search-message');
-            if (!emptyMessageDiv) {
-                emptyMessageDiv = document.createElement('div');
-                emptyMessageDiv.id = 'empty-search-message';
-                emptyMessageDiv.style.cssText = 'text-align: center; padding: 40px 20px; color: #999; font-size: 1em; margin-top: 20px;';
-                document.getElementById('categorias').parentNode.insertBefore(emptyMessageDiv, document.getElementById('categorias'));
-            }
-
-            if (searchText !== '' && totalVistos === 0) {
-                emptyMessageDiv.textContent = `Nenhum resultado encontrado para "${searchText}"`;
-                emptyMessageDiv.style.display = 'block';
-            } else {
-                emptyMessageDiv.style.display = 'none';
-            }
-        }
+        // Mostrar data atual no header
+        const hoje = new Date();
+        const diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+        const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+        const dataFormatada = `${diasSemana[hoje.getDay()]}, ${hoje.getDate()} ${meses[hoje.getMonth()]} ${hoje.getFullYear()}`;
+        document.getElementById('data-atual-header').textContent = dataFormatada;
 
         // Dados de autenticação
         const profissionaisData = {"professionals": [{"name": "Fabiane Scheffer Reginatto", "email": "fabischeffer@hotmail.com", "phone": "(49) 99136-6431", "last4": "6431"}, {"name": "Patricia Carla De Lima", "email": "Patricialima1407@gmail.com", "phone": "(49) 99116-3404", "last4": "3404"}, {"name": "Isabela Maran", "email": "Isabelamaranped@gmail.com", "phone": "(41) 98706-2929", "last4": "2929"}, {"name": "Elaine Aparecida Forgiarini", "email": "elaineforgiarini@gmail.com", "phone": "(55) 98141-0589", "last4": "0589"}, {"name": "Guilherme Macena Barreto Junior", "email": "guilherme.barreto23@gmail.com", "phone": "(93) 99176-2753", "last4": "2753"}, {"name": "Carlos Foga\u00e7a", "email": "fogaca@unochapeco.edu.br", "phone": "(49) 99987-7255", "last4": "7255"}, {"name": "Andressa Daga", "email": "andressadaga@gmail.com", "phone": "(51) 98115-4241", "last4": "4241"}, {"name": "Mateus Ceresoli Baptistella", "email": "mateusbaptistella@yahoo.com.br", "phone": "(54) 99975-7413", "last4": "7413"}, {"name": "Ricardo Marcelus Araujo Filipak", "email": "rfilipak@uol.com.br", "phone": "(49) 99987-1234", "last4": "1234"}, {"name": "Dantas Luis Lavall da Silva", "email": "dantaslls91@gmail.com", "phone": "(49) 98805-4819", "last4": "4819"}, {"name": "Helio Augusto Santos Machado", "email": "helioasm1@hotmail.com", "phone": "(49) 99987-0545", "last4": "0545"}, {"name": "Fernanda Scortegagna Annes", "email": "ferscort@gmail.com", "phone": "(54) 98152-8500", "last4": "8500"}, {"name": "Mar\u00edndia Sitta", "email": "marindia.med@hotmail.com", "phone": "(49) 99162-7414", "last4": "7414"}, {"name": "Ocieny Gonzaga Guimar\u00e3es Ram\u00edrez", "email": "ocienygg@hotmail.com", "phone": "(49) 99930-2856", "last4": "2856"}, {"name": "Julio Roberto Barbiero", "email": "juliobarbiero@yahoo.com.br", "phone": "(49) 99161-0662", "last4": "0662"}, {"name": "Jo\u00e3o Victor Garcia de Souza", "email": "jv.garcia1997@bol.com.br", "phone": "(49) 99149-3492", "last4": "3492"}, {"name": "Marina Oliboni Moschetta", "email": "marina.omoschetta@gmail.com", "phone": "(49) 99987-7277", "last4": "7277"}, {"name": "Luan Lucena", "email": "drluanlucena@gmail.com", "phone": "(11) 99878-4646", "last4": "4646"}, {"name": "Clezio Alex Onuki Castro", "email": "alexonuki@gmail.com", "phone": "(49) 99900-1133", "last4": "1133"}, {"name": "Davi Machado de Souza", "email": "davimsouza@gmail.com", "phone": "(49) 99163-3573", "last4": "3573"}, {"name": "Kaliandra de Almeida", "email": "drakaliandrapediatra@gmail.com", "phone": "(49) 98813-7205", "last4": "7205"}, {"name": "Geovan F\u00e1bio de Oliveira", "email": "medicinageovan@gmail.com", "phone": "(49) 99915-0567", "last4": "0567"}, {"name": "Julio Cesar Dalferth de Oliveira", "email": "j.oliveira@unochapeco.edu.br", "phone": "(55) 99720-6788", "last4": "6788"}, {"name": "Marta Schmidt Pfaffenzeller", "email": "mspfaffenzeller@gmail.com", "phone": "(48) 98415-0811", "last4": "0811"}, {"name": "Viviane Mance de Souza", "email": "vivi.m.sousa@gmail.com", "phone": "(42) 98426-4885", "last4": "4885"}, {"name": "Nathalia Moreira Pereira", "email": "moreirapnathalia@gmail.com", "phone": "(34) 99776-9897", "last4": "9897"}, {"name": "Augusto Cancian", "email": "gutocancian@hotmail.com", "phone": "(55) 99970-0770", "last4": "0770"}, {"name": "Mateus Henrique Provim", "email": "mateus_provim@hotmail.com", "phone": "(49) 98808-5367", "last4": "5367"}, {"name": "Mario Goto", "email": "mariogoto@gmail.com", "phone": "(49) 99989-0400", "last4": "0400"}, {"name": "Thiago Felippe Reck", "email": "thiagoreck@gmail.com", "phone": "(49) 99976-9191", "last4": "9191"}, {"name": "Juliano Ferneda", "email": "julianourochapeco@gmail.com", "phone": "(49) 99157-0907", "last4": "0907"}, {"name": "Luiz Tsuyoshi Inoue", "email": "ltinoue@hotmail.com", "phone": "(49) 99974-0343", "last4": "0343"}, {"name": "Hellen Katya Wiebbelling", "email": "hellenwiebbelling@yahoo.com.br", "phone": "(49) 99103-3825", "last4": "3825"}, {"name": "Samuel Teixeira Coelho", "email": "samuel_coelho@unochapeco.edu.br", "phone": "(49) 99966-8824", "last4": "8824"}, {"name": "Eduardo Menegat", "email": "menegat.dudu@gmail.com", "phone": "(51) 98051-9100", "last4": "9100"}, {"name": "Marina Emely Jorge", "email": "emelyjorge@gmail.com", "phone": "(41) 99708-0037", "last4": "0037"}, {"name": "Antonio Carlos Andrade Pontes", "email": "ac.pontes@bol.com.br", "phone": "(35) 99192-9393", "last4": "9393"}, {"name": "Jorge Antonio Pompermaier", "email": "japompermaier@gmail.com", "phone": "(49) 98816-8017", "last4": "8017"}, {"name": "Marcia de Menezes Bergamo", "email": "marciambergamo@gmail.com", "phone": "(49) 99977-7647", "last4": "7647"}, {"name": "Ana Carolina Muller Beheregaray", "email": "anacbeheregaray@hotmail.com", "phone": "(51) 99996-6833", "last4": "6833"}, {"name": "Ana Claudia Cazzuni", "email": "anacczz.fk@gmail.com", "phone": "(49) 99807-9671", "last4": "9671"}, {"name": "Ana Paula Romanzini", "email": "anapaularomanzini@unochapeco.edu.br", "phone": "(49) 99908-1570", "last4": "1570"}, {"name": "Bruno Taddeo Nogueira Alves Soares De Alvarenga", "email": "drbrunodealvarenga@gmail.com", "phone": "(49) 99835-2234", "last4": "2234"}, {"name": "Matheus Antonio Baccin", "email": "baccinmatheus@gmail.com", "phone": "(54) 99609-6875", "last4": "6875"}, {"name": "Leticia Rosa Modelski", "email": "letimodelski@hotmail.com", "phone": "(54) 99615-3366", "last4": "3366"}, {"name": "Maria Eduarda Wilvert", "email": "mariawilvert@gmail.com", "phone": "(49) 99950-7770", "last4": "7770"}, {"name": "Gustavo Ara\u00fajo", "email": "gustavoaaraujo10@outlook.com", "phone": "(77) 99146-1003", "last4": "1003"}, {"name": "Miyake Adriana Souza Cirqueira", "email": "adriana.miyake@hotmail.com", "phone": "(38) 99142-9975", "last4": "9975"}, {"name": "Ana Carolina Renz Simon", "email": "ana.simon@unochapeco.edu.br", "phone": "(49) 99129-1329", "last4": "1329"}, {"name": "Regiany Paula Gon\u00e7alves de Oliveira Carvalho da Silva", "email": "regianypaula@yahoo.com.br", "phone": "(41) 98853-1590", "last4": "1590"}, {"name": "William Vinicius Weber", "email": "william.weber@hotmail.com", "phone": "(49) 99165-3908", "last4": "3908"}, {"name": "Adelaine Marilia Pinheiro", "email": "adelainemarilia@gmail.com", "phone": "(49) 98844-0377", "last4": "0377"}, {"name": "Matheus De Oliveira Brock", "email": "matheusbrock@gmail.com", "phone": "(49) 98856-4909", "last4": "4909"}, {"name": "Jamessom Borralho Paes de Barros Filho", "email": "jamessonpaesdebarros@gmail.com", "phone": "(41) 98498-1706", "last4": "1706"}, {"name": "Fernando Luiz Chiella Buchele", "email": "fernadocbuchele@gmail.com", "phone": "(49) 98828-6262", "last4": "6262"}, {"name": "Graciany Gasperin", "email": "gragasperin@hotmail.com", "phone": "(41) 99955-9004", "last4": "9004"}, {"name": "Bruno Trevisan", "email": "brunoootrevisan@gmail.com", "phone": "(55) 99976-0748", "last4": "0748"}, {"name": "Paulo Henrique Fachinello", "email": "paulofachinello@hotmail.com", "phone": "(49) 99917-7176", "last4": "7176"}, {"name": "Lais Paganella de Aquino", "email": "lais.paganella@hotmail.com", "phone": "(51) 99559-2599", "last4": "2599"}, {"name": "Bruna Paola Defaveri Damiani", "email": "brunapaola@unochapeco.edu.br", "phone": "(49) 98864-8888", "last4": "8888"}, {"name": "Eduardo Henrique Borsatto", "email": "eduardoborsatto@gmail.com", "phone": "(47) 99976-2524", "last4": "2524"}, {"name": "Julia Canci", "email": "canci.julia@gmail.com", "phone": "(48) 99828-5492", "last4": "5492"}, {"name": "Amanda Alberici", "email": "amandaalberici@yahoo.com.br", "phone": "(49) 98846-9947", "last4": "9947"}, {"name": "Rafael Santos de Arruda", "email": "arrdrafael@gmail.com", "phone": "(54) 99665-0815", "last4": "0815"}, {"name": "Jo\u00e3o Henrique Peres", "email": "joaohperes@gmail.com", "phone": "(49) 99835-1563", "last4": "1563"}, {"name": "Juciana Belini", "email": "belini.juciana@unochapeco.edu.br", "phone": "(49) 99806-5659", "last4": "5659"}, {"name": "Sergio Francisco Siepko Junior", "email": "sergiosiepko@gmail.com", "phone": "(49) 99987-6865", "last4": "6865"}, {"name": "Kaliandra de Almeida", "email": "drakaliandrapediatra@gmail.com", "phone": "(49) 98813-7205", "last4": "7205"}, {"name": "Adriano Reginatto Klein", "email": "arklein.cot@superip.com.br", "phone": "(49) 99987-4567", "last4": "4567"}, {"name": "Amauri Antonio Biazi", "email": "amauribiazi@hotmail.com", "phone": "(49) 99126-7050", "last4": "7050"}, {"name": "Paulo Filipe Pereira", "email": "paulofilipemed@gmail.com", "phone": "(49) 99124-3160", "last4": "3160"}, {"name": "Beatriz Teixeira Bai\u00e3o", "email": "beatriz.t.baiao@gmail.com", "phone": "(33) 98801-2435", "last4": "2435"}, {"name": "Juliano Cesar Huf Farias", "email": "julianofarias@ymail.com", "phone": "(49) 99942-4165", "last4": "4165"}, {"name": "Elvis Casquet Ribeiro Junior", "email": "elviscasquetr@gmail.com", "phone": "(49) 99991-0230", "last4": "0230"}, {"name": "Leonardo Moura Lock", "email": "mouralock@gmail.com", "phone": "(49) 99147-0666", "last4": "0666"}, {"name": "Kevin Cristian Moraes Henkemaier", "email": "kevin.henk@hotmail.com", "phone": "(49) 99157-1517", "last4": "1517"}, {"name": "Luiza da Ros Schumacher", "email": "luuh_schumacher@hotmail.com", "phone": "(49) 99984-8161", "last4": "8161"}, {"name": "Gustavo Brito Soares", "email": "gbritosoares@outlook.com", "phone": "(48) 98406-2777", "last4": "2777"}, {"name": "Bianca Soder Wolschick", "email": "biia.wolschick@hotmail.com", "phone": "(49) 99125-5659", "last4": "5659"}, {"name": "Antonio Fernandez Kensy", "email": "antonio.fernandez.kensy@gmail.com", "phone": "(55) 99995-0804", "last4": "0804"}, {"name": "Neuda Rodrigues da Silva", "email": "neudacco@gmail.com", "phone": "(49) 99831-1799", "last4": "1799"}, {"name": "Izadora Czarnobai", "email": "izadoracz@gmail.com", "phone": "(49) 99976-6685", "last4": "6685"}, {"name": "Cesar Augusto Seidler Junior", "email": "seidlercesar@gmail.com", "phone": "(49) 98808-0201", "last4": "0201"}, {"name": "Hiolanda Gomes Piler Dornelas", "email": "hio.piler@gmail.com", "phone": "(32) 99921-7541", "last4": "7541"}, {"name": "Morgana Filippi Chiella", "email": "morganafilippi@hotmail.com", "phone": "(49) 99998-6311", "last4": "6311"}, {"name": "Elisa Noskoski", "email": "noskoski.elisa@gmail.com", "phone": "(49) 99923-9410", "last4": "9410"}, {"name": "Lisane Beatriz Giacomossi", "email": "lisebeatriz@yahoo.com.br", "phone": "(41) 99951-6066", "last4": "6066"}, {"name": "Guilherme Assoni Gomes", "email": "guiligomes@outlook.com", "phone": "(54) 99198-4729", "last4": "4729"}, {"name": "Janice Velleda Brancao", "email": "janis-vb@hotmail.com", "phone": "(51) 98109-8899", "last4": "8899"}, {"name": "Lucas Alcir da Silva", "email": "lucas.alcir.silva@gmail.com", "phone": "(49) 99916-5657", "last4": "5657"}, {"name": "Jonathan Caon de Souza", "email": "jonathancaon@yahoo.com.br", "phone": "(49) 99145-8511", "last4": "8511"}, {"name": "Leandro Trevizan", "email": "drleandrot@hotmail.com", "phone": "(49) 98807-1429", "last4": "1429"}, {"name": "Gabriel Vitoria Domingues", "email": "gabrielvdom@gmail.com", "phone": "(49) 99146-1395", "last4": "1395"}, {"name": "Andre Luiz Bortoluzzi", "email": "andre@reumatologiachapeco.com.br", "phone": "(49) 98807-4637", "last4": "4637"}, {"name": "Willian Di Domenico", "email": "williandidomenico@gmail.com", "phone": "(49) 99191-2248", "last4": "2248"}, {"name": "Marcus Vinicius Trassi Neves", "email": "marcus_trassi@hotmail.com", "phone": "(48) 99696-6169", "last4": "6169"}, {"name": "Samira da Silva Pinto", "email": "samyysilva@unochapeco.edu.br", "phone": "(49) 99836-4295", "last4": "4295"}, {"name": "Julia Braghini", "email": "ju_braghini@hotmail.com", "phone": "(49) 99128-2888", "last4": "2888"}, {"name": "Guilherme Luiz de Melo Bernardi", "email": "bernardi.md@gmail.com", "phone": "(51) 98404-6578", "last4": "6578"}, {"name": "Allan Douglas Santos", "email": "allands@unochapeco.edu.br", "phone": "(49) 99903-2582", "last4": "2582"}, {"name": "Ridiger Gertz Clauss", "email": "medicoridiger@gmail.com", "phone": "(49) 99997-2131", "last4": "2131"}, {"name": "Geraldo Antunes Cordova", "email": "cristianemezzalira@hotmail.com", "phone": "(49) 99107-0000", "last4": "0000"}, {"name": "M\u00e1rcia Costa Morales Longhi", "email": "marciamorales.nc@hotmail.com", "phone": "(49) 99950-6743", "last4": "6743"}, {"name": "Cezar Tarabal de Oliveira", "email": "cezartarabal@gmail.com", "phone": "(49) 99134-2002", "last4": "2002"}, {"name": "Jesus Alberto Albornoz Camargo", "email": "jealber@gmail.com", "phone": "(55) 99193-9870", "last4": "9870"}, {"name": "Mauricio Hoffmann Sanagiotto", "email": "mauricio.stt@unochapeco.edu.br", "phone": "(49) 99998-7498", "last4": "7498"}, {"name": "Priscila Domingos", "email": "priscila.domingos95@gmail.com", "phone": "(49) 99142-4137", "last4": "4137"}, {"name": "Eliana Iora Schneider", "email": "eliana.iora.schneider@gmail.com", "phone": "(49) 99953-7825", "last4": "7825"}, {"name": "Milena Ayumi Yamauchi", "email": "milenaay@hotmail.com", "phone": "(14) 99773-6826", "last4": "6826"}, {"name": "Caroline Lopes Tamada", "email": "carolinetamada@gmail.com", "phone": "(18) 99662-9404", "last4": "9404"}, {"name": "Walter Ferreira dos Santos", "email": "leonizenevicz@yahoo.com.br", "phone": "(49) 99987-1414", "last4": "1414"}, {"name": "Sabrina Tayna Da Silva", "email": "sabrinasilva@unochapeco.edu.br", "phone": "(49) 99952-3836", "last4": "3836"}, {"name": "Elias Matheus Baggio Valgoi", "email": "eliasmbvalgoi@gmail.com", "phone": "(49) 99128-6861", "last4": "6861"}, {"name": "Nat\u00e1lia Cristhine Lazarin Goehr", "email": "natigoehr@gmail.com", "phone": "(49) 99151-7009", "last4": "7009"}, {"name": "Ana Paula Graboski", "email": "anapaula_grabovski@hotmail.com", "phone": "(65) 98154-1100", "last4": "1100"}, {"name": "Fernanda Fornari", "email": "fernandafornari@yahoo.com.br", "phone": "(49) 99107-9720", "last4": "9720"}, {"name": "Debora De Cesaro", "email": "debora_decesaro@unochapeco.edu.br", "phone": "(49) 98812-1441", "last4": "1441"}, {"name": "Elemar Fachinello Nichele", "email": "elemarnichele@gmail.com", "phone": "(49) 99201-6548", "last4": "6548"}, {"name": "Maiara Szepilowski Bampi", "email": "szepilowsk@gmail.com", "phone": "(48) 98821-0652", "last4": "0652"}, {"name": "Juliana Ulsenheimer Knorst", "email": "julianauknorst@gmail.com", "phone": "(49) 99158-8518", "last4": "8518"}, {"name": "Thiago Muniz de Lima", "email": "thiagomuniz@msn.com", "phone": "(49) 98402-6207", "last4": "6207"}, {"name": "Emanuel Felipe Vieira Luz", "email": "emanuelfelipe1@gmail.com", "phone": "(49) 98900-6161", "last4": "6161"}, {"name": "Tania Zunkowski", "email": "tanizunk@hotmail.com", "phone": "(49) 99999-9999", "last4": "9999"}, {"name": "Alberto Stolt", "email": "stolt@desbrava.com.br", "phone": "(49) 99917-4239", "last4": "4239"}, {"name": "Thais Nascimento Helou", "email": "drathaishelou@gmail.com", "phone": "(49) 99109-5531", "last4": "5531"}, {"name": "Fabio Luis Rockenbach", "email": "fabiorockenbach@hotmail.com", "phone": "(49) 99188-0786", "last4": "0786"}, {"name": "Adalberto Gloeckner de Meira", "email": "adalberto_62@hotmail.com", "phone": "(49) 99987-8582", "last4": "8582"}, {"name": "Marcelo Lemos Vieira Da Cunha", "email": "marcelolvc@yahoo.com.br", "phone": "(49) 99907-9440", "last4": "9440"}, {"name": "Vitor Augusto Macedo Briese", "email": "vitorbriese@gmail.com", "phone": "(49) 99180-6096", "last4": "6096"}, {"name": "Igor Barroca Maurer", "email": "maurerigor@gmail.com", "phone": "(49) 99814-3791", "last4": "3791"}, {"name": "Brenda Lesley Alves Capra", "email": "brenda.capra@gmail.com", "phone": "(55) 99673-6272", "last4": "6272"}, {"name": "Gustavo Wentz Biasuz", "email": "biasuz@gmail.com", "phone": "(49) 99180-0404", "last4": "0404"}, {"name": "Christine Leitner", "email": "christinekleitner@gmail.com", "phone": "(44) 99875-5848", "last4": "5848"}, {"name": "Eduardo Masiero Cola", "email": "edumasierocola@gmail.com", "phone": "(49) 99121-2941", "last4": "2941"}, {"name": "Michel Peruzzo", "email": "peruzzomp@yahoo.com.br", "phone": "(49) 99200-5048", "last4": "5048"}, {"name": "Jo\u00e3o Orlando Rodrigues da Silva", "email": "joaoorsilva@hotmail.com.br", "phone": "(12) 99125-3489", "last4": "3489"}, {"name": "Danielle Martins dos Santos", "email": "pediatradanni@gmail.com", "phone": "(49) 99909-5529", "last4": "5529"}, {"name": "Rafael Sales de Vasconcelos Ferreira", "email": "vasconcelostrauma@gmail.com", "phone": "(85) 98189-7891", "last4": "7891"}, {"name": "Diego Finamor Nascimento", "email": "diegonascimentomed@gmail.com", "phone": "(54) 98118-8410", "last4": "8410"}, {"name": "Naila Cerutti", "email": "ceruttinaila2@gmail.com", "phone": "(45) 99851-6023", "last4": "6023"}, {"name": "Eloisa Lehr Filippi Chiella", "email": "eloisa.chiella@unochapeco.edu.br", "phone": "(49) 98817-2147", "last4": "2147"}, {"name": "Claudia Fernanda Garcez Fernandes", "email": "fernandagarcez@outlook.com", "phone": "(51) 99563-9763", "last4": "9763"}, {"name": "Julia Cieslik Schreiner", "email": "juliaschreiner_@hotmail.com", "phone": "(49) 99999-4297", "last4": "4297"}, {"name": "Gabriela Simionato dos Santos", "email": "gabrielasimionato98@gmail.com", "phone": "(49) 99201-3836", "last4": "3836"}, {"name": "Bruna Raquel Kessler", "email": "brunaraquelkessler@gmail.com", "phone": "(49) 99911-2258", "last4": "2258"}, {"name": "Jose Augusto Nogueira Ribas", "email": "j.ribas@unochapeco.edu.br", "phone": "(49) 99816-3428", "last4": "3428"}, {"name": "Liss Andreza Nunes Druchak", "email": "lissdruchak23@gmail.com", "phone": "(42) 99909-3179", "last4": "3179"}, {"name": "Claudio Quinan Balestrin Neto", "email": "claudioneto@unochapeco.edu.br", "phone": "(49) 99920-4895", "last4": "4895"}, {"name": "Alberto Antonio Biazussi", "email": "betobiazussi@gmail.com", "phone": "(49) 99164-9559", "last4": "9559"}, {"name": "Fabio Silva Romani", "email": "fabioromani@nevada.unr.edu", "phone": "(49) 99915-3353", "last4": "3353"}, {"name": "Cintya Boligon", "email": "boligoncintya@gmail.com", "phone": "(49) 99943-5502", "last4": "5502"}, {"name": "Matheus Ramos Vieira", "email": "matheusrvieira94@gmail.com", "phone": "(41) 99914-0405", "last4": "0405"}, {"name": "Luan Gabriel Paese", "email": "luan_paese@hotmail.com", "phone": "(54) 99681-7333", "last4": "7333"}, {"name": "Shayane Luiza Rebelatto", "email": "srebelatto@unochapeco.edu.br", "phone": "(49) 99914-8587", "last4": "8587"}, {"name": "Eduardo Felipe Martinelli Baldissera", "email": "eduardofmb@hotmail.com", "phone": "(49) 99182-3853", "last4": "3853"}, {"name": "Bruna Bassotti Favretto", "email": "brunafavretto3@gmail.com", "phone": "(41) 98533-9399", "last4": "9399"}]};
@@ -1978,28 +2049,6 @@
         profissionaisData.professionals.forEach(prof => {
             mapaProfissionais[prof.name.toLowerCase()] = prof;
         });
-
-        // Função de autenticação
-        // Trocar entre abas
-        function trocarAbaAuth(aba) {
-          // Esconder todas as abas
-          document.getElementById('auth-tab-profissional').classList.remove('active');
-          document.getElementById('auth-tab-outro').classList.remove('active');
-
-          // Remover classe active de todos os botões
-          document.querySelectorAll('.auth-tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-          });
-
-          // Mostrar aba selecionada
-          if (aba === 'profissional') {
-            document.getElementById('auth-tab-profissional').classList.add('active');
-            document.querySelectorAll('.auth-tab-btn')[0].classList.add('active');
-          } else {
-            document.getElementById('auth-tab-outro').classList.add('active');
-            document.querySelectorAll('.auth-tab-btn')[1].classList.add('active');
-          }
-        }
 
         // Autenticar como Profissional
         function autenticarProfissional() {
