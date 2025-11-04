@@ -1993,10 +1993,8 @@ def gerar_dashboard():
         let diaSelecionado = 'atual';
 
         // Especialidades que devem ser divididas por turno
-        const especialidadesComTurno = [
-            'plantão', 'sobreaviso', 'residência', 'uti', 'pronto', 'urgência',
-            'emergência', 'on-call', 'clinica', 'cirurgia', 'pediatria'
-        ];
+        // Card layout is now determined by actual turno data, not sector name keywords
+        // This was removed: const especialidadesComTurno = [...]
 
         // Dados de ramais e mapeamento
         const ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
@@ -2298,8 +2296,17 @@ def gerar_dashboard():
         }
 
         function temMultiplosTurnos(setor) {
-            const setorLower = setor.toLowerCase();
-            return especialidadesComTurno.some(esp => setorLower.includes(esp));
+            // Check if this sector has multiple different shifts (turnos)
+            // by examining the actual data, not just the sector name
+            const profissionaisDaSetor = escalas.atual.registros.filter(reg => reg.setor === setor);
+            if (profissionaisDaSetor.length === 0) return false;
+
+            const turnosUnicos = new Set(profissionaisDaSetor.map(prof => {
+                const { nome } = normalizarTurno(prof.tipo_turno);
+                return nome;
+            }));
+
+            return turnosUnicos.size > 1;
         }
 
         function obterTipoTurno(turnoText, horarioText = '') {
@@ -2525,7 +2532,6 @@ def gerar_dashboard():
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${setor}</div>
-                                <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
@@ -2571,7 +2577,6 @@ def gerar_dashboard():
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${setor}</div>
-                                <div class="categoria-count">${pluralizarProfissional(profissionais.length)}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
