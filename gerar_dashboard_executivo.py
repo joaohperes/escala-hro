@@ -859,25 +859,25 @@ def gerar_dashboard():
         }
 
         .btn-contacts {
-            background: #28a745;
+            background: #0d3b66;
             color: white;
         }
 
         .btn-contacts:hover {
-            background: #218838;
+            background: #0a2947;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.3);
         }
 
         .btn-ramais {
-            background: #6610f2;
+            background: #0d3b66;
             color: white;
         }
 
         .btn-ramais:hover {
-            background: #520dc2;
+            background: #0a2947;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(102, 16, 242, 0.3);
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.3);
         }
 
         .btn-print {
@@ -1824,10 +1824,9 @@ def gerar_dashboard():
                     <div class="header-logo">ALVF</div>
                     <div class="header-separator"></div>
                     <div class="header-info">
-                        <h2>Hospital Regional de Ourinhos</h2>
+                        <h2>Hospital Regional do Oeste (HRO)</h2>
                         <div class="header-description">
-                            <p>Escalas Médicas e Profissionais de Saúde</p>
-                            <p>Gestão Humanizada · Excelência no Cuidado</p>
+                            <p>Escala Médica</p>
                         </div>
                     </div>
                 </div>
@@ -2344,7 +2343,7 @@ def gerar_dashboard():
             }
 
             const porSetor = {};
-            dados.profissionais.forEach(prof => {
+            dados.registros.forEach(prof => {
                 if (!porSetor[prof.setor]) {
                     porSetor[prof.setor] = [];
                 }
