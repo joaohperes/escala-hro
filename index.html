@@ -487,15 +487,28 @@
             font-size: 0.9em;
         }
 
+        .contacts-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 12px;
+        }
+
         .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
             padding: 12px 15px;
-            margin-bottom: 8px;
+            border: 1px solid #e8eef7;
             border-left: 4px solid #0d3b66;
-            transition: background 0.2s ease;
+            border-radius: 8px;
+            background: white;
+            transition: all 0.2s ease;
         }
 
         .contact-item:hover {
-            background: #f8f9fa;
+            background: #f8fbff;
+            border-color: #0d3b66;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
         .contact-name {
@@ -593,26 +606,21 @@
         }
 
         .ramal-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
             padding: 12px 15px;
             border: 1px solid #e8eef7;
+            border-left: 4px solid #0d3b66;
             border-radius: 8px;
-            transition: all 0.2s ease;
             background: white;
+            transition: all 0.2s ease;
         }
 
         .ramal-item:hover {
             background: #f8fbff;
             border-color: #0d3b66;
             box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
-        }
-
-        .ramal-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            padding: 12px 15px;
-            border-left: 4px solid #0d3b66;
-            margin-bottom: 8px;
         }
 
         .ramal-dept-line {
