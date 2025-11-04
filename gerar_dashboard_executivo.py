@@ -305,18 +305,18 @@ def normalizar_turno(turno_text):
 
     # SOBREAVISO (Ordem 5)
     if 'sobreaviso' in turno:
-        if 'cardiologia' in turno:
+        # Check more specific terms FIRST to avoid substring matching issues
+        # e.g., "neurologia" contains "ologia" which could match "urologia" check
+        if 'neurocirurgia' in turno:
+            return (5, "Sobreaviso Neurocirurgia")
+        elif 'neurologia' in turno:
+            return (5, "Sobreaviso Neurologia")
+        elif 'cardiologia' in turno:
             return (5, "Sobreaviso Cardiologia")
-        elif 'urologia' in turno:
-            return (5, "Sobreaviso Urologia")
-        elif 'cirurgia' in turno:
-            if 'equipe 1' in turno or ' 1' in turno:
-                return (5, "Sobreaviso Cirurgia - Equipe 1")
-            elif 'equipe 2' in turno or ' 2' in turno:
-                return (5, "Sobreaviso Cirurgia - Equipe 2")
-            return (5, "Sobreaviso Cirurgia")
         elif 'oftalmologia' in turno:
             return (5, "Sobreaviso Oftalmologia")
+        elif 'urologia' in turno:
+            return (5, "Sobreaviso Urologia")
         elif 'oncologia' in turno:
             return (5, "Sobreaviso Oncologia")
         elif 'endoscopia' in turno:
@@ -325,10 +325,12 @@ def normalizar_turno(turno_text):
             return (5, "Sobreaviso Cirurgia Pediátrica")
         elif 'vascular' in turno:
             return (5, "Sobreaviso Cirurgia Vascular")
-        elif 'neurologia' in turno:
-            return (5, "Sobreaviso Neurologia")
-        elif 'neurocirurgia' in turno:
-            return (5, "Sobreaviso Neurocirurgia")
+        elif 'cirurgia' in turno:
+            if 'equipe 1' in turno or ' 1' in turno:
+                return (5, "Sobreaviso Cirurgia - Equipe 1")
+            elif 'equipe 2' in turno or ' 2' in turno:
+                return (5, "Sobreaviso Cirurgia - Equipe 2")
+            return (5, "Sobreaviso Cirurgia")
         return (5, "Sobreaviso")
 
     # Plantão Diurno
@@ -2267,8 +2269,17 @@ def gerar_dashboard():
 
             // SOBREAVISO (Ordem 5)
             if (turno.includes('sobreaviso')) {
+                // Check more specific terms FIRST to avoid substring matching issues
+                // e.g., "neurologia" contains "ologia" which could match "urologia" check
+                if (turno.includes('neurocirurgia')) return { ordem: 5, nome: 'Sobreaviso Neurocirurgia' };
+                if (turno.includes('neurologia')) return { ordem: 5, nome: 'Sobreaviso Neurologia' };
                 if (turno.includes('cardiologia')) return { ordem: 5, nome: 'Sobreaviso Cardiologia' };
+                if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
                 if (turno.includes('urologia')) return { ordem: 5, nome: 'Sobreaviso Urologia' };
+                if (turno.includes('oncologia')) return { ordem: 5, nome: 'Sobreaviso Oncologia' };
+                if (turno.includes('endoscopia')) return { ordem: 5, nome: 'Sobreaviso Endoscopia' };
+                if (turno.includes('pediátrica') || turno.includes('pediatrica')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Pediátrica' };
+                if (turno.includes('vascular')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Vascular' };
                 if (turno.includes('cirurgia')) {
                     if (turno.includes('equipe 1') || turno.includes(' 1')) {
                         return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
@@ -2277,13 +2288,6 @@ def gerar_dashboard():
                     }
                     return { ordem: 5, nome: 'Sobreaviso Cirurgia' };
                 }
-                if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
-                if (turno.includes('oncologia')) return { ordem: 5, nome: 'Sobreaviso Oncologia' };
-                if (turno.includes('endoscopia')) return { ordem: 5, nome: 'Sobreaviso Endoscopia' };
-                if (turno.includes('pediátrica') || turno.includes('pediatrica')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Pediátrica' };
-                if (turno.includes('vascular')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Vascular' };
-                if (turno.includes('neurologia')) return { ordem: 5, nome: 'Sobreaviso Neurologia' };
-                if (turno.includes('neurocirurgia')) return { ordem: 5, nome: 'Sobreaviso Neurocirurgia' };
                 return { ordem: 5, nome: 'Sobreaviso' };
             }
 

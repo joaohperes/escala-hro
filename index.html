@@ -1770,8 +1770,17 @@
 
             // SOBREAVISO (Ordem 5)
             if (turno.includes('sobreaviso')) {
+                // Check more specific terms FIRST to avoid substring matching issues
+                // e.g., "neurologia" contains "ologia" which could match "urologia" check
+                if (turno.includes('neurocirurgia')) return { ordem: 5, nome: 'Sobreaviso Neurocirurgia' };
+                if (turno.includes('neurologia')) return { ordem: 5, nome: 'Sobreaviso Neurologia' };
                 if (turno.includes('cardiologia')) return { ordem: 5, nome: 'Sobreaviso Cardiologia' };
+                if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
                 if (turno.includes('urologia')) return { ordem: 5, nome: 'Sobreaviso Urologia' };
+                if (turno.includes('oncologia')) return { ordem: 5, nome: 'Sobreaviso Oncologia' };
+                if (turno.includes('endoscopia')) return { ordem: 5, nome: 'Sobreaviso Endoscopia' };
+                if (turno.includes('pediátrica') || turno.includes('pediatrica')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Pediátrica' };
+                if (turno.includes('vascular')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Vascular' };
                 if (turno.includes('cirurgia')) {
                     if (turno.includes('equipe 1') || turno.includes(' 1')) {
                         return { ordem: 5, nome: 'Sobreaviso Cirurgia - Equipe 1' };
@@ -1780,13 +1789,6 @@
                     }
                     return { ordem: 5, nome: 'Sobreaviso Cirurgia' };
                 }
-                if (turno.includes('oftalmologia')) return { ordem: 5, nome: 'Sobreaviso Oftalmologia' };
-                if (turno.includes('oncologia')) return { ordem: 5, nome: 'Sobreaviso Oncologia' };
-                if (turno.includes('endoscopia')) return { ordem: 5, nome: 'Sobreaviso Endoscopia' };
-                if (turno.includes('pediátrica') || turno.includes('pediatrica')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Pediátrica' };
-                if (turno.includes('vascular')) return { ordem: 5, nome: 'Sobreaviso Cirurgia Vascular' };
-                if (turno.includes('neurologia')) return { ordem: 5, nome: 'Sobreaviso Neurologia' };
-                if (turno.includes('neurocirurgia')) return { ordem: 5, nome: 'Sobreaviso Neurocirurgia' };
                 return { ordem: 5, nome: 'Sobreaviso' };
             }
 
