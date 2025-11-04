@@ -15,3 +15,13 @@ venv/
 *.json
 !profissionais_autenticacao.json
 rodar_diariamente.sh
+
+# Documentation files with secrets
+.env.example
+AUTOMACAO_GITHUB_ACTIONS.md
+SETUP_GITHUB.md
+SETUP_PASSO_A_PASSO.md
+GUIA_NOTION_VIEWS.md
+ANALISE_COMPARATIVA_23-24_OUTUBRO.txt
+PROFISSIONAIS_SETORES_EXTRAIDOS.txt
+CRIAR_VIEWS_PASSO_A_PASSO.md
