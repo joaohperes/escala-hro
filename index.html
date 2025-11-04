@@ -609,8 +609,21 @@
 
         .ramal-item {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: column;
+            gap: 5px;
+            padding: 12px 0;
+        }
+
+        .ramal-dept-line {
+            font-weight: 600;
+            color: #0d3b66;
+            font-size: 0.95em;
+        }
+
+        .ramal-exts-line {
+            color: #28a745;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
         .ramal-dept {
@@ -986,19 +999,20 @@
 
         .telefone-icon-btn:hover::after {
             content: attr(data-phone);
-            position: absolute;
+            position: fixed;
             background: #0d3b66;
             color: white;
             padding: 8px 12px;
             border-radius: 4px;
             font-size: 0.85em;
             white-space: nowrap;
-            bottom: 105%;
-            left: 50%;
-            transform: translateX(-50%);
             z-index: 9999;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             pointer-events: none;
+            bottom: auto;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .telefone-icon {
@@ -1525,13 +1539,16 @@
 
             ramaisList.innerHTML = departamentos.map(dept => {
                 const extsStr = dept.extensions.join(', ');
+                const extsDisplay = dept.extensions.join(' | ');
+                // Split department name by " - " to get main name and sub-area
+                const nameParts = dept.name.split(' - ');
+                const mainName = nameParts[0];
+                const subArea = nameParts.length > 1 ? nameParts.slice(1).join(' - ') : '';
+
                 return `
                     <div class="ramal-item" data-search="${dept.name.toLowerCase()} ${extsStr}">
-                        <div class="ramal-dept">${dept.name}</div>
-                        <div class="ramal-separator">|</div>
-                        <div class="ramal-exts-inline">
-                            <span class="ramal-exts-inline-value">${extsStr}</span>
-                        </div>
+                        <div class="ramal-dept-line">${mainName}${subArea ? ' | ' + subArea : ''}</div>
+                        <div class="ramal-exts-line">${extsDisplay}</div>
                     </div>
                 `;
             }).join('');
