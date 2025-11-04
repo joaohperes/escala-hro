@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Extração INTELIGENTE baseada em POSIÇÃO VISUAL das colunas (coordenada X)
+Com suporte a Rolling Window para Dia Anterior
 """
 
 import os
@@ -50,53 +51,40 @@ class ExtractorInteligente:
         # Se não encontrou, tenta baixar via webdriver-manager
         if not chrome_driver_path:
             print("⚠️  ChromeDriver não encontrado nos caminhos comuns, tentando webdriver-manager...")
+            
+            # Limpa cache do webdriver-manager
+            wdm_cache = os.path.expanduser("~/.wdm")
+            if os.path.exists(wdm_cache):
+                print(f"🗑️  Limpando cache em {wdm_cache}...")
+                shutil.rmtree(wdm_cache)
+            
             try:
-                # Limpa cache corrompido do webdriver-manager
-                cache_dir = os.path.expanduser('~/.wdm')
-                if os.path.exists(cache_dir):
-                    print(f"🗑️  Limpando cache em {cache_dir}...")
-                    shutil.rmtree(cache_dir, ignore_errors=True)
-
-                downloaded_path = ChromeDriverManager().install()
-                print(f"⚠️  WebDriver-Manager retornou: {downloaded_path}")
-
-                # webdriver-manager às vezes retorna o diretório em vez do executável
-                # ou retorna o arquivo errado (THIRD_PARTY_NOTICES.chromedriver)
-                # Procura pelo executável real
-                search_dir = downloaded_path if os.path.isdir(downloaded_path) else os.path.dirname(downloaded_path)
-                print(f"🔍 Procurando chromedriver em: {search_dir}")
-
-                # Procura pelo executável no diretório
-                # IMPORTANTE: Busca especificamente pelo arquivo 'chromedriver' sem extensão
-                for root, dirs, files in os.walk(search_dir):
+                wdm_result = ChromeDriverManager().install()
+                print(f"⚠️  WebDriver-Manager retornou: {wdm_result}")
+                
+                # Procura o arquivo executável
+                chrome_dir = os.path.dirname(wdm_result)
+                print(f"🔍 Procurando chromedriver em: {chrome_dir}")
+                for root, dirs, files in os.walk(chrome_dir):
                     for file in files:
-                        # Apenas o arquivo 'chromedriver' simples é o executável real
-                        # Ignore THIRD_PARTY, LICENSE, .zip, .dmg, etc
-                        if file == 'chromedriver' and not file.endswith(('.zip', '.dmg', '.exe')):
+                        if file == 'chromedriver' or file == 'chromedriver.exe':
                             full_path = os.path.join(root, file)
-                            # Garante que é executável
-                            if not os.access(full_path, os.X_OK):
-                                os.chmod(full_path, 0o755)
-                            chrome_driver_path = full_path
-                            print(f"✅ Executável encontrado: {chrome_driver_path}")
-                            break
+                            if os.access(full_path, os.X_OK):
+                                chrome_driver_path = full_path
+                                print(f"✅ Executável encontrado: {full_path}")
+                                break
                     if chrome_driver_path:
                         break
-
-                if not chrome_driver_path:
-                    print(f"❌ Não conseguiu encontrar arquivo 'chromedriver' em {search_dir}")
-                    raise FileNotFoundError("ChromeDriver executável não encontrado")
-
-                print(f"✅ ChromeDriver pronto: {chrome_driver_path}")
-
             except Exception as e:
-                print(f"❌ Erro ao usar webdriver-manager: {e}")
-                raise
+                print(f"⚠️  Erro com webdriver-manager: {e}")
 
-        self.driver = webdriver.Chrome(
-            service=Service(chrome_driver_path),
-            options=chrome_options
-        )
+        if chrome_driver_path:
+            print(f"✅ ChromeDriver pronto: {chrome_driver_path}")
+            service = Service(chrome_driver_path)
+            self.driver = webdriver.Chrome(service=service, options=chrome_options)
+        else:
+            print("⚠️  Usando ChromeDriver padrão do sistema...")
+            self.driver = webdriver.Chrome(options=chrome_options)
 
     def login(self):
         print(f"[{datetime.now()}] 🔐 Fazendo login...")
@@ -116,20 +104,8 @@ class ExtractorInteligente:
 
         print(f"[{datetime.now()}] ✅ Login realizado")
 
-    def extrair_inteligente(self):
-        print(f"[{datetime.now()}] 📊 Extraindo com análise de POSIÇÃO VISUAL (X coordinate)...")
-
-        self.driver.get("https://escala.med.br/painel/#!/day_grid")
-        time.sleep(5)
-
-        # Switch iframe
-        try:
-            iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
-            if iframes:
-                self.driver.switch_to.frame(iframes[0])
-        except:
-            pass
-
+    def extrair_dia(self):
+        """Extrai dados de um único dia (atual ou anterior) usando JavaScript"""
         # JavaScript que calcula setores por POSIÇÃO X
         js_inteligente = """
         return (function() {
@@ -327,6 +303,31 @@ class ExtractorInteligente:
         resultado = self.driver.execute_script(js_inteligente)
         return resultado
 
+    def extrair_inteligente(self):
+        """Extrai dados do dia atual (ignorando tentar obter dia anterior via navegação)"""
+        print(f"[{datetime.now()}] 📊 Extraindo com análise de POSIÇÃO VISUAL (X coordinate)...")
+
+        self.driver.get("https://escala.med.br/painel/#!/day_grid")
+        time.sleep(5)
+
+        # Switch iframe
+        try:
+            iframes = self.driver.find_elements(By.TAG_NAME, "iframe")
+            if iframes:
+                self.driver.switch_to.frame(iframes[0])
+        except:
+            pass
+
+        # ===== EXTRAÇÃO DO DIA ATUAL =====
+        print(f"[{datetime.now()}] 📅 Extraindo dados do dia ATUAL...")
+        resultado_atual = self.extrair_dia()
+        print(f"[{datetime.now()}] ✅ Dia atual extraído: {resultado_atual['total']} registros")
+
+        return {
+            'atual': resultado_atual,
+            'anterior': None  # Será preenchido pela lógica de rolling window
+        }
+
     def close(self):
         self.driver.quit()
 
@@ -355,65 +356,7 @@ def main():
     try:
         extractor = ExtractorInteligente(headless=True)
         extractor.login()
-        resultado = extractor.extrair_inteligente()
-
-        data = resultado['data']
-        registros = resultado['registros']
-        setores_count = resultado['setores_encontrados']
-        headers_encontrados = resultado['headers_encontrados']
-
-        # Corrige erros de português nos registros
-        for reg in registros:
-            reg['setor'] = corrigir_portugues(reg['setor'])
-
-        # Debug info do JavaScript
-        debug_info = resultado.get('debug', {})
-
-        print(f"\n{'='*100}")
-        print(f"📅 DATA: {data}")
-        print(f"📊 TOTAL DE REGISTROS: {len(registros)}")
-        print(f"📂 SETORES DETECTADOS: {setores_count}")
-        print(f"🔍 HEADERS ENCONTRADOS: {headers_encontrados}")
-        print(f"{'='*100}")
-
-        if debug_info:
-            print(f"\n🔧 DEBUG INFO:")
-            print(f"   - Profissionais selecionados: {debug_info.get('profissionais_selecionados', 'N/A')}")
-            print(f"   - Turnos selecionados: {debug_info.get('turnos_selecionados', 'N/A')}")
-            print(f"   - Horários selecionados: {debug_info.get('horarios_selecionados', 'N/A')}")
-            print(f"   - Setores com posição: {debug_info.get('setores_com_posicao', 'N/A')}")
-            print(f"{'='*100}\n")
-        else:
-            print(f"{'='*100}\n")
-
-        # Conta setores
-        setores_dict = {}
-        for reg in registros:
-            s = reg['setor']
-            setores_dict[s] = setores_dict.get(s, 0) + 1
-
-        print("📊 DISTRIBUIÇÃO POR SETOR:")
-        for setor, count in sorted(setores_dict.items()):
-            print(f"   {count:2d}x - {setor}")
-
-        print(f"\n{'='*160}")
-        print(f" #  | {'PROFISSIONAL':<30} | {'SETOR':<35} | {'TURNO':<25} | {'HORÁRIO':<12}")
-        print("-"*160)
-
-        for idx, reg in enumerate(registros, 1):
-            prof = reg['profissional'][:30].ljust(30)
-            setor = reg['setor'][:35].ljust(35)
-            turno = reg['tipo_turno'][:25].ljust(25)
-            horario = reg['horario'][:12].ljust(12)
-            print(f"{idx:3d} | {prof} | {setor} | {turno} | {horario}")
-
-        print(f"\n{'='*100}")
-        print(f"✅ Extração salva em: /tmp/extracao_inteligente.json")
-        print(f"{'='*100}\n")
-
-        # Salva JSON no formato esperado pelo dashboard (com chave 'atual')
-        # O dashboard espera: { "anterior": {...}, "atual": {...}, "proximo": {...} }
-        from datetime import datetime
+        resultados = extractor.extrair_inteligente()
 
         # Extrai data simples (DD/MM/YYYY) a partir da data em português
         def extrair_data_simples(data_texto):
@@ -435,30 +378,131 @@ def main():
                 pass
             return "00/00/0000"
 
-        data_simples = extrair_data_simples(data)
+        # ===== PROCESSA RESULTADO ATUAL =====
+        resultado_atual = resultados['atual']
+        data_atual = resultado_atual['data']
+        registros_atual = resultado_atual['registros']
+        setores_count_atual = resultado_atual['setores_encontrados']
+        headers_encontrados_atual = resultado_atual['headers_encontrados']
 
-        # Formata a resposta no formato esperado pelo dashboard
-        # Formato: { "atual": {...}, "anterior": {...} } para dia atual e consulta histórica
+        # Corrige erros de português nos registros atuais
+        for reg in registros_atual:
+            reg['setor'] = corrigir_portugues(reg['setor'])
+
+        # Debug info do JavaScript (atual)
+        debug_info_atual = resultado_atual.get('debug', {})
+
+        print(f"\n{'='*100}")
+        print(f"📅 DIA ATUAL - DATA: {data_atual}")
+        print(f"📊 TOTAL DE REGISTROS: {len(registros_atual)}")
+        print(f"📂 SETORES DETECTADOS: {setores_count_atual}")
+        print(f"🔍 HEADERS ENCONTRADOS: {headers_encontrados_atual}")
+        print(f"{'='*100}")
+
+        if debug_info_atual:
+            print(f"\n🔧 DEBUG INFO (ATUAL):")
+            print(f"   - Profissionais selecionados: {debug_info_atual.get('profissionais_selecionados', 'N/A')}")
+            print(f"   - Turnos selecionados: {debug_info_atual.get('turnos_selecionados', 'N/A')}")
+            print(f"   - Horários selecionados: {debug_info_atual.get('horarios_selecionados', 'N/A')}")
+            print(f"   - Setores com posição: {debug_info_atual.get('setores_com_posicao', 'N/A')}")
+            print(f"{'='*100}\n")
+        else:
+            print(f"{'='*100}\n")
+
+        # Conta setores (atual)
+        setores_dict_atual = {}
+        for reg in registros_atual:
+            s = reg['setor']
+            setores_dict_atual[s] = setores_dict_atual.get(s, 0) + 1
+
+        print("📊 DISTRIBUIÇÃO POR SETOR (ATUAL):")
+        for setor, count in sorted(setores_dict_atual.items()):
+            print(f"   {count:2d}x - {setor}")
+
+        print(f"\n{'='*160}")
+        print(f" #  | {'PROFISSIONAL':<30} | {'SETOR':<35} | {'TURNO':<25} | {'HORÁRIO':<12}")
+        print("-"*160)
+
+        for idx, reg in enumerate(registros_atual, 1):
+            prof = reg['profissional'][:30].ljust(30)
+            setor = reg['setor'][:35].ljust(35)
+            turno = reg['tipo_turno'][:25].ljust(25)
+            horario = reg['horario'][:12].ljust(12)
+            print(f"{idx:3d} | {prof} | {setor} | {turno} | {horario}")
+
+        print(f"\n{'='*100}")
+        print(f"✅ Extração salva em: /tmp/extracao_inteligente.json")
+        print(f"{'='*100}\n")
+
+        # ===== IMPLEMENTAR ROLLING WINDOW =====
+        print(f"\n{'='*100}")
+        print(f"🔄 CARREGANDO DADOS DO DIA ANTERIOR (ROLLING WINDOW)...")
+        print(f"{'='*100}")
+
+        resultado_anterior_salvo = None
+        arquivo_anterior = '/tmp/extracao_inteligente_anterior.json'
+
+        # Tenta carregar a extração anterior salva
+        if os.path.exists(arquivo_anterior):
+            try:
+                with open(arquivo_anterior, 'r') as f:
+                    anterior_completa = json.load(f)
+                    # A anterior salva tem a estrutura: { 'atual': {...}, 'anterior': {...} }
+                    # Vamos usar o 'atual' dessa anterior como nosso 'anterior'
+                    resultado_anterior_salvo = anterior_completa.get('atual')
+                    if resultado_anterior_salvo:
+                        print(f"✅ Dados do dia anterior carregados: {resultado_anterior_salvo.get('data', 'N/A')}")
+                        print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+            except Exception as e:
+                print(f"⚠️  Erro ao carregar anterior: {e}")
+        else:
+            print(f"⚠️  Nenhuma extração anterior encontrada (primeira execução?)")
+
+        # ===== CONSTRUIR OUTPUT COM ROLLING WINDOW =====
+        data_simples_atual = extrair_data_simples(data_atual)
+
         output = {
             'atual': {
-                'data': data,
-                'data_simples': data_simples,
-                'registros': registros,
-                'total': len(registros)
-            },
-            'anterior': {
-                'data': 'N/A',
-                'data_simples': '00/00/0000',
-                'registros': [],
-                'total': 0
+                'data': data_atual,
+                'data_simples': data_simples_atual,
+                'registros': registros_atual,
+                'total': len(registros_atual)
             },
             'data_atualizacao': datetime.now().strftime('%d/%m/%Y'),
             'hora_atualizacao': datetime.now().strftime('%H:%M'),
             'status_atualizacao': 'sucesso'
         }
 
+        # Adiciona dados do dia anterior (rolling window)
+        if resultado_anterior_salvo:
+            output['anterior'] = resultado_anterior_salvo
+        else:
+            # Primeira execução ou arquivo perdido
+            output['anterior'] = {
+                'data': 'N/A',
+                'data_simples': '00/00/0000',
+                'registros': [],
+                'total': 0
+            }
+
+        # Salva o JSON principal
         with open('/tmp/extracao_inteligente.json', 'w') as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
+        print(f"\n✅ JSON principal salvo: /tmp/extracao_inteligente.json")
+
+        # IMPORTANTE: Salvar a extração ATUAL para ser usada como ANTERIOR amanhã
+        # Criar um backup da extração atual para amanhã usar como anterior
+        backup_para_amanha = {
+            'atual': output['atual'],
+            'anterior': output['anterior'],  # Mantém a cadeia de histórico
+            'data_backup': datetime.now().strftime('%d/%m/%Y'),
+            'hora_backup': datetime.now().strftime('%H:%M')
+        }
+
+        with open(arquivo_anterior, 'w') as f:
+            json.dump(backup_para_amanha, f, ensure_ascii=False, indent=2)
+        print(f"✅ Backup para amanhã: {arquivo_anterior}")
+        print(f"{'='*100}\n")
 
     except Exception as e:
         print(f"❌ ERRO: {e}")
