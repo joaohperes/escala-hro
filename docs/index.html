@@ -1505,9 +1505,10 @@
 
         /* Cards e Containers */
         body.dark-theme .profissional {
-            background: #2a2a2a;
+            background: #262626;
             border-color: #3a3a3a;
-            color: #e0e0e0;
+            color: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         body.dark-theme .category {
@@ -1515,30 +1516,84 @@
         }
 
         body.dark-theme .categoria-header {
-            background: #2a2a2a;
-            color: #e0e0e0;
+            background: #1a1a1a;
+            color: #f0f0f0;
             border-color: #3a3a3a;
         }
 
         body.dark-theme .categoria-header:hover {
-            background: #323232;
+            background: #252525;
+            border-color: #4a4a4a;
         }
 
         body.dark-theme .categoria-content {
-            background: #1a1a1a;
+            background: transparent;
         }
 
         body.dark-theme .profissional-nome {
-            color: #e0e0e0;
+            color: #f0f0f0;
+            font-weight: 600;
         }
 
         body.dark-theme .profissional-info {
-            color: #999;
+            color: #b0b0b0;
+            font-size: 0.9em;
         }
 
+        body.dark-theme .info-label {
+            color: #d0d0d0;
+            font-weight: 500;
+        }
+
+        /* Badges - Dark Theme */
         body.dark-theme .turno-badge {
             background: #0066cc;
             color: white;
+        }
+
+        body.dark-theme .turno-badge.matutino {
+            background: #1a4d2e;
+            color: #5cdb5c;
+        }
+
+        body.dark-theme .turno-badge.vespertino {
+            background: #664d00;
+            color: #ffcc00;
+        }
+
+        body.dark-theme .turno-badge.noturno {
+            background: #003d4d;
+            color: #5ce0e8;
+        }
+
+        body.dark-theme .turno-badge.badge-24h {
+            background: #5a1a1a;
+            color: #ff6b6b;
+        }
+
+        body.dark-theme .turno-badge.sobreaviso {
+            background: #4a4a8a;
+            color: #b3b3ff;
+        }
+
+        body.dark-theme .turno-badge.rotina {
+            background: #444;
+            color: #b0b0b0;
+        }
+
+        body.dark-theme .turno-badge.plantao {
+            background: #664d1a;
+            color: #ffcc99;
+        }
+
+        body.dark-theme .turno-badge.diurno {
+            background: #1a4d2e;
+            color: #5cdb5c;
+        }
+
+        body.dark-theme .turno-badge.outro {
+            background: #444;
+            color: #999;
         }
 
         /* Modais */
@@ -1567,16 +1622,20 @@
 
         /* Stats */
         body.dark-theme .stat-card {
-            background: #2a2a2a;
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
+            color: #f0f0f0;
+            border-color: #3a3a3a;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
         }
 
         body.dark-theme .stat-number {
             color: #4da6ff;
+            font-weight: 700;
         }
 
         body.dark-theme .stat-label {
-            color: #999;
+            color: #b0b0b0;
+            font-weight: 500;
         }
 
         /* Header */
@@ -1586,11 +1645,11 @@
 
         /* Text */
         body.dark-theme label {
-            color: #e0e0e0;
+            color: #f0f0f0;
         }
 
         body.dark-theme h2, body.dark-theme h3 {
-            color: #e0e0e0;
+            color: #f0f0f0;
         }
 
         body.dark-theme .auth-modal-content h2 {
@@ -1598,7 +1657,30 @@
         }
 
         body.dark-theme .auth-modal-content p {
-            color: #999;
+            color: #b0b0b0;
+        }
+
+        /* Melhorar legibilidade dos setores */
+        body.dark-theme .categoria-nome {
+            color: #f0f0f0;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        /* Turno titles */
+        body.dark-theme .turno-title {
+            color: #f0f0f0;
+            font-weight: 500;
+            background: #1a1a1a;
+        }
+
+        /* Borders e separadores */
+        body.dark-theme .profissional {
+            border: 1px solid #404040;
+        }
+
+        body.dark-theme .categoria-header {
+            border-bottom: 2px solid #404040;
         }
     </style>
 </head>
