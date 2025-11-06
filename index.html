@@ -904,10 +904,9 @@
         .profissional-info {
             font-size: 0.85em;
             color: #666;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px;
         }
 
         .info-label {
@@ -1822,9 +1821,6 @@
                 try {
                     const [entrada, saida] = horario.split('/').map(x => x.trim());
                     if (entrada === saida) {
-                        return 'badge-24h';
-                    }
-                    if (turno.includes('sobreaviso') || turno.includes('24h')) {
                         return 'badge-24h';
                     }
                     // Detecta Diurno (07:00-19:00) - típico de residência
