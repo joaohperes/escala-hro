@@ -516,11 +516,132 @@ def gerar_dashboard():
             height: 100%;
         }
 
+        /* CSS Variables para Temas */
+        :root {
+            /* Cores principais */
+            --bg-primary: #f8f9fb;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f8fbff;
+            --bg-gradient-start: #f8fbff;
+            --bg-gradient-end: #e8eef7;
+
+            /* Textos */
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-tertiary: #999999;
+
+            /* Bordas */
+            --border-color: #e8eef7;
+            --border-color-hover: #ddd;
+
+            /* Cores de destaque */
+            --color-primary: #0d3b66;
+            --color-primary-dark: #0a2f52;
+            --color-primary-light: #1a5490;
+            --color-success: #28a745;
+            --color-success-dark: #218838;
+            --color-warning: #ffc107;
+            --color-danger: #dc3545;
+            --color-info: #17a2b8;
+            --color-purple: #6610f2;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(13, 59, 102, 0.1);
+            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 8px 24px rgba(13, 59, 102, 0.2);
+
+            /* Badges - Turnos */
+            --badge-matutino-bg: #d4edda;
+            --badge-matutino-text: #155724;
+            --badge-vespertino-bg: #fff3cd;
+            --badge-vespertino-text: #856404;
+            --badge-noturno-bg: #d1ecf1;
+            --badge-noturno-text: #0c5460;
+            --badge-24h-bg: #f8d7da;
+            --badge-24h-text: #721c24;
+            --badge-sobreaviso-bg: #e7e7ff;
+            --badge-sobreaviso-text: #4a4a8a;
+            --badge-rotina-bg: #e2e3e5;
+            --badge-rotina-text: #383d41;
+            --badge-plantao-bg: #ffdab9;
+            --badge-plantao-text: #8b4513;
+            --badge-diurno-bg: #d4edda;
+            --badge-diurno-text: #155724;
+            --badge-outro-bg: #e2e3e5;
+            --badge-outro-text: #6c757d;
+
+            /* Modal */
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --modal-overlay-light: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Tema Escuro */
+        body.dark-theme {
+            /* Cores principais */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #242424;
+            --bg-gradient-start: #2d2d2d;
+            --bg-gradient-end: #1a1a1a;
+
+            /* Textos */
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #808080;
+
+            /* Bordas */
+            --border-color: #404040;
+            --border-color-hover: #555555;
+
+            /* Cores de destaque - mantêm-se vibrantes no escuro */
+            --color-primary: #4a9eff;
+            --color-primary-dark: #3a8eef;
+            --color-primary-light: #5aadff;
+            --color-success: #4caf50;
+            --color-success-dark: #3c9f40;
+            --color-warning: #ffb300;
+            --color-danger: #f44336;
+            --color-info: #29b6f6;
+            --color-purple: #9c27b0;
+
+            /* Shadows - mais sutis no escuro */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+            /* Badges - Turnos (versões escuras) */
+            --badge-matutino-bg: #2d4a2f;
+            --badge-matutino-text: #81c784;
+            --badge-vespertino-bg: #4a4220;
+            --badge-vespertino-text: #ffd54f;
+            --badge-noturno-bg: #1e3a4a;
+            --badge-noturno-text: #4dd0e1;
+            --badge-24h-bg: #4a2d2d;
+            --badge-24h-text: #ef9a9a;
+            --badge-sobreaviso-bg: #3a3a5a;
+            --badge-sobreaviso-text: #b39ddb;
+            --badge-rotina-bg: #3a3a3a;
+            --badge-rotina-text: #b0b0b0;
+            --badge-plantao-bg: #4a3a2a;
+            --badge-plantao-text: #ffcc80;
+            --badge-diurno-bg: #2d4a2f;
+            --badge-diurno-text: #81c784;
+            --badge-outro-bg: #3a3a3a;
+            --badge-outro-text: #9e9e9e;
+
+            /* Modal */
+            --modal-overlay: rgba(0, 0, 0, 0.85);
+            --modal-overlay-light: rgba(0, 0, 0, 0.75);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #f8f9fb;
-            color: #1a1a1a;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         #main-content {
@@ -539,7 +660,7 @@ def gerar_dashboard():
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: var(--modal-overlay);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -551,7 +672,7 @@ def gerar_dashboard():
         }
 
         .auth-modal-content {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -561,13 +682,13 @@ def gerar_dashboard():
         }
 
         .auth-modal-content h2 {
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 15px;
             font-size: 1.5em;
         }
 
         .auth-modal-content p {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             font-size: 0.95em;
         }
@@ -575,24 +696,26 @@ def gerar_dashboard():
         .auth-input {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #ddd;
+            border: 2px solid var(--border-color-hover);
             border-radius: 8px;
             font-size: 1em;
             margin-bottom: 15px;
             box-sizing: border-box;
             transition: border-color 0.3s ease;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .auth-input:focus {
             outline: none;
-            border-color: #0d3b66;
-            box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
 
         .auth-btn {
             width: 100%;
             padding: 12px;
-            background: #0d3b66;
+            background: var(--color-primary);
             color: white;
             border: none;
             border-radius: 8px;
@@ -603,9 +726,9 @@ def gerar_dashboard():
         }
 
         .auth-btn:hover {
-            background: #0a2f52;
+            background: var(--color-primary-dark);
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(13, 59, 102, 0.2);
+            box-shadow: var(--shadow-sm);
         }
 
         .auth-btn:active {
@@ -613,7 +736,7 @@ def gerar_dashboard():
         }
 
         .auth-error {
-            color: #d9534f;
+            color: var(--color-danger);
             font-size: 0.9em;
             margin-top: 10px;
             display: none;
@@ -627,7 +750,7 @@ def gerar_dashboard():
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
         }
 
         .auth-tab-btn {
@@ -638,18 +761,18 @@ def gerar_dashboard():
             border-bottom: 3px solid transparent;
             cursor: pointer;
             font-size: 1em;
-            color: #666;
+            color: var(--text-secondary);
             transition: all 0.3s ease;
         }
 
         .auth-tab-btn.active {
-            color: #0d3b66;
-            border-bottom-color: #0d3b66;
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
             font-weight: 600;
         }
 
         .auth-tab-btn:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .auth-tab-content {
@@ -818,18 +941,20 @@ def gerar_dashboard():
         .search-input {
             width: 100%;
             padding: 12px 20px;
-            border: 2px solid #e8eef7;
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             font-size: 0.95em;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .search-input:focus {
             outline: none;
-            border-color: #0d3b66;
-            background: #f8fbff;
-            box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            background: var(--bg-tertiary);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
 
         .action-buttons {
@@ -1037,7 +1162,7 @@ def gerar_dashboard():
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--modal-overlay-light);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1050,7 +1175,7 @@ def gerar_dashboard():
         }
 
         .ramais-modal-content {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 30px;
             max-width: 800px;
@@ -1065,12 +1190,12 @@ def gerar_dashboard():
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 15px;
         }
 
         .ramais-modal-header h2 {
-            color: #0d3b66;
+            color: var(--color-primary);
             font-size: 1.5em;
             margin: 0;
         }
@@ -1079,23 +1204,25 @@ def gerar_dashboard():
             background: none;
             border: none;
             font-size: 1.5em;
-            color: #666;
+            color: var(--text-secondary);
             cursor: pointer;
             padding: 0;
             line-height: 1;
         }
 
         .ramais-modal-close:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .ramais-search {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #ddd;
+            border: 2px solid var(--border-color-hover);
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 1em;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .ramais-list {
@@ -1177,21 +1304,21 @@ def gerar_dashboard():
             text-align: center;
             font-size: 1.2em;
             font-weight: 600;
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 15px;
             padding: 12px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            box-shadow: var(--shadow-sm);
         }
 
         .last-update {
             text-align: center;
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             padding: 10px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 8px;
             display: flex;
             justify-content: center;
@@ -1229,60 +1356,60 @@ def gerar_dashboard():
         }
 
         .stat-card {
-            background: white;
+            background: var(--bg-secondary);
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #0d3b66;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--color-primary);
             transition: all 0.3s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow-lg);
         }
 
         .stat-number {
             font-size: 2em;
             font-weight: 700;
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 5px;
         }
 
         .stat-label {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .category {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow-md);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .category:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow-lg);
         }
 
         .categoria-header {
-            background: linear-gradient(135deg, #f8fbff 0%, #e8eef7 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             padding: 18px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-left: 4px solid #0d3b66;
+            border-left: 4px solid var(--color-primary);
             transition: all 0.3s ease;
         }
 
         .categoria-header:hover {
-            background: linear-gradient(135deg, #e8eef7 0%, #d8dfe7 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-end) 0%, var(--border-color) 100%);
         }
 
         .categoria-header-text {
@@ -1296,11 +1423,11 @@ def gerar_dashboard():
         .categoria-nome {
             font-size: 1.15em;
             font-weight: 600;
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .categoria-count {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             font-weight: 500;
         }
@@ -1372,15 +1499,15 @@ def gerar_dashboard():
 
         .profissional {
             padding: 12px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 6px;
-            border: 1px solid #e8eef7;
+            border: 1px solid var(--border-color);
             transition: all 0.2s ease;
         }
 
         .profissional:hover {
-            border-color: #0d3b66;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
             transform: translateX(2px);
         }
 
@@ -1426,48 +1553,48 @@ def gerar_dashboard():
         }
 
         .turno-badge.matutino {
-            background: #d4edda;
-            color: #155724;
+            background: var(--badge-matutino-bg);
+            color: var(--badge-matutino-text);
         }
 
         .turno-badge.vespertino {
-            background: #fff3cd;
-            color: #856404;
+            background: var(--badge-vespertino-bg);
+            color: var(--badge-vespertino-text);
         }
 
         .turno-badge.noturno {
-            background: #d1ecf1;
-            color: #0c5460;
+            background: var(--badge-noturno-bg);
+            color: var(--badge-noturno-text);
         }
 
         .turno-badge.badge-24h {
-            background: #f8d7da;
-            color: #721c24;
+            background: var(--badge-24h-bg);
+            color: var(--badge-24h-text);
         }
 
         .turno-badge.sobreaviso {
-            background: #e7e7ff;
-            color: #4a4a8a;
+            background: var(--badge-sobreaviso-bg);
+            color: var(--badge-sobreaviso-text);
         }
 
         .turno-badge.rotina {
-            background: #e2e3e5;
-            color: #383d41;
+            background: var(--badge-rotina-bg);
+            color: var(--badge-rotina-text);
         }
 
         .turno-badge.plantao {
-            background: #ffdab9;
-            color: #8b4513;
+            background: var(--badge-plantao-bg);
+            color: var(--badge-plantao-text);
         }
 
         .turno-badge.diurno {
-            background: #d4edda;
-            color: #155724;
+            background: var(--badge-diurno-bg);
+            color: var(--badge-diurno-text);
         }
 
         .turno-badge.outro {
-            background: #e2e3e5;
-            color: #6c757d;
+            background: var(--badge-outro-bg);
+            color: var(--badge-outro-text);
         }
 
         .telefone-tooltip {
@@ -1559,7 +1686,7 @@ def gerar_dashboard():
             display: flex;
             gap: 5px;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 5px;
         }
 
@@ -1567,13 +1694,13 @@ def gerar_dashboard():
             flex: 1;
             padding: 12px;
             text-align: center;
-            background: white;
+            background: var(--bg-secondary);
             border: none;
             border-bottom: 3px solid transparent;
             cursor: pointer;
             font-size: 1em;
             font-weight: 500;
-            color: #666;
+            color: var(--text-secondary);
             transition: all 0.3s ease;
             border-radius: 8px 8px 0 0;
             position: relative;
@@ -1581,12 +1708,12 @@ def gerar_dashboard():
         }
 
         .data-tab:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .data-tab.active {
-            color: #0d3b66;
-            border-bottom-color: #0d3b66;
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
         }
 
         .data-tab.inactive {
@@ -1870,6 +1997,62 @@ def gerar_dashboard():
             /* Ocultar ramais no print */
             .setor-ramais {
                 display: none !important;
+            }
+        }
+
+        /* Botão Toggle de Tema */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .theme-toggle-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover .theme-toggle-icon {
+            transform: rotate(20deg);
+        }
+
+        @media print {
+            .theme-toggle {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .theme-toggle-icon {
+                font-size: 20px;
             }
         }
     </style>
@@ -2885,7 +3068,57 @@ def gerar_dashboard():
         // Verifica antes de renderizar
         verificarAutenticacao();
         renderizarEscala();
+
+        // ==================== GERENCIAMENTO DE TEMA ====================
+
+        // Função para alternar tema
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            // Alterna a classe
+            if (newTheme === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+
+            // Salva no localStorage
+            localStorage.setItem('theme', newTheme);
+
+            // Atualiza o ícone do botão
+            updateThemeIcon(newTheme);
+        }
+
+        // Função para atualizar o ícone do botão
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Função para carregar o tema salvo
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+
+            updateThemeIcon(savedTheme);
+        }
+
+        // Carrega o tema salvo quando a página carrega
+        loadSavedTheme();
     </script>
+
+    <!-- Botão Toggle de Tema -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span class="theme-toggle-icon" id="theme-icon">🌙</span>
+    </button>
+
     </div> <!-- Fecha main-content -->
 </body>
 </html>"""
