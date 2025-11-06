@@ -2058,6 +2058,8 @@
                                                     <div class="profissional-info">
                                                         <span class="info-label">Horário:</span> ${prof.horario}
                                                         <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
+                                                        <br>
+                                                        <span class="info-label">Turno:</span> ${prof.tipo_turno}
                                                     </div>
                                                 </div>
                                             `}).join('')}
@@ -2094,9 +2096,10 @@
                                             </div>
                                         </div>
                                         <div class="profissional-info">
-                                            <span class="info-label">Turno:</span> ${prof.tipo_turno}
-                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span><br>
                                             <span class="info-label">Horário:</span> ${prof.horario}
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
+                                            <br>
+                                            <span class="info-label">Turno:</span> ${prof.tipo_turno}
                                         </div>
                                     </div>
                                 `}).join('')}
