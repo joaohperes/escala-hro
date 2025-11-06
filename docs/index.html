@@ -969,6 +969,14 @@
             color: #6c757d;
         }
 
+        .turno-badge.misto {
+            background: linear-gradient(135deg, #ff9800 0%, #2196f3 100%);
+            color: #ffffff;
+            font-weight: 700;
+            border: 1px solid #ff6f00;
+            box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+        }
+
         .telefone-tooltip {
             color: #28a745;
             text-decoration: none;
@@ -1123,15 +1131,15 @@
                 flex: none;
                 min-width: auto;
                 width: 100%;
-                justify-content: center;
-                gap: 8px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
 
             .header-right {
                 flex: none;
                 min-width: auto;
                 width: 100%;
-                justify-content: center;
                 text-align: center;
                 gap: 8px;
             }
@@ -1194,6 +1202,21 @@
             .date-btn {
                 padding: 8px 12px;
                 font-size: 0.9em;
+            }
+
+            .contacts-list,
+            .ramais-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item,
+            .ramal-item {
+                padding: 10px 12px;
+            }
+
+            .contact-name,
+            .ramal-name {
+                font-size: 0.95em;
             }
         }
 
@@ -1423,7 +1446,7 @@
     <div id="ramais-modal" class="ramais-modal">
         <div class="ramais-modal-content">
             <div class="ramais-modal-header">
-                <h2>📞 Diretório Telefônico HRO</h2>
+                <h2>Diretório Telefônico HRO</h2>
                 <button class="ramais-modal-close" onclick="fecharDiretorioRamais()">✕</button>
             </div>
             <input type="text" class="ramais-search" id="ramais-search" placeholder="Buscar por departamento ou ramal..." onkeyup="filtrarRamais()">
@@ -1808,11 +1831,52 @@
 
         function obterTipoTurno(turnoText, horarioText = '') {
             // Identifica o tipo de turno com detecção hierárquica
-            // Prioridade: 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
+            // Prioridade: 24H → MIXED (com hífen) → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
             if (!turnoText) return 'outro';
 
             const turno = turnoText.toLowerCase();
             const horario = horarioText ? horarioText.toLowerCase() : '';
+
+            // PRIORIDADE 0: Detecta TURNOS MISTOS (com hífen, ex: "Vesp - Noturno")
+            if (turno.includes('-')) {
+                // Extrai as partes antes e depois do hífen
+                const partes = turno.split('-').map(p => p.trim());
+
+                // Sistema genérico para detectar qualquer combinação de períodos
+                const temMatutino = partes.some(p => p.includes('matutino') || p.includes('manhã'));
+                const temVespertino = partes.some(p => p.includes('vesp') || p.includes('tarde'));
+                const temNoturno = partes.some(p => p.includes('noturno') || p.includes('noite'));
+                const periodosMistos = [temMatutino, temVespertino, temNoturno].filter(Boolean).length > 1;
+
+                // Se tem múltiplos períodos, retorna badge misto
+                if (periodosMistos) {
+                    return 'misto';
+                }
+
+                // Fallback: Usa o horário como critério principal para outros turnos com hífen
+                if (horario && horario.includes('/')) {
+                    try {
+                        const [entrada, saida] = horario.split('/').map(x => x.trim());
+                        const entradaH = parseInt(entrada.split(':')[0]);
+                        const saidaH = parseInt(saida.split(':')[0]);
+
+                        // Se sai antes de entrar (ex: 14:00/06:00), é turno estendido
+                        if (saidaH < entradaH) {
+                            // Baseado na entrada, determina o período inicial
+                            if (entradaH >= 6 && entradaH < 12) return 'matutino';
+                            if (entradaH >= 12 && entradaH < 18) return 'vespertino';
+                            if (entradaH >= 18 || entradaH < 6) return 'noturno';
+                        }
+                    } catch (e) {}
+                }
+
+                // Se temos palavras-chave, usa a última parte (a mais específica)
+                const ultimaParte = partes[partes.length - 1];
+                if (ultimaParte.includes('matutino') || ultimaParte.includes('manhã')) return 'matutino';
+                if (ultimaParte.includes('vespertino') || ultimaParte.includes('tarde')) return 'vespertino';
+                if (ultimaParte.includes('noturno') || ultimaParte.includes('noite')) return 'noturno';
+                return 'misto'; // Fallback para qualquer outro turno com hífen não identificado
+            }
 
             // PRIORIDADE 1: Detecta 24H (entrada == saída)
             if (horario && horario.includes('/')) {
@@ -1945,9 +2009,11 @@
                 'matutino': 'MATUTINO',
                 'vespertino': 'VESPERTINO',
                 'noturno': 'NOTURNO',
+                'misto': 'MISTO',
                 'sobreaviso': 'SOBREAVISO',
                 'rotina': 'ROTINA',
                 'plantao': 'PLANTÃO',
+                'diurno': 'DIURNO',
                 'outro': 'OUTRO'
             };
             return mapping[tipoBadge] || tipoBadge.toUpperCase();
