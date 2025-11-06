@@ -970,11 +970,10 @@
         }
 
         .turno-badge.misto {
-            background: linear-gradient(135deg, #ff9800 0%, #2196f3 100%);
-            color: #ffffff;
+            background: #d8b8e6;
+            color: #6b4c8a;
             font-weight: 700;
-            border: 1px solid #ff6f00;
-            box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+            border: 1px solid #c9a8d8;
         }
 
         .telefone-tooltip {
@@ -1581,7 +1580,7 @@
         function renderizarDiretorioRamais() {
             const ramaisList = document.getElementById('ramais-list');
 
-            if (!ramaisData.departments) {
+            if (!ramaisData || !ramaisData.departments || ramaisData.departments.length === 0) {
                 ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
                 return;
             }
@@ -1839,7 +1838,25 @@
             const turno = turnoText.toLowerCase();
             const horario = horarioText ? horarioText.toLowerCase() : '';
 
-            // PRIORIDADE 0: Detecta TURNOS MISTOS (com hífen, ex: "Vesp - Noturno")
+            // PRIORIDADE 1: Detecta 24H PRIMEIRO (entrada == saída)
+            if (horario && horario.includes('/')) {
+                try {
+                    const [entrada, saida] = horario.split('/').map(x => x.trim());
+                    if (entrada === saida) {
+                        return 'badge-24h';
+                    }
+                    // Detecta Diurno (07:00-19:00) - típico de residência
+                    try {
+                        const entradaH = parseInt(entrada.split(':')[0]);
+                        const saidaH = parseInt(saida.split(':')[0]);
+                        if (entradaH === 7 && saidaH === 19) {
+                            return 'diurno';
+                        }
+                    } catch (e) {}
+                } catch (e) {}
+            }
+
+            // PRIORIDADE 1.5: Detecta TURNOS MISTOS (com hífen, ex: "Vesp - Noturno")
             if (turno.includes('-')) {
                 // Extrai as partes antes e depois do hífen
                 const partes = turno.split('-').map(p => p.trim());
@@ -1878,24 +1895,6 @@
                 if (ultimaParte.includes('vespertino') || ultimaParte.includes('tarde')) return 'vespertino';
                 if (ultimaParte.includes('noturno') || ultimaParte.includes('noite')) return 'noturno';
                 return 'misto'; // Fallback para qualquer outro turno com hífen não identificado
-            }
-
-            // PRIORIDADE 1: Detecta 24H (entrada == saída)
-            if (horario && horario.includes('/')) {
-                try {
-                    const [entrada, saida] = horario.split('/').map(x => x.trim());
-                    if (entrada === saida) {
-                        return 'badge-24h';
-                    }
-                    // Detecta Diurno (07:00-19:00) - típico de residência
-                    try {
-                        const entradaH = parseInt(entrada.split(':')[0]);
-                        const saidaH = parseInt(saida.split(':')[0]);
-                        if (entradaH === 7 && saidaH === 19) {
-                            return 'diurno';
-                        }
-                    } catch (e) {}
-                } catch (e) {}
             }
 
             // PRIORIDADE 2: Detecta SOBREAVISO (com ou sem fim de semana)
