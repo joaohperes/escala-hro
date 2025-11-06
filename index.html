@@ -22,6 +22,13 @@
             background: #f8f9fb;
             color: #1a1a1a;
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Tema Escuro */
+        body.dark-theme {
+            background: #1a1a1a;
+            color: #e0e0e0;
         }
 
         #main-content {
@@ -59,6 +66,12 @@
             max-width: 400px;
             width: 90%;
             text-align: center;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-theme .auth-modal-content {
+            background: #2a2a2a;
+            color: #e0e0e0;
         }
 
         .auth-modal-content h2 {
@@ -1094,6 +1107,20 @@
             opacity: 0.6;
         }
 
+        body.dark-theme .data-tab {
+            background: #2a2a2a;
+            color: #999;
+        }
+
+        body.dark-theme .data-tab:hover {
+            color: #4da6ff;
+        }
+
+        body.dark-theme .data-tab.active {
+            color: #4da6ff;
+            border-bottom-color: #4da6ff;
+        }
+
         .data-content {
             display: none;
         }
@@ -1372,6 +1399,206 @@
             .setor-ramais {
                 display: none !important;
             }
+        }
+
+        /* Botão Toggle de Tema */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #0d3b66;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        body.dark-theme .theme-toggle {
+            background: #4da6ff;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+
+        /* ========== Estilos Dark Theme para Componentes ========== */
+
+        /* Botões */
+        body.dark-theme .date-btn {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            color: #999;
+        }
+
+        body.dark-theme .date-btn:hover {
+            border-color: #4da6ff;
+            color: #4da6ff;
+            box-shadow: 0 2px 8px rgba(77, 166, 255, 0.2);
+        }
+
+        body.dark-theme .date-btn.active {
+            background: #0066cc;
+            color: white;
+            border-color: #0066cc;
+            box-shadow: 0 4px 12px rgba(77, 166, 255, 0.3);
+        }
+
+        body.dark-theme .btn {
+            background: #0066cc;
+            color: white;
+        }
+
+        body.dark-theme .btn:hover {
+            background: #0052a3;
+        }
+
+        /* Input e Search */
+        body.dark-theme .search-input {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .search-input:focus {
+            border-color: #4da6ff;
+            background: #1a1a1a;
+            box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.2);
+        }
+
+        body.dark-theme .search-input::placeholder {
+            color: #666;
+        }
+
+        body.dark-theme .auth-input {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .auth-input:focus {
+            border-color: #4da6ff;
+            box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.2);
+        }
+
+        /* Cards e Containers */
+        body.dark-theme .profissional {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .category {
+            background: transparent;
+        }
+
+        body.dark-theme .categoria-header {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-theme .categoria-header:hover {
+            background: #323232;
+        }
+
+        body.dark-theme .categoria-content {
+            background: #1a1a1a;
+        }
+
+        body.dark-theme .profissional-nome {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .profissional-info {
+            color: #999;
+        }
+
+        body.dark-theme .turno-badge {
+            background: #0066cc;
+            color: white;
+        }
+
+        /* Modais */
+        body.dark-theme .contacts-modal,
+        body.dark-theme .ramais-modal {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        body.dark-theme .modal-content {
+            background: #1a1a1a;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-theme .contact-item {
+            background: #2a2a2a;
+            border-color: #3a3a3a;
+        }
+
+        body.dark-theme .contact-name {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .contact-info {
+            color: #999;
+        }
+
+        /* Stats */
+        body.dark-theme .stat-card {
+            background: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .stat-number {
+            color: #4da6ff;
+        }
+
+        body.dark-theme .stat-label {
+            color: #999;
+        }
+
+        /* Header */
+        body.dark-theme .header {
+            background: linear-gradient(135deg, #0052a3 0%, #003d7a 100%);
+        }
+
+        /* Text */
+        body.dark-theme label {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme h2, body.dark-theme h3 {
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .auth-modal-content h2 {
+            color: #4da6ff;
+        }
+
+        body.dark-theme .auth-modal-content p {
+            color: #999;
         }
     </style>
 </head>
@@ -2383,10 +2610,64 @@
         // Setup tooltips after page loads
         setupPhoneTooltips();
 
+        // ==================== GERENCIAMENTO DE TEMA ====================
+
+        function toggleTheme() {
+            try {
+                const isDarkTheme = document.body.classList.toggle('dark-theme');
+
+                // Save preference to localStorage
+                localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+
+                // Update icon
+                updateThemeIcon(isDarkTheme);
+            } catch (error) {
+                console.warn('Tema toggle error:', error);
+                // Fallback: just toggle without saving
+                document.body.classList.toggle('dark-theme');
+            }
+        }
+
+        function updateThemeIcon(isDarkTheme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = isDarkTheme ? '☀️' : '🌙';
+            }
+        }
+
+        function loadSavedTheme() {
+            try {
+                const savedTheme = localStorage.getItem('theme') || 'light';
+
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    updateThemeIcon(true);
+                } else {
+                    updateThemeIcon(false);
+                }
+            } catch (error) {
+                console.warn('Theme load error:', error);
+                // Fallback: use system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('dark-theme');
+                    updateThemeIcon(true);
+                }
+            }
+        }
+
+        // Load saved theme when page loads
+        loadSavedTheme();
+
         // Verifica antes de renderizar
         verificarAutenticacao();
         renderizarEscala();
     </script>
+
+    <!-- Botão Toggle de Tema -->
+    <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span id="theme-icon">🌙</span>
+    </button>
+
     </div> <!-- Fecha main-content -->
 </body>
 </html>
