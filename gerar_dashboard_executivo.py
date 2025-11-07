@@ -2783,8 +2783,6 @@ def gerar_dashboard():
                                                         <div class="info-row">
                                                             <span class="info-label">Horário:</span>
                                                             <span class="info-value">${prof.horario}</span>
-                                                        </div>
-                                                        <div class="info-row">
                                                             <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
                                                         </div>
                                                     </div>
@@ -2828,13 +2826,9 @@ def gerar_dashboard():
                                                 <span class="info-value">${setor}</span>
                                             </div>
                                             <div class="info-row">
-                                                <span class="info-label">Turno:</span>
-                                                <span class="info-value">${prof.tipo_turno}</span>
-                                                <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
-                                            </div>
-                                            <div class="info-row">
                                                 <span class="info-label">Horário:</span>
                                                 <span class="info-value">${prof.horario}</span>
+                                                <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
                                             </div>
                                         </div>
                                     </div>
