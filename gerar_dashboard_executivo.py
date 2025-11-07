@@ -1484,7 +1484,6 @@ def gerar_dashboard():
             color: #0d3b66;
             margin-bottom: 12px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #e8eef7;
             font-size: 1em;
             display: flex;
             align-items: center;
