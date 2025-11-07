@@ -2525,7 +2525,7 @@ def gerar_dashboard():
             // Exemplos: "Vesp - Noturno", "Matutino - Vespertino", "Vespertino/Noturno"
             const periodosPresentes = [
                 turno.includes('matutino') || turno.includes('manhã'),
-                turno.includes('vespertino') || turno.includes('tarde'),
+                turno.includes('vespertino') || turno.includes('vesp') || turno.includes('tarde'),
                 turno.includes('noturno') || turno.includes('noite')
             ].filter(Boolean).length;
 
