@@ -2016,11 +2016,23 @@
 
         function obterTipoTurno(turnoText, horarioText = '') {
             // Identifica o tipo de turno com detecção hierárquica
-            // Prioridade: 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
-            if (!turnoText) return 'outro';
+            // Prioridade: MISTO → 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
+            if (!turnoText) return 'misto';
 
             const turno = turnoText.toLowerCase();
             const horario = horarioText ? horarioText.toLowerCase() : '';
+
+            // PRIORIDADE 0: Detecta turnos MISTOS (combinações de múltiplos períodos)
+            // Exemplos: "Vesp - Noturno", "Matutino - Vespertino", "Vespertino/Noturno"
+            const periodosPresentes = [
+                turno.includes('matutino') || turno.includes('manhã'),
+                turno.includes('vespertino') || turno.includes('tarde'),
+                turno.includes('noturno') || turno.includes('noite')
+            ].filter(Boolean).length;
+
+            if (periodosPresentes > 1) {
+                return 'misto';
+            }
 
             // PRIORIDADE 1: Detecta 24H (entrada == saída)
             if (horario && horario.includes('/')) {
