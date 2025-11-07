@@ -17,11 +17,132 @@
             height: 100%;
         }
 
+        /* CSS Variables para Temas */
+        :root {
+            /* Cores principais */
+            --bg-primary: #f8f9fb;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f8fbff;
+            --bg-gradient-start: #f8fbff;
+            --bg-gradient-end: #e8eef7;
+
+            /* Textos */
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-tertiary: #999999;
+
+            /* Bordas */
+            --border-color: #e8eef7;
+            --border-color-hover: #ddd;
+
+            /* Cores de destaque */
+            --color-primary: #0d3b66;
+            --color-primary-dark: #0a2f52;
+            --color-primary-light: #1a5490;
+            --color-success: #28a745;
+            --color-success-dark: #218838;
+            --color-warning: #ffc107;
+            --color-danger: #dc3545;
+            --color-info: #17a2b8;
+            --color-purple: #6610f2;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(13, 59, 102, 0.1);
+            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 8px 24px rgba(13, 59, 102, 0.2);
+
+            /* Badges - Turnos */
+            --badge-matutino-bg: #d4edda;
+            --badge-matutino-text: #155724;
+            --badge-vespertino-bg: #fff3cd;
+            --badge-vespertino-text: #856404;
+            --badge-noturno-bg: #d1ecf1;
+            --badge-noturno-text: #0c5460;
+            --badge-24h-bg: #f8d7da;
+            --badge-24h-text: #721c24;
+            --badge-sobreaviso-bg: #e7e7ff;
+            --badge-sobreaviso-text: #4a4a8a;
+            --badge-rotina-bg: #e2e3e5;
+            --badge-rotina-text: #383d41;
+            --badge-plantao-bg: #ffdab9;
+            --badge-plantao-text: #8b4513;
+            --badge-diurno-bg: #d4edda;
+            --badge-diurno-text: #155724;
+            --badge-outro-bg: #e2e3e5;
+            --badge-outro-text: #6c757d;
+
+            /* Modal */
+            --modal-overlay: rgba(0, 0, 0, 0.7);
+            --modal-overlay-light: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Tema Escuro */
+        body.dark-theme {
+            /* Cores principais */
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #242424;
+            --bg-gradient-start: #2d2d2d;
+            --bg-gradient-end: #1a1a1a;
+
+            /* Textos */
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --text-tertiary: #808080;
+
+            /* Bordas */
+            --border-color: #404040;
+            --border-color-hover: #555555;
+
+            /* Cores de destaque - mantêm-se vibrantes no escuro */
+            --color-primary: #4a9eff;
+            --color-primary-dark: #3a8eef;
+            --color-primary-light: #5aadff;
+            --color-success: #4caf50;
+            --color-success-dark: #3c9f40;
+            --color-warning: #ffb300;
+            --color-danger: #f44336;
+            --color-info: #29b6f6;
+            --color-purple: #9c27b0;
+
+            /* Shadows - mais sutis no escuro */
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+            /* Badges - Turnos (versões escuras) */
+            --badge-matutino-bg: #2d4a2f;
+            --badge-matutino-text: #81c784;
+            --badge-vespertino-bg: #4a4220;
+            --badge-vespertino-text: #ffd54f;
+            --badge-noturno-bg: #1e3a4a;
+            --badge-noturno-text: #4dd0e1;
+            --badge-24h-bg: #4a2d2d;
+            --badge-24h-text: #ef9a9a;
+            --badge-sobreaviso-bg: #3a3a5a;
+            --badge-sobreaviso-text: #b39ddb;
+            --badge-rotina-bg: #3a3a3a;
+            --badge-rotina-text: #b0b0b0;
+            --badge-plantao-bg: #4a3a2a;
+            --badge-plantao-text: #ffcc80;
+            --badge-diurno-bg: #2d4a2f;
+            --badge-diurno-text: #81c784;
+            --badge-outro-bg: #3a3a3a;
+            --badge-outro-text: #9e9e9e;
+
+            /* Modal */
+            --modal-overlay: rgba(0, 0, 0, 0.85);
+            --modal-overlay-light: rgba(0, 0, 0, 0.75);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #f8f9fb;
-            color: #1a1a1a;
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         #main-content {
@@ -40,7 +161,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: var(--modal-overlay);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,7 +173,7 @@
         }
 
         .auth-modal-content {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 40px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
@@ -62,13 +183,13 @@
         }
 
         .auth-modal-content h2 {
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 15px;
             font-size: 1.5em;
         }
 
         .auth-modal-content p {
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             font-size: 0.95em;
         }
@@ -76,24 +197,26 @@
         .auth-input {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #ddd;
+            border: 2px solid var(--border-color-hover);
             border-radius: 8px;
             font-size: 1em;
             margin-bottom: 15px;
             box-sizing: border-box;
             transition: border-color 0.3s ease;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .auth-input:focus {
             outline: none;
-            border-color: #0d3b66;
-            box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
 
         .auth-btn {
             width: 100%;
             padding: 12px;
-            background: #0d3b66;
+            background: var(--color-primary);
             color: white;
             border: none;
             border-radius: 8px;
@@ -104,9 +227,9 @@
         }
 
         .auth-btn:hover {
-            background: #0a2f52;
+            background: var(--color-primary-dark);
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(13, 59, 102, 0.2);
+            box-shadow: var(--shadow-sm);
         }
 
         .auth-btn:active {
@@ -114,7 +237,7 @@
         }
 
         .auth-error {
-            color: #d9534f;
+            color: var(--color-danger);
             font-size: 0.9em;
             margin-top: 10px;
             display: none;
@@ -128,7 +251,7 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
         }
 
         .auth-tab-btn {
@@ -139,18 +262,18 @@
             border-bottom: 3px solid transparent;
             cursor: pointer;
             font-size: 1em;
-            color: #666;
+            color: var(--text-secondary);
             transition: all 0.3s ease;
         }
 
         .auth-tab-btn.active {
-            color: #0d3b66;
-            border-bottom-color: #0d3b66;
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
             font-weight: 600;
         }
 
         .auth-tab-btn:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .auth-tab-content {
@@ -319,18 +442,20 @@
         .search-input {
             width: 100%;
             padding: 12px 20px;
-            border: 2px solid #e8eef7;
+            border: 2px solid var(--border-color);
             border-radius: 8px;
             font-size: 0.95em;
             transition: all 0.3s ease;
             font-family: 'Inter', sans-serif;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .search-input:focus {
             outline: none;
-            border-color: #0d3b66;
-            background: #f8fbff;
-            box-shadow: 0 0 0 3px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            background: var(--bg-tertiary);
+            box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
         }
 
         .action-buttons {
@@ -538,7 +663,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--modal-overlay-light);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -551,7 +676,7 @@
         }
 
         .ramais-modal-content {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             padding: 30px;
             max-width: 800px;
@@ -566,12 +691,12 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 15px;
         }
 
         .ramais-modal-header h2 {
-            color: #0d3b66;
+            color: var(--color-primary);
             font-size: 1.5em;
             margin: 0;
         }
@@ -580,23 +705,25 @@
             background: none;
             border: none;
             font-size: 1.5em;
-            color: #666;
+            color: var(--text-secondary);
             cursor: pointer;
             padding: 0;
             line-height: 1;
         }
 
         .ramais-modal-close:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .ramais-search {
             width: 100%;
             padding: 12px 15px;
-            border: 2px solid #ddd;
+            border: 2px solid var(--border-color-hover);
             border-radius: 8px;
             margin-bottom: 20px;
             font-size: 1em;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
         .ramais-list {
@@ -678,21 +805,21 @@
             text-align: center;
             font-size: 1.2em;
             font-weight: 600;
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 15px;
             padding: 12px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            box-shadow: var(--shadow-sm);
         }
 
         .last-update {
             text-align: center;
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 20px;
             padding: 10px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 8px;
             display: flex;
             justify-content: center;
@@ -730,60 +857,60 @@
         }
 
         .stat-card {
-            background: white;
+            background: var(--bg-secondary);
             padding: 20px;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid #0d3b66;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--color-primary);
             transition: all 0.3s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow-lg);
         }
 
         .stat-number {
             font-size: 2em;
             font-weight: 700;
-            color: #0d3b66;
+            color: var(--color-primary);
             margin-bottom: 5px;
         }
 
         .stat-label {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .category {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow-md);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
         .category:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow-lg);
         }
 
         .categoria-header {
-            background: linear-gradient(135deg, #f8fbff 0%, #e8eef7 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             padding: 18px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-left: 4px solid #0d3b66;
+            border-left: 4px solid var(--color-primary);
             transition: all 0.3s ease;
         }
 
         .categoria-header:hover {
-            background: linear-gradient(135deg, #e8eef7 0%, #d8dfe7 100%);
+            background: linear-gradient(135deg, var(--bg-gradient-end) 0%, var(--border-color) 100%);
         }
 
         .categoria-header-text {
@@ -797,11 +924,11 @@
         .categoria-nome {
             font-size: 1.15em;
             font-weight: 600;
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .categoria-count {
-            color: #666;
+            color: var(--text-secondary);
             font-size: 0.9em;
             font-weight: 500;
         }
@@ -854,6 +981,7 @@
             color: #0d3b66;
             margin-bottom: 12px;
             padding-bottom: 8px;
+            border-bottom: 2px solid #e8eef7;
             font-size: 1em;
         }
 
@@ -872,15 +1000,15 @@
 
         .profissional {
             padding: 12px;
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 6px;
-            border: 1px solid #e8eef7;
+            border: 1px solid var(--border-color);
             transition: all 0.2s ease;
         }
 
         .profissional:hover {
-            border-color: #0d3b66;
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
             transform: translateX(2px);
         }
 
@@ -904,9 +1032,10 @@
         .profissional-info {
             font-size: 0.85em;
             color: #666;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .info-label {
@@ -925,55 +1054,48 @@
         }
 
         .turno-badge.matutino {
-            background: #d4edda;
-            color: #155724;
+            background: var(--badge-matutino-bg);
+            color: var(--badge-matutino-text);
         }
 
         .turno-badge.vespertino {
-            background: #fff3cd;
-            color: #856404;
+            background: var(--badge-vespertino-bg);
+            color: var(--badge-vespertino-text);
         }
 
         .turno-badge.noturno {
-            background: #d1ecf1;
-            color: #0c5460;
+            background: var(--badge-noturno-bg);
+            color: var(--badge-noturno-text);
         }
 
         .turno-badge.badge-24h {
-            background: #f8d7da;
-            color: #721c24;
+            background: var(--badge-24h-bg);
+            color: var(--badge-24h-text);
         }
 
         .turno-badge.sobreaviso {
-            background: #e7e7ff;
-            color: #4a4a8a;
+            background: var(--badge-sobreaviso-bg);
+            color: var(--badge-sobreaviso-text);
         }
 
         .turno-badge.rotina {
-            background: #e2e3e5;
-            color: #383d41;
+            background: var(--badge-rotina-bg);
+            color: var(--badge-rotina-text);
         }
 
         .turno-badge.plantao {
-            background: #ffdab9;
-            color: #8b4513;
+            background: var(--badge-plantao-bg);
+            color: var(--badge-plantao-text);
         }
 
         .turno-badge.diurno {
-            background: #d4edda;
-            color: #155724;
+            background: var(--badge-diurno-bg);
+            color: var(--badge-diurno-text);
         }
 
         .turno-badge.outro {
-            background: #e2e3e5;
-            color: #6c757d;
-        }
-
-        .turno-badge.misto {
-            background: #d8b8e6;
-            color: #6b4c8a;
-            font-weight: 700;
-            border: 1px solid #c9a8d8;
+            background: var(--badge-outro-bg);
+            color: var(--badge-outro-text);
         }
 
         .telefone-tooltip {
@@ -1065,7 +1187,7 @@
             display: flex;
             gap: 5px;
             margin-bottom: 20px;
-            border-bottom: 2px solid #e8eef7;
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 5px;
         }
 
@@ -1073,13 +1195,13 @@
             flex: 1;
             padding: 12px;
             text-align: center;
-            background: white;
+            background: var(--bg-secondary);
             border: none;
             border-bottom: 3px solid transparent;
             cursor: pointer;
             font-size: 1em;
             font-weight: 500;
-            color: #666;
+            color: var(--text-secondary);
             transition: all 0.3s ease;
             border-radius: 8px 8px 0 0;
             position: relative;
@@ -1087,12 +1209,12 @@
         }
 
         .data-tab:hover {
-            color: #0d3b66;
+            color: var(--color-primary);
         }
 
         .data-tab.active {
-            color: #0d3b66;
-            border-bottom-color: #0d3b66;
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
         }
 
         .data-tab.inactive {
@@ -1130,15 +1252,15 @@
                 flex: none;
                 min-width: auto;
                 width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
+                justify-content: center;
+                gap: 8px;
             }
 
             .header-right {
                 flex: none;
                 min-width: auto;
                 width: 100%;
+                justify-content: center;
                 text-align: center;
                 gap: 8px;
             }
@@ -1201,21 +1323,6 @@
             .date-btn {
                 padding: 8px 12px;
                 font-size: 0.9em;
-            }
-
-            .contacts-list,
-            .ramais-list {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-item,
-            .ramal-item {
-                padding: 10px 12px;
-            }
-
-            .contact-name,
-            .ramal-name {
-                font-size: 0.95em;
             }
         }
 
@@ -1393,6 +1500,62 @@
                 display: none !important;
             }
         }
+
+        /* Botão Toggle de Tema */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+
+        .theme-toggle-icon {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover .theme-toggle-icon {
+            transform: rotate(20deg);
+        }
+
+        @media print {
+            .theme-toggle {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .theme-toggle-icon {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1445,7 +1608,7 @@
     <div id="ramais-modal" class="ramais-modal">
         <div class="ramais-modal-content">
             <div class="ramais-modal-header">
-                <h2>Diretório Telefônico HRO</h2>
+                <h2>📞 Diretório Telefônico HRO</h2>
                 <button class="ramais-modal-close" onclick="fecharDiretorioRamais()">✕</button>
             </div>
             <input type="text" class="ramais-search" id="ramais-search" placeholder="Buscar por departamento ou ramal..." onkeyup="filtrarRamais()">
@@ -1509,7 +1672,7 @@
 
     <script>
         // Dados das escalas
-        const escalas = {"atual": {"data": "06 novembro 2025", "data_simples": "06/11/2025", "registros": [{"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 92, "profissional": "Fabiane Scheffer Reginatto", "setor": "Alojamento Conjunto", "tipo_turno": "Rotina - Alojamento Conjunto"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 428, "profissional": "Patricia Carla De Lima", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/13:00", "phone": "", "pos_x": 765, "profissional": "Elaine Aparecida Forgiarini", "setor": "Ambulatório Oncologia - Triagem", "tipo_turno": "Ambulatório Oncologia Triagem - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 1101, "profissional": "Guilherme Macena Barreto Junior", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Diurno"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1438, "profissional": "Carlos Fogaça", "setor": "Bucomaxilo Sobreaviso", "tipo_turno": "Bucomaxilo - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1774, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Cardiologia - Sobreaviso", "tipo_turno": "Sobreaviso Cardiologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 2111, "profissional": "Mateus Ceresoli Baptistella", "setor": "Cirurgia Geral - Sobreaviso", "tipo_turno": "Cirurgia Geral - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2447, "profissional": "Alberto Stolt", "setor": "Cirurgia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Cirurgia Pediátrica"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2784, "profissional": "Dantas Luis Lavall da Silva", "setor": "Cirurgia Torácica - Sobreaviso", "tipo_turno": "Cirurgia Torácica - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3120, "profissional": "Graciany Gasperin", "setor": "Cirurgia Vascular - Sobreaviso", "tipo_turno": "Vascular Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Gabriel Vitoria Domingues", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Bruno Trevisan", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Eduardo Henrique Borsatto", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3793, "profissional": "Paulo Henrique Fachinello", "setor": "Endoscopia - Sobreaviso", "tipo_turno": "Endoscopia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Ocieny Gonzaga Guimarães Ramírez", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Maríndia Sitta", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 4466, "profissional": "Julio Roberto Barbiero", "setor": "Hemodinâmica - Sobreaviso Cardiologia", "tipo_turno": "Hemodinâmica - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "Eduardo Henrique Borsatto", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "João Orlando Rodrigues da Silva", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "06:00/14:00", "phone": "", "pos_x": 5139, "profissional": "Geraldo Antunes Cordova", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5476, "profissional": "Marcelo Lemos Vieira Da Cunha", "setor": "Neurocirurgia - Sobreaviso", "tipo_turno": "Neurocirurgia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5812, "profissional": "Clezio Alex Onuki Castro", "setor": "Neurologia/U-AVC Integral - Sobreaviso", "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 6148, "profissional": "João Henrique Peres", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6485, "profissional": "Sergio Francisco Siepko Junior", "setor": "Oftalmologia Sobreaviso", "tipo_turno": "Sobreaviso Oftalmologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Geovan Fábio de Oliveira", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Alberto Antonio Biazussi", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Luiza da Ros Schumacher", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8167, "profissional": "Claudio Quinan Balestrin Neto", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8504, "profissional": "Hiolanda Gomes Piler Dornelas", "setor": "Residência de Cirurgia Geral", "tipo_turno": "DIA"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8840, "profissional": "Ana Paula Graboski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8840, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Mario Goto", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Thiago Felippe Reck", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Juliano Ferneda", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Urologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Ana Carolina Renz Simon", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Marcia de Menezes Bergamo", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10186, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10186, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Eliana Iora Schneider", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Maiara Szepilowski Bampi", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10859, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10859, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/12:00", "phone": "", "pos_x": 11195, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "10:00/14:00", "phone": "", "pos_x": 11532, "profissional": "Janice Velleda Brancao", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Médico Rotineiro I"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 11868, "profissional": "Lucas Alcir da Silva", "setor": "Urologia Sobreaviso", "tipo_turno": "Sobreaviso Urologia"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 428, "profissional": "Kaliandra de Almeida", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "13:30/17:30", "phone": "", "pos_x": 765, "profissional": "Elaine Aparecida Forgiarini", "setor": "Ambulatório Oncologia - Triagem", "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 1101, "profissional": "Guilherme Macena Barreto Junior", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/16:00", "phone": "", "pos_x": 3457, "profissional": "Paulo Henrique Fachinello", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Ocieny Gonzaga Guimarães Ramírez", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Maríndia Sitta", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P2"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Cintya Boligon", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Julia Braghini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "João Orlando Rodrigues da Silva", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4803, "profissional": "Marta Schmidt Pfaffenzeller", "setor": "Hospitalista", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "14:00/06:00", "phone": "", "pos_x": 5139, "profissional": "Geraldo Antunes Cordova", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Vesp - Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 6148, "profissional": "Juciana Belini", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "17:00/19:00", "phone": "", "pos_x": 6821, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 6821, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "João Henrique Peres", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "06 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "Maria Eduarda Wilvert", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Naila Cerutti", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Gabriela Simionato dos Santos", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "06 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Bruna Raquel Kessler", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Jose Augusto Nogueira Ribas", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Leticia Rosa Modelski", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7831, "profissional": "Liss Andreza Nunes Druchak", "setor": "R2 Clínica Médica UTI", "tipo_turno": "Noite"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/00:00", "phone": "", "pos_x": 8167, "profissional": "Elias Matheus Baggio Valgoi", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clinica Méidica Intermediário"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8167, "profissional": "Claudio Quinan Balestrin Neto", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8504, "profissional": "Jamile Rosset Mocellin", "setor": "Residência de Cirurgia Geral", "tipo_turno": "NOITE"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8840, "profissional": "Elisa Noskoski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8840, "profissional": "Waleska Furini", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "18:30/07:30", "phone": "", "pos_x": 9513, "profissional": "Vicente Gregorio Restelli", "setor": "Ultrassonografia - Sobreaviso", "tipo_turno": "Ultrassonografia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 9850, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 9850, "profissional": "Ana Carolina Renz Simon", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 9850, "profissional": "Luiz Tsuyoshi Inoue", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10186, "profissional": "Fabio Silva Romani", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10186, "profissional": "Leonardo Moura Lock", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10523, "profissional": "Matheus De Oliveira Brock", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10523, "profissional": "Allan Douglas Santos", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10859, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10859, "profissional": "João Victor Garcia de Souza", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/08:00", "phone": "", "pos_x": 6821, "profissional": "Kaliandra de Almeida", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobre Aviso Oncologia"}], "total": 92}, "data_atualizacao": "06/11/2025", "hora_atualizacao": "10:14", "status_atualizacao": "sucesso", "anterior": {"data": "05 novembro 2025", "data_simples": "05/11/2025", "registros": [{"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 92, "profissional": "Fabiane Scheffer Reginatto", "setor": "Alojamento Conjunto", "tipo_turno": "Rotina - Alojamento Conjunto"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 428, "profissional": "Kaliandra de Almeida", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "05 novembro 2025", "email": "", "horario": "09:00/13:00", "phone": "", "pos_x": 428, "profissional": "Patricia Carla De Lima", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 1101, "profissional": "Jamessom Borralho Paes de Barros Filho", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Diurno"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1438, "profissional": "Carlos Fogaça", "setor": "Bucomaxilo Sobreaviso", "tipo_turno": "Bucomaxilo - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1774, "profissional": "Thais Nascimento Helou", "setor": "Cardiologia - Sobreaviso", "tipo_turno": "Sobreaviso Cardiologia"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 2111, "profissional": "Fabio Luis Rockenbach", "setor": "Cirurgia Geral - Sobreaviso", "tipo_turno": "Cirurgia Geral - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2447, "profissional": "Ricardo Marcelus Araujo Filipak", "setor": "Cirurgia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Cirurgia Pediátrica"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2784, "profissional": "Dantas Luis Lavall da Silva", "setor": "Cirurgia Torácica - Sobreaviso", "tipo_turno": "Cirurgia Torácica - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3120, "profissional": "Graciany Gasperin", "setor": "Cirurgia Vascular - Sobreaviso", "tipo_turno": "Vascular Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Gabriel Vitoria Domingues", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Bruno Trevisan", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Ana Carolina Muller Beheregaray", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3793, "profissional": "Paulo Henrique Fachinello", "setor": "Endoscopia - Sobreaviso", "tipo_turno": "Endoscopia - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Ana Paula Romanzini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P1"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Ana Claudia Cazzuni", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P2"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 4466, "profissional": "Adalberto Gloeckner de Meira", "setor": "Hemodinâmica - Sobreaviso Cardiologia", "tipo_turno": "Hemodinâmica - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "Eduardo Henrique Borsatto", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "Matheus Antonio Baccin", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "06:00/14:00", "phone": "", "pos_x": 5139, "profissional": "Marina Oliboni Moschetta", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5476, "profissional": "Clezio Alex Onuki Castro", "setor": "Neurocirurgia - Sobreaviso", "tipo_turno": "Neurocirurgia - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5812, "profissional": "Marcelo Lemos Vieira Da Cunha", "setor": "Neurologia/U-AVC Integral - Sobreaviso", "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 6148, "profissional": "João Henrique Peres", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6485, "profissional": "Sergio Francisco Siepko Junior", "setor": "Oftalmologia Sobreaviso", "tipo_turno": "Sobreaviso Oftalmologia"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Vitor Augusto Macedo Briese", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Igor Barroca Maurer", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Kevin Cristian Moraes Henkemaier", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8167, "profissional": "Cesar Augusto Seidler Junior", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8504, "profissional": "Hiolanda Gomes Piler Dornelas", "setor": "Residência de Cirurgia Geral", "tipo_turno": "DIA"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8840, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Mario Goto", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 1"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Thiago Felippe Reck", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 2"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Juliano Ferneda", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Urologia"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Fernanda Fornari", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Marcia de Menezes Bergamo", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10186, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10186, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Rotina"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Allan Douglas Santos", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Maiara Szepilowski Bampi", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Rotina"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10859, "profissional": "Juliana Ulsenheimer Knorst", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10859, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Rotina"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/12:00", "phone": "", "pos_x": 11195, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Rotina"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Matutino"}, {"data": "05 novembro 2025", "email": "", "horario": "10:00/14:00", "phone": "", "pos_x": 11532, "profissional": "Janice Velleda Brancao", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Médico Rotineiro I"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 11868, "profissional": "Lucas Alcir da Silva", "setor": "Urologia Sobreaviso", "tipo_turno": "Sobreaviso Urologia"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 428, "profissional": "Patricia Carla De Lima", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "05 novembro 2025", "email": "", "horario": "13:30/17:30", "phone": "", "pos_x": 765, "profissional": "Elaine Aparecida Forgiarini", "setor": "Ambulatório Oncologia - Triagem", "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 1101, "profissional": "Jamessom Borralho Paes de Barros Filho", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/16:00", "phone": "", "pos_x": 3457, "profissional": "Paulo Henrique Fachinello", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Ana Paula Romanzini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P1"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Ana Claudia Cazzuni", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P2"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Maríndia Sitta", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Ocieny Gonzaga Guimarães Ramírez", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "Amanda Alberici", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "Matheus Antonio Baccin", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4803, "profissional": "Bruno Taddeo Nogueira Alves Soares De Alvarenga", "setor": "Hospitalista", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "14:00/06:00", "phone": "", "pos_x": 5139, "profissional": "Marina Oliboni Moschetta", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Vesp - Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 6148, "profissional": "Juciana Belini", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "17:00/19:00", "phone": "", "pos_x": 6821, "profissional": "Kaliandra de Almeida", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 6821, "profissional": "Kaliandra de Almeida", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "05 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "Leticia Rosa Modelski", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "05 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "Luiza da Ros Schumacher", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Nathalia Moreira Pereira", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "05 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Brenda Lesley Alves Capra", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "05 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Caroline Lopes Tamada", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Priscila Domingos", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Gustavo Wentz Biasuz", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7831, "profissional": "Christine Leitner", "setor": "R2 Clínica Médica UTI", "tipo_turno": "Noite"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/00:00", "phone": "", "pos_x": 8167, "profissional": "Cesar Augusto Seidler Junior", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clinica Méidica Intermediário"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8167, "profissional": "Eduardo Masiero Cola", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8504, "profissional": "Gustavo Araújo", "setor": "Residência de Cirurgia Geral", "tipo_turno": "NOITE"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8840, "profissional": "Waleska Furini", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8840, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8840, "profissional": "Ana Paula Graboski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "18:30/07:30", "phone": "", "pos_x": 9513, "profissional": "Vicente Gregorio Restelli", "setor": "Ultrassonografia - Sobreaviso", "tipo_turno": "Ultrassonografia - Sobreaviso"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 9850, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 9850, "profissional": "Fabiane Scheffer Reginatto", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 9850, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10186, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10186, "profissional": "Michel Peruzzo", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10523, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10523, "profissional": "Eliana Iora Schneider", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10859, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10859, "profissional": "João Orlando Rodrigues da Silva", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11195, "profissional": "Marcia de Menezes Bergamo", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Vespertino"}, {"data": "05 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Noturno"}, {"data": "05 novembro 2025", "email": "", "horario": "07:00/08:00", "phone": "", "pos_x": 6821, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobre Aviso Oncologia"}], "total": 92}};
+        const escalas = {"atual": {"data": "07 novembro 2025", "data_simples": "07/11/2025", "registros": [{"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 92, "profissional": "Fabiane Scheffer Reginatto", "setor": "Alojamento Conjunto", "tipo_turno": "Rotina - Alojamento Conjunto"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 429, "profissional": "Kaliandra de Almeida", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 765, "profissional": "Guilherme Macena Barreto Junior", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Diurno"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1102, "profissional": "Carlos Fogaça", "setor": "Bucomaxilo Sobreaviso", "tipo_turno": "Bucomaxilo - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1438, "profissional": "Andressa Daga", "setor": "Cardiologia - Sobreaviso", "tipo_turno": "Sobreaviso Cardiologia"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1775, "profissional": "Mateus Ceresoli Baptistella", "setor": "Cirurgia Geral - Sobreaviso", "tipo_turno": "Cirurgia Geral - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2111, "profissional": "Alberto Stolt", "setor": "Cirurgia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Cirurgia Pediátrica"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2448, "profissional": "Dantas Luis Lavall da Silva", "setor": "Cirurgia Torácica - Sobreaviso", "tipo_turno": "Cirurgia Torácica - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2785, "profissional": "Graciany Gasperin", "setor": "Cirurgia Vascular - Sobreaviso", "tipo_turno": "Vascular Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3121, "profissional": "Gabriel Vitoria Domingues", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3121, "profissional": "Bruno Trevisan", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3121, "profissional": "Eduardo Henrique Borsatto", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3458, "profissional": "Fernanda Scortegagna Annes", "setor": "Endoscopia - Sobreaviso", "tipo_turno": "Endoscopia - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 3794, "profissional": "Cintya Boligon", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P1"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 3794, "profissional": "Julia Braghini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P2"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 4131, "profissional": "Adalberto Gloeckner de Meira", "setor": "Hemodinâmica - Sobreaviso Cardiologia", "tipo_turno": "Hemodinâmica - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4468, "profissional": "Eduardo Henrique Borsatto", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4468, "profissional": "Matheus Antonio Baccin", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "06:00/14:00", "phone": "", "pos_x": 4804, "profissional": "Marina Oliboni Moschetta", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5141, "profissional": "Cezar Tarabal de Oliveira", "setor": "Neurocirurgia - Sobreaviso", "tipo_turno": "Neurocirurgia - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5477, "profissional": "Márcia Costa Morales Longhi", "setor": "Neurologia/U-AVC Integral - Sobreaviso", "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 5814, "profissional": "João Henrique Peres", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6150, "profissional": "Sergio Francisco Siepko Junior", "setor": "Oftalmologia Sobreaviso", "tipo_turno": "Sobreaviso Oftalmologia"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6824, "profissional": "Rafael Sales de Vasconcelos Ferreira", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6824, "profissional": "Diego Finamor Nascimento", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7160, "profissional": "Eliana Iora Schneider", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7160, "profissional": "Milena Ayumi Yamauchi", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 7833, "profissional": "Julia Cieslik Schreiner", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8170, "profissional": "Hiolanda Gomes Piler Dornelas", "setor": "Residência de Cirurgia Geral", "tipo_turno": "DIA"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8506, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 8843, "profissional": "Mario Goto", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 1"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 8843, "profissional": "Thiago Felippe Reck", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 2"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 8843, "profissional": "Juliano Ferneda", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Urologia"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9516, "profissional": "Jessica Aparecida Battistel", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9516, "profissional": "Marcia de Menezes Bergamo", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9853, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 9853, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Rotina"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10189, "profissional": "Allan Douglas Santos", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10189, "profissional": "Maiara Szepilowski Bampi", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Rotina"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10526, "profissional": "Juliana Ulsenheimer Knorst", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10526, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Rotina"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/12:00", "phone": "", "pos_x": 10863, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Rotina"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10863, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11199, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Matutino"}, {"data": "07 novembro 2025", "email": "", "horario": "10:00/14:00", "phone": "", "pos_x": 11199, "profissional": "Janice Velleda Brancao", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Médico Rotineiro I"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 11536, "profissional": "Lucas Alcir da Silva", "setor": "Urologia Sobreaviso", "tipo_turno": "Sobreaviso Urologia"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 429, "profissional": "Kaliandra de Almeida", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 765, "profissional": "Jamessom Borralho Paes de Barros Filho", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/16:00", "phone": "", "pos_x": 3121, "profissional": "Willian Di Domenico", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 3794, "profissional": "Cintya Boligon", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P1"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 3794, "profissional": "Julia Braghini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P2"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 3794, "profissional": "Cintya Boligon", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 3794, "profissional": "Matheus Ramos Vieira", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4468, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4468, "profissional": "João Orlando Rodrigues da Silva", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4468, "profissional": "Bruno Taddeo Nogueira Alves Soares De Alvarenga", "setor": "Hospitalista", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "14:00/06:00", "phone": "", "pos_x": 4804, "profissional": "Marina Oliboni Moschetta", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Vesp - Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 5814, "profissional": "Juciana Belini", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "17:00/19:00", "phone": "", "pos_x": 6487, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 6487, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "07 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7160, "profissional": "Luiza da Ros Schumacher", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "07 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7160, "profissional": "Naila Cerutti", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7160, "profissional": "Eliana Iora Schneider", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7160, "profissional": "Antonio Fernandez Kensy", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "07 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7160, "profissional": "Eloisa Lehr Filippi Chiella", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "07 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7160, "profissional": "Christine Leitner", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7160, "profissional": "Cesar Augusto Seidler Junior", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7160, "profissional": "Claudia Fernanda Garcez Fernandes", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7497, "profissional": "Neuda Rodrigues da Silva", "setor": "R2 Clínica Médica UTI", "tipo_turno": "Noite"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/00:00", "phone": "", "pos_x": 7833, "profissional": "Julia Cieslik Schreiner", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clinica Méidica Intermediário"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7833, "profissional": "Augusto Cancian", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8170, "profissional": "Bruna Raquel Kessler", "setor": "Residência de Cirurgia Geral", "tipo_turno": "NOITE"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8506, "profissional": "Ana Paula Graboski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8506, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8506, "profissional": "Elisa Noskoski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "18:30/07:30", "phone": "", "pos_x": 9180, "profissional": "Vicente Gregorio Restelli", "setor": "Ultrassonografia - Sobreaviso", "tipo_turno": "Ultrassonografia - Sobreaviso"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 9516, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 9516, "profissional": "Ana Carolina Renz Simon", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 9516, "profissional": "Danielle Martins dos Santos", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 9853, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 9853, "profissional": "Samuel Teixeira Coelho", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10189, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10189, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10526, "profissional": "Eduardo Menegat", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10526, "profissional": "João Orlando Rodrigues da Silva", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10863, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10863, "profissional": "Fabiane Scheffer Reginatto", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11199, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Vespertino"}, {"data": "07 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11199, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Noturno"}, {"data": "07 novembro 2025", "email": "", "horario": "07:00/08:00", "phone": "", "pos_x": 6487, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobre Aviso Oncologia"}], "total": 90}, "data_atualizacao": "07/11/2025", "hora_atualizacao": "10:53", "status_atualizacao": "sucesso", "anterior": {"data": "06 novembro 2025", "data_simples": "06/11/2025", "registros": [{"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 92, "profissional": "Fabiane Scheffer Reginatto", "setor": "Alojamento Conjunto", "tipo_turno": "Rotina - Alojamento Conjunto"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 428, "profissional": "Patricia Carla De Lima", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/13:00", "phone": "", "pos_x": 765, "profissional": "Elaine Aparecida Forgiarini", "setor": "Ambulatório Oncologia - Triagem", "tipo_turno": "Ambulatório Oncologia Triagem - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 1101, "profissional": "Guilherme Macena Barreto Junior", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Diurno"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1438, "profissional": "Carlos Fogaça", "setor": "Bucomaxilo Sobreaviso", "tipo_turno": "Bucomaxilo - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 1774, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Cardiologia - Sobreaviso", "tipo_turno": "Sobreaviso Cardiologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 2111, "profissional": "Mateus Ceresoli Baptistella", "setor": "Cirurgia Geral - Sobreaviso", "tipo_turno": "Cirurgia Geral - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2447, "profissional": "Alberto Stolt", "setor": "Cirurgia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Cirurgia Pediátrica"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 2784, "profissional": "Dantas Luis Lavall da Silva", "setor": "Cirurgia Torácica - Sobreaviso", "tipo_turno": "Cirurgia Torácica - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3120, "profissional": "Graciany Gasperin", "setor": "Cirurgia Vascular - Sobreaviso", "tipo_turno": "Vascular Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Gabriel Vitoria Domingues", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Bruno Trevisan", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/11:00", "phone": "", "pos_x": 3457, "profissional": "Eduardo Henrique Borsatto", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/08:00", "phone": "", "pos_x": 3793, "profissional": "Paulo Henrique Fachinello", "setor": "Endoscopia - Sobreaviso", "tipo_turno": "Endoscopia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Ocieny Gonzaga Guimarães Ramírez", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4130, "profissional": "Maríndia Sitta", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Matutino - P2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 4466, "profissional": "Julio Roberto Barbiero", "setor": "Hemodinâmica - Sobreaviso Cardiologia", "tipo_turno": "Hemodinâmica - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "Eduardo Henrique Borsatto", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 4803, "profissional": "João Orlando Rodrigues da Silva", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "06:00/14:00", "phone": "", "pos_x": 5139, "profissional": "Geraldo Antunes Cordova", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5476, "profissional": "Marcelo Lemos Vieira Da Cunha", "setor": "Neurocirurgia - Sobreaviso", "tipo_turno": "Neurocirurgia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 5812, "profissional": "Clezio Alex Onuki Castro", "setor": "Neurologia/U-AVC Integral - Sobreaviso", "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "08:00/12:00", "phone": "", "pos_x": 6148, "profissional": "João Henrique Peres", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 6485, "profissional": "Sergio Francisco Siepko Junior", "setor": "Oftalmologia Sobreaviso", "tipo_turno": "Sobreaviso Oftalmologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Geovan Fábio de Oliveira", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 7158, "profissional": "Alberto Antonio Biazussi", "setor": "Ortopedia e Traumatologia - Sobreaviso", "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 7494, "profissional": "Luiza da Ros Schumacher", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8167, "profissional": "Claudio Quinan Balestrin Neto", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/19:00", "phone": "", "pos_x": 8504, "profissional": "Hiolanda Gomes Piler Dornelas", "setor": "Residência de Cirurgia Geral", "tipo_turno": "DIA"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8840, "profissional": "Ana Paula Graboski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 8840, "profissional": "Miyake Adriana Souza Cirqueira", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Manhã"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Mario Goto", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 1"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Thiago Felippe Reck", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Cirurgia Geral - 2"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 9177, "profissional": "Juliano Ferneda", "setor": "Transplante - Sobreaviso Cirurgia", "tipo_turno": "Urologia"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Ana Carolina Renz Simon", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 9850, "profissional": "Marcia de Menezes Bergamo", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10186, "profissional": "Julia Canci", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10186, "profissional": "Adelaine Marilia Pinheiro", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Eliana Iora Schneider", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10523, "profissional": "Maiara Szepilowski Bampi", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 10859, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "09:00/15:00", "phone": "", "pos_x": 10859, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/12:00", "phone": "", "pos_x": 11195, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Rotina"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/13:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Matutino"}, {"data": "06 novembro 2025", "email": "", "horario": "10:00/14:00", "phone": "", "pos_x": 11532, "profissional": "Janice Velleda Brancao", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Médico Rotineiro I"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/07:00", "phone": "", "pos_x": 11868, "profissional": "Lucas Alcir da Silva", "setor": "Urologia Sobreaviso", "tipo_turno": "Sobreaviso Urologia"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 428, "profissional": "Kaliandra de Almeida", "setor": "Ambulatório De Oncologia Pediátrica", "tipo_turno": "Ambulatório de Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "13:30/17:30", "phone": "", "pos_x": 765, "profissional": "Elaine Aparecida Forgiarini", "setor": "Ambulatório Oncologia - Triagem", "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 1101, "profissional": "Guilherme Macena Barreto Junior", "setor": "Atendimento Pediátrico - Plantão", "tipo_turno": "Plantão Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/16:00", "phone": "", "pos_x": 3457, "profissional": "Paulo Henrique Fachinello", "setor": "Clínica Médica", "tipo_turno": "Rotina Clínica Médica - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Ocieny Gonzaga Guimarães Ramírez", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4130, "profissional": "Maríndia Sitta", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Vespertino - P2"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Cintya Boligon", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4130, "profissional": "Julia Braghini", "setor": "Ginecologia e Obstetrícia - Plantão", "tipo_turno": "Plantão Noturno - P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "Emanuel Felipe Vieira Luz", "setor": "Hospitalista", "tipo_turno": "Hospitalista Comanejo Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 4803, "profissional": "João Orlando Rodrigues da Silva", "setor": "Hospitalista", "tipo_turno": "Hospitalista Urgência Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 4803, "profissional": "Marta Schmidt Pfaffenzeller", "setor": "Hospitalista", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "14:00/06:00", "phone": "", "pos_x": 5139, "profissional": "Geraldo Antunes Cordova", "setor": "Nefrologia - Sobreaviso", "tipo_turno": "Vesp - Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 6148, "profissional": "Juciana Belini", "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador", "tipo_turno": "Médico - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "17:00/19:00", "phone": "", "pos_x": 6821, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 6821, "profissional": "Patricia Carla De Lima", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobreaviso Oncologia"}, {"data": "06 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "João Henrique Peres", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "06 novembro 2025", "email": "", "horario": "12:00/18:00", "phone": "", "pos_x": 7494, "profissional": "Maria Eduarda Wilvert", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Leonardo Moura Lock", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 7494, "profissional": "Naila Cerutti", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Gabriela Simionato dos Santos", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P3"}, {"data": "06 novembro 2025", "email": "", "horario": "18:00/00:00", "phone": "", "pos_x": 7494, "profissional": "Bruna Raquel Kessler", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P5"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Jose Augusto Nogueira Ribas", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P1"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7494, "profissional": "Leticia Rosa Modelski", "setor": "Pronto Socorro HRO - Plantão", "tipo_turno": "P2"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 7831, "profissional": "Liss Andreza Nunes Druchak", "setor": "R2 Clínica Médica UTI", "tipo_turno": "Noite"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/00:00", "phone": "", "pos_x": 8167, "profissional": "Elias Matheus Baggio Valgoi", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clinica Méidica Intermediário"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8167, "profissional": "Claudio Quinan Balestrin Neto", "setor": "Residência de Clínica Médica", "tipo_turno": "Res. Clínica Médica Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8504, "profissional": "Jamile Rosset Mocellin", "setor": "Residência de Cirurgia Geral", "tipo_turno": "NOITE"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 8840, "profissional": "Elisa Noskoski", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Tarde"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 8840, "profissional": "Waleska Furini", "setor": "Residência de Ginecologia e Obstetrícia", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "18:30/07:30", "phone": "", "pos_x": 9513, "profissional": "Vicente Gregorio Restelli", "setor": "Ultrassonografia - Sobreaviso", "tipo_turno": "Ultrassonografia - Sobreaviso"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/17:00", "phone": "", "pos_x": 9850, "profissional": "Lisane Beatriz Giacomossi", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Rotina UCIN - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 9850, "profissional": "Ana Carolina Renz Simon", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 9850, "profissional": "Luiz Tsuyoshi Inoue", "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "tipo_turno": "Plantão - Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10186, "profissional": "Fabio Silva Romani", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10186, "profissional": "Leonardo Moura Lock", "setor": "Unidade de Terapia Intensiva (UTI) Adulto I", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10523, "profissional": "Matheus De Oliveira Brock", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10523, "profissional": "Allan Douglas Santos", "setor": "Unidade de Terapia Intensiva (UTI) Adulto II", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 10859, "profissional": "Thiago Muniz de Lima", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 10859, "profissional": "João Victor Garcia de Souza", "setor": "Unidade de Terapia Intensiva (UTI) Adulto III", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11195, "profissional": "Marina Emely Jorge", "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "tipo_turno": "Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "13:00/19:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Vespertino"}, {"data": "06 novembro 2025", "email": "", "horario": "19:00/07:00", "phone": "", "pos_x": 11532, "profissional": "Antonio Carlos Andrade Pontes", "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica", "tipo_turno": "Plantão Noturno"}, {"data": "06 novembro 2025", "email": "", "horario": "07:00/08:00", "phone": "", "pos_x": 6821, "profissional": "Kaliandra de Almeida", "setor": "Oncologia Pediátrica - Sobreaviso", "tipo_turno": "Sobre Aviso Oncologia"}], "total": 92}};
 
         let diaSelecionado = 'atual';
 
@@ -1518,8 +1681,8 @@
         // This was removed: const especialidadesComTurno = [...]
 
         // Dados de ramais e mapeamento
-        const ramaisData = {};
-        const setorRamaisMapping = {};
+        const ramaisData = {"departments": [{"name": "Adm Ger. de Operações - Diretor Técnico", "extensions": ["6569", "6510"]}, {"name": "Adm Ger. Assistencial - Ger. Financeiro", "extensions": ["6515", "6513"]}, {"name": "Adm Recepção - Secretaria - Aquário", "extensions": ["6517", "6511", "6613"]}, {"name": "Adm Sala de Reuniões - Jurídico", "extensions": ["6516", "6514", "6506"]}, {"name": "AFHRO Associação Funcionários", "extensions": ["6787"]}, {"name": "Almoxarifado", "extensions": ["6520", "6519"]}, {"name": "Assessoria de Imprensa", "extensions": ["6705"]}, {"name": "Ambulatório de Pele", "extensions": ["6755"]}, {"name": "Banco de Sangue", "extensions": ["6528", "6576"]}, {"name": "Banco de Leite - Manipulação", "extensions": ["8087", "8088"]}, {"name": "Berçário UCINCO", "extensions": ["6542"]}, {"name": "Cartório", "extensions": ["6594"]}, {"name": "Captação de Recursos", "extensions": ["6512"]}, {"name": "Central de Captação de Órgãos", "extensions": ["6523", "8097", "8096", "8095", "8060", "8098", "6534", "8093", "8094", "8059", "8066"]}, {"name": "Centro de Estudos", "extensions": ["6770"]}, {"name": "Centro Especialidades", "extensions": ["6708", "6546", "6543", "6544"]}, {"name": "CME", "extensions": ["6551", "6532", "6524"]}, {"name": "Caixa - Custos", "extensions": ["6530", "6778"]}, {"name": "C.C 4º Anestesistas - Arsenal", "extensions": ["8097", "8536"]}, {"name": "C.C 4º Coordenação - Escrituração", "extensions": ["8096", "8095"]}, {"name": "C.C 4º Farmácia - OPME", "extensions": ["8098", "6753"]}, {"name": "C.C 4º Recepção - Recuperação 1 - 2", "extensions": ["6534", "8093", "8094"]}, {"name": "C.C 5º Anestesia - Sala 01 – Sala 02", "extensions": ["8061", "8062", "8075"]}, {"name": "C.C 5º Recepção - Farmácia", "extensions": ["6654"]}, {"name": "C.C 5º Órteses Prótese - Arsenal", "extensions": ["8075", "8083"]}, {"name": "C.C 5º Prescrição Multiprofissional", "extensions": ["8077", "8078"]}, {"name": "C.C 5º Recuperação - Sala de Troca", "extensions": ["8076", "8085"]}, {"name": "C.C 5º Sala Cirúrgica 03 - Sala 04", "extensions": ["8081", "8082"]}, {"name": "C.O - Triagem - Obstetra", "extensions": ["6670", "6672", "6671"]}, {"name": "C.O Coordenação", "extensions": ["6540"]}, {"name": "Clínica Médica - Copa - Coordenação", "extensions": ["6560", "6561", "6559", "6564"]}, {"name": "Compras - Coordenação", "extensions": ["6509", "6508", "6507"]}, {"name": "Contabilidade - Contas - Coordenação", "extensions": ["6738", "6570", "6759"]}, {"name": "Convênios Posto Enf. - Copa", "extensions": ["6649", "6650"]}, {"name": "Cozinha - Refeitório", "extensions": ["6648", "6602"]}, {"name": "Cozinha Nutrição - Depósito", "extensions": ["6546", "6789"]}, {"name": "Dep. Pessoal - Recepção", "extensions": ["6715", "6718", "6716"]}, {"name": "Dep. Pessoal - Gerência – Entrevista", "extensions": ["6714", "6558"]}, {"name": "Direção de Enfermagem - Gerência", "extensions": ["6580", "6581"]}, {"name": "Emergência Farmácia - Plantão Médico", "extensions": ["6604", "6599"]}, {"name": "Emergência Gesso – Triagem – Posto", "extensions": ["6719", "6737", "6597"]}, {"name": "Emergência Intern. – Oftalmo - Apoio", "extensions": ["6739", "6623", "6539"]}, {"name": "Emergência Coordenação - Prescrição", "extensions": ["8058", "6598"]}, {"name": "Emergência Recepção - Escrituração", "extensions": ["6700", "6702", "6603"]}, {"name": "Endoscopia - Recepção - Coordenação", "extensions": ["6601", "6668", "6667"]}, {"name": "Ecocardiograma - Enfermeira", "extensions": ["6620", "6667"]}, {"name": "Estomaterepia", "extensions": ["6525"]}, {"name": "Farmácia Balcão - Farmácia Clinica", "extensions": ["8047", "8030"]}, {"name": "Farmácia Balcão Retirada - CAF", "extensions": ["8039", "8068"]}, {"name": "Farmácia Coordenação - Farmacêuticos", "extensions": ["8046", "6726", "6760"]}, {"name": "Faturamento Coordenação - AIH", "extensions": ["6606", "6607", "6521"]}, {"name": "Faturamento Recepção - Ambulatório", "extensions": ["6720", "6557"]}, {"name": "Faturamento Convênios", "extensions": ["6608", "6522", "6550"]}, {"name": "Faturamento Auditoria - Auditoria Externa", "extensions": ["6706", "6567", "6588"]}, {"name": "Financeiro", "extensions": ["6313", "6775"]}, {"name": "Financeiro Contas - Coordenação", "extensions": ["6792", "6626"]}, {"name": "Fiscal", "extensions": ["8043"]}, {"name": "Fisioterapia - Fonoaudiologia", "extensions": ["8050", "8074"]}, {"name": "GEDI Arquivo - GEDI Judicial", "extensions": ["6621", "8026"]}, {"name": "Gerente de Operações", "extensions": ["6566"]}, {"name": "Hemodinâmica - Laudos - Procedimentos", "extensions": ["8049", "8048", "8080"]}, {"name": "Hemodinâmica Enf. - Recuperação", "extensions": ["6761", "8037"]}, {"name": "IML", "extensions": ["6644"]}, {"name": "Internação - Segurança - Sisreg", "extensions": ["6617", "6619", "6616"]}, {"name": "Internação Coord. - Regulação - Supervisão", "extensions": ["6553", "6568", "6618"]}, {"name": "Lactário", "extensions": ["6647"]}, {"name": "Laboratório Secretaria - Triagem", "extensions": ["8060", "6773", "8065"]}, {"name": "Laboratório Coord. - Microbiologia", "extensions": ["8064", "8063"]}, {"name": "Laboratório Produção Laboratorial", "extensions": ["8059", "8066"]}, {"name": "Lavanderia - Coordenação", "extensions": ["6628", "6627", "6592"]}, {"name": "Limpeza", "extensions": ["6629"]}, {"name": "Manutenção Secretária - Gerência", "extensions": ["6634", "6655"]}, {"name": "Manutenção - Mecânica - Elétrica", "extensions": ["6666", "6656", "6632"]}, {"name": "Manutenção Caldeira - Marcenaria", "extensions": ["6630", "6633"]}, {"name": "Maternidade - Coordenação", "extensions": ["6636", "6637", "6638"]}, {"name": "Maternidade Higiene RN - Copa", "extensions": ["6570"]}, {"name": "Neurologia - Copa", "extensions": ["6670", "6672", "6671"]}, {"name": "Neurologia Ambulatório", "extensions": ["6658"]}, {"name": "NIR Oncologia 8º Andar", "extensions": ["8024", "8008"]}, {"name": "NIR Ortopedia / Neurologia - Exames", "extensions": ["6779", "6764"]}, {"name": "NIR Cirúrgico - Coordenação", "extensions": ["6537", "6645", "6625"]}, {"name": "Núcleo Epidemiologia", "extensions": ["8044"]}, {"name": "Nutricionista Coordenação", "extensions": ["6639"]}, {"name": "Onco Posto 1 Posto 2 - Onco Fisioterapia", "extensions": ["8003", "8004", "8055"]}, {"name": "Onco Escrituraria - Copa - Prescrição", "extensions": ["8002", "8054", "8032"]}, {"name": "Onco Recepção 1º Andar", "extensions": ["8027", "6533"]}, {"name": "Onco Ped. Recep. - Aplicação - Dentista", "extensions": ["6582", "8090"]}, {"name": "Onco Ped. Enfermagem - Consultório", "extensions": ["8092", "8089", "8091"]}, {"name": "Ortopedia Recepção - Ambulatório", "extensions": ["6614", "6624"]}, {"name": "Ortopedia Consultórios Ambulatório", "extensions": ["6783", "6774"]}, {"name": "Orçamentos - Convênios", "extensions": ["6653"]}, {"name": "Patrimônio - Pastoral - Psicologia", "extensions": ["6586", "6784", "6767"]}, {"name": "Posto A - Copa - Coordenação", "extensions": ["6547", "6549", "6548"]}, {"name": "Posto A/B Escrituração", "extensions": ["6746"]}, {"name": "Posto B - Copa", "extensions": ["6573", "6574", "6572"]}, {"name": "Posto - Prescrição", "extensions": ["6681", "6682"]}, {"name": "Pronto Atendimento - Consultório", "extensions": ["6760"]}, {"name": "Quimio - APAC - Prescrição", "extensions": ["8024", "8008"]}, {"name": "Quimio Atenção Farmacêutica", "extensions": ["8009"]}, {"name": "Quimio Administrativo - Nutrição", "extensions": ["6797", "8015"]}, {"name": "Quimio Farmácia", "extensions": ["8010", "8011", "8012"]}, {"name": "Quimio Recepção - Internação", "extensions": ["6524", "8069"]}, {"name": "Quimio Enf. - Coord. - Triagem", "extensions": ["8016", "8014", "8022"]}, {"name": "Quimio Tratamento 01 - 02", "extensions": ["8013", "8051"]}, {"name": "Qualidade e Seg. Paciente - Coord", "extensions": ["6609", "8067"]}, {"name": "Radioterapia - Enfermagem", "extensions": ["6766", "6704"]}, {"name": "Radioterapia Técnicos", "extensions": ["6765", "6504"]}, {"name": "Radioterapia Sala Multi", "extensions": ["6758", "6772"]}, {"name": "Radioterapia Físico - Simulador", "extensions": ["6771", "6577"]}, {"name": "Radioterapia Oficina - Braquiterapia", "extensions": ["6754"]}, {"name": "Ressonância Recepção", "extensions": ["6661"]}, {"name": "Ressonância Técnicos", "extensions": ["6662"]}, {"name": "Residência Orto - Pedi - Médica", "extensions": ["6762", "6731", "6554"]}, {"name": "Residências Obstetra Anestesia Neuro", "extensions": ["6523", "6734", "6679"]}, {"name": "RX Recepção - Coordenação", "extensions": ["6723", "6585"]}, {"name": "RX Laudos - Técnicos", "extensions": ["6722", "6721"]}, {"name": "Sala Uno - Sala de Vacina", "extensions": ["6592", "6724"]}, {"name": "Segurança Coordenador", "extensions": ["6701"]}, {"name": "Serviço Social - Ouvidoria", "extensions": ["6578"]}, {"name": "Sesmt Medicina do Trabalho", "extensions": ["6751", "8001"]}, {"name": "Sesmt Enfermeiro - Sesmt Médica", "extensions": ["6752", "6643"]}, {"name": "Sesmt Segurança - Engenheiro", "extensions": ["6750", "8025", "6531"]}, {"name": "STI Sistemas", "extensions": ["6763", "6611"]}, {"name": "STI Suporte Técnico", "extensions": ["6591", "6590"]}, {"name": "SAC/Ouvidoria", "extensions": ["8078"]}, {"name": "Tomografia - Técnicos", "extensions": ["6664"]}, {"name": "TRR", "extensions": ["6593"]}, {"name": "Ultrassom 01 - Ultrassom 02", "extensions": ["6761", "6728"]}, {"name": "UTI Geral", "extensions": ["8041", "8040", "8038"]}, {"name": "UTI Geral III - Plantão Médico", "extensions": ["8029", "8028"]}, {"name": "UTI - Plantão Médico", "extensions": ["8034", "8005"]}, {"name": "UTI Escrituraria - Coordenação", "extensions": ["6615", "8033"]}, {"name": "UTI Neo - Escrituraria - Plantão Med.", "extensions": ["8036"]}, {"name": "UTI Pediátrica - Plantão Médico", "extensions": ["8092", "8089", "8091"]}]};
+        const setorRamaisMapping = {"sector_mappings": [{"dashboard_sector": "Alojamento Conjunto", "ramais_departments": ["Maternidade - Coordenação"]}, {"dashboard_sector": "Ambulatório De Oncologia Pediátrica", "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista", "Onco Ped. Enfermagem - Consultório"]}, {"dashboard_sector": "Ambulatório Oncologia - Triagem", "ramais_departments": ["Endoscopia - Recepção - Coordenação"]}, {"dashboard_sector": "Atendimento Pediátrico - Plantão", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Bucomaxilo Sobreaviso", "ramais_departments": ["Estomaterepia"]}, {"dashboard_sector": "Cardiologia - Sobreaviso", "ramais_departments": ["Ecocardiograma - Enfermeira"]}, {"dashboard_sector": "Cirurgia Geral - Sobreaviso", "ramais_departments": ["Residências Obstetra Anestesia Neuro"]}, {"dashboard_sector": "Cirurgia Pediátrica - Sobreaviso", "ramais_departments": ["C.C 4º Anestesistas - Arsenal"]}, {"dashboard_sector": "Cirurgia Torácica - Sobreaviso", "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]}, {"dashboard_sector": "Cirurgia Vascular - Sobreaviso", "ramais_departments": ["C.C 5º Sala Cirúrgica 03 - Sala 04"]}, {"dashboard_sector": "Clínica Médica", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Endoscopia - Sobreaviso", "ramais_departments": ["Endoscopia - Recepção - Coordenação"]}, {"dashboard_sector": "Ginecologia e Obstetrícia - Plantão", "ramais_departments": ["Maternidade - Coordenação", "C.O - Triagem - Obstetra"]}, {"dashboard_sector": "Hemodinâmica - Sobreaviso Cardiologia", "ramais_departments": ["Hemodinâmica - Laudos - Procedimentos"]}, {"dashboard_sector": "Hospitalista", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Nefrologia - Sobreaviso", "ramais_departments": ["Laboratório Secretaria - Triagem"]}, {"dashboard_sector": "Neurocirurgia - Sobreaviso", "ramais_departments": ["Neurologia - Copa"]}, {"dashboard_sector": "Neurologia/U-AVC Integral - Sobreaviso", "ramais_departments": ["Neurologia Ambulatório"]}, {"dashboard_sector": "Núcleo Interno de Regulação (NIR) Médico Regulador", "ramais_departments": ["NIR Cirúrgico - Coordenação"]}, {"dashboard_sector": "Oftalmologia Sobreaviso", "ramais_departments": ["Emergência Intern. – Oftalmo - Apoio"]}, {"dashboard_sector": "Oncologia Pediátrica - Sobreaviso", "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista"]}, {"dashboard_sector": "Ortopedia e Traumatologia - Sobreaviso", "ramais_departments": ["Ortopedia Recepção - Ambulatório", "Ortopedia Consultórios Ambulatório"]}, {"dashboard_sector": "Pronto Socorro HRO - Plantão", "ramais_departments": ["Emergência Farmácia - Plantão Médico", "Emergência Coordenação - Prescrição"]}, {"dashboard_sector": "R2 Clínica Médica UTI", "ramais_departments": ["UTI Geral"]}, {"dashboard_sector": "Residência de Cirurgia Geral", "ramais_departments": ["C.C 4º Coordenação - Escrituração"]}, {"dashboard_sector": "Residência de Clínica Médica", "ramais_departments": ["Clínica Médica - Copa - Coordenação"]}, {"dashboard_sector": "Residência de Ginecologia e Obstetrícia", "ramais_departments": ["Maternidade - Coordenação"]}, {"dashboard_sector": "Transplante - Sobreaviso Cirurgia", "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]}, {"dashboard_sector": "Ultrassonografia - Sobreaviso", "ramais_departments": ["Ultrassom 01 - Ultrassom 02"]}, {"dashboard_sector": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica", "ramais_departments": ["Berçário UCINCO"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto I", "ramais_departments": ["UTI Geral"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto II", "ramais_departments": ["UTI Geral III - Plantão Médico"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto III", "ramais_departments": ["UTI Geral III - Plantão Médico"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica", "ramais_departments": ["Berçário UCINCO"]}, {"dashboard_sector": "Unidade de Terapia Intensiva (UTI) Pediátrica", "ramais_departments": ["UTI Pediátrica - Plantão Médico"]}, {"dashboard_sector": "Urologia Sobreaviso", "ramais_departments": ["Ortopedia Consultórios Ambulatório"]}]};
 
         // Função para obter ramais de um setor
         function obterRamaisSetor(setorNome) {
@@ -1580,7 +1743,7 @@
         function renderizarDiretorioRamais() {
             const ramaisList = document.getElementById('ramais-list');
 
-            if (!ramaisData || !ramaisData.departments || ramaisData.departments.length === 0) {
+            if (!ramaisData.departments) {
                 ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
                 return;
             }
@@ -1832,17 +1995,20 @@
 
         function obterTipoTurno(turnoText, horarioText = '') {
             // Identifica o tipo de turno com detecção hierárquica
-            // Prioridade: 24H → MIXED (com hífen) → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
+            // Prioridade: 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
             if (!turnoText) return 'outro';
 
             const turno = turnoText.toLowerCase();
             const horario = horarioText ? horarioText.toLowerCase() : '';
 
-            // PRIORIDADE 1: Detecta 24H PRIMEIRO (entrada == saída)
+            // PRIORIDADE 1: Detecta 24H (entrada == saída)
             if (horario && horario.includes('/')) {
                 try {
                     const [entrada, saida] = horario.split('/').map(x => x.trim());
                     if (entrada === saida) {
+                        return 'badge-24h';
+                    }
+                    if (turno.includes('sobreaviso') || turno.includes('24h')) {
                         return 'badge-24h';
                     }
                     // Detecta Diurno (07:00-19:00) - típico de residência
@@ -1854,47 +2020,6 @@
                         }
                     } catch (e) {}
                 } catch (e) {}
-            }
-
-            // PRIORIDADE 1.5: Detecta TURNOS MISTOS (com hífen, ex: "Vesp - Noturno")
-            if (turno.includes('-')) {
-                // Extrai as partes antes e depois do hífen
-                const partes = turno.split('-').map(p => p.trim());
-
-                // Sistema genérico para detectar qualquer combinação de períodos
-                const temMatutino = partes.some(p => p.includes('matutino') || p.includes('manhã'));
-                const temVespertino = partes.some(p => p.includes('vesp') || p.includes('tarde'));
-                const temNoturno = partes.some(p => p.includes('noturno') || p.includes('noite'));
-                const periodosMistos = [temMatutino, temVespertino, temNoturno].filter(Boolean).length > 1;
-
-                // Se tem múltiplos períodos, retorna badge misto
-                if (periodosMistos) {
-                    return 'misto';
-                }
-
-                // Fallback: Usa o horário como critério principal para outros turnos com hífen
-                if (horario && horario.includes('/')) {
-                    try {
-                        const [entrada, saida] = horario.split('/').map(x => x.trim());
-                        const entradaH = parseInt(entrada.split(':')[0]);
-                        const saidaH = parseInt(saida.split(':')[0]);
-
-                        // Se sai antes de entrar (ex: 14:00/06:00), é turno estendido
-                        if (saidaH < entradaH) {
-                            // Baseado na entrada, determina o período inicial
-                            if (entradaH >= 6 && entradaH < 12) return 'matutino';
-                            if (entradaH >= 12 && entradaH < 18) return 'vespertino';
-                            if (entradaH >= 18 || entradaH < 6) return 'noturno';
-                        }
-                    } catch (e) {}
-                }
-
-                // Se temos palavras-chave, usa a última parte (a mais específica)
-                const ultimaParte = partes[partes.length - 1];
-                if (ultimaParte.includes('matutino') || ultimaParte.includes('manhã')) return 'matutino';
-                if (ultimaParte.includes('vespertino') || ultimaParte.includes('tarde')) return 'vespertino';
-                if (ultimaParte.includes('noturno') || ultimaParte.includes('noite')) return 'noturno';
-                return 'misto'; // Fallback para qualquer outro turno com hífen não identificado
             }
 
             // PRIORIDADE 2: Detecta SOBREAVISO (com ou sem fim de semana)
@@ -2010,11 +2135,9 @@
                 'matutino': 'MATUTINO',
                 'vespertino': 'VESPERTINO',
                 'noturno': 'NOTURNO',
-                'misto': 'MISTO',
                 'sobreaviso': 'SOBREAVISO',
                 'rotina': 'ROTINA',
                 'plantao': 'PLANTÃO',
-                'diurno': 'DIURNO',
                 'outro': 'OUTRO'
             };
             return mapping[tipoBadge] || tipoBadge.toUpperCase();
@@ -2122,8 +2245,6 @@
                                                     <div class="profissional-info">
                                                         <span class="info-label">Horário:</span> ${prof.horario}
                                                         <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
-                                                        <br>
-                                                        <span class="info-label">Turno:</span> ${prof.tipo_turno}
                                                     </div>
                                                 </div>
                                             `}).join('')}
@@ -2160,10 +2281,9 @@
                                             </div>
                                         </div>
                                         <div class="profissional-info">
-                                            <span class="info-label">Horário:</span> ${prof.horario}
-                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
-                                            <br>
                                             <span class="info-label">Turno:</span> ${prof.tipo_turno}
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span><br>
+                                            <span class="info-label">Horário:</span> ${prof.horario}
                                         </div>
                                     </div>
                                 `}).join('')}
@@ -2449,7 +2569,57 @@
         // Verifica antes de renderizar
         verificarAutenticacao();
         renderizarEscala();
+
+        // ==================== GERENCIAMENTO DE TEMA ====================
+
+        // Função para alternar tema
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            // Alterna a classe
+            if (newTheme === 'dark') {
+                body.classList.add('dark-theme');
+            } else {
+                body.classList.remove('dark-theme');
+            }
+
+            // Salva no localStorage
+            localStorage.setItem('theme', newTheme);
+
+            // Atualiza o ícone do botão
+            updateThemeIcon(newTheme);
+        }
+
+        // Função para atualizar o ícone do botão
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Função para carregar o tema salvo
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+
+            updateThemeIcon(savedTheme);
+        }
+
+        // Carrega o tema salvo quando a página carrega
+        loadSavedTheme();
     </script>
+
+    <!-- Botão Toggle de Tema -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+        <span class="theme-toggle-icon" id="theme-icon">🌙</span>
+    </button>
+
     </div> <!-- Fecha main-content -->
 </body>
 </html>
