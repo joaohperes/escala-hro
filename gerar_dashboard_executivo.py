@@ -568,6 +568,8 @@ def gerar_dashboard():
             --badge-plantao-text: #8b4513;
             --badge-diurno-bg: #d4edda;
             --badge-diurno-text: #155724;
+            --badge-misto-bg: #e2d5f8;
+            --badge-misto-text: #6610f2;
             --badge-outro-bg: #e2e3e5;
             --badge-outro-text: #6c757d;
 
@@ -628,6 +630,8 @@ def gerar_dashboard():
             --badge-plantao-text: #ffcc80;
             --badge-diurno-bg: #2d4a2f;
             --badge-diurno-text: #81c784;
+            --badge-misto-bg: #3a2d4a;
+            --badge-misto-text: #c486ff;
             --badge-outro-bg: #3a3a3a;
             --badge-outro-text: #9e9e9e;
 
@@ -1532,6 +1536,13 @@ def gerar_dashboard():
             font-size: 0.85em;
             color: #666;
             display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .info-row {
+            display: flex;
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
@@ -1540,6 +1551,11 @@ def gerar_dashboard():
         .info-label {
             font-weight: 500;
             color: #999;
+            min-width: 65px;
+        }
+
+        .info-value {
+            color: #333;
         }
 
         .turno-badge {
@@ -1590,6 +1606,11 @@ def gerar_dashboard():
         .turno-badge.diurno {
             background: var(--badge-diurno-bg);
             color: var(--badge-diurno-text);
+        }
+
+        .turno-badge.misto {
+            background: var(--badge-misto-bg);
+            color: var(--badge-misto-text);
         }
 
         .turno-badge.outro {
@@ -2494,11 +2515,23 @@ def gerar_dashboard():
 
         function obterTipoTurno(turnoText, horarioText = '') {
             // Identifica o tipo de turno com detecção hierárquica
-            // Prioridade: 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
-            if (!turnoText) return 'outro';
+            // Prioridade: MISTO → 24H → SOBREAVISO+FIM SEMANA → FIM SEMANA → Específico → ROTINA → OUTRO
+            if (!turnoText) return 'misto';
 
             const turno = turnoText.toLowerCase();
             const horario = horarioText ? horarioText.toLowerCase() : '';
+
+            // PRIORIDADE 0: Detecta turnos MISTOS (combinações de múltiplos períodos)
+            // Exemplos: "Vesp - Noturno", "Matutino - Vespertino", "Vespertino/Noturno"
+            const periodosPresentes = [
+                turno.includes('matutino') || turno.includes('manhã'),
+                turno.includes('vespertino') || turno.includes('tarde'),
+                turno.includes('noturno') || turno.includes('noite')
+            ].filter(Boolean).length;
+
+            if (periodosPresentes > 1) {
+                return 'misto';
+            }
 
             // PRIORIDADE 1: Detecta 24H (entrada == saída)
             if (horario && horario.includes('/')) {
@@ -2637,6 +2670,7 @@ def gerar_dashboard():
                 'sobreaviso': 'SOBREAVISO',
                 'rotina': 'ROTINA',
                 'plantao': 'PLANTÃO',
+                'misto': 'MISTO',
                 'outro': 'OUTRO'
             };
             return mapping[tipoBadge] || tipoBadge.toUpperCase();
@@ -2742,8 +2776,17 @@ def gerar_dashboard():
                                                         </div>
                                                     </div>
                                                     <div class="profissional-info">
-                                                        <span class="info-label">Horário:</span> ${prof.horario}
-                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
+                                                        <div class="info-row">
+                                                            <span class="info-label">Setor:</span>
+                                                            <span class="info-value">${setor}</span>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <span class="info-label">Horário:</span>
+                                                            <span class="info-value">${prof.horario}</span>
+                                                        </div>
+                                                        <div class="info-row">
+                                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             `}).join('')}
@@ -2780,9 +2823,19 @@ def gerar_dashboard():
                                             </div>
                                         </div>
                                         <div class="profissional-info">
-                                            <span class="info-label">Turno:</span> ${prof.tipo_turno}
-                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span><br>
-                                            <span class="info-label">Horário:</span> ${prof.horario}
+                                            <div class="info-row">
+                                                <span class="info-label">Setor:</span>
+                                                <span class="info-value">${setor}</span>
+                                            </div>
+                                            <div class="info-row">
+                                                <span class="info-label">Turno:</span>
+                                                <span class="info-value">${prof.tipo_turno}</span>
+                                                <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
+                                            </div>
+                                            <div class="info-row">
+                                                <span class="info-label">Horário:</span>
+                                                <span class="info-value">${prof.horario}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 `}).join('')}
