@@ -1484,6 +1484,13 @@
             text-align: center;
         }
 
+        .footer-title {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 0 0 8px 0;
+        }
+
         .footer-text {
             font-size: 0.85em;
             margin: 0;
@@ -2534,29 +2541,32 @@
         verificarAutenticacao();
         renderizarEscala();
 
-        // ==================== EASTER EGG ====================
-        const footerCredit = document.getElementById('footer-credit');
-        let clickCount = 0;
-
-        footerCredit.addEventListener('click', function() {
-            clickCount++;
-
-            if (clickCount === 1) {
-                footerCredit.textContent = 'Feito com ❤️';
-            } else if (clickCount === 2) {
-                footerCredit.textContent = 'por João Peres';
-            } else if (clickCount === 3) {
-                footerCredit.textContent = '@joaohperes';
-                clickCount = 0; // Reset para voltar ao início
-            }
-        });
     </script>
 
     <!-- Rodapé -->
     <footer class="app-footer">
-        <p class="footer-text" id="footer-credit">© HRO - Todos os direitos reservados.</p>
+        <p class="footer-title">Escala Médica HRO</p>
+        <p class="footer-text" id="footer-credit">ALVF - HRO - Todos os direitos reservados</p>
     </footer>
 
     </div> <!-- Fecha main-content -->
 </body>
+
+<script>
+    // ==================== EASTER EGG ====================
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerCredit = document.getElementById('footer-credit');
+        let isShowing = false;
+
+        footerCredit.addEventListener('click', function() {
+            if (!isShowing) {
+                footerCredit.textContent = 'Feito com ❤️ por @joaohperes';
+                isShowing = true;
+            } else {
+                footerCredit.textContent = 'ALVF - HRO - Todos os direitos reservados';
+                isShowing = false;
+            }
+        });
+    });
+</script>
 </html>
