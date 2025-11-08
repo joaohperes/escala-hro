@@ -1591,6 +1591,85 @@
                 font-size: 20px;
             }
         }
+
+        /* Footer Styles */
+        .app-footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .footer-section {
+            padding: 0 10px;
+        }
+
+        .footer-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .footer-description {
+            font-size: 0.9em;
+            color: #999;
+            margin: 0;
+        }
+
+        .footer-meta {
+            font-size: 0.85em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .footer-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .footer-status {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .footer-small {
+            font-size: 0.8em;
+            color: #999;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        body.dark-theme .footer-label {
+            color: #aaa;
+        }
+
+        body.dark-theme .app-footer {
+            background: #1a1a1a;
+            border-top-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .app-footer {
+                padding: 30px 15px;
+                margin-top: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2674,12 +2753,46 @@
 
         // Carrega o tema salvo quando a página carrega
         loadSavedTheme();
+
+        // ==================== ATUALIZAR FOOTER ====================
+        function atualizarFooter() {
+            const footerDate = document.getElementById('footer-date');
+            if (footerDate && escalas && escalas.atual) {
+                footerDate.textContent = escalas.atual.data_atualizacao || '--';
+            }
+        }
+
+        // Atualiza o footer quando a página carrega
+        atualizarFooter();
     </script>
 
     <!-- Botão Toggle de Tema -->
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">
         <span class="theme-toggle-icon" id="theme-icon">🌙</span>
     </button>
+
+    <!-- Rodapé -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p class="footer-title">Escala HRO</p>
+                <p class="footer-description">Sistema de Gestão de Escalas Médicas</p>
+            </div>
+            <div class="footer-section">
+                <p class="footer-meta">
+                    <span class="footer-label">Versão:</span> 2.0<br>
+                    <span class="footer-label">Atualizado em:</span> <span id="footer-date">--</span><br>
+                    <span class="footer-label">Status:</span> <span class="footer-status">Operacional</span>
+                </p>
+            </div>
+            <div class="footer-section">
+                <p class="footer-small">
+                    Desenvolvido com foco em usabilidade e eficiência.<br>
+                    © HRO - Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
 
     </div> <!-- Fecha main-content -->
 </body>
