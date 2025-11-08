@@ -43,27 +43,10 @@ jobs:
         python3 converter_inteligente.py 2>&1 | tee /tmp/converter.log
       continue-on-error: true
 
-    - name: Gerar dashboard
-      run: |
-        python3 gerar_dashboard_executivo.py 2>&1 | tee /tmp/dashboard.log
-      continue-on-error: true
-
-    - name: Verificar se arquivo foi gerado
-      run: |
-        ls -lah /tmp/dashboard_executivo.html || echo "❌ Dashboard não foi gerado!"
-        ls -lah /tmp/*.log 2>/dev/null || echo "Sem logs"
-
-    - name: Copiar dashboard para publicação
-      run: |
-        if [ -f /tmp/dashboard_executivo.html ]; then
-          cp /tmp/dashboard_executivo.html index.html
-          echo "✅ Dashboard copiado com sucesso"
-          ls -lah index.html
-        else
-          echo "❌ Erro: arquivo dashboard não foi gerado"
-          exit 1
-        fi
-      continue-on-error: true
+    # Dashboard gerado manualmente e mantido no repositório
+    # Isso garante que as mudanças de layout/styling não sejam sobrescritas
+    # pelo gerador automatizado. O index.html é atualizado manualmente
+    # e sincronizado com gerar_dashboard_executivo.py quando necessário.
 
     - name: Commit e Push
       run: |
