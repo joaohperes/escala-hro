@@ -1502,36 +1502,31 @@
 
         /* Footer Styles */
         .app-footer {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(42, 42, 42, 0.8) 100%);
-            border-top: 2px solid var(--color-primary);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            padding: 30px 20px;
+            padding: 20px;
             color: #999;
             text-align: center;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .footer-title {
-            font-size: 0.95em;
-            font-weight: 700;
+            font-size: 0.9em;
+            font-weight: 600;
             color: var(--color-primary);
-            margin: 0 0 12px 0;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            margin: 0 0 8px 0;
         }
 
         .footer-text {
             font-size: 0.8em;
             margin: 0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             color: #aaa;
-            letter-spacing: 0.3px;
         }
 
         .footer-text:hover {
             color: var(--color-primary);
-            transform: scale(1.02);
         }
     </style>
 </head>
@@ -2578,27 +2573,10 @@
     <!-- Rodapé -->
     <footer class="app-footer">
         <p class="footer-title">Escala Médica HRO</p>
-        <p class="footer-text" id="footer-credit">ALVF - HRO - Todos os direitos reservados</p>
+        <p class="footer-text">@joaohperes</p>
     </footer>
 
     </div> <!-- Fecha main-content -->
 </body>
 
-<script>
-    // ==================== EASTER EGG ====================
-    document.addEventListener('DOMContentLoaded', function() {
-        const footerCredit = document.getElementById('footer-credit');
-        let isShowing = false;
-
-        footerCredit.addEventListener('click', function() {
-            if (!isShowing) {
-                footerCredit.textContent = 'Feito com ❤️ por @joaohperes';
-                isShowing = true;
-            } else {
-                footerCredit.textContent = 'ALVF - HRO - Todos os direitos reservados';
-                isShowing = false;
-            }
-        });
-    });
-</script>
 </html>
