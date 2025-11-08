@@ -1479,69 +1479,20 @@
             background: var(--bg-secondary);
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
-            padding: 40px 20px;
-            color: #666;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            padding: 20px;
+            color: #999;
             text-align: center;
         }
 
-        .footer-section {
-            padding: 0 10px;
-        }
-
-        .footer-title {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-bottom: 8px;
-        }
-
-        .footer-description {
-            font-size: 0.9em;
-            color: #999;
-            margin: 0;
-        }
-
-        .footer-meta {
+        .footer-text {
             font-size: 0.85em;
-            line-height: 1.6;
             margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
-        .footer-label {
-            font-weight: 600;
-            color: #555;
-        }
-
-        .footer-status {
-            color: #27ae60;
-            font-weight: 600;
-        }
-
-        .footer-small {
-            font-size: 0.8em;
-            color: #999;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .app-footer {
-                padding: 30px 15px;
-                margin-top: 40px;
-            }
+        .footer-text:hover {
+            color: var(--color-primary);
         }
     </style>
 </head>
@@ -2583,39 +2534,27 @@
         verificarAutenticacao();
         renderizarEscala();
 
-        // ==================== ATUALIZAR FOOTER ====================
-        function atualizarFooter() {
-            const footerDate = document.getElementById('footer-date');
-            if (footerDate && escalas && escalas.atual) {
-                footerDate.textContent = escalas.atual.data_atualizacao || '--';
-            }
-        }
+        // ==================== EASTER EGG ====================
+        const footerCredit = document.getElementById('footer-credit');
+        let clickCount = 0;
 
-        // Atualiza o footer quando a página carrega
-        atualizarFooter();
+        footerCredit.addEventListener('click', function() {
+            clickCount++;
+
+            if (clickCount === 1) {
+                footerCredit.textContent = 'Feito com ❤️';
+            } else if (clickCount === 2) {
+                footerCredit.textContent = 'por João Peres';
+            } else if (clickCount === 3) {
+                footerCredit.textContent = '@joaohperes';
+                clickCount = 0; // Reset para voltar ao início
+            }
+        });
     </script>
 
     <!-- Rodapé -->
     <footer class="app-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <p class="footer-title">Escala HRO</p>
-                <p class="footer-description">Sistema de Gestão de Escalas Médicas</p>
-            </div>
-            <div class="footer-section">
-                <p class="footer-meta">
-                    <span class="footer-label">Versão:</span> 2.0<br>
-                    <span class="footer-label">Atualizado em:</span> <span id="footer-date">--</span><br>
-                    <span class="footer-label">Status:</span> <span class="footer-status">Operacional</span>
-                </p>
-            </div>
-            <div class="footer-section">
-                <p class="footer-small">
-                    Desenvolvido com foco em usabilidade e eficiência.<br>
-                    © HRO - Todos os direitos reservados.
-                </p>
-            </div>
-        </div>
+        <p class="footer-text" id="footer-credit">© HRO - Todos os direitos reservados.</p>
     </footer>
 
     </div> <!-- Fecha main-content -->
