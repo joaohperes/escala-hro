@@ -61,6 +61,12 @@ jobs:
           exit 1
         fi
 
+    - name: Health Check
+      if: always()
+      run: |
+        echo "🏥 Executando verificação de saúde..."
+        python3 health_check.py
+
     - name: Upload de logs em caso de erro
       if: failure()
       uses: actions/upload-artifact@v4
