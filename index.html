@@ -1225,8 +1225,9 @@
                 flex: none;
                 min-width: auto;
                 width: 100%;
-                justify-content: center;
-                gap: 8px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
             }
 
             .header-right {
@@ -2573,10 +2574,27 @@
     <!-- Rodapé -->
     <footer class="app-footer">
         <p class="footer-title">Escala Médica HRO</p>
-        <p class="footer-text">@joaohperes</p>
+        <p class="footer-text" id="footer-credit">ALVF | HRO | Todos os direitos reservados</p>
     </footer>
 
     </div> <!-- Fecha main-content -->
 </body>
 
+<script>
+    // ==================== EASTER EGG ====================
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerCredit = document.getElementById('footer-credit');
+        let isShowing = false;
+
+        footerCredit.addEventListener('click', function() {
+            if (!isShowing) {
+                footerCredit.textContent = 'por @joaohperes';
+                isShowing = true;
+            } else {
+                footerCredit.textContent = 'ALVF | HRO | Todos os direitos reservados';
+                isShowing = false;
+            }
+        });
+    });
+</script>
 </html>
