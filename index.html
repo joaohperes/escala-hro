@@ -1297,6 +1297,32 @@
                 padding: 8px 12px;
                 font-size: 0.9em;
             }
+
+            .contacts-list,
+            .ramais-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item,
+            .ramal-item {
+                padding: 10px 12px;
+                font-size: 0.9em;
+            }
+
+            .contacts-modal-content,
+            .ramais-modal-content {
+                width: 95%;
+                padding: 20px;
+                max-height: 70vh;
+            }
+
+            .contacts-modal-header h2 {
+                font-size: 1.2em;
+            }
+
+            .ramais-modal-header h2 {
+                font-size: 1.2em;
+            }
         }
 
         /* Estilos para Impressão - 1 página A4 máxima compactação */
@@ -1476,30 +1502,36 @@
 
         /* Footer Styles */
         .app-footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(42, 42, 42, 0.8) 100%);
+            border-top: 2px solid var(--color-primary);
             margin-top: 60px;
-            padding: 20px;
+            padding: 30px 20px;
             color: #999;
             text-align: center;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .footer-title {
-            font-size: 1em;
-            font-weight: 600;
+            font-size: 0.95em;
+            font-weight: 700;
             color: var(--color-primary);
-            margin: 0 0 8px 0;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         .footer-text {
-            font-size: 0.85em;
+            font-size: 0.8em;
             margin: 0;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            color: #aaa;
+            letter-spacing: 0.3px;
         }
 
         .footer-text:hover {
             color: var(--color-primary);
+            transform: scale(1.02);
         }
     </style>
 </head>
