@@ -1,0 +1,6 @@
+{
+  "professionals": [],
+  "data": "2025-11-08",
+  "timestamp": "2025-11-08T10:00:00Z",
+  "note": "Sample file for fallback when extraction fails. This prevents dashboard from becoming empty."
+}
