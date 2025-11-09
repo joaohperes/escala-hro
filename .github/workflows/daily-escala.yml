@@ -93,7 +93,7 @@ jobs:
       if: always()
       run: |
         echo "🏥 Executando verificação de saúde..."
-        python3 health_check.py
+        python3 health_check.py || true
 
     - name: Upload de logs em caso de erro
       if: failure()

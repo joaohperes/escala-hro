@@ -122,12 +122,24 @@ class HealthCheck:
 
         # Summary
         print("\n" + "-"*60)
-        critical_ok = (
-            "✅" in self.checks["extraction_file"] or
-            "✅" in self.checks["fallback_data"]
-        ) and "✅" in self.checks["dashboard_html"]
 
-        if critical_ok:
+        # CRITICAL: Dashboard must exist
+        dashboard_ok = "✅" in self.checks["dashboard_html"]
+
+        # Data must be available from SOME source
+        has_data = (
+            "✅" in self.checks["extraction_file"] or
+            "✅" in self.checks["previous_day_file"] or
+            "✅" in self.checks["fallback_data"]
+        )
+
+        # Workflows must be valid
+        workflows_ok = "✅" in self.checks["workflows"]
+
+        # System is healthy if dashboard exists, has data, and workflows are configured
+        is_healthy = dashboard_ok and has_data and workflows_ok
+
+        if is_healthy:
             print("✅ SYSTEM STATUS: HEALTHY")
             print("\nData Summary:")
             if self.data.get("professionals_count"):
@@ -136,7 +148,15 @@ class HealthCheck:
                 print(f"  • Yesterday: {self.data['previous_day_count']} professionals")
             return True
         else:
-            print("⚠️ SYSTEM STATUS: DEGRADED (using fallback)")
+            # Only fail if something CRITICAL is missing
+            if not dashboard_ok:
+                print("❌ SYSTEM STATUS: FAILED - Dashboard not generated")
+            elif not has_data:
+                print("❌ SYSTEM STATUS: FAILED - No data available")
+            elif not workflows_ok:
+                print("❌ SYSTEM STATUS: FAILED - Workflow not configured")
+            else:
+                print("⚠️ SYSTEM STATUS: DEGRADED (using fallback)")
             return False
 
 def main():
