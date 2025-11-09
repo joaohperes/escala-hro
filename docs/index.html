@@ -79,68 +79,6 @@
             --modal-overlay-light: rgba(0, 0, 0, 0.6);
         }
 
-        /* Tema Escuro */
-        body.dark-theme {
-            /* Cores principais */
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --bg-tertiary: #242424;
-            --bg-gradient-start: #2d2d2d;
-            --bg-gradient-end: #1a1a1a;
-
-            /* Textos */
-            --text-primary: #e8e8e8;
-            --text-secondary: #b0b0b0;
-            --text-tertiary: #808080;
-
-            /* Bordas */
-            --border-color: #404040;
-            --border-color-hover: #555555;
-
-            /* Cores de destaque - mantêm-se vibrantes no escuro */
-            --color-primary: #4a9eff;
-            --color-primary-dark: #3a8eef;
-            --color-primary-light: #5aadff;
-            --color-success: #4caf50;
-            --color-success-dark: #3c9f40;
-            --color-warning: #ffb300;
-            --color-danger: #f44336;
-            --color-info: #29b6f6;
-            --color-purple: #9c27b0;
-
-            /* Shadows - mais sutis no escuro */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.4);
-            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
-            --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.6);
-
-            /* Badges - Turnos (versões escuras) */
-            --badge-matutino-bg: #2d4a2f;
-            --badge-matutino-text: #81c784;
-            --badge-vespertino-bg: #4a4220;
-            --badge-vespertino-text: #ffd54f;
-            --badge-noturno-bg: #1e3a4a;
-            --badge-noturno-text: #4dd0e1;
-            --badge-24h-bg: #4a2d2d;
-            --badge-24h-text: #ef9a9a;
-            --badge-sobreaviso-bg: #3a3a5a;
-            --badge-sobreaviso-text: #b39ddb;
-            --badge-rotina-bg: #3a3a3a;
-            --badge-rotina-text: #b0b0b0;
-            --badge-plantao-bg: #4a3a2a;
-            --badge-plantao-text: #ffcc80;
-            --badge-diurno-bg: #2d4a2f;
-            --badge-diurno-text: #81c784;
-            --badge-misto-bg: #3a2d4a;
-            --badge-misto-text: #c486ff;
-            --badge-outro-bg: #3a3a3a;
-            --badge-outro-text: #9e9e9e;
-
-            /* Modal */
-            --modal-overlay: rgba(0, 0, 0, 0.85);
-            --modal-overlay-light: rgba(0, 0, 0, 0.75);
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg-primary);
@@ -1536,61 +1474,6 @@
             }
         }
 
-        /* Botão Toggle de Tema */
-        .theme-toggle {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--color-primary);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 9999;
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .theme-toggle:active {
-            transform: scale(0.95);
-        }
-
-        .theme-toggle-icon {
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .theme-toggle:hover .theme-toggle-icon {
-            transform: rotate(20deg);
-        }
-
-        @media print {
-            .theme-toggle {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .theme-toggle {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .theme-toggle-icon {
-                font-size: 20px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -2633,53 +2516,7 @@
 
         // ==================== GERENCIAMENTO DE TEMA ====================
 
-        // Função para alternar tema
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.classList.contains('dark-theme') ? 'dark' : 'light';
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-            // Alterna a classe
-            if (newTheme === 'dark') {
-                body.classList.add('dark-theme');
-            } else {
-                body.classList.remove('dark-theme');
-            }
-
-            // Salva no localStorage
-            localStorage.setItem('theme', newTheme);
-
-            // Atualiza o ícone do botão
-            updateThemeIcon(newTheme);
-        }
-
-        // Função para atualizar o ícone do botão
-        function updateThemeIcon(theme) {
-            const icon = document.getElementById('theme-icon');
-            if (icon) {
-                icon.textContent = theme === 'dark' ? '☀️' : '🌙';
-            }
-        }
-
-        // Função para carregar o tema salvo
-        function loadSavedTheme() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-theme');
-            }
-
-            updateThemeIcon(savedTheme);
-        }
-
-        // Carrega o tema salvo quando a página carrega
-        loadSavedTheme();
     </script>
-
-    <!-- Botão Toggle de Tema -->
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-        <span class="theme-toggle-icon" id="theme-icon">🌙</span>
-    </button>
 
     </div> <!-- Fecha main-content -->
 </body>
