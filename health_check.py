@@ -27,7 +27,15 @@ class HealthCheck:
             try:
                 with open(path) as f:
                     data = json.load(f)
-                    count = len(data.get("professionals", []))
+                    # Nova estrutura: data["atual"]["registros"]
+                    # Estrutura antiga: data["professionals"]
+                    count = 0
+                    if isinstance(data, dict):
+                        if "atual" in data and "registros" in data["atual"]:
+                            count = len(data["atual"]["registros"])
+                        elif "professionals" in data:
+                            count = len(data["professionals"])
+
                     self.checks["extraction_file"] = f"✅ {count} professionals"
                     self.data["professionals_count"] = count
                     return True
@@ -47,7 +55,15 @@ class HealthCheck:
             try:
                 with open(path) as f:
                     data = json.load(f)
-                    count = len(data.get("professionals", []))
+                    # Nova estrutura: data["anterior"]["registros"]
+                    # Estrutura antiga: data["professionals"]
+                    count = 0
+                    if isinstance(data, dict):
+                        if "anterior" in data and "registros" in data["anterior"]:
+                            count = len(data["anterior"]["registros"])
+                        elif "professionals" in data:
+                            count = len(data["professionals"])
+
                     self.checks["previous_day_file"] = f"✅ {count} professionals"
                     self.data["previous_day_count"] = count
                     return True
