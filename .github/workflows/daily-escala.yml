@@ -17,6 +17,34 @@ jobs:
     steps:
     - name: Checkout código
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: main
+
+    - name: Validar que workflow antigo foi deletado
+      run: |
+        if [ -f .github/workflows/atualizar-dashboard.yml ]; then
+          echo "❌ ERRO: Workflow antigo ainda existe!"
+          echo "❌ Deletar: .github/workflows/atualizar-dashboard.yml"
+          exit 1
+        fi
+        echo "✅ Confirmado: Workflow antigo não existe"
+
+    - name: Validar que health_check.py existe
+      run: |
+        if [ ! -f health_check.py ]; then
+          echo "❌ ERRO: health_check.py não encontrado!"
+          exit 1
+        fi
+        echo "✅ Confirmado: health_check.py existe"
+
+    - name: Validar que data/fallback existe
+      run: |
+        if [ ! -d data ] || [ ! -f data/extracao_inteligente_sample.json ]; then
+          echo "❌ ERRO: Fallback data não encontrado!"
+          exit 1
+        fi
+        echo "✅ Confirmado: Fallback data existe"
 
     - name: Configurar Python
       uses: actions/setup-python@v4

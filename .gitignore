@@ -1,3 +1,7 @@
+# ⚠️ DEPRECATED FILES - NEVER RESTORE THESE
+.github/workflows/atualizar-dashboard.yml
+converter_inteligente.py
+
 __pycache__/
 *.pyc
 *.pyo
