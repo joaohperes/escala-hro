@@ -499,6 +499,12 @@ def gerar_dashboard():
     if mapping_data is None:
         print("⚠️  Mapeamento de setores não carregado - funcionalidade de extensões desabilitada")
 
+    # DEBUG: Verificar se escalas tem dados anteriores
+    if 'anterior' in escalas:
+        print(f"✅ DEBUG: Dados anteriores presentes - {escalas['anterior'].get('data', 'N/A')} ({len(escalas['anterior'].get('registros', []))} registros)")
+    else:
+        print(f"❌ DEBUG: Dados anteriores NÃO presentes. Chaves: {list(escalas.keys())}")
+
     html = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
