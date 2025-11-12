@@ -1,0 +1,17 @@
+{
+  "atual": {
+    "data": "11 novembro 2025",
+    "data_simples": "11/11/2025",
+    "registros": [],
+    "total": 0
+  },
+  "anterior": {
+    "data": "N/A",
+    "data_simples": "00/00/0000",
+    "registros": [],
+    "total": 0
+  },
+  "data_backup": "11/11/2025",
+  "hora_backup": "00:00",
+  "nota": "Fallback data for day 11 - actual extraction data not available"
+}

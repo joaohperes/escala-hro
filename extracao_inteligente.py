@@ -450,9 +450,62 @@ def main():
                     # A anterior salva tem a estrutura: { 'atual': {...}, 'anterior': {...} }
                     # Vamos usar o 'atual' dessa anterior como nosso 'anterior'
                     resultado_anterior_salvo = anterior_completa.get('atual')
+
                     if resultado_anterior_salvo:
-                        print(f"✅ Dados do dia anterior carregados: {resultado_anterior_salvo.get('data', 'N/A')}")
-                        print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+                        data_anterior_str = resultado_anterior_salvo.get('data', 'N/A')
+
+                        # Validar que o arquivo anterior é realmente do dia anterior
+                        # Se tiver mais de 1 dia de diferença, ignorar (workflow não rodou)
+                        try:
+                            # Exemplo de data: "09 novembro 2025"
+                            meses_pt = {
+                                'janeiro': 1, 'fevereiro': 2, 'março': 3, 'abril': 4,
+                                'maio': 5, 'junho': 6, 'julho': 7, 'agosto': 8,
+                                'setembro': 9, 'outubro': 10, 'novembro': 11, 'dezembro': 12
+                            }
+
+                            partes = data_anterior_str.split()
+                            if len(partes) >= 3:
+                                dia_ant = int(partes[0])
+                                mes_ant = meses_pt.get(partes[1].lower(), 0)
+                                ano_ant = int(partes[2])
+
+                                data_obj_anterior = datetime(ano_ant, mes_ant, dia_ant)
+                                data_obj_hoje = datetime.now()
+
+                                dias_diff = (data_obj_hoje - data_obj_anterior).days
+
+                                if dias_diff > 2:
+                                    # Arquivo anterior é muito antigo, tentar carregar fallback
+                                    print(f"⚠️  Arquivo anterior muito antigo ({dias_diff} dias). Tentando carregar fallback...")
+                                    resultado_anterior_salvo = None
+
+                                    # Tentar carregar arquivo fallback
+                                    fallback_paths = [
+                                        'data/extracao_inteligente_anterior_fallback.json',
+                                        os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
+                                    ]
+                                    for fallback_path in fallback_paths:
+                                        if os.path.exists(fallback_path):
+                                            try:
+                                                with open(fallback_path, 'r') as fb:
+                                                    fallback_data = json.load(fb)
+                                                    resultado_anterior_salvo = fallback_data.get('atual')
+                                                    if resultado_anterior_salvo:
+                                                        print(f"✅ Fallback anterior carregado: {resultado_anterior_salvo.get('data', 'N/A')}")
+                                                        break
+                                            except Exception as fb_err:
+                                                print(f"⚠️  Erro ao carregar fallback: {fb_err}")
+                                elif dias_diff == 1:
+                                    print(f"✅ Dados do dia anterior carregados: {data_anterior_str}")
+                                    print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+                                else:
+                                    print(f"⚠️  Dados do anterior com diferença de {dias_diff} dia(s): {data_anterior_str}")
+                                    print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+                        except Exception as date_err:
+                            print(f"⚠️  Erro ao validar data anterior: {date_err}")
+                            # Se não conseguir validar, mantém como está
+
             except Exception as e:
                 print(f"⚠️  Erro ao carregar anterior: {e}")
         else:
