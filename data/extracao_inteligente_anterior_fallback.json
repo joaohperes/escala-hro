@@ -1,17 +1,118 @@
 {
   "atual": {
+    "data": "12 novembro 2025",
+    "data_simples": "12/11/2025",
+    "registros": [
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "07:00/19:00",
+        "phone": "",
+        "pos_x": 1101,
+        "profissional": "Jamessom Borralho Paes de Barros Filho",
+        "setor": "Atendimento Pediátrico - Plantão",
+        "tipo_turno": "Plantão Diurno"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 1438,
+        "profissional": "Carlos Fogaça",
+        "setor": "Bucomaxilo Sobreaviso",
+        "tipo_turno": "Bucomaxilo - Sobreaviso"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 1774,
+        "profissional": "Luan Gabriel Paese",
+        "setor": "Cardiologia - Sobreaviso",
+        "tipo_turno": "Sobreaviso Cardiologia"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 2111,
+        "profissional": "Fabio Luis Rockenbach",
+        "setor": "Cirurgia Geral - Sobreaviso",
+        "tipo_turno": "Cirurgia Geral - Sobreaviso"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 2447,
+        "profissional": "Ricardo Marcelus Araujo Filipak",
+        "setor": "Cirurgia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Cirurgia Pediátrica"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 2784,
+        "profissional": "Rodrigo  Sponchiado Rocha",
+        "setor": "Cirurgia Torácica - Sobreaviso",
+        "tipo_turno": "Cirurgia Torácica - Sobreaviso"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 3120,
+        "profissional": "Graciany Gasperin",
+        "setor": "Cirurgia Vascular - Sobreaviso",
+        "tipo_turno": "Vascular Sobreaviso"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 3793,
+        "profissional": "Fernanda Scortegagna Annes",
+        "setor": "Endoscopia - Sobreaviso",
+        "tipo_turno": "Endoscopia - Sobreaviso"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 4130,
+        "profissional": "Lais Paganella de Aquino",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P1"
+      },
+      {
+        "data": "12 novembro 2025",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 4130,
+        "profissional": "Ana Claudia Cazzuni",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P2"
+      }
+    ],
+    "total": 10
+  },
+  "anterior": {
     "data": "11 novembro 2025",
     "data_simples": "11/11/2025",
     "registros": [],
     "total": 0
   },
-  "anterior": {
-    "data": "N/A",
-    "data_simples": "00/00/0000",
-    "registros": [],
-    "total": 0
-  },
-  "data_backup": "11/11/2025",
-  "hora_backup": "00:00",
-  "nota": "Fallback data for day 11 - actual extraction data not available"
+  "data_backup": "12/11/2025",
+  "hora_backup": "11:25",
+  "nota": "Fallback data for day 12 with sample records"
 }
