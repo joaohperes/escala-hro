@@ -441,11 +441,17 @@ def main():
 
         resultado_anterior_salvo = None
         arquivo_anterior = '/tmp/extracao_inteligente_anterior.json'
+        arquivo_anterior_persistente = 'data/extracao_inteligente_anterior_cache.json'
 
         # Tenta carregar a extração anterior salva
-        if os.path.exists(arquivo_anterior):
+        # Primeiro tenta /tmp, depois o arquivo persistente no repo
+        anterior_paths = [arquivo_anterior, arquivo_anterior_persistente]
+
+        if os.path.exists(arquivo_anterior) or os.path.exists(arquivo_anterior_persistente):
+            # Tenta carregar de /tmp primeiro, depois do diretório persistente
+            arquivo_para_carregar = arquivo_anterior if os.path.exists(arquivo_anterior) else arquivo_anterior_persistente
             try:
-                with open(arquivo_anterior, 'r') as f:
+                with open(arquivo_para_carregar, 'r') as f:
                     anterior_completa = json.load(f)
                     # A anterior salva tem a estrutura: { 'atual': {...}, 'anterior': {...} }
                     # Vamos usar o 'atual' dessa anterior como nosso 'anterior'
@@ -552,9 +558,22 @@ def main():
             'hora_backup': datetime.now().strftime('%H:%M')
         }
 
+        # Salvar em /tmp (temporário) e no repositório (persistente)
         with open(arquivo_anterior, 'w') as f:
             json.dump(backup_para_amanha, f, ensure_ascii=False, indent=2)
         print(f"✅ Backup para amanhã: {arquivo_anterior}")
+
+        # Salvar também no arquivo persistente (data/extracao_inteligente_anterior_cache.json)
+        # para que o GitHub Actions possa usar no dia seguinte
+        try:
+            # Criar diretório se não existir
+            os.makedirs(os.path.dirname(arquivo_anterior_persistente), exist_ok=True)
+            with open(arquivo_anterior_persistente, 'w') as f:
+                json.dump(backup_para_amanha, f, ensure_ascii=False, indent=2)
+            print(f"✅ Backup persistente: {arquivo_anterior_persistente}")
+        except Exception as e:
+            print(f"⚠️  Erro ao salvar backup persistente: {e}")
+
         print(f"{'='*100}\n")
 
     except Exception as e:
