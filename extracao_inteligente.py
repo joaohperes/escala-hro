@@ -454,7 +454,8 @@ def main():
                 with open(arquivo_para_carregar, 'r') as f:
                     anterior_completa = json.load(f)
                     # A anterior salva tem a estrutura: { 'atual': {...}, 'anterior': {...} }
-                    # Vamos usar o 'atual' dessa anterior como nosso 'anterior'
+                    # O 'atual' desse arquivo é de ONTEM (quando foi salvo como backup)
+                    # Então é ISSO que deve ser nosso 'anterior' HOJE
                     resultado_anterior_salvo = anterior_completa.get('atual')
 
                     if resultado_anterior_salvo:
@@ -481,7 +482,34 @@ def main():
 
                                 dias_diff = (data_obj_hoje - data_obj_anterior).days
 
-                                if dias_diff > 2:
+                                if dias_diff == 1:
+                                    # Dados de exatamente 1 dia atrás - PERFEITO!
+                                    print(f"✅ Dados do dia anterior carregados: {data_anterior_str}")
+                                    print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+                                elif dias_diff == 0:
+                                    # ERRO: Cache contém dados de HOJE (mesmo dia)
+                                    # Isso significa que o website já tinha dados de hoje quando extraímos
+                                    # Ignorar e carregar fallback
+                                    print(f"⚠️  Cache contém dados de HOJE (não é anterior válido). Tentando fallback...")
+                                    resultado_anterior_salvo = None
+
+                                    # Tentar carregar arquivo fallback
+                                    fallback_paths = [
+                                        'data/extracao_inteligente_anterior_fallback.json',
+                                        os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
+                                    ]
+                                    for fallback_path in fallback_paths:
+                                        if os.path.exists(fallback_path):
+                                            try:
+                                                with open(fallback_path, 'r') as fb:
+                                                    fallback_data = json.load(fb)
+                                                    resultado_anterior_salvo = fallback_data.get('atual')
+                                                    if resultado_anterior_salvo:
+                                                        print(f"✅ Fallback anterior carregado: {resultado_anterior_salvo.get('data', 'N/A')}")
+                                                        break
+                                            except Exception as fb_err:
+                                                print(f"⚠️  Erro ao carregar fallback: {fb_err}")
+                                elif dias_diff > 2:
                                     # Arquivo anterior é muito antigo, tentar carregar fallback
                                     print(f"⚠️  Arquivo anterior muito antigo ({dias_diff} dias). Tentando carregar fallback...")
                                     resultado_anterior_salvo = None
@@ -502,10 +530,8 @@ def main():
                                                         break
                                             except Exception as fb_err:
                                                 print(f"⚠️  Erro ao carregar fallback: {fb_err}")
-                                elif dias_diff == 1:
-                                    print(f"✅ Dados do dia anterior carregados: {data_anterior_str}")
-                                    print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
                                 else:
+                                    # Dias diff é 2 ou algo entre 0-2 (mas não 0 ou 1)
                                     print(f"⚠️  Dados do anterior com diferença de {dias_diff} dia(s): {data_anterior_str}")
                                     print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
                         except Exception as date_err:
