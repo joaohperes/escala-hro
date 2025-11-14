@@ -2191,45 +2191,56 @@ def gerar_dashboard():
 
         // Função para obter ramais de um setor
         function obterRamaisSetor(setorNome) {
-            if (!ramaisData.departments || !setorRamaisMapping.sector_mappings) {
-                return [];
-            }
-
-            // Procurar o setor no mapeamento
-            const mapping = setorRamaisMapping.sector_mappings.find(m => m.dashboard_sector === setorNome);
-            if (!mapping) {
-                return [];
-            }
-
-            // Coletar todos os ramais dos departamentos mapeados
-            const extensions = [];
-            mapping.ramais_departments.forEach(deptName => {
-                const dept = ramaisData.departments.find(d => d.name === deptName);
-                if (dept) {
-                    extensions.push(...dept.extensions);
+            try {
+                if (!ramaisData || !ramaisData.departments || !setorRamaisMapping || !setorRamaisMapping.sector_mappings) {
+                    console.warn('⚠️  Dados de ramais não carregados corretamente');
+                    return [];
                 }
-            });
 
-            return extensions;
+                // Procurar o setor no mapeamento
+                const mapping = setorRamaisMapping.sector_mappings.find(m => m.dashboard_sector === setorNome);
+                if (!mapping) {
+                    return [];
+                }
+
+                // Coletar todos os ramais dos departamentos mapeados
+                const extensions = [];
+                mapping.ramais_departments.forEach(deptName => {
+                    const dept = ramaisData.departments.find(d => d.name === deptName);
+                    if (dept) {
+                        extensions.push(...dept.extensions);
+                    }
+                });
+
+                return extensions;
+            } catch (e) {
+                console.error('❌ Erro em obterRamaisSetor:', e);
+                return [];
+            }
         }
 
         // Função para formatar ramais para exibição
         function formatarRamaisDisplay(extensions) {
-            if (!extensions || extensions.length === 0) {
+            try {
+                if (!extensions || extensions.length === 0) {
+                    return '';
+                }
+
+                // Remover duplicatas
+                const uniqueExts = [...new Set(extensions)];
+
+                // Limitar exibição a 5 ramais
+                if (uniqueExts.length > 5) {
+                    const extsStr = uniqueExts.slice(0, 5).join(', ');
+                    const allExtsStr = uniqueExts.join(', ');
+                    return ` <span class="setor-ramais" title="${allExtsStr}">(${extsStr}...)</span>`;
+                } else {
+                    const extsStr = uniqueExts.join(', ');
+                    return ` <span class="setor-ramais">(${extsStr})</span>`;
+                }
+            } catch (e) {
+                console.error('❌ Erro em formatarRamaisDisplay:', e);
                 return '';
-            }
-
-            // Remover duplicatas
-            const uniqueExts = [...new Set(extensions)];
-
-            // Limitar exibição a 5 ramais
-            if (uniqueExts.length > 5) {
-                const extsStr = uniqueExts.slice(0, 5).join(', ');
-                const allExtsStr = uniqueExts.join(', ');
-                return ` <span class="setor-ramais" title="${allExtsStr}">(${extsStr}...)</span>`;
-            } else {
-                const extsStr = uniqueExts.join(', ');
-                return ` <span class="setor-ramais">(${extsStr})</span>`;
             }
         }
 
