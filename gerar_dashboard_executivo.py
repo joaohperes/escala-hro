@@ -496,8 +496,13 @@ def gerar_dashboard():
 
     if ramais_data is None:
         print("⚠️  Ramais não carregados - funcionalidade de extensões desabilitada")
+    else:
+        print(f"✅ Ramais data loaded: {len(ramais_data.get('departments', []))} departments")
+
     if mapping_data is None:
         print("⚠️  Mapeamento de setores não carregado - funcionalidade de extensões desabilitada")
+    else:
+        print(f"✅ Mapping data loaded: {len(mapping_data.get('sector_mappings', []))} sector mappings")
 
     html = """<!DOCTYPE html>
 <html lang="pt-BR">
@@ -2184,7 +2189,7 @@ def gerar_dashboard():
         try {
             // Parse escalas data
             escalas = """ + json.dumps(escalas, ensure_ascii=False) + """;
-            console.log('✅ Escalas carregadas com sucesso:', Object.keys(escalas));
+            console.log('✅ Escalas carregadas com sucesso:', escalas ? Object.keys(escalas).length : 0, 'keys');
         } catch (e) {
             console.error('❌ Erro ao parsear dados de escalas:', e.message);
             console.error('Stack:', e.stack);
@@ -2194,7 +2199,7 @@ def gerar_dashboard():
         try {
             // Parse ramais data
             ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
-            console.log('✅ Dados de ramais carregados:', ramaisData && Object.keys(ramaisData).length ? 'Com dados' : 'Vazio');
+            console.log('✅ Dados de ramais carregados:', ramaisData ? Object.keys(ramaisData).length : 0, 'keys:', ramaisData ? Object.keys(ramaisData) : 'empty');
         } catch (e) {
             console.error('❌ Erro ao parsear dados de ramais:', e.message);
             ramaisData = {};
@@ -2203,7 +2208,7 @@ def gerar_dashboard():
         try {
             // Parse sector mapping data
             setorRamaisMapping = """ + json.dumps(mapping_data if mapping_data else {}, ensure_ascii=False) + """;
-            console.log('✅ Mapeamento de setores carregado:', setorRamaisMapping && Object.keys(setorRamaisMapping).length ? 'Com dados' : 'Vazio');
+            console.log('✅ Mapeamento de setores carregado:', setorRamaisMapping ? Object.keys(setorRamaisMapping).length : 0, 'keys:', setorRamaisMapping ? Object.keys(setorRamaisMapping) : 'empty');
         } catch (e) {
             console.error('❌ Erro ao parsear mapeamento de setores:', e.message);
             setorRamaisMapping = {};
@@ -2714,28 +2719,30 @@ def gerar_dashboard():
 
         function renderizarEscala() {
             try {
-                console.log('🔄 Dashboard v3-ramais renderizado');
-                console.log('Stack:', new Error().stack.split('\\n').slice(0, 5).join(' | '));
+                console.log('%c🔄 Dashboard v3-ramais - INICIANDO RENDERIZAÇÃO', 'color: blue; font-weight: bold');
 
                 // Validate escalas data structure
+                console.log('1️⃣  Validando escalas:', typeof escalas, escalas ? 'não-null' : 'null');
                 if (!escalas) {
                     console.error('❌ escalas é null/undefined');
                     return;
                 }
 
+                console.log('2️⃣  Chaves de escalas:', Object.keys(escalas));
                 if (!escalas[diaSelecionado]) {
                     console.error(`❌ escalas['${diaSelecionado}'] não existe. Chaves disponíveis:`, Object.keys(escalas));
                     return;
                 }
 
                 const dados = escalas[diaSelecionado];
+                console.log('3️⃣  Dados do dia selecionado:', dados ? 'obtido' : 'null', 'Keys:', dados ? Object.keys(dados) : 'N/A');
 
-                if (!dados.registros || !Array.isArray(dados.registros)) {
+                if (!dados || !dados.registros || !Array.isArray(dados.registros)) {
                     console.error('❌ dados.registros não é um array:', dados);
                     return;
                 }
 
-                console.log(`✅ Renderizando ${dados.registros.length} profissionais para ${diaSelecionado}`);
+                console.log(`✅ 4️⃣  Renderizando ${dados.registros.length} profissionais para ${diaSelecionado}`);
 
                 document.getElementById('data-selecionada').textContent = dados.data;
 
