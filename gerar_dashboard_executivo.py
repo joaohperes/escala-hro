@@ -2808,8 +2808,9 @@ def gerar_dashboard():
 
             setores.forEach(setor => {
                 const profissionais = porSetor[setor];
-                const ramaisSetor = obterRamaisSetor(setor);
-                const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
+                // Note: ramais display is disabled for now - only shown in the Ramais modal
+                // const ramaisSetor = obterRamaisSetor(setor);
+                // const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
 
                 if (temMultiplosTurnos(setor)) {
                     const porTurno = {};
@@ -2830,7 +2831,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
+                                <div class="categoria-nome">${setor}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
@@ -2882,7 +2883,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
+                                <div class="categoria-nome">${setor}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>

@@ -600,6 +600,17 @@ def main():
         except Exception as e:
             print(f"⚠️  Erro ao salvar backup persistente: {e}")
 
+        # TAMBÉM salvar como fallback anterior para quando a extração falhar
+        # Isso garante que "Dia Anterior" sempre tenha dados mais recentes
+        arquivo_anterior_fallback = 'data/extracao_inteligente_anterior_fallback.json'
+        try:
+            os.makedirs(os.path.dirname(arquivo_anterior_fallback), exist_ok=True)
+            with open(arquivo_anterior_fallback, 'w') as f:
+                json.dump(backup_para_amanha, f, ensure_ascii=False, indent=2)
+            print(f"✅ Fallback anterior atualizado: {arquivo_anterior_fallback}")
+        except Exception as e:
+            print(f"⚠️  Erro ao salvar fallback anterior: {e}")
+
         print(f"{'='*100}\n")
 
     except Exception as e:
