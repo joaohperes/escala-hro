@@ -2259,7 +2259,12 @@ def gerar_dashboard():
         function renderizarDiretorioRamais() {
             const ramaisList = document.getElementById('ramais-list');
 
-            if (!ramaisData.departments) {
+            console.log('🔄 renderizarDiretorioRamais called');
+            console.log('ramaisData:', typeof ramaisData, ramaisData ? Object.keys(ramaisData) : 'null/undefined');
+
+            if (!ramaisData || !ramaisData.departments) {
+                console.warn('⚠️  ramaisData.departments not available');
+                console.warn('ramaisData:', ramaisData);
                 ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
                 return;
             }
