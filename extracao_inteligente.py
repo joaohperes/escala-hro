@@ -454,8 +454,13 @@ def main():
                 with open(arquivo_para_carregar, 'r') as f:
                     anterior_completa = json.load(f)
                     # A anterior salva tem a estrutura: { 'atual': {...}, 'anterior': {...} }
-                    # O 'atual' desse arquivo é de ONTEM (quando foi salvo como backup)
-                    # Então é ISSO que deve ser nosso 'anterior' HOJE
+                    # Se o arquivo é de ONTEM:
+                    # - O 'atual' desse arquivo é de ONTEM (quando foi salvo como backup)
+                    # - Esse 'atual' deve ser nosso 'anterior' HOJE
+                    # Se o arquivo é de HOJE (dias_diff == 0):
+                    # - Significa que o 'atual' é de hoje
+                    # - Então devemos usar o 'anterior' do arquivo como o anterior de hoje
+                    # Por enquanto, vamos tentar usar 'atual' primeiro
                     resultado_anterior_salvo = anterior_completa.get('atual')
 
                     if resultado_anterior_salvo:
@@ -487,28 +492,35 @@ def main():
                                     print(f"✅ Dados do dia anterior carregados: {data_anterior_str}")
                                     print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
                                 elif dias_diff == 0:
-                                    # ERRO: Cache contém dados de HOJE (mesmo dia)
-                                    # Isso significa que o website já tinha dados de hoje quando extraímos
-                                    # Ignorar e carregar fallback
-                                    print(f"⚠️  Cache contém dados de HOJE (não é anterior válido). Tentando fallback...")
-                                    resultado_anterior_salvo = None
+                                    # Cache contém dados de HOJE (foi atualizado hoje)
+                                    # Neste caso, o 'atual' do cache é de hoje
+                                    # Devemos usar o 'anterior' do cache em vez do 'atual'
+                                    print(f"⚠️  Cache foi atualizado hoje. Usando campo 'anterior' do cache...")
+                                    resultado_anterior_salvo = anterior_completa.get('anterior')
+                                    if resultado_anterior_salvo:
+                                        data_anterior_str = resultado_anterior_salvo.get('data', 'N/A')
+                                        print(f"✅ Usando anterior do cache: {data_anterior_str}")
+                                        print(f"   Total de registros: {len(resultado_anterior_salvo.get('registros', []))}")
+                                    else:
+                                        print(f"⚠️  Campo 'anterior' do cache vazio. Tentando fallback...")
+                                        resultado_anterior_salvo = None
 
-                                    # Tentar carregar arquivo fallback
-                                    fallback_paths = [
-                                        'data/extracao_inteligente_anterior_fallback.json',
-                                        os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
-                                    ]
-                                    for fallback_path in fallback_paths:
-                                        if os.path.exists(fallback_path):
-                                            try:
-                                                with open(fallback_path, 'r') as fb:
-                                                    fallback_data = json.load(fb)
-                                                    resultado_anterior_salvo = fallback_data.get('atual')
-                                                    if resultado_anterior_salvo:
-                                                        print(f"✅ Fallback anterior carregado: {resultado_anterior_salvo.get('data', 'N/A')}")
-                                                        break
-                                            except Exception as fb_err:
-                                                print(f"⚠️  Erro ao carregar fallback: {fb_err}")
+                                        # Tentar carregar arquivo fallback
+                                        fallback_paths = [
+                                            'data/extracao_inteligente_anterior_fallback.json',
+                                            os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
+                                        ]
+                                        for fallback_path in fallback_paths:
+                                            if os.path.exists(fallback_path):
+                                                try:
+                                                    with open(fallback_path, 'r') as fb:
+                                                        fallback_data = json.load(fb)
+                                                        resultado_anterior_salvo = fallback_data.get('atual')
+                                                        if resultado_anterior_salvo:
+                                                            print(f"✅ Fallback anterior carregado: {resultado_anterior_salvo.get('data', 'N/A')}")
+                                                            break
+                                                except Exception as fb_err:
+                                                    print(f"⚠️  Erro ao carregar fallback: {fb_err}")
                                 elif dias_diff > 2:
                                     # Arquivo anterior é muito antigo, tentar carregar fallback
                                     print(f"⚠️  Arquivo anterior muito antigo ({dias_diff} dias). Tentando carregar fallback...")
