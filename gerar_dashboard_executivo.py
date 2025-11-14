@@ -2197,8 +2197,11 @@ def gerar_dashboard():
         }
 
         try {
-            // Parse ramais data
+            // Parse ramais data - assignment happens here
+            console.log('📍 Antes de atribuir ramaisData');
             ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
+            console.log('✅ Imediatamente após atribuição - ramaisData tipo:', typeof ramaisData);
+
             if (ramaisData && ramaisData.departments) {
                 console.log('✅ Dados de ramais carregados:', ramaisData.departments.length, 'departments');
             } else {
@@ -2207,6 +2210,7 @@ def gerar_dashboard():
         } catch (e) {
             console.error('❌ ERRO CRÍTICO ao parsear dados de ramais:', e.message);
             console.error('❌ Stack:', e.stack);
+            console.error('❌ Definindo ramaisData para {} como fallback');
             ramaisData = {};
         }
 
