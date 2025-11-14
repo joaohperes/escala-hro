@@ -440,16 +440,15 @@ def main():
         print(f"{'='*100}")
 
         resultado_anterior_salvo = None
-        arquivo_anterior = '/tmp/extracao_inteligente_anterior.json'
+        # FIX: Remover /tmp como source primário de anterior data
+        # /tmp é ephemeral e pode conter dados antigos entre execuções
+        # PRIORIZAR: data/ (persistente) > fallback > nenhum
         arquivo_anterior_persistente = 'data/extracao_inteligente_anterior_cache.json'
 
-        # Tenta carregar a extração anterior salva
-        # Primeiro tenta /tmp, depois o arquivo persistente no repo
-        anterior_paths = [arquivo_anterior, arquivo_anterior_persistente]
-
-        if os.path.exists(arquivo_anterior) or os.path.exists(arquivo_anterior_persistente):
-            # Tenta carregar de /tmp primeiro, depois do diretório persistente
-            arquivo_para_carregar = arquivo_anterior if os.path.exists(arquivo_anterior) else arquivo_anterior_persistente
+        # APENAS carrega do arquivo persistente (data/)
+        # NÃO carrega de /tmp para evitar acumular dados antigos
+        if os.path.exists(arquivo_anterior_persistente):
+            arquivo_para_carregar = arquivo_anterior_persistente
             try:
                 with open(arquivo_para_carregar, 'r') as f:
                     anterior_completa = json.load(f)
@@ -522,8 +521,9 @@ def main():
                                                 except Exception as fb_err:
                                                     print(f"⚠️  Erro ao carregar fallback: {fb_err}")
                                 elif dias_diff > 2:
-                                    # Arquivo anterior é muito antigo, tentar carregar fallback
-                                    print(f"⚠️  Arquivo anterior muito antigo ({dias_diff} dias). Tentando carregar fallback...")
+                                    # Arquivo anterior é muito antigo (mais de 2 dias), rejeitar e usar fallback
+                                    # Isso previne reutilizar dados muito antigos que podem estar desatualizados
+                                    print(f"⚠️  REJEITAR: Arquivo anterior muito antigo ({dias_diff} dias). Carregando fallback...")
                                     resultado_anterior_salvo = None
 
                                     # Tentar carregar arquivo fallback

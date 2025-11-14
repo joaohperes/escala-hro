@@ -21,6 +21,15 @@ jobs:
         fetch-depth: 0
         ref: main
 
+    - name: Limpar arquivos antigos de /tmp
+      run: |
+        echo "🗑️  Limpando /tmp de arquivos antigos de extraction..."
+        rm -f /tmp/extracao_inteligente*.json
+        rm -f /tmp/escalas*.json
+        rm -f /tmp/dashboard*.html
+        echo "✅ Arquivos antigos removidos"
+        echo "⚠️  Nota: Extraction script usará apenas cache persistente (data/)"
+
     - name: Validar que workflow antigo foi deletado
       run: |
         if [ -f .github/workflows/atualizar-dashboard.yml ]; then
