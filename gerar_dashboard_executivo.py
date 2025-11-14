@@ -2199,9 +2199,14 @@ def gerar_dashboard():
         try {
             // Parse ramais data
             ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
-            console.log('✅ Dados de ramais carregados:', ramaisData ? Object.keys(ramaisData).length : 0, 'keys:', ramaisData ? Object.keys(ramaisData) : 'empty');
+            if (ramaisData && ramaisData.departments) {
+                console.log('✅ Dados de ramais carregados:', ramaisData.departments.length, 'departments');
+            } else {
+                console.warn('⚠️  ramaisData carregado mas sem departments. Type:', typeof ramaisData, 'Keys:', ramaisData ? Object.keys(ramaisData) : 'null');
+            }
         } catch (e) {
-            console.error('❌ Erro ao parsear dados de ramais:', e.message);
+            console.error('❌ ERRO CRÍTICO ao parsear dados de ramais:', e.message);
+            console.error('❌ Stack:', e.stack);
             ramaisData = {};
         }
 
@@ -2284,37 +2289,58 @@ def gerar_dashboard():
         }
 
         function renderizarDiretorioRamais() {
-            const ramaisList = document.getElementById('ramais-list');
+            try {
+                const ramaisList = document.getElementById('ramais-list');
 
-            console.log('🔄 renderizarDiretorioRamais called');
-            console.log('ramaisData:', typeof ramaisData, ramaisData ? Object.keys(ramaisData) : 'null/undefined');
+                console.log('%c🔄 renderizarDiretorioRamais - INICIANDO', 'color: green; font-weight: bold');
+                console.log('ramaisData type:', typeof ramaisData);
+                console.log('ramaisData keys:', ramaisData ? Object.keys(ramaisData) : 'null/undefined');
+                console.log('ramaisData.departments:', ramaisData && ramaisData.departments ? 'exists, length: ' + ramaisData.departments.length : 'NOT FOUND');
 
-            if (!ramaisData || !ramaisData.departments) {
-                console.warn('⚠️  ramaisData.departments not available');
-                console.warn('ramaisData:', ramaisData);
-                ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
-                return;
+                if (!ramaisList) {
+                    console.error('❌ CRÍTICO: #ramais-list element not found!');
+                    return;
+                }
+
+                if (!ramaisData || !ramaisData.departments) {
+                    console.warn('⚠️  ramaisData.departments not available');
+                    console.warn('Full ramaisData:', ramaisData);
+                    ramaisList.innerHTML = '<p style="text-align: center; color: #666;">Dados de ramais não disponíveis.</p>';
+                    return;
+                }
+
+                console.log('✅ ramaisData.departments encontrado com', ramaisData.departments.length, 'itens');
+
+                const departamentos = [...ramaisData.departments].sort((a, b) =>
+                    a.name.localeCompare(b.name, 'pt-BR')
+                );
+
+                const html = departamentos.map(dept => {
+                    const extsStr = dept.extensions.join(', ');
+                    const extsDisplay = dept.extensions.join(' | ');
+                    // Split department name by " - " to get main name and sub-area
+                    const nameParts = dept.name.split(' - ');
+                    const mainName = nameParts[0];
+                    const subArea = nameParts.length > 1 ? nameParts.slice(1).join(' - ') : '';
+
+                    return `
+                        <div class="ramal-item" data-search="${dept.name.toLowerCase()} ${extsStr}">
+                            <div class="ramal-dept-line">${mainName}${subArea ? ' | ' + subArea : ''}</div>
+                            <div class="ramal-exts-line">${extsDisplay}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                ramaisList.innerHTML = html;
+                console.log('✅ renderizarDiretorioRamais completado com', departamentos.length, 'departamentos');
+            } catch (error) {
+                console.error('❌ ERRO em renderizarDiretorioRamais:', error.message);
+                console.error('Stack:', error.stack);
+                const ramaisList = document.getElementById('ramais-list');
+                if (ramaisList) {
+                    ramaisList.innerHTML = '<p style="text-align: center; color: #cc0000;">Erro ao carregar ramais: ' + error.message + '</p>';
+                }
             }
-
-            const departamentos = [...ramaisData.departments].sort((a, b) =>
-                a.name.localeCompare(b.name, 'pt-BR')
-            );
-
-            ramaisList.innerHTML = departamentos.map(dept => {
-                const extsStr = dept.extensions.join(', ');
-                const extsDisplay = dept.extensions.join(' | ');
-                // Split department name by " - " to get main name and sub-area
-                const nameParts = dept.name.split(' - ');
-                const mainName = nameParts[0];
-                const subArea = nameParts.length > 1 ? nameParts.slice(1).join(' - ') : '';
-
-                return `
-                    <div class="ramal-item" data-search="${dept.name.toLowerCase()} ${extsStr}">
-                        <div class="ramal-dept-line">${mainName}${subArea ? ' | ' + subArea : ''}</div>
-                        <div class="ramal-exts-line">${extsDisplay}</div>
-                    </div>
-                `;
-            }).join('');
         }
 
         function filtrarRamais() {
