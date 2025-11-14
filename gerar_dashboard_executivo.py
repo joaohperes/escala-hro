@@ -2734,7 +2734,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
@@ -2786,7 +2786,7 @@ def gerar_dashboard():
                     <div class="category">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${setor}${ramaisDisplay}</div>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
