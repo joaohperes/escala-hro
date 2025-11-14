@@ -2176,18 +2176,40 @@ def gerar_dashboard():
     </div>
 
     <script>
-        // Dados das escalas
-        const escalas = """ + json.dumps(escalas, ensure_ascii=False) + """;
+        // Initialize data safely with error handling
+        let escalas = null;
+        let ramaisData = null;
+        let setorRamaisMapping = null;
+
+        try {
+            // Parse escalas data
+            escalas = """ + json.dumps(escalas, ensure_ascii=False) + """;
+            console.log('✅ Escalas carregadas com sucesso:', Object.keys(escalas));
+        } catch (e) {
+            console.error('❌ Erro ao parsear dados de escalas:', e.message);
+            console.error('Stack:', e.stack);
+            escalas = { atual: { data: 'Erro', registros: [] }, anterior: { data: 'Erro', registros: [] }, data_atualizacao: 'N/A', hora_atualizacao: 'N/A', status_atualizacao: 'erro' };
+        }
+
+        try {
+            // Parse ramais data
+            ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
+            console.log('✅ Dados de ramais carregados:', ramaisData && Object.keys(ramaisData).length ? 'Com dados' : 'Vazio');
+        } catch (e) {
+            console.error('❌ Erro ao parsear dados de ramais:', e.message);
+            ramaisData = {};
+        }
+
+        try {
+            // Parse sector mapping data
+            setorRamaisMapping = """ + json.dumps(mapping_data if mapping_data else {}, ensure_ascii=False) + """;
+            console.log('✅ Mapeamento de setores carregado:', setorRamaisMapping && Object.keys(setorRamaisMapping).length ? 'Com dados' : 'Vazio');
+        } catch (e) {
+            console.error('❌ Erro ao parsear mapeamento de setores:', e.message);
+            setorRamaisMapping = {};
+        }
 
         let diaSelecionado = 'atual';
-
-        // Especialidades que devem ser divididas por turno
-        // Card layout is now determined by actual turno data, not sector name keywords
-        // This was removed: const especialidadesComTurno = [...]
-
-        // Dados de ramais e mapeamento
-        const ramaisData = """ + json.dumps(ramais_data if ramais_data else {}, ensure_ascii=False) + """;
-        const setorRamaisMapping = """ + json.dumps(mapping_data if mapping_data else {}, ensure_ascii=False) + """;
 
         // Função para obter ramais de um setor
         function obterRamaisSetor(setorNome) {
@@ -2691,10 +2713,31 @@ def gerar_dashboard():
         }
 
         function renderizarEscala() {
-            console.log('🔄 Dashboard v3-ramais renderizado');
-            console.log('Stack:', new Error().stack.split('\\n').slice(0, 5).join(' | '));
-            const dados = escalas[diaSelecionado];
-            document.getElementById('data-selecionada').textContent = dados.data;
+            try {
+                console.log('🔄 Dashboard v3-ramais renderizado');
+                console.log('Stack:', new Error().stack.split('\\n').slice(0, 5).join(' | '));
+
+                // Validate escalas data structure
+                if (!escalas) {
+                    console.error('❌ escalas é null/undefined');
+                    return;
+                }
+
+                if (!escalas[diaSelecionado]) {
+                    console.error(`❌ escalas['${diaSelecionado}'] não existe. Chaves disponíveis:`, Object.keys(escalas));
+                    return;
+                }
+
+                const dados = escalas[diaSelecionado];
+
+                if (!dados.registros || !Array.isArray(dados.registros)) {
+                    console.error('❌ dados.registros não é um array:', dados);
+                    return;
+                }
+
+                console.log(`✅ Renderizando ${dados.registros.length} profissionais para ${diaSelecionado}`);
+
+                document.getElementById('data-selecionada').textContent = dados.data;
 
             // Mostrar última atualização (da data em que os dados foram gerados)
             const dataAtualizacao = escalas.data_atualizacao;
@@ -2880,6 +2923,22 @@ def gerar_dashboard():
                     <div class="stat-label">Setores</div>
                 </div>
             `;
+            } catch (error) {
+                console.error('❌ ERRO CRÍTICO em renderizarEscala:', error.message);
+                console.error('Stack:', error.stack);
+
+                // Display error message to user
+                const categoriasEl = document.getElementById('categorias');
+                if (categoriasEl) {
+                    categoriasEl.innerHTML = `
+                        <div style="padding: 20px; background: #ffe6e6; border: 2px solid #cc0000; border-radius: 8px; margin: 20px; color: #cc0000;">
+                            <h3>⚠️ Erro ao carregar dados</h3>
+                            <p>Mensagem: ${error.message}</p>
+                            <p style="font-size: 12px; color: #999;">Tente recarregar a página.</p>
+                        </div>
+                    `;
+                }
+            }
         }
 
         function toggleCategoria(header) {
@@ -3110,12 +3169,40 @@ def gerar_dashboard():
             });
         }
 
+        // Global error handler
+        window.addEventListener('error', function(event) {
+            console.error('❌ GLOBAL ERROR:', event.message);
+            console.error('Source:', event.filename, 'Line:', event.lineno, 'Column:', event.colno);
+            console.error('Error object:', event.error);
+        });
+
         // Setup tooltips after page loads
-        setupPhoneTooltips();
+        try {
+            console.log('📍 Iniciando setup...');
+            setupPhoneTooltips();
+            console.log('✅ Tooltips configurados');
+        } catch (e) {
+            console.error('❌ Erro ao configurar tooltips:', e.message);
+        }
 
         // Verifica antes de renderizar
-        verificarAutenticacao();
-        renderizarEscala();
+        try {
+            console.log('📍 Verificando autenticação...');
+            verificarAutenticacao();
+            console.log('✅ Autenticação verificada');
+        } catch (e) {
+            console.error('❌ Erro ao verificar autenticação:', e.message);
+        }
+
+        // Renderizar escala
+        try {
+            console.log('📍 Iniciando renderização...');
+            renderizarEscala();
+            console.log('✅ Renderização concluída');
+        } catch (e) {
+            console.error('❌ Erro ao renderizar escala:', e.message);
+            console.error('Stack:', e.stack);
+        }
 
         // ==================== GERENCIAMENTO DE TEMA ====================
 
