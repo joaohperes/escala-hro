@@ -682,7 +682,34 @@ def main():
         except Exception as e:
             print(f"⚠️  Erro ao salvar fallback anterior: {e}")
 
-        print(f"{'='*100}\n")
+        # ===== VALIDAÇÃO FINAL =====
+        print(f"\n{'='*100}")
+        print(f"🔍 VALIDAÇÃO FINAL DA EXTRAÇÃO")
+        print(f"{'='*100}")
+
+        try:
+            # Validar que ramais foram embarcados
+            if 'ramais_hro' not in output:
+                raise ValueError("❌ ERRO CRÍTICO: 'ramais_hro' não encontrado no arquivo de saída!")
+            if 'setor_ramais_mapping' not in output:
+                raise ValueError("❌ ERRO CRÍTICO: 'setor_ramais_mapping' não encontrado no arquivo de saída!")
+
+            if len(output.get('ramais_hro', [])) == 0:
+                raise ValueError("❌ ERRO CRÍTICO: 'ramais_hro' está vazio!")
+            if len(output.get('setor_ramais_mapping', [])) == 0:
+                raise ValueError("❌ ERRO CRÍTICO: 'setor_ramais_mapping' está vazio!")
+
+            print(f"✅ Ramais embarcados: {len(output['ramais_hro'])} departamentos")
+            print(f"✅ Mapeamento de setores: {len(output['setor_ramais_mapping'])} mapeamentos")
+            print(f"✅ Data atual: {output['atual']['data']}")
+            print(f"✅ Data anterior: {output['anterior']['data']}")
+            print(f"✅ Validação PASSOU!")
+            print(f"{'='*100}\n")
+
+        except ValueError as ve:
+            print(f"{ve}")
+            print(f"❌ VALIDAÇÃO FALHOU! Extração abortada.")
+            raise
 
     except Exception as e:
         print(f"❌ ERRO: {e}")
