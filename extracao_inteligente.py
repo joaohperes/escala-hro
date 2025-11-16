@@ -21,6 +21,47 @@ load_dotenv()
 ESCALA_USERNAME = os.getenv('ESCALA_USERNAME')
 ESCALA_PASSWORD = os.getenv('ESCALA_PASSWORD')
 
+def carregar_ramais_data():
+    """Carrega dados de ramais e mapeamento de setores para persistência"""
+    ramais_data = None
+    mapping_data = None
+
+    # Tentar carregar ramais_hro.json
+    ramais_paths = [
+        'ramais_hro.json',
+        os.path.expanduser('~/escalaHRO/ramais_hro.json'),
+        '/Users/joaoperes/escalaHRO/ramais_hro.json',
+    ]
+
+    for path in ramais_paths:
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    ramais_data = json.load(f)
+                print(f"✅ Ramais carregados de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+
+    # Tentar carregar setor_ramais_mapping.json
+    mapping_paths = [
+        'setor_ramais_mapping.json',
+        os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
+        '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
+    ]
+
+    for path in mapping_paths:
+        if os.path.exists(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    mapping_data = json.load(f)
+                print(f"✅ Mapeamento de setores carregado de: {path}")
+                break
+            except Exception as e:
+                print(f"⚠️  Erro ao ler {path}: {e}")
+
+    return ramais_data, mapping_data
+
 class ExtractorInteligente:
     def __init__(self, headless=True):
         chrome_options = Options()
@@ -555,6 +596,17 @@ def main():
         else:
             print(f"⚠️  Nenhuma extração anterior encontrada (primeira execução?)")
 
+        # ===== CARREGAR RAMAIS PARA PERSISTÊNCIA =====
+        print(f"\n{'='*100}")
+        print(f"📞 CARREGANDO DADOS DE RAMAIS PARA PERSISTÊNCIA...")
+        print(f"{'='*100}")
+        ramais_data, mapping_data = carregar_ramais_data()
+        if ramais_data is None:
+            print(f"⚠️  Ramais não carregados")
+        if mapping_data is None:
+            print(f"⚠️  Mapeamento de setores não carregado")
+        print(f"\n{'='*100}\n")
+
         # ===== CONSTRUIR OUTPUT COM ROLLING WINDOW =====
         data_simples_atual = extrair_data_simples(data_atual)
 
@@ -569,6 +621,12 @@ def main():
             'hora_atualizacao': datetime.now().strftime('%H:%M'),
             'status_atualizacao': 'sucesso'
         }
+
+        # Adiciona dados de ramais ao output para persistência (garante que estarão disponíveis no workflow)
+        if ramais_data:
+            output['ramais_hro'] = ramais_data
+        if mapping_data:
+            output['setor_ramais_mapping'] = mapping_data
 
         # Adiciona dados do dia anterior (rolling window)
         if resultado_anterior_salvo:

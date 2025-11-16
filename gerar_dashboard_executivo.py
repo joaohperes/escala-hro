@@ -340,50 +340,66 @@ def normalizar_turno(turno_text):
     # Manter o original para casos não identificados
     return (99, turno_original)
 
-def carregar_ramais_data():
-    """Carrega dados de ramais e mapeamento de setores"""
+def carregar_ramais_data(escala_data=None):
+    """Carrega dados de ramais e mapeamento de setores
+
+    Prioridade:
+    1. Usar dados embutidos no arquivo de extração (escala_data)
+    2. Carregar de arquivos individuais (ramais_hro.json e setor_ramais_mapping.json)
+    """
     import os
     from pathlib import Path
 
-    # Tentar carregar ramais_hro.json
-    ramais_paths = [
-        'ramais_hro.json',
-        os.path.expanduser('~/escalaHRO/ramais_hro.json'),
-        '/Users/joaoperes/escalaHRO/ramais_hro.json',
-        os.path.join(os.getcwd(), 'ramais_hro.json'),
-    ]
-
     ramais_data = None
-    for path in ramais_paths:
-        if Path(path).exists():
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    ramais_data = json.load(f)
-                print(f"✅ Ramais carregados de: {path}")
-                break
-            except Exception as e:
-                print(f"⚠️  Erro ao ler {path}: {e}")
-                continue
-
-    # Tentar carregar setor_ramais_mapping.json
-    mapping_paths = [
-        'setor_ramais_mapping.json',
-        os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
-        '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
-        os.path.join(os.getcwd(), 'setor_ramais_mapping.json'),
-    ]
-
     mapping_data = None
-    for path in mapping_paths:
-        if Path(path).exists():
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    mapping_data = json.load(f)
-                print(f"✅ Mapeamento de setores carregado de: {path}")
-                break
-            except Exception as e:
-                print(f"⚠️  Erro ao ler {path}: {e}")
-                continue
+
+    # PRIORIDADE 1: Procurar no arquivo de extração (novo comportamento)
+    if escala_data:
+        if 'ramais_hro' in escala_data:
+            ramais_data = escala_data['ramais_hro']
+            print(f"✅ Ramais carregados do arquivo de extração")
+        if 'setor_ramais_mapping' in escala_data:
+            mapping_data = escala_data['setor_ramais_mapping']
+            print(f"✅ Mapeamento de setores carregado do arquivo de extração")
+
+    # PRIORIDADE 2: Se não encontrou no arquivo de extração, carregar de arquivo separado
+    if not ramais_data:
+        ramais_paths = [
+            'ramais_hro.json',
+            os.path.expanduser('~/escalaHRO/ramais_hro.json'),
+            '/Users/joaoperes/escalaHRO/ramais_hro.json',
+            os.path.join(os.getcwd(), 'ramais_hro.json'),
+        ]
+
+        for path in ramais_paths:
+            if Path(path).exists():
+                try:
+                    with open(path, 'r', encoding='utf-8') as f:
+                        ramais_data = json.load(f)
+                    print(f"✅ Ramais carregados de: {path}")
+                    break
+                except Exception as e:
+                    print(f"⚠️  Erro ao ler {path}: {e}")
+                    continue
+
+    if not mapping_data:
+        mapping_paths = [
+            'setor_ramais_mapping.json',
+            os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
+            '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
+            os.path.join(os.getcwd(), 'setor_ramais_mapping.json'),
+        ]
+
+        for path in mapping_paths:
+            if Path(path).exists():
+                try:
+                    with open(path, 'r', encoding='utf-8') as f:
+                        mapping_data = json.load(f)
+                    print(f"✅ Mapeamento de setores carregado de: {path}")
+                    break
+                except Exception as e:
+                    print(f"⚠️  Erro ao ler {path}: {e}")
+                    continue
 
     return ramais_data, mapping_data
 
@@ -491,8 +507,8 @@ def gerar_dashboard():
         print("❌ Arquivo de profissionais não encontrado em nenhum local.")
         return
 
-    # Carregar dados de ramais
-    ramais_data, mapping_data = carregar_ramais_data()
+    # Carregar dados de ramais (prioriza dados embutidos no arquivo de extração)
+    ramais_data, mapping_data = carregar_ramais_data(escalas)
 
     if ramais_data is None:
         print("⚠️  Ramais não carregados - funcionalidade de extensões desabilitada")
