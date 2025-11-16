@@ -655,6 +655,7 @@ def main():
         }
 
         # Salvar em /tmp (temporário) e no repositório (persistente)
+        arquivo_anterior = '/tmp/extracao_inteligente_anterior.json'
         with open(arquivo_anterior, 'w') as f:
             json.dump(backup_para_amanha, f, ensure_ascii=False, indent=2)
         print(f"✅ Backup para amanhã: {arquivo_anterior}")
