@@ -1612,7 +1612,7 @@
     <div id="ramais-modal" class="ramais-modal">
         <div class="ramais-modal-content">
             <div class="ramais-modal-header">
-                <h2>📞 Diretório Telefônico HRO</h2>
+                <h2>Diretório Telefônico HRO</h2>
                 <button class="ramais-modal-close" onclick="fecharDiretorioRamais()">✕</button>
             </div>
             <input type="text" class="ramais-search" id="ramais-search" placeholder="Buscar por departamento ou ramal..." onkeyup="filtrarRamais()">
@@ -1646,15 +1646,15 @@
         <div class="controls-bar">
             <div class="date-selector">
                 <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">Dia Anterior</button>
-                <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">📅 Hoje</button>
+                <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">Hoje</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
                 <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
-                <button class="btn btn-contacts" onclick="abrirListaContatos()">📋 Contatos</button>
-                <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">📞 Ramais</button>
+                <button class="btn btn-contacts" onclick="abrirListaContatos()">Contatos</button>
+                <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">Ramais</button>
             </div>
         </div>
 
@@ -2580,13 +2580,16 @@
 
         // Verifica autenticação ao carregar
         function verificarAutenticacao() {
-          if (!sessionStorage.getItem('authenticated')) {
-            // Auto-authenticate on first load to show dashboard
-            sessionStorage.setItem('authenticated', 'true');
+          // Verificar se já foi autenticado
+          if (sessionStorage.getItem('authenticated') === 'true') {
+            // Já foi autenticado, esconder modal e mostrar dashboard
+            document.getElementById('auth-modal').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('blurred');
+          } else {
+            // Não foi autenticado, mostrar modal
+            document.getElementById('auth-modal').classList.remove('hidden');
+            document.getElementById('main-content').classList.add('blurred');
           }
-          // Always hide auth modal and remove blur
-          document.getElementById('auth-modal').classList.add('hidden');
-          document.getElementById('main-content').classList.remove('blurred');
         }
 
         // Funções para o modal de contatos
