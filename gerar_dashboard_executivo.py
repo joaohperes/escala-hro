@@ -1287,15 +1287,13 @@ def gerar_dashboard():
         }
 
         .last-update {
-            text-align: center;
+            text-align: right;
             font-size: 0.9em;
             color: var(--text-secondary);
             margin-bottom: 20px;
-            padding: 10px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
+            padding: 10px 20px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             gap: 8px;
         }
@@ -2221,10 +2219,9 @@ def gerar_dashboard():
         <!-- Data selecionada -->
         <div class="date-display" id="data-selecionada"></div>
 
-        <!-- Última atualização -->
+        <!-- Status de Atualização -->
         <div class="last-update">
             <span class="update-status-indicator" id="status-indicator"></span>
-            <span id="ultima-atualizacao">Carregando...</span>
         </div>
 
         <!-- Estatísticas -->
@@ -2833,14 +2830,8 @@ def gerar_dashboard():
 
                 document.getElementById('data-selecionada').textContent = dados.data;
 
-            // Mostrar última atualização (usar data do dia selecionado e hora atual)
-            const statusAtualizacao = escalas.status_atualizacao;
-            const agora = new Date();
-            const horaAgora = agora.getHours().toString().padStart(2, '0') + ':' + agora.getMinutes().toString().padStart(2, '0');
-
-            document.getElementById('ultima-atualizacao').textContent = `Atualizado em ${agora.getDate()}/${(agora.getMonth() + 1).toString().padStart(2, '0')}/${agora.getFullYear()} às ${horaAgora}`;
-
             // Mostrar indicador de status (dot colorido)
+            const statusAtualizacao = escalas.status_atualizacao;
             const statusIndicator = document.getElementById('status-indicator');
             statusIndicator.className = 'update-status-indicator';
 
@@ -3326,7 +3317,7 @@ def gerar_dashboard():
 
         footerCredit.addEventListener('click', function() {
             if (!isShowing) {
-                footerCredit.textContent = 'Feito com ❤️ por @joaohperes';
+                footerCredit.textContent = 'Desenvolvido por @joaohperes';
                 isShowing = true;
             } else {
                 footerCredit.textContent = 'ALVF - HRO - Todos os direitos reservados';
