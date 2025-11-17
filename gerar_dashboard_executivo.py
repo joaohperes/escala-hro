@@ -356,10 +356,19 @@ def carregar_ramais_data(escala_data=None):
     # PRIORIDADE 1: Procurar no arquivo de extração (novo comportamento)
     if escala_data:
         if 'ramais_hro' in escala_data:
-            ramais_data = escala_data['ramais_hro']
+            # Transformar array para estrutura esperada { departments: [...] }
+            ramais_array = escala_data['ramais_hro']
+            if isinstance(ramais_array, list):
+                ramais_data = {'departments': ramais_array}
+            else:
+                ramais_data = ramais_array
             print(f"✅ Ramais carregados do arquivo de extração")
         if 'setor_ramais_mapping' in escala_data:
-            mapping_data = escala_data['setor_ramais_mapping']
+            mapping_array = escala_data['setor_ramais_mapping']
+            if isinstance(mapping_array, list):
+                mapping_data = {'sector_mappings': mapping_array}
+            else:
+                mapping_data = mapping_array
             print(f"✅ Mapeamento de setores carregado do arquivo de extração")
 
     # PRIORIDADE 2: Se não encontrou no arquivo de extração, carregar de arquivo separado
