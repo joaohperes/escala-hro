@@ -2091,6 +2091,35 @@ def gerar_dashboard():
             }
         }
 
+        /* Footer Styles */
+        .app-footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            padding: 30px 20px;
+            color: #999;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 0 0 8px 0;
+        }
+
+        .footer-text {
+            font-size: 0.8em;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: #aaa;
+        }
+
+        .footer-text:hover {
+            color: var(--color-primary);
+        }
+
     </style>
 </head>
 <body>
@@ -3281,7 +3310,31 @@ def gerar_dashboard():
     </script>
 
     </div> <!-- Fecha main-content -->
+
+    <!-- Rodapé -->
+    <footer class="app-footer">
+        <p class="footer-title">Escala Médica HRO</p>
+        <p class="footer-text" id="footer-credit">ALVF - HRO - Todos os direitos reservados</p>
+    </footer>
+
 </body>
+<script>
+    // ==================== EASTER EGG ====================
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerCredit = document.getElementById('footer-credit');
+        let isShowing = false;
+
+        footerCredit.addEventListener('click', function() {
+            if (!isShowing) {
+                footerCredit.textContent = 'Feito com ❤️ por @joaohperes';
+                isShowing = true;
+            } else {
+                footerCredit.textContent = 'ALVF - HRO - Todos os direitos reservados';
+                isShowing = false;
+            }
+        });
+    });
+</script>
 </html>"""
 
     # Substituir placeholder de profissionais com dados reais
