@@ -2720,24 +2720,27 @@
             console.error('❌ Erro ao configurar tooltips:', e.message);
         }
 
-        // Verifica antes de renderizar
-        try {
-            console.log('📍 Verificando autenticação...');
-            verificarAutenticacao();
-            console.log('✅ Autenticação verificada');
-        } catch (e) {
-            console.error('❌ Erro ao verificar autenticação:', e.message);
-        }
+        // Aguardar DOM estar completamente carregado antes de verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verifica antes de renderizar
+            try {
+                console.log('📍 Verificando autenticação...');
+                verificarAutenticacao();
+                console.log('✅ Autenticação verificada');
+            } catch (e) {
+                console.error('❌ Erro ao verificar autenticação:', e.message);
+            }
 
-        // Renderizar escala
-        try {
-            console.log('📍 Iniciando renderização...');
-            renderizarEscala();
-            console.log('✅ Renderização concluída');
-        } catch (e) {
-            console.error('❌ Erro ao renderizar escala:', e.message);
-            console.error('Stack:', e.stack);
-        }
+            // Renderizar escala
+            try {
+                console.log('📍 Iniciando renderização...');
+                renderizarEscala();
+                console.log('✅ Renderização concluída');
+            } catch (e) {
+                console.error('❌ Erro ao renderizar escala:', e.message);
+                console.error('Stack:', e.stack);
+            }
+        });
 
         // ==================== GERENCIAMENTO DE TEMA ====================
 
