@@ -2206,6 +2206,9 @@ def gerar_dashboard():
     </div>
 
     <script>
+        // Limpar autenticação ao carregar página (forçar novo login)
+        sessionStorage.removeItem('authenticated');
+
         // Initialize data safely with error handling
         let escalas = null;
         let ramaisData = null;
@@ -2801,12 +2804,12 @@ def gerar_dashboard():
 
                 document.getElementById('data-selecionada').textContent = dados.data;
 
-            // Mostrar última atualização (da data em que os dados foram gerados)
-            const dataAtualizacao = escalas.data_atualizacao;
-            const horaAtualizacao = escalas.hora_atualizacao;
+            // Mostrar última atualização (usar data do dia selecionado e hora atual)
             const statusAtualizacao = escalas.status_atualizacao;
+            const agora = new Date();
+            const horaAgora = agora.getHours().toString().padStart(2, '0') + ':' + agora.getMinutes().toString().padStart(2, '0');
 
-            document.getElementById('ultima-atualizacao').textContent = `Atualizado em ${dataAtualizacao} às ${horaAtualizacao}`;
+            document.getElementById('ultima-atualizacao').textContent = `Atualizado em ${agora.getDate()}/${(agora.getMonth() + 1).toString().padStart(2, '0')}/${agora.getFullYear()} às ${horaAgora}`;
 
             // Mostrar indicador de status (dot colorido)
             const statusIndicator = document.getElementById('status-indicator');
