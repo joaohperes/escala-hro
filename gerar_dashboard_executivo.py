@@ -2161,8 +2161,8 @@ def gerar_dashboard():
 
             <!-- Conteúdo: Profissional -->
             <div id="auth-content-profissional" class="auth-tab-content active">
-                <p>Entre com seu email ou últimos 4 dígitos do telefone cadastrado no app.</p>
-                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos do telefone" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
+                <p>Entre com seu email ou últimos 4 dígitos do telefone cadastrado no app Escalas.</p>
+                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos do telefone (Escalas)" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
                 <button onclick="autenticarProfissional()" class="auth-btn">Acessar</button>
                 <p id="auth-error-prof" class="auth-error"></p>
             </div>
