@@ -529,15 +529,32 @@ def gerar_dashboard():
     else:
         print(f"✅ Mapping data loaded: {len(mapping_data.get('sector_mappings', []))} sector mappings")
 
-    # ✅ CRITICAL FIX: Adicionar ramais_hro e setor_ramais_mapping ao objeto escalas
+    # ✅ CRITICAL FIX: SEMPRE adicionar ramais_hro e setor_ramais_mapping ao objeto escalas
     # Isso garante que os dados estejam disponíveis no JavaScript da dashboard
-    if ramais_data:
-        escalas['ramais_hro'] = ramais_data
-        print(f"✅ Embedded ramais_hro into escalas object")
+    # MESMO em caso de fallback ou quando escalas não tem ramais embutidos
 
-    if mapping_data:
-        escalas['setor_ramais_mapping'] = mapping_data
-        print(f"✅ Embedded setor_ramais_mapping into escalas object")
+    # Verificar se escalas já tem ramais (por exemplo, se veio do fallback que agora tem ramais)
+    if 'ramais_hro' not in escalas or not escalas['ramais_hro']:
+        if ramais_data:
+            escalas['ramais_hro'] = ramais_data
+            print(f"✅ Embedded ramais_hro into escalas object (from carregar_ramais_data)")
+        else:
+            # Fallback final: estrutura vazia mas válida
+            escalas['ramais_hro'] = {'departments': []}
+            print(f"⚠️  Usando ramais_hro vazio como fallback")
+    else:
+        print(f"✅ Ramais_hro já presente em escalas: {len(escalas['ramais_hro'].get('departments', []))} departments")
+
+    if 'setor_ramais_mapping' not in escalas or not escalas['setor_ramais_mapping']:
+        if mapping_data:
+            escalas['setor_ramais_mapping'] = mapping_data
+            print(f"✅ Embedded setor_ramais_mapping into escalas object (from carregar_ramais_data)")
+        else:
+            # Fallback final: estrutura vazia mas válida
+            escalas['setor_ramais_mapping'] = {'sector_mappings': []}
+            print(f"⚠️  Usando setor_ramais_mapping vazio como fallback")
+    else:
+        print(f"✅ Setor_ramais_mapping já presente em escalas: {len(escalas['setor_ramais_mapping'].get('sector_mappings', []))} mappings")
 
     html = """<!DOCTYPE html>
 <html lang="pt-BR">
