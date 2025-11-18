@@ -529,6 +529,16 @@ def gerar_dashboard():
     else:
         print(f"✅ Mapping data loaded: {len(mapping_data.get('sector_mappings', []))} sector mappings")
 
+    # ✅ CRITICAL FIX: Adicionar ramais_hro e setor_ramais_mapping ao objeto escalas
+    # Isso garante que os dados estejam disponíveis no JavaScript da dashboard
+    if ramais_data:
+        escalas['ramais_hro'] = ramais_data
+        print(f"✅ Embedded ramais_hro into escalas object")
+
+    if mapping_data:
+        escalas['setor_ramais_mapping'] = mapping_data
+        print(f"✅ Embedded setor_ramais_mapping into escalas object")
+
     html = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
