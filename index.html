@@ -1720,30 +1720,40 @@
         }
 
         try {
-            // Parse ramais data - assignment happens here
-            console.log('📍 Antes de atribuir ramaisData');
-            ramaisData = {};
-            console.log('✅ Imediatamente após atribuição - ramaisData tipo:', typeof ramaisData);
+            // Parse ramais data from escalas object
+            console.log('📍 Carregando dados de ramais de escalas object');
+            if (escalas && escalas.ramais_hro) {
+                ramaisData = escalas.ramais_hro;
+                console.log('✅ Dados de ramais carregados de escalas.ramais_hro:', ramaisData.departments ? ramaisData.departments.length : 0, 'departments');
+            } else {
+                console.warn('⚠️  escalas.ramais_hro não encontrado, usando fallback');
+                ramaisData = { departments: [] };
+            }
 
             if (ramaisData && ramaisData.departments) {
-                console.log('✅ Dados de ramais carregados:', ramaisData.departments.length, 'departments');
+                console.log('✅ Dados de ramais confirmados:', ramaisData.departments.length, 'departments');
             } else {
                 console.warn('⚠️  ramaisData carregado mas sem departments. Type:', typeof ramaisData, 'Keys:', ramaisData ? Object.keys(ramaisData) : 'null');
             }
         } catch (e) {
             console.error('❌ ERRO CRÍTICO ao parsear dados de ramais:', e.message);
             console.error('❌ Stack:', e.stack);
-            console.error('❌ Definindo ramaisData para {} como fallback');
-            ramaisData = {};
+            console.error('❌ Definindo ramaisData para fallback');
+            ramaisData = { departments: [] };
         }
 
         try {
-            // Parse sector mapping data
-            setorRamaisMapping = {};
-            console.log('✅ Mapeamento de setores carregado:', setorRamaisMapping ? Object.keys(setorRamaisMapping).length : 0, 'keys:', setorRamaisMapping ? Object.keys(setorRamaisMapping) : 'empty');
+            // Parse sector mapping data from escalas object
+            if (escalas && escalas.setor_ramais_mapping) {
+                setorRamaisMapping = escalas.setor_ramais_mapping;
+                console.log('✅ Mapeamento de setores carregado:', setorRamaisMapping.sector_mappings ? setorRamaisMapping.sector_mappings.length : 0, 'mappings');
+            } else {
+                console.warn('⚠️  escalas.setor_ramais_mapping não encontrado, usando fallback');
+                setorRamaisMapping = { sector_mappings: [] };
+            }
         } catch (e) {
             console.error('❌ Erro ao parsear mapeamento de setores:', e.message);
-            setorRamaisMapping = {};
+            setorRamaisMapping = { sector_mappings: [] };
         }
 
         let diaSelecionado = 'atual';
