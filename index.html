@@ -1701,8 +1701,6 @@
     </div>
 
     <script>
-        // Limpar autenticação ao carregar página (forçar novo login)
-        sessionStorage.removeItem('authenticated');
 
         // Initialize data safely with error handling
         let escalas = null;
@@ -2562,8 +2560,8 @@
           });
 
           if (encontrado) {
-            // Salva autenticação na sessão
-            sessionStorage.setItem('authenticated', 'true');
+            // Salva autenticação no dispositivo (persiste entre sessões)
+            localStorage.setItem('authenticated', 'true');
             // Esconde o modal e remove blur
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
@@ -2588,8 +2586,8 @@
           }
 
           if (senha === senhaCorreta) {
-            // Salva autenticação na sessão
-            sessionStorage.setItem('authenticated', 'true');
+            // Salva autenticação no dispositivo (persiste entre sessões)
+            localStorage.setItem('authenticated', 'true');
             // Esconde o modal e remove blur
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
@@ -2604,7 +2602,7 @@
         // Verifica autenticação ao carregar
         function verificarAutenticacao() {
           // Verificar se já foi autenticado
-          if (sessionStorage.getItem('authenticated') === 'true') {
+          if (localStorage.getItem('authenticated') === 'true') {
             // Já foi autenticado, esconder modal e mostrar dashboard
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
