@@ -1,0 +1,148 @@
+{
+  "sector_mappings": [
+    {
+      "dashboard_sector": "Alojamento Conjunto",
+      "ramais_departments": ["Maternidade - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Ambulatório De Oncologia Pediátrica",
+      "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista", "Onco Ped. Enfermagem - Consultório"]
+    },
+    {
+      "dashboard_sector": "Ambulatório Oncologia - Triagem",
+      "ramais_departments": ["Endoscopia - Recepção - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Atendimento Pediátrico - Plantão",
+      "ramais_departments": ["Clínica Médica - Copa - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Bucomaxilo Sobreaviso",
+      "ramais_departments": ["Estomaterepia"]
+    },
+    {
+      "dashboard_sector": "Cardiologia - Sobreaviso",
+      "ramais_departments": ["Ecocardiograma - Enfermeira"]
+    },
+    {
+      "dashboard_sector": "Cirurgia Geral - Sobreaviso",
+      "ramais_departments": ["Residências Obstetra Anestesia Neuro"]
+    },
+    {
+      "dashboard_sector": "Cirurgia Pediátrica - Sobreaviso",
+      "ramais_departments": ["C.C 4º Anestesistas - Arsenal"]
+    },
+    {
+      "dashboard_sector": "Cirurgia Torácica - Sobreaviso",
+      "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]
+    },
+    {
+      "dashboard_sector": "Cirurgia Vascular - Sobreaviso",
+      "ramais_departments": ["C.C 5º Sala Cirúrgica 03 - Sala 04"]
+    },
+    {
+      "dashboard_sector": "Clínica Médica",
+      "ramais_departments": ["Clínica Médica - Copa - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Endoscopia - Sobreaviso",
+      "ramais_departments": ["Endoscopia - Recepção - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Ginecologia e Obstetrícia - Plantão",
+      "ramais_departments": ["Maternidade - Coordenação", "C.O - Triagem - Obstetra"]
+    },
+    {
+      "dashboard_sector": "Hemodinâmica - Sobreaviso Cardiologia",
+      "ramais_departments": ["Hemodinâmica - Laudos - Procedimentos"]
+    },
+    {
+      "dashboard_sector": "Hospitalista",
+      "ramais_departments": ["Clínica Médica - Copa - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Nefrologia - Sobreaviso",
+      "ramais_departments": ["Laboratório Secretaria - Triagem"]
+    },
+    {
+      "dashboard_sector": "Neurocirurgia - Sobreaviso",
+      "ramais_departments": ["Neurologia - Copa"]
+    },
+    {
+      "dashboard_sector": "Neurologia/U-AVC Integral - Sobreaviso",
+      "ramais_departments": ["Neurologia Ambulatório"]
+    },
+    {
+      "dashboard_sector": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+      "ramais_departments": ["NIR Cirúrgico - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Oftalmologia Sobreaviso",
+      "ramais_departments": ["Emergência Intern. – Oftalmo - Apoio"]
+    },
+    {
+      "dashboard_sector": "Oncologia Pediátrica - Sobreaviso",
+      "ramais_departments": ["Onco Ped. Recep. - Aplicação - Dentista"]
+    },
+    {
+      "dashboard_sector": "Ortopedia e Traumatologia - Sobreaviso",
+      "ramais_departments": ["Ortopedia Recepção - Ambulatório", "Ortopedia Consultórios Ambulatório"]
+    },
+    {
+      "dashboard_sector": "Pronto Socorro HRO - Plantão",
+      "ramais_departments": ["Emergência Farmácia - Plantão Médico", "Emergência Coordenação - Prescrição"]
+    },
+    {
+      "dashboard_sector": "R2 Clínica Médica UTI",
+      "ramais_departments": ["UTI Geral"]
+    },
+    {
+      "dashboard_sector": "Residência de Cirurgia Geral",
+      "ramais_departments": ["C.C 4º Coordenação - Escrituração"]
+    },
+    {
+      "dashboard_sector": "Residência de Clínica Médica",
+      "ramais_departments": ["Clínica Médica - Copa - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Residência de Ginecologia e Obstetrícia",
+      "ramais_departments": ["Maternidade - Coordenação"]
+    },
+    {
+      "dashboard_sector": "Transplante - Sobreaviso Cirurgia",
+      "ramais_departments": ["C.C 5º Anestesia - Sala 01 – Sala 02"]
+    },
+    {
+      "dashboard_sector": "Ultrassonografia - Sobreaviso",
+      "ramais_departments": ["Ultrassom 01 - Ultrassom 02"]
+    },
+    {
+      "dashboard_sector": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+      "ramais_departments": ["Berçário UCINCO"]
+    },
+    {
+      "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto I",
+      "ramais_departments": ["UTI Geral"]
+    },
+    {
+      "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto II",
+      "ramais_departments": ["UTI Geral III - Plantão Médico"]
+    },
+    {
+      "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Adulto III",
+      "ramais_departments": ["UTI Geral III - Plantão Médico"]
+    },
+    {
+      "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+      "ramais_departments": ["Berçário UCINCO"]
+    },
+    {
+      "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+      "ramais_departments": ["UTI Pediátrica - Plantão Médico"]
+    },
+    {
+      "dashboard_sector": "Urologia Sobreaviso",
+      "ramais_departments": ["Ortopedia Consultórios Ambulatório"]
+    }
+  ]
+}

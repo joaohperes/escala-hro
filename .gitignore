@@ -18,6 +18,8 @@ venv/
 /tmp/
 *.json
 !profissionais_autenticacao.json
+!ramais_hro.json
+!setor_ramais_mapping.json
 !data/extracao_inteligente_sample.json
 !data/extracao_inteligente_anterior_fallback.json
 !data/extracao_inteligente_anterior_cache.json
