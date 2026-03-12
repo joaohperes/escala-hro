@@ -1015,25 +1015,14 @@ def gerar_dashboard():
         }
 
         .btn-print {
-            background: #6c757d;
+            background: #0d3b66;
             color: white;
         }
 
         .btn-print:hover {
-            background: #5a6268;
+            background: #0a2947;
             transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
-        }
-
-        .btn-print::before {
-            content: '';
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-top: 6px solid transparent;
-            border-bottom: 6px solid transparent;
-            border-right: 10px solid #0d3b66;
-            margin-right: 8px;
+            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.3);
         }
 
         /* Modal de Contatos */
@@ -2087,20 +2076,21 @@ def gerar_dashboard():
                 color: #333;
             }
 
-            /* Grid de 3 colunas para os setores */
+            /* 3 colunas estilo jornal — preenche espaço sem gaps */
             #categorias {
-                display: grid !important;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 2mm;
-                align-items: start;
+                display: block !important;
+                columns: 3;
+                column-gap: 2.5mm;
             }
 
             .category {
                 break-inside: avoid;
+                display: inline-block;
+                width: 100%;
                 border: 0.5pt solid #bbb;
                 border-radius: 1pt;
                 overflow: hidden;
-                margin: 0 !important;
+                margin: 0 0 2mm 0 !important;
                 padding: 0 !important;
             }
 
@@ -2110,7 +2100,7 @@ def gerar_dashboard():
 
             .categoria-header {
                 background: #1a4a7a !important;
-                padding: 1.2mm 2mm !important;
+                padding: 0.8mm 1.5mm !important;
                 margin: 0 !important;
                 display: flex !important;
                 align-items: center;
@@ -2121,9 +2111,10 @@ def gerar_dashboard():
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 6.5pt !important;
+                font-size: 6pt !important;
                 font-weight: bold !important;
                 color: white !important;
+                line-height: 1.2 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2131,7 +2122,7 @@ def gerar_dashboard():
             .categoria-content {
                 display: block !important;
                 max-height: none !important;
-                padding: 1.5mm !important;
+                padding: 1mm !important;
                 margin: 0 !important;
             }
 
@@ -2139,7 +2130,7 @@ def gerar_dashboard():
             .turnos-container {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1mm !important;
+                gap: 0.8mm !important;
             }
 
             .turno-coluna {
@@ -2150,12 +2141,13 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 5.5pt !important;
+                font-size: 5pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
-                padding-bottom: 0.3mm !important;
-                margin-bottom: 0.8mm !important;
+                padding-bottom: 0.2mm !important;
+                margin-bottom: 0.5mm !important;
+                line-height: 1.2 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2167,7 +2159,7 @@ def gerar_dashboard():
 
             .profissional {
                 border: none !important;
-                padding: 0.3mm 0 !important;
+                padding: 0.2mm 0 !important;
                 margin: 0 !important;
                 border-bottom: 0.3pt solid #eee !important;
                 -webkit-print-color-adjust: exact;
@@ -2178,11 +2170,12 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 6.5pt !important;
+                font-size: 6pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                line-height: 1.2 !important;
             }
 
             .profissional-nome-wrapper { display: inline !important; }
@@ -2190,16 +2183,17 @@ def gerar_dashboard():
 
             .profissional-info {
                 display: block !important;
-                font-size: 5.5pt !important;
-                color: #444 !important;
+                font-size: 5pt !important;
+                color: #555 !important;
                 margin: 0 !important;
                 padding: 0 !important;
+                line-height: 1.2 !important;
             }
 
             .info-row { display: inline !important; }
             .info-row + .info-row::before { content: ' · '; color: #999; }
             .info-label { display: none !important; }
-            .info-value { color: #444 !important; }
+            .info-value { color: #555 !important; }
         }
 
         /* Footer Styles */
