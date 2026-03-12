@@ -2194,6 +2194,9 @@ def gerar_dashboard():
             .info-row + .info-row::before { content: ' · '; color: #999; }
             .info-label { display: none !important; }
             .info-value { color: #555 !important; }
+
+            /* Setores excluídos da impressão */
+            .print-exclude { display: none !important; }
         }
 
         /* Footer Styles */
@@ -3009,11 +3012,25 @@ def gerar_dashboard():
             ];
             const setoresOcultos = todosSetores.filter(s => prefs.ocultos.includes(s));
 
+            // Setores excluídos da impressão (foco no PS)
+            const EXCLUIR_PRINT = [
+                'Alojamento Conjunto',
+                'Ambulatório De Oncologia Pediátrica',
+                'Oncologia Pediátrica - Sobreaviso',
+                'Transplante - Sobreaviso Cirurgia',
+                'Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica',
+                'Unidade de Terapia Intensiva (UTI) Adulto I',
+                'Unidade de Terapia Intensiva (UTI) Adulto II',
+                'Unidade de Terapia Intensiva (UTI) Adulto III',
+                'Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica',
+            ];
+
             let html = '';
 
             setoresVisiveis.forEach(setor => {
                 const profissionais = porSetor[setor];
                 const isFavorito = prefs.favoritos.includes(setor);
+                const isPrintExcluded = EXCLUIR_PRINT.includes(setor);
                 // Note: ramais display is disabled for now - only shown in the Ramais modal
                 // const ramaisSetor = obterRamaisSetor(setor);
                 // const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
@@ -3034,7 +3051,7 @@ def gerar_dashboard():
                     const turnosOrdenados = Object.keys(porTurno).sort((a, b) => turnoOrdem[a] - turnoOrdem[b]);
 
                     html += `
-                    <div class="category${isFavorito ? ' setor-favorito' : ''}">
+                    <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
@@ -3090,7 +3107,7 @@ def gerar_dashboard():
                     `;
                 } else {
                     html += `
-                    <div class="category${isFavorito ? ' setor-favorito' : ''}">
+                    <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
