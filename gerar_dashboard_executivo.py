@@ -1443,6 +1443,79 @@ def gerar_dashboard():
             transform: rotate(180deg);
         }
 
+        /* Botões de preferência do setor */
+        .setor-pref-btns {
+            display: flex;
+            gap: 4px;
+            margin-left: 8px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .categoria-header:hover .setor-pref-btns {
+            opacity: 1;
+        }
+        .btn-pref {
+            background: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 2px 7px;
+            font-size: 1em;
+            line-height: 1.4;
+            color: #888;
+            transition: all 0.15s;
+        }
+        .btn-pref:hover { background: rgba(0,0,0,0.08); border-color: #ccc; }
+        .btn-pref.favorito-ativo { color: #f59e0b; opacity: 1 !important; }
+
+        /* Setor favoritado */
+        .category.setor-favorito .categoria-header {
+            border-left-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        }
+        .category.setor-favorito .categoria-nome { color: #92400e; }
+
+        /* Barra de setores ocultos */
+        .setores-ocultos-bar {
+            margin-top: 12px;
+            padding: 10px 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px dashed #dee2e6;
+            font-size: 0.88em;
+            color: #6c757d;
+        }
+        .setores-ocultos-bar summary {
+            cursor: pointer;
+            user-select: none;
+            font-weight: 500;
+        }
+        .setores-ocultos-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .setor-oculto-chip {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .setor-oculto-chip button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #28a745;
+            font-size: 1em;
+            padding: 0;
+            line-height: 1;
+        }
+
         .categoria-content {
             padding: 20px;
             transition: all 0.3s ease;
@@ -2259,8 +2332,7 @@ def gerar_dashboard():
     </div>
 
     <script>
-        // Limpar autenticação ao carregar página (forçar novo login)
-        sessionStorage.removeItem('authenticated');
+        // Autenticação persistente via localStorage
 
         // Initialize data safely with error handling
         let escalas = null;
@@ -2828,6 +2900,39 @@ def gerar_dashboard():
             document.getElementById('search').value = '';
         }
 
+        // ── Preferências por usuário ──────────────────────────────
+        function getPrefs() {
+            const user = localStorage.getItem('auth_user') || 'guest';
+            const raw = localStorage.getItem('prefs_' + user);
+            return raw ? JSON.parse(raw) : { favoritos: [], ocultos: [] };
+        }
+        function savePrefs(prefs) {
+            const user = localStorage.getItem('auth_user') || 'guest';
+            localStorage.setItem('prefs_' + user, JSON.stringify(prefs));
+        }
+        function toggleFavorito(setor) {
+            const prefs = getPrefs();
+            const idx = prefs.favoritos.indexOf(setor);
+            if (idx === -1) prefs.favoritos.push(setor);
+            else prefs.favoritos.splice(idx, 1);
+            savePrefs(prefs);
+            renderizarEscala();
+        }
+        function toggleOcultar(setor) {
+            const prefs = getPrefs();
+            const oIdx = prefs.ocultos.indexOf(setor);
+            if (oIdx === -1) {
+                prefs.ocultos.push(setor);
+                const fIdx = prefs.favoritos.indexOf(setor);
+                if (fIdx !== -1) prefs.favoritos.splice(fIdx, 1);
+            } else {
+                prefs.ocultos.splice(oIdx, 1);
+            }
+            savePrefs(prefs);
+            renderizarEscala();
+        }
+        // ─────────────────────────────────────────────────────────
+
         function renderizarEscala() {
             try {
                 console.log('%c🔄 Dashboard v3-ramais - INICIANDO RENDERIZAÇÃO', 'color: blue; font-weight: bold');
@@ -2878,11 +2983,19 @@ def gerar_dashboard():
                 porSetor[prof.setor].push(prof);
             });
 
-            const setores = Object.keys(porSetor).sort();
+            const prefs = getPrefs();
+            const todosSetores = Object.keys(porSetor).sort();
+            const setoresVisiveis = [
+                ...todosSetores.filter(s => prefs.favoritos.includes(s)),
+                ...todosSetores.filter(s => !prefs.favoritos.includes(s) && !prefs.ocultos.includes(s))
+            ];
+            const setoresOcultos = todosSetores.filter(s => prefs.ocultos.includes(s));
+
             let html = '';
 
-            setores.forEach(setor => {
+            setoresVisiveis.forEach(setor => {
                 const profissionais = porSetor[setor];
+                const isFavorito = prefs.favoritos.includes(setor);
                 // Note: ramais display is disabled for now - only shown in the Ramais modal
                 // const ramaisSetor = obterRamaisSetor(setor);
                 // const ramaisDisplay = formatarRamaisDisplay(ramaisSetor);
@@ -2903,10 +3016,14 @@ def gerar_dashboard():
                     const turnosOrdenados = Object.keys(porTurno).sort((a, b) => turnoOrdem[a] - turnoOrdem[b]);
 
                     html += `
-                    <div class="category">
+                    <div class="category${isFavorito ? ' setor-favorito' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
+                            </div>
+                            <div class="setor-pref-btns" onclick="event.stopPropagation()">
+                                <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
+                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar setor">✕</button>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
@@ -2955,10 +3072,14 @@ def gerar_dashboard():
                     `;
                 } else {
                     html += `
-                    <div class="category">
+                    <div class="category${isFavorito ? ' setor-favorito' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${setor}</div>
+                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
+                            </div>
+                            <div class="setor-pref-btns" onclick="event.stopPropagation()">
+                                <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
+                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar setor">✕</button>
                             </div>
                             <div class="categoria-toggle">▲</div>
                         </div>
@@ -2996,6 +3117,21 @@ def gerar_dashboard():
                     `;
                 }
             });
+
+            // Barra de setores ocultos
+            if (setoresOcultos.length > 0) {
+                html += `
+                <details class="setores-ocultos-bar">
+                    <summary>🚫 ${setoresOcultos.length} setor${setoresOcultos.length > 1 ? 'es' : ''} oculto${setoresOcultos.length > 1 ? 's' : ''} — clique para gerenciar</summary>
+                    <div class="setores-ocultos-lista">
+                        ${setoresOcultos.map(s => `
+                        <div class="setor-oculto-chip">
+                            <span>${s}</span>
+                            <button onclick="toggleOcultar('${s.replace(/'/g, "\\'")}')" title="Mostrar setor">👁 mostrar</button>
+                        </div>`).join('')}
+                    </div>
+                </details>`;
+            }
 
             // CRITICAL: Verify element exists before inserting
             const categoriasEl = document.getElementById('categorias');
@@ -3120,8 +3256,9 @@ def gerar_dashboard():
           });
 
           if (encontrado) {
-            // Salva autenticação na sessão
-            sessionStorage.setItem('authenticated', 'true');
+            // Salva autenticação persistente
+            localStorage.setItem('authenticated', 'true');
+            localStorage.setItem('auth_user', input);
             // Esconde o modal e remove blur
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
@@ -3146,8 +3283,9 @@ def gerar_dashboard():
           }
 
           if (senha === senhaCorreta) {
-            // Salva autenticação na sessão
-            sessionStorage.setItem('authenticated', 'true');
+            // Salva autenticação persistente
+            localStorage.setItem('authenticated', 'true');
+            localStorage.setItem('auth_user', 'admin');
             // Esconde o modal e remove blur
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
@@ -3162,7 +3300,7 @@ def gerar_dashboard():
         // Verifica autenticação ao carregar
         function verificarAutenticacao() {
           // Verificar se já foi autenticado
-          if (sessionStorage.getItem('authenticated') === 'true') {
+          if (localStorage.getItem('authenticated') === 'true') {
             // Já foi autenticado, esconder modal e mostrar dashboard
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
