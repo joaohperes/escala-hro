@@ -2090,7 +2090,7 @@ def gerar_dashboard():
                 border: 0.5pt solid #bbb;
                 border-radius: 1pt;
                 overflow: hidden;
-                margin: 0 0 2mm 0 !important;
+                margin: 0 0 3mm 0 !important;
                 padding: 0 !important;
             }
 
@@ -2100,7 +2100,7 @@ def gerar_dashboard():
 
             .categoria-header {
                 background: #1a4a7a !important;
-                padding: 0.8mm 1.5mm !important;
+                padding: 1.5mm 2mm !important;
                 margin: 0 !important;
                 display: flex !important;
                 align-items: center;
@@ -2111,10 +2111,10 @@ def gerar_dashboard():
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 6pt !important;
+                font-size: 8pt !important;
                 font-weight: bold !important;
                 color: white !important;
-                line-height: 1.2 !important;
+                line-height: 1.3 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2122,7 +2122,7 @@ def gerar_dashboard():
             .categoria-content {
                 display: block !important;
                 max-height: none !important;
-                padding: 1mm !important;
+                padding: 1.5mm !important;
                 margin: 0 !important;
             }
 
@@ -2130,7 +2130,7 @@ def gerar_dashboard():
             .turnos-container {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 0.8mm !important;
+                gap: 1.5mm !important;
             }
 
             .turno-coluna {
@@ -2141,13 +2141,13 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 5pt !important;
+                font-size: 6.5pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
-                padding-bottom: 0.2mm !important;
-                margin-bottom: 0.5mm !important;
-                line-height: 1.2 !important;
+                padding-bottom: 0.3mm !important;
+                margin-bottom: 1mm !important;
+                line-height: 1.3 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2159,7 +2159,7 @@ def gerar_dashboard():
 
             .profissional {
                 border: none !important;
-                padding: 0.2mm 0 !important;
+                padding: 0.5mm 0 !important;
                 margin: 0 !important;
                 border-bottom: 0.3pt solid #eee !important;
                 -webkit-print-color-adjust: exact;
@@ -2170,12 +2170,12 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 6pt !important;
+                font-size: 7.5pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                line-height: 1.2 !important;
+                line-height: 1.3 !important;
             }
 
             .profissional-nome-wrapper { display: inline !important; }
@@ -2183,11 +2183,11 @@ def gerar_dashboard():
 
             .profissional-info {
                 display: block !important;
-                font-size: 5pt !important;
+                font-size: 6pt !important;
                 color: #555 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                line-height: 1.2 !important;
+                line-height: 1.3 !important;
             }
 
             .info-row { display: inline !important; }
