@@ -2014,179 +2014,192 @@ def gerar_dashboard():
             }
         }
 
-        /* Estilos para Impressão - 1 página A4 máxima compactação */
+        /* Cabeçalho visível apenas na impressão */
+        .print-header {
+            display: none;
+        }
+
+        /* Estilos para Impressão — A4 retrato */
         @media print {
             @page {
-                size: A4;
-                margin: 1mm;
+                size: A4 portrait;
+                margin: 8mm;
             }
 
-            * {
-                box-shadow: none !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
+            * { box-shadow: none !important; }
 
             html, body {
-                height: 100%;
                 background: white;
-                font-family: Arial, sans-serif;
-                font-size: 5pt;
-                line-height: 1;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 7pt;
+                color: #000;
             }
 
-            .container {
-                max-width: 100%;
-                width: 100%;
-                padding: 1mm !important;
-            }
-
-            /* Ocultar tudo exceto conteúdo */
+            /* Ocultar elementos de interface */
             .controls-bar,
             .header,
             .dashboard-description,
             .contacts-modal,
             .ramais-modal,
+            .auth-modal,
             .date-display,
-            .categoria-toggle,
+            .last-update,
             .stats,
-            .categoria-header-text,
-            .categoria-count {
+            .categoria-toggle,
+            .setor-pref-btns,
+            .setores-ocultos-bar,
+            .app-footer,
+            .telefone-icon-btn,
+            .turno-badge,
+            .setor-ramais {
                 display: none !important;
             }
 
-            /* Mostrar apenas conteúdo das categorias */
+            .container {
+                max-width: 100%;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Cabeçalho de impressão */
+            .print-header {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: baseline;
+                border-bottom: 1pt solid #1a4a7a;
+                padding-bottom: 2mm;
+                margin-bottom: 3mm;
+            }
+            .print-header-title {
+                font-size: 10pt;
+                font-weight: bold;
+                color: #1a4a7a;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .print-header-sub {
+                font-size: 7pt;
+                color: #555;
+            }
+            .print-header-date {
+                font-size: 8pt;
+                font-weight: bold;
+                color: #333;
+            }
+
+            /* Grid de 3 colunas para os setores */
+            #categorias {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 2mm;
+                align-items: start;
+            }
+
             .category {
-                display: block !important;
+                break-inside: avoid;
+                border: 0.5pt solid #bbb;
+                border-radius: 1pt;
+                overflow: hidden;
                 margin: 0 !important;
                 padding: 0 !important;
-                page-break-inside: avoid;
-                break-inside: avoid;
+            }
+
+            .category.setor-favorito .categoria-header {
+                background: #1a4a7a !important;
             }
 
             .categoria-header {
-                background: transparent !important;
-                border-left: none !important;
-                padding: 0.3mm !important;
-                margin: 0.3mm 0 !important;
-                font-size: 4.5pt !important;
+                background: #1a4a7a !important;
+                padding: 1.2mm 2mm !important;
+                margin: 0 !important;
+                display: flex !important;
+                align-items: center;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .categoria-header-text { flex: 1 !important; }
+
+            .categoria-nome {
+                font-size: 6.5pt !important;
                 font-weight: bold !important;
-                display: block !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .categoria-content {
                 display: block !important;
                 max-height: none !important;
-                padding: 0 !important;
+                padding: 1.5mm !important;
                 margin: 0 !important;
             }
 
+            /* Turnos em 2 sub-colunas dentro do setor */
             .turnos-container {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr 1fr !important;
-                gap: 0.5mm !important;
-                padding: 0 !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1mm !important;
             }
 
-            /* Colunas de turno extremamente compactas */
             .turno-coluna {
-                page-break-inside: avoid;
-                break-inside: avoid;
+                border: none !important;
+                background: none !important;
+                padding: 0 !important;
                 margin: 0 !important;
-                padding: 0.3mm !important;
-                border: 0.5pt solid #e0e0e0;
-                background: white;
-                display: block !important;
             }
 
             .turno-title {
-                font-weight: bold;
-                font-size: 4.5pt;
-                margin: 0 0 0.2mm 0 !important;
-                padding: 0 !important;
-                color: #0d3b66;
-                page-break-inside: avoid;
-                break-inside: avoid;
-                border-bottom: 0.5pt solid #e0e0e0;
+                font-size: 5.5pt !important;
+                font-weight: bold !important;
+                color: #1a4a7a !important;
+                border-bottom: 0.3pt solid #ddd !important;
+                padding-bottom: 0.3mm !important;
+                margin-bottom: 0.8mm !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .profissionais-list {
                 display: block !important;
+                padding: 0 !important;
             }
 
-            /* Profissionais extremamente compactos */
             .profissional {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                margin: 0.1mm 0 !important;
-                padding: 0.1mm 0 !important;
                 border: none !important;
-                font-size: 4pt;
-                line-height: 1;
-                display: block;
+                padding: 0.3mm 0 !important;
+                margin: 0 !important;
+                border-bottom: 0.3pt solid #eee !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
+
+            .profissional:last-child { border-bottom: none !important; }
 
             .profissional-nome {
-                font-weight: bold;
+                display: block !important;
+                font-size: 6.5pt !important;
+                font-weight: bold !important;
+                color: #000 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                font-size: 4pt;
-                display: inline;
             }
 
-            .profissional-nome-wrapper {
-                display: inline !important;
-            }
-
-            .profissional-nome-text {
-                color: #000;
-                margin: 0 !important;
-            }
+            .profissional-nome-wrapper { display: inline !important; }
+            .profissional-nome-text { color: #000 !important; }
 
             .profissional-info {
-                font-size: 3.5pt;
-                color: #333;
+                display: block !important;
+                font-size: 5.5pt !important;
+                color: #444 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                display: inline;
             }
 
-            .telefone-tooltip,
-            .telefone-icon,
-            a.telefone-tooltip {
-                display: none !important;
-            }
-
-            .turno-badge {
-                font-size: 3pt !important;
-                padding: 0.1pt 1pt !important;
-                margin: 0 0.5pt !important;
-                display: inline-block;
-                border-radius: 1pt;
-            }
-
-            /* Remover todos os espaçamentos extras */
-            .info-label {
-                display: none;
-            }
-
-            /* Mostrar apenas o essencial: nome e horário */
-            .profissional-info::before {
-                content: ' ';
-                margin: 0;
-            }
-
-            /* Ocultar elementos flutuantes */
-            .contacts-modal-overlay,
-            .contacts-modal,
-            .ramais-modal {
-                display: none !important;
-            }
-
-            /* Ocultar ramais no print */
-            .setor-ramais {
-                display: none !important;
-            }
+            .info-row { display: inline !important; }
+            .info-row + .info-row::before { content: ' · '; color: #999; }
+            .info-label { display: none !important; }
+            .info-value { color: #444 !important; }
         }
 
         /* Footer Styles */
@@ -2313,7 +2326,17 @@ def gerar_dashboard():
                 <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">Contatos</button>
                 <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">Ramais</button>
+                <button class="btn btn-print" onclick="window.print()">🖨 Imprimir</button>
             </div>
+        </div>
+
+        <!-- Cabeçalho de impressão (visível só no print) -->
+        <div class="print-header">
+            <div>
+                <div class="print-header-title">Hospital Regional do Oeste</div>
+                <div class="print-header-sub">Escala Médica</div>
+            </div>
+            <div class="print-header-date" id="print-date-display"></div>
         </div>
 
         <!-- Data selecionada -->
@@ -2961,6 +2984,7 @@ def gerar_dashboard():
                 console.log(`✅ 4️⃣  Renderizando ${dados.registros.length} profissionais para ${diaSelecionado}`);
 
                 document.getElementById('data-selecionada').textContent = dados.data;
+                document.getElementById('print-date-display').textContent = dados.data;
 
             // Mostrar indicador de status (dot colorido)
             const statusAtualizacao = escalas.status_atualizacao;
