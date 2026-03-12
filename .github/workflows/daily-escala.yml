@@ -86,7 +86,9 @@ jobs:
       run: |
         if [ -f /tmp/dashboard_executivo.html ]; then
           cp /tmp/dashboard_executivo.html index.html
-          git add index.html
+          mkdir -p docs
+          cp /tmp/dashboard_executivo.html docs/index.html
+          git add index.html docs/index.html
           if ! git diff --cached --quiet; then
             git commit -m "📊 Atualizar dashboard - $(date '+%d/%m/%Y %H:%M')"
             git push origin main
