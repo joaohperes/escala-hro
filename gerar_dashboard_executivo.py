@@ -557,6 +557,12 @@ def gerar_dashboard():
         print(f"✅ Setor_ramais_mapping já presente em escalas: {len(escalas['setor_ramais_mapping'].get('sector_mappings', []))} mappings")
 
     html = """<!DOCTYPE html>
+<!-- ============================================================
+     ARQUIVO GERADO AUTOMATICAMENTE — NÃO EDITE MANUALMENTE
+     Edite: gerar_dashboard_executivo.py
+     Gerado por: update_dashboard.py via GitHub Actions (diariamente)
+     Alterações diretas neste arquivo SERÃO PERDIDAS na próxima execução
+     ============================================================ -->
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
