@@ -2115,7 +2115,7 @@ def gerar_dashboard():
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 10pt !important;
+                font-size: 11pt !important;
                 font-weight: bold !important;
                 color: white !important;
                 line-height: 1.1 !important;
@@ -2145,7 +2145,7 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 8pt !important;
+                font-size: 9pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
@@ -2179,7 +2179,7 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 10pt !important;
+                font-size: 11pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
@@ -2195,7 +2195,7 @@ def gerar_dashboard():
             .profissional::after {
                 content: attr(data-hora);
                 display: block !important;
-                font-size: 8pt !important;
+                font-size: 9pt !important;
                 color: #555 !important;
                 line-height: 1.2 !important;
             }
