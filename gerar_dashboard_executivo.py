@@ -2099,28 +2099,26 @@ def gerar_dashboard():
             }
 
             .category.setor-favorito .categoria-header {
-                background: #1a4a7a !important;
+                background: white !important;
+                border-bottom: 1.5pt solid #1a4a7a !important;
             }
 
             .categoria-header {
-                background: #1a4a7a !important;
+                background: white !important;
+                border-bottom: 1.5pt solid #1a4a7a !important;
                 padding: 1mm 2mm !important;
                 margin: 0 !important;
                 display: flex !important;
                 align-items: center;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
 
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 11pt !important;
+                font-size: 12pt !important;
                 font-weight: bold !important;
-                color: white !important;
+                color: #1a4a7a !important;
                 line-height: 1.1 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
 
             .categoria-content {
@@ -2145,7 +2143,7 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 9pt !important;
+                font-size: 10pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
@@ -2179,7 +2177,7 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 11pt !important;
+                font-size: 12pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
@@ -2195,7 +2193,7 @@ def gerar_dashboard():
             .profissional::after {
                 content: attr(data-hora);
                 display: block !important;
-                font-size: 9pt !important;
+                font-size: 10pt !important;
                 color: #555 !important;
                 line-height: 1.2 !important;
             }
