@@ -2152,6 +2152,10 @@ def gerar_dashboard():
                 print-color-adjust: exact;
             }
 
+            .turno-title::before {
+                display: none !important;
+            }
+
             .profissionais-list {
                 display: block !important;
                 padding: 0 !important;
@@ -3016,7 +3020,7 @@ def gerar_dashboard():
             const EXCLUIR_PRINT = [
                 'Alojamento Conjunto',
                 'Ambulatório De Oncologia Pediátrica',
-                'Oncologia Pediátrica - Sobreaviso',
+                'Ambulatório Oncologia - Triagem',
                 'Transplante - Sobreaviso Cirurgia',
                 'Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica',
                 'Unidade de Terapia Intensiva (UTI) Adulto I',
