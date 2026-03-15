@@ -2011,8 +2011,8 @@ def gerar_dashboard():
         /* Estilos para Impressão — A4 retrato */
         @media print {
             @page {
-                size: A4 portrait;
-                margin: 8mm;
+                size: A4 landscape;
+                margin: 7mm;
             }
 
             * { box-shadow: none !important; }
@@ -2020,7 +2020,7 @@ def gerar_dashboard():
             html, body {
                 background: white;
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 7pt;
+                font-size: 8pt;
                 color: #000;
             }
 
@@ -2076,11 +2076,11 @@ def gerar_dashboard():
                 color: #333;
             }
 
-            /* 3 colunas estilo jornal — preenche espaço sem gaps */
+            /* 4 colunas estilo jornal — landscape, preenche espaço sem gaps */
             #categorias {
                 display: block !important;
-                columns: 3;
-                column-gap: 2.5mm;
+                columns: 4;
+                column-gap: 2mm;
             }
 
             .category {
@@ -2111,7 +2111,7 @@ def gerar_dashboard():
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 8pt !important;
+                font-size: 9pt !important;
                 font-weight: bold !important;
                 color: white !important;
                 line-height: 1.3 !important;
@@ -2141,7 +2141,7 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 6.5pt !important;
+                font-size: 7.5pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
@@ -2174,7 +2174,7 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 7.5pt !important;
+                font-size: 9pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
@@ -2187,7 +2187,7 @@ def gerar_dashboard():
 
             .profissional-info {
                 display: block !important;
-                font-size: 6pt !important;
+                font-size: 7pt !important;
                 color: #555 !important;
                 margin: 0 !important;
                 padding: 0 !important;
