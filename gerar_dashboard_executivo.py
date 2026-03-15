@@ -2111,7 +2111,7 @@ def gerar_dashboard():
             .categoria-header-text { flex: 1 !important; }
 
             .categoria-nome {
-                font-size: 11pt !important;
+                font-size: 10pt !important;
                 font-weight: bold !important;
                 color: white !important;
                 line-height: 1.1 !important;
@@ -2141,7 +2141,7 @@ def gerar_dashboard():
             }
 
             .turno-title {
-                font-size: 9pt !important;
+                font-size: 8pt !important;
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
@@ -2164,7 +2164,7 @@ def gerar_dashboard():
             .profissional {
                 display: flex !important;
                 justify-content: space-between !important;
-                align-items: baseline !important;
+                align-items: flex-start !important;
                 border: none !important;
                 padding: 0.3mm 0 !important;
                 margin: 0 !important;
@@ -2177,7 +2177,7 @@ def gerar_dashboard():
 
             .profissional-nome {
                 display: block !important;
-                font-size: 11pt !important;
+                font-size: 10pt !important;
                 font-weight: bold !important;
                 color: #000 !important;
                 margin: 0 !important;
@@ -2192,7 +2192,7 @@ def gerar_dashboard():
             /* Horário ao lado do nome — sem repetir o setor */
             .profissional::after {
                 content: attr(data-hora);
-                font-size: 8.5pt !important;
+                font-size: 8pt !important;
                 color: #555 !important;
                 white-space: nowrap !important;
                 margin-left: 2mm !important;
