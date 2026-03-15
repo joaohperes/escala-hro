@@ -3142,7 +3142,7 @@ def gerar_dashboard():
                                         <div class="profissional-nome">
                                             ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-icon-btn" data-phone="${telefone}" title="WhatsApp: ${telefone}"><span class="telefone-icon"></span></a>` : ''}
                                             <div class="profissional-nome-wrapper">
-                                                <span class="profissional-nome-text">${prof.profissional}</span>
+                                                <span class="profissional-nome-text">${prof.profissional}</span><span class="profissional-nome-curto">${(p => p.length <= 2 ? p.join(' ') : p[0] + ' ' + p[p.length-1])(prof.profissional.trim().split(/\s+/))}</span>
                                             </div>
                                         </div>
                                         <div class="profissional-info">
