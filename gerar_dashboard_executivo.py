@@ -2012,7 +2012,7 @@ def gerar_dashboard():
         @media print {
             @page {
                 size: A4 landscape;
-                margin: 7mm;
+                margin: 5mm;
             }
 
             * { box-shadow: none !important; }
@@ -2056,8 +2056,8 @@ def gerar_dashboard():
                 justify-content: space-between;
                 align-items: baseline;
                 border-bottom: 1pt solid #1a4a7a;
-                padding-bottom: 2mm;
-                margin-bottom: 3mm;
+                padding-bottom: 1mm;
+                margin-bottom: 2mm;
             }
             .print-header-title {
                 font-size: 10pt;
@@ -2090,7 +2090,7 @@ def gerar_dashboard():
                 border: 0.5pt solid #bbb;
                 border-radius: 1pt;
                 overflow: hidden;
-                margin: 0 0 3mm 0 !important;
+                margin: 0 0 1.5mm 0 !important;
                 padding: 0 !important;
             }
 
@@ -2100,7 +2100,7 @@ def gerar_dashboard():
 
             .categoria-header {
                 background: #1a4a7a !important;
-                padding: 1.5mm 2mm !important;
+                padding: 1mm 2mm !important;
                 margin: 0 !important;
                 display: flex !important;
                 align-items: center;
@@ -2114,7 +2114,7 @@ def gerar_dashboard():
                 font-size: 9pt !important;
                 font-weight: bold !important;
                 color: white !important;
-                line-height: 1.3 !important;
+                line-height: 1.1 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2122,7 +2122,7 @@ def gerar_dashboard():
             .categoria-content {
                 display: block !important;
                 max-height: none !important;
-                padding: 1.5mm !important;
+                padding: 1mm !important;
                 margin: 0 !important;
             }
 
@@ -2130,7 +2130,7 @@ def gerar_dashboard():
             .turnos-container {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1.5mm !important;
+                gap: 1mm !important;
             }
 
             .turno-coluna {
@@ -2145,9 +2145,9 @@ def gerar_dashboard():
                 font-weight: bold !important;
                 color: #1a4a7a !important;
                 border-bottom: 0.3pt solid #ddd !important;
-                padding-bottom: 0.3mm !important;
-                margin-bottom: 1mm !important;
-                line-height: 1.3 !important;
+                padding-bottom: 0.2mm !important;
+                margin-bottom: 0.5mm !important;
+                line-height: 1.1 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -2163,7 +2163,7 @@ def gerar_dashboard():
 
             .profissional {
                 border: none !important;
-                padding: 0.5mm 0 !important;
+                padding: 0.2mm 0 !important;
                 margin: 0 !important;
                 border-bottom: 0.3pt solid #eee !important;
                 -webkit-print-color-adjust: exact;
@@ -2179,7 +2179,7 @@ def gerar_dashboard():
                 color: #000 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                line-height: 1.3 !important;
+                line-height: 1.1 !important;
             }
 
             .profissional-nome-wrapper { display: inline !important; }
@@ -2191,7 +2191,7 @@ def gerar_dashboard():
                 color: #555 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                line-height: 1.3 !important;
+                line-height: 1.1 !important;
             }
 
             .info-row { display: inline !important; }
