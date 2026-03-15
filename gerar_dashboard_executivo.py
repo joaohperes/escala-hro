@@ -1414,6 +1414,8 @@ def gerar_dashboard():
             color: var(--color-primary);
         }
 
+        .setor-nome-curto { display: none; }
+
         .categoria-count {
             color: var(--text-secondary);
             font-size: 0.9em;
@@ -2064,18 +2066,17 @@ def gerar_dashboard():
                 margin-bottom: 2mm;
             }
             .print-header-title {
-                font-size: 10pt;
+                font-size: 11pt;
                 font-weight: bold;
                 color: #1a4a7a;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
             .print-header-sub {
-                font-size: 7pt;
+                font-size: 9pt;
+                font-weight: normal;
                 color: #555;
             }
             .print-header-date {
-                font-size: 8pt;
+                font-size: 11pt;
                 font-weight: bold;
                 color: #333;
             }
@@ -2098,11 +2099,7 @@ def gerar_dashboard():
                 padding: 0 !important;
             }
 
-            .category.setor-favorito .categoria-header {
-                background: white !important;
-                border-bottom: 1.5pt solid #1a4a7a !important;
-            }
-
+            .category.setor-favorito .categoria-header,
             .categoria-header {
                 background: white !important;
                 border-bottom: 1.5pt solid #1a4a7a !important;
@@ -2110,6 +2107,8 @@ def gerar_dashboard():
                 margin: 0 !important;
                 display: flex !important;
                 align-items: center;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
 
             .categoria-header-text { flex: 1 !important; }
@@ -2120,6 +2119,9 @@ def gerar_dashboard():
                 color: #1a4a7a !important;
                 line-height: 1.1 !important;
             }
+
+            .setor-nome-full { display: none !important; }
+            .setor-nome-curto { display: inline !important; }
 
             .categoria-content {
                 display: block !important;
@@ -2335,10 +2337,7 @@ def gerar_dashboard():
 
         <!-- Cabeçalho de impressão (visível só no print) -->
         <div class="print-header">
-            <div>
-                <div class="print-header-title">Hospital Regional do Oeste</div>
-                <div class="print-header-sub">Escala Médica</div>
-            </div>
+            <div class="print-header-title">Hospital Regional do Oeste <span class="print-header-sub">· Escala Médica</span></div>
             <div class="print-header-date" id="print-date-display"></div>
         </div>
 
@@ -3064,7 +3063,7 @@ def gerar_dashboard():
                     <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
+                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}<span class="setor-nome-full">${setor}</span><span class="setor-nome-curto">${setor.replace(/\s*[-–]\s*(Sobreaviso|Plantão|Plantao).*$/i, '').trim()}</span></div>
                             </div>
                             <div class="setor-pref-btns" onclick="event.stopPropagation()">
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
@@ -3120,7 +3119,7 @@ def gerar_dashboard():
                     <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
-                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}${setor}</div>
+                                <div class="categoria-nome">${isFavorito ? '★ ' : ''}<span class="setor-nome-full">${setor}</span><span class="setor-nome-curto">${setor.replace(/\s*[-–]\s*(Sobreaviso|Plantão|Plantao).*$/i, '').trim()}</span></div>
                             </div>
                             <div class="setor-pref-btns" onclick="event.stopPropagation()">
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
