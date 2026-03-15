@@ -6,16 +6,6 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "08:00/13:00",
-        "phone": "",
-        "pos_x": 92,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Alojamento Conjunto",
-        "tipo_turno": "Rotina - Alojamento Conjunto - Final de Semana"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "07:00/07:00",
         "phone": "",
         "pos_x": 429,
@@ -76,16 +66,6 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "08:00/14:00",
-        "phone": "",
-        "pos_x": 2453,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "08:00/08:00",
         "phone": "",
         "pos_x": 2790,
@@ -96,22 +76,22 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 3128,
         "profissional": "Julia Braghini",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P1"
+        "tipo_turno": "Plantão Vespertino - P1"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 3128,
         "profissional": "Maisa Miranda Cascaes",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P2"
+        "tipo_turno": "Plantão Vespertino - P2"
       },
       {
         "data": "15 março 2026",
@@ -126,32 +106,22 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 3802,
-        "profissional": "Bruno Taddeo Nogueira Alves Soares De Alvarenga",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Matutino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 3802,
         "profissional": "Izadora Czarnobai",
         "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Matutino"
+        "tipo_turno": "Hospitalista Urgência Vespertino"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "",
         "pos_x": 4140,
         "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "15 março 2026",
@@ -226,22 +196,42 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "12:00/18:00",
         "phone": "",
         "pos_x": 6838,
-        "profissional": "Bianca Soder  Wolschick",
+        "profissional": "Marta Schmidt Pfaffenzeller",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 6838,
+        "profissional": "William Vinicius Weber",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 6838,
-        "profissional": "Vanessa Vitoria Kerkhoff",
+        "profissional": "Inaya Flores Leal",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "14:00/22:00",
+        "phone": "",
+        "pos_x": 6838,
+        "profissional": "Henrike Nathan Gandolfi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
       },
       {
         "data": "15 março 2026",
@@ -286,62 +276,62 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 7850,
         "profissional": "Ana Carolina Renz Simon",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Matutino"
+        "tipo_turno": "Plantão - Vespertino"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 7850,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Rotina UCIN - Finais de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 8187,
         "profissional": "Eliana Iora Schneider",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 8525,
         "profissional": "Samantha de Aspiazu Damiani",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 8862,
         "profissional": "Juliana Ulsenheimer Knorst",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "07:00/12:00",
-        "phone": "",
-        "pos_x": 9199,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "",
         "pos_x": 9199,
         "profissional": "Marina Emely Jorge",
         "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "15 março 2026",
@@ -366,26 +356,6 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3128,
-        "profissional": "Julia Braghini",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P1"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3128,
-        "profissional": "Maisa Miranda Cascaes",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P2"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "19:00/07:00",
         "phone": "",
         "pos_x": 3128,
@@ -406,32 +376,12 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3802,
-        "profissional": "Izadora Czarnobai",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "19:00/07:00",
         "phone": "",
         "pos_x": 3802,
         "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "14:00/06:00",
-        "phone": "",
-        "pos_x": 4140,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "15 março 2026",
@@ -476,46 +426,6 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "12:00/18:00",
-        "phone": "",
-        "pos_x": 6838,
-        "profissional": "Marta Schmidt Pfaffenzeller",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 6838,
-        "profissional": "William Vinicius Weber",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 6838,
-        "profissional": "Inaya Flores Leal",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "14:00/22:00",
-        "phone": "",
-        "pos_x": 6838,
-        "profissional": "Henrike Nathan Gandolfi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "18:00/00:00",
         "phone": "",
         "pos_x": 6838,
@@ -546,52 +456,12 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 7850,
-        "profissional": "Ana Carolina Renz Simon",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 7850,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Finais de Semana"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "19:00/07:00",
         "phone": "",
         "pos_x": 7850,
         "profissional": "Danielle Martins dos Santos",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8187,
-        "profissional": "Eliana Iora Schneider",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:30/14:30",
-        "phone": "",
-        "pos_x": 8187,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "15 março 2026",
@@ -606,52 +476,12 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8525,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "14:30/15:30",
-        "phone": "",
-        "pos_x": 8525,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "19:00/07:00",
         "phone": "",
         "pos_x": 8525,
         "profissional": "Allan Douglas Santos",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8862,
-        "profissional": "Juliana Ulsenheimer Knorst",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
-        "horario": "13:30/14:30",
-        "phone": "",
-        "pos_x": 8862,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "15 março 2026",
@@ -666,22 +496,102 @@
       {
         "data": "15 março 2026",
         "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 9199,
-        "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "15 março 2026",
-        "email": "",
         "horario": "19:00/07:00",
         "phone": "",
         "pos_x": 9199,
         "profissional": "Marina Emely Jorge",
         "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
         "tipo_turno": "Noturno"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "08:00/13:00",
+        "phone": "",
+        "pos_x": 92,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Alojamento Conjunto",
+        "tipo_turno": "Rotina - Alojamento Conjunto - Final de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "08:00/14:00",
+        "phone": "",
+        "pos_x": 2453,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3128,
+        "profissional": "Julia Braghini",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P1"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3128,
+        "profissional": "Maisa Miranda Cascaes",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P2"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3802,
+        "profissional": "Bruno Taddeo Nogueira Alves Soares De Alvarenga",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3802,
+        "profissional": "Izadora Czarnobai",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "06:00/14:00",
+        "phone": "",
+        "pos_x": 4140,
+        "profissional": "Marcelo Eduardo Heinig",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 6838,
+        "profissional": "Bianca Soder  Wolschick",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 6838,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
       {
         "data": "15 março 2026",
@@ -696,12 +606,52 @@
       {
         "data": "15 março 2026",
         "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 7850,
+        "profissional": "Ana Carolina Renz Simon",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Plantão - Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 8187,
+        "profissional": "Eliana Iora Schneider",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
         "horario": "07:30/08:30",
         "phone": "",
         "pos_x": 8187,
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "13:30/14:30",
+        "phone": "",
+        "pos_x": 8187,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 8525,
+        "profissional": "Samantha de Aspiazu Damiani",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "15 março 2026",
@@ -716,12 +666,62 @@
       {
         "data": "15 março 2026",
         "email": "",
+        "horario": "14:30/15:30",
+        "phone": "",
+        "pos_x": 8525,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 8862,
+        "profissional": "Juliana Ulsenheimer Knorst",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
         "horario": "07:30/08:30",
         "phone": "",
         "pos_x": 8862,
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "13:30/14:30",
+        "phone": "",
+        "pos_x": 8862,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/12:00",
+        "phone": "",
+        "pos_x": 9199,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "15 março 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 9199,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Matutino"
       }
     ],
     "total": 72
@@ -1444,5 +1444,5 @@
     "total": 71
   },
   "data_backup": "15/03/2026",
-  "hora_backup": "10:19"
+  "hora_backup": "17:18"
 }
