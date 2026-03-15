@@ -2189,7 +2189,7 @@ def gerar_dashboard():
 
             .profissional-nome-wrapper { display: inline !important; }
             .profissional-nome-text { display: none !important; }
-            .profissional-nome-curto { color: #000 !important; }
+            .profissional-nome-curto { display: inline !important; color: #000 !important; }
 
             /* Horário abaixo do nome — sem overflow na margem direita */
             .profissional::after {
