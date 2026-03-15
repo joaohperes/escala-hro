@@ -3021,12 +3021,16 @@ def gerar_dashboard():
                 'Alojamento Conjunto',
                 'Ambulatório De Oncologia Pediátrica',
                 'Ambulatório Oncologia - Triagem',
+                'Núcleo Interno de Regulação (NIR) Médico Regulador',
+                'R2 Clínica Médica UTI',
+                'Residência de Clínica Médica',
                 'Transplante - Sobreaviso Cirurgia',
                 'Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica',
                 'Unidade de Terapia Intensiva (UTI) Adulto I',
                 'Unidade de Terapia Intensiva (UTI) Adulto II',
                 'Unidade de Terapia Intensiva (UTI) Adulto III',
                 'Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica',
+                'Unidade de Terapia Intensiva (UTI) Pediátrica',
             ];
 
             let html = '';
