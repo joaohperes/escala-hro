@@ -2162,9 +2162,7 @@ def gerar_dashboard():
             }
 
             .profissional {
-                display: flex !important;
-                justify-content: space-between !important;
-                align-items: flex-start !important;
+                display: block !important;
                 border: none !important;
                 padding: 0.3mm 0 !important;
                 margin: 0 !important;
@@ -2183,19 +2181,17 @@ def gerar_dashboard():
                 margin: 0 !important;
                 padding: 0 !important;
                 line-height: 1.2 !important;
-                flex: 1 !important;
             }
 
             .profissional-nome-wrapper { display: inline !important; }
             .profissional-nome-text { color: #000 !important; }
 
-            /* Horário ao lado do nome — sem repetir o setor */
+            /* Horário abaixo do nome — sem overflow na margem direita */
             .profissional::after {
                 content: attr(data-hora);
+                display: block !important;
                 font-size: 8pt !important;
                 color: #555 !important;
-                white-space: nowrap !important;
-                margin-left: 2mm !important;
                 line-height: 1.2 !important;
             }
 
