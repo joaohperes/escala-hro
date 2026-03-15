@@ -2162,8 +2162,11 @@ def gerar_dashboard():
             }
 
             .profissional {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: baseline !important;
                 border: none !important;
-                padding: 0.2mm 0 !important;
+                padding: 0.3mm 0 !important;
                 margin: 0 !important;
                 border-bottom: 0.3pt solid #eee !important;
                 -webkit-print-color-adjust: exact;
@@ -2179,25 +2182,25 @@ def gerar_dashboard():
                 color: #000 !important;
                 margin: 0 !important;
                 padding: 0 !important;
-                line-height: 1.1 !important;
+                line-height: 1.2 !important;
+                flex: 1 !important;
             }
 
             .profissional-nome-wrapper { display: inline !important; }
             .profissional-nome-text { color: #000 !important; }
 
-            .profissional-info {
-                display: block !important;
+            /* Horário ao lado do nome — sem repetir o setor */
+            .profissional::after {
+                content: attr(data-hora);
                 font-size: 7pt !important;
                 color: #555 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                line-height: 1.1 !important;
+                white-space: nowrap !important;
+                margin-left: 2mm !important;
+                line-height: 1.2 !important;
             }
 
-            .info-row { display: inline !important; }
-            .info-row + .info-row::before { content: ' · '; color: #999; }
-            .info-label { display: none !important; }
-            .info-value { color: #555 !important; }
+            /* Ocultar bloco de info (setor + horário duplicados) */
+            .profissional-info { display: none !important; }
 
             /* Setores excluídos da impressão */
             .print-exclude { display: none !important; }
