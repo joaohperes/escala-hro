@@ -1,5 +1,882 @@
 {
   "atual": {
+    "data": "27 abril 2026",
+    "data_simples": "27/04/2026",
+    "registros": [
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 92,
+        "profissional": "Fabiane Scheffer Reginatto",
+        "setor": "Alojamento Conjunto",
+        "tipo_turno": "Rotina - Alojamento Conjunto"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/12:00",
+        "phone": "",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 766,
+        "profissional": "Carlos Fogaça",
+        "setor": "Bucomaxilo Sobreaviso",
+        "tipo_turno": "Bucomaxilo - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 1103,
+        "profissional": "Gabriel Vitoria Domingues",
+        "setor": "Cardiologia - Sobreaviso",
+        "tipo_turno": "Sobreaviso Cardiologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 1440,
+        "profissional": "Luciano Guarienti",
+        "setor": "Cirurgia Geral - Sobreaviso",
+        "tipo_turno": "Cirurgia Geral - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 1777,
+        "profissional": "Alberto Stolt",
+        "setor": "Cirurgia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Cirurgia Pediátrica"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 2113,
+        "profissional": "Rovani Jose Rinaldi Camargo",
+        "setor": "Cirurgia Torácica - Sobreaviso",
+        "tipo_turno": "Cirurgia Torácica - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 2450,
+        "profissional": "Alexandre Almeida de Medeiros",
+        "setor": "Cirurgia Vascular - Sobreaviso",
+        "tipo_turno": "Vascular Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/08:00",
+        "phone": "",
+        "pos_x": 3124,
+        "profissional": "Maridiane Tormem",
+        "setor": "Endoscopia - Sobreaviso",
+        "tipo_turno": "Endoscopia - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Lais Paganella de Aquino",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Fernanda Canello Modesti",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P2"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 3798,
+        "profissional": "Fernando Luiz de Melo Bernardi",
+        "setor": "Hemodinâmica - Sobreaviso Cardiologia",
+        "tipo_turno": "Hemodinâmica - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Bruna Regina Marinho de Mello",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Matheus Antonio Baccin",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "06:00/14:00",
+        "phone": "",
+        "pos_x": 4472,
+        "profissional": "Marina Oliboni Moschetta",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 4809,
+        "profissional": "Luan Lucena",
+        "setor": "Neurocirurgia - Sobreaviso",
+        "tipo_turno": "Neurocirurgia - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 5146,
+        "profissional": "Liamara Petroli",
+        "setor": "Neurologia/U-AVC Integral - Sobreaviso",
+        "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/12:00",
+        "phone": "",
+        "pos_x": 5483,
+        "profissional": "Camila Tonini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 5819,
+        "profissional": "Davi Machado de Souza",
+        "setor": "Oftalmologia Sobreaviso",
+        "tipo_turno": "Sobreaviso Oftalmologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 6493,
+        "profissional": "Adriano Reginatto Klein",
+        "setor": "Ortopedia e Traumatologia - Sobreaviso",
+        "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 6493,
+        "profissional": "Amauri Antonio Biazi",
+        "setor": "Ortopedia e Traumatologia - Sobreaviso",
+        "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/19:00",
+        "phone": "",
+        "pos_x": 6830,
+        "profissional": "Ligia Oro",
+        "setor": "Residência de Clínica Médica",
+        "tipo_turno": "Res. Clínica Médica"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/19:00",
+        "phone": "",
+        "pos_x": 7167,
+        "profissional": "Mateus Henrique Provim",
+        "setor": "Residência de Cirurgia Geral",
+        "tipo_turno": "DIA"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 7504,
+        "profissional": "Miyake Adriana Souza Cirqueira",
+        "setor": "Residência de Ginecologia e Obstetrícia",
+        "tipo_turno": "Manhã"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 7504,
+        "profissional": "Nathália Karolina Rech",
+        "setor": "Residência de Ginecologia e Obstetrícia",
+        "tipo_turno": "Manhã"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Erika Luiza Biasoli",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "09:00/18:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "09:00/18:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Augusto Cancian",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "10:00/16:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Henrike Nathan Gandolfi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 8178,
+        "profissional": "Mario Goto",
+        "setor": "Transplante - Sobreaviso Cirurgia",
+        "tipo_turno": "Cirurgia Geral - 1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 8178,
+        "profissional": "Juliano Ferneda",
+        "setor": "Transplante - Sobreaviso Cirurgia",
+        "tipo_turno": "Urologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 8852,
+        "profissional": "Ana Carolina Renz Simon",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Plantão - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 8852,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 9188,
+        "profissional": "Debora De Cesaro Rossetto",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "09:00/15:00",
+        "phone": "",
+        "pos_x": 9188,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 9525,
+        "profissional": "Allan Douglas Santos",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 9525,
+        "profissional": "Adelaine Marilia Pinheiro",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 9862,
+        "profissional": "Emanuel Felipe Vieira Luz",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "09:00/15:00",
+        "phone": "",
+        "pos_x": 9862,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/12:00",
+        "phone": "",
+        "pos_x": 10199,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/13:00",
+        "phone": "",
+        "pos_x": 10199,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/07:00",
+        "phone": "",
+        "pos_x": 10536,
+        "profissional": "Vinicius Rubin",
+        "setor": "Urologia Sobreaviso",
+        "tipo_turno": "Sobreaviso Urologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/17:00",
+        "phone": "",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/16:00",
+        "phone": "",
+        "pos_x": 2787,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Lais Paganella de Aquino",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Fernanda Canello Modesti",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P2"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Lais Paganella de Aquino",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Noturno - P1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 3461,
+        "profissional": "Bruna Paola Defaveri Damiani",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Noturno - P1"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Matheus Antonio Baccin",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Urgência Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 4135,
+        "profissional": "Ridiger Gertz Clauss",
+        "setor": "Hospitalista",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "14:00/06:00",
+        "phone": "",
+        "pos_x": 4472,
+        "profissional": "Marina Oliboni Moschetta",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Vesp - Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/17:00",
+        "phone": "",
+        "pos_x": 5483,
+        "profissional": "Juciana Belini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "17:00/19:00",
+        "phone": "",
+        "pos_x": 6156,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 6156,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 6830,
+        "profissional": "Cesar Augusto Seidler Junior",
+        "setor": "Residência de Clínica Médica",
+        "tipo_turno": "Res. Clínica Médica Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 6830,
+        "profissional": "Marina Costella Pasquali",
+        "setor": "Residência de Clínica Médica",
+        "tipo_turno": "Res. Clinica Méidica Intermediário"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 7167,
+        "profissional": "Maria Antônia Bortoli Giongo",
+        "setor": "Residência de Cirurgia Geral",
+        "tipo_turno": "NOITE"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 7504,
+        "profissional": "Nathália Karolina Rech",
+        "setor": "Residência de Ginecologia e Obstetrícia",
+        "tipo_turno": "Tarde"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 7504,
+        "profissional": "Miyake Adriana Souza Cirqueira",
+        "setor": "Residência de Ginecologia e Obstetrícia",
+        "tipo_turno": "Tarde"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 7504,
+        "profissional": "Gabriela Moschetta",
+        "setor": "Residência de Ginecologia e Obstetrícia",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Leonardo Moura Lock",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Bruna Carolina Fagundes Gabbi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:30/17:30",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Fabio Rosalvo Urnau",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "16:00/22:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Marta Schmidt Pfaffenzeller",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "18:00/00:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Caroline Lopes Tamada",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Priscila Domingos",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 7841,
+        "profissional": "Nathalia Moreira Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "18:30/07:30",
+        "phone": "",
+        "pos_x": 8515,
+        "profissional": "Vicente Gregorio Restelli",
+        "setor": "Ultrassonografia - Sobreaviso",
+        "tipo_turno": "Ultrassonografia - Sobreaviso"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/17:00",
+        "phone": "",
+        "pos_x": 8852,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Rotina UCIN - Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 8852,
+        "profissional": "Fabiane Scheffer Reginatto",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Plantão - Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 8852,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Plantão - Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 9188,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 9188,
+        "profissional": "Debora De Cesaro Rossetto",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 9525,
+        "profissional": "Hellen Katya Wiebbelling",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 9525,
+        "profissional": "Hellen Katya Wiebbelling",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 9862,
+        "profissional": "Emanuel Felipe Vieira Luz",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 9862,
+        "profissional": "Michel Peruzzo",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "13:00/19:00",
+        "phone": "",
+        "pos_x": 10199,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "19:00/07:00",
+        "phone": "",
+        "pos_x": 10199,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/11:00",
+        "phone": "",
+        "pos_x": 2787,
+        "profissional": "Bruno Trevisan",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/11:00",
+        "phone": "",
+        "pos_x": 2787,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/11:00",
+        "phone": "",
+        "pos_x": 2787,
+        "profissional": "Emeline Moreira Cabral",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "08:00/11:00",
+        "phone": "",
+        "pos_x": 2787,
+        "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "27 abril 2026",
+        "email": "",
+        "horario": "07:00/08:00",
+        "phone": "",
+        "pos_x": 6156,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobre Aviso Oncologia"
+      }
+    ],
+    "total": 87
+  },
+  "anterior": {
     "data": "26 abril 2026",
     "data_simples": "26/04/2026",
     "registros": [
@@ -706,713 +1583,6 @@
     ],
     "total": 70
   },
-  "anterior": {
-    "data": "25 abril 2026",
-    "data_simples": "25/04/2026",
-    "registros": [
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/13:00",
-        "phone": "",
-        "pos_x": 92,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Alojamento Conjunto",
-        "tipo_turno": "Rotina - Alojamento Conjunto - Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 429,
-        "profissional": "Angela Aiolfi",
-        "setor": "Bucomaxilo Sobreaviso",
-        "tipo_turno": "Bucomaxilo - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 767,
-        "profissional": "Gabriel Vitoria Domingues",
-        "setor": "Cardiologia - Sobreaviso",
-        "tipo_turno": "Sobreaviso Cardiologia"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 1104,
-        "profissional": "Jonathan Caon de Souza",
-        "setor": "Cirurgia Geral - Sobreaviso",
-        "tipo_turno": "Cirurgia Geral - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/08:00",
-        "phone": "",
-        "pos_x": 1442,
-        "profissional": "Ricardo Marcelus Araujo Filipak",
-        "setor": "Cirurgia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Cirurgia Pediátrica"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/08:00",
-        "phone": "",
-        "pos_x": 1779,
-        "profissional": "Rovani Jose Rinaldi Camargo",
-        "setor": "Cirurgia Torácica - Sobreaviso",
-        "tipo_turno": "Cirurgia Torácica - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/08:00",
-        "phone": "",
-        "pos_x": 2117,
-        "profissional": "Alexandre Almeida de Medeiros",
-        "setor": "Cirurgia Vascular - Sobreaviso",
-        "tipo_turno": "Vascular Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/14:00",
-        "phone": "",
-        "pos_x": 2454,
-        "profissional": "Eduardo Henrique Borsatto",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:00/08:00",
-        "phone": "",
-        "pos_x": 2792,
-        "profissional": "Giovani Santin",
-        "setor": "Endoscopia - Sobreaviso",
-        "tipo_turno": "Endoscopia - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Maríndia Sitta",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Ana Claudia Cazzuni",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P2"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 3467,
-        "profissional": "Fernando Luiz de Melo Bernardi",
-        "setor": "Hemodinâmica - Sobreaviso Cardiologia",
-        "tipo_turno": "Hemodinâmica - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 3804,
-        "profissional": "Eduardo Henrique Borsatto",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 3804,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "06:00/14:00",
-        "phone": "",
-        "pos_x": 4142,
-        "profissional": "Geraldo Antunes Cordova",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 4479,
-        "profissional": "Rafael Cordeiro dos Santos",
-        "setor": "Neurocirurgia - Sobreaviso",
-        "tipo_turno": "Neurocirurgia - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 4816,
-        "profissional": "Cezar Tarabal de Oliveira",
-        "setor": "Neurologia/U-AVC Integral - Sobreaviso",
-        "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 5154,
-        "profissional": "Sergio Francisco Siepko Junior",
-        "setor": "Oftalmologia Sobreaviso",
-        "tipo_turno": "Sobreaviso Oftalmologia"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 5491,
-        "profissional": "Rafael Sales de Vasconcelos Ferreira",
-        "setor": "Ortopedia e Traumatologia - Sobreaviso",
-        "tipo_turno": "Ortopedia  Sobreaviso - Equipe 1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 5491,
-        "profissional": "Diego Finamor Nascimento",
-        "setor": "Ortopedia e Traumatologia - Sobreaviso",
-        "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/15:00",
-        "phone": "",
-        "pos_x": 5829,
-        "profissional": "Marina Costella Pasquali",
-        "setor": "Residência de Clínica Médica",
-        "tipo_turno": "Res. Clinica Méidica Intermediário"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/19:00",
-        "phone": "",
-        "pos_x": 5829,
-        "profissional": "Sofia Wanderley da Cunha Santos",
-        "setor": "Residência de Clínica Médica",
-        "tipo_turno": "Res. Clínica Médica"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/19:00",
-        "phone": "",
-        "pos_x": 6166,
-        "profissional": "Pedro Leonel Fucks da Veiga",
-        "setor": "Residência de Cirurgia Geral",
-        "tipo_turno": "DIA"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "João Henrique Peres",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Brenda Lesley Alves Capra",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "10:00/16:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 6841,
-        "profissional": "Mario Goto",
-        "setor": "Transplante - Sobreaviso Cirurgia",
-        "tipo_turno": "Cirurgia Geral - 1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 6841,
-        "profissional": "Juliano Ferneda",
-        "setor": "Transplante - Sobreaviso Cirurgia",
-        "tipo_turno": "Urologia"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:30/07:30",
-        "phone": "",
-        "pos_x": 7179,
-        "profissional": "Vicente Gregorio Restelli",
-        "setor": "Ultrassonografia - Sobreaviso",
-        "tipo_turno": "Ultrassonografia - Sobreaviso Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 7516,
-        "profissional": "Graziela Fatima Battistel",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 7854,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 8191,
-        "profissional": "Claudio Quinan Balestrin Neto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 8529,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/12:00",
-        "phone": "",
-        "pos_x": 8866,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/13:00",
-        "phone": "",
-        "pos_x": 8866,
-        "profissional": "Carlos Pinkner",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/07:00",
-        "phone": "",
-        "pos_x": 9204,
-        "profissional": "Lucas Alcir da Silva",
-        "setor": "Urologia Sobreaviso",
-        "tipo_turno": "Sobreaviso Urologia"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Maríndia Sitta",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Ana Claudia Cazzuni",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P2"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Maisa Miranda Cascaes",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Noturno - P1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 3129,
-        "profissional": "Fernanda Canello Modesti",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Noturno - P1"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 3804,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 3804,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Hospitalista",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "14:00/06:00",
-        "phone": "",
-        "pos_x": 4142,
-        "profissional": "Geraldo Antunes Cordova",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 5829,
-        "profissional": "Matheus Piton",
-        "setor": "Residência de Clínica Médica",
-        "tipo_turno": "Res. Clínica Médica Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 5829,
-        "profissional": "Fernanda Trevisan Zancan",
-        "setor": "Residência de Clínica Médica",
-        "tipo_turno": "Res. Clinica Méidica Intermediário"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 6166,
-        "profissional": "Ana Catarina Dantas Gomes",
-        "setor": "Residência de Cirurgia Geral",
-        "tipo_turno": "NOITE"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "João Henrique Peres",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Brenda Lesley Alves Capra",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "14:00/22:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Gabriela Sudbrack",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "16:00/22:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Bianca Soder  Wolschick",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 6504,
-        "profissional": "Maria Eduarda Wilvert",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 7516,
-        "profissional": "Dara Luiza Foppa",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 7516,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Finais de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 7516,
-        "profissional": "Dara Luiza Foppa",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 7854,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:30/14:30",
-        "phone": "",
-        "pos_x": 7854,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 7854,
-        "profissional": "Guilherme Assoni Gomes",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8191,
-        "profissional": "Claudio Quinan Balestrin Neto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "14:30/15:30",
-        "phone": "",
-        "pos_x": 8191,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 8191,
-        "profissional": "Eliana Iora Schneider",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8529,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:30/14:30",
-        "phone": "",
-        "pos_x": 8529,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 8529,
-        "profissional": "Claudio Quinan Balestrin Neto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "13:00/19:00",
-        "phone": "",
-        "pos_x": 8866,
-        "profissional": "Carlos Pinkner",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "19:00/07:00",
-        "phone": "",
-        "pos_x": 8866,
-        "profissional": "Fabiele Bandeira",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:00/08:00",
-        "phone": "",
-        "pos_x": 7516,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Finais de Semana Matutino"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:30/08:30",
-        "phone": "",
-        "pos_x": 7854,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "08:30/09:30",
-        "phone": "",
-        "pos_x": 8191,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "25 abril 2026",
-        "email": "",
-        "horario": "07:30/08:30",
-        "phone": "",
-        "pos_x": 8529,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      }
-    ],
-    "total": 70
-  },
-  "data_backup": "26/04/2026",
-  "hora_backup": "10:12"
+  "data_backup": "27/04/2026",
+  "hora_backup": "11:22"
 }
