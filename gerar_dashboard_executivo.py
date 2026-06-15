@@ -914,36 +914,40 @@ def gerar_dashboard():
             flex-wrap: wrap;
         }
 
+        /* Seletor de dia como toggle segmentado (botões conectados) */
         .date-selector {
-            display: flex;
-            gap: 10px;
+            display: inline-flex;
+            border: 2px solid #e8eef7;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
         }
 
         .date-btn {
             padding: 10px 18px;
             background: white;
-            border: 2px solid #e8eef7;
-            border-radius: 8px;
+            border: none;
+            border-left: 1px solid #e8eef7;
             cursor: pointer;
             font-size: 0.95em;
             font-weight: 500;
             color: #666;
-            transition: all 0.3s ease;
+            transition: background 0.2s ease, color 0.2s ease;
             font-family: 'Inter', sans-serif;
         }
 
+        .date-btn:first-child {
+            border-left: none;
+        }
+
         .date-btn:hover {
-            border-color: #0d3b66;
             color: #0d3b66;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
+            background: #f2f6fc;
         }
 
         .date-btn.active {
             background: #0d3b66;
             color: white;
-            border-color: #0d3b66;
-            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.2);
         }
 
         .search-section {
@@ -1155,6 +1159,12 @@ def gerar_dashboard():
 
         .contact-phone:hover {
             text-decoration: underline;
+        }
+
+        .contact-phone-vazio {
+            color: #999;
+            font-style: italic;
+            font-size: 0.9em;
         }
 
         /* Modal de Ramais */
@@ -1389,10 +1399,22 @@ def gerar_dashboard():
             letter-spacing: 0.5px;
         }
 
+        /* Setores em grid de 2 colunas; os de turno ocupam a linha inteira.
+           align-items:start evita que um card curto estique até a altura do vizinho. */
+        #categorias {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .category-full {
+            grid-column: 1 / -1;
+        }
+
         .category {
             background: var(--bg-secondary);
             border-radius: 12px;
-            margin-bottom: 20px;
             box-shadow: var(--shadow-md);
             overflow: hidden;
             transition: all 0.3s ease;
@@ -1441,14 +1463,12 @@ def gerar_dashboard():
 
         .categoria-toggle {
             color: #0d3b66;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
+            font-size: 1.4em;
+            line-height: 1;
             margin-left: auto;
             padding-left: 20px;
-        }
-
-        .categoria-header:not(.expanded) .categoria-toggle {
-            transform: rotate(180deg);
+            width: 1em;
+            text-align: center;
         }
 
         /* Botões de preferência do setor */
@@ -1456,7 +1476,7 @@ def gerar_dashboard():
             display: flex;
             gap: 4px;
             margin-left: 8px;
-            opacity: 0;
+            opacity: 0.35;
             transition: opacity 0.2s;
         }
         .categoria-header:hover .setor-pref-btns {
@@ -1483,8 +1503,33 @@ def gerar_dashboard():
         }
         .category.setor-favorito .categoria-nome { color: #92400e; }
 
-        /* Barra de setores ocultos */
+        /* Toast (aviso temporário) */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #0d3b66;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 9999;
+            max-width: 90vw;
+            text-align: center;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Barra de setores ocultos — ocupa a linha inteira do grid */
         .setores-ocultos-bar {
+            grid-column: 1 / -1;
             margin-top: 12px;
             padding: 10px 16px;
             background: #f8f9fa;
@@ -1555,6 +1600,7 @@ def gerar_dashboard():
             box-shadow: 0 2px 8px rgba(13, 59, 102, 0.1);
         }
 
+
         .turno-title {
             font-weight: 600;
             color: #0d3b66;
@@ -1592,7 +1638,7 @@ def gerar_dashboard():
         }
 
         .profissional {
-            padding: 12px;
+            padding: 10px 12px;
             background: var(--bg-secondary);
             border-radius: 6px;
             border: 1px solid var(--border-color);
@@ -1614,6 +1660,7 @@ def gerar_dashboard():
 
         .profissional-nome-wrapper {
             flex: 1;
+            min-width: 0;
         }
 
         .profissional-nome-text {
@@ -1626,30 +1673,20 @@ def gerar_dashboard():
             display: none;
         }
 
+        /* Horário logo abaixo do nome, alinhado sob o nome (após o ícone). */
         .profissional-info {
             font-size: 0.85em;
             color: #666;
             display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        .info-row {
-            display: flex;
             align-items: center;
             gap: 8px;
-            flex-wrap: wrap;
+            padding-left: 28px;
         }
 
-        .info-label {
-            font-weight: 500;
-            color: #999;
-            min-width: 65px;
-        }
-
-        .info-value {
+        .info-horario {
             color: #333;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
         }
 
         .turno-badge {
@@ -1933,11 +1970,22 @@ def gerar_dashboard():
                 grid-template-columns: 1fr;
             }
 
+            /* Mobile: setores em coluna única */
+            #categorias {
+                grid-template-columns: 1fr;
+            }
+
             .stats {
                 grid-template-columns: 1fr;
             }
 
+            .date-selector {
+                display: flex;
+                width: 100%;
+            }
+
             .date-btn {
+                flex: 1;
                 padding: 8px 12px;
                 font-size: 0.9em;
             }
@@ -2332,7 +2380,7 @@ def gerar_dashboard():
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()">Minimizar</button>
+                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()" title="Recolher ou expandir todos os setores">▾ Recolher tudo</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">Contatos</button>
                 <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">Ramais</button>
                 <button class="btn btn-print" onclick="window.print()">🖨 Imprimir</button>
@@ -2934,15 +2982,34 @@ def gerar_dashboard():
         function toggleOcultar(setor) {
             const prefs = getPrefs();
             const oIdx = prefs.ocultos.indexOf(setor);
+            let ocultou = false;
             if (oIdx === -1) {
                 prefs.ocultos.push(setor);
                 const fIdx = prefs.favoritos.indexOf(setor);
                 if (fIdx !== -1) prefs.favoritos.splice(fIdx, 1);
+                ocultou = true;
             } else {
                 prefs.ocultos.splice(oIdx, 1);
             }
             savePrefs(prefs);
             renderizarEscala();
+            if (ocultou) mostrarToast('Setor ocultado — reexiba na barra no rodapé da lista.');
+        }
+
+        // Aviso temporário no rodapé da tela
+        let _toastTimer = null;
+        function mostrarToast(msg) {
+            let t = document.getElementById('toast');
+            if (!t) {
+                t = document.createElement('div');
+                t.id = 'toast';
+                t.className = 'toast';
+                document.body.appendChild(t);
+            }
+            t.textContent = msg;
+            t.classList.add('show');
+            clearTimeout(_toastTimer);
+            _toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
         }
         // ─────────────────────────────────────────────────────────
 
@@ -3069,16 +3136,16 @@ def gerar_dashboard():
                     const turnosOrdenados = Object.keys(porTurno).sort((a, b) => turnoOrdem[a] - turnoOrdem[b]);
 
                     html += `
-                    <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
+                    <div class="category category-full${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
                         <div class="categoria-header expanded" onclick="toggleCategoria(this)">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${isFavorito ? '★ ' : ''}<span class="setor-nome-full">${setor}</span><span class="setor-nome-curto">${setor.replace(/\s*[-–]\s*(Sobreaviso|Plantão|Plantao).*$/i, '').trim()}</span></div>
                             </div>
                             <div class="setor-pref-btns" onclick="event.stopPropagation()">
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
-                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar setor">✕</button>
+                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar este setor da lista (reversível no rodapé)">✕</button>
                             </div>
-                            <div class="categoria-toggle">▲</div>
+                            <div class="categoria-toggle">▾</div>
                         </div>
                         <div class="categoria-content">
                             <div class="turnos-container">
@@ -3103,15 +3170,8 @@ def gerar_dashboard():
                                                         </div>
                                                     </div>
                                                     <div class="profissional-info">
-                                                        <div class="info-row">
-                                                            <span class="info-label">Setor:</span>
-                                                            <span class="info-value">${setor}</span>
-                                                        </div>
-                                                        <div class="info-row">
-                                                            <span class="info-label">Horário:</span>
-                                                            <span class="info-value">${prof.horario}</span>
-                                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
-                                                        </div>
+                                                        <span class="info-horario">${prof.horario}</span>
+                                                        <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
                                                     </div>
                                                 </div>
                                             `}).join('')}
@@ -3132,9 +3192,9 @@ def gerar_dashboard():
                             </div>
                             <div class="setor-pref-btns" onclick="event.stopPropagation()">
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
-                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar setor">✕</button>
+                                <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar este setor da lista (reversível no rodapé)">✕</button>
                             </div>
-                            <div class="categoria-toggle">▲</div>
+                            <div class="categoria-toggle">▾</div>
                         </div>
                         <div class="categoria-content">
                             <div class="profissionais-list">
@@ -3152,15 +3212,8 @@ def gerar_dashboard():
                                             </div>
                                         </div>
                                         <div class="profissional-info">
-                                            <div class="info-row">
-                                                <span class="info-label">Setor:</span>
-                                                <span class="info-value">${setor}</span>
-                                            </div>
-                                            <div class="info-row">
-                                                <span class="info-label">Horário:</span>
-                                                <span class="info-value">${prof.horario}</span>
-                                                <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
-                                            </div>
+                                            <span class="info-horario">${prof.horario}</span>
+                                            <span class="turno-badge ${obterTipoTurno(prof.tipo_turno, prof.horario)}" title="${prof.tipo_turno}">${formatarTipoBadge(obterTipoTurno(prof.tipo_turno, prof.horario))}</span>
                                         </div>
                                     </div>
                                 `}).join('')}
@@ -3244,9 +3297,11 @@ def gerar_dashboard():
         }
 
         function toggleCategoria(header) {
-            header.classList.toggle('expanded');
+            const aberto = header.classList.toggle('expanded');
             const content = header.nextElementSibling;
             content.classList.toggle('collapsed');
+            const toggle = header.querySelector('.categoria-toggle');
+            if (toggle) toggle.textContent = aberto ? '▾' : '▸';
         }
 
         let seccoesExpandidas = true;
@@ -3260,8 +3315,10 @@ def gerar_dashboard():
                 categorias.forEach(h => {
                     h.classList.remove('expanded');
                     h.nextElementSibling.classList.add('collapsed');
+                    const t = h.querySelector('.categoria-toggle');
+                    if (t) t.textContent = '▸';
                 });
-                btn.innerHTML = 'Expandir';
+                btn.innerHTML = '▸ Expandir tudo';
                 btn.classList.add('collapsed');
                 seccoesExpandidas = false;
             } else {
@@ -3269,8 +3326,10 @@ def gerar_dashboard():
                 categorias.forEach(h => {
                     h.classList.add('expanded');
                     h.nextElementSibling.classList.remove('collapsed');
+                    const t = h.querySelector('.categoria-toggle');
+                    if (t) t.textContent = '▾';
                 });
-                btn.innerHTML = 'Minimizar';
+                btn.innerHTML = '▾ Recolher tudo';
                 btn.classList.remove('collapsed');
                 seccoesExpandidas = true;
             }
@@ -3359,16 +3418,16 @@ def gerar_dashboard():
           );
 
           contactsList.innerHTML = profissionais.map(prof => {
-            const telefoneLimpo = prof.phone.replace(/\D/g, '');
+            const telefoneLimpo = (prof.phone || '').replace(/\D/g, '');
+            const temTelefone = telefoneLimpo.length >= 10;
             const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
+            const infoHtml = temTelefone
+              ? `<a href="${whatsappUrl}" target="_blank" class="contact-phone">${prof.phone}</a>`
+              : `<span class="contact-phone-vazio">Sem telefone cadastrado</span>`;
             return `
               <div class="contact-item">
                 <div class="contact-name">${prof.name}</div>
-                <div class="contact-info">
-                  <a href="${whatsappUrl}" target="_blank" class="contact-phone">
-                    ${prof.phone}
-                  </a>
-                </div>
+                <div class="contact-info">${infoHtml}</div>
               </div>
             `;
           }).join('');
