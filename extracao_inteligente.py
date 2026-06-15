@@ -412,8 +412,38 @@ class ExtractorInteligente:
         except Exception as e:
             print(f"[{datetime.now()}] ⚠️  Não foi possível ativar filtro de contato: {e}")
 
+    def navegar_proximo_dia(self):
+        """Clica na seta '>' do cabeçalho de data para avançar 1 dia.
+        Retorna (data_antes, data_depois); se forem iguais, a navegação falhou."""
+        antes = self.driver.execute_script(r"""
+          for(var e of document.querySelectorAll('*')){
+            if(e.childElementCount===0){var t=(e.textContent||'').trim();
+              if(/^\d{1,2}\s+[A-Za-zçÇ]+\s+\d{4}$/.test(t)) return t;}
+          }
+          return null;
+        """)
+        self.driver.execute_script(r"""
+          var cands=[];
+          for(var e of document.querySelectorAll('button,span,div,i,svg,a')){
+            var t=(e.textContent||'').trim();
+            var aria=(e.getAttribute('aria-label')||'');
+            if(t==='>'||/next|forward|chevron.?right|arrow.?right|proxim/i.test(aria)){ cands.push(e); }
+          }
+          if(cands.length){ cands[cands.length-1].click(); }
+        """)
+        time.sleep(4)
+        depois = self.driver.execute_script(r"""
+          for(var e of document.querySelectorAll('*')){
+            if(e.childElementCount===0){var t=(e.textContent||'').trim();
+              if(/^\d{1,2}\s+[A-Za-zçÇ]+\s+\d{4}$/.test(t)) return t;}
+          }
+          return null;
+        """)
+        return antes, depois
+
     def extrair_inteligente(self):
-        """Extrai dados do dia atual (ignorando tentar obter dia anterior via navegação)"""
+        """Extrai dados do dia ATUAL e do dia SEGUINTE (via navegação).
+        O dia ANTERIOR é preenchido pela lógica de rolling window (cache)."""
         print(f"[{datetime.now()}] 📊 Extraindo com análise de POSIÇÃO VISUAL (X coordinate)...")
 
         self.driver.get("https://escala.med.br/painel/#!/day_grid")
@@ -436,8 +466,22 @@ class ExtractorInteligente:
         resultado_atual = self.extrair_dia()
         print(f"[{datetime.now()}] ✅ Dia atual extraído: {resultado_atual['total']} registros")
 
+        # ===== EXTRAÇÃO DO DIA SEGUINTE (navega +1 dia) =====
+        resultado_seguinte = None
+        try:
+            print(f"[{datetime.now()}] ➡️  Navegando para o dia SEGUINTE...")
+            antes, depois = self.navegar_proximo_dia()
+            if antes and depois and antes != depois:
+                resultado_seguinte = self.extrair_dia()
+                print(f"[{datetime.now()}] ✅ Dia seguinte extraído ({depois}): {resultado_seguinte['total']} registros")
+            else:
+                print(f"[{datetime.now()}] ⚠️  Navegação não avançou (antes={antes}, depois={depois}); dia seguinte ignorado")
+        except Exception as e:
+            print(f"[{datetime.now()}] ⚠️  Erro ao extrair dia seguinte: {e}")
+
         return {
             'atual': resultado_atual,
+            'seguinte': resultado_seguinte,
             'anterior': None  # Será preenchido pela lógica de rolling window
         }
 
@@ -706,6 +750,25 @@ def main():
         else:
             # Primeira execução ou arquivo perdido
             output['anterior'] = {
+                'data': 'N/A',
+                'data_simples': '00/00/0000',
+                'registros': [],
+                'total': 0
+            }
+
+        # Adiciona dados do dia seguinte (extraído ao vivo navegando +1 dia)
+        resultado_seguinte = resultados.get('seguinte')
+        if resultado_seguinte and resultado_seguinte.get('registros'):
+            for reg in resultado_seguinte['registros']:
+                reg['setor'] = corrigir_portugues(reg['setor'])
+            output['seguinte'] = {
+                'data': resultado_seguinte['data'],
+                'data_simples': extrair_data_simples(resultado_seguinte['data']),
+                'registros': resultado_seguinte['registros'],
+                'total': len(resultado_seguinte['registros'])
+            }
+        else:
+            output['seguinte'] = {
                 'data': 'N/A',
                 'data_simples': '00/00/0000',
                 'registros': [],

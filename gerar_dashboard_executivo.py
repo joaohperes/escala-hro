@@ -493,6 +493,12 @@ def gerar_dashboard():
     escalas_str = escalas_str.replace('Méidica', 'Médica')
     escalas = json_lib.loads(escalas_str)
 
+    # Garante que 'anterior' e 'seguinte' existam (algumas fontes de fallback
+    # só trazem 'atual'); evita erro no dashboard ao trocar de dia.
+    for _dia in ('anterior', 'seguinte'):
+        if not isinstance(escalas.get(_dia), dict) or 'registros' not in (escalas.get(_dia) or {}):
+            escalas[_dia] = {'data': 'N/A', 'data_simples': '00/00/0000', 'registros': [], 'total': 0}
+
     # Procurar arquivo de profissionais
     prof_paths = [
         'profissionais_autenticacao.json',
@@ -1325,6 +1331,11 @@ def gerar_dashboard():
             height: 10px;
             border-radius: 50%;
             display: inline-block;
+        }
+
+        .update-status-text {
+            font-size: 0.85em;
+            color: var(--text-secondary);
         }
 
         .update-status-indicator.sucesso {
@@ -2250,24 +2261,10 @@ def gerar_dashboard():
         <div class="auth-modal-content">
             <h2>Acesso Restrito</h2>
 
-            <!-- Abas de Autenticação -->
-            <div class="auth-tabs">
-                <button class="auth-tab-btn active" onclick="trocarAbaAuth('profissional')">Profissional</button>
-                <button class="auth-tab-btn" onclick="trocarAbaAuth('outro')">Outro Usuário</button>
-            </div>
-
-            <!-- Conteúdo: Profissional -->
-            <div id="auth-content-profissional" class="auth-tab-content active">
-                <p>Entre com seu email ou últimos 4 dígitos do telefone cadastrado no app Escalas.</p>
-                <input type="text" id="auth-input-prof" placeholder="Email ou últimos 4 dígitos do telefone" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarProfissional()">
-                <button onclick="autenticarProfissional()" class="auth-btn">Acessar</button>
-                <p id="auth-error-prof" class="auth-error"></p>
-            </div>
-
-            <!-- Conteúdo: Outro Usuário -->
-            <div id="auth-content-outro" class="auth-tab-content">
-                <p>Acesso para administrativo, enfermagem e outros usuários.</p>
-                <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se você não possui acesso, entre em contato conosco para solicitar a senha.</p>
+            <!-- Login único por senha geral -->
+            <div class="auth-tab-content active">
+                <p>Digite a senha de acesso para visualizar a escala.</p>
+                <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se você não possui a senha, entre em contato conosco para solicitá-la.</p>
                 <input type="password" id="auth-input-outro" placeholder="Digite a senha" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarOutro()">
                 <button onclick="autenticarOutro()" class="auth-btn">Acessar</button>
                 <p id="auth-error-outro" class="auth-error"></p>
@@ -2329,6 +2326,7 @@ def gerar_dashboard():
             <div class="date-selector">
                 <button class="date-btn" data-dia="anterior" onclick="selecionarDia('anterior')">Dia Anterior</button>
                 <button class="date-btn active" data-dia="atual" onclick="selecionarDia('atual')">Hoje</button>
+                <button class="date-btn" data-dia="seguinte" onclick="selecionarDia('seguinte')">Amanhã</button>
             </div>
             <div class="search-section">
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
@@ -2353,6 +2351,7 @@ def gerar_dashboard():
         <!-- Status de Atualização -->
         <div class="last-update">
             <span class="update-status-indicator" id="status-indicator"></span>
+            <span class="update-status-text" id="status-text"></span>
         </div>
 
         <!-- Estatísticas -->
@@ -2377,7 +2376,7 @@ def gerar_dashboard():
         } catch (e) {
             console.error('❌ Erro ao parsear dados de escalas:', e.message);
             console.error('Stack:', e.stack);
-            escalas = { atual: { data: 'Erro', registros: [] }, anterior: { data: 'Erro', registros: [] }, data_atualizacao: 'N/A', hora_atualizacao: 'N/A', status_atualizacao: 'erro' };
+            escalas = { atual: { data: 'Erro', registros: [] }, anterior: { data: 'Erro', registros: [] }, seguinte: { data: 'Erro', registros: [] }, data_atualizacao: 'N/A', hora_atualizacao: 'N/A', status_atualizacao: 'erro' };
         }
 
         try {
@@ -2551,23 +2550,6 @@ def gerar_dashboard():
                 fecharDiretorioRamais();
             }
         });
-
-        function trocarAbaAuth(aba) {
-            // Trocar aba ativa
-            document.querySelectorAll('.auth-tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.auth-tab-content').forEach(content => content.classList.remove('active'));
-
-            if (aba === 'profissional') {
-                document.querySelector('.auth-tab-btn:first-child').classList.add('active');
-                document.getElementById('auth-content-profissional').classList.add('active');
-            } else {
-                document.querySelector('.auth-tab-btn:last-child').classList.add('active');
-                document.getElementById('auth-content-outro').classList.add('active');
-            }
-
-            // Limpar mensagens de erro
-            document.querySelectorAll('.auth-error').forEach(err => err.classList.remove('show'));
-        }
 
         function filtrarProfissionais() {
             const search = document.getElementById('search').value.toLowerCase().trim();
@@ -2994,6 +2976,17 @@ def gerar_dashboard():
                 document.getElementById('data-selecionada').textContent = dados.data;
                 document.getElementById('print-date-display').textContent = dados.data;
 
+                // Dia sem dados (ex: "Amanhã" ainda não disponível): mostra aviso
+                if (dados.registros.length === 0) {
+                    const rotuloDia = diaSelecionado === 'seguinte' ? 'do dia seguinte'
+                                    : diaSelecionado === 'anterior' ? 'do dia anterior' : 'deste dia';
+                    document.getElementById('stats').innerHTML = '';
+                    document.getElementById('categorias').innerHTML =
+                        '<p style="text-align:center;color:#666;padding:40px 20px;">A escala ' + rotuloDia +
+                        ' ainda não está disponível.</p>';
+                    return;
+                }
+
             // Mostrar indicador de status (dot colorido)
             const statusAtualizacao = escalas.status_atualizacao;
             const statusIndicator = document.getElementById('status-indicator');
@@ -3005,6 +2998,16 @@ def gerar_dashboard():
                 statusIndicator.classList.add('pendente');
             } else {
                 statusIndicator.classList.add('erro');
+            }
+
+            // Texto com data/hora da última atualização
+            const statusText = document.getElementById('status-text');
+            if (statusText) {
+                const dataAtu = escalas.data_atualizacao || 'N/A';
+                const horaAtu = escalas.hora_atualizacao || '';
+                statusText.textContent = horaAtu
+                    ? `Atualizado em ${dataAtu} às ${horaAtu}`
+                    : `Atualizado em ${dataAtu}`;
             }
 
             const porSetor = {};
@@ -3290,37 +3293,7 @@ def gerar_dashboard():
         });
 
         // Autenticar como Profissional
-        function autenticarProfissional() {
-          const input = document.getElementById('auth-input-prof').value.toLowerCase().trim();
-          const errorMsg = document.getElementById('auth-error-prof');
-
-          if (!input) {
-            errorMsg.textContent = 'Digite seu email ou telefone';
-            errorMsg.classList.add('show');
-            return;
-          }
-
-          // Procura na lista de profissionais
-          const encontrado = profissionaisData.professionals.some(prof => {
-            return prof.email.toLowerCase() === input || prof.last4 === input;
-          });
-
-          if (encontrado) {
-            // Salva autenticação persistente
-            localStorage.setItem('authenticated', 'true');
-            localStorage.setItem('auth_user', input);
-            // Esconde o modal e remove blur
-            document.getElementById('auth-modal').classList.add('hidden');
-            document.getElementById('main-content').classList.remove('blurred');
-            errorMsg.classList.remove('show');
-          } else {
-            errorMsg.textContent = 'Email ou telefone não encontrado';
-            errorMsg.classList.add('show');
-            document.getElementById('auth-input-prof').value = '';
-          }
-        }
-
-        // Autenticar como Outro Usuário
+        // Autenticar com senha geral
         function autenticarOutro() {
           const senha = document.getElementById('auth-input-outro').value.trim();
           const errorMsg = document.getElementById('auth-error-outro');

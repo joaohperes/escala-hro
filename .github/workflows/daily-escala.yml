@@ -1,10 +1,14 @@
 name: Atualizar Escala Diária HRO
 
 on:
-  # Executa todos os dias às 4h00 (horário de Brasília = 7h00 UTC)
-  # Agendado 30min antes para compensar atraso típico do GitHub Actions
+  # Executa 3x ao dia (horário de Brasília = UTC-3) para capturar trocas de plantão.
+  #  - 04h00 BRT (07h00 UTC) → atualização da madrugada
+  #  - 12h00 BRT (15h00 UTC) → meio-dia (pega trocas da manhã)
+  #  - 18h00 BRT (21h00 UTC) → fim de tarde (pega trocas do dia)
   schedule:
     - cron: '0 7 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 21 * * *'
 
   # Permite execução manual para testes
   workflow_dispatch:
