@@ -64,6 +64,26 @@ def carregar_ramais_data():
 
 class ExtractorInteligente:
     def __init__(self, headless=True):
+        # Backend de browser: 'chrome' (padrão, usado no GitHub Actions) ou 'safari'
+        # (para rodar localmente em Macs sem Chrome). Toda a extração usa JS via
+        # execute_script, então o motor é indiferente para os dados.
+        browser = os.getenv('ESCALA_BROWSER', 'chrome').lower()
+        if browser == 'safari':
+            print("🧭 Usando Safari (safaridriver) como backend...")
+            # safaridriver às vezes falha com "unexpectedly exited" quando uma
+            # sessão anterior ficou presa. Tenta algumas vezes com pausa.
+            ultima_excecao = None
+            for tentativa in range(1, 4):
+                try:
+                    self.driver = webdriver.Safari()
+                    self.driver.set_window_size(1600, 1000)
+                    return
+                except Exception as e:
+                    ultima_excecao = e
+                    print(f"   ⚠️  Tentativa {tentativa}/3 de iniciar Safari falhou; aguardando...")
+                    time.sleep(5)
+            raise ultima_excecao
+
         chrome_options = Options()
         if headless:
             chrome_options.add_argument('--headless=new')
@@ -344,6 +364,54 @@ class ExtractorInteligente:
         resultado = self.driver.execute_script(js_inteligente)
         return resultado
 
+    def ativar_filtro_contato(self):
+        """Abre o painel de Filtros e marca 'Mostrar informações de contato do
+        plantonista', sem o qual telefone/email não aparecem na grade.
+        Idempotente: se já estiver marcado, não faz nada."""
+        try:
+            # Abre o painel de Filtros
+            self.driver.execute_script(r"""
+              for (var e of document.querySelectorAll('button,div,span,a')){
+                if((e.textContent||'').trim()==='Filtros'){ e.click(); return true; }
+              }
+              return false;
+            """)
+            time.sleep(2)
+
+            # Marca o checkbox de contato (por texto; fallback: 2º checkbox)
+            marcado = self.driver.execute_script(r"""
+              function rowText(c){
+                var n=c;
+                for(var i=0;i<6;i++){ if(!n) break;
+                  var t=(n.textContent||'').trim();
+                  if(t.length>3) return t.slice(0,70);
+                  n=n.parentElement;
+                }
+                return '';
+              }
+              var cbs=Array.from(document.querySelectorAll("input[type='checkbox']"));
+              for (var c of cbs){
+                if(rowText(c).toLowerCase().includes('contato')){
+                  if(!c.checked) c.click();
+                  return rowText(c);
+                }
+              }
+              if(cbs.length>1){ if(!cbs[1].checked) cbs[1].click(); return 'idx1'; }
+              return null;
+            """)
+            time.sleep(3)
+            print(f"[{datetime.now()}] 📞 Filtro de contato ativado: {marcado}")
+
+            # Fecha o painel de Filtros para não cobrir a grade (clica de novo)
+            self.driver.execute_script(r"""
+              for (var e of document.querySelectorAll('button,div,span,a')){
+                if((e.textContent||'').trim()==='Filtros'){ e.click(); return; }
+              }
+            """)
+            time.sleep(2)
+        except Exception as e:
+            print(f"[{datetime.now()}] ⚠️  Não foi possível ativar filtro de contato: {e}")
+
     def extrair_inteligente(self):
         """Extrai dados do dia atual (ignorando tentar obter dia anterior via navegação)"""
         print(f"[{datetime.now()}] 📊 Extraindo com análise de POSIÇÃO VISUAL (X coordinate)...")
@@ -358,6 +426,10 @@ class ExtractorInteligente:
                 self.driver.switch_to.frame(iframes[0])
         except:
             pass
+
+        # ===== ATIVAR FILTRO "MOSTRAR INFORMAÇÕES DE CONTATO" =====
+        # Sem este filtro o site não renderiza telefone/email nos cards.
+        self.ativar_filtro_contato()
 
         # ===== EXTRAÇÃO DO DIA ATUAL =====
         print(f"[{datetime.now()}] 📅 Extraindo dados do dia ATUAL...")
