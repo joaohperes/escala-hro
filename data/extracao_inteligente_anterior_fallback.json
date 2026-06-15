@@ -245,16 +245,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "mspfaffenzeller@gmail.com",
-        "horario": "16:00/22:00",
-        "phone": "(48) 98415-0811",
-        "pos_x": 8172,
-        "profissional": "Marta Schmidt Pfaffenzeller",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "brunaraquelkessler@gmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99911-2258",
@@ -732,6 +722,16 @@
         "profissional": "Fabio Rosalvo Urnau",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "mspfaffenzeller@gmail.com",
+        "horario": "16:00/22:00",
+        "phone": "(48) 98415-0811",
+        "pos_x": 8172,
+        "profissional": "Marta Schmidt Pfaffenzeller",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "15 junho 2026",
@@ -1654,5 +1654,5 @@
     "total": 72
   },
   "data_backup": "15/06/2026",
-  "hora_backup": "19:03"
+  "hora_backup": "23:05"
 }
