@@ -2261,11 +2261,11 @@ def gerar_dashboard():
         <div class="auth-modal-content">
             <h2>Acesso Restrito</h2>
 
-            <!-- Login único por senha geral -->
+            <!-- Login único: aceita os 4 últimos dígitos do telefone OU a senha geral -->
             <div class="auth-tab-content active">
-                <p>Digite a senha de acesso para visualizar a escala.</p>
-                <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se você não possui a senha, entre em contato conosco para solicitá-la.</p>
-                <input type="password" id="auth-input-outro" placeholder="Digite a senha" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarOutro()">
+                <p>Digite os <strong>4 últimos dígitos do seu telefone</strong> (cadastrado no app Escalas) ou a senha de acesso.</p>
+                <p style="color: #666; font-size: 0.9em; margin: 15px 0;">Se não conseguir acessar, entre em contato conosco.</p>
+                <input type="password" id="auth-input-outro" placeholder="4 dígitos do telefone ou senha" class="auth-input" onkeypress="if(event.key === 'Enter') autenticarOutro()">
                 <button onclick="autenticarOutro()" class="auth-btn">Acessar</button>
                 <p id="auth-error-outro" class="auth-error"></p>
             </div>
@@ -3292,29 +3292,35 @@ def gerar_dashboard():
             mapaProfissionais[prof.name.toLowerCase()] = prof;
         });
 
-        // Autenticar como Profissional
-        // Autenticar com senha geral
+        // Autenticar: aceita a senha geral OU os 4 últimos dígitos do telefone
+        // de qualquer profissional cadastrado (preserva o hábito antigo de login).
         function autenticarOutro() {
-          const senha = document.getElementById('auth-input-outro').value.trim();
+          const input = document.getElementById('auth-input-outro').value.trim();
           const errorMsg = document.getElementById('auth-error-outro');
           const senhaCorreta = 'HRO-ALVF';
 
-          if (!senha) {
-            errorMsg.textContent = 'Digite a senha';
+          if (!input) {
+            errorMsg.textContent = 'Digite os 4 dígitos do telefone ou a senha';
             errorMsg.classList.add('show');
             return;
           }
 
-          if (senha === senhaCorreta) {
-            // Salva autenticação persistente
+          // Aceita a senha geral (case-insensitive) ...
+          const senhaOk = input.toLowerCase() === senhaCorreta.toLowerCase();
+          // ... ou os 4 últimos dígitos de algum profissional cadastrado.
+          const digitos = input.replace(/\D/g, '');
+          const last4Ok = digitos.length === 4 && (profissionaisData.professionals || []).some(
+            prof => (prof.last4 || '') === digitos
+          );
+
+          if (senhaOk || last4Ok) {
             localStorage.setItem('authenticated', 'true');
-            localStorage.setItem('auth_user', 'admin');
-            // Esconde o modal e remove blur
+            localStorage.setItem('auth_user', senhaOk ? 'admin' : digitos);
             document.getElementById('auth-modal').classList.add('hidden');
             document.getElementById('main-content').classList.remove('blurred');
             errorMsg.classList.remove('show');
           } else {
-            errorMsg.textContent = 'Senha incorreta';
+            errorMsg.textContent = 'Telefone ou senha não reconhecidos';
             errorMsg.classList.add('show');
             document.getElementById('auth-input-outro').value = '';
           }
