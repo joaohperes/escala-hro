@@ -75,16 +75,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 2785,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "ferscort@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(54) 98152-8500",
@@ -255,16 +245,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 8172,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "eliasmbvalgoi@gmail.com",
         "horario": "09:00/18:00",
         "phone": "(49) 99128-6861",
@@ -275,21 +255,21 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "lkrasniak@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(48) 99994-9854",
-        "pos_x": 8172,
-        "profissional": "Lais Cristine Krasniak",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "mouralock@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99147-0666",
         "pos_x": 8172,
         "profissional": "Leonardo Moura Lock",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8172,
+        "profissional": "Paulo Filipe Pereira",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
       },
@@ -312,6 +292,16 @@
         "profissional": "Fabio Rosalvo Urnau",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "mspfaffenzeller@gmail.com",
+        "horario": "16:00/22:00",
+        "phone": "(48) 98415-0811",
+        "pos_x": 8172,
+        "profissional": "Marta Schmidt Pfaffenzeller",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "15 junho 2026",
@@ -365,16 +355,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98856-4909",
-        "pos_x": 9519,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "szepilowsk@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 98821-0652",
@@ -392,16 +372,6 @@
         "profissional": "Hellen Katya Wiebbelling",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "15 junho 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10192,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina"
       },
       {
         "data": "15 junho 2026",
@@ -555,16 +525,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "mspfaffenzeller@gmail.com",
-        "horario": "16:00/22:00",
-        "phone": "(48) 98415-0811",
-        "pos_x": 8172,
-        "profissional": "Marta Schmidt Pfaffenzeller",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "brunaraquelkessler@gmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99911-2258",
@@ -695,16 +655,6 @@
       },
       {
         "data": "15 junho 2026",
-        "email": "emelinemoreira@hotmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99958-0101",
-        "pos_x": 2785,
-        "profissional": "Emeline Moreira Cabral",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "15 junho 2026",
         "email": "brunoootrevisan@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(55) 99976-0748",
@@ -722,6 +672,26 @@
         "profissional": "Barbara Anahy Vinhas Bazzano",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "emelinemoreira@hotmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99958-0101",
+        "pos_x": 2785,
+        "profissional": "Emeline Moreira Cabral",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 2785,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
       },
       {
         "data": "15 junho 2026",
@@ -825,6 +795,16 @@
       },
       {
         "data": "15 junho 2026",
+        "email": "lkrasniak@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(48) 99994-9854",
+        "pos_x": 8172,
+        "profissional": "Lais Cristine Krasniak",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 junho 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/13:00",
         "phone": "(41) 98853-1590",
@@ -855,6 +835,16 @@
       },
       {
         "data": "15 junho 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98856-4909",
+        "pos_x": 9519,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "15 junho 2026",
         "email": "allands@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99903-2582",
@@ -882,6 +872,16 @@
         "profissional": "Emanuel Felipe Vieira Luz",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "15 junho 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10192,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina"
       },
       {
         "data": "15 junho 2026",
@@ -1654,5 +1654,5 @@
     "total": 72
   },
   "data_backup": "15/06/2026",
-  "hora_backup": "14:09"
+  "hora_backup": "16:48"
 }
