@@ -235,16 +235,6 @@
       },
       {
         "data": "16 junho 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "16:00/22:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8172,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "16 junho 2026",
         "email": "matheustoldok@hotmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99978-3320",
@@ -762,6 +752,16 @@
         "profissional": "Vanessa Vitoria Kerkhoff",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "16 junho 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "16:00/22:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8172,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "16 junho 2026",
@@ -1884,5 +1884,5 @@
     "total": 92
   },
   "data_backup": "16/06/2026",
-  "hora_backup": "19:08"
+  "hora_backup": "22:58"
 }
