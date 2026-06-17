@@ -15,16 +15,6 @@
       },
       {
         "data": "17 junho 2026",
-        "email": "drakaliandrapediatra@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(49) 98813-7205",
-        "pos_x": 429,
-        "profissional": "Kaliandra de Almeida",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "17 junho 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "09:00/13:00",
         "phone": "(49) 99116-3404",
@@ -92,46 +82,6 @@
         "profissional": "Gabriel Roberto Radaelli",
         "setor": "Cirurgia Vascular - Sobreaviso",
         "tipo_turno": "Vascular Sobreaviso"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "eduardo.fg.pneumo@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99914-9150",
-        "pos_x": 2785,
-        "profissional": "Eduardo Formoso Goldschimidt",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "emelinemoreira@hotmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99958-0101",
-        "pos_x": 2785,
-        "profissional": "Emeline Moreira Cabral",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 2785,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/11:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 2785,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
       {
         "data": "17 junho 2026",
@@ -455,17 +405,7 @@
       },
       {
         "data": "17 junho 2026",
-        "email": "emelyjorge@gmail.com",
-        "horario": "07:00/12:00",
-        "phone": "(41) 99708-0037",
-        "pos_x": 10529,
-        "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "emelyjorge@gmail.com",
+        "email": "fernandafornari@yahoo.com.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99917-5310",
         "pos_x": 10529,
@@ -482,16 +422,6 @@
         "profissional": "Luiz Felipe Reis Carvalho Sordi",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "17 junho 2026",
-        "email": "fernandafornari@yahoo.com.br",
-        "horario": "08:00/12:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 10866,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "17 junho 2026",
@@ -915,6 +845,56 @@
       },
       {
         "data": "17 junho 2026",
+        "email": "drakaliandrapediatra@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(49) 98813-7205",
+        "pos_x": 429,
+        "profissional": "Kaliandra de Almeida",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "eduardo.fg.pneumo@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99914-9150",
+        "pos_x": 2785,
+        "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "emelinemoreira@hotmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99958-0101",
+        "pos_x": 2785,
+        "profissional": "Emeline Moreira Cabral",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 2785,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/11:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 2785,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "17 junho 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99116-3404",
@@ -922,6 +902,26 @@
         "profissional": "Patricia Carla De Lima",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "emelyjorge@gmail.com",
+        "horario": "07:00/12:00",
+        "phone": "(41) 99708-0037",
+        "pos_x": 10529,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "17 junho 2026",
+        "email": "drakaliandrapediatra@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 10866,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 92
@@ -1884,5 +1884,5 @@
     "total": 95
   },
   "data_backup": "17/06/2026",
-  "hora_backup": "10:29"
+  "hora_backup": "12:06"
 }
