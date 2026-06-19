@@ -145,13 +145,13 @@
       },
       {
         "data": "19 junho 2026",
-        "email": "marina.omoschetta@gmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99987-7277",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 4469,
-        "profissional": "Marina Oliboni Moschetta",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "19 junho 2026",
@@ -465,16 +465,6 @@
       },
       {
         "data": "19 junho 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 4469,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "19 junho 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "17:00/19:00",
         "phone": "(49) 99116-3404",
@@ -762,6 +752,16 @@
         "profissional": "Matheus Antonio Baccin",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "19 junho 2026",
+        "email": "marina.omoschetta@gmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99987-7277",
+        "pos_x": 4469,
+        "profissional": "Marina Oliboni Moschetta",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "19 junho 2026",
@@ -1874,5 +1874,5 @@
     "total": 95
   },
   "data_backup": "19/06/2026",
-  "hora_backup": "13:01"
+  "hora_backup": "14:09"
 }
