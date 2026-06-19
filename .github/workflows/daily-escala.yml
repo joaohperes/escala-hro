@@ -2,21 +2,30 @@ name: Atualizar Escala Diária HRO
 
 on:
   # Horário de Brasília = UTC-3.
-  # REQUISITO: a escala do dia precisa estar atualizada entre 05h e 07h BRT, pois
-  # é quando o plantonista entra. Como o GitHub Actions atrasa/enfileira crons
-  # (chegou a atrasar 5h+ um cron em hora cheia), garantimos a janela da manhã com
-  # VÁRIAS tentativas escalonadas na madrugada — mesmo que alguma atrase, outra cai
-  # entre 05h e 07h. Usamos minutos "quebrados" (fora de :00) que sofrem bem menos atraso.
+  # REQUISITO: a escala do dia precisa estar atualizada ATÉ 07h15 BRT, pois
+  # é quando o plantonista entra.
   #
-  # JANELA DA MANHÃ (alvo 05h–07h BRT):
-  #  - 04h32 BRT (07h32 UTC) → tentativa cedo
-  #  - 05h32 BRT (08h32 UTC) → alvo principal, dentro da janela
-  #  - 06h32 BRT (09h32 UTC) → reforço, ainda dentro da janela
-  # RESTANTE DO DIA (trocas de plantão):
-  #  - 12h47 BRT (15h47 UTC) → meio-dia
-  #  - 18h17 BRT (21h17 UTC) → fim de tarde
+  # GATILHO PRINCIPAL (garantia do horário): repository_dispatch acionado por um
+  # agendador EXTERNO confiável (ex: cron-job.org), que dispara num horário fixo
+  # sem sofrer a fila/atraso do GitHub Actions. Configure o agendador para chamar:
+  #   POST https://api.github.com/repos/<owner>/<repo>/dispatches
+  #   Header: Authorization: Bearer <PAT com escopo repo>
+  #   Header: Accept: application/vnd.github+json
+  #   Body:   {"event_type": "escala-update"}
+  # Agende-o, p.ex., às 06h45 BRT (com margem para os ~3-5min de execução do job).
+  #
+  # FALLBACK: os crons abaixo continuam como rede de segurança. O GitHub atrasa/
+  # enfileira crons (já atrasou 5h+ em hora cheia), por isso NÃO confiamos neles
+  # para o SLA — quem garante as 07h15 é o gatilho externo. Minutos "quebrados"
+  # (fora de :00) sofrem menos atraso.
+  #  - 05h32 BRT (08h32 UTC) → reforço manhã
+  #  - 06h32 BRT (09h32 UTC) → reforço manhã
+  #  - 12h47 BRT (15h47 UTC) → meio-dia (troca de plantão)
+  #  - 18h17 BRT (21h17 UTC) → fim de tarde (troca de plantão)
+  repository_dispatch:
+    types: [escala-update]
+
   schedule:
-    - cron: '32 7 * * *'
     - cron: '32 8 * * *'
     - cron: '32 9 * * *'
     - cron: '47 15 * * *'
