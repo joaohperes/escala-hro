@@ -355,16 +355,6 @@
       },
       {
         "data": "21 junho 2026",
-        "email": "lisebeatriz@yahoo.com.br",
-        "horario": "07:00/12:00",
-        "phone": "(41) 99951-6066",
-        "pos_x": 9529,
-        "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "21 junho 2026",
         "email": "carlospinkner@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 99117-0062",
@@ -375,23 +365,13 @@
       },
       {
         "data": "21 junho 2026",
-        "email": "fernandakamei@gmail.com",
+        "email": "marciambergamo@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(92) 98113-2728",
         "pos_x": 9866,
         "profissional": "Luiz Felipe Reis Carvalho Sordi",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "21 junho 2026",
-        "email": "fernandakamei@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(27) 98120-0880",
-        "pos_x": 9866,
-        "profissional": "Fernanda Marcenes Kamei",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "21 junho 2026",
@@ -792,6 +772,26 @@
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "21 junho 2026",
+        "email": "lisebeatriz@yahoo.com.br",
+        "horario": "07:00/12:00",
+        "phone": "(41) 99951-6066",
+        "pos_x": 9529,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "21 junho 2026",
+        "email": "fernandakamei@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(27) 98120-0880",
+        "pos_x": 9866,
+        "profissional": "Fernanda Marcenes Kamei",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 79
@@ -1614,5 +1614,5 @@
     "total": 81
   },
   "data_backup": "21/06/2026",
-  "hora_backup": "11:31"
+  "hora_backup": "12:01"
 }
