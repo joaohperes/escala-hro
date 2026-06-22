@@ -325,6 +325,16 @@
       },
       {
         "data": "22 junho 2026",
+        "email": "lkrasniak@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(48) 99994-9854",
+        "pos_x": 8172,
+        "profissional": "Lais Cristine Krasniak",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "22 junho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -695,16 +705,6 @@
       },
       {
         "data": "22 junho 2026",
-        "email": "lkrasniak@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(48) 99994-9854",
-        "pos_x": 8172,
-        "profissional": "Lais Cristine Krasniak",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "22 junho 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -865,11 +865,11 @@
       },
       {
         "data": "22 junho 2026",
-        "email": "guiligomes@outlook.com",
+        "email": "seidlercesar@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(54) 99198-4729",
+        "phone": "(49) 98808-0201",
         "pos_x": 10192,
-        "profissional": "Guilherme Assoni Gomes",
+        "profissional": "Cesar Augusto Seidler Junior",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Noturno"
       },
@@ -1724,5 +1724,5 @@
     "total": 79
   },
   "data_backup": "22/06/2026",
-  "hora_backup": "09:46"
+  "hora_backup": "10:46"
 }
