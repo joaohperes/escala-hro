@@ -8,7 +8,7 @@ import os
 import json
 import time
 import shutil
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -733,8 +733,8 @@ def main():
                 'registros': registros_atual,
                 'total': len(registros_atual)
             },
-            'data_atualizacao': datetime.now().strftime('%d/%m/%Y'),
-            'hora_atualizacao': datetime.now().strftime('%H:%M'),
+            'data_atualizacao': datetime.now(timezone(timedelta(hours=-3))).strftime('%d/%m/%Y'),
+            'hora_atualizacao': datetime.now(timezone(timedelta(hours=-3))).strftime('%H:%M'),
             'status_atualizacao': 'sucesso'
         }
 
@@ -785,8 +785,8 @@ def main():
         backup_para_amanha = {
             'atual': output['atual'],
             'anterior': output['anterior'],  # Mantém a cadeia de histórico
-            'data_backup': datetime.now().strftime('%d/%m/%Y'),
-            'hora_backup': datetime.now().strftime('%H:%M')
+            'data_backup': datetime.now(timezone(timedelta(hours=-3))).strftime('%d/%m/%Y'),
+            'hora_backup': datetime.now(timezone(timedelta(hours=-3))).strftime('%H:%M')
         }
 
         # Salvar em /tmp (temporário) e no repositório (persistente)
