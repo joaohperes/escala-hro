@@ -245,26 +245,6 @@
       },
       {
         "data": "23 junho 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 8172,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "23 junho 2026",
-        "email": "eliasmbvalgoi@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99128-6861",
-        "pos_x": 8172,
-        "profissional": "Elias Matheus Baggio Valgoi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "23 junho 2026",
         "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99835-1563",
@@ -295,6 +275,16 @@
       },
       {
         "data": "23 junho 2026",
+        "email": "brenda.capra@gmail.com",
+        "horario": "18:00/00:00",
+        "phone": "(55) 99673-6272",
+        "pos_x": 8172,
+        "profissional": "Brenda Lesley Alves Capra",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO"
+      },
+      {
+        "data": "23 junho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -322,6 +312,16 @@
         "profissional": "Juliano Ferneda",
         "setor": "Transplante - Sobreaviso Cirurgia",
         "tipo_turno": "Urologia"
+      },
+      {
+        "data": "23 junho 2026",
+        "email": "zorzettoj@bol.com.br",
+        "horario": "18:30/07:30",
+        "phone": "(49) 99912-7995",
+        "pos_x": 8846,
+        "profissional": "João Roberto Munhoz Zorzetto",
+        "setor": "Ultrassonografia - Sobreaviso",
+        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "23 junho 2026",
@@ -485,16 +485,6 @@
       },
       {
         "data": "23 junho 2026",
-        "email": "brenda.capra@gmail.com",
-        "horario": "18:00/00:00",
-        "phone": "(55) 99673-6272",
-        "pos_x": 8172,
-        "profissional": "Brenda Lesley Alves Capra",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO"
-      },
-      {
-        "data": "23 junho 2026",
         "email": "guiligomes@outlook.com",
         "horario": "19:00/07:00",
         "phone": "(54) 99198-4729",
@@ -512,16 +502,6 @@
         "profissional": "Walter Ferreira dos Santos",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "23 junho 2026",
-        "email": "zorzettoj@bol.com.br",
-        "horario": "18:30/07:30",
-        "phone": "(49) 99947-3832",
-        "pos_x": 8846,
-        "profissional": "João Roberto Munhoz Zorzetto",
-        "setor": "Ultrassonografia - Sobreaviso",
-        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "23 junho 2026",
@@ -812,6 +792,26 @@
         "profissional": "Fabio Rosalvo Urnau",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "23 junho 2026",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(21) 99923-1486",
+        "pos_x": 8172,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "23 junho 2026",
+        "email": "eliasmbvalgoi@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99128-6861",
+        "pos_x": 8172,
+        "profissional": "Elias Matheus Baggio Valgoi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
       },
       {
         "data": "23 junho 2026",
@@ -1884,5 +1884,5 @@
     "total": 92
   },
   "data_backup": "23/06/2026",
-  "hora_backup": "17:29"
+  "hora_backup": "15:42"
 }
