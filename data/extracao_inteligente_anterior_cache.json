@@ -95,46 +95,6 @@
       },
       {
         "data": "24 junho 2026",
-        "email": "eduardo.fg.pneumo@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99914-9150",
-        "pos_x": 2785,
-        "profissional": "Eduardo Formoso Goldschimidt",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 junho 2026",
-        "email": "emelinemoreira@hotmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99958-0101",
-        "pos_x": 2785,
-        "profissional": "Emeline Moreira Cabral",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 junho 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 2785,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 junho 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/11:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 2785,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 junho 2026",
         "email": "drgiovanisantin@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99963-6866",
@@ -912,6 +872,46 @@
         "profissional": "Luis Antonio Bataglin Dalcastel",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Noturno"
+      },
+      {
+        "data": "24 junho 2026",
+        "email": "eduardo.fg.pneumo@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99914-9150",
+        "pos_x": 2785,
+        "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 junho 2026",
+        "email": "emelinemoreira@hotmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99958-0101",
+        "pos_x": 2785,
+        "profissional": "Emeline Moreira Cabral",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 junho 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 2785,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 junho 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/11:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 2785,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
       {
         "data": "24 junho 2026",
@@ -1884,5 +1884,5 @@
     "total": 95
   },
   "data_backup": "24/06/2026",
-  "hora_backup": "07:46"
+  "hora_backup": "08:23"
 }
