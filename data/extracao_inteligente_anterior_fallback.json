@@ -335,6 +335,16 @@
       },
       {
         "data": "26 junho 2026",
+        "email": "luuh_schumacher@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99984-8161",
+        "pos_x": 8172,
+        "profissional": "Luiza da Ros Schumacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "26 junho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -695,16 +705,6 @@
       },
       {
         "data": "26 junho 2026",
-        "email": "luuh_schumacher@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99984-8161",
-        "pos_x": 8172,
-        "profissional": "Luiza da Ros Schumacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "26 junho 2026",
         "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99835-1563",
@@ -835,11 +835,11 @@
       },
       {
         "data": "26 junho 2026",
-        "email": "hellenwiebbelling@yahoo.com.br",
+        "email": "allands@unochapeco.edu.br",
         "horario": "13:00/19:00",
-        "phone": "(49) 99103-3825",
+        "phone": "(49) 99903-2582",
         "pos_x": 9856,
-        "profissional": "Hellen Katya Wiebbelling",
+        "profissional": "Allan Douglas Santos",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
       },
@@ -1884,5 +1884,5 @@
     "total": 95
   },
   "data_backup": "26/06/2026",
-  "hora_backup": "06:46"
+  "hora_backup": "07:46"
 }
