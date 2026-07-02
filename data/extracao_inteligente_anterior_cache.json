@@ -95,26 +95,6 @@
       },
       {
         "data": "02 julho 2026",
-        "email": "gabrielvdom@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99146-1395",
-        "pos_x": 3122,
-        "profissional": "Gabriel Vitoria Domingues",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "02 julho 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 3122,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "02 julho 2026",
         "email": "eduardoborsatto@gmail.com",
         "horario": "08:00/14:00",
         "phone": "(42) 99976-2524",
@@ -902,6 +882,26 @@
         "profissional": "Silvia Garcia Ambrosio",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Noturno"
+      },
+      {
+        "data": "02 julho 2026",
+        "email": "gabrielvdom@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99146-1395",
+        "pos_x": 3122,
+        "profissional": "Gabriel Vitoria Domingues",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "02 julho 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 3122,
+        "profissional": "Bianca Valandro",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
       }
     ],
     "total": 90
@@ -1774,5 +1774,5 @@
     "total": 86
   },
   "data_backup": "02/07/2026",
-  "hora_backup": "07:46"
+  "hora_backup": "08:08"
 }
