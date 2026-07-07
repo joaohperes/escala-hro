@@ -15,16 +15,6 @@
       },
       {
         "data": "07 julho 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "07 julho 2026",
         "email": "Isabelamaranped@gmail.com",
         "horario": "09:00/13:00",
         "phone": "(41) 98706-2929",
@@ -285,16 +275,6 @@
       },
       {
         "data": "07 julho 2026",
-        "email": "fabiorosalvo@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(49) 99101-3438",
-        "pos_x": 8172,
-        "profissional": "Fabio Rosalvo Urnau",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "COORDENAÇÃO"
-      },
-      {
-        "data": "07 julho 2026",
         "email": "marialuizahensel@gmail.com",
         "horario": "09:00/18:00",
         "phone": "(21) 99923-1486",
@@ -435,17 +415,7 @@
       },
       {
         "data": "07 julho 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "07:00/12:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 10529,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "07 julho 2026",
-        "email": "regianypaula@yahoo.com.br",
+        "email": "fabischeffer@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 99968-0428",
         "pos_x": 10529,
@@ -462,16 +432,6 @@
         "profissional": "Aline Luciana Casagrande Mantovani",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "07 julho 2026",
-        "email": "ali_manto@hotmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 10866,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "07 julho 2026",
@@ -815,11 +775,11 @@
       },
       {
         "data": "07 julho 2026",
-        "email": "hellenwiebbelling@yahoo.com.br",
+        "email": "peruzzomp@yahoo.com.br",
         "horario": "19:00/07:00",
-        "phone": "(49) 99103-3825",
+        "phone": "(49) 99200-5048",
         "pos_x": 9856,
-        "profissional": "Hellen Katya Wiebbelling",
+        "profissional": "Michel Peruzzo",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
       },
@@ -885,6 +845,16 @@
       },
       {
         "data": "07 julho 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 429,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "07 julho 2026",
         "email": "bianca.geriatra@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(54) 98103-8771",
@@ -932,6 +902,36 @@
         "profissional": "Isabela Maran",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "07 julho 2026",
+        "email": "fabiorosalvo@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(49) 99101-3438",
+        "pos_x": 8172,
+        "profissional": "Fabio Rosalvo Urnau",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "07 julho 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "07:00/12:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 10529,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "07 julho 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 10866,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 93
@@ -1864,5 +1864,5 @@
     "total": 92
   },
   "data_backup": "07/07/2026",
-  "hora_backup": "08:25"
+  "hora_backup": "09:16"
 }
