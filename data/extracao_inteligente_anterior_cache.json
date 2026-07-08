@@ -85,16 +85,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 3121,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "paulofachinello@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99917-7176",
@@ -285,16 +275,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 8506,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -312,6 +292,16 @@
         "profissional": "Izadora Valdameri Sulzbacher",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "luisastieler@gmail.com",
+        "horario": "16:00/22:00",
+        "phone": "(55) 99670-6933",
+        "pos_x": 8506,
+        "profissional": "Luisa Cancian Stieler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 julho 2026",
@@ -365,16 +355,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98856-4909",
-        "pos_x": 9853,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "debora_decesaro@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 98812-1441",
@@ -392,16 +372,6 @@
         "profissional": "Adelaine Marilia Pinheiro",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "08 julho 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10526,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina"
       },
       {
         "data": "08 julho 2026",
@@ -542,16 +512,6 @@
         "profissional": "Gabriela Moschetta",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "08 julho 2026",
-        "email": "luisastieler@gmail.com",
-        "horario": "16:00/22:00",
-        "phone": "(55) 99670-6933",
-        "pos_x": 8506,
-        "profissional": "Luisa Cancian Stieler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 julho 2026",
@@ -735,6 +695,16 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 3121,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "morganafilippi@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99998-6311",
@@ -835,6 +805,16 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 8506,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/13:00",
         "phone": "(41) 99951-6066",
@@ -865,6 +845,16 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98856-4909",
+        "pos_x": 9853,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "allands@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99903-2582",
@@ -892,6 +882,16 @@
         "profissional": "Juliana Ulsenheimer Knorst",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10526,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina"
       },
       {
         "data": "08 julho 2026",
@@ -1874,5 +1874,5 @@
     "total": 93
   },
   "data_backup": "08/07/2026",
-  "hora_backup": "11:06"
+  "hora_backup": "13:17"
 }
