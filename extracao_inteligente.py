@@ -27,10 +27,10 @@ def carregar_ramais_data():
     mapping_data = None
 
     # Tentar carregar ramais_hro.json
+    base_dir = os.path.dirname(os.path.abspath(__file__))
     ramais_paths = [
+        os.path.join(base_dir, 'ramais_hro.json'),
         'ramais_hro.json',
-        os.path.expanduser('~/escalaHRO/ramais_hro.json'),
-        '/Users/joaoperes/escalaHRO/ramais_hro.json',
     ]
 
     for path in ramais_paths:
@@ -45,9 +45,8 @@ def carregar_ramais_data():
 
     # Tentar carregar setor_ramais_mapping.json
     mapping_paths = [
+        os.path.join(base_dir, 'setor_ramais_mapping.json'),
         'setor_ramais_mapping.json',
-        os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
-        '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
     ]
 
     for path in mapping_paths:
@@ -664,7 +663,7 @@ def main():
                                         # Tentar carregar arquivo fallback
                                         fallback_paths = [
                                             'data/extracao_inteligente_anterior_fallback.json',
-                                            os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
+                                            os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/extracao_inteligente_anterior_fallback.json'),
                                         ]
                                         for fallback_path in fallback_paths:
                                             if os.path.exists(fallback_path):
@@ -686,7 +685,7 @@ def main():
                                     # Tentar carregar arquivo fallback
                                     fallback_paths = [
                                         'data/extracao_inteligente_anterior_fallback.json',
-                                        os.path.expanduser('~/escalaHRO/data/extracao_inteligente_anterior_fallback.json'),
+                                        os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data/extracao_inteligente_anterior_fallback.json'),
                                     ]
                                     for fallback_path in fallback_paths:
                                         if os.path.exists(fallback_path):

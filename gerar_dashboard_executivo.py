@@ -15,442 +15,13 @@ MELHORIAS V3:
 import json
 from datetime import datetime
 
-def obter_tipo_turno(turno_text, horario_text=""):
-    """Identifica o tipo de turno para aplicar cor correta com detecção hierárquica
-
-    Prioridade:
-    1. Detecta NOTURNO por horário (19:00-00:00 ou 19:00+) - IMPORTANTE para residências
-    2. Detecta 24H (Sobreaviso/On-call que dura o dia inteiro)
-    3. Detecta SOBREAVISO explícito
-    4. Detecta FINAL DE SEMANA
-    5. Detecta turnos específicos por horário
-    6. Detecta ROTINA com horários
-    7. Retorna OUTRO como fallback
-    """
-    if not turno_text:
-        return "outro"
-
-    turno = turno_text.lower()
-    horario = horario_text.lower() if horario_text else ""
-
-    # PRIORIDADE 1: Detecta NOTURNO por horário ANTES de 24H
-    # Importante porque 19:00/00:00 é noturno, não 24h
-    if horario and "/" in horario:
-        try:
-            entrada, saida = horario.split("/")
-            entrada_h = int(entrada.split(":")[0])
-            saida_h = int(saida.split(":")[0])
-
-            # Noturno: entrada >= 19 (19:00 até 06:00 ou 00:00)
-            # Exemplos: 19:00/00:00, 19:00/07:00, 20:00/06:00, 18:30/07:30
-            if entrada_h >= 18:
-                return "noturno"
-        except:
-            pass
-
-    # PRIORIDADE 2: Detecta 24H (entrada = saída ou diferença grande)
-    # Exemplos: "24:00/08:00", "07:00/07:00", "13:00/13:00" (on-call que dura o dia inteiro)
-    if horario and "/" in horario:
-        try:
-            entrada, saida = horario.split("/")
-            entrada = entrada.strip()
-            saida = saida.strip()
-
-            # Se entrada == saída, é plantão de 24h
-            if entrada == saida:
-                return "badge-24h"
-
-            # Se está explícito como sobreaviso, marca como 24h
-            if 'sobreaviso' in turno or '24h' in turno:
-                return "badge-24h"
-
-            # Detecta Diurno (07:00-19:00) - típico de residência
-            try:
-                entrada_h = int(entrada.split(":")[0])
-                saida_h = int(saida.split(":")[0])
-                # Se é 07:00/19:00, é diurno
-                if entrada_h == 7 and saida_h == 19:
-                    return "diurno"
-            except:
-                pass
-        except:
-            pass
-
-    # PRIORIDADE 3: Detecta SOBREAVISO + FIM DE SEMANA (se entrada != saída, é só sobreaviso, não 24h)
-    # Exemplos: "Ultrassonografia - Sobreaviso Final de Semana" com horário real
-    if 'sobreaviso' in turno or 'sobre aviso' in turno:
-        # Se tem horário e entrada == saída, já foi detectado como 24h acima
-        # Se não, é sobreaviso normal com fim de semana como contexto
-        # Mas detectar o período se disponível
-        if any(x in turno for x in ['matutino', 'manhã', '07:00', '08:00', '06:00']):
-            return "matutino"
-        elif any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
-            return "vespertino"
-        elif any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
-            return "noturno"
-        # Sobreaviso sem período específico
-        if horario and "/" in horario:
-            try:
-                entrada, saida = horario.split("/")
-                entrada_h = int(entrada.split(":")[0])
-                if entrada_h >= 6 and entrada_h < 12:
-                    return "matutino"
-                elif entrada_h >= 12 and entrada_h < 18:
-                    return "vespertino"
-                elif entrada_h >= 18 or entrada_h < 6:
-                    return "noturno"
-            except:
-                pass
-        return "sobreaviso"
-
-    # PRIORIDADE 4: Detecta FINAL DE SEMANA (sem sobreaviso)
-    # "Rotina Vespertino - Final de Semana" → vespertino (não cria badge própria)
-    if 'final' in turno or 'finais' in turno or 'fim de semana' in turno or 'fds' in turno:
-        # Se for final de semana, retorna o período específico
-        if any(x in turno for x in ['matutino', 'manhã', '07:00', '08:00', '06:00']):
-            return "matutino"
-        elif any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
-            return "vespertino"
-        elif any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
-            return "noturno"
-
-        # Se não tem período explícito, detecta pelo horário
-        if horario and "/" in horario:
-            try:
-                entrada, saida = horario.split("/")
-                entrada_h = int(entrada.split(":")[0])
-                # Matutino (6:00-13:00)
-                if entrada_h >= 6 and entrada_h < 12:
-                    return "matutino"
-                # Vespertino (13:00-19:00)
-                elif entrada_h >= 12 and entrada_h < 18:
-                    return "vespertino"
-                # Noturno (19:00-06:00)
-                elif entrada_h >= 18 or entrada_h < 6:
-                    return "noturno"
-            except:
-                pass
-
-        # Se é rotina sem período específico
-        if 'rotina' in turno:
-            return "rotina"
-        # Fallback
-        return "outro"
-
-    # PRIORIDADE 5: Detecta turnos específicos por horário/nome
-    # Detecta por abreviações (P1, P2, P3, P4, DIA, NOITE) + horário
-    if turno in ['p1', 'p2', 'p3', 'p4', 'dia', 'noite'] or (len(turno) <= 3 and turno.isalnum()):
-        # P1, P2, P3 geralmente são matutino/vespertino, P4 é noturno
-        if horario and "/" in horario:
-            try:
-                entrada, saida = horario.split("/")
-                entrada_h = int(entrada.split(":")[0])
-                saida_h = int(saida.split(":")[0])
-
-                # Matutino (6:00-13:00)
-                if entrada_h >= 6 and entrada_h < 12:
-                    return "matutino"
-                # Vespertino (13:00-19:00)
-                elif entrada_h >= 12 and entrada_h < 18:
-                    return "vespertino"
-                # Noturno (19:00-06:00)
-                elif entrada_h >= 18 or entrada_h < 6:
-                    return "noturno"
-            except:
-                pass
-
-    # Matutino (Verde)
-    if any(x in turno for x in ['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00']):
-        return "matutino"
-
-    # Vespertino (Laranja)
-    if any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
-        return "vespertino"
-
-    # Noturno (Azul Escuro)
-    if any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
-        return "noturno"
-
-    # Plantão (Coral)
-    if 'plantão' in turno or 'plantao' in turno:
-        if 'noturno' in turno or 'noite' in turno or '19:00' in turno:
-            return "noturno"
-        elif 'vespertino' in turno or 'tarde' in turno or '13:00' in turno:
-            return "vespertino"
-        elif 'matutino' in turno or 'manhã' in turno or '07:00' in turno:
-            return "matutino"
-        return "plantao"
-
-    # PRIORIDADE 6: Detecta ROTINA com horário específico
-    if 'rotina' in turno:
-        if horario and "/" in horario:
-            try:
-                entrada, saida = horario.split("/")
-                entrada_h = int(entrada.split(":")[0])
-                saida_h = int(saida.split(":")[0])
-
-                # Matutino (6:00-13:00)
-                if entrada_h >= 6 and entrada_h < 12:
-                    return "matutino"
-                # Vespertino (13:00-19:00)
-                elif entrada_h >= 12 and entrada_h < 18:
-                    return "vespertino"
-                # Noturno (19:00-06:00)
-                elif entrada_h >= 18 or entrada_h < 6:
-                    return "noturno"
-            except:
-                pass
-        return "rotina"
-
-    # FALLBACK: Detecta por horário como último recurso antes de retornar "outro"
-    # Importante para turnos que não têm palavras-chave específicas (ex: Ambulatório, etc)
-    if horario and "/" in horario:
-        try:
-            entrada, saida = horario.split("/")
-            entrada_h = int(entrada.split(":")[0])
-            saida_h = int(saida.split(":")[0])
-
-            # Matutino (6:00-13:00)
-            if entrada_h >= 6 and entrada_h < 12:
-                return "matutino"
-            # Vespertino (13:00-19:00)
-            elif entrada_h >= 12 and entrada_h < 18:
-                return "vespertino"
-            # Noturno (19:00-06:00)
-            elif entrada_h >= 18 or entrada_h < 6:
-                return "noturno"
-        except:
-            pass
-
-    return "outro"
-
-def normalizar_turno(turno_text):
-    """Normaliza nomes de turnos para ordem cronológica padrão"""
-    if not turno_text:
-        return (99, "Outro")
-
-    turno = turno_text.lower().strip()
-    turno_original = turno_text.strip()
-
-    # HOSPITALISTA - COMANEJO vs URGÊNCIA (especial)
-    if 'hospitalista' in turno:
-        if 'comanejo' in turno:
-            if 'matutino' in turno or '07:00' in turno:
-                return (1, "Comanejo Matutino")
-            elif 'vespertino' in turno or 'tarde' in turno or '13:00' in turno:
-                return (2, "Comanejo Vespertino")
-            elif 'noturno' in turno or '19:00' in turno:
-                return (3, "Comanejo Noturno")
-        elif 'urgência' in turno or 'urgencia' in turno:
-            if 'matutino' in turno or '07:00' in turno:
-                return (1, "Urgência Matutino")
-            elif 'vespertino' in turno or 'tarde' in turno or '13:00' in turno:
-                return (2, "Urgência Vespertino")
-            elif 'noturno' in turno or '19:00' in turno:
-                return (3, "Urgência Noturno")
-
-    # MATUTINO (Ordem 1)
-    if any(x in turno for x in ['matutino', 'matutina', 'manhã', 'madrugada', '07:00', '08:00', '06:00']):
-        if 'final' in turno:
-            return (1, "Manhã - Final de Semana")
-        if 'p1' in turno:
-            return (1, "Plantão Matutino - P1")
-        elif 'p2' in turno:
-            return (1, "Plantão Matutino - P2")
-        return (1, "Plantão Matutino")
-
-    # VESPERTINO (Ordem 2)
-    if any(x in turno for x in ['vespertino', 'vespertina', 'tarde', '13:00', '14:00']):
-        if 'final' in turno:
-            return (2, "Tarde - Final de Semana")
-        if 'p1' in turno:
-            return (2, "Plantão Vespertino - P1")
-        elif 'p2' in turno:
-            return (2, "Plantão Vespertino - P2")
-        return (2, "Plantão Vespertino")
-
-    # NOTURNO (Ordem 3)
-    if any(x in turno for x in ['noturno', 'noturna', 'noite', '19:00']):
-        if 'p1' in turno:
-            return (3, "Plantão Noturno - P1")
-        elif 'p2' in turno:
-            return (3, "Plantão Noturno - P2")
-        return (3, "Plantão Noturno")
-
-    # DIURNO (07:00-19:00) - Residência
-    if turno == 'diurno':
-        return (1, "Plantão Diurno")
-
-    # DIA / NOITE (Residência - legacy)
-    if turno == 'dia':
-        return (1, "Plantão Diurno")
-    elif turno == 'noite':
-        return (3, "Período Noturno")
-
-    # P1, P2, P3, P4 (Plantões standalone)
-    if turno in ['p1', 'p2', 'p3', 'p4']:
-        return (2, f"Plantão {turno.upper()}")
-
-    # ROTINA (Ordem 4)
-    if any(x in turno for x in ['rotina', 'regular', 'alojamento']):
-        if 'matutino' in turno:
-            return (1, "Rotina Matutino")
-        elif 'vespertino' in turno or 'tarde' in turno:
-            return (2, "Rotina Vespertino")
-        elif 'noturno' in turno or 'noite' in turno:
-            return (3, "Rotina Noturno")
-        elif 'final' in turno:
-            return (4, "Rotina - Final de Semana")
-        return (4, "Rotina")
-
-    # SOBREAVISO (Ordem 5)
-    if 'sobreaviso' in turno:
-        # Check more specific terms FIRST to avoid substring matching issues
-        # e.g., "neurologia" contains "ologia" which could match "urologia" check
-        if 'neurocirurgia' in turno:
-            return (5, "Sobreaviso Neurocirurgia")
-        elif 'neurologia' in turno:
-            return (5, "Sobreaviso Neurologia")
-        elif 'cardiologia' in turno:
-            return (5, "Sobreaviso Cardiologia")
-        elif 'oftalmologia' in turno:
-            return (5, "Sobreaviso Oftalmologia")
-        elif 'urologia' in turno:
-            return (5, "Sobreaviso Urologia")
-        elif 'oncologia' in turno:
-            return (5, "Sobreaviso Oncologia")
-        elif 'endoscopia' in turno:
-            return (5, "Sobreaviso Endoscopia")
-        elif 'pediátrica' in turno or 'pediatrica' in turno:
-            return (5, "Sobreaviso Cirurgia Pediátrica")
-        elif 'vascular' in turno:
-            return (5, "Sobreaviso Cirurgia Vascular")
-        elif 'cirurgia' in turno:
-            if 'equipe 1' in turno or ' 1' in turno:
-                return (5, "Sobreaviso Cirurgia - Equipe 1")
-            elif 'equipe 2' in turno or ' 2' in turno:
-                return (5, "Sobreaviso Cirurgia - Equipe 2")
-            return (5, "Sobreaviso Cirurgia")
-        return (5, "Sobreaviso")
-
-    # Plantão Diurno
-    if 'plantão diurno' in turno:
-        return (1, "Plantão Diurno")
-
-    # Manter o original para casos não identificados
-    return (99, turno_original)
-
-def carregar_ramais_data(escala_data=None):
-    """Carrega dados de ramais e mapeamento de setores
-
-    Prioridade:
-    1. Usar dados embutidos no arquivo de extração (escala_data)
-    2. Carregar de arquivos individuais (ramais_hro.json e setor_ramais_mapping.json)
-    """
-    import os
-    from pathlib import Path
-
-    ramais_data = None
-    mapping_data = None
-
-    # PRIORIDADE 1: Procurar no arquivo de extração (novo comportamento)
-    if escala_data:
-        if 'ramais_hro' in escala_data:
-            # Transformar array para estrutura esperada { departments: [...] }
-            ramais_array = escala_data['ramais_hro']
-            if isinstance(ramais_array, list):
-                ramais_data = {'departments': ramais_array}
-            else:
-                ramais_data = ramais_array
-            print(f"✅ Ramais carregados do arquivo de extração")
-        if 'setor_ramais_mapping' in escala_data:
-            mapping_array = escala_data['setor_ramais_mapping']
-            if isinstance(mapping_array, list):
-                mapping_data = {'sector_mappings': mapping_array}
-            else:
-                mapping_data = mapping_array
-            print(f"✅ Mapeamento de setores carregado do arquivo de extração")
-
-    # PRIORIDADE 2: Se não encontrou no arquivo de extração, carregar de arquivo separado
-    if not ramais_data:
-        ramais_paths = [
-            'ramais_hro.json',
-            os.path.expanduser('~/escalaHRO/ramais_hro.json'),
-            '/Users/joaoperes/escalaHRO/ramais_hro.json',
-            os.path.join(os.getcwd(), 'ramais_hro.json'),
-        ]
-
-        for path in ramais_paths:
-            if Path(path).exists():
-                try:
-                    with open(path, 'r', encoding='utf-8') as f:
-                        ramais_data = json.load(f)
-                    print(f"✅ Ramais carregados de: {path}")
-                    break
-                except Exception as e:
-                    print(f"⚠️  Erro ao ler {path}: {e}")
-                    continue
-
-    if not mapping_data:
-        mapping_paths = [
-            'setor_ramais_mapping.json',
-            os.path.expanduser('~/escalaHRO/setor_ramais_mapping.json'),
-            '/Users/joaoperes/escalaHRO/setor_ramais_mapping.json',
-            os.path.join(os.getcwd(), 'setor_ramais_mapping.json'),
-        ]
-
-        for path in mapping_paths:
-            if Path(path).exists():
-                try:
-                    with open(path, 'r', encoding='utf-8') as f:
-                        mapping_data = json.load(f)
-                    print(f"✅ Mapeamento de setores carregado de: {path}")
-                    break
-                except Exception as e:
-                    print(f"⚠️  Erro ao ler {path}: {e}")
-                    continue
-
-    return ramais_data, mapping_data
-
-def obter_ramais_setor(setor_nome, ramais_data, mapping_data):
-    """Obtém os ramais de um setor baseado no mapeamento"""
-    if not ramais_data or not mapping_data:
-        return []
-
-    # Procurar o setor no mapeamento
-    for mapping in mapping_data.get('sector_mappings', []):
-        if mapping['dashboard_sector'] == setor_nome:
-            # Encontrou o mapeamento, buscar os ramais
-            extensions = []
-            for dept_name in mapping['ramais_departments']:
-                # Procurar o departamento nos ramais
-                for dept in ramais_data.get('departments', []):
-                    if dept['name'] == dept_name:
-                        extensions.extend(dept['extensions'])
-            return extensions
-
-    return []
-
-def formatar_ramais_display(extensions):
-    """Formata ramais para exibição no cabeçalho do setor"""
-    if not extensions:
-        return ""
-
-    # Remover duplicatas mantendo ordem
-    unique_exts = []
-    seen = set()
-    for ext in extensions:
-        if ext not in seen:
-            unique_exts.append(ext)
-            seen.add(ext)
-
-    # Limitar exibição a 5 ramais para não poluir o cabeçalho
-    if len(unique_exts) > 5:
-        exts_str = ", ".join(unique_exts[:5])
-        return f' <span class="setor-ramais" title="{", ".join(unique_exts)}">({exts_str}...)</span>'
-    else:
-        exts_str = ", ".join(unique_exts)
-        return f' <span class="setor-ramais">({exts_str})</span>'
+from dashboard_logic import (
+    obter_tipo_turno,
+    normalizar_turno,
+    carregar_ramais_data,
+    obter_ramais_setor,
+    formatar_ramais_display,
+)
 
 def gerar_dashboard():
     """Gera dashboard executivo com visual premium"""
@@ -462,13 +33,12 @@ def gerar_dashboard():
     # Procurar arquivo de escalas
     # Prioritize extracao_inteligente.json (direct output from extraction)
     # Fallback to escalas_multiplos_dias.json for backward compatibility
+    base_dir = Path(__file__).parent
     escala_paths = [
         '/tmp/extracao_inteligente.json',  # Primary: fresh from extraction
         '/tmp/escalas_multiplos_dias.json',  # Fallback: legacy intermediate file
-        'extracao_inteligente.json',
-        'escalas_multiplos_dias.json',
-        os.path.expanduser('~/escalaHRO/extracao_inteligente.json'),
-        os.path.expanduser('~/escalaHRO/escalas_multiplos_dias.json'),
+        base_dir / 'extracao_inteligente.json',
+        base_dir / 'escalas_multiplos_dias.json',
     ]
 
     escalas = None
@@ -501,9 +71,8 @@ def gerar_dashboard():
 
     # Procurar arquivo de profissionais
     prof_paths = [
-        'profissionais_autenticacao.json',
-        os.path.expanduser('~/escalaHRO/profissionais_autenticacao.json'),
-        '/Users/joaoperes/escalaHRO/profissionais_autenticacao.json',
+        base_dir / 'profissionais_autenticacao.json',
+        Path.cwd() / 'profissionais_autenticacao.json',
     ]
 
     profissionais_data = None
@@ -573,9 +142,16 @@ def gerar_dashboard():
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="version" content="{datetime.now().strftime('%Y%m%d_%H%M%S')}">
+    <meta name="version" content="VERSAO_GERACAO">
+    <meta name="theme-color" content="#0d3b66">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon.svg">
     <title>Escala - ALVF</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -2302,6 +1878,312 @@ def gerar_dashboard():
             color: var(--color-primary);
         }
 
+        /* ============================================================
+           MELHORIAS V4 — dark mode, filtros, "agora", mobile, a11y
+           ============================================================ */
+
+        /* ---- Tema escuro: redefinição de tokens ---- */
+        html { color-scheme: light; }
+        html[data-theme="dark"] {
+            color-scheme: dark;
+            --bg-primary: #0f1722;
+            --bg-secondary: #16212f;
+            --bg-tertiary: #1a2736;
+            --bg-gradient-start: #1a2736;
+            --bg-gradient-end: #14202e;
+            --text-primary: #e6ecf3;
+            --text-secondary: #9db0c3;
+            --text-tertiary: #7b8fa0;
+            --border-color: #24344a;
+            --border-color-hover: #35496a;
+            --color-primary: #6ea8dd;
+            --color-primary-dark: #8dbde8;
+            --color-primary-light: #4a86c2;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+            --shadow-md: 0 2px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.55);
+            --badge-matutino-bg: #17402a;  --badge-matutino-text: #8fe0af;
+            --badge-vespertino-bg: #4a3607; --badge-vespertino-text: #f3cd76;
+            --badge-noturno-bg: #1c3050;   --badge-noturno-text: #a7c6f5;
+            --badge-24h-bg: #4c1d24;       --badge-24h-text: #f1a3ae;
+            --badge-sobreaviso-bg: #2b2b52; --badge-sobreaviso-text: #b9b9f0;
+            --badge-rotina-bg: #2c3238;    --badge-rotina-text: #c3cad1;
+            --badge-plantao-bg: #4a2e14;   --badge-plantao-text: #f0c295;
+            --badge-diurno-bg: #17402a;    --badge-diurno-text: #8fe0af;
+            --badge-misto-bg: #33254d;     --badge-misto-text: #cbb8f5;
+            --badge-outro-bg: #2c3238;     --badge-outro-text: #aab3bb;
+            --modal-overlay: rgba(0, 0, 0, 0.8);
+            --modal-overlay-light: rgba(0, 0, 0, 0.75);
+        }
+        html[data-theme="dark"] .date-selector,
+        html[data-theme="dark"] .date-btn { background: var(--bg-secondary); color: var(--text-secondary); border-color: var(--border-color); }
+        html[data-theme="dark"] .date-btn.active { background: var(--color-primary); color: #0f1722; }
+        html[data-theme="dark"] .date-btn:hover { color: var(--color-primary-dark); background: var(--bg-tertiary); }
+        html[data-theme="dark"] .turno-coluna { background: var(--bg-secondary); border-color: var(--border-color); }
+        html[data-theme="dark"] .btn-toggle-sections { background: var(--bg-secondary); color: var(--color-primary); border-color: var(--color-primary); }
+        html[data-theme="dark"] .contacts-modal-content,
+        html[data-theme="dark"] .ramais-modal-content { background: var(--bg-secondary); color: var(--text-primary); }
+        html[data-theme="dark"] .contact-item { background: var(--bg-secondary); border-color: var(--border-color); }
+        html[data-theme="dark"] .contact-item:hover { background: var(--bg-tertiary); }
+        html[data-theme="dark"] .contact-name,
+        html[data-theme="dark"] .contacts-modal-header h2 { color: var(--color-primary); }
+        html[data-theme="dark"] .contacts-search { background: var(--bg-tertiary); color: var(--text-primary); border-color: var(--border-color); }
+        html[data-theme="dark"] .contacts-warning { background: #3d3110; border-color: #6b5a1e; color: #e8d9a0; }
+        html[data-theme="dark"] .setores-ocultos-bar { background: var(--bg-secondary); border-color: var(--border-color); color: var(--text-secondary); }
+        html[data-theme="dark"] .setor-oculto-chip { background: var(--bg-tertiary); border-color: var(--border-color); }
+        html[data-theme="dark"] .category.setor-favorito .categoria-header { background: linear-gradient(135deg, #3a2f10 0%, #2e2508 100%); }
+        html[data-theme="dark"] .category.setor-favorito .categoria-nome { color: #f3cd76; }
+        html[data-theme="dark"] .profissional-nome-text { color: var(--text-primary); }
+        html[data-theme="dark"] .info-horario { color: var(--text-secondary); }
+        html[data-theme="dark"] .contact-phone { color: #6fd398; }
+
+        .btn-theme {
+            background: var(--bg-secondary);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            min-width: 44px;
+        }
+        .btn-theme:hover { background: var(--color-primary); color: var(--bg-secondary); }
+
+        /* ---- Faixa lateral colorida por turno ---- */
+        .profissional { border-left: 4px solid transparent; }
+        .profissional.stripe-matutino  { border-left-color: #2f9e5f; }
+        .profissional.stripe-diurno    { border-left-color: #2f9e5f; }
+        .profissional.stripe-vespertino{ border-left-color: #d99114; }
+        .profissional.stripe-noturno   { border-left-color: #3f74c9; }
+        .profissional.stripe-badge-24h { border-left-color: #c0392b; }
+        .profissional.stripe-sobreaviso{ border-left-color: #8a7bd8; }
+        .profissional.stripe-plantao   { border-left-color: #d97b4a; }
+        .profissional.stripe-rotina    { border-left-color: #9aa5ae; }
+
+        /* ---- Destaque "de plantão agora" / encerrados ---- */
+        .profissional.plantao-agora {
+            border-left-color: #1e7e46;
+            box-shadow: 0 0 0 1px rgba(30, 126, 70, 0.35);
+        }
+        .profissional.plantao-encerrado { opacity: 0.5; }
+        .agora-pill {
+            display: inline-block;
+            background: #1e7e46;
+            color: #fff;
+            font-size: 0.68em;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 999px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+        }
+
+        /* ---- Chips de filtro por período ---- */
+        .filter-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .filter-chip {
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-radius: 999px;
+            padding: 7px 14px;
+            font-size: 0.82em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s ease, color 0.15s ease;
+            min-height: 34px;
+        }
+        .filter-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .filter-chip.active { background: var(--color-primary); border-color: var(--color-primary); color: var(--bg-secondary); }
+
+        /* ---- Índice de setores ---- */
+        .setor-index {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        .setor-index:empty { display: none; }
+        .setor-index-chip {
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.78em;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .setor-index-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
+        .setor-index-chip .count {
+            color: var(--text-tertiary);
+            font-weight: 700;
+            margin-left: 4px;
+        }
+
+        /* ---- Selo de frescor + próxima troca ---- */
+        .freshness-stamp {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .freshness-stamp.fresco { background: var(--badge-matutino-bg); color: var(--badge-matutino-text); }
+        .freshness-stamp.velho  { background: var(--badge-24h-bg); color: var(--badge-24h-text); font-weight: 700; }
+        .proxima-troca-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.85em;
+            background: var(--bg-gradient-end);
+            color: var(--color-primary);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* ---- Distribuição por período nos stats ---- */
+        .stat-distribuicao { grid-column: 1 / -1; text-align: left; cursor: default; }
+        .dist-bar {
+            display: flex;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0 8px;
+        }
+        .dist-bar span { display: block; }
+        .dist-legend {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            font-size: 0.8em;
+            color: var(--text-secondary);
+        }
+        .dist-legend button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1em;
+            color: inherit;
+            padding: 4px 2px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .dist-legend button:hover { color: var(--color-primary); }
+        .dist-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+        /* ---- Estado vazio da busca ---- */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 20px;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px dashed var(--border-color-hover);
+        }
+        .empty-state strong { color: var(--text-primary); }
+        .empty-state button {
+            margin-top: 14px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background: var(--color-primary);
+            color: var(--bg-secondary);
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ---- Modo compacto ---- */
+        body.compacto .profissional { padding: 4px 10px; }
+        body.compacto .profissional-nome { margin-bottom: 0; }
+        body.compacto .turno-badge { display: none; }
+        body.compacto .categoria-content { padding: 12px; }
+        body.compacto .turnos-container { gap: 8px; }
+        body.compacto .turno-coluna { padding: 8px; }
+        body.compacto .profissionais-list { gap: 4px; }
+        body.compacto .stats { display: none; }
+
+        /* ---- Barra inferior fixa (mobile) ---- */
+        .bottom-bar { display: none; }
+        @media (max-width: 768px) {
+            .bottom-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--border-color);
+                box-shadow: 0 -2px 12px rgba(13, 59, 102, 0.15);
+                z-index: 4000;
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            .bottom-bar button {
+                flex: 1;
+                background: none;
+                border: none;
+                border-left: 1px solid var(--border-color);
+                padding: 8px 4px 10px;
+                font-family: inherit;
+                font-size: 0.68em;
+                font-weight: 600;
+                color: var(--color-primary);
+                cursor: pointer;
+                min-height: 52px;
+            }
+            .bottom-bar button:first-child { border-left: none; }
+            .bottom-bar .bb-icon { display: block; font-size: 1.5em; margin-bottom: 2px; }
+            body { padding-bottom: 64px; }
+            /* Busca sticky no mobile */
+            .controls-bar { position: sticky; top: 0; z-index: 3000; background: var(--bg-primary); padding: 8px 0; margin-bottom: 12px; }
+            .action-buttons { display: none; }
+        }
+        @media print { .bottom-bar { display: none !important; } }
+
+        /* ---- Ramais clicáveis ---- */
+        .ramal-tel-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-primary);
+            padding: 2px 1px;
+        }
+        .ramal-tel-link:hover { color: var(--color-primary); }
+
+        /* ---- Acessibilidade ---- */
+        .btn-pref { padding: 8px 12px; min-width: 40px; min-height: 40px; }
+        .categoria-header:focus-visible,
+        .filter-chip:focus-visible,
+        .setor-index-chip:focus-visible,
+        .btn:focus-visible,
+        .btn-pref:focus-visible,
+        .date-btn:focus-visible,
+        .bottom-bar button:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2385,8 +2267,16 @@ def gerar_dashboard():
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">Contatos</button>
                 <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">Ramais</button>
                 <button class="btn btn-print" onclick="window.print()">🖨 Imprimir</button>
+                <button class="btn btn-theme" id="btn-compacto" onclick="alternarCompacto()" title="Alternar modo compacto (mais setores por tela)">☰</button>
+                <button class="btn btn-theme" id="btn-theme" onclick="alternarTema()" title="Alternar tema claro/escuro">🌙</button>
             </div>
         </div>
+
+        <!-- Filtros por período -->
+        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filtrar por período"></div>
+
+        <!-- Índice de setores -->
+        <div class="setor-index" id="setor-index" role="navigation" aria-label="Ir para setor"></div>
 
         <!-- Cabeçalho de impressão (visível só no print) -->
         <div class="print-header">
@@ -2397,10 +2287,13 @@ def gerar_dashboard():
         <!-- Data selecionada -->
         <div class="date-display" id="data-selecionada"></div>
 
-        <!-- Status de Atualização -->
+        <!-- Status de Atualização + próxima troca de plantão -->
         <div class="last-update">
-            <span class="update-status-indicator" id="status-indicator"></span>
-            <span class="update-status-text" id="status-text"></span>
+            <span class="proxima-troca-chip" id="proxima-troca" hidden></span>
+            <span class="freshness-stamp" id="freshness-stamp">
+                <span class="update-status-indicator" id="status-indicator"></span>
+                <span class="update-status-text" id="status-text"></span>
+            </span>
         </div>
 
         <!-- Estatísticas -->
@@ -2409,6 +2302,14 @@ def gerar_dashboard():
         <!-- Categorias -->
         <div id="categorias"></div>
     </div>
+
+    <!-- Barra de ações fixa (só mobile) -->
+    <nav class="bottom-bar" aria-label="Ações rápidas">
+        <button onclick="abrirListaContatos()"><span class="bb-icon">📇</span>Contatos</button>
+        <button onclick="abrirDiretorioRamais()"><span class="bb-icon">☎️</span>Ramais</button>
+        <button onclick="focarBusca()"><span class="bb-icon">🔍</span>Buscar</button>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})"><span class="bb-icon">⬆️</span>Topo</button>
+    </nav>
 
     <script>
         // Autenticação persistente via localStorage
@@ -2553,7 +2454,10 @@ def gerar_dashboard():
 
                 const html = departamentos.map(dept => {
                     const extsStr = dept.extensions.join(', ');
-                    const extsDisplay = dept.extensions.join(' | ');
+                    // Cada ramal vira um link tel: (no celular, toca para discar)
+                    const extsDisplay = dept.extensions.map(ext =>
+                        `<a href="tel:${String(ext).replace(/\\D/g, '')}" class="ramal-tel-link">${ext}</a>`
+                    ).join(' | ');
                     // Split department name by " - " to get main name and sub-area
                     const nameParts = dept.name.split(' - ');
                     const mainName = nameParts[0];
@@ -2600,21 +2504,40 @@ def gerar_dashboard():
             }
         });
 
+        // Filtro ativo por período ('' = todos). Combina com a busca por texto.
+        let filtroPeriodo = '';
+
+        // Mapeia o tipo de badge para o grupo do chip de filtro
+        function grupoDoTipo(tipo) {
+            if (tipo === 'matutino' || tipo === 'diurno') return 'manha';
+            if (tipo === 'vespertino') return 'tarde';
+            if (tipo === 'noturno') return 'noite';
+            if (tipo === 'sobreaviso') return 'sobreaviso';
+            if (tipo === 'badge-24h') return '24h';
+            return 'outro';
+        }
+
+        function tipoDoProf(prof) {
+            const m = (prof.className.match(/stripe-([\\w-]+)/) || []);
+            return m[1] || 'outro';
+        }
+
         function filtrarProfissionais() {
             const search = document.getElementById('search').value.toLowerCase().trim();
             const profissionais = document.querySelectorAll('.profissional');
             const categorias = document.querySelectorAll('.category');
 
-            if (!search) {
-                profissionais.forEach(prof => prof.style.display = 'block');
-                categorias.forEach(cat => cat.style.display = 'block');
-                return;
-            }
-
             let visibleCount = 0;
             profissionais.forEach(prof => {
                 const searchText = prof.getAttribute('data-search') || '';
-                if (searchText.includes(search)) {
+                const passaBusca = !search || searchText.includes(search);
+                let passaPeriodo = true;
+                if (filtroPeriodo === 'agora') {
+                    passaPeriodo = prof.classList.contains('plantao-agora');
+                } else if (filtroPeriodo) {
+                    passaPeriodo = grupoDoTipo(tipoDoProf(prof)) === filtroPeriodo;
+                }
+                if (passaBusca && passaPeriodo) {
                     prof.style.display = 'block';
                     visibleCount++;
                 } else {
@@ -2622,30 +2545,47 @@ def gerar_dashboard():
                 }
             });
 
-            // Hide categories with no visible professionals
+            // Esconde categorias sem profissionais visíveis
             categorias.forEach(categoria => {
-                const visibleProfs = categoria.querySelectorAll('.profissional[style="display: block"], .profissional:not([style*="display"])');
-                const hasVisibleProfessionals = Array.from(visibleProfs).some(prof =>
-                    prof.parentElement === categoria || prof.closest('.category') === categoria
-                );
-
-                // Count visible professionals in this category
-                const professionalsInCategory = categoria.querySelectorAll('.profissional');
                 let visibleInCategory = 0;
-                professionalsInCategory.forEach(prof => {
-                    if (prof.style.display !== 'none') {
-                        visibleInCategory++;
-                    }
+                categoria.querySelectorAll('.profissional').forEach(prof => {
+                    if (prof.style.display !== 'none') visibleInCategory++;
                 });
-
-                if (visibleInCategory === 0) {
-                    categoria.style.display = 'none';
-                } else {
-                    categoria.style.display = 'block';
-                }
+                categoria.style.display = visibleInCategory === 0 ? 'none' : 'block';
             });
 
-            console.log(`Busca: "${search}" - ${visibleCount} resultados`);
+            // Estado vazio com saída clara
+            let emptyEl = document.getElementById('empty-state');
+            if (visibleCount === 0 && (search || filtroPeriodo)) {
+                if (!emptyEl) {
+                    emptyEl = document.createElement('div');
+                    emptyEl.id = 'empty-state';
+                    emptyEl.className = 'empty-state';
+                    document.getElementById('categorias').appendChild(emptyEl);
+                }
+                const criterio = search ? `para "<strong>${search}</strong>"` : 'para este filtro';
+                emptyEl.innerHTML = `<p>Nenhum profissional encontrado ${criterio} neste dia.</p>` +
+                    `<button onclick="limparFiltros()">Limpar busca e filtros</button>`;
+                emptyEl.style.display = 'block';
+            } else if (emptyEl) {
+                emptyEl.style.display = 'none';
+            }
+        }
+
+        function limparFiltros() {
+            document.getElementById('search').value = '';
+            filtroPeriodo = '';
+            document.querySelectorAll('.filter-chip').forEach(c =>
+                c.classList.toggle('active', c.getAttribute('data-filtro') === ''));
+            filtrarProfissionais();
+        }
+
+        function definirFiltroPeriodo(filtro) {
+            filtroPeriodo = (filtroPeriodo === filtro) ? '' : filtro;
+            if (filtroPeriodo === '') filtro = '';
+            document.querySelectorAll('.filter-chip').forEach(c =>
+                c.classList.toggle('active', c.getAttribute('data-filtro') === filtroPeriodo));
+            filtrarProfissionais();
         }
 
         function normalizarTurno(turnoText) {
@@ -3163,7 +3103,7 @@ def gerar_dashboard():
                                                 const telefoneLimpo = telefone.replace(/\D/g, '');
                                                 const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                                 return `
-                                                <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()}">
+                                                <div class="profissional stripe-${obterTipoTurno(prof.tipo_turno, prof.horario)}" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()} ${turno.toLowerCase()}">
                                                     <div class="profissional-nome">
                                                         ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-icon-btn" data-phone="${telefone}" title="WhatsApp: ${telefone}"><span class="telefone-icon"></span></a>` : ''}
                                                         <div class="profissional-nome-wrapper">
@@ -3205,7 +3145,7 @@ def gerar_dashboard():
                                     const telefoneLimpo = telefone.replace(/\D/g, '');
                                     const whatsappUrl = `https://wa.me/55${telefoneLimpo}`;
                                     return `
-                                    <div class="profissional" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${prof.tipo_turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()}">
+                                    <div class="profissional stripe-${obterTipoTurno(prof.tipo_turno, prof.horario)}" data-prof="${prof.profissional}" data-setor="${setor}" data-turno="${prof.tipo_turno}" data-tipo="${prof.tipo_turno}" data-hora="${prof.horario}" data-search="${prof.profissional.toLowerCase()} ${setor.toLowerCase()}">
                                         <div class="profissional-nome">
                                             ${telefone !== 'N/A' ? `<a href="${whatsappUrl}" target="_blank" class="telefone-icon-btn" data-phone="${telefone}" title="WhatsApp: ${telefone}"><span class="telefone-icon"></span></a>` : ''}
                                             <div class="profissional-nome-wrapper">
@@ -3269,6 +3209,23 @@ def gerar_dashboard():
             console.log(`Total profissionais processados: ${attrCount}`);
 
             const totalSetores = Object.keys(porSetor).length;
+
+            // Distribuição por período (clicável = filtro)
+            const distribuicao = { manha: 0, tarde: 0, noite: 0, sobreaviso: 0, '24h': 0, outro: 0 };
+            dados.registros.forEach(prof => {
+                const g = grupoDoTipo(obterTipoTurno(prof.tipo_turno, prof.horario));
+                distribuicao[g] = (distribuicao[g] || 0) + 1;
+            });
+            const totalDist = Object.values(distribuicao).reduce((a, b) => a + b, 0) || 1;
+            const gruposComGente = Object.keys(distribuicao).filter(g => distribuicao[g] > 0);
+            const distBarHtml = gruposComGente.map(g =>
+                `<span style="flex:${distribuicao[g]}; background:${CORES_PERIODO[g]}" title="${ROTULOS_PERIODO[g]}: ${distribuicao[g]}"></span>`
+            ).join('');
+            const distLegendHtml = gruposComGente.map(g =>
+                `<button onclick="definirFiltroPeriodo('${g === 'outro' ? '' : g}')" title="Filtrar por ${ROTULOS_PERIODO[g]}">` +
+                `<span class="dist-dot" style="background:${CORES_PERIODO[g]}"></span>${ROTULOS_PERIODO[g]} ${distribuicao[g]}</button>`
+            ).join('');
+
             document.getElementById('stats').innerHTML = `
                 <div class="stat-card">
                     <div class="stat-number">${dados.total}</div>
@@ -3278,7 +3235,15 @@ def gerar_dashboard():
                     <div class="stat-number">${totalSetores}</div>
                     <div class="stat-label">Setores</div>
                 </div>
+                <div class="stat-card stat-distribuicao">
+                    <div class="stat-label">Distribuição por período</div>
+                    <div class="dist-bar">${distBarHtml}</div>
+                    <div class="dist-legend">${distLegendHtml}</div>
+                </div>
             `;
+
+            // Pós-render: "agora", chips, índice de setores, a11y, frescor
+            aposRenderizar(porSetor, setoresVisiveis);
             } catch (error) {
                 console.error('❌ ERRO CRÍTICO em renderizarEscala:', error.message);
                 console.error('Stack:', error.stack);
@@ -3303,6 +3268,232 @@ def gerar_dashboard():
             content.classList.toggle('collapsed');
             const toggle = header.querySelector('.categoria-toggle');
             if (toggle) toggle.textContent = aberto ? '▾' : '▸';
+            header.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        }
+
+        /* ============================================================
+           MELHORIAS V4 — tema, "agora", chips, índice, frescor, troca
+           ============================================================ */
+
+        const CORES_PERIODO = {
+            manha: '#2f9e5f', tarde: '#d99114', noite: '#3f74c9',
+            sobreaviso: '#8a7bd8', '24h': '#c0392b', outro: '#9aa5ae'
+        };
+        const ROTULOS_PERIODO = {
+            manha: 'Manhã', tarde: 'Tarde', noite: 'Noite',
+            sobreaviso: 'Sobreaviso', '24h': '24h', outro: 'Outro'
+        };
+
+        function diaAtivo() {
+            const btn = document.querySelector('.date-btn.active');
+            return btn ? btn.getAttribute('data-dia') : 'atual';
+        }
+
+        function minutosDe(hhmm) {
+            const partes = hhmm.trim().split(':');
+            const h = parseInt(partes[0], 10);
+            const m = parseInt(partes[1] || '0', 10);
+            if (isNaN(h) || isNaN(m)) return null;
+            return h * 60 + m;
+        }
+
+        // Marca quem está de plantão AGORA (só faz sentido no dia "atual")
+        function marcarAgora() {
+            const agora = new Date();
+            const agoraMin = agora.getHours() * 60 + agora.getMinutes();
+            const ehHoje = diaAtivo() === 'atual';
+
+            document.querySelectorAll('.profissional').forEach(prof => {
+                prof.classList.remove('plantao-agora', 'plantao-encerrado');
+                const pill = prof.querySelector('.agora-pill');
+                if (pill) pill.remove();
+                if (!ehHoje) return;
+
+                const hora = prof.getAttribute('data-hora') || '';
+                if (!hora.includes('/')) return;
+                const [entradaStr, saidaStr] = hora.split('/');
+                const entrada = minutosDe(entradaStr);
+                const saida = minutosDe(saidaStr);
+                if (entrada === null || saida === null) return;
+
+                let emServico = false;
+                let encerrado = false;
+                if (entrada === saida) {
+                    emServico = true; // plantão de 24h
+                } else if (saida < entrada) {
+                    // vira a madrugada (ex: 19:00/07:00)
+                    emServico = agoraMin >= entrada || agoraMin < saida;
+                } else {
+                    emServico = agoraMin >= entrada && agoraMin < saida;
+                    encerrado = agoraMin >= saida;
+                }
+
+                if (emServico) {
+                    prof.classList.add('plantao-agora');
+                    const info = prof.querySelector('.profissional-info');
+                    if (info && !info.querySelector('.agora-pill')) {
+                        const span = document.createElement('span');
+                        span.className = 'agora-pill';
+                        span.textContent = 'Agora';
+                        info.appendChild(span);
+                    }
+                } else if (encerrado) {
+                    prof.classList.add('plantao-encerrado');
+                }
+            });
+        }
+
+        // Chips de filtro por período, com contagens do dia visível
+        function renderizarChips() {
+            const el = document.getElementById('filter-chips');
+            if (!el) return;
+            const contagens = { manha: 0, tarde: 0, noite: 0, sobreaviso: 0, '24h': 0 };
+            let agoraCount = 0;
+            document.querySelectorAll('.profissional').forEach(prof => {
+                const g = grupoDoTipo(tipoDoProf(prof));
+                if (contagens[g] !== undefined) contagens[g]++;
+                if (prof.classList.contains('plantao-agora')) agoraCount++;
+            });
+
+            let html = `<button class="filter-chip${filtroPeriodo === '' ? ' active' : ''}" data-filtro="" onclick="definirFiltroPeriodo('')">Todos</button>`;
+            if (agoraCount > 0) {
+                html += `<button class="filter-chip${filtroPeriodo === 'agora' ? ' active' : ''}" data-filtro="agora" onclick="definirFiltroPeriodo('agora')">🟢 Agora · ${agoraCount}</button>`;
+            }
+            ['manha', 'tarde', 'noite', 'sobreaviso', '24h'].forEach(g => {
+                if (contagens[g] > 0) {
+                    html += `<button class="filter-chip${filtroPeriodo === g ? ' active' : ''}" data-filtro="${g}" onclick="definirFiltroPeriodo('${g}')">${ROTULOS_PERIODO[g]} · ${contagens[g]}</button>`;
+                }
+            });
+            el.innerHTML = html;
+        }
+
+        // Índice horizontal de setores (pular direto para um setor)
+        function renderizarSetorIndex(porSetor, setoresVisiveis) {
+            const el = document.getElementById('setor-index');
+            if (!el) return;
+            el.innerHTML = setoresVisiveis.map(setor => {
+                const n = (porSetor[setor] || []).length;
+                const nomeCurto = setor.replace(/\\s*[-–]\\s*(Sobreaviso|Plantão|Plantao|Escala).*$/i, '').trim();
+                return `<button class="setor-index-chip" onclick="irParaSetor('${setor.replace(/'/g, "\\'")}')">${nomeCurto}<span class="count">${n}</span></button>`;
+            }).join('');
+        }
+
+        function irParaSetor(setor) {
+            const alvo = Array.from(document.querySelectorAll('.category')).find(cat => {
+                const nome = cat.querySelector('.setor-nome-full');
+                return nome && nome.textContent === setor;
+            });
+            if (!alvo) return;
+            const header = alvo.querySelector('.categoria-header');
+            if (header && !header.classList.contains('expanded')) toggleCategoria(header);
+            alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Chip "próxima troca de plantão" (07h / 13h / 19h)
+        function atualizarProximaTroca() {
+            const el = document.getElementById('proxima-troca');
+            if (!el) return;
+            const TROCAS = [7 * 60, 13 * 60, 19 * 60];
+            const agora = new Date();
+            const agoraMin = agora.getHours() * 60 + agora.getMinutes();
+            let proxima = TROCAS.find(t => t > agoraMin);
+            let delta;
+            if (proxima === undefined) {
+                proxima = TROCAS[0];
+                delta = (24 * 60 - agoraMin) + proxima;
+            } else {
+                delta = proxima - agoraMin;
+            }
+            const h = Math.floor(delta / 60);
+            const m = delta % 60;
+            const quando = h > 0 ? `${h}h${String(m).padStart(2, '0')}` : `${m} min`;
+            el.textContent = `⏱ Próxima troca às ${String(proxima / 60).padStart(2, '0')}:00 · em ${quando}`;
+            el.hidden = false;
+        }
+
+        // Selo de frescor: verde se os dados são de hoje, vermelho caso contrário
+        function atualizarFrescor() {
+            const stamp = document.getElementById('freshness-stamp');
+            const statusText = document.getElementById('status-text');
+            if (!stamp || !statusText || !escalas) return;
+            const dataAtu = escalas.data_atualizacao || escalas.data_backup ||
+                            (escalas.atual && escalas.atual.data_simples) || '';
+            if (!statusText.textContent && dataAtu) {
+                const horaAtu = escalas.hora_atualizacao || escalas.hora_backup || '';
+                statusText.textContent = horaAtu ? `Atualizado em ${dataAtu} às ${horaAtu}` : `Atualizado em ${dataAtu}`;
+            }
+            const hoje = new Date();
+            const hojeStr = String(hoje.getDate()).padStart(2, '0') + '/' +
+                            String(hoje.getMonth() + 1).padStart(2, '0') + '/' + hoje.getFullYear();
+            stamp.classList.remove('fresco', 'velho');
+            if (dataAtu === hojeStr) {
+                stamp.classList.add('fresco');
+            } else if (dataAtu) {
+                stamp.classList.add('velho');
+                statusText.textContent = `⚠️ Dados de ${dataAtu} — atualização pode ter falhado`;
+            }
+        }
+
+        // Tema claro/escuro (segue o sistema por padrão; toggle persiste)
+        function aplicarTema(tema) {
+            document.documentElement.setAttribute('data-theme', tema);
+            const btn = document.getElementById('btn-theme');
+            if (btn) btn.textContent = tema === 'dark' ? '☀️' : '🌙';
+        }
+
+        function alternarTema() {
+            const atual = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            const novo = atual === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('tema', novo);
+            aplicarTema(novo);
+        }
+
+        function iniciarTema() {
+            const salvo = localStorage.getItem('tema');
+            const preferido = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            aplicarTema(salvo || preferido);
+        }
+
+        // Modo compacto (densidade)
+        function alternarCompacto() {
+            const ativo = document.body.classList.toggle('compacto');
+            localStorage.setItem('compacto', ativo ? '1' : '0');
+            const btn = document.getElementById('btn-compacto');
+            if (btn) btn.title = ativo ? 'Voltar ao modo normal' : 'Alternar modo compacto (mais setores por tela)';
+        }
+
+        function focarBusca() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => document.getElementById('search').focus(), 350);
+        }
+
+        // Acessibilidade: cabeçalhos recolhíveis operáveis por teclado
+        function aplicarA11y() {
+            document.querySelectorAll('.categoria-header').forEach(header => {
+                header.setAttribute('role', 'button');
+                header.setAttribute('tabindex', '0');
+                header.setAttribute('aria-expanded', header.classList.contains('expanded') ? 'true' : 'false');
+                if (!header.dataset.a11y) {
+                    header.dataset.a11y = '1';
+                    header.addEventListener('keydown', e => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleCategoria(header);
+                        }
+                    });
+                }
+            });
+        }
+
+        // Pós-render: tudo que depende do DOM das categorias
+        function aposRenderizar(porSetor, setoresVisiveis) {
+            marcarAgora();
+            renderizarChips();
+            renderizarSetorIndex(porSetor, setoresVisiveis);
+            aplicarA11y();
+            atualizarProximaTroca();
+            atualizarFrescor();
+            if (filtroPeriodo || document.getElementById('search').value) filtrarProfissionais();
         }
 
         let seccoesExpandidas = true;
@@ -3530,6 +3721,16 @@ def gerar_dashboard():
 
         // Aguardar DOM estar completamente carregado antes de verificar autenticação
         document.addEventListener('DOMContentLoaded', function() {
+            // Tema e densidade (antes de renderizar, para evitar flash)
+            try {
+                iniciarTema();
+                if (localStorage.getItem('compacto') === '1') {
+                    document.body.classList.add('compacto');
+                }
+            } catch (e) {
+                console.error('❌ Erro ao aplicar tema:', e.message);
+            }
+
             // Verifica antes de renderizar
             try {
                 console.log('📍 Verificando autenticação...');
@@ -3548,9 +3749,17 @@ def gerar_dashboard():
                 console.error('❌ Erro ao renderizar escala:', e.message);
                 console.error('Stack:', e.stack);
             }
-        });
 
-        // ==================== GERENCIAMENTO DE TEMA ====================
+            // Atualiza "agora" e a contagem de troca a cada minuto
+            setInterval(function() {
+                try {
+                    marcarAgora();
+                    renderizarChips();
+                    atualizarProximaTroca();
+                    if (filtroPeriodo === 'agora') filtrarProfissionais();
+                } catch (e) { /* silencioso */ }
+            }, 60000);
+        });
 
     </script>
 
@@ -3585,12 +3794,13 @@ def gerar_dashboard():
     # Substituir placeholder de profissionais com dados reais
     profissionais_json_str = json.dumps(profissionais_data)
     html = html.replace('PROFISSIONAIS_JSON', profissionais_json_str)
+    html = html.replace('VERSAO_GERACAO', datetime.now().strftime('%Y%m%d_%H%M%S'))
 
     # Salvar arquivo em múltiplos locais para garantir que seja atualizado
     output_files = [
         '/tmp/dashboard_executivo.html',
-        '/Users/joaoperes/escalaHRO/index.html',
-        '/Users/joaoperes/escalaHRO/docs/index.html'
+        str(Path(__file__).parent / 'index.html'),
+        str(Path(__file__).parent / 'docs' / 'index.html')
     ]
 
     for output_file in output_files:

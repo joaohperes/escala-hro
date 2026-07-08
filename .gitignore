@@ -23,6 +23,9 @@ venv/
 !data/extracao_inteligente_sample.json
 !data/extracao_inteligente_anterior_fallback.json
 !data/extracao_inteligente_anterior_cache.json
+!manifest.json
+!docs/manifest.json
+!data/historico/*.json
 rodar_diariamente.sh
 
 # Documentation files with secrets

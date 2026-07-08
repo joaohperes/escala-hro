@@ -27,13 +27,13 @@ def validar_ramais():
         print(f"\n   Verificando se extração foi executada corretamente...")
 
         # Verificar se arquivos fonte existem (ramais_hro.json)
-        if os.path.exists('/Users/joaoperes/escalaHRO/ramais_hro.json'):
+        if os.path.exists('ramais_hro.json'):
             print(f"✅ Arquivo source ramais_hro.json existe")
         else:
             print(f"❌ Arquivo source ramais_hro.json NÃO existe!")
             return False
 
-        if os.path.exists('/Users/joaoperes/escalaHRO/setor_ramais_mapping.json'):
+        if os.path.exists('setor_ramais_mapping.json'):
             print(f"✅ Arquivo source setor_ramais_mapping.json existe")
         else:
             print(f"❌ Arquivo source setor_ramais_mapping.json NÃO existe!")
@@ -93,7 +93,7 @@ def validar_dia_anterior():
 
     arquivo = '/tmp/extracao_inteligente.json'
     if not os.path.exists(arquivo):
-        arquivo = '/Users/joaoperes/escalaHRO/data/extracao_inteligente_anterior_cache.json'
+        arquivo = 'data/extracao_inteligente_anterior_cache.json'
 
     try:
         with open(arquivo, 'r') as f:
@@ -165,7 +165,7 @@ def validar_autenticacao():
     print(f"🔐 VALIDANDO AUTENTICAÇÃO")
     print(f"{'='*80}\n")
 
-    arquivo = '/Users/joaoperes/escalaHRO/index.html'
+    arquivo = 'index.html'
 
     try:
         with open(arquivo, 'r') as f:
@@ -204,7 +204,7 @@ def validar_profissionais():
     print(f"👥 VALIDANDO PROFISSIONAIS (Sem Duplicatas)")
     print(f"{'='*80}\n")
 
-    arquivo = '/Users/joaoperes/escalaHRO/profissionais_autenticacao.json'
+    arquivo = 'profissionais_autenticacao.json'
 
     try:
         with open(arquivo, 'r') as f:

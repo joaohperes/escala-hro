@@ -39,6 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
 
     steps:
     - name: Checkout código
@@ -96,12 +97,28 @@ jobs:
       with:
         chrome-version: stable
 
+    - name: Rodar testes
+      run: |
+        pip install pytest
+        python -m pytest tests/ -q
+
     - name: Atualizar Escala e Dashboard
       env:
         ESCALA_USERNAME: ${{ secrets.ESCALA_USERNAME }}
         ESCALA_PASSWORD: ${{ secrets.ESCALA_PASSWORD }}
       run: |
         python update_dashboard.py
+
+    - name: Validar sanidade da extração
+      run: |
+        python validar_extracao.py
+
+    - name: Salvar snapshot histórico
+      run: |
+        mkdir -p data/historico
+        DIA=$(TZ=America/Sao_Paulo date '+%Y-%m-%d')
+        cp /tmp/extracao_inteligente.json "data/historico/${DIA}.json"
+        echo "✅ Snapshot salvo: data/historico/${DIA}.json"
 
     - name: Configurar Git
       run: |
@@ -139,3 +156,24 @@ jobs:
         name: error-logs
         path: /tmp/*.png
         retention-days: 7
+
+    # ALERTA: se o workflow falhar, abre (ou comenta em) uma issue para que a
+    # falha seja notada ANTES das 07h15 — e-mail de issue chega na hora.
+    - name: Alertar falha via issue
+      if: failure()
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        TITULO="🚨 Falha na atualização da escala"
+        CORPO="Workflow **${{ github.workflow }}** falhou em $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M') (BRT).
+
+        Gatilho: \`${{ github.event_name }}\`
+        Logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+        ⚠️ O dashboard NÃO foi atualizado. Se for antes das 07h15, rode manualmente: Actions → Atualizar Escala Diária HRO → Run workflow."
+        EXISTENTE=$(gh issue list --state open --search "$TITULO in:title" --json number --jq '.[0].number' || echo "")
+        if [ -n "$EXISTENTE" ] && [ "$EXISTENTE" != "null" ]; then
+          gh issue comment "$EXISTENTE" --body "$CORPO"
+        else
+          gh issue create --title "$TITULO" --body "$CORPO"
+        fi
