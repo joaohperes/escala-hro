@@ -2049,6 +2049,24 @@ def gerar_dashboard():
             font-weight: 600;
             white-space: nowrap;
         }
+        /* Mobile: chips empilhados e centralizados, sem estourar a largura */
+        @media (max-width: 768px) {
+            .last-update {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 0 10px 4px;
+                text-align: center;
+            }
+            .proxima-troca-chip,
+            .freshness-stamp {
+                white-space: normal;
+                justify-content: center;
+                text-align: center;
+                max-width: 100%;
+            }
+        }
 
         /* ---- Estado vazio da busca ---- */
         .empty-state {
