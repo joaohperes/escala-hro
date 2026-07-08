@@ -245,26 +245,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 8840,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "08 julho 2026",
-        "email": "juliaschreiner_@hotmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99999-4297",
-        "pos_x": 8840,
-        "profissional": "Julia Cieslik Schreiner",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -292,6 +272,16 @@
         "profissional": "Luisa Cancian Stieler",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "brunaraquelkessler@gmail.com",
+        "horario": "18:00/00:00",
+        "phone": "(49) 99911-2258",
+        "pos_x": 8840,
+        "profissional": "Bruna Raquel Kessler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO"
       },
       {
         "data": "08 julho 2026",
@@ -492,16 +482,6 @@
         "profissional": "Gabriela Moschetta",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "08 julho 2026",
-        "email": "brunaraquelkessler@gmail.com",
-        "horario": "18:00/00:00",
-        "phone": "(49) 99911-2258",
-        "pos_x": 8840,
-        "profissional": "Bruna Raquel Kessler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO"
       },
       {
         "data": "08 julho 2026",
@@ -835,6 +815,26 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(21) 99923-1486",
+        "pos_x": 8840,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "juliaschreiner_@hotmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99999-4297",
+        "pos_x": 8840,
+        "profissional": "Julia Cieslik Schreiner",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "letimodelski@hotmail.com",
         "horario": "10:00/16:00",
         "phone": "(54) 99615-3366",
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "08/07/2026",
-  "hora_atualizacao": "14:39",
+  "hora_atualizacao": "15:00",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
