@@ -1004,7 +1004,6 @@ def gerar_dashboard():
         .categoria-header {
             background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
             padding: 18px 20px;
-            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -2119,7 +2118,33 @@ def gerar_dashboard():
             .controls-bar { position: sticky; top: 0; z-index: 3000; background: var(--bg-primary); padding: 8px 0; margin-bottom: 12px; }
             .action-buttons { display: none; }
         }
-        @media print { .bottom-bar { display: none !important; } }
+        @media print {
+            .bottom-bar,
+            .filter-chips,
+            .setor-select,
+            .proxima-troca-chip,
+            .freshness-stamp,
+            .agora-pill,
+            .empty-state,
+            .btn-theme { display: none !important; }
+            .profissional.plantao-encerrado { opacity: 1 !important; }
+            .profissional { border-left-width: 0 !important; }
+        }
+
+        /* ---- Ícones SVG inline ---- */
+        .ic { vertical-align: -3px; }
+        .btn .ic { margin-right: 2px; }
+        .bb-icon .ic { display: inline-block; vertical-align: middle; }
+        .chip-dot {
+            display: inline-block;
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: #1e7e46;
+            margin-right: 6px;
+            vertical-align: 0;
+        }
+        .filter-chip.active .chip-dot { background: #7ee2a8; }
+        .proxima-troca-chip .ic { vertical-align: -2px; margin-right: 2px; }
 
         /* ---- Ramais clicáveis ---- */
         .ramal-tel-link {
@@ -2228,12 +2253,11 @@ def gerar_dashboard():
                 <input type="text" class="search-input" id="search" placeholder="Busque por nome, setor, turno..." onkeyup="filtrarProfissionais()">
             </div>
             <div class="action-buttons">
-                <button class="btn btn-toggle-sections" id="toggle-btn" onclick="alternarSeccoes()" title="Recolher ou expandir todos os setores">▾ Recolher tudo</button>
                 <button class="btn btn-contacts" onclick="abrirListaContatos()">Contatos</button>
                 <button class="btn btn-ramais" onclick="abrirDiretorioRamais()">Ramais</button>
-                <button class="btn btn-print" onclick="window.print()">🖨 Imprimir</button>
-                <button class="btn btn-theme" id="btn-compacto" onclick="alternarCompacto()" title="Alternar modo compacto (mais setores por tela)">☰</button>
-                <button class="btn btn-theme" id="btn-theme" onclick="alternarTema()" title="Alternar tema claro/escuro">🌙</button>
+                <button class="btn btn-print" onclick="window.print()"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg> Imprimir</button>
+                <button class="btn btn-theme" id="btn-compacto" onclick="alternarCompacto()" title="Alternar modo compacto (mais setores por tela)" aria-label="Modo compacto"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+                <button class="btn btn-theme" id="btn-theme" onclick="alternarTema()" title="Alternar tema claro/escuro" aria-label="Alternar tema"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
             </div>
         </div>
 
@@ -2270,11 +2294,11 @@ def gerar_dashboard():
 
     <!-- Barra de ações fixa (só mobile) -->
     <nav class="bottom-bar" aria-label="Ações rápidas">
-        <button onclick="abrirListaContatos()"><span class="bb-icon">📇</span>Contatos</button>
-        <button onclick="abrirDiretorioRamais()"><span class="bb-icon">☎️</span>Ramais</button>
-        <button onclick="focarBusca()"><span class="bb-icon">🔍</span>Buscar</button>
-        <button onclick="alternarTema()"><span class="bb-icon">🌓</span>Tema</button>
-        <button onclick="window.scrollTo({top:0, behavior:'smooth'})"><span class="bb-icon">⬆️</span>Topo</button>
+        <button onclick="abrirListaContatos()"><span class="bb-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Contatos</button>
+        <button onclick="abrirDiretorioRamais()"><span class="bb-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>Ramais</button>
+        <button onclick="focarBusca()"><span class="bb-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>Buscar</button>
+        <button onclick="alternarTema()" id="btn-theme-mobile"><span class="bb-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>Tema</button>
+        <button onclick="window.scrollTo({top:0, behavior:'smooth'})"><span class="bb-icon"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></span>Topo</button>
     </nav>
 
     <script>
@@ -3044,7 +3068,7 @@ def gerar_dashboard():
 
                     html += `
                     <div class="category category-full${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
-                        <div class="categoria-header expanded" onclick="toggleCategoria(this)">
+                        <div class="categoria-header expanded">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${isFavorito ? '★ ' : ''}<span class="setor-nome-full">${setor}</span><span class="setor-nome-curto">${setor.replace(/\s*[-–]\s*(Sobreaviso|Plantão|Plantao).*$/i, '').trim()}</span></div>
                             </div>
@@ -3052,7 +3076,6 @@ def gerar_dashboard():
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
                                 <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar este setor da lista (reversível no rodapé)">✕</button>
                             </div>
-                            <div class="categoria-toggle">▾</div>
                         </div>
                         <div class="categoria-content">
                             <div class="turnos-container">
@@ -3093,7 +3116,7 @@ def gerar_dashboard():
                 } else {
                     html += `
                     <div class="category${isFavorito ? ' setor-favorito' : ''}${isPrintExcluded ? ' print-exclude' : ''}">
-                        <div class="categoria-header expanded" onclick="toggleCategoria(this)">
+                        <div class="categoria-header expanded">
                             <div class="categoria-header-text">
                                 <div class="categoria-nome">${isFavorito ? '★ ' : ''}<span class="setor-nome-full">${setor}</span><span class="setor-nome-curto">${setor.replace(/\s*[-–]\s*(Sobreaviso|Plantão|Plantao).*$/i, '').trim()}</span></div>
                             </div>
@@ -3101,7 +3124,6 @@ def gerar_dashboard():
                                 <button class="btn-pref${isFavorito ? ' favorito-ativo' : ''}" onclick="toggleFavorito('${setor.replace(/'/g, "\\'")}')" title="${isFavorito ? 'Remover dos favoritos' : 'Favoritar setor'}">★</button>
                                 <button class="btn-pref" onclick="toggleOcultar('${setor.replace(/'/g, "\\'")}')" title="Ocultar este setor da lista (reversível no rodapé)">✕</button>
                             </div>
-                            <div class="categoria-toggle">▾</div>
                         </div>
                         <div class="categoria-content">
                             <div class="profissionais-list">
@@ -3206,14 +3228,6 @@ def gerar_dashboard():
             }
         }
 
-        function toggleCategoria(header) {
-            const aberto = header.classList.toggle('expanded');
-            const content = header.nextElementSibling;
-            content.classList.toggle('collapsed');
-            const toggle = header.querySelector('.categoria-toggle');
-            if (toggle) toggle.textContent = aberto ? '▾' : '▸';
-            header.setAttribute('aria-expanded', aberto ? 'true' : 'false');
-        }
 
         /* ============================================================
            MELHORIAS V4 — tema, "agora", chips, índice, frescor, troca
@@ -3297,7 +3311,7 @@ def gerar_dashboard():
 
             let html = `<button class="filter-chip${filtroPeriodo === '' ? ' active' : ''}" data-filtro="" onclick="definirFiltroPeriodo('')">Todos</button>`;
             if (agoraCount > 0) {
-                html += `<button class="filter-chip${filtroPeriodo === 'agora' ? ' active' : ''}" data-filtro="agora" onclick="definirFiltroPeriodo('agora')">🟢 Agora · ${agoraCount}</button>`;
+                html += `<button class="filter-chip${filtroPeriodo === 'agora' ? ' active' : ''}" data-filtro="agora" onclick="definirFiltroPeriodo('agora')"><span class="chip-dot"></span>Agora · ${agoraCount}</button>`;
             }
             ['manha', 'tarde', 'noite', 'sobreaviso', '24h'].forEach(g => {
                 if (contagens[g] > 0) {
@@ -3325,8 +3339,6 @@ def gerar_dashboard():
                 return nome && nome.textContent === setor;
             });
             if (!alvo) return;
-            const header = alvo.querySelector('.categoria-header');
-            if (header && !header.classList.contains('expanded')) toggleCategoria(header);
             alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
@@ -3348,7 +3360,7 @@ def gerar_dashboard():
             const h = Math.floor(delta / 60);
             const m = delta % 60;
             const quando = h > 0 ? `${h}h${String(m).padStart(2, '0')}` : `${m} min`;
-            el.textContent = `⏱ Próxima troca às ${String(proxima / 60).padStart(2, '0')}:00 · em ${quando}`;
+            el.innerHTML = `<svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Próxima troca às ${String(proxima / 60).padStart(2, '0')}:00 · em ${quando}`;
             el.hidden = false;
         }
 
@@ -3376,10 +3388,14 @@ def gerar_dashboard():
         }
 
         // Tema claro/escuro (segue o sistema por padrão; toggle persiste)
+        const SVG_SOL = `<svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+        const SVG_LUA = `<svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
         function aplicarTema(tema) {
             document.documentElement.setAttribute('data-theme', tema);
             const btn = document.getElementById('btn-theme');
-            if (btn) btn.textContent = tema === 'dark' ? '☀️' : '🌙';
+            if (btn) btn.innerHTML = tema === 'dark' ? SVG_SOL : SVG_LUA;
+            const btnM = document.querySelector('#btn-theme-mobile .bb-icon');
+            if (btnM) btnM.innerHTML = tema === 'dark' ? SVG_SOL : SVG_LUA;
         }
 
         function alternarTema() {
@@ -3407,65 +3423,17 @@ def gerar_dashboard():
             setTimeout(() => document.getElementById('search').focus(), 350);
         }
 
-        // Acessibilidade: cabeçalhos recolhíveis operáveis por teclado
-        function aplicarA11y() {
-            document.querySelectorAll('.categoria-header').forEach(header => {
-                header.setAttribute('role', 'button');
-                header.setAttribute('tabindex', '0');
-                header.setAttribute('aria-expanded', header.classList.contains('expanded') ? 'true' : 'false');
-                if (!header.dataset.a11y) {
-                    header.dataset.a11y = '1';
-                    header.addEventListener('keydown', e => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            toggleCategoria(header);
-                        }
-                    });
-                }
-            });
-        }
 
         // Pós-render: tudo que depende do DOM das categorias
         function aposRenderizar(porSetor, setoresVisiveis) {
             marcarAgora();
             renderizarChips();
             renderizarSetorIndex(porSetor, setoresVisiveis);
-            aplicarA11y();
             atualizarProximaTroca();
             atualizarFrescor();
             if (filtroPeriodo || document.getElementById('search').value) filtrarProfissionais();
         }
 
-        let seccoesExpandidas = true;
-
-        function alternarSeccoes() {
-            const btn = document.getElementById('toggle-btn');
-            const categorias = document.querySelectorAll('.categoria-header');
-
-            if (seccoesExpandidas) {
-                // Colapsar todas
-                categorias.forEach(h => {
-                    h.classList.remove('expanded');
-                    h.nextElementSibling.classList.add('collapsed');
-                    const t = h.querySelector('.categoria-toggle');
-                    if (t) t.textContent = '▸';
-                });
-                btn.innerHTML = '▸ Expandir tudo';
-                btn.classList.add('collapsed');
-                seccoesExpandidas = false;
-            } else {
-                // Expandir todas
-                categorias.forEach(h => {
-                    h.classList.add('expanded');
-                    h.nextElementSibling.classList.remove('collapsed');
-                    const t = h.querySelector('.categoria-toggle');
-                    if (t) t.textContent = '▾';
-                });
-                btn.innerHTML = '▾ Recolher tudo';
-                btn.classList.remove('collapsed');
-                seccoesExpandidas = true;
-            }
-        }
 
         // Mostrar data atual no header
         const hoje = new Date();
