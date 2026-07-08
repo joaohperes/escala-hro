@@ -1937,6 +1937,13 @@ def gerar_dashboard():
         html[data-theme="dark"] .profissional-nome-text { color: var(--text-primary); }
         html[data-theme="dark"] .info-horario { color: var(--text-secondary); }
         html[data-theme="dark"] .contact-phone { color: #6fd398; }
+        html[data-theme="dark"] .ramal-item { background: var(--bg-tertiary); border-color: var(--border-color); }
+        html[data-theme="dark"] .ramal-item:hover { background: var(--bg-secondary); border-color: var(--color-primary); }
+        html[data-theme="dark"] .ramal-dept-line { color: var(--color-primary); }
+        html[data-theme="dark"] .ramais-search { background: var(--bg-tertiary); color: var(--text-primary); border-color: var(--border-color); }
+        html[data-theme="dark"] .ramais-modal-header h2 { color: var(--color-primary); }
+        html[data-theme="dark"] .ramal-exts-line a,
+        html[data-theme="dark"] .ramal-tel-link { color: #6fd398; }
 
         .btn-theme {
             background: var(--bg-secondary);
@@ -1980,6 +1987,7 @@ def gerar_dashboard():
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+            align-items: center;
             margin-bottom: 14px;
         }
         .filter-chip {
@@ -1998,35 +2006,24 @@ def gerar_dashboard():
         .filter-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
         .filter-chip.active { background: var(--color-primary); border-color: var(--color-primary); color: var(--bg-secondary); }
 
-        /* ---- Índice de setores ---- */
-        .setor-index {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 6px;
-            margin-bottom: 16px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: thin;
-        }
-        .setor-index:empty { display: none; }
-        .setor-index-chip {
-            flex-shrink: 0;
+        /* ---- Dropdown "Ir para setor" ---- */
+        .setor-select {
+            margin-left: auto;
             border: 1px solid var(--border-color);
             background: var(--bg-secondary);
             color: var(--text-secondary);
             border-radius: 999px;
             padding: 6px 12px;
-            font-size: 0.78em;
+            font-size: 0.82em;
             font-weight: 600;
-            cursor: pointer;
             font-family: inherit;
-            white-space: nowrap;
+            cursor: pointer;
+            max-width: 220px;
+            min-height: 34px;
         }
-        .setor-index-chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
-        .setor-index-chip .count {
-            color: var(--text-tertiary);
-            font-weight: 700;
-            margin-left: 4px;
+        .setor-select:hover, .setor-select:focus { border-color: var(--color-primary); color: var(--color-primary); }
+        @media (max-width: 768px) {
+            .setor-select { margin-left: 0; max-width: 100%; flex: 1 1 100%; }
         }
 
         /* ---- Selo de frescor + próxima troca ---- */
@@ -2053,38 +2050,6 @@ def gerar_dashboard():
             font-weight: 600;
             white-space: nowrap;
         }
-
-        /* ---- Distribuição por período nos stats ---- */
-        .stat-distribuicao { grid-column: 1 / -1; text-align: left; cursor: default; }
-        .dist-bar {
-            display: flex;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin: 10px 0 8px;
-        }
-        .dist-bar span { display: block; }
-        .dist-legend {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            font-size: 0.8em;
-            color: var(--text-secondary);
-        }
-        .dist-legend button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1em;
-            color: inherit;
-            padding: 4px 2px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .dist-legend button:hover { color: var(--color-primary); }
-        .dist-dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 
         /* ---- Estado vazio da busca ---- */
         .empty-state {
@@ -2272,11 +2237,11 @@ def gerar_dashboard():
             </div>
         </div>
 
-        <!-- Filtros por período -->
-        <div class="filter-chips" id="filter-chips" role="group" aria-label="Filtrar por período"></div>
-
-        <!-- Índice de setores -->
-        <div class="setor-index" id="setor-index" role="navigation" aria-label="Ir para setor"></div>
+        <!-- Filtros por período + ir para setor -->
+        <div class="filter-chips" id="filter-row">
+            <div id="filter-chips" role="group" aria-label="Filtrar por período" style="display:contents"></div>
+            <select id="setor-index" class="setor-select" aria-label="Ir para setor" onchange="if(this.value){irParaSetor(this.value); this.selectedIndex=0;}"></select>
+        </div>
 
         <!-- Cabeçalho de impressão (visível só no print) -->
         <div class="print-header">
@@ -2308,6 +2273,7 @@ def gerar_dashboard():
         <button onclick="abrirListaContatos()"><span class="bb-icon">📇</span>Contatos</button>
         <button onclick="abrirDiretorioRamais()"><span class="bb-icon">☎️</span>Ramais</button>
         <button onclick="focarBusca()"><span class="bb-icon">🔍</span>Buscar</button>
+        <button onclick="alternarTema()"><span class="bb-icon">🌓</span>Tema</button>
         <button onclick="window.scrollTo({top:0, behavior:'smooth'})"><span class="bb-icon">⬆️</span>Topo</button>
     </nav>
 
@@ -3209,23 +3175,6 @@ def gerar_dashboard():
             console.log(`Total profissionais processados: ${attrCount}`);
 
             const totalSetores = Object.keys(porSetor).length;
-
-            // Distribuição por período (clicável = filtro)
-            const distribuicao = { manha: 0, tarde: 0, noite: 0, sobreaviso: 0, '24h': 0, outro: 0 };
-            dados.registros.forEach(prof => {
-                const g = grupoDoTipo(obterTipoTurno(prof.tipo_turno, prof.horario));
-                distribuicao[g] = (distribuicao[g] || 0) + 1;
-            });
-            const totalDist = Object.values(distribuicao).reduce((a, b) => a + b, 0) || 1;
-            const gruposComGente = Object.keys(distribuicao).filter(g => distribuicao[g] > 0);
-            const distBarHtml = gruposComGente.map(g =>
-                `<span style="flex:${distribuicao[g]}; background:${CORES_PERIODO[g]}" title="${ROTULOS_PERIODO[g]}: ${distribuicao[g]}"></span>`
-            ).join('');
-            const distLegendHtml = gruposComGente.map(g =>
-                `<button onclick="definirFiltroPeriodo('${g === 'outro' ? '' : g}')" title="Filtrar por ${ROTULOS_PERIODO[g]}">` +
-                `<span class="dist-dot" style="background:${CORES_PERIODO[g]}"></span>${ROTULOS_PERIODO[g]} ${distribuicao[g]}</button>`
-            ).join('');
-
             document.getElementById('stats').innerHTML = `
                 <div class="stat-card">
                     <div class="stat-number">${dados.total}</div>
@@ -3234,11 +3183,6 @@ def gerar_dashboard():
                 <div class="stat-card">
                     <div class="stat-number">${totalSetores}</div>
                     <div class="stat-label">Setores</div>
-                </div>
-                <div class="stat-card stat-distribuicao">
-                    <div class="stat-label">Distribuição por período</div>
-                    <div class="dist-bar">${distBarHtml}</div>
-                    <div class="dist-legend">${distLegendHtml}</div>
                 </div>
             `;
 
@@ -3275,10 +3219,6 @@ def gerar_dashboard():
            MELHORIAS V4 — tema, "agora", chips, índice, frescor, troca
            ============================================================ */
 
-        const CORES_PERIODO = {
-            manha: '#2f9e5f', tarde: '#d99114', noite: '#3f74c9',
-            sobreaviso: '#8a7bd8', '24h': '#c0392b', outro: '#9aa5ae'
-        };
         const ROTULOS_PERIODO = {
             manha: 'Manhã', tarde: 'Tarde', noite: 'Noite',
             sobreaviso: 'Sobreaviso', '24h': '24h', outro: 'Outro'
@@ -3367,15 +3307,16 @@ def gerar_dashboard():
             el.innerHTML = html;
         }
 
-        // Índice horizontal de setores (pular direto para um setor)
+        // Dropdown "Ir para setor" (compacto, sem scroll horizontal)
         function renderizarSetorIndex(porSetor, setoresVisiveis) {
             const el = document.getElementById('setor-index');
             if (!el) return;
-            el.innerHTML = setoresVisiveis.map(setor => {
+            const options = setoresVisiveis.map(setor => {
                 const n = (porSetor[setor] || []).length;
                 const nomeCurto = setor.replace(/\\s*[-–]\\s*(Sobreaviso|Plantão|Plantao|Escala).*$/i, '').trim();
-                return `<button class="setor-index-chip" onclick="irParaSetor('${setor.replace(/'/g, "\\'")}')">${nomeCurto}<span class="count">${n}</span></button>`;
+                return `<option value="${setor.replace(/"/g, '&quot;')}">${nomeCurto} (${n})</option>`;
             }).join('');
+            el.innerHTML = `<option value="">Ir para setor…</option>` + options;
         }
 
         function irParaSetor(setor) {
@@ -3449,9 +3390,8 @@ def gerar_dashboard():
         }
 
         function iniciarTema() {
-            const salvo = localStorage.getItem('tema');
-            const preferido = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            aplicarTema(salvo || preferido);
+            // Padrão é SEMPRE claro; escuro só se o usuário escolheu no toggle
+            aplicarTema(localStorage.getItem('tema') === 'dark' ? 'dark' : 'light');
         }
 
         // Modo compacto (densidade)
