@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "08 julho 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "elaineforgiarini@gmail.com",
         "horario": "13:30/17:30",
         "phone": "(55) 98141-0589",
@@ -175,16 +165,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "belini.juciana@unochapeco.edu.br",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99806-5659",
-        "pos_x": 5814,
-        "profissional": "Juciana Belini",
-        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
-        "tipo_turno": "Médico - Vespertino"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "davimsouza@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99163-3573",
@@ -192,6 +172,16 @@
         "profissional": "Davi Machado de Souza",
         "setor": "Oftalmologia Sobreaviso",
         "tipo_turno": "Sobreaviso Oftalmologia"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "drakaliandrapediatra@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(49) 98813-7205",
+        "pos_x": 6487,
+        "profissional": "Kaliandra de Almeida",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "08 julho 2026",
@@ -335,16 +325,6 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 9516,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "08 julho 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "13:00/19:00",
         "phone": "(41) 99951-6066",
@@ -385,7 +365,7 @@
       },
       {
         "data": "08 julho 2026",
-        "email": "Patricialima1407@gmail.com",
+        "email": "elaineforgiarini@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(41) 99968-0428",
         "pos_x": 10862,
@@ -442,16 +422,6 @@
         "profissional": "Priscila Domingos",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "08 julho 2026",
-        "email": "drakaliandrapediatra@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(49) 98813-7205",
-        "pos_x": 6487,
-        "profissional": "Kaliandra de Almeida",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "08 julho 2026",
@@ -645,6 +615,16 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 429,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "elaineforgiarini@gmail.com",
         "horario": "08:00/12:00",
         "phone": "(55) 98141-0589",
@@ -765,6 +745,16 @@
       },
       {
         "data": "08 julho 2026",
+        "email": "belini.juciana@unochapeco.edu.br",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99806-5659",
+        "pos_x": 5814,
+        "profissional": "Juciana Belini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Vespertino"
+      },
+      {
+        "data": "08 julho 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99116-3404",
@@ -832,6 +822,16 @@
         "profissional": "Marcia de Menezes Bergamo",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
         "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "08 julho 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 9516,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "08 julho 2026",
@@ -937,7 +937,7 @@
     "total": 93
   },
   "data_atualizacao": "08/07/2026",
-  "hora_atualizacao": "13:17",
+  "hora_atualizacao": "14:06",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
