@@ -365,6 +365,16 @@
       },
       {
         "data": "09 julho 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 8840,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "09 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -772,16 +782,6 @@
         "profissional": "Miyake Adriana Souza Cirqueira",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "09 julho 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 8840,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "09 julho 2026",
@@ -1974,5 +1974,5 @@
     "total": 97
   },
   "data_backup": "09/07/2026",
-  "hora_backup": "06:51"
+  "hora_backup": "07:46"
 }
