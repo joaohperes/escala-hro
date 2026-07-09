@@ -105,46 +105,6 @@
       },
       {
         "data": "09 julho 2026",
-        "email": "Samantha.aspiazu@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 99982-3380",
-        "pos_x": 3457,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "09 julho 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 3457,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "09 julho 2026",
-        "email": "gabrielvdom@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99146-1395",
-        "pos_x": 3457,
-        "profissional": "Gabriel Vitoria Domingues",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "09 julho 2026",
-        "email": "brunoootrevisan@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(55) 99976-0748",
-        "pos_x": 3457,
-        "profissional": "Bruno Trevisan",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "09 julho 2026",
         "email": "williandidomenico@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99191-2248",
@@ -985,6 +945,46 @@
       },
       {
         "data": "09 julho 2026",
+        "email": "Samantha.aspiazu@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 99982-3380",
+        "pos_x": 3457,
+        "profissional": "Samantha de Aspiazu Damiani",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "09 julho 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 3457,
+        "profissional": "Bianca Valandro",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "09 julho 2026",
+        "email": "gabrielvdom@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99146-1395",
+        "pos_x": 3457,
+        "profissional": "Gabriel Vitoria Domingues",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "09 julho 2026",
+        "email": "brunoootrevisan@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(55) 99976-0748",
+        "pos_x": 3457,
+        "profissional": "Bruno Trevisan",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "09 julho 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 98813-7205",
@@ -997,7 +997,7 @@
     "total": 99
   },
   "data_atualizacao": "09/07/2026",
-  "hora_atualizacao": "07:46",
+  "hora_atualizacao": "08:32",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
