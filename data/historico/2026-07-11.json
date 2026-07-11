@@ -285,6 +285,16 @@
       },
       {
         "data": "11 julho 2026",
+        "email": "mspfaffenzeller@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(48) 98415-0811",
+        "pos_x": 7838,
+        "profissional": "Marta Schmidt Pfaffenzeller",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "11 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -362,16 +372,6 @@
         "profissional": "Claudio Quinan Balestrin Neto",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
-      },
-      {
-        "data": "11 julho 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:30/10:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9859,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
       },
       {
         "data": "11 julho 2026",
@@ -602,16 +602,6 @@
         "profissional": "Gabriela Moschetta",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "11 julho 2026",
-        "email": "mspfaffenzeller@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(48) 98415-0811",
-        "pos_x": 7838,
-        "profissional": "Marta Schmidt Pfaffenzeller",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "11 julho 2026",
@@ -862,12 +852,22 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "11 julho 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:30/10:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9859,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
     "total": 86
   },
   "data_atualizacao": "11/07/2026",
-  "hora_atualizacao": "06:59",
+  "hora_atualizacao": "07:43",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
