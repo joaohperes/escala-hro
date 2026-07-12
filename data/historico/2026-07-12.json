@@ -375,16 +375,6 @@
       },
       {
         "data": "12 julho 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:30/10:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9859,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "12 julho 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 98853-1590",
@@ -862,12 +852,22 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "12 julho 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:30/10:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9859,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
     "total": 86
   },
   "data_atualizacao": "12/07/2026",
-  "hora_atualizacao": "07:08",
+  "hora_atualizacao": "07:46",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
