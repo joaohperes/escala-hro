@@ -285,6 +285,16 @@
       },
       {
         "data": "12 julho 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7838,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "12 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -602,16 +612,6 @@
         "profissional": "Miyake Adriana Souza Cirqueira",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "12 julho 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7838,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "12 julho 2026",
@@ -1734,5 +1734,5 @@
     "total": 86
   },
   "data_backup": "12/07/2026",
-  "hora_backup": "06:46"
+  "hora_backup": "07:08"
 }
