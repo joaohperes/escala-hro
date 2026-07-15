@@ -355,6 +355,16 @@
       },
       {
         "data": "15 julho 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 8840,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -755,16 +765,6 @@
       },
       {
         "data": "15 julho 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 8840,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 julho 2026",
         "email": "victortrennepohl@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(46) 99976-3592",
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "15/07/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:21",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
