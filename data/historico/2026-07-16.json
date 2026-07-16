@@ -365,6 +365,16 @@
       },
       {
         "data": "16 julho 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 8840,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "16 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -775,16 +785,6 @@
       },
       {
         "data": "16 julho 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 8840,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "16 julho 2026",
         "email": "toninicamila1@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99834-2129",
@@ -997,7 +997,7 @@
     "total": 99
   },
   "data_atualizacao": "16/07/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:28",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
