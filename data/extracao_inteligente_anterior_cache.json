@@ -365,16 +365,6 @@
       },
       {
         "data": "19 julho 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9525,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "19 julho 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -831,6 +821,16 @@
         "pos_x": 9188,
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "19 julho 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9525,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1674,5 +1674,5 @@
     "total": 83
   },
   "data_backup": "19/07/2026",
-  "hora_backup": "07:08"
+  "hora_backup": "07:45"
 }
