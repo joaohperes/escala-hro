@@ -15,16 +15,6 @@
       },
       {
         "data": "20 julho 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 429,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "20 julho 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(62) 99136-0987",
@@ -415,16 +405,6 @@
       },
       {
         "data": "20 julho 2026",
-        "email": "lisebeatriz@yahoo.com.br",
-        "horario": "07:00/12:00",
-        "phone": "(41) 99951-6066",
-        "pos_x": 10862,
-        "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "20 julho 2026",
         "email": "mrosannev@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 99976-0590",
@@ -442,16 +422,6 @@
         "profissional": "Luis Antonio Bataglin Dalcastel",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "20 julho 2026",
-        "email": "luisdalcastel@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 11199,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "20 julho 2026",
@@ -905,6 +875,16 @@
       },
       {
         "data": "20 julho 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "20 julho 2026",
         "email": "eduardo.fg.pneumo@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(49) 99914-9150",
@@ -952,12 +932,32 @@
         "profissional": "Isabela Maran",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "20 julho 2026",
+        "email": "lisebeatriz@yahoo.com.br",
+        "horario": "07:00/12:00",
+        "phone": "(41) 99951-6066",
+        "pos_x": 10862,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "20 julho 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 11199,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 95
   },
   "data_atualizacao": "20/07/2026",
-  "hora_atualizacao": "08:23",
+  "hora_atualizacao": "09:02",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
