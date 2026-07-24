@@ -95,46 +95,6 @@
       },
       {
         "data": "24 julho 2026",
-        "email": "brunoootrevisan@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(55) 99976-0748",
-        "pos_x": 3121,
-        "profissional": "Bruno Trevisan",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 julho 2026",
-        "email": "Samantha.aspiazu@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 99982-3380",
-        "pos_x": 3121,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 julho 2026",
-        "email": "gabrielvdom@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99146-1395",
-        "pos_x": 3121,
-        "profissional": "Gabriel Vitoria Domingues",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 julho 2026",
-        "email": "eduardo.fg.pneumo@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99914-9150",
-        "pos_x": 3121,
-        "profissional": "Eduardo Formoso Goldschimidt",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "24 julho 2026",
         "email": "ferscort@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(54) 98152-8500",
@@ -932,6 +892,46 @@
         "profissional": "Luis Antonio Bataglin Dalcastel",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Noturno"
+      },
+      {
+        "data": "24 julho 2026",
+        "email": "brunoootrevisan@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(55) 99976-0748",
+        "pos_x": 3121,
+        "profissional": "Bruno Trevisan",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 julho 2026",
+        "email": "Samantha.aspiazu@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 99982-3380",
+        "pos_x": 3121,
+        "profissional": "Samantha de Aspiazu Damiani",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 julho 2026",
+        "email": "gabrielvdom@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99146-1395",
+        "pos_x": 3121,
+        "profissional": "Gabriel Vitoria Domingues",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "24 julho 2026",
+        "email": "eduardo.fg.pneumo@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99914-9150",
+        "pos_x": 3121,
+        "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
       {
         "data": "24 julho 2026",
@@ -1974,5 +1974,5 @@
     "total": 102
   },
   "data_backup": "24/07/2026",
-  "hora_backup": "07:46"
+  "hora_backup": "08:20"
 }
