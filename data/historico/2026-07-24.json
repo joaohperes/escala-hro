@@ -345,6 +345,16 @@
       },
       {
         "data": "24 julho 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 8506,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "24 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -725,16 +735,6 @@
       },
       {
         "data": "24 julho 2026",
-        "email": "francihoff@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 98138-9719",
-        "pos_x": 8506,
-        "profissional": "Francine Ehrhardt Hoffmann",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "24 julho 2026",
         "email": "mspfaffenzeller@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 98415-0811",
@@ -947,7 +947,7 @@
     "total": 94
   },
   "data_atualizacao": "24/07/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:34",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
