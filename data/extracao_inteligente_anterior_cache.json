@@ -365,16 +365,6 @@
       },
       {
         "data": "26 julho 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9525,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "26 julho 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 98853-1590",
@@ -821,6 +811,16 @@
         "pos_x": 9188,
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "26 julho 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9525,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1654,5 +1654,5 @@
     "total": 82
   },
   "data_backup": "26/07/2026",
-  "hora_backup": "07:19"
+  "hora_backup": "07:46"
 }
