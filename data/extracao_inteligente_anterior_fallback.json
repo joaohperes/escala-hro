@@ -355,6 +355,16 @@
       },
       {
         "data": "30 julho 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 9172,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "30 julho 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -792,16 +802,6 @@
         "profissional": "Stephanie Mosena Scalco",
         "setor": "Serviço de Infectologia",
         "tipo_turno": "Serviço de Infectologia"
-      },
-      {
-        "data": "30 julho 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 9172,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "30 julho 2026",
@@ -2094,5 +2094,5 @@
     "total": 105
   },
   "data_backup": "30/07/2026",
-  "hora_backup": "06:46"
+  "hora_backup": "07:38"
 }
