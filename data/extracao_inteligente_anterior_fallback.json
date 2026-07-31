@@ -95,46 +95,6 @@
       },
       {
         "data": "31 julho 2026",
-        "email": "brunoootrevisan@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(55) 99976-0748",
-        "pos_x": 3119,
-        "profissional": "Bruno Trevisan",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "31 julho 2026",
-        "email": "emelinemoreira@hotmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 99958-0101",
-        "pos_x": 3119,
-        "profissional": "Emeline Moreira Cabral",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "31 julho 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 3119,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "31 julho 2026",
-        "email": "Samantha.aspiazu@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 99982-3380",
-        "pos_x": 3119,
-        "profissional": "Samantha de Aspiazu Damiani",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "31 julho 2026",
         "email": "drgiovanisantin@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99963-6866",
@@ -952,6 +912,46 @@
         "profissional": "João Henrique Peres",
         "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
         "tipo_turno": "Plantão Noturno"
+      },
+      {
+        "data": "31 julho 2026",
+        "email": "brunoootrevisan@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(55) 99976-0748",
+        "pos_x": 3119,
+        "profissional": "Bruno Trevisan",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "31 julho 2026",
+        "email": "emelinemoreira@hotmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 99958-0101",
+        "pos_x": 3119,
+        "profissional": "Emeline Moreira Cabral",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "31 julho 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 3119,
+        "profissional": "Bianca Valandro",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "31 julho 2026",
+        "email": "Samantha.aspiazu@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 99982-3380",
+        "pos_x": 3119,
+        "profissional": "Samantha de Aspiazu Damiani",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
       {
         "data": "31 julho 2026",
@@ -2024,5 +2024,5 @@
     "total": 105
   },
   "data_backup": "31/07/2026",
-  "hora_backup": "07:46"
+  "hora_backup": "08:07"
 }
