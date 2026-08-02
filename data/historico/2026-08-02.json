@@ -235,6 +235,16 @@
       },
       {
         "data": "02 agosto 2026",
+        "email": "eloisa.chiella@unochapeco.edu.br",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98817-2147",
+        "pos_x": 6169,
+        "profissional": "Eloisa Lehr Filippi Chiella",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "02 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -442,16 +452,6 @@
         "profissional": "Natália Cristhine Lazarin Goehr",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "02 agosto 2026",
-        "email": "eloisa.chiella@unochapeco.edu.br",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98817-2147",
-        "pos_x": 6169,
-        "profissional": "Eloisa Lehr Filippi Chiella",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "02 agosto 2026",
@@ -677,7 +677,7 @@
     "total": 67
   },
   "data_atualizacao": "02/08/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:15",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
