@@ -305,6 +305,16 @@
       },
       {
         "data": "03 agosto 2026",
+        "email": "julianofarias@ymail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99942-4165",
+        "pos_x": 7172,
+        "profissional": "Juliano Cesar Huf Farias",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "03 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -595,16 +605,6 @@
       },
       {
         "data": "03 agosto 2026",
-        "email": "julianofarias@ymail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99942-4165",
-        "pos_x": 7172,
-        "profissional": "Juliano Cesar Huf Farias",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "03 agosto 2026",
         "email": "marialuizahensel@gmail.com",
         "horario": "12:00/18:00",
         "phone": "(21) 99923-1486",
@@ -807,7 +807,7 @@
     "total": 80
   },
   "data_atualizacao": "03/08/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:46",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
