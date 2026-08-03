@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "03 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 92,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "03 agosto 2026",
         "email": "fogaca@unochapeco.edu.br",
         "horario": "07:00/07:00",
         "phone": "(49) 99987-7255",
@@ -275,6 +265,16 @@
       },
       {
         "data": "03 agosto 2026",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "12:00/18:00",
+        "phone": "(21) 99923-1486",
+        "pos_x": 7170,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "03 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -365,16 +365,6 @@
       },
       {
         "data": "03 agosto 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "07:00/12:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 9192,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "03 agosto 2026",
         "email": "emelyjorge@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 99708-0037",
@@ -392,16 +382,6 @@
         "profissional": "Daniel Candido Naman Dutra",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "03 agosto 2026",
-        "email": "dani_naman@hotmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 9529,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "03 agosto 2026",
@@ -582,16 +562,6 @@
         "profissional": "Pedro Leonel Fucks da Veiga",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "03 agosto 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "12:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 7170,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
       },
       {
         "data": "03 agosto 2026",
@@ -795,6 +765,16 @@
       },
       {
         "data": "03 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 92,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "03 agosto 2026",
         "email": "Samantha.aspiazu@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(54) 99982-3380",
@@ -842,6 +822,26 @@
         "profissional": "Isabela Maran",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "03 agosto 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "07:00/12:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 9192,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "03 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 9529,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 84
@@ -1544,5 +1544,5 @@
     "total": 69
   },
   "data_backup": "03/08/2026",
-  "hora_backup": "08:57"
+  "hora_backup": "09:44"
 }
