@@ -325,16 +325,6 @@
       },
       {
         "data": "08 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "08:30/09:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 8518,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "08 agosto 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98808-0201",
@@ -342,6 +332,16 @@
         "profissional": "Cesar Augusto Seidler Junior",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "08 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:30/10:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 8855,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       },
       {
         "data": "08 agosto 2026",
@@ -675,16 +675,6 @@
       },
       {
         "data": "08 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:30/10:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 8855,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "08 agosto 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98808-0201",
@@ -811,6 +801,16 @@
         "pos_x": 8181,
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "08 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "08:30/09:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 8518,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1774,5 +1774,5 @@
     "total": 95
   },
   "data_backup": "08/08/2026",
-  "hora_backup": "06:11"
+  "hora_backup": "06:46"
 }
