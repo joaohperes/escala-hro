@@ -345,6 +345,16 @@
       },
       {
         "data": "11 agosto 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8170,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "11 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -725,16 +735,6 @@
       },
       {
         "data": "11 agosto 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8170,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "11 agosto 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -967,7 +967,7 @@
     "total": 96
   },
   "data_atualizacao": "11/08/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:27",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
