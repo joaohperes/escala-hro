@@ -355,6 +355,16 @@
       },
       {
         "data": "12 agosto 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 8170,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "12 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -722,16 +732,6 @@
         "profissional": "Mateus Henrique Provim",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "12 agosto 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 8170,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "12 agosto 2026",
@@ -1944,5 +1944,5 @@
     "total": 96
   },
   "data_backup": "12/08/2026",
-  "hora_backup": "06:46"
+  "hora_backup": "07:39"
 }
