@@ -5,23 +5,13 @@
     "registros": [
       {
         "data": "14 agosto 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "dani_naman@hotmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(64) 99988-0411",
+        "email": "guilherme.barreto23@gmail.com",
+        "horario": "19:00/07:00",
+        "phone": "(93) 99176-2753",
         "pos_x": 765,
-        "profissional": "Daniel Candido Naman Dutra",
+        "profissional": "Guilherme Macena Barreto Junior",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Plantão Pediátrico - Vespertino"
+        "tipo_turno": "Plantão Pediátrico - Noturno"
       },
       {
         "data": "14 agosto 2026",
@@ -95,23 +85,23 @@
       },
       {
         "data": "14 agosto 2026",
-        "email": "boligoncintya@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99943-5502",
+        "email": "fercm@unochapeco.edu.br",
+        "horario": "19:00/07:00",
+        "phone": "(49) 99902-9999",
         "pos_x": 3795,
-        "profissional": "Cintya Boligon",
+        "profissional": "Fernanda Canello Modesti",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P1"
+        "tipo_turno": "Plantão Noturno - P1"
       },
       {
         "data": "14 agosto 2026",
-        "email": "macascaes@hotmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(48) 99115-1002",
+        "email": "srebelatto@unochapeco.edu.br",
+        "horario": "19:00/07:00",
+        "phone": "(49) 99914-8587",
         "pos_x": 3795,
-        "profissional": "Maisa Miranda Cascaes",
+        "profissional": "Shayane Luiza Rebelatto",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P2"
+        "tipo_turno": "Plantão Noturno - P1"
       },
       {
         "data": "14 agosto 2026",
@@ -125,23 +115,13 @@
       },
       {
         "data": "14 agosto 2026",
-        "email": "amandaalberici@yahoo.com.br",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98846-9947",
+        "email": "biia.wolschick@hotmail.com",
+        "horario": "19:00/07:00",
+        "phone": "(49) 99125-5659",
         "pos_x": 4469,
-        "profissional": "Amanda Alberici",
+        "profissional": "Bianca Soder  Wolschick",
         "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "joaohperes@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99835-1563",
-        "pos_x": 4469,
-        "profissional": "João Henrique Peres",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Vespertino"
+        "tipo_turno": "Noturno"
       },
       {
         "data": "14 agosto 2026",
@@ -175,16 +155,6 @@
       },
       {
         "data": "14 agosto 2026",
-        "email": "belini.juciana@unochapeco.edu.br",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99806-5659",
-        "pos_x": 5816,
-        "profissional": "Juciana Belini",
-        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
-        "tipo_turno": "Médico - Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
         "email": "davimsouza@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99163-3573",
@@ -192,6 +162,16 @@
         "profissional": "Davi Machado de Souza",
         "setor": "Oftalmologia Sobreaviso",
         "tipo_turno": "Sobreaviso Oftalmologia"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "19:00/07:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 6489,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "14 agosto 2026",
@@ -215,256 +195,6 @@
       },
       {
         "data": "14 agosto 2026",
-        "email": "nauradanielimarcon@gmail.com",
-        "horario": "07:00/19:00",
-        "phone": "(54) 99971-7583",
-        "pos_x": 7499,
-        "profissional": "Naura Danieli Marcon",
-        "setor": "Residência de Cirurgia Geral",
-        "tipo_turno": "DIA"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 7836,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "mariajteston@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99921-5262",
-        "pos_x": 7836,
-        "profissional": "Maria Julia Teston",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "edumasierocola@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99121-2941",
-        "pos_x": 7836,
-        "profissional": "Eduardo Masiero Cola",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "j.ribas@unochapeco.edu.br",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99816-3428",
-        "pos_x": 7836,
-        "profissional": "Jose Augusto Nogueira Ribas",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "brunacfgabbi@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99827-4102",
-        "pos_x": 7836,
-        "profissional": "Bruna Carolina Fagundes Gabbi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "ceruttinaila2@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(45) 99851-6023",
-        "pos_x": 7836,
-        "profissional": "Naila Cerutti",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "mariogoto@gmail.com",
-        "horario": "07:00/07:00",
-        "phone": "(49) 99989-0400",
-        "pos_x": 8172,
-        "profissional": "Mario Goto",
-        "setor": "Transplante - Sobreaviso Cirurgia",
-        "tipo_turno": "Cirurgia Geral - 1"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "thiagoreck@gmail.com",
-        "horario": "07:00/07:00",
-        "phone": "(49) 99976-9191",
-        "pos_x": 8172,
-        "profissional": "Thiago Felippe Reck",
-        "setor": "Transplante - Sobreaviso Cirurgia",
-        "tipo_turno": "Cirurgia Geral - 2"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "julianourochapeco@gmail.com",
-        "horario": "07:00/07:00",
-        "phone": "(49) 99157-0907",
-        "pos_x": 8172,
-        "profissional": "Juliano Ferneda",
-        "setor": "Transplante - Sobreaviso Cirurgia",
-        "tipo_turno": "Urologia"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "fabischeffer@hotmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99136-6431",
-        "pos_x": 8846,
-        "profissional": "Fabiane Scheffer Reginatto",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "lisebeatriz@yahoo.com.br",
-        "horario": "13:00/19:00",
-        "phone": "(41) 99951-6066",
-        "pos_x": 8846,
-        "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "debora_decesaro@unochapeco.edu.br",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98812-1441",
-        "pos_x": 9182,
-        "profissional": "Debora De Cesaro Rossetto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "adelainemarilia@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98844-0377",
-        "pos_x": 9519,
-        "profissional": "Adelaine Marilia Pinheiro",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "joaoorsilva@hotmail.com.br",
-        "horario": "13:00/19:00",
-        "phone": "(12) 99125-3489",
-        "pos_x": 9856,
-        "profissional": "João Orlando Rodrigues da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "emelyjorge@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(41) 99708-0037",
-        "pos_x": 10192,
-        "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 10529,
-        "profissional": "Gisella Raquel Silva Correa",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Plantão Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "baccinmatheus@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(54) 99609-6875",
-        "pos_x": 10866,
-        "profissional": "Matheus Antonio Baccin",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
-        "tipo_turno": "Plantão Vespertino"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "lucas.alcir.silva@gmail.com",
-        "horario": "07:00/07:00",
-        "phone": "(49) 99916-5657",
-        "pos_x": 11202,
-        "profissional": "Lucas Alcir da Silva",
-        "setor": "Urologia Sobreaviso",
-        "tipo_turno": "Sobreaviso Urologia"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "guilherme.barreto23@gmail.com",
-        "horario": "19:00/07:00",
-        "phone": "(93) 99176-2753",
-        "pos_x": 765,
-        "profissional": "Guilherme Macena Barreto Junior",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Plantão Pediátrico - Noturno"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "fercm@unochapeco.edu.br",
-        "horario": "19:00/07:00",
-        "phone": "(49) 99902-9999",
-        "pos_x": 3795,
-        "profissional": "Fernanda Canello Modesti",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Noturno - P1"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "srebelatto@unochapeco.edu.br",
-        "horario": "19:00/07:00",
-        "phone": "(49) 99914-8587",
-        "pos_x": 3795,
-        "profissional": "Shayane Luiza Rebelatto",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Noturno - P1"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "biia.wolschick@hotmail.com",
-        "horario": "19:00/07:00",
-        "phone": "(49) 99125-5659",
-        "pos_x": 4469,
-        "profissional": "Bianca Soder  Wolschick",
-        "setor": "Hospitalista",
-        "tipo_turno": "Noturno"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 6489,
-        "profissional": "Isabela Maran",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
-      },
-      {
-        "data": "14 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "19:00/07:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 6489,
-        "profissional": "Isabela Maran",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
-      },
-      {
-        "data": "14 agosto 2026",
         "email": "edumasierocola@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99121-2941",
@@ -482,6 +212,16 @@
         "profissional": "Gustavo Araújo",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "ceruttinaila2@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(45) 99851-6023",
+        "pos_x": 7836,
+        "profissional": "Naila Cerutti",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "14 agosto 2026",
@@ -512,6 +252,36 @@
         "profissional": "Luisa Cancian Stieler",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "mariogoto@gmail.com",
+        "horario": "07:00/07:00",
+        "phone": "(49) 99989-0400",
+        "pos_x": 8172,
+        "profissional": "Mario Goto",
+        "setor": "Transplante - Sobreaviso Cirurgia",
+        "tipo_turno": "Cirurgia Geral - 1"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "thiagoreck@gmail.com",
+        "horario": "07:00/07:00",
+        "phone": "(49) 99976-9191",
+        "pos_x": 8172,
+        "profissional": "Thiago Felippe Reck",
+        "setor": "Transplante - Sobreaviso Cirurgia",
+        "tipo_turno": "Cirurgia Geral - 2"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "julianourochapeco@gmail.com",
+        "horario": "07:00/07:00",
+        "phone": "(49) 99157-0907",
+        "pos_x": 8172,
+        "profissional": "Juliano Ferneda",
+        "setor": "Transplante - Sobreaviso Cirurgia",
+        "tipo_turno": "Urologia"
       },
       {
         "data": "14 agosto 2026",
@@ -595,6 +365,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "lucas.alcir.silva@gmail.com",
+        "horario": "07:00/07:00",
+        "phone": "(49) 99916-5657",
+        "pos_x": 11202,
+        "profissional": "Lucas Alcir da Silva",
+        "setor": "Urologia Sobreaviso",
+        "tipo_turno": "Sobreaviso Urologia"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "fabischeffer@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99136-6431",
@@ -607,6 +387,16 @@
         "data": "14 agosto 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "08:00/12:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 429,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "13:00/17:00",
         "phone": "(49) 99116-3404",
         "pos_x": 429,
         "profissional": "Patricia Carla De Lima",
@@ -632,6 +422,16 @@
         "profissional": "Janice Velleda Brancao",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Rotina Pediátrico"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "dani_naman@hotmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(64) 99988-0411",
+        "pos_x": 765,
+        "profissional": "Daniel Candido Naman Dutra",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Plantão Pediátrico - Vespertino"
       },
       {
         "data": "14 agosto 2026",
@@ -705,6 +505,26 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "boligoncintya@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99943-5502",
+        "pos_x": 3795,
+        "profissional": "Cintya Boligon",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P1"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "macascaes@hotmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(48) 99115-1002",
+        "pos_x": 3795,
+        "profissional": "Maisa Miranda Cascaes",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Vespertino - P2"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "amandaalberici@yahoo.com.br",
         "horario": "07:00/13:00",
         "phone": "(49) 98846-9947",
@@ -735,6 +555,26 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "amandaalberici@yahoo.com.br",
+        "horario": "13:00/19:00",
+        "phone": "(49) 98846-9947",
+        "pos_x": 4469,
+        "profissional": "Amanda Alberici",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "joaohperes@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99835-1563",
+        "pos_x": 4469,
+        "profissional": "João Henrique Peres",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Urgência Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "cristianemezzalira@hotmail.com",
         "horario": "06:00/14:00",
         "phone": "(49) 99107-0000",
@@ -745,6 +585,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "belini.juciana@unochapeco.edu.br",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99806-5659",
+        "pos_x": 5816,
+        "profissional": "Juciana Belini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99116-3404",
@@ -752,6 +602,26 @@
         "profissional": "Patricia Carla De Lima",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 6489,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "nauradanielimarcon@gmail.com",
+        "horario": "07:00/19:00",
+        "phone": "(54) 99971-7583",
+        "pos_x": 7499,
+        "profissional": "Naura Danieli Marcon",
+        "setor": "Residência de Cirurgia Geral",
+        "tipo_turno": "DIA"
       },
       {
         "data": "14 agosto 2026",
@@ -775,6 +645,36 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(21) 99923-1486",
+        "pos_x": 7836,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "mariajteston@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99921-5262",
+        "pos_x": 7836,
+        "profissional": "Maria Julia Teston",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "edumasierocola@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99121-2941",
+        "pos_x": 7836,
+        "profissional": "Eduardo Masiero Cola",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "jmnegretto@hotmail.com",
         "horario": "10:00/16:00",
         "phone": "(49) 99155-1711",
@@ -782,6 +682,26 @@
         "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "lkrasniak@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(48) 99994-9854",
+        "pos_x": 7836,
+        "profissional": "Lais Cristine Krasniak",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "brunacfgabbi@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99827-4102",
+        "pos_x": 7836,
+        "profissional": "Bruna Carolina Fagundes Gabbi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
       {
         "data": "14 agosto 2026",
@@ -805,6 +725,26 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "fabischeffer@hotmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99136-6431",
+        "pos_x": 8846,
+        "profissional": "Fabiane Scheffer Reginatto",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Rotina UCIN - Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "lisebeatriz@yahoo.com.br",
+        "horario": "13:00/19:00",
+        "phone": "(41) 99951-6066",
+        "pos_x": 8846,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "tipo_turno": "Plantão - Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "debora_decesaro@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 98812-1441",
@@ -822,6 +762,16 @@
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
         "tipo_turno": "Rotina"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "debora_decesaro@unochapeco.edu.br",
+        "horario": "13:00/19:00",
+        "phone": "(49) 98812-1441",
+        "pos_x": 9182,
+        "profissional": "Debora De Cesaro Rossetto",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "14 agosto 2026",
@@ -845,6 +795,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "adelainemarilia@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 98844-0377",
+        "pos_x": 9519,
+        "profissional": "Adelaine Marilia Pinheiro",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "emanuelfelipe1@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98900-6161",
@@ -862,6 +822,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
         "tipo_turno": "Rotina"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "joaoorsilva@hotmail.com.br",
+        "horario": "13:00/19:00",
+        "phone": "(12) 99125-3489",
+        "pos_x": 9856,
+        "profissional": "João Orlando Rodrigues da Silva",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "14 agosto 2026",
@@ -885,6 +855,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "emelyjorge@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(41) 99708-0037",
+        "pos_x": 10192,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "fabischeffer@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(51) 98109-8899",
@@ -905,6 +885,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "fabischeffer@hotmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 10529,
+        "profissional": "Gisella Raquel Silva Correa",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Plantão Vespertino"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "dr.jourdangustavo@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99126-8588",
@@ -922,12 +912,22 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
         "tipo_turno": "Rotineiro Semanal"
+      },
+      {
+        "data": "14 agosto 2026",
+        "email": "baccinmatheus@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(54) 99609-6875",
+        "pos_x": 10866,
+        "profissional": "Matheus Antonio Baccin",
+        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "tipo_turno": "Plantão Vespertino"
       }
     ],
     "total": 92
   },
   "data_atualizacao": "14/08/2026",
-  "hora_atualizacao": "13:30",
+  "hora_atualizacao": "18:38",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3338,6 +3338,16 @@
       },
       {
         "data": "15 agosto 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "19:00/07:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 4136,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Hospitalista",
+        "tipo_turno": "Noturno"
+      },
+      {
+        "data": "15 agosto 2026",
         "email": "edumasierocola@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99121-2941",
@@ -3927,6 +3937,6 @@
         "tipo_turno": "Sobreaviso Urologia"
       }
     ],
-    "total": 82
+    "total": 83
   }
 }
