@@ -325,6 +325,16 @@
       },
       {
         "data": "14 agosto 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 7836,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "14 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -685,16 +695,6 @@
       },
       {
         "data": "14 agosto 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 7836,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "14 agosto 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -927,7 +927,7 @@
     "total": 92
   },
   "data_atualizacao": "14/08/2026",
-  "hora_atualizacao": "06:46",
+  "hora_atualizacao": "07:35",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
