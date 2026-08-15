@@ -325,16 +325,6 @@
       },
       {
         "data": "15 agosto 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "08:30/09:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 8518,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "15 agosto 2026",
         "email": "thiagomuniz@msn.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98402-6207",
@@ -342,6 +332,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "15 agosto 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 8855,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       },
       {
         "data": "15 agosto 2026",
@@ -695,16 +695,6 @@
       },
       {
         "data": "15 agosto 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 8855,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "15 agosto 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99920-4895",
@@ -831,6 +821,16 @@
         "pos_x": 8181,
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "15 agosto 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "08:30/09:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 8518,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1764,5 +1764,5 @@
     "total": 92
   },
   "data_backup": "15/08/2026",
-  "hora_backup": "05:56"
+  "hora_backup": "06:46"
 }
