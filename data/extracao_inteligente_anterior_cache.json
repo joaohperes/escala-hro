@@ -255,6 +255,16 @@
       },
       {
         "data": "15 agosto 2026",
+        "email": "eloisa.chiella@unochapeco.edu.br",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98817-2147",
+        "pos_x": 6833,
+        "profissional": "Eloisa Lehr Filippi Chiella",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -335,16 +345,6 @@
       },
       {
         "data": "15 agosto 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 8855,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "15 agosto 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -392,6 +392,16 @@
         "profissional": "Priscila Domingos",
         "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "15 agosto 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "10:30/11:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9866,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "15 agosto 2026",
@@ -532,16 +542,6 @@
         "profissional": "Maria Antônia Bortoli Giongo",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "15 agosto 2026",
-        "email": "eloisa.chiella@unochapeco.edu.br",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98817-2147",
-        "pos_x": 6833,
-        "profissional": "Eloisa Lehr Filippi Chiella",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "15 agosto 2026",
@@ -765,16 +765,6 @@
       },
       {
         "data": "15 agosto 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "10:30/11:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9866,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "15 agosto 2026",
         "email": "priscila.domingos95@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99142-4137",
@@ -831,6 +821,16 @@
         "pos_x": 8518,
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "15 agosto 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 8855,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1764,5 +1764,5 @@
     "total": 92
   },
   "data_backup": "15/08/2026",
-  "hora_backup": "06:53"
+  "hora_backup": "07:46"
 }
