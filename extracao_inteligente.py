@@ -92,7 +92,11 @@ class ExtractorInteligente:
         chrome_options.add_argument('--no-sandbox')  # Necessário para GitHub Actions
         chrome_options.add_argument('--disable-dev-shm-usage')  # Evita problemas de memória
         chrome_options.add_argument('--start-maximized')
+        chrome_options.add_argument('--window-size=1600,1000')
         chrome_options.add_argument('user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36')
+        # Console do navegador: essencial para diagnosticar por que o SPA não
+        # renderiza no runner do GitHub Actions.
+        chrome_options.set_capability('goog:loggingPrefs', {'browser': 'ALL'})
 
         # Tenta usar chromedriver já instalado, se não, baixa via webdriver-manager
         chrome_driver_path = None
@@ -159,6 +163,23 @@ class ExtractorInteligente:
             print(f"   Título:    {self.driver.title!r}")
             texto = self.driver.find_element(By.TAG_NAME, "body").text[:500]
             print(f"   Texto visível (500 chars): {texto!r}")
+
+            try:
+                for entrada in self.driver.get_log("browser"):
+                    print(f"   [console:{entrada.get('level')}] {str(entrada.get('message'))[:400]}")
+            except Exception as log_err:
+                print(f"   (sem log de console: {log_err})")
+
+            try:
+                recursos = self.driver.execute_script(
+                    "return performance.getEntriesByType('resource')"
+                    ".map(function(r){return r.name + ' | ' + Math.round(r.duration) + 'ms | ' + r.transferSize;});"
+                )
+                print(f"   Recursos carregados ({len(recursos)}):")
+                for r in recursos[:40]:
+                    print(f"     - {r}")
+            except Exception as perf_err:
+                print(f"   (sem dados de rede: {perf_err})")
         except Exception as diag_err:
             print(f"⚠️  Não foi possível salvar diagnóstico: {diag_err}")
 
