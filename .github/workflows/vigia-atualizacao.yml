@@ -23,6 +23,10 @@ jobs:
       - name: Conferir se o site publicou a escala de hoje
         env:
           GH_TOKEN: ${{ github.token }}
+          # O job não faz checkout, então o gh não descobre o repositório pelo
+          # diretório: sem isto, gh issue list/create falha com
+          # "fatal: not a git repository".
+          GH_REPO: ${{ github.repository }}
         run: |
           SITE="https://escalahro.vercel.app"
           HOJE=$(TZ=America/Sao_Paulo date '+%d/%m/%Y')
