@@ -5,33 +5,23 @@
     "registros": [
       {
         "data": "18 agosto 2026",
-        "email": "fernandafornari@yahoo.com.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99107-9720",
-        "pos_x": 92,
-        "profissional": "Fernanda Fornari",
-        "setor": "Alojamento Conjunto",
-        "tipo_turno": "Rotina - Alojamento Conjunto"
-      },
-      {
-        "data": "18 agosto 2026",
         "email": "Isabelamaranped@gmail.com",
-        "horario": "09:00/13:00",
+        "horario": "13:00/17:00",
         "phone": "(41) 98706-2929",
         "pos_x": 429,
         "profissional": "Isabela Maran",
         "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia - Matutino"
+        "tipo_turno": "Ambulatório de Oncologia"
       },
       {
         "data": "18 agosto 2026",
-        "email": "guilherme.barreto23@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(93) 99176-2753",
-        "pos_x": 1102,
-        "profissional": "Guilherme Macena Barreto Junior",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Plantão Pediátrico - Matutino"
+        "email": "elaineforgiarini@gmail.com",
+        "horario": "13:30/17:30",
+        "phone": "(55) 98141-0589",
+        "pos_x": 765,
+        "profissional": "Elaine Aparecida Forgiarini",
+        "setor": "Ambulatório Oncologia - Triagem",
+        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -42,6 +32,16 @@
         "profissional": "Janice Velleda Brancao",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Rotina Pediátrico"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "guilherme.barreto23@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(93) 99176-2753",
+        "pos_x": 1102,
+        "profissional": "Guilherme Macena Barreto Junior",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Plantão Pediátrico - Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -115,23 +115,23 @@
       },
       {
         "data": "18 agosto 2026",
-        "email": "brunapaola@unochapeco.edu.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 98864-8888",
+        "email": "marcus_trassi@hotmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(48) 99696-6169",
         "pos_x": 4131,
-        "profissional": "Bruna Paola Defaveri Damiani",
+        "profissional": "Marcus Vinicius Trassi Neves",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P1"
+        "tipo_turno": "Plantão Vespertino - P1"
       },
       {
         "data": "18 agosto 2026",
         "email": "morganafilippi@hotmail.com",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "(49) 99998-6311",
         "pos_x": 4131,
         "profissional": "Morgana Filippi Chiella",
         "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Matutino - P2"
+        "tipo_turno": "Plantão Vespertino - P2"
       },
       {
         "data": "18 agosto 2026",
@@ -146,42 +146,42 @@
       {
         "data": "18 agosto 2026",
         "email": "bmello331@gmail.com",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "(46) 99921-4360",
         "pos_x": 4804,
         "profissional": "Bruna Regina Marinho de Mello",
         "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Matutino"
+        "tipo_turno": "Hospitalista Comanejo Vespertino"
       },
       {
         "data": "18 agosto 2026",
         "email": "emanuelfelipe1@gmail.com",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "(49) 98900-6161",
         "pos_x": 4804,
         "profissional": "Emanuel Felipe Vieira Luz",
         "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Matutino"
+        "tipo_turno": "Hospitalista Comanejo Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "samuel_coelho@unochapeco.edu.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99966-8824",
+        "email": "joaohperes@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99835-1563",
         "pos_x": 4804,
-        "profissional": "Samuel Teixeira Coelho",
+        "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Matutino"
+        "tipo_turno": "Hospitalista Urgência Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99107-0000",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 5141,
-        "profissional": "Geraldo Antunes Cordova",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "18 agosto 2026",
@@ -202,6 +202,16 @@
         "profissional": "Cezar Tarabal de Oliveira",
         "setor": "Neurologia/U-AVC Integral - Sobreaviso",
         "tipo_turno": "Neurologia/U-AVC Integral - Sobreaviso"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "belini.juciana@unochapeco.edu.br",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99806-5659",
+        "pos_x": 6150,
+        "profissional": "Juciana Belini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -255,26 +265,6 @@
       },
       {
         "data": "18 agosto 2026",
-        "email": "j.ribas@unochapeco.edu.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99816-3428",
-        "pos_x": 8170,
-        "profissional": "Jose Augusto Nogueira Ribas",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "moreirapnathalia@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(34) 99776-9897",
-        "pos_x": 8170,
-        "profissional": "Nathalia Moreira Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "18 agosto 2026",
         "email": "marialuizahensel@gmail.com",
         "horario": "09:00/18:00",
         "phone": "(21) 99923-1486",
@@ -305,8 +295,28 @@
       },
       {
         "data": "18 agosto 2026",
+        "email": "lkrasniak@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(48) 99994-9854",
+        "pos_x": 8170,
+        "profissional": "Lais Cristine Krasniak",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 8170,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "18 agosto 2026",
         "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
+        "horario": "16:00/00:00",
         "phone": "(49) 99124-3160",
         "pos_x": 8170,
         "profissional": "Paulo Filipe Pereira",
@@ -345,123 +355,83 @@
       },
       {
         "data": "18 agosto 2026",
+        "email": "ana.simon@unochapeco.edu.br",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99129-1329",
+        "pos_x": 9179,
+        "profissional": "Ana Carolina Renz Simon",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
+      },
+      {
+        "data": "18 agosto 2026",
         "email": "marciaakemi70@gmail.com",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "(41) 99963-0964",
         "pos_x": 9179,
         "profissional": "Marcia Akemi Nishino",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Matutino"
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Plantão - Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "marciambergamo@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99977-7647",
-        "pos_x": 9179,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Matutino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "debora_decesaro@unochapeco.edu.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 98812-1441",
+        "email": "baccinmatheus@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(54) 99609-6875",
         "pos_x": 9516,
-        "profissional": "Debora De Cesaro Rossetto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
-        "tipo_turno": "Matutino"
+        "profissional": "Matheus Antonio Baccin",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98856-4909",
-        "pos_x": 9516,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "allands@unochapeco.edu.br",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99903-2582",
+        "email": "samuel_coelho@unochapeco.edu.br",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99966-8824",
         "pos_x": 9853,
-        "profissional": "Allan Douglas Santos",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Matutino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "adelainemarilia@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(49) 98844-0377",
-        "pos_x": 9853,
-        "profissional": "Adelaine Marilia Pinheiro",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "julianauknorst@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99158-8518",
-        "pos_x": 10189,
-        "profissional": "Juliana Ulsenheimer Knorst",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Matutino"
+        "profissional": "Samuel Teixeira Coelho",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
         "email": "thiagomuniz@msn.com",
-        "horario": "09:00/15:00",
+        "horario": "13:00/19:00",
         "phone": "(49) 98402-6207",
         "pos_x": 10189,
         "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Rotina"
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
         "email": "emelyjorge@gmail.com",
-        "horario": "07:00/13:00",
+        "horario": "13:00/19:00",
         "phone": "(41) 99708-0037",
         "pos_x": 10526,
         "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Matutino"
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
+        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "ali_manto@hotmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(49) 98923-2332",
+        "email": "luisdalcastel@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(21) 99478-9904",
         "pos_x": 10862,
-        "profissional": "Aline Luciana Casagrande Mantovani",
+        "profissional": "Luis Antonio Bataglin Dalcastel",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Plantão Matutino"
+        "tipo_turno": "Plantão Vespertino"
       },
       {
         "data": "18 agosto 2026",
-        "email": "dr.jourdangustavo@gmail.com",
-        "horario": "07:00/13:00",
-        "phone": "(49) 99126-8588",
+        "email": "priscila.domingos95@gmail.com",
+        "horario": "13:00/19:00",
+        "phone": "(49) 99142-4137",
         "pos_x": 11199,
-        "profissional": "Arnaldo Gustavo Jourdan",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
-        "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(48) 98821-0652",
-        "pos_x": 11199,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
-        "tipo_turno": "Rotineiro Semanal"
+        "profissional": "Priscila Domingos",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Plantão Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -475,36 +445,6 @@
       },
       {
         "data": "18 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 429,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "elaineforgiarini@gmail.com",
-        "horario": "13:30/17:30",
-        "phone": "(55) 98141-0589",
-        "pos_x": 765,
-        "profissional": "Elaine Aparecida Forgiarini",
-        "setor": "Ambulatório Oncologia - Triagem",
-        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "guilherme.barreto23@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(93) 99176-2753",
-        "pos_x": 1102,
-        "profissional": "Guilherme Macena Barreto Junior",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Plantão Pediátrico - Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
         "email": "dani_naman@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(64) 99988-0411",
@@ -512,36 +452,6 @@
         "profissional": "Daniel Candido Naman Dutra",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 3458,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "marcus_trassi@hotmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(48) 99696-6169",
-        "pos_x": 4131,
-        "profissional": "Marcus Vinicius Trassi Neves",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P1"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "morganafilippi@hotmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99998-6311",
-        "pos_x": 4131,
-        "profissional": "Morgana Filippi Chiella",
-        "setor": "Ginecologia e Obstetrícia - Plantão",
-        "tipo_turno": "Plantão Vespertino - P2"
       },
       {
         "data": "18 agosto 2026",
@@ -565,36 +475,6 @@
       },
       {
         "data": "18 agosto 2026",
-        "email": "bmello331@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(46) 99921-4360",
-        "pos_x": 4804,
-        "profissional": "Bruna Regina Marinho de Mello",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "emanuelfelipe1@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98900-6161",
-        "pos_x": 4804,
-        "profissional": "Emanuel Felipe Vieira Luz",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Comanejo Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "toninicamila1@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99834-2129",
-        "pos_x": 4804,
-        "profissional": "Camila Tonini",
-        "setor": "Hospitalista",
-        "tipo_turno": "Hospitalista Urgência Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "19:00/07:00",
         "phone": "(49) 99816-3428",
@@ -602,26 +482,6 @@
         "profissional": "Jose Augusto Nogueira Ribas",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 5141,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "belini.juciana@unochapeco.edu.br",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99806-5659",
-        "pos_x": 6150,
-        "profissional": "Juciana Belini",
-        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
-        "tipo_turno": "Médico - Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -665,36 +525,6 @@
       },
       {
         "data": "18 agosto 2026",
-        "email": "lkrasniak@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(48) 99994-9854",
-        "pos_x": 8170,
-        "profissional": "Lais Cristine Krasniak",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 8170,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8170,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "18 agosto 2026",
         "email": "matheustoldok@hotmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99978-3320",
@@ -727,31 +557,11 @@
         "data": "18 agosto 2026",
         "email": "zorzettoj@bol.com.br",
         "horario": "18:30/07:30",
-        "phone": "(41) 98706-2929",
+        "phone": "(64) 99988-0411",
         "pos_x": 8843,
         "profissional": "João Roberto Munhoz Zorzetto",
         "setor": "Ultrassonografia - Sobreaviso",
         "tipo_turno": "Ultrassonografia - Sobreaviso"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "ana.simon@unochapeco.edu.br",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99129-1329",
-        "pos_x": 9179,
-        "profissional": "Ana Carolina Renz Simon",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "marciaakemi70@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(41) 99963-0964",
-        "pos_x": 9179,
-        "profissional": "Marcia Akemi Nishino",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
-        "tipo_turno": "Plantão - Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -760,18 +570,8 @@
         "phone": "(49) 99107-9720",
         "pos_x": 9179,
         "profissional": "Fernanda Fornari",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "baccinmatheus@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(54) 99609-6875",
-        "pos_x": 9516,
-        "profissional": "Matheus Antonio Baccin",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -780,18 +580,8 @@
         "phone": "(49) 98856-4909",
         "pos_x": 9516,
         "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "samuel_coelho@unochapeco.edu.br",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99966-8824",
-        "pos_x": 9853,
-        "profissional": "Samuel Teixeira Coelho",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -800,18 +590,8 @@
         "phone": "(54) 99198-4729",
         "pos_x": 9853,
         "profissional": "Guilherme Assoni Gomes",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10189,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
-        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -820,18 +600,8 @@
         "phone": "(49) 98402-6207",
         "pos_x": 10189,
         "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "emelyjorge@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(41) 99708-0037",
-        "pos_x": 10526,
-        "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
-        "tipo_turno": "Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -840,18 +610,8 @@
         "phone": "(41) 99708-0037",
         "pos_x": 10526,
         "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "luisdalcastel@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(21) 99478-9904",
-        "pos_x": 10862,
-        "profissional": "Luis Antonio Bataglin Dalcastel",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Plantão Vespertino"
       },
       {
         "data": "18 agosto 2026",
@@ -866,22 +626,22 @@
       {
         "data": "18 agosto 2026",
         "email": "priscila.domingos95@gmail.com",
-        "horario": "13:00/19:00",
-        "phone": "(49) 99142-4137",
-        "pos_x": 11199,
-        "profissional": "Priscila Domingos",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
-        "tipo_turno": "Plantão Vespertino"
-      },
-      {
-        "data": "18 agosto 2026",
-        "email": "priscila.domingos95@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99142-4137",
         "pos_x": 11199,
         "profissional": "Priscila Domingos",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Noturno"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "fernandafornari@yahoo.com.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99107-9720",
+        "pos_x": 92,
+        "profissional": "Fernanda Fornari",
+        "setor": "Alojamento Conjunto",
+        "tipo_turno": "Rotina - Alojamento Conjunto"
       },
       {
         "data": "18 agosto 2026",
@@ -892,6 +652,26 @@
         "profissional": "Patricia Carla De Lima",
         "setor": "Ambulatório De Oncologia Pediátrica",
         "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "09:00/13:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia - Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "guilherme.barreto23@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(93) 99176-2753",
+        "pos_x": 1102,
+        "profissional": "Guilherme Macena Barreto Junior",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Plantão Pediátrico - Matutino"
       },
       {
         "data": "18 agosto 2026",
@@ -935,6 +715,76 @@
       },
       {
         "data": "18 agosto 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 3458,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "brunapaola@unochapeco.edu.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 98864-8888",
+        "pos_x": 4131,
+        "profissional": "Bruna Paola Defaveri Damiani",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P1"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "morganafilippi@hotmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99998-6311",
+        "pos_x": 4131,
+        "profissional": "Morgana Filippi Chiella",
+        "setor": "Ginecologia e Obstetrícia - Plantão",
+        "tipo_turno": "Plantão Matutino - P2"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "bmello331@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(46) 99921-4360",
+        "pos_x": 4804,
+        "profissional": "Bruna Regina Marinho de Mello",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "emanuelfelipe1@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 98900-6161",
+        "pos_x": 4804,
+        "profissional": "Emanuel Felipe Vieira Luz",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Comanejo Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "samuel_coelho@unochapeco.edu.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99966-8824",
+        "pos_x": 4804,
+        "profissional": "Samuel Teixeira Coelho",
+        "setor": "Hospitalista",
+        "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 5141,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
         "email": "Isabelamaranped@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(41) 98706-2929",
@@ -942,6 +792,26 @@
         "profissional": "Isabela Maran",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "j.ribas@unochapeco.edu.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99816-3428",
+        "pos_x": 8170,
+        "profissional": "Jose Augusto Nogueira Ribas",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "moreirapnathalia@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(34) 99776-9897",
+        "pos_x": 8170,
+        "profissional": "Nathalia Moreira Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
       {
         "data": "18 agosto 2026",
@@ -955,29 +825,159 @@
       },
       {
         "data": "18 agosto 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8170,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "marciaakemi70@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(41) 99963-0964",
+        "pos_x": 9179,
+        "profissional": "Marcia Akemi Nishino",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Plantão - Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "marciambergamo@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99977-7647",
+        "pos_x": 9179,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "debora_decesaro@unochapeco.edu.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 98812-1441",
+        "pos_x": 9516,
+        "profissional": "Debora De Cesaro Rossetto",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98856-4909",
+        "pos_x": 9516,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "allands@unochapeco.edu.br",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99903-2582",
+        "pos_x": 9853,
+        "profissional": "Allan Douglas Santos",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "adelainemarilia@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 98844-0377",
+        "pos_x": 9853,
+        "profissional": "Adelaine Marilia Pinheiro",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "julianauknorst@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99158-8518",
+        "pos_x": 10189,
+        "profissional": "Juliana Ulsenheimer Knorst",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10189,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "18 agosto 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
         "pos_x": 10526,
         "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Rotina"
       },
       {
         "data": "18 agosto 2026",
-        "email": "Patricialima1407@gmail.com",
+        "email": "emelyjorge@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(41) 99708-0037",
+        "pos_x": 10526,
+        "profissional": "Marina Emely Jorge",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "ali_manto@hotmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 98923-2332",
+        "pos_x": 10862,
+        "profissional": "Aline Luciana Casagrande Mantovani",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "ali_manto@hotmail.com",
         "horario": "08:00/12:00",
         "phone": "(51) 98109-8899",
         "pos_x": 10862,
         "profissional": "Janice Velleda Brancao",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Médico Rotineiro I"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "dr.jourdangustavo@gmail.com",
+        "horario": "07:00/13:00",
+        "phone": "(49) 99126-8588",
+        "pos_x": 11199,
+        "profissional": "Arnaldo Gustavo Jourdan",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "18 agosto 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(48) 98821-0652",
+        "pos_x": 11199,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Semanal"
       }
     ],
     "total": 97
   },
   "data_atualizacao": "18/08/2026",
-  "hora_atualizacao": "09:59",
+  "hora_atualizacao": "13:03",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -2122,7 +2122,7 @@
         ]
       },
       {
-        "dashboard_sector": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "dashboard_sector": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "ramais_departments": [
           "Berçário UCINCO"
         ]
@@ -2146,7 +2146,7 @@
         ]
       },
       {
-        "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "dashboard_sector": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "ramais_departments": [
           "Berçário UCINCO"
         ]
@@ -2461,7 +2461,7 @@
       },
       {
         "phone": "(49) 99129-1329",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "pos_x": 8845,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2471,7 +2471,7 @@
       },
       {
         "phone": "(49) 98812-1441",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "pos_x": 9182,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2481,7 +2481,7 @@
       },
       {
         "phone": "(49) 99103-3825",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "pos_x": 9519,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2491,7 +2491,7 @@
       },
       {
         "phone": "(49) 99200-5048",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "pos_x": 9855,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2501,7 +2501,7 @@
       },
       {
         "phone": "(49) 99917-5310",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "pos_x": 10192,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2521,7 +2521,7 @@
       },
       {
         "phone": "(49) 98808-0201",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "pos_x": 10866,
         "data": "17 agosto 2026",
         "horario": "19:00/07:00",
@@ -2881,7 +2881,7 @@
       },
       {
         "phone": "(41) 99963-0964",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "pos_x": 8845,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2891,7 +2891,7 @@
       },
       {
         "phone": "(49) 99977-7647",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "pos_x": 8845,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2901,7 +2901,7 @@
       },
       {
         "phone": "(49) 99977-7647",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "pos_x": 8845,
         "data": "17 agosto 2026",
         "horario": "13:00/17:00",
@@ -2911,7 +2911,7 @@
       },
       {
         "phone": "(41) 99963-0964",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "pos_x": 8845,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -2921,7 +2921,7 @@
       },
       {
         "phone": "(49) 98812-1441",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "pos_x": 9182,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2931,7 +2931,7 @@
       },
       {
         "phone": "(49) 98856-4909",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "pos_x": 9182,
         "data": "17 agosto 2026",
         "horario": "09:00/15:00",
@@ -2941,7 +2941,7 @@
       },
       {
         "phone": "(49) 99142-4137",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "pos_x": 9182,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -2951,7 +2951,7 @@
       },
       {
         "phone": "(49) 99903-2582",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "pos_x": 9519,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2961,7 +2961,7 @@
       },
       {
         "phone": "(49) 98844-0377",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "pos_x": 9519,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2971,7 +2971,7 @@
       },
       {
         "phone": "(49) 99103-3825",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "pos_x": 9519,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -2981,7 +2981,7 @@
       },
       {
         "phone": "(49) 98900-6161",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "pos_x": 9855,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -2991,7 +2991,7 @@
       },
       {
         "phone": "(49) 98402-6207",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "pos_x": 9855,
         "data": "17 agosto 2026",
         "horario": "09:00/15:00",
@@ -3001,7 +3001,7 @@
       },
       {
         "phone": "(49) 98900-6161",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "pos_x": 9855,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -3011,7 +3011,7 @@
       },
       {
         "phone": "(41) 99951-6066",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "pos_x": 10192,
         "data": "17 agosto 2026",
         "horario": "07:00/12:00",
@@ -3021,7 +3021,7 @@
       },
       {
         "phone": "(41) 99708-0037",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "pos_x": 10192,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -3031,7 +3031,7 @@
       },
       {
         "phone": "(41) 99708-0037",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "pos_x": 10192,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -3071,7 +3071,7 @@
       },
       {
         "phone": "(49) 99126-8588",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "pos_x": 10866,
         "data": "17 agosto 2026",
         "horario": "07:00/13:00",
@@ -3081,7 +3081,7 @@
       },
       {
         "phone": "(48) 98821-0652",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "pos_x": 10866,
         "data": "17 agosto 2026",
         "horario": "09:00/15:00",
@@ -3091,7 +3091,7 @@
       },
       {
         "phone": "(49) 99126-8588",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "pos_x": 10866,
         "data": "17 agosto 2026",
         "horario": "13:00/19:00",
@@ -3763,7 +3763,7 @@
         "phone": "(49) 99107-9720",
         "pos_x": 9179,
         "profissional": "Fernanda Fornari",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Matutino"
       },
       {
@@ -3773,7 +3773,7 @@
         "phone": "(49) 99977-7647",
         "pos_x": 9179,
         "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Matutino"
       },
       {
@@ -3783,7 +3783,7 @@
         "phone": "(49) 99128-5775",
         "pos_x": 9179,
         "profissional": "Graziela Fatima Battistel",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
@@ -3793,7 +3793,7 @@
         "phone": "(49) 99136-6431",
         "pos_x": 9179,
         "profissional": "Fabiane Scheffer Reginatto",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Vespertino"
       },
       {
@@ -3803,7 +3803,7 @@
         "phone": "(49) 99129-1329",
         "pos_x": 9179,
         "profissional": "Ana Carolina Renz Simon",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
       },
       {
@@ -3813,7 +3813,7 @@
         "phone": "(49) 98812-1441",
         "pos_x": 9516,
         "profissional": "Debora De Cesaro Rossetto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Matutino"
       },
       {
@@ -3823,7 +3823,7 @@
         "phone": "(49) 98856-4909",
         "pos_x": 9516,
         "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Rotina"
       },
       {
@@ -3833,7 +3833,7 @@
         "phone": "(49) 98812-1441",
         "pos_x": 9516,
         "profissional": "Debora De Cesaro Rossetto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Vespertino"
       },
       {
@@ -3843,7 +3843,7 @@
         "phone": "(54) 99609-6875",
         "pos_x": 9516,
         "profissional": "Matheus Antonio Baccin",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Noturno"
       },
       {
@@ -3853,7 +3853,7 @@
         "phone": "(49) 99903-2582",
         "pos_x": 9853,
         "profissional": "Allan Douglas Santos",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Matutino"
       },
       {
@@ -3863,7 +3863,7 @@
         "phone": "(49) 98844-0377",
         "pos_x": 9853,
         "profissional": "Adelaine Marilia Pinheiro",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina"
       },
       {
@@ -3873,7 +3873,7 @@
         "phone": "(49) 98844-0377",
         "pos_x": 9853,
         "profissional": "Adelaine Marilia Pinheiro",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
       },
       {
@@ -3883,7 +3883,7 @@
         "phone": "(49) 99126-8588",
         "pos_x": 9853,
         "profissional": "Arnaldo Gustavo Jourdan",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
       },
       {
@@ -3893,7 +3893,7 @@
         "phone": "(49) 99158-8518",
         "pos_x": 10189,
         "profissional": "Juliana Ulsenheimer Knorst",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
       },
       {
@@ -3903,7 +3903,7 @@
         "phone": "(49) 98402-6207",
         "pos_x": 10189,
         "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina"
       },
       {
@@ -3913,7 +3913,7 @@
         "phone": "(49) 98900-6161",
         "pos_x": 10189,
         "profissional": "Emanuel Felipe Vieira Luz",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Vespertino"
       },
       {
@@ -3923,7 +3923,7 @@
         "phone": "(12) 99125-3489",
         "pos_x": 10189,
         "profissional": "João Orlando Rodrigues da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Noturno"
       },
       {
@@ -3933,7 +3933,7 @@
         "phone": "(41) 99951-6066",
         "pos_x": 10526,
         "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Rotina"
       },
       {
@@ -3943,7 +3943,7 @@
         "phone": "(41) 99708-0037",
         "pos_x": 10526,
         "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Matutino"
       },
       {
@@ -3953,7 +3953,7 @@
         "phone": "(41) 99708-0037",
         "pos_x": 10526,
         "profissional": "Marina Emely Jorge",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Vespertino"
       },
       {
@@ -3963,7 +3963,7 @@
         "phone": "(49) 99136-6431",
         "pos_x": 10526,
         "profissional": "Fabiane Scheffer Reginatto",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Noturno"
       },
       {
@@ -4013,7 +4013,7 @@
         "phone": "(49) 99126-8588",
         "pos_x": 11199,
         "profissional": "Arnaldo Gustavo Jourdan",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
       },
       {
@@ -4023,7 +4023,7 @@
         "phone": "(48) 98821-0652",
         "pos_x": 11199,
         "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Semanal"
       },
       {
@@ -4033,7 +4033,7 @@
         "phone": "(49) 99126-8588",
         "pos_x": 11199,
         "profissional": "Arnaldo Gustavo Jourdan",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Vespertino"
       },
       {
@@ -4043,7 +4043,7 @@
         "phone": "(48) 98821-0652",
         "pos_x": 11199,
         "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia intensiva (UTI) Adulto IV - ESCALA MÉDICA",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Noturno"
       },
       {
