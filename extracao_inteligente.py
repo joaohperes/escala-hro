@@ -164,6 +164,21 @@ class ExtractorInteligente:
             texto = self.driver.find_element(By.TAG_NAME, "body").text[:500]
             print(f"   Texto visível (500 chars): {texto!r}")
 
+            # Sintoma conhecido: o CloudFront do escala.med.br devolve o index.html
+            # no lugar dos bundles JS quando a requisição vem de fora do Brasil
+            # (runner do GitHub Actions fica nos EUA). Sem os bundles o AngularJS
+            # nunca inicializa e nenhum campo do formulário existe.
+            try:
+                angular_ok = self.driver.execute_script("return typeof window.angular !== 'undefined';")
+                if not angular_ok:
+                    print("   🚫 AngularJS não inicializou: os bundles do escala.med.br não")
+                    print("      foram executados. Se o console acusar \"Unexpected token '<'\",")
+                    print("      o CDN devolveu HTML no lugar do JS — bloqueio por origem da")
+                    print("      requisição (o runner do GitHub Actions sai dos EUA).")
+                    print("      Solução: rodar a extração a partir de uma rede brasileira.")
+            except Exception:
+                pass
+
             try:
                 for entrada in self.driver.get_log("browser"):
                     print(f"   [console:{entrada.get('level')}] {str(entrada.get('message'))[:400]}")
