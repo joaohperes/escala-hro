@@ -27,15 +27,24 @@ jobs:
           SITE="https://escalahro.vercel.app"
           HOJE=$(TZ=America/Sao_Paulo date '+%d/%m/%Y')
 
-          echo "Procurando a data $HOJE em $SITE ..."
-          if curl -s --max-time 30 "$SITE" | grep -q "$HOJE"; then
+          # O dashboard embute três dias (anterior, atual, seguinte), então
+          # procurar a data solta daria falso positivo: a data de hoje aparece
+          # como "seguinte" na publicação de ontem. A checagem olha o bloco
+          # "atual", que é o dia que o dashboard abre mostrando.
+          echo "Procurando o dia atual == $HOJE em $SITE ..."
+          PUBLICADA=$(curl -s --max-time 30 "$SITE" \
+            | grep -o '"atual": *{[^}]*"data_simples": *"[0-9/]*"' \
+            | grep -o '[0-9][0-9]/[0-9][0-9]/[0-9]\{4\}' | tail -1)
+          echo "Dia atual publicado: ${PUBLICADA:-<não encontrado>}"
+
+          if [ "$PUBLICADA" = "$HOJE" ]; then
             echo "✅ Site atualizado com a escala de $HOJE"
             exit 0
           fi
 
-          echo "❌ O site NÃO contém a data de hoje ($HOJE)"
+          echo "❌ O dashboard publicado está no dia ${PUBLICADA:-desconhecido}, não em $HOJE"
           TITULO="🚨 Site sem a escala de hoje"
-          CORPO="O dashboard em $SITE não mostra a data de hoje ($HOJE), verificado às $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M') (BRT).
+          CORPO="O dashboard em $SITE está publicado no dia ${PUBLICADA:-desconhecido}, não em $HOJE, verificado às $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M') (BRT).
 
           Causas prováveis, em ordem:
           1. O runner próprio (VPS no Brasil) está offline ou com o serviço parado.
