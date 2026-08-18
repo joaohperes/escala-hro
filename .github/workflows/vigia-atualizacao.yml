@@ -1,0 +1,52 @@
+# Rede de segurança independente do runner próprio.
+#
+# Se o VPS brasileiro estiver desligado, sem rede ou com o serviço do runner
+# parado, o job de atualização simplesmente não roda — e um job que nunca começa
+# não dispara o alerta de falha. Este vigia roda em runner hospedado do GitHub
+# (só acessa o site publicado, nunca o escala.med.br) e cobra o resultado:
+# o dashboard publicado precisa mostrar a data de hoje.
+name: Vigia da atualização da escala
+
+on:
+  schedule:
+    # 07h22 BRT (10h22 UTC) — logo após o horário em que a escala do dia precisa
+    # estar no ar (07h15), com margem para o job de atualização terminar.
+    - cron: '22 10 * * *'
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Conferir se o site publicou a escala de hoje
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SITE="https://escalahro.vercel.app"
+          HOJE=$(TZ=America/Sao_Paulo date '+%d/%m/%Y')
+
+          echo "Procurando a data $HOJE em $SITE ..."
+          if curl -s --max-time 30 "$SITE" | grep -q "$HOJE"; then
+            echo "✅ Site atualizado com a escala de $HOJE"
+            exit 0
+          fi
+
+          echo "❌ O site NÃO contém a data de hoje ($HOJE)"
+          TITULO="🚨 Site sem a escala de hoje"
+          CORPO="O dashboard em $SITE não mostra a data de hoje ($HOJE), verificado às $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M') (BRT).
+
+          Causas prováveis, em ordem:
+          1. O runner próprio (VPS no Brasil) está offline ou com o serviço parado.
+          2. O job \`Atualizar Escala Diária HRO\` falhou — confira as issues e os logs.
+          3. O escala.med.br mudou algo no login ou na grade.
+
+          Para atualizar agora: Actions → Atualizar Escala Diária HRO → Run workflow."
+          EXISTENTE=$(gh issue list --state open --search "$TITULO in:title" --json number --jq '.[0].number' || echo "")
+          if [ -n "$EXISTENTE" ] && [ "$EXISTENTE" != "null" ]; then
+            gh issue comment "$EXISTENTE" --body "$CORPO"
+          else
+            gh issue create --title "$TITULO" --body "$CORPO"
+          fi
+          exit 1

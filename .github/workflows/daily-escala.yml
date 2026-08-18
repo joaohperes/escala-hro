@@ -36,7 +36,16 @@ on:
 
 jobs:
   update-escala:
-    runs-on: ubuntu-latest
+    # POR QUE UM RUNNER PRÓPRIO: desde 16/08/2026 o CDN do escala.med.br devolve
+    # o index.html no lugar dos bundles JS para requisições de fora do Brasil —
+    # os runners do GitHub ficam nos EUA, o AngularJS não inicializa e o login
+    # falha. A extração precisa sair de uma rede brasileira.
+    #
+    # A variável de repositório RUNNER_LABEL aponta para o runner self-hosted
+    # (ex: "escala-br"). Enquanto ela não existir, o job roda no runner hospedado
+    # e falha de forma visível, em vez de ficar enfileirado em silêncio.
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
+    timeout-minutes: 30
     permissions:
       contents: write
       issues: write
@@ -92,10 +101,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Instalar Chrome e ChromeDriver
+    # No runner self-hosted o Chrome e o chromedriver são instalados uma única
+    # vez pelo provisionamento (scripts/provisionar_runner_br.sh), não a cada run.
+    - name: Instalar Chrome e ChromeDriver (runner hospedado)
+      if: ${{ !vars.RUNNER_LABEL }}
       uses: browser-actions/setup-chrome@latest
       with:
         chrome-version: stable
+
+    - name: Verificar Chrome e ChromeDriver (runner próprio)
+      if: ${{ vars.RUNNER_LABEL }}
+      run: |
+        google-chrome --version
+        chromedriver --version
 
     - name: Rodar testes
       run: |
