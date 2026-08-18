@@ -154,7 +154,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: error-logs
-        path: /tmp/*.png
+        path: |
+          /tmp/*.png
+          /tmp/*.html
         retention-days: 7
 
     # ALERTA: se o workflow falhar, abre (ou comenta em) uma issue para que a

@@ -14,6 +14,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
 load_dotenv()
@@ -146,23 +148,67 @@ class ExtractorInteligente:
             print("⚠️  Usando ChromeDriver padrão do sistema...")
             self.driver = webdriver.Chrome(options=chrome_options)
 
-    def login(self):
-        print(f"[{datetime.now()}] 🔐 Fazendo login...")
-        self.driver.get("https://escala.med.br/painel/#!/login")
-        time.sleep(4)
+    def salvar_diagnostico(self, prefixo):
+        """Salva screenshot + HTML da página atual em /tmp para diagnóstico no CI."""
+        try:
+            self.driver.save_screenshot(f"/tmp/{prefixo}.png")
+            with open(f"/tmp/{prefixo}.html", "w", encoding="utf-8") as f:
+                f.write(self.driver.page_source)
+            print(f"🧾 Diagnóstico salvo: /tmp/{prefixo}.png e /tmp/{prefixo}.html")
+            print(f"   URL atual: {self.driver.current_url}")
+            print(f"   Título:    {self.driver.title!r}")
+            texto = self.driver.find_element(By.TAG_NAME, "body").text[:500]
+            print(f"   Texto visível (500 chars): {texto!r}")
+        except Exception as diag_err:
+            print(f"⚠️  Não foi possível salvar diagnóstico: {diag_err}")
 
-        username = self.driver.find_element(By.CSS_SELECTOR, "input[type='email'], input[type='text'][placeholder*='usuário']")
-        username.send_keys(ESCALA_USERNAME)
-        time.sleep(1)
+    def login(self, tentativas=3, timeout=30):
+        """Faz login no escala.med.br.
 
-        password = self.driver.find_element(By.CSS_SELECTOR, "input[type='password']")
-        password.send_keys(ESCALA_PASSWORD)
-        time.sleep(1)
+        A página é um SPA AngularJS: o formulário só existe depois que os bundles
+        carregam. No GitHub Actions isso já demorou mais que os 4s fixos que
+        usávamos antes, derrubando o pipeline por dias. Por isso: espera explícita,
+        retentativas com reload e diagnóstico salvo em /tmp quando falha.
+        """
+        SELETOR_USER = "input[type='email'], input#username, input[type='text'][placeholder*='usuário']"
 
-        self.driver.execute_script("var buttons = document.querySelectorAll('button'); for(var b of buttons) { if(b.textContent.toLowerCase().includes('entrar')) { b.click(); break; } }")
-        time.sleep(5)
+        ultimo_erro = None
+        for tentativa in range(1, tentativas + 1):
+            print(f"[{datetime.now()}] 🔐 Fazendo login (tentativa {tentativa}/{tentativas})...")
+            try:
+                self.driver.get("https://escala.med.br/painel/#!/login")
 
-        print(f"[{datetime.now()}] ✅ Login realizado")
+                username = WebDriverWait(self.driver, timeout).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, SELETOR_USER))
+                )
+                password = self.driver.find_element(By.CSS_SELECTOR, "input[type='password']")
+
+                username.clear()
+                username.send_keys(ESCALA_USERNAME)
+                time.sleep(1)
+                password.clear()
+                password.send_keys(ESCALA_PASSWORD)
+                time.sleep(1)
+
+                self.driver.execute_script(
+                    "var buttons = document.querySelectorAll('button'); "
+                    "for(var b of buttons) { if(b.textContent.toLowerCase().includes('entrar')) { b.click(); break; } }"
+                )
+
+                # Login OK quando saímos da rota de login
+                WebDriverWait(self.driver, timeout).until(
+                    lambda d: "#!/login" not in d.current_url
+                )
+                print(f"[{datetime.now()}] ✅ Login realizado")
+                return
+            except Exception as e:
+                ultimo_erro = e
+                print(f"⚠️  Falha no login (tentativa {tentativa}/{tentativas}): {type(e).__name__}: {e}")
+                self.salvar_diagnostico(f"login_falha_tentativa{tentativa}")
+                if tentativa < tentativas:
+                    time.sleep(10)
+
+        raise RuntimeError(f"Login falhou após {tentativas} tentativas: {ultimo_erro}")
 
     def extrair_dia(self):
         """Extrai dados de um único dia (atual ou anterior) usando JavaScript"""

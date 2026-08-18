@@ -19,10 +19,12 @@ def run_extraction():
     """Tenta executar a extração de dados da escala.med.br"""
     print("\n📋 Tentando extrair dados de escala.med.br...")
     try:
+        # 600s: o login agora tem esperas explícitas + retentativas (até ~210s no
+        # pior caso) antes da extração em si, que leva ~60s.
         result = subprocess.run("python3 extracao_inteligente.py",
                               shell=True,
                               check=False,
-                              timeout=300)
+                              timeout=600)
         if result.returncode == 0:
             print("✅ Extração bem-sucedida")
             return True
