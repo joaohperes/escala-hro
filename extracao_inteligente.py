@@ -5,6 +5,7 @@ Com suporte a Rolling Window para Dia Anterior
 """
 
 import os
+import re
 import json
 import time
 import shutil
@@ -581,6 +582,10 @@ def corrigir_portugues(texto):
         'Clinica': 'Clínica',
         'Clinica Médica': 'Clínica Médica',
         'Obstetrícia': 'Obstetrícia',  # Já está certo, mas por segurança
+        # A UTI Adulto IV foi cadastrada na origem com "intensiva" minúsculo.
+        # Sem isto ela ordena depois de todas as outras UTIs (o sort compara
+        # código de caractere: 'I' < 'i') e aparece longe das irmãs.
+        'Terapia intensiva': 'Terapia Intensiva',
     }
 
     resultado = texto
@@ -588,6 +593,20 @@ def corrigir_portugues(texto):
         resultado = resultado.replace(errado, correto)
 
     return resultado
+
+
+# A origem começou a anexar " - ESCALA MÉDICA" (e variações de caixa) ao nome de
+# alguns setores. O sufixo não diz nada ao leitor e quebrava o casamento com as
+# tabelas de ramais e de impressão, que guardam o nome limpo.
+_SUFIXO_ESCALA_MEDICA = re.compile(r'\s*[-–]\s*escala\s+m[eé]dica\s*$', re.IGNORECASE)
+
+
+def normalizar_setor(texto):
+    """Nome de setor pronto para exibir: ortografia corrigida e sem o sufixo
+    administrativo que o escala.med.br anexa."""
+    if not texto:
+        return texto
+    return _SUFIXO_ESCALA_MEDICA.sub('', corrigir_portugues(texto)).strip()
 
 def main():
     extractor = None
@@ -625,7 +644,7 @@ def main():
 
         # Corrige erros de português nos registros atuais
         for reg in registros_atual:
-            reg['setor'] = corrigir_portugues(reg['setor'])
+            reg['setor'] = normalizar_setor(reg['setor'])
 
         # Debug info do JavaScript (atual)
         debug_info_atual = resultado_atual.get('debug', {})
@@ -827,6 +846,12 @@ def main():
 
         # Adiciona dados do dia anterior (rolling window)
         if resultado_anterior_salvo:
+            # O anterior vem de cache gravado em execuções passadas, que podem ter
+            # sido escritas antes de uma regra de normalização existir. Normalizar
+            # na leitura evita que o dashboard mostre o mesmo setor com dois nomes
+            # ao navegar entre os dias.
+            for reg in resultado_anterior_salvo.get('registros', []):
+                reg['setor'] = normalizar_setor(reg['setor'])
             output['anterior'] = resultado_anterior_salvo
         else:
             # Primeira execução ou arquivo perdido
@@ -841,7 +866,7 @@ def main():
         resultado_seguinte = resultados.get('seguinte')
         if resultado_seguinte and resultado_seguinte.get('registros'):
             for reg in resultado_seguinte['registros']:
-                reg['setor'] = corrigir_portugues(reg['setor'])
+                reg['setor'] = normalizar_setor(reg['setor'])
             output['seguinte'] = {
                 'data': resultado_seguinte['data'],
                 'data_simples': extrair_data_simples(resultado_seguinte['data']),

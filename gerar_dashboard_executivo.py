@@ -3051,11 +3051,12 @@ def gerar_dashboard():
                 'R2 Clínica Médica UTI',
                 'Residência de Clínica Médica',
                 'Transplante - Sobreaviso Cirurgia',
-                'Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto - Escala Médica',
+                'Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto',
                 'Unidade de Terapia Intensiva (UTI) Adulto I',
                 'Unidade de Terapia Intensiva (UTI) Adulto II',
                 'Unidade de Terapia Intensiva (UTI) Adulto III',
-                'Unidade de Terapia Intensiva (UTI) Neonatal - Plantão - Escala Médica',
+                'Unidade de Terapia Intensiva (UTI) Adulto IV',
+                'Unidade de Terapia Intensiva (UTI) Neonatal - Plantão',
                 'Unidade de Terapia Intensiva (UTI) Pediátrica',
             ];
 
