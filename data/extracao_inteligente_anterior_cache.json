@@ -325,6 +325,16 @@
       },
       {
         "data": "21 agosto 2026",
+        "email": "luuh_schumacher@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99984-8161",
+        "pos_x": 7836,
+        "profissional": "Luiza da Ros Schumacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "21 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -682,16 +692,6 @@
         "profissional": "Pedro Leonel Fucks da Veiga",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "21 agosto 2026",
-        "email": "luuh_schumacher@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99984-8161",
-        "pos_x": 7836,
-        "profissional": "Luiza da Ros Schumacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "21 agosto 2026",
@@ -1884,5 +1884,5 @@
     "total": 95
   },
   "data_backup": "21/08/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:04"
 }
