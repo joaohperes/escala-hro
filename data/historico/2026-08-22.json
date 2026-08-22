@@ -255,6 +255,16 @@
       },
       {
         "data": "22 agosto 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/15:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 6833,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "22 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -335,16 +345,6 @@
       },
       {
         "data": "22 agosto 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8855,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "22 agosto 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -392,6 +392,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "22 agosto 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "10:30/11:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9866,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "22 agosto 2026",
@@ -522,16 +532,6 @@
         "profissional": "Hiolanda Gomes Piler Dornelas",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "22 agosto 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/15:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 6833,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "22 agosto 2026",
@@ -756,16 +756,6 @@
       {
         "data": "22 agosto 2026",
         "email": "szepilowsk@gmail.com",
-        "horario": "10:30/11:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9866,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "22 agosto 2026",
-        "email": "szepilowsk@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 98821-0652",
         "pos_x": 9866,
@@ -822,12 +812,22 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "22 agosto 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8855,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
     "total": 82
   },
   "data_atualizacao": "22/08/2026",
-  "hora_atualizacao": "06:55",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
