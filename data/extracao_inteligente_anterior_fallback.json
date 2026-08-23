@@ -325,16 +325,6 @@
       },
       {
         "data": "23 agosto 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "08:30/09:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8518,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "23 agosto 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99920-4895",
@@ -342,6 +332,16 @@
         "profissional": "Claudio Quinan Balestrin Neto",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "23 agosto 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8855,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       },
       {
         "data": "23 agosto 2026",
@@ -685,16 +685,6 @@
       },
       {
         "data": "23 agosto 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8855,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "23 agosto 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99920-4895",
@@ -821,6 +811,16 @@
         "pos_x": 8181,
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "23 agosto 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "08:30/09:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8518,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1654,5 +1654,5 @@
     "total": 82
   },
   "data_backup": "23/08/2026",
-  "hora_backup": "05:59"
+  "hora_backup": "06:47"
 }
