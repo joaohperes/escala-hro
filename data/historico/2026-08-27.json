@@ -475,21 +475,21 @@
       },
       {
         "data": "27 agosto 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/11:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 3793,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "27 agosto 2026",
         "email": "eduardo.fg.pneumo@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(49) 99914-9150",
         "pos_x": 3793,
         "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "27 agosto 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/11:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 3793,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
@@ -715,21 +715,21 @@
       },
       {
         "data": "27 agosto 2026",
-        "email": "edumasierocola@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99121-2941",
-        "pos_x": 8504,
-        "profissional": "Eduardo Masiero Cola",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "27 agosto 2026",
         "email": "mariajteston@gmail.com",
         "horario": "09:00/18:00",
         "phone": "(49) 99921-5262",
         "pos_x": 8504,
         "profissional": "Maria Julia Teston",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "27 agosto 2026",
+        "email": "edumasierocola@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99121-2941",
+        "pos_x": 8504,
+        "profissional": "Eduardo Masiero Cola",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
       },
@@ -742,6 +742,16 @@
         "profissional": "Vanessa Vitoria Kerkhoff",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "27 agosto 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "12:00/16:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 8504,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
       },
       {
         "data": "27 agosto 2026",
@@ -994,10 +1004,10 @@
         "tipo_turno": "Plantão Vespertino"
       }
     ],
-    "total": 99
+    "total": 100
   },
   "data_atualizacao": "27/08/2026",
-  "hora_atualizacao": "16:14",
+  "hora_atualizacao": "16:58",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
