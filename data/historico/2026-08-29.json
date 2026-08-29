@@ -15,17 +15,7 @@
       },
       {
         "data": "29 agosto 2026",
-        "email": "silviamed2015@hotmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(95) 99135-6300",
-        "pos_x": 766,
-        "profissional": "Silvia Garcia Ambrosio",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Rotina Pediátrico - Final de Semana"
-      },
-      {
-        "data": "29 agosto 2026",
-        "email": "silviamed2015@hotmail.com",
+        "email": "Nathaliafornarifernandes@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(62) 99136-0987",
         "pos_x": 766,
@@ -225,16 +215,6 @@
       },
       {
         "data": "29 agosto 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 7167,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 agosto 2026",
         "email": "biia.wolschick@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99125-5659",
@@ -262,6 +242,16 @@
         "profissional": "Bruna Carolina Fagundes Gabbi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "29 agosto 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 7167,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "29 agosto 2026",
@@ -342,16 +332,6 @@
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "29 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 8852,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "29 agosto 2026",
@@ -475,16 +455,6 @@
       },
       {
         "data": "29 agosto 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 7167,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 agosto 2026",
         "email": "william.weber@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99165-3908",
@@ -535,16 +505,6 @@
       },
       {
         "data": "29 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "15:30/16:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9188,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
-      },
-      {
-        "data": "29 agosto 2026",
         "email": "brunapolettobp@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(46) 99975-0033",
@@ -572,16 +532,6 @@
         "profissional": "Luis Antonio Bataglin Dalcastel",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Noturno"
-      },
-      {
-        "data": "29 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "16:30/17:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10199,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
       },
       {
         "data": "29 agosto 2026",
@@ -615,13 +565,23 @@
       },
       {
         "data": "29 agosto 2026",
-        "email": "marciambergamo@gmail.com",
+        "email": "silviamed2015@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(62) 99136-0987",
         "pos_x": 766,
         "profissional": "Patricia de melo Pereira",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "29 agosto 2026",
+        "email": "silviamed2015@hotmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(95) 99135-6300",
+        "pos_x": 766,
+        "profissional": "Silvia Garcia Ambrosio",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Rotina Pediátrico - Final de Semana"
       },
       {
         "data": "29 agosto 2026",
@@ -705,6 +665,16 @@
       },
       {
         "data": "29 agosto 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 7167,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "29 agosto 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99977-7647",
@@ -775,6 +745,16 @@
       },
       {
         "data": "29 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 8852,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "29 agosto 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99920-4895",
@@ -792,6 +772,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "29 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "15:30/16:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9188,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "29 agosto 2026",
@@ -852,12 +842,22 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "29 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "16:30/17:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10199,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 85
   },
   "data_atualizacao": "29/08/2026",
-  "hora_atualizacao": "11:42",
+  "hora_atualizacao": "15:53",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3798,11 +3798,11 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "dr.jourdangustavo@gmail.com",
+        "email": "william.weber@hotmail.com",
         "horario": "07:00/13:00",
-        "phone": "(49) 99126-8588",
+        "phone": "(49) 99165-3908",
         "pos_x": 9866,
-        "profissional": "Arnaldo Gustavo Jourdan",
+        "profissional": "William Vinicius Weber",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
       },
@@ -3818,11 +3818,11 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "toninicamila1@gmail.com",
+        "email": "william.weber@hotmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 99834-2129",
+        "phone": "(49) 99165-3908",
         "pos_x": 9866,
-        "profissional": "Camila Tonini",
+        "profissional": "William Vinicius Weber",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Vespertino"
       },
