@@ -255,6 +255,16 @@
       },
       {
         "data": "30 agosto 2026",
+        "email": "henrikegandolfi@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 38851-1268",
+        "pos_x": 6833,
+        "profissional": "Henrike Nathan Gandolfi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "30 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -335,16 +345,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(49) 98856-4909",
-        "pos_x": 8855,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -392,6 +392,16 @@
         "profissional": "William Vinicius Weber",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "10:30/11:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9866,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "30 agosto 2026",
@@ -522,16 +532,6 @@
         "profissional": "Pedro Leonel Fucks da Veiga",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "30 agosto 2026",
-        "email": "henrikegandolfi@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 38851-1268",
-        "pos_x": 6833,
-        "profissional": "Henrike Nathan Gandolfi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "30 agosto 2026",
@@ -755,16 +755,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "10:30/11:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9866,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "william.weber@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99165-3908",
@@ -821,6 +811,16 @@
         "pos_x": 8518,
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(49) 98856-4909",
+        "pos_x": 8855,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1684,5 +1684,5 @@
     "total": 85
   },
   "data_backup": "30/08/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
