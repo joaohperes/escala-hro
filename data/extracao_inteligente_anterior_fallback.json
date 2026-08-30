@@ -85,16 +85,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "eduardoborsatto@gmail.com",
-        "horario": "08:00/14:00",
-        "phone": "(42) 99976-2524",
-        "pos_x": 2788,
-        "profissional": "Eduardo Henrique Borsatto",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "ferscort@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(54) 98152-8500",
@@ -146,12 +136,12 @@
       {
         "data": "30 agosto 2026",
         "email": "marcelo.heinig@gmail.com",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "(49) 99101-6806",
         "pos_x": 4473,
         "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "30 agosto 2026",
@@ -255,6 +245,16 @@
       },
       {
         "data": "30 agosto 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 6833,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "30 agosto 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -325,16 +325,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(49) 98856-4909",
-        "pos_x": 8181,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99835-1563",
@@ -342,6 +332,16 @@
         "profissional": "João Henrique Peres",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98856-4909",
+        "pos_x": 8518,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "30 agosto 2026",
@@ -435,16 +435,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 4473,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 98813-7205",
@@ -462,16 +452,6 @@
         "profissional": "Pedro Leonel Fucks da Veiga",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
-      },
-      {
-        "data": "30 agosto 2026",
-        "email": "francihoff@hotmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(55) 98138-9719",
-        "pos_x": 6833,
-        "profissional": "Francine Ehrhardt Hoffmann",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
       },
       {
         "data": "30 agosto 2026",
@@ -522,16 +502,6 @@
         "profissional": "Sabino Bertão Junio",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "30 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98856-4909",
-        "pos_x": 8518,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "30 agosto 2026",
@@ -625,6 +595,16 @@
       },
       {
         "data": "30 agosto 2026",
+        "email": "eduardoborsatto@gmail.com",
+        "horario": "08:00/14:00",
+        "phone": "(42) 99976-2524",
+        "pos_x": 2788,
+        "profissional": "Eduardo Henrique Borsatto",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
         "email": "srebelatto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99914-8587",
@@ -662,6 +642,16 @@
         "profissional": "Bruna Poletto",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99101-6806",
+        "pos_x": 4473,
+        "profissional": "Marcelo Eduardo Heinig",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "30 agosto 2026",
@@ -722,6 +712,16 @@
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(49) 98856-4909",
+        "pos_x": 8181,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "30 agosto 2026",
@@ -1684,5 +1684,5 @@
     "total": 85
   },
   "data_backup": "30/08/2026",
-  "hora_backup": "10:56"
+  "hora_backup": "11:32"
 }
