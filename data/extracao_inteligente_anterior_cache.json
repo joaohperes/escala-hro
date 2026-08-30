@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "30 agosto 2026",
-        "email": "luisdalcastel@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(21) 99478-9904",
-        "pos_x": 429,
-        "profissional": "Luis Antonio Bataglin Dalcastel",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Rotina Pediátrico - Final de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "dani_naman@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(64) 99988-0411",
@@ -215,16 +205,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "henrikegandolfi@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 38851-1268",
-        "pos_x": 6833,
-        "profissional": "Henrike Nathan Gandolfi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "william.weber@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99165-3908",
@@ -252,6 +232,16 @@
         "profissional": "Francine Ehrhardt Hoffmann",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 6833,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "30 agosto 2026",
@@ -335,16 +325,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98856-4909",
-        "pos_x": 8518,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98808-0201",
@@ -365,9 +345,9 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "luisdalcastel@gmail.com",
+        "email": "dani_naman@hotmail.com",
         "horario": "13:00/19:00",
-        "phone": "(21) 99478-9904",
+        "phone": "(64) 99988-0411",
         "pos_x": 9529,
         "profissional": "Rafaella Da Silva Holmer",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
@@ -455,16 +435,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 6833,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "william.weber@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99165-3908",
@@ -515,16 +485,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "matheusbrock@gmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(49) 98856-4909",
-        "pos_x": 8855,
-        "profissional": "Matheus De Oliveira Brock",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "peruzzomp@yahoo.com.br",
         "horario": "19:00/07:00",
         "phone": "(49) 99200-5048",
@@ -555,16 +515,6 @@
       },
       {
         "data": "30 agosto 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "16:30/17:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9866,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
-      },
-      {
-        "data": "30 agosto 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 98856-4909",
@@ -592,6 +542,16 @@
         "profissional": "Daniel Candido Naman Dutra",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "luisdalcastel@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(21) 99478-9904",
+        "pos_x": 429,
+        "profissional": "Luis Antonio Bataglin Dalcastel",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Rotina Pediátrico - Final de Semana"
       },
       {
         "data": "30 agosto 2026",
@@ -675,6 +635,16 @@
       },
       {
         "data": "30 agosto 2026",
+        "email": "henrikegandolfi@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 38851-1268",
+        "pos_x": 6833,
+        "profissional": "Henrike Nathan Gandolfi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "30 agosto 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99977-7647",
@@ -745,6 +715,16 @@
       },
       {
         "data": "30 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98856-4909",
+        "pos_x": 8518,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98808-0201",
@@ -762,6 +742,16 @@
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "matheusbrock@gmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(49) 98856-4909",
+        "pos_x": 8855,
+        "profissional": "Matheus De Oliveira Brock",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "30 agosto 2026",
@@ -822,6 +812,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "30 agosto 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "16:30/17:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9866,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 82
@@ -1684,5 +1684,5 @@
     "total": 85
   },
   "data_backup": "30/08/2026",
-  "hora_backup": "11:32"
+  "hora_backup": "15:50"
 }
