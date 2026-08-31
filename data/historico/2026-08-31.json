@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "31 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 429,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "31 agosto 2026",
         "email": "guilhermexavier.d@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(54) 99712-0595",
@@ -22,16 +12,6 @@
         "profissional": "Guilherme Xavier Di Domenico",
         "setor": "Anestesiologia - Serviço Médico",
         "tipo_turno": "Plantão"
-      },
-      {
-        "data": "31 agosto 2026",
-        "email": "j.ribas@unochapeco.edu.br",
-        "horario": "12:30/16:30",
-        "phone": "(51) 98109-8899",
-        "pos_x": 1102,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
-        "tipo_turno": "Rotina Pediátrico"
       },
       {
         "data": "31 agosto 2026",
@@ -195,16 +175,6 @@
       },
       {
         "data": "31 agosto 2026",
-        "email": "belini.juciana@unochapeco.edu.br",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99806-5659",
-        "pos_x": 6150,
-        "profissional": "Juciana Belini",
-        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
-        "tipo_turno": "Médico - Vespertino"
-      },
-      {
-        "data": "31 agosto 2026",
         "email": "davimsouza@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99163-3573",
@@ -212,6 +182,16 @@
         "profissional": "Davi Machado de Souza",
         "setor": "Oftalmologia Sobreaviso",
         "tipo_turno": "Sobreaviso Oftalmologia"
+      },
+      {
+        "data": "31 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 6823,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "31 agosto 2026",
@@ -355,16 +335,6 @@
       },
       {
         "data": "31 agosto 2026",
-        "email": "marciambergamo@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99977-7647",
-        "pos_x": 9179,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "31 agosto 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "13:00/19:00",
         "phone": "(41) 99951-6066",
@@ -415,9 +385,9 @@
       },
       {
         "data": "31 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
+        "email": "guilhermexavier.d@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(41) 98706-2929",
+        "phone": "(54) 99712-0595",
         "pos_x": 10862,
         "profissional": "Rafaella Da Silva Holmer",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
@@ -492,16 +462,6 @@
         "profissional": "Jose Augusto Nogueira Ribas",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "31 agosto 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 6823,
-        "profissional": "Isabela Maran",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "31 agosto 2026",
@@ -665,6 +625,16 @@
       },
       {
         "data": "31 agosto 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "31 agosto 2026",
         "email": "vicentepons4@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98402-9364",
@@ -682,6 +652,16 @@
         "profissional": "Jose Augusto Nogueira Ribas",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "31 agosto 2026",
+        "email": "j.ribas@unochapeco.edu.br",
+        "horario": "12:30/16:30",
+        "phone": "(51) 98109-8899",
+        "pos_x": 1102,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
+        "tipo_turno": "Rotina Pediátrico"
       },
       {
         "data": "31 agosto 2026",
@@ -795,6 +775,16 @@
       },
       {
         "data": "31 agosto 2026",
+        "email": "belini.juciana@unochapeco.edu.br",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99806-5659",
+        "pos_x": 6150,
+        "profissional": "Juciana Belini",
+        "setor": "Núcleo Interno de Regulação (NIR) Médico Regulador",
+        "tipo_turno": "Médico - Vespertino"
+      },
+      {
+        "data": "31 agosto 2026",
         "email": "Isabelamaranped@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(41) 98706-2929",
@@ -852,6 +842,16 @@
         "profissional": "Marcia de Menezes Bergamo",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "31 agosto 2026",
+        "email": "marciambergamo@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99977-7647",
+        "pos_x": 9179,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "31 agosto 2026",
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "31/08/2026",
-  "hora_atualizacao": "13:19",
+  "hora_atualizacao": "14:14",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
