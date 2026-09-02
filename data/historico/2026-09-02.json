@@ -355,6 +355,16 @@
       },
       {
         "data": "02 setembro 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 8170,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "02 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -735,16 +745,6 @@
       },
       {
         "data": "02 setembro 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 8170,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "02 setembro 2026",
         "email": "paulofilipemed@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99124-3160",
@@ -865,11 +865,11 @@
       },
       {
         "data": "02 setembro 2026",
-        "email": "adelainemarilia@gmail.com",
+        "email": "matheusbrock@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 98844-0377",
+        "phone": "(49) 98856-4909",
         "pos_x": 9853,
-        "profissional": "Adelaine Marilia Pinheiro",
+        "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
       },
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "02/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3728,11 +3728,11 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "moreirapnathalia@gmail.com",
+        "email": "izadoraasulzbacher@gmail.com",
         "horario": "07:00/13:00",
-        "phone": "(34) 99776-9897",
+        "phone": "(51) 99820-8372",
         "pos_x": 8170,
-        "profissional": "Nathalia Moreira Pereira",
+        "profissional": "Izadora Valdameri Sulzbacher",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
