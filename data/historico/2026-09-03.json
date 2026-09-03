@@ -335,6 +335,16 @@
       },
       {
         "data": "03 setembro 2026",
+        "email": "luisastieler@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 99670-6933",
+        "pos_x": 8170,
+        "profissional": "Luisa Cancian Stieler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "03 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -675,11 +685,11 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "seidlercesar@gmail.com",
+        "email": "izadoracz@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(49) 98808-0201",
+        "phone": "(49) 99976-6685",
         "pos_x": 7160,
-        "profissional": "Cesar Augusto Seidler Junior",
+        "profissional": "Izadora Czarnobai",
         "setor": "R2 Clínica Médica UTI",
         "tipo_turno": "Plantão UTI"
       },
@@ -732,16 +742,6 @@
         "profissional": "Miyake Adriana Souza Cirqueira",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "luisastieler@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 99670-6933",
-        "pos_x": 8170,
-        "profissional": "Luisa Cancian Stieler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "03 setembro 2026",
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "03/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
