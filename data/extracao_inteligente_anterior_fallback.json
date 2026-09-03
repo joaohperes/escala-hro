@@ -15,16 +15,6 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "03 setembro 2026",
         "email": "dani_naman@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(64) 99988-0411",
@@ -92,46 +82,6 @@
         "profissional": "Vanessa Dias",
         "setor": "Cirurgia Vascular - Sobreaviso",
         "tipo_turno": "Vascular Sobreaviso"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/11:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 3458,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "emanuelfelipe1@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(49) 98900-6161",
-        "pos_x": 3458,
-        "profissional": "Emanuel Felipe Vieira Luz",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 3458,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "brunoootrevisan@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(55) 99976-0748",
-        "pos_x": 3458,
-        "profissional": "Bruno Trevisan",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
       {
         "data": "03 setembro 2026",
@@ -305,16 +255,6 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "fabiorosalvo@gmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(49) 99101-3438",
-        "pos_x": 8170,
-        "profissional": "Fabio Rosalvo Urnau",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "COORDENAÇÃO"
-      },
-      {
-        "data": "03 setembro 2026",
         "email": "marialuizahensel@gmail.com",
         "horario": "09:00/18:00",
         "phone": "(21) 99923-1486",
@@ -455,16 +395,6 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "07:00/12:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 10526,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "03 setembro 2026",
         "email": "emelyjorge@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 99708-0037",
@@ -482,16 +412,6 @@
         "profissional": "Aline Luciana Casagrande Mantovani",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
-      },
-      {
-        "data": "03 setembro 2026",
-        "email": "ali_manto@hotmail.com",
-        "horario": "08:00/12:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 10862,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "03 setembro 2026",
@@ -635,11 +555,11 @@
       },
       {
         "data": "03 setembro 2026",
-        "email": "biia.wolschick@hotmail.com",
+        "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
-        "phone": "(49) 99125-5659",
+        "phone": "(49) 99816-3428",
         "pos_x": 4804,
-        "profissional": "Bianca Soder  Wolschick",
+        "profissional": "Jose Augusto Nogueira Ribas",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Vespertino"
       },
@@ -966,12 +886,92 @@
       {
         "data": "03 setembro 2026",
         "email": "drakaliandrapediatra@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(49) 98813-7205",
+        "pos_x": 429,
+        "profissional": "Kaliandra de Almeida",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/11:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 3458,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "emanuelfelipe1@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(49) 98900-6161",
+        "pos_x": 3458,
+        "profissional": "Emanuel Felipe Vieira Luz",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 3458,
+        "profissional": "Bianca Valandro",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "brunoootrevisan@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(55) 99976-0748",
+        "pos_x": 3458,
+        "profissional": "Bruno Trevisan",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "drakaliandrapediatra@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 98813-7205",
         "pos_x": 6487,
         "profissional": "Kaliandra de Almeida",
         "setor": "Oncologia Pediátrica - Sobreaviso",
         "tipo_turno": "Sobre Aviso Oncologia"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "fabiorosalvo@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(49) 99101-3438",
+        "pos_x": 8170,
+        "profissional": "Fabio Rosalvo Urnau",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "07:00/12:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 10526,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "03 setembro 2026",
+        "email": "drakaliandrapediatra@gmail.com",
+        "horario": "08:00/12:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 10862,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       }
     ],
     "total": 97
@@ -1954,5 +1954,5 @@
     "total": 97
   },
   "data_backup": "03/09/2026",
-  "hora_backup": "07:47"
+  "hora_backup": "09:58"
 }
