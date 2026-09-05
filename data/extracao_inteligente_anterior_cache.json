@@ -75,16 +75,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "08:00/14:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 2786,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "drgiovanisantin@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99963-6866",
@@ -136,12 +126,12 @@
       {
         "data": "05 setembro 2026",
         "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "(49) 99107-0000",
         "pos_x": 4470,
         "profissional": "Geraldo Antunes Cordova",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "05 setembro 2026",
@@ -235,16 +225,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "juliaschreiner_@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99999-4297",
-        "pos_x": 7501,
-        "profissional": "Julia Cieslik Schreiner",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "luisastieler@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(55) 99670-6933",
@@ -262,6 +242,26 @@
         "profissional": "Eloisa Lehr Filippi Chiella",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "brunacfgabbi@gmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(49) 99827-4102",
+        "pos_x": 7501,
+        "profissional": "Bruna Carolina Fagundes Gabbi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "erikalbiasoli@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99936-9649",
+        "pos_x": 7501,
+        "profissional": "Erika Luiza Biasoli",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "05 setembro 2026",
@@ -445,16 +445,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99107-0000",
-        "pos_x": 4470,
-        "profissional": "Geraldo Antunes Cordova",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 98813-7205",
@@ -482,26 +472,6 @@
         "profissional": "Laura Tolotti",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "05 setembro 2026",
-        "email": "brunacfgabbi@gmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(49) 99827-4102",
-        "pos_x": 7501,
-        "profissional": "Bruna Carolina Fagundes Gabbi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "05 setembro 2026",
-        "email": "erikalbiasoli@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99936-9649",
-        "pos_x": 7501,
-        "profissional": "Erika Luiza Biasoli",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "05 setembro 2026",
@@ -535,16 +505,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8849,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "debora_decesaro@unochapeco.edu.br",
         "horario": "19:00/07:00",
         "phone": "(49) 98812-1441",
@@ -555,16 +515,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9185,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "Samantha.aspiazu@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(54) 99982-3380",
@@ -572,16 +522,6 @@
         "profissional": "Samantha de Aspiazu Damiani",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9522,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "05 setembro 2026",
@@ -615,16 +555,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "16:30/17:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 10532,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "toninicamila1@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99834-2129",
@@ -652,6 +582,16 @@
         "profissional": "Guilherme Macena Barreto Junior",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "08:00/14:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 2786,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
       },
       {
         "data": "05 setembro 2026",
@@ -695,6 +635,16 @@
       },
       {
         "data": "05 setembro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 4470,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "05 setembro 2026",
         "email": "lautolotti@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(41) 98853-1590",
@@ -722,6 +672,16 @@
         "profissional": "Erika Luiza Biasoli",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "juliaschreiner_@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99999-4297",
+        "pos_x": 7501,
+        "profissional": "Julia Cieslik Schreiner",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "05 setembro 2026",
@@ -765,6 +725,16 @@
       },
       {
         "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8849,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "05 setembro 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98856-4909",
@@ -785,6 +755,16 @@
       },
       {
         "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9185,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "05 setembro 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98808-0201",
@@ -802,6 +782,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9522,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "05 setembro 2026",
@@ -852,6 +842,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "16:30/17:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 10532,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 85
@@ -1854,5 +1854,5 @@
     "total": 99
   },
   "data_backup": "05/09/2026",
-  "hora_backup": "10:01"
+  "hora_backup": "14:40"
 }
