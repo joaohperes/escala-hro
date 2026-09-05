@@ -275,6 +275,16 @@
       },
       {
         "data": "05 setembro 2026",
+        "email": "juliaschreiner_@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99999-4297",
+        "pos_x": 7501,
+        "profissional": "Julia Cieslik Schreiner",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "05 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -355,16 +365,6 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9522,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "05 setembro 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -402,6 +402,16 @@
         "profissional": "Camila Tonini",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "10:30/11:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 10532,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "05 setembro 2026",
@@ -542,16 +552,6 @@
         "profissional": "Laura Tolotti",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "05 setembro 2026",
-        "email": "juliaschreiner_@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99999-4297",
-        "pos_x": 7501,
-        "profissional": "Julia Cieslik Schreiner",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "05 setembro 2026",
@@ -785,21 +785,11 @@
       },
       {
         "data": "05 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "10:30/11:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 10532,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "05 setembro 2026",
-        "email": "toninicamila1@gmail.com",
+        "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 99834-2129",
+        "phone": "(49) 99835-1563",
         "pos_x": 10532,
-        "profissional": "Camila Tonini",
+        "profissional": "João Henrique Peres",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Vespertino"
       },
@@ -851,6 +841,16 @@
         "pos_x": 9185,
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "05 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9522,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
@@ -1854,5 +1854,5 @@
     "total": 99
   },
   "data_backup": "05/09/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
