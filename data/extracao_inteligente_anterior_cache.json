@@ -345,6 +345,16 @@
       },
       {
         "data": "07 setembro 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 7836,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "07 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -702,16 +712,6 @@
         "profissional": "Elisa Noskoski",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "07 setembro 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 7836,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "07 setembro 2026",
@@ -1814,5 +1814,5 @@
     "total": 86
   },
   "data_backup": "07/09/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
