@@ -15,6 +15,16 @@
       },
       {
         "data": "09 setembro 2026",
+        "email": "elaineforgiarini@gmail.com",
+        "horario": "13:30/17:30",
+        "phone": "(55) 98141-0589",
+        "pos_x": 765,
+        "profissional": "Elaine Aparecida Forgiarini",
+        "setor": "Ambulatório Oncologia - Triagem",
+        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
+      },
+      {
+        "data": "09 setembro 2026",
         "email": "guilherme.barreto23@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(93) 99176-2753",
@@ -135,21 +145,21 @@
       },
       {
         "data": "09 setembro 2026",
-        "email": "amandaalberici@yahoo.com.br",
+        "email": "efzottis14@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 98846-9947",
+        "phone": "(54) 99955-3434",
         "pos_x": 4803,
-        "profissional": "Amanda Alberici",
+        "profissional": "Eduardo Ferri Zottis",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Comanejo Vespertino"
       },
       {
         "data": "09 setembro 2026",
-        "email": "toninicamila1@gmail.com",
+        "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 99834-2129",
+        "phone": "(49) 99835-1563",
         "pos_x": 4803,
-        "profissional": "Camila Tonini",
+        "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Vespertino"
       },
@@ -455,16 +465,6 @@
       },
       {
         "data": "09 setembro 2026",
-        "email": "elaineforgiarini@gmail.com",
-        "horario": "13:30/17:30",
-        "phone": "(55) 98141-0589",
-        "pos_x": 765,
-        "profissional": "Elaine Aparecida Forgiarini",
-        "setor": "Ambulatório Oncologia - Triagem",
-        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
-      },
-      {
-        "data": "09 setembro 2026",
         "email": "guilherme.barreto23@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(93) 99176-2753",
@@ -557,7 +557,7 @@
         "data": "09 setembro 2026",
         "email": "lautolotti@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(55) 98141-0589",
+        "phone": "(93) 99176-2753",
         "pos_x": 8167,
         "profissional": "Laura Tolotti",
         "setor": "Residência de Ginecologia e Obstetrícia",
@@ -655,7 +655,7 @@
       },
       {
         "data": "09 setembro 2026",
-        "email": "elaineforgiarini@gmail.com",
+        "email": "guilherme.barreto23@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(41) 99968-0428",
         "pos_x": 10859,
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "09/09/2026",
-  "hora_atualizacao": "10:07",
+  "hora_atualizacao": "10:53",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
