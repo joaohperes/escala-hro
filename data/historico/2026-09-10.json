@@ -345,6 +345,16 @@
       },
       {
         "data": "10 setembro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 8504,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "10 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -745,16 +755,6 @@
       },
       {
         "data": "10 setembro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 8504,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "10 setembro 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "10/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
