@@ -15,6 +15,16 @@
       },
       {
         "data": "10 setembro 2026",
+        "email": "elaineforgiarini@gmail.com",
+        "horario": "13:30/17:30",
+        "phone": "(55) 98141-0589",
+        "pos_x": 765,
+        "profissional": "Elaine Aparecida Forgiarini",
+        "setor": "Ambulatório Oncologia - Triagem",
+        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
+      },
+      {
+        "data": "10 setembro 2026",
         "email": "dani_naman@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(64) 99988-0411",
@@ -465,16 +475,6 @@
       },
       {
         "data": "10 setembro 2026",
-        "email": "elaineforgiarini@gmail.com",
-        "horario": "13:30/17:30",
-        "phone": "(55) 98141-0589",
-        "pos_x": 765,
-        "profissional": "Elaine Aparecida Forgiarini",
-        "setor": "Ambulatório Oncologia - Triagem",
-        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
-      },
-      {
-        "data": "10 setembro 2026",
         "email": "dani_naman@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(64) 99988-0411",
@@ -627,7 +627,7 @@
         "data": "10 setembro 2026",
         "email": "zorzettoj@bol.com.br",
         "horario": "18:30/07:30",
-        "phone": "(55) 98141-0589",
+        "phone": "(64) 99988-0411",
         "pos_x": 9177,
         "profissional": "João Roberto Munhoz Zorzetto",
         "setor": "Ultrassonografia - Sobreaviso",
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "10/09/2026",
-  "hora_atualizacao": "10:04",
+  "hora_atualizacao": "10:48",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
