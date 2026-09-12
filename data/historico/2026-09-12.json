@@ -285,6 +285,16 @@
       },
       {
         "data": "12 setembro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 7501,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "12 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -365,16 +375,6 @@
       },
       {
         "data": "12 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:30/10:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9522,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "12 setembro 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 98853-1590",
@@ -422,6 +422,16 @@
         "profissional": "João Henrique Peres",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "12 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "10:30/11:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10532,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "12 setembro 2026",
@@ -572,16 +582,6 @@
         "profissional": "Ana Paula Grabovski",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "12 setembro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 7501,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "12 setembro 2026",
@@ -805,16 +805,6 @@
       },
       {
         "data": "12 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "10:30/11:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10532,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "12 setembro 2026",
         "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99835-1563",
@@ -872,12 +862,22 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "12 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:30/10:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9522,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
     "total": 87
   },
   "data_atualizacao": "12/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
