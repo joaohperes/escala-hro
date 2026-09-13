@@ -75,16 +75,6 @@
       },
       {
         "data": "13 setembro 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/14:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 2786,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "13 setembro 2026",
         "email": "ferscort@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(54) 98152-8500",
@@ -136,12 +126,12 @@
       {
         "data": "13 setembro 2026",
         "email": "marina.omoschetta@gmail.com",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "(49) 99987-7277",
         "pos_x": 4470,
         "profissional": "Marina Oliboni Moschetta",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "13 setembro 2026",
@@ -245,16 +235,6 @@
       },
       {
         "data": "13 setembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "13 setembro 2026",
         "email": "luisastieler@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(55) 99670-6933",
@@ -272,6 +252,26 @@
         "profissional": "Bruna Carolina Fagundes Gabbi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "marcieleznatali@gmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(49) 98401-1736",
+        "pos_x": 7501,
+        "profissional": "Marciele Natali Franzosi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "13 setembro 2026",
@@ -342,16 +342,6 @@
         "profissional": "Mariana Siqueira Leite",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "13 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "13:30/14:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 8849,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "13 setembro 2026",
@@ -455,16 +445,6 @@
       },
       {
         "data": "13 setembro 2026",
-        "email": "marina.omoschetta@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99987-7277",
-        "pos_x": 4470,
-        "profissional": "Marina Oliboni Moschetta",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "13 setembro 2026",
         "email": "Isabelamaranped@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(41) 98706-2929",
@@ -492,26 +472,6 @@
         "profissional": "Karolayne Brandalise",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "13 setembro 2026",
-        "email": "marcieleznatali@gmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(49) 98401-1736",
-        "pos_x": 7501,
-        "profissional": "Marciele Natali Franzosi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "13 setembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "13 setembro 2026",
@@ -555,16 +515,6 @@
       },
       {
         "data": "13 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9185,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "13 setembro 2026",
         "email": "peruzzomp@yahoo.com.br",
         "horario": "19:00/07:00",
         "phone": "(49) 99200-5048",
@@ -572,16 +522,6 @@
         "profissional": "Michel Peruzzo",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "13 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "15:30/16:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9522,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "13 setembro 2026",
@@ -615,16 +555,6 @@
       },
       {
         "data": "13 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "16:30/17:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10532,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
-      },
-      {
-        "data": "13 setembro 2026",
         "email": "dr.jourdangustavo@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99126-8588",
@@ -652,6 +582,16 @@
         "profissional": "Tabata Simao Conrado",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/14:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 2786,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
       },
       {
         "data": "13 setembro 2026",
@@ -695,6 +635,16 @@
       },
       {
         "data": "13 setembro 2026",
+        "email": "marina.omoschetta@gmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99987-7277",
+        "pos_x": 4470,
+        "profissional": "Marina Oliboni Moschetta",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "13 setembro 2026",
         "email": "adriana.miyake@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(38) 99142-9975",
@@ -732,6 +682,16 @@
         "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "13 setembro 2026",
@@ -775,6 +735,16 @@
       },
       {
         "data": "13 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "13:30/14:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 8849,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "13 setembro 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98808-0201",
@@ -795,6 +765,16 @@
       },
       {
         "data": "13 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9185,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "13 setembro 2026",
         "email": "joaoorsilva@hotmail.com.br",
         "horario": "07:00/13:00",
         "phone": "(12) 99125-3489",
@@ -812,6 +792,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "15:30/16:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9522,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "13 setembro 2026",
@@ -872,12 +862,22 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "13 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "16:30/17:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10532,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 87
   },
   "data_atualizacao": "13/09/2026",
-  "hora_atualizacao": "10:54",
+  "hora_atualizacao": "15:21",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
