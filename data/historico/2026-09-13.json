@@ -345,6 +345,16 @@
       },
       {
         "data": "13 setembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "13:30/14:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 8849,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "13 setembro 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98808-0201",
@@ -532,16 +542,6 @@
         "profissional": "Luiz Tsuyoshi Inoue",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "13 setembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "13:30/14:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 8849,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "13 setembro 2026",
@@ -877,7 +877,7 @@
     "total": 87
   },
   "data_atualizacao": "13/09/2026",
-  "hora_atualizacao": "10:26",
+  "hora_atualizacao": "10:54",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
