@@ -1027,7 +1027,7 @@
     "total": 102
   },
   "data_atualizacao": "15/09/2026",
-  "hora_atualizacao": "16:13",
+  "hora_atualizacao": "20:32",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3398,26 +3398,6 @@
       },
       {
         "data": "16 setembro 2026",
-        "email": "brunoootrevisan@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(55) 99976-0748",
-        "pos_x": 3457,
-        "profissional": "Bruno Trevisan",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "16 setembro 2026",
-        "email": "bbazzano@icloud.com",
-        "horario": "08:00/11:00",
-        "phone": "(45) 99104-9074",
-        "pos_x": 3457,
-        "profissional": "Barbara Anahy Vinhas Bazzano",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "16 setembro 2026",
         "email": "emelinemoreira@hotmail.com",
         "horario": "08:00/11:00",
         "phone": "(49) 99958-0101",
@@ -3433,6 +3413,26 @@
         "phone": "(49) 99914-9150",
         "pos_x": 3457,
         "profissional": "Eduardo Formoso Goldschimidt",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "16 setembro 2026",
+        "email": "bbazzano@icloud.com",
+        "horario": "08:00/11:00",
+        "phone": "(45) 99104-9074",
+        "pos_x": 3457,
+        "profissional": "Barbara Anahy Vinhas Bazzano",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "16 setembro 2026",
+        "email": "brunoootrevisan@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(55) 99976-0748",
+        "pos_x": 3457,
+        "profissional": "Bruno Trevisan",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
@@ -3778,6 +3778,16 @@
       },
       {
         "data": "16 setembro 2026",
+        "email": "william.weber@hotmail.com",
+        "horario": "00:00/07:00",
+        "phone": "(49) 99165-3908",
+        "pos_x": 8504,
+        "profissional": "William Vinicius Weber",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "16 setembro 2026",
         "email": "biia.wolschick@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99125-5659",
@@ -3868,11 +3878,11 @@
       },
       {
         "data": "16 setembro 2026",
-        "email": "william.weber@hotmail.com",
-        "horario": "19:00/07:00",
-        "phone": "(49) 99165-3908",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "19:00/00:00",
+        "phone": "(49) 99124-3160",
         "pos_x": 8504,
-        "profissional": "William Vinicius Weber",
+        "profissional": "Paulo Filipe Pereira",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
       },
@@ -4227,6 +4237,6 @@
         "tipo_turno": "Sobreaviso Urologia"
       }
     ],
-    "total": 98
+    "total": 99
   }
 }
