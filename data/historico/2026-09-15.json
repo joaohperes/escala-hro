@@ -385,6 +385,16 @@
       },
       {
         "data": "15 setembro 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8504,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -775,16 +785,6 @@
       },
       {
         "data": "15 setembro 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8504,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "15 setembro 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -1027,7 +1027,7 @@
     "total": 102
   },
   "data_atualizacao": "15/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3458,11 +3458,11 @@
       },
       {
         "data": "16 setembro 2026",
-        "email": "srebelatto@unochapeco.edu.br",
+        "email": "brunapaola@unochapeco.edu.br",
         "horario": "07:00/13:00",
-        "phone": "(49) 99914-8587",
+        "phone": "(49) 98864-8888",
         "pos_x": 4130,
-        "profissional": "Shayane Luiza Rebelatto",
+        "profissional": "Bruna Paola Defaveri Damiani",
         "setor": "Ginecologia e Obstetrícia - Plantão",
         "tipo_turno": "Plantão Matutino - P1"
       },

@@ -385,6 +385,16 @@
       },
       {
         "data": "15 setembro 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8504,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "15 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -772,16 +782,6 @@
         "profissional": "Nathália Karolina Rech",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "15 setembro 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8504,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "15 setembro 2026",
@@ -2054,5 +2054,5 @@
     "total": 102
   },
   "data_backup": "15/09/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
