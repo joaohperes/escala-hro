@@ -285,6 +285,16 @@
       },
       {
         "data": "19 setembro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 7501,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "19 setembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -365,16 +375,6 @@
       },
       {
         "data": "19 setembro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "09:30/10:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9522,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Matutino - Final de Semana"
-      },
-      {
-        "data": "19 setembro 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 99951-6066",
@@ -412,6 +412,16 @@
         "profissional": "Priscila Domingos",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "19 setembro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "10:30/11:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 10532,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana"
       },
       {
         "data": "19 setembro 2026",
@@ -562,16 +572,6 @@
         "profissional": "Nathália Karolina Rech",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "19 setembro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 7501,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "19 setembro 2026",
@@ -795,16 +795,6 @@
       },
       {
         "data": "19 setembro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "10:30/11:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 10532,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana"
-      },
-      {
-        "data": "19 setembro 2026",
         "email": "priscila.domingos95@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99142-4137",
@@ -862,12 +852,22 @@
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "19 setembro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "09:30/10:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9522,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Matutino - Final de Semana"
       }
     ],
     "total": 86
   },
   "data_atualizacao": "19/09/2026",
-  "hora_atualizacao": "06:47",
+  "hora_atualizacao": "07:47",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
