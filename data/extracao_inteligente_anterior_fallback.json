@@ -345,6 +345,16 @@
       },
       {
         "data": "20 setembro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9182,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "20 setembro 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98856-4909",
@@ -552,16 +562,6 @@
         "profissional": "Ana Carolina Renz Simon",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "20 setembro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9182,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "20 setembro 2026",
@@ -1754,5 +1754,5 @@
     "total": 86
   },
   "data_backup": "20/09/2026",
-  "hora_backup": "10:11"
+  "hora_backup": "10:41"
 }
