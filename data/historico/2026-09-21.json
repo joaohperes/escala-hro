@@ -86,16 +86,6 @@
       {
         "data": "21 setembro 2026",
         "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 3121,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "21 setembro 2026",
-        "email": "williandidomenico@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99191-2248",
         "pos_x": 3458,
@@ -285,16 +275,6 @@
       },
       {
         "data": "21 setembro 2026",
-        "email": "julianofarias@ymail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99942-4165",
-        "pos_x": 8170,
-        "profissional": "Juliano Cesar Huf Farias",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "21 setembro 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -342,6 +322,16 @@
         "profissional": "Fabio Rosalvo Urnau",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "21 setembro 2026",
+        "email": "erikalbiasoli@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99936-9649",
+        "pos_x": 8170,
+        "profissional": "Erika Luiza Biasoli",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "21 setembro 2026",
@@ -565,16 +555,6 @@
       },
       {
         "data": "21 setembro 2026",
-        "email": "erikalbiasoli@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99936-9649",
-        "pos_x": 8170,
-        "profissional": "Erika Luiza Biasoli",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "21 setembro 2026",
         "email": "matheustoldok@hotmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99978-3320",
@@ -755,6 +735,16 @@
       },
       {
         "data": "21 setembro 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 3121,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "21 setembro 2026",
         "email": "lais.paganella@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(51) 99559-2599",
@@ -862,6 +852,16 @@
         "profissional": "Francine Ehrhardt Hoffmann",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "21 setembro 2026",
+        "email": "julianofarias@ymail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99942-4165",
+        "pos_x": 8170,
+        "profissional": "Juliano Cesar Huf Farias",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "21 setembro 2026",
@@ -1007,7 +1007,7 @@
     "total": 100
   },
   "data_atualizacao": "21/09/2026",
-  "hora_atualizacao": "12:17",
+  "hora_atualizacao": "13:01",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
