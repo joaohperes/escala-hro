@@ -165,13 +165,13 @@
       },
       {
         "data": "23 setembro 2026",
-        "email": "marina.omoschetta@gmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99987-7277",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 5139,
-        "profissional": "Marina Oliboni Moschetta",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "23 setembro 2026",
@@ -315,11 +315,11 @@
       },
       {
         "data": "23 setembro 2026",
-        "email": "luisastieler@gmail.com",
+        "email": "francihoff@hotmail.com",
         "horario": "13:00/19:00",
-        "phone": "(55) 99670-6933",
+        "phone": "(55) 98138-9719",
         "pos_x": 8504,
-        "profissional": "Luisa Cancian Stieler",
+        "profissional": "Francine Ehrhardt Hoffmann",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
@@ -525,16 +525,6 @@
       },
       {
         "data": "23 setembro 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 5139,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "23 setembro 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "17:00/19:00",
         "phone": "(49) 98813-7205",
@@ -615,11 +605,11 @@
       },
       {
         "data": "23 setembro 2026",
-        "email": "francihoff@hotmail.com",
+        "email": "luisastieler@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(55) 98138-9719",
+        "phone": "(55) 99670-6933",
         "pos_x": 8504,
-        "profissional": "Francine Ehrhardt Hoffmann",
+        "profissional": "Luisa Cancian Stieler",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
@@ -845,6 +835,16 @@
       },
       {
         "data": "23 setembro 2026",
+        "email": "marina.omoschetta@gmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99987-7277",
+        "pos_x": 5139,
+        "profissional": "Marina Oliboni Moschetta",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "23 setembro 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99116-3404",
@@ -997,7 +997,7 @@
     "total": 99
   },
   "data_atualizacao": "23/09/2026",
-  "hora_atualizacao": "10:49",
+  "hora_atualizacao": "11:24",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
