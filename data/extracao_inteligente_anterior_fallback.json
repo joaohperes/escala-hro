@@ -176,12 +176,12 @@
       {
         "data": "24 setembro 2026",
         "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "(49) 99107-0000",
         "pos_x": 5139,
         "profissional": "Geraldo Antunes Cordova",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "24 setembro 2026",
@@ -525,16 +525,6 @@
       },
       {
         "data": "24 setembro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99107-0000",
-        "pos_x": 5139,
-        "profissional": "Geraldo Antunes Cordova",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "24 setembro 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "17:00/19:00",
         "phone": "(49) 99116-3404",
@@ -832,6 +822,16 @@
         "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "24 setembro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 5139,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "24 setembro 2026",
@@ -1984,5 +1984,5 @@
     "total": 99
   },
   "data_backup": "24/09/2026",
-  "hora_backup": "10:44"
+  "hora_backup": "11:24"
 }

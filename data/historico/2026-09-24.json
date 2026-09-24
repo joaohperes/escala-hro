@@ -176,12 +176,12 @@
       {
         "data": "24 setembro 2026",
         "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
+        "horario": "14:00/06:00",
         "phone": "(49) 99107-0000",
         "pos_x": 5139,
         "profissional": "Geraldo Antunes Cordova",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "24 setembro 2026",
@@ -525,16 +525,6 @@
       },
       {
         "data": "24 setembro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99107-0000",
-        "pos_x": 5139,
-        "profissional": "Geraldo Antunes Cordova",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "24 setembro 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "17:00/19:00",
         "phone": "(49) 99116-3404",
@@ -835,6 +825,16 @@
       },
       {
         "data": "24 setembro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 5139,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "24 setembro 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 98813-7205",
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "24/09/2026",
-  "hora_atualizacao": "10:44",
+  "hora_atualizacao": "11:24",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
