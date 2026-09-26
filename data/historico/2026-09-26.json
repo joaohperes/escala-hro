@@ -345,6 +345,16 @@
       },
       {
         "data": "26 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8849,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "26 setembro 2026",
         "email": "sabinobjunior@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(55) 99963-5179",
@@ -552,16 +562,6 @@
         "profissional": "Lisane Beatriz Giacomossi",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "26 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8849,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "26 setembro 2026",
@@ -897,7 +897,7 @@
     "total": 89
   },
   "data_atualizacao": "26/09/2026",
-  "hora_atualizacao": "10:20",
+  "hora_atualizacao": "10:52",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
