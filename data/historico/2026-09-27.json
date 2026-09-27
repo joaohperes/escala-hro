@@ -345,16 +345,6 @@
       },
       {
         "data": "27 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8849,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "27 setembro 2026",
         "email": "william.weber@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99165-3908",
@@ -362,6 +352,16 @@
         "profissional": "William Vinicius Weber",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "27 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9185,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "27 setembro 2026",
@@ -552,16 +552,6 @@
         "profissional": "Leandro Paulo do Nascimento",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "27 setembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9185,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "27 setembro 2026",
@@ -795,6 +785,16 @@
       },
       {
         "data": "27 setembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8849,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "27 setembro 2026",
         "email": "william.weber@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99165-3908",
@@ -887,7 +887,7 @@
     "total": 88
   },
   "data_atualizacao": "27/09/2026",
-  "hora_atualizacao": "11:14",
+  "hora_atualizacao": "11:50",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
