@@ -235,16 +235,6 @@
       },
       {
         "data": "27 setembro 2026",
-        "email": "henrikegandolfi@gmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(49) 38851-1268",
-        "pos_x": 7501,
-        "profissional": "Henrike Nathan Gandolfi",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "27 setembro 2026",
         "email": "izadoraasulzbacher@gmail.com",
         "horario": "16:00/00:00",
         "phone": "(51) 99820-8372",
@@ -622,6 +612,16 @@
         "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "27 setembro 2026",
+        "email": "henrikegandolfi@gmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(49) 38851-1268",
+        "pos_x": 7501,
+        "profissional": "Henrike Nathan Gandolfi",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
       },
       {
         "data": "27 setembro 2026",
@@ -1784,5 +1784,5 @@
     "total": 89
   },
   "data_backup": "27/09/2026",
-  "hora_backup": "16:17"
+  "hora_backup": "20:49"
 }
