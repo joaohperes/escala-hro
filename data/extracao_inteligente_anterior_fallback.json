@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "28 setembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 428,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "28 setembro 2026",
         "email": "guilherme.barreto23@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(93) 99176-2753",
@@ -195,6 +185,16 @@
       },
       {
         "data": "28 setembro 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 6822,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "28 setembro 2026",
         "email": "theocgonzalez@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(11) 96353-8082",
@@ -305,16 +305,6 @@
       },
       {
         "data": "28 setembro 2026",
-        "email": "fabiorosalvo@gmail.com",
-        "horario": "13:30/17:30",
-        "phone": "(49) 99101-3438",
-        "pos_x": 8504,
-        "profissional": "Fabio Rosalvo Urnau",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "COORDENAÇÃO"
-      },
-      {
-        "data": "28 setembro 2026",
         "email": "izadoraasulzbacher@gmail.com",
         "horario": "16:00/00:00",
         "phone": "(51) 99820-8372",
@@ -352,16 +342,6 @@
         "profissional": "Juliano Ferneda",
         "setor": "Transplante - Sobreaviso Cirurgia",
         "tipo_turno": "Urologia"
-      },
-      {
-        "data": "28 setembro 2026",
-        "email": "lisebeatriz@yahoo.com.br",
-        "horario": "13:00/17:00",
-        "phone": "(41) 99951-6066",
-        "pos_x": 9513,
-        "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "28 setembro 2026",
@@ -415,7 +395,7 @@
       },
       {
         "data": "28 setembro 2026",
-        "email": "Patricialima1407@gmail.com",
+        "email": "guilherme.barreto23@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(96) 98112-9326",
         "pos_x": 11196,
@@ -482,16 +462,6 @@
         "profissional": "Eduardo Masiero Cola",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "28 setembro 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 6822,
-        "profissional": "Isabela Maran",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "28 setembro 2026",
@@ -667,6 +637,16 @@
         "data": "28 setembro 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "08:00/12:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 428,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "28 setembro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "13:00/17:00",
         "phone": "(49) 99116-3404",
         "pos_x": 428,
         "profissional": "Patricia Carla De Lima",
@@ -865,6 +845,16 @@
       },
       {
         "data": "28 setembro 2026",
+        "email": "fabiorosalvo@gmail.com",
+        "horario": "13:30/17:30",
+        "phone": "(49) 99101-3438",
+        "pos_x": 8504,
+        "profissional": "Fabio Rosalvo Urnau",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "28 setembro 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "07:00/13:00",
         "phone": "(41) 99951-6066",
@@ -882,6 +872,16 @@
         "profissional": "Marcia de Menezes Bergamo",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "28 setembro 2026",
+        "email": "lisebeatriz@yahoo.com.br",
+        "horario": "13:00/17:00",
+        "phone": "(41) 99951-6066",
+        "pos_x": 9513,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "28 setembro 2026",
@@ -1894,5 +1894,5 @@
     "total": 88
   },
   "data_backup": "28/09/2026",
-  "hora_backup": "13:57"
+  "hora_backup": "14:49"
 }
