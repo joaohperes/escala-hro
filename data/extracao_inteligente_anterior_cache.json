@@ -95,16 +95,6 @@
       },
       {
         "data": "29 setembro 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 3457,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "29 setembro 2026",
         "email": "maridianetormem@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99901-8470",
@@ -305,16 +295,6 @@
       },
       {
         "data": "29 setembro 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8504,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 setembro 2026",
         "email": "biia.wolschick@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99125-5659",
@@ -332,6 +312,16 @@
         "profissional": "Vanessa Vitoria Kerkhoff",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "29 setembro 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8504,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "29 setembro 2026",
@@ -545,16 +535,6 @@
       },
       {
         "data": "29 setembro 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8504,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 setembro 2026",
         "email": "matheustoldok@hotmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99978-3320",
@@ -745,6 +725,16 @@
       },
       {
         "data": "29 setembro 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 3457,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "29 setembro 2026",
         "email": "marcus_trassi@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(48) 99696-6169",
@@ -872,6 +862,16 @@
         "profissional": "Fabio Rosalvo Urnau",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "29 setembro 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8504,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "29 setembro 2026",
@@ -2024,5 +2024,5 @@
     "total": 100
   },
   "data_backup": "29/09/2026",
-  "hora_backup": "12:00"
+  "hora_backup": "13:07"
 }
