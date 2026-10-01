@@ -325,6 +325,16 @@
       },
       {
         "data": "01 outubro 2026",
+        "email": "luisastieler@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 99670-6933",
+        "pos_x": 7176,
+        "profissional": "Luisa Cancian Stieler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "01 outubro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -602,16 +612,6 @@
         "profissional": "Elisa Noskoski",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "01 outubro 2026",
-        "email": "luisastieler@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 99670-6933",
-        "pos_x": 7176,
-        "profissional": "Luisa Cancian Stieler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "01 outubro 2026",
@@ -1724,5 +1724,5 @@
     "total": 95
   },
   "data_backup": "01/10/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
