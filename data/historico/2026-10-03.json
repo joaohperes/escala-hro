@@ -75,16 +75,6 @@
       },
       {
         "data": "03 outubro 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "08:00/14:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 2787,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "03 outubro 2026",
         "email": "maridianetormem@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99901-8470",
@@ -135,13 +125,13 @@
       },
       {
         "data": "03 outubro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99107-0000",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 4472,
-        "profissional": "Geraldo Antunes Cordova",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "03 outubro 2026",
@@ -262,6 +252,16 @@
         "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "03 outubro 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 7167,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
       },
       {
         "data": "03 outubro 2026",
@@ -455,16 +455,6 @@
       },
       {
         "data": "03 outubro 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 4472,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "03 outubro 2026",
         "email": "hio.piler@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(32) 99921-7541",
@@ -482,16 +472,6 @@
         "profissional": "Waleska Furini",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "03 outubro 2026",
-        "email": "francihoff@hotmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(55) 98138-9719",
-        "pos_x": 7167,
-        "profissional": "Francine Ehrhardt Hoffmann",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
       },
       {
         "data": "03 outubro 2026",
@@ -645,6 +625,16 @@
       },
       {
         "data": "03 outubro 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "08:00/14:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 2787,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
+      },
+      {
+        "data": "03 outubro 2026",
         "email": "anacczz.fk@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99807-9671",
@@ -682,6 +672,16 @@
         "profissional": "Bianca Soder  Wolschick",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "03 outubro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 4472,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "03 outubro 2026",
@@ -857,7 +857,7 @@
     "total": 85
   },
   "data_atualizacao": "03/10/2026",
-  "hora_atualizacao": "10:38",
+  "hora_atualizacao": "11:26",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
