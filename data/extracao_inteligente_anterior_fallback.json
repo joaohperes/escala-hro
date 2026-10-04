@@ -106,7 +106,7 @@
       {
         "data": "04 outubro 2026",
         "email": "ferber08@gmail.com",
-        "horario": "07:00/07:00",
+        "horario": "07:00/19:00",
         "phone": "(49) 99825-0730",
         "pos_x": 3798,
         "profissional": "Fernando Luiz de Melo Bernardi",
@@ -215,16 +215,6 @@
       },
       {
         "data": "04 outubro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 7167,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "04 outubro 2026",
         "email": "paulofilipemed@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99124-3160",
@@ -252,6 +242,16 @@
         "profissional": "Marciele Natali Franzosi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "04 outubro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7167,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "04 outubro 2026",
@@ -335,16 +335,6 @@
       },
       {
         "data": "04 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8852,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "04 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99920-4895",
@@ -362,16 +352,6 @@
         "profissional": "Marina Emely Jorge",
         "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "04 outubro 2026",
-        "email": "dani_naman@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(48) 98866-0432",
-        "pos_x": 9862,
-        "profissional": "Gisella Raquel Silva Correa",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "04 outubro 2026",
@@ -435,6 +415,16 @@
       },
       {
         "data": "04 outubro 2026",
+        "email": "bernardi.md@gmail.com",
+        "horario": "19:00/07:00",
+        "phone": "(51) 98404-6578",
+        "pos_x": 3798,
+        "profissional": "Guilherme Luiz de Melo Bernardi",
+        "setor": "Hemodinâmica - Sobreaviso Cardiologia",
+        "tipo_turno": "Hemodinâmica - Sobreaviso"
+      },
+      {
+        "data": "04 outubro 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "19:00/07:00",
         "phone": "(49) 99816-3428",
@@ -462,16 +452,6 @@
         "profissional": "Gabriela Moschetta",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "04 outubro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7167,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "04 outubro 2026",
@@ -525,16 +505,6 @@
       },
       {
         "data": "04 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9188,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
-      },
-      {
-        "data": "04 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "19:00/07:00",
         "phone": "(49) 99920-4895",
@@ -562,16 +532,6 @@
         "profissional": "Daniel Candido Naman Dutra",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Noturno"
-      },
-      {
-        "data": "04 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "16:30/17:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 10199,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
       },
       {
         "data": "04 outubro 2026",
@@ -695,6 +655,16 @@
       },
       {
         "data": "04 outubro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 7167,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "04 outubro 2026",
         "email": "fabiban@yahoo.com.br",
         "horario": "07:00/08:00",
         "phone": "(49) 99917-5310",
@@ -765,6 +735,16 @@
       },
       {
         "data": "04 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8852,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "04 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99920-4895",
@@ -782,6 +762,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "04 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9188,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "04 outubro 2026",
@@ -815,6 +805,16 @@
       },
       {
         "data": "04 outubro 2026",
+        "email": "ali_manto@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(48) 98866-0432",
+        "pos_x": 9862,
+        "profissional": "Gisella Raquel Silva Correa",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
+      },
+      {
+        "data": "04 outubro 2026",
         "email": "william.weber@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99165-3908",
@@ -832,9 +832,19 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "04 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "16:30/17:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 10199,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
-    "total": 83
+    "total": 84
   },
   "anterior": {
     "data": "03 outubro 2026",
@@ -1694,5 +1704,5 @@
     "total": 85
   },
   "data_backup": "04/10/2026",
-  "hora_backup": "11:58"
+  "hora_backup": "15:49"
 }
