@@ -255,26 +255,6 @@
       },
       {
         "data": "05 outubro 2026",
-        "email": "lkrasniak@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(48) 99994-9854",
-        "pos_x": 7836,
-        "profissional": "Lais Cristine Krasniak",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "05 outubro 2026",
-        "email": "sofiwanderley@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 96752-6943",
-        "pos_x": 7836,
-        "profissional": "Sofia Wanderley da Cunha Santos",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "05 outubro 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -305,6 +285,16 @@
       },
       {
         "data": "05 outubro 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "18:00/00:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 7836,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO"
+      },
+      {
+        "data": "05 outubro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -332,6 +322,16 @@
         "profissional": "Juliano Ferneda",
         "setor": "Transplante - Sobreaviso Cirurgia",
         "tipo_turno": "Urologia"
+      },
+      {
+        "data": "05 outubro 2026",
+        "email": "vgrestelli@yahoo.com.br",
+        "horario": "18:30/07:30",
+        "phone": "(49) 99123-4545",
+        "pos_x": 8509,
+        "profissional": "Vicente Gregorio Restelli",
+        "setor": "Ultrassonografia - Sobreaviso",
+        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "05 outubro 2026",
@@ -495,16 +495,6 @@
       },
       {
         "data": "05 outubro 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "18:00/00:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 7836,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO"
-      },
-      {
-        "data": "05 outubro 2026",
         "email": "biia.wolschick@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99125-5659",
@@ -522,16 +512,6 @@
         "profissional": "Paula Eduarda Dalmaz Boaretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "05 outubro 2026",
-        "email": "vgrestelli@yahoo.com.br",
-        "horario": "18:30/07:30",
-        "phone": "(49) 99123-4545",
-        "pos_x": 8509,
-        "profissional": "Vicente Gregorio Restelli",
-        "setor": "Ultrassonografia - Sobreaviso",
-        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "05 outubro 2026",
@@ -775,6 +755,26 @@
       },
       {
         "data": "05 outubro 2026",
+        "email": "lkrasniak@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(48) 99994-9854",
+        "pos_x": 7836,
+        "profissional": "Lais Cristine Krasniak",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "05 outubro 2026",
+        "email": "sofiwanderley@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(21) 96752-6943",
+        "pos_x": 7836,
+        "profissional": "Sofia Wanderley da Cunha Santos",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "05 outubro 2026",
         "email": "henrikegandolfi@gmail.com",
         "horario": "10:00/16:00",
         "phone": "(49) 38851-1268",
@@ -937,7 +937,7 @@
     "total": 93
   },
   "data_atualizacao": "05/10/2026",
-  "hora_atualizacao": "14:19",
+  "hora_atualizacao": "15:49",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
