@@ -95,16 +95,6 @@
       },
       {
         "data": "06 outubro 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 3458,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "06 outubro 2026",
         "email": "drgiovanisantin@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99963-6866",
@@ -295,16 +285,6 @@
       },
       {
         "data": "06 outubro 2026",
-        "email": "paulofilipemed@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99124-3160",
-        "pos_x": 8170,
-        "profissional": "Paulo Filipe Pereira",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "06 outubro 2026",
         "email": "mspfaffenzeller@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 98415-0811",
@@ -322,6 +302,16 @@
         "profissional": "Henrike Nathan Gandolfi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "06 outubro 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 8170,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "06 outubro 2026",
@@ -525,16 +515,6 @@
       },
       {
         "data": "06 outubro 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 8170,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "06 outubro 2026",
         "email": "brenda.capra@gmail.com",
         "horario": "18:00/00:00",
         "phone": "(55) 99673-6272",
@@ -715,6 +695,16 @@
       },
       {
         "data": "06 outubro 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 3458,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "06 outubro 2026",
         "email": "marcus_trassi@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(48) 99696-6169",
@@ -832,6 +822,16 @@
         "profissional": "Izadora Valdameri Sulzbacher",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "06 outubro 2026",
+        "email": "paulofilipemed@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99124-3160",
+        "pos_x": 8170,
+        "profissional": "Paulo Filipe Pereira",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "06 outubro 2026",
@@ -977,7 +977,7 @@
     "total": 97
   },
   "data_atualizacao": "06/10/2026",
-  "hora_atualizacao": "12:24",
+  "hora_atualizacao": "13:15",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
