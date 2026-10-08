@@ -95,16 +95,6 @@
       },
       {
         "data": "08 outubro 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 3458,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "08 outubro 2026",
         "email": "drgiovanisantin@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99963-6866",
@@ -285,16 +275,6 @@
       },
       {
         "data": "08 outubro 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 8170,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "08 outubro 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -312,6 +292,16 @@
         "profissional": "Naila Cerutti",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "08 outubro 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 8170,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 outubro 2026",
@@ -525,16 +515,6 @@
       },
       {
         "data": "08 outubro 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 8170,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "08 outubro 2026",
         "email": "brunaraquelkessler@gmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99911-2258",
@@ -715,6 +695,16 @@
       },
       {
         "data": "08 outubro 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 3458,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "08 outubro 2026",
         "email": "ocienygg@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99930-2856",
@@ -822,6 +812,16 @@
         "profissional": "Luiza da Ros Schumacher",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "08 outubro 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 8170,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 outubro 2026",
@@ -967,7 +967,7 @@
     "total": 96
   },
   "data_atualizacao": "08/10/2026",
-  "hora_atualizacao": "12:49",
+  "hora_atualizacao": "13:53",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
