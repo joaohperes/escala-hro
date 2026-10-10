@@ -345,16 +345,6 @@
       },
       {
         "data": "10 outubro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9185,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "10 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99920-4895",
@@ -365,6 +355,16 @@
       },
       {
         "data": "10 outubro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "15:30/16:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9522,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
+      },
+      {
+        "data": "10 outubro 2026",
         "email": "mrosannev@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(41) 99976-0590",
@@ -372,16 +372,6 @@
         "profissional": "Michelle Hattori",
         "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "10 outubro 2026",
-        "email": "dani_naman@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(64) 99988-0411",
-        "pos_x": 10196,
-        "profissional": "Daniel Candido Naman Dutra",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "10 outubro 2026",
@@ -552,16 +542,6 @@
         "profissional": "Debora De Cesaro Rossetto",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "10 outubro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "15:30/16:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9522,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "10 outubro 2026",
@@ -795,6 +775,16 @@
       },
       {
         "data": "10 outubro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9185,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "10 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99920-4895",
@@ -845,6 +835,16 @@
       },
       {
         "data": "10 outubro 2026",
+        "email": "dani_naman@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(64) 99988-0411",
+        "pos_x": 10196,
+        "profissional": "Daniel Candido Naman Dutra",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
+      },
+      {
+        "data": "10 outubro 2026",
         "email": "toninicamila1@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99834-2129",
@@ -867,7 +867,7 @@
     "total": 86
   },
   "data_atualizacao": "10/10/2026",
-  "hora_atualizacao": "11:38",
+  "hora_atualizacao": "12:34",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
