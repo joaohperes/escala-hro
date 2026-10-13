@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "13 outubro 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 429,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "13 outubro 2026",
         "email": "elaineforgiarini@gmail.com",
         "horario": "13:30/17:30",
         "phone": "(55) 98141-0589",
@@ -215,6 +205,16 @@
       },
       {
         "data": "13 outubro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 6823,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "13 outubro 2026",
         "email": "chiesarobson@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(55) 98129-0464",
@@ -345,16 +345,6 @@
       },
       {
         "data": "13 outubro 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 9179,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "13 outubro 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99977-7647",
@@ -395,7 +385,7 @@
       },
       {
         "data": "13 outubro 2026",
-        "email": "Isabelamaranped@gmail.com",
+        "email": "elaineforgiarini@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(41) 99968-0428",
         "pos_x": 10526,
@@ -476,16 +466,6 @@
       {
         "data": "13 outubro 2026",
         "email": "Patricialima1407@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 6823,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
-      },
-      {
-        "data": "13 outubro 2026",
-        "email": "Patricialima1407@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99116-3404",
         "pos_x": 6823,
@@ -515,11 +495,11 @@
       },
       {
         "data": "13 outubro 2026",
-        "email": "brenda.capra@gmail.com",
+        "email": "jmnegretto@hotmail.com",
         "horario": "18:00/00:00",
-        "phone": "(55) 99673-6272",
+        "phone": "(49) 99155-1711",
         "pos_x": 8170,
-        "profissional": "Brenda Lesley Alves Capra",
+        "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO"
       },
@@ -652,6 +632,16 @@
         "profissional": "Isabela Maran",
         "setor": "Ambulatório De Oncologia Pediátrica",
         "tipo_turno": "Ambulatório de Oncologia - Matutino"
+      },
+      {
+        "data": "13 outubro 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
       },
       {
         "data": "13 outubro 2026",
@@ -865,6 +855,16 @@
       },
       {
         "data": "13 outubro 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 9179,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
+      },
+      {
+        "data": "13 outubro 2026",
         "email": "debora_decesaro@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 98812-1441",
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "13/10/2026",
-  "hora_atualizacao": "13:17",
+  "hora_atualizacao": "14:07",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
