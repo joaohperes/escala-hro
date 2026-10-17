@@ -75,16 +75,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "08:00/14:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 2786,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "maridianetormem@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99901-8470",
@@ -135,13 +125,13 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99107-0000",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 4470,
-        "profissional": "Geraldo Antunes Cordova",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "17 outubro 2026",
@@ -245,16 +235,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "erikalbiasoli@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99936-9649",
-        "pos_x": 7501,
-        "profissional": "Erika Luiza Biasoli",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "brunaraquelkessler@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99911-2258",
@@ -272,6 +252,26 @@
         "profissional": "Vera Claudia Marques Braga",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "mariawilvert@gmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(49) 99950-7770",
+        "pos_x": 7501,
+        "profissional": "Maria Eduarda Wilvert",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "jmnegretto@hotmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 99155-1711",
+        "pos_x": 7501,
+        "profissional": "Joao Marcos Negretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "17 outubro 2026",
@@ -376,16 +376,6 @@
       {
         "data": "17 outubro 2026",
         "email": "dani_naman@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(48) 98866-0432",
-        "pos_x": 10196,
-        "profissional": "Gisella Raquel Silva Correa",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
-      },
-      {
-        "data": "17 outubro 2026",
-        "email": "dani_naman@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(64) 99988-0411",
         "pos_x": 10196,
@@ -455,16 +445,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 4470,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "drakaliandrapediatra@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 98813-7205",
@@ -475,11 +455,11 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "gustavoaaraujo10@outlook.com",
+        "email": "anacatgomes09@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(77) 99146-1003",
+        "phone": "(91) 99251-1481",
         "pos_x": 6828,
-        "profissional": "Gustavo Araújo",
+        "profissional": "Ana Catarina Dantas Gomes",
         "setor": "Residência de Cirurgia Geral",
         "tipo_turno": "NOITE"
       },
@@ -502,26 +482,6 @@
         "profissional": "Miyake Adriana Souza Cirqueira",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "17 outubro 2026",
-        "email": "mariawilvert@gmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(49) 99950-7770",
-        "pos_x": 7501,
-        "profissional": "Maria Eduarda Wilvert",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "17 outubro 2026",
-        "email": "jmnegretto@hotmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 99155-1711",
-        "pos_x": 7501,
-        "profissional": "Joao Marcos Negretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "17 outubro 2026",
@@ -555,16 +515,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 8849,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "Samantha.aspiazu@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(54) 99982-3380",
@@ -575,16 +525,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9185,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "william.weber@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99165-3908",
@@ -592,16 +532,6 @@
         "profissional": "William Vinicius Weber",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "17 outubro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9522,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "17 outubro 2026",
@@ -635,16 +565,6 @@
       },
       {
         "data": "17 outubro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "16:30/17:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 10532,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
-      },
-      {
-        "data": "17 outubro 2026",
         "email": "toninicamila1@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99834-2129",
@@ -672,6 +592,16 @@
         "profissional": "Guilherme Macena Barreto Junior",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "08:00/14:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 2786,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
       },
       {
         "data": "17 outubro 2026",
@@ -712,6 +642,16 @@
         "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Matutino"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 4470,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
       },
       {
         "data": "17 outubro 2026",
@@ -765,6 +705,16 @@
       },
       {
         "data": "17 outubro 2026",
+        "email": "erikalbiasoli@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99936-9649",
+        "pos_x": 7501,
+        "profissional": "Erika Luiza Biasoli",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "17 outubro 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/08:00",
         "phone": "(41) 98853-1590",
@@ -805,6 +755,16 @@
       },
       {
         "data": "17 outubro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 8849,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "17 outubro 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98856-4909",
@@ -825,6 +785,16 @@
       },
       {
         "data": "17 outubro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9185,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "17 outubro 2026",
         "email": "thiagomuniz@msn.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98402-6207",
@@ -842,6 +812,16 @@
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9522,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "17 outubro 2026",
@@ -875,6 +855,16 @@
       },
       {
         "data": "17 outubro 2026",
+        "email": "dani_naman@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(48) 98866-0432",
+        "pos_x": 10196,
+        "profissional": "Gisella Raquel Silva Correa",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
+      },
+      {
+        "data": "17 outubro 2026",
         "email": "priscila.domingos95@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99142-4137",
@@ -892,6 +882,16 @@
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "17 outubro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "16:30/17:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 10532,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 89
@@ -1854,5 +1854,5 @@
     "total": 95
   },
   "data_backup": "17/10/2026",
-  "hora_backup": "10:09"
+  "hora_backup": "14:56"
 }
