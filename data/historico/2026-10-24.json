@@ -75,16 +75,6 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/14:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 2786,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Finais de Semana"
-      },
-      {
-        "data": "24 outubro 2026",
         "email": "williandidomenico@gmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99191-2248",
@@ -135,13 +125,13 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "cristianemezzalira@hotmail.com",
-        "horario": "06:00/14:00",
-        "phone": "(49) 99107-0000",
+        "email": "marcelo.heinig@gmail.com",
+        "horario": "14:00/06:00",
+        "phone": "(49) 99101-6806",
         "pos_x": 4470,
-        "profissional": "Geraldo Antunes Cordova",
+        "profissional": "Marcelo Eduardo Heinig",
         "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Matutino"
+        "tipo_turno": "Vesp - Noturno"
       },
       {
         "data": "24 outubro 2026",
@@ -245,16 +235,6 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "24 outubro 2026",
         "email": "erikalbiasoli@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99936-9649",
@@ -272,6 +252,26 @@
         "profissional": "Julia Cieslik Schreiner",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "14:00/22:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 7501,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 7501,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "24 outubro 2026",
@@ -345,16 +345,6 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 8849,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
-      },
-      {
-        "data": "24 outubro 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98856-4909",
@@ -385,19 +375,9 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "dani_naman@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(64) 99988-0411",
-        "pos_x": 10196,
-        "profissional": "Daniel Candido Naman Dutra",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
-      },
-      {
-        "data": "24 outubro 2026",
-        "email": "dani_naman@hotmail.com",
+        "email": "aaiolfi.ctbmf@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(64) 99988-0411",
+        "phone": "(49) 99912-7995",
         "pos_x": 10196,
         "profissional": "Morgana de Freitas Pandolfo",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
@@ -465,16 +445,6 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "marcelo.heinig@gmail.com",
-        "horario": "14:00/06:00",
-        "phone": "(49) 99101-6806",
-        "pos_x": 4470,
-        "profissional": "Marcelo Eduardo Heinig",
-        "setor": "Nefrologia - Sobreaviso",
-        "tipo_turno": "Vesp - Noturno"
-      },
-      {
-        "data": "24 outubro 2026",
         "email": "Isabelamaranped@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(41) 98706-2929",
@@ -502,26 +472,6 @@
         "profissional": "Nathália Karolina Rech",
         "setor": "Residência de Ginecologia e Obstetrícia",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "24 outubro 2026",
-        "email": "francihoff@hotmail.com",
-        "horario": "14:00/22:00",
-        "phone": "(55) 98138-9719",
-        "pos_x": 7501,
-        "profissional": "Francine Ehrhardt Hoffmann",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO FDS"
-      },
-      {
-        "data": "24 outubro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 7501,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "24 outubro 2026",
@@ -565,16 +515,6 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9185,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "24 outubro 2026",
         "email": "baccinmatheus@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(54) 99609-6875",
@@ -582,16 +522,6 @@
         "profissional": "Matheus Antonio Baccin",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "24 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9522,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "24 outubro 2026",
@@ -612,16 +542,6 @@
         "profissional": "Carlos Pinkner",
         "setor": "Unidade de Terapia Intensiva (UTI) Neonatal - Plantão",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "24 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "16:30/17:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 10532,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
       },
       {
         "data": "24 outubro 2026",
@@ -652,6 +572,16 @@
         "profissional": "Tabata Simao Conrado",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
         "tipo_turno": "Plantão Pediátrico - Matutino"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/14:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 2786,
+        "profissional": "Bianca Valandro",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Finais de Semana"
       },
       {
         "data": "24 outubro 2026",
@@ -695,6 +625,16 @@
       },
       {
         "data": "24 outubro 2026",
+        "email": "cristianemezzalira@hotmail.com",
+        "horario": "06:00/14:00",
+        "phone": "(49) 99107-0000",
+        "pos_x": 4470,
+        "profissional": "Geraldo Antunes Cordova",
+        "setor": "Nefrologia - Sobreaviso",
+        "tipo_turno": "Matutino"
+      },
+      {
+        "data": "24 outubro 2026",
         "email": "nkarolrech@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99835-4105",
@@ -732,6 +672,16 @@
         "profissional": "Caroline Lopes Tamada",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "24 outubro 2026",
@@ -775,6 +725,16 @@
       },
       {
         "data": "24 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 8849,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "24 outubro 2026",
         "email": "matheusbrock@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 98856-4909",
@@ -792,6 +752,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9185,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "24 outubro 2026",
@@ -815,6 +785,16 @@
       },
       {
         "data": "24 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9522,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
+      },
+      {
+        "data": "24 outubro 2026",
         "email": "regianypaula@yahoo.com.br",
         "horario": "07:00/12:00",
         "phone": "(41) 98853-1590",
@@ -835,13 +815,23 @@
       },
       {
         "data": "24 outubro 2026",
-        "email": "marciambergamo@gmail.com",
+        "email": "dani_naman@hotmail.com",
         "horario": "07:00/13:00",
-        "phone": "(49) 99977-7647",
+        "phone": "(64) 99988-0411",
         "pos_x": 10196,
         "profissional": "Morgana de Freitas Pandolfo",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "dani_naman@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(64) 99988-0411",
+        "pos_x": 10196,
+        "profissional": "Daniel Candido Naman Dutra",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "24 outubro 2026",
@@ -862,12 +852,22 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "24 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "16:30/17:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 10532,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 86
   },
   "data_atualizacao": "24/10/2026",
-  "hora_atualizacao": "10:34",
+  "hora_atualizacao": "15:22",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3488,11 +3488,11 @@
       },
       {
         "data": "25 outubro 2026",
-        "email": "biia.wolschick@hotmail.com",
+        "email": "mspfaffenzeller@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 99125-5659",
+        "phone": "(48) 98415-0811",
         "pos_x": 7501,
-        "profissional": "Bianca Soder  Wolschick",
+        "profissional": "Marta Schmidt Pfaffenzeller",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
       },
