@@ -355,6 +355,16 @@
       },
       {
         "data": "25 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "13:30/14:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9182,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina Vespertino - Final de semana"
+      },
+      {
+        "data": "25 outubro 2026",
         "email": "vera.braga040666@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(73) 99979-4637",
@@ -562,16 +572,6 @@
         "profissional": "Ana Carolina Renz Simon",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Plantão - Noturno"
-      },
-      {
-        "data": "25 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "13:30/14:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9182,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina Vespertino - Final de semana"
       },
       {
         "data": "25 outubro 2026",
@@ -1774,5 +1774,5 @@
     "total": 86
   },
   "data_backup": "25/10/2026",
-  "hora_backup": "10:19"
+  "hora_backup": "10:54"
 }
