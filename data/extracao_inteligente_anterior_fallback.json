@@ -376,16 +376,6 @@
       {
         "data": "27 outubro 2026",
         "email": "adelainemarilia@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98844-0377",
-        "pos_x": 9516,
-        "profissional": "Adelaine Marilia Pinheiro",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
-        "tipo_turno": "Rotina"
-      },
-      {
-        "data": "27 outubro 2026",
-        "email": "adelainemarilia@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98844-0377",
         "pos_x": 9516,
@@ -402,16 +392,6 @@
         "profissional": "Matheus De Oliveira Brock",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Vespertino"
-      },
-      {
-        "data": "27 outubro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "09:00/15:00",
-        "phone": "(49) 98402-6207",
-        "pos_x": 10189,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina"
       },
       {
         "data": "27 outubro 2026",
@@ -436,32 +416,12 @@
       {
         "data": "27 outubro 2026",
         "email": "ali_manto@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(51) 98109-8899",
-        "pos_x": 10862,
-        "profissional": "Janice Velleda Brancao",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
-      },
-      {
-        "data": "27 outubro 2026",
-        "email": "ali_manto@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98923-2332",
         "pos_x": 10862,
         "profissional": "Aline Luciana Casagrande Mantovani",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Vespertino"
-      },
-      {
-        "data": "27 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "09:00/15:00",
-        "phone": "(48) 98821-0652",
-        "pos_x": 11199,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Semanal"
       },
       {
         "data": "27 outubro 2026",
@@ -925,6 +885,16 @@
       },
       {
         "data": "27 outubro 2026",
+        "email": "adelainemarilia@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98844-0377",
+        "pos_x": 9516,
+        "profissional": "Adelaine Marilia Pinheiro",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto I",
+        "tipo_turno": "Rotina"
+      },
+      {
+        "data": "27 outubro 2026",
         "email": "fabioromani.med@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99915-3353",
@@ -952,6 +922,16 @@
         "profissional": "Juliana Ulsenheimer Knorst",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Matutino"
+      },
+      {
+        "data": "27 outubro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "09:00/15:00",
+        "phone": "(49) 98402-6207",
+        "pos_x": 10189,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina"
       },
       {
         "data": "27 outubro 2026",
@@ -985,6 +965,16 @@
       },
       {
         "data": "27 outubro 2026",
+        "email": "ali_manto@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(51) 98109-8899",
+        "pos_x": 10862,
+        "profissional": "Janice Velleda Brancao",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
+      },
+      {
+        "data": "27 outubro 2026",
         "email": "dr.jourdangustavo@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99126-8588",
@@ -992,6 +982,16 @@
         "profissional": "Arnaldo Gustavo Jourdan",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "27 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "09:00/15:00",
+        "phone": "(48) 98821-0652",
+        "pos_x": 11199,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Semanal"
       }
     ],
     "total": 99
@@ -1964,5 +1964,5 @@
     "total": 96
   },
   "data_backup": "27/10/2026",
-  "hora_backup": "11:51"
+  "hora_backup": "12:32"
 }
