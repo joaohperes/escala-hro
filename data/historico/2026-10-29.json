@@ -95,16 +95,6 @@
       },
       {
         "data": "29 outubro 2026",
-        "email": "efzottis14@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(54) 99955-3434",
-        "pos_x": 3458,
-        "profissional": "Eduardo Ferri Zottis",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "29 outubro 2026",
         "email": "paulofachinello@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99917-7176",
@@ -165,11 +155,11 @@
       },
       {
         "data": "29 outubro 2026",
-        "email": "toninicamila1@gmail.com",
+        "email": "joaohperes@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(49) 99834-2129",
+        "phone": "(49) 99835-1563",
         "pos_x": 4804,
-        "profissional": "Camila Tonini",
+        "profissional": "João Henrique Peres",
         "setor": "Hospitalista",
         "tipo_turno": "Hospitalista Urgência Vespertino"
       },
@@ -295,16 +285,6 @@
       },
       {
         "data": "29 outubro 2026",
-        "email": "luisastieler@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 99670-6933",
-        "pos_x": 8170,
-        "profissional": "Luisa Cancian Stieler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 outubro 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -322,6 +302,16 @@
         "profissional": "Naila Cerutti",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "29 outubro 2026",
+        "email": "letimodelski@hotmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(54) 99615-3366",
+        "pos_x": 8170,
+        "profissional": "Leticia Rosa Modelski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "29 outubro 2026",
@@ -535,16 +525,6 @@
       },
       {
         "data": "29 outubro 2026",
-        "email": "letimodelski@hotmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(54) 99615-3366",
-        "pos_x": 8170,
-        "profissional": "Leticia Rosa Modelski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "29 outubro 2026",
         "email": "paulaeduardaboaretto@gmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99138-0101",
@@ -725,6 +705,16 @@
       },
       {
         "data": "29 outubro 2026",
+        "email": "efzottis14@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(54) 99955-3434",
+        "pos_x": 3458,
+        "profissional": "Eduardo Ferri Zottis",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "29 outubro 2026",
         "email": "brunapaola@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 98864-8888",
@@ -842,6 +832,16 @@
         "profissional": "Maria Luiza Hensel",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "29 outubro 2026",
+        "email": "luisastieler@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 99670-6933",
+        "pos_x": 8170,
+        "profissional": "Luisa Cancian Stieler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "29 outubro 2026",
@@ -987,7 +987,7 @@
     "total": 98
   },
   "data_atualizacao": "29/10/2026",
-  "hora_atualizacao": "12:28",
+  "hora_atualizacao": "13:24",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
