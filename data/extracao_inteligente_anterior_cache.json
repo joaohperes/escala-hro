@@ -85,16 +85,6 @@
       },
       {
         "data": "30 outubro 2026",
-        "email": "williandidomenico@gmail.com",
-        "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
-        "pos_x": 3122,
-        "profissional": "Willian Di Domenico",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Vespertino"
-      },
-      {
-        "data": "30 outubro 2026",
         "email": "paulofachinello@hotmail.com",
         "horario": "08:00/08:00",
         "phone": "(49) 99917-7176",
@@ -285,16 +275,6 @@
       },
       {
         "data": "30 outubro 2026",
-        "email": "paulaeduardaboaretto@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 99138-0101",
-        "pos_x": 7836,
-        "profissional": "Paula Eduarda Dalmaz Boaretto",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "30 outubro 2026",
         "email": "j.ribas@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99816-3428",
@@ -312,6 +292,16 @@
         "profissional": "Bruna Carolina Fagundes Gabbi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "30 outubro 2026",
+        "email": "ceruttinaila2@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(45) 99851-6023",
+        "pos_x": 7836,
+        "profissional": "Naila Cerutti",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "30 outubro 2026",
@@ -515,16 +505,6 @@
       },
       {
         "data": "30 outubro 2026",
-        "email": "ceruttinaila2@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(45) 99851-6023",
-        "pos_x": 7836,
-        "profissional": "Naila Cerutti",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "30 outubro 2026",
         "email": "jmnegretto@hotmail.com",
         "horario": "18:00/00:00",
         "phone": "(49) 99155-1711",
@@ -705,6 +685,16 @@
       },
       {
         "data": "30 outubro 2026",
+        "email": "williandidomenico@gmail.com",
+        "horario": "13:00/16:00",
+        "phone": "(49) 99191-2248",
+        "pos_x": 3122,
+        "profissional": "Willian Di Domenico",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Vespertino"
+      },
+      {
+        "data": "30 outubro 2026",
         "email": "boligoncintya@gmail.com",
         "horario": "07:00/13:00",
         "phone": "(49) 99943-5502",
@@ -822,6 +812,16 @@
         "profissional": "Maria Luiza Hensel",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "COORDENAÇÃO"
+      },
+      {
+        "data": "30 outubro 2026",
+        "email": "paulaeduardaboaretto@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99138-0101",
+        "pos_x": 7836,
+        "profissional": "Paula Eduarda Dalmaz Boaretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "30 outubro 2026",
@@ -1984,5 +1984,5 @@
     "total": 101
   },
   "data_backup": "30/10/2026",
-  "hora_backup": "12:12"
+  "hora_backup": "13:12"
 }
