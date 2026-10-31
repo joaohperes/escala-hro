@@ -345,16 +345,6 @@
       },
       {
         "data": "31 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9185,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "31 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 99920-4895",
@@ -362,6 +352,16 @@
         "profissional": "Claudio Quinan Balestrin Neto",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "31 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9522,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "31 outubro 2026",
@@ -375,17 +375,7 @@
       },
       {
         "data": "31 outubro 2026",
-        "email": "ali_manto@hotmail.com",
-        "horario": "07:00/15:00",
-        "phone": "(49) 98923-2332",
-        "pos_x": 10196,
-        "profissional": "Aline Luciana Casagrande Mantovani",
-        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
-        "tipo_turno": "Médico Rotineiro I"
-      },
-      {
-        "data": "31 outubro 2026",
-        "email": "ali_manto@hotmail.com",
+        "email": "guilherme.barreto23@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 98866-0432",
         "pos_x": 10196,
@@ -542,16 +532,6 @@
         "profissional": "Eliana Iora Schneider",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "31 outubro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 9522,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "31 outubro 2026",
@@ -785,6 +765,16 @@
       },
       {
         "data": "31 outubro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 9185,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
+      },
+      {
+        "data": "31 outubro 2026",
         "email": "claudioneto@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 99920-4895",
@@ -825,13 +815,23 @@
       },
       {
         "data": "31 outubro 2026",
-        "email": "lisebeatriz@yahoo.com.br",
+        "email": "ali_manto@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(48) 98866-0432",
         "pos_x": 10196,
         "profissional": "Gisella Raquel Silva Correa",
         "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
         "tipo_turno": "Plantão Matutino"
+      },
+      {
+        "data": "31 outubro 2026",
+        "email": "ali_manto@hotmail.com",
+        "horario": "07:00/15:00",
+        "phone": "(49) 98923-2332",
+        "pos_x": 10196,
+        "profissional": "Aline Luciana Casagrande Mantovani",
+        "setor": "Unidade de Terapia Intensiva (UTI) Pediátrica",
+        "tipo_turno": "Médico Rotineiro I"
       },
       {
         "data": "31 outubro 2026",
@@ -857,7 +857,7 @@
     "total": 85
   },
   "data_atualizacao": "31/10/2026",
-  "hora_atualizacao": "11:41",
+  "hora_atualizacao": "12:30",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
