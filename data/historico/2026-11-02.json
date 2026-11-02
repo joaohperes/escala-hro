@@ -897,7 +897,7 @@
     "total": 89
   },
   "data_atualizacao": "02/11/2026",
-  "hora_atualizacao": "16:45",
+  "hora_atualizacao": "20:14",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3098,11 +3098,11 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "williandidomenico@gmail.com",
+        "email": "bianca.geriatra@gmail.com",
         "horario": "13:00/16:00",
-        "phone": "(49) 99191-2248",
+        "phone": "(54) 98103-8771",
         "pos_x": 3459,
-        "profissional": "Willian Di Domenico",
+        "profissional": "Bianca Valandro",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Vespertino"
       },
@@ -3288,11 +3288,11 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "alexonuki@gmail.com",
+        "email": "liaapetroli@unochapeco.edu.br",
         "horario": "07:00/07:00",
-        "phone": "(49) 99900-1133",
+        "phone": "(49) 98810-3704",
         "pos_x": 5816,
-        "profissional": "Clezio Alex Onuki Castro",
+        "profissional": "Liamara Petroli",
         "setor": "Neuroendovascular - Sobreaviso Médico",
         "tipo_turno": "Sobreaviso Neuroendovascular"
       },
