@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "03 novembro 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 429,
-        "profissional": "Isabela Maran",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "03 novembro 2026",
         "email": "elaineforgiarini@gmail.com",
         "horario": "13:30/17:30",
         "phone": "(55) 98141-0589",
@@ -25,7 +15,7 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "Isabelamaranped@gmail.com",
+        "email": "elaineforgiarini@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(43) 99151-5858",
         "pos_x": 1102,
@@ -215,6 +205,36 @@
       },
       {
         "data": "03 novembro 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 6823,
+        "profissional": "Isabela Maran",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "03 novembro 2026",
+        "email": "mauricio.stt@unochapeco.edu.br",
+        "horario": "07:00/23:59",
+        "phone": "(49) 99998-7498",
+        "pos_x": 7160,
+        "profissional": "Mauricio Hoffmann Sanagiotto",
+        "setor": "Ortopedia e Traumatologia",
+        "tipo_turno": "Ortopedia Plantão"
+      },
+      {
+        "data": "03 novembro 2026",
+        "email": "chiesarobson@gmail.com",
+        "horario": "07:00/23:59",
+        "phone": "(55) 98129-0464",
+        "pos_x": 7160,
+        "profissional": "Robson Chiesa",
+        "setor": "Ortopedia e Traumatologia",
+        "tipo_turno": "Ortopedia Plantão"
+      },
+      {
+        "data": "03 novembro 2026",
         "email": "pedroveiga01@hotmail.com",
         "horario": "07:00/19:00",
         "phone": "(55) 99601-3842",
@@ -325,16 +345,6 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "regianypaula@yahoo.com.br",
-        "horario": "13:00/17:00",
-        "phone": "(41) 98853-1590",
-        "pos_x": 9179,
-        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "03 novembro 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99977-7647",
@@ -375,7 +385,7 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "Isabelamaranped@gmail.com",
+        "email": "elaineforgiarini@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(41) 99968-0428",
         "pos_x": 10526,
@@ -452,16 +462,6 @@
         "profissional": "Jose Augusto Nogueira Ribas",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "03 novembro 2026",
-        "email": "Isabelamaranped@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(41) 98706-2929",
-        "pos_x": 6823,
-        "profissional": "Isabela Maran",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "03 novembro 2026",
@@ -635,6 +635,16 @@
       },
       {
         "data": "03 novembro 2026",
+        "email": "Isabelamaranped@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98706-2929",
+        "pos_x": 429,
+        "profissional": "Isabela Maran",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "03 novembro 2026",
         "email": "fabischeffer@hotmail.com",
         "horario": "07:00/13:00",
         "phone": "(43) 99151-5858",
@@ -655,11 +665,11 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "bianca.geriatra@gmail.com",
+        "email": "Samantha.aspiazu@gmail.com",
         "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
+        "phone": "(54) 99982-3380",
         "pos_x": 3458,
-        "profissional": "Bianca Valandro",
+        "profissional": "Samantha de Aspiazu Damiani",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
@@ -675,11 +685,11 @@
       },
       {
         "data": "03 novembro 2026",
-        "email": "Samantha.aspiazu@gmail.com",
+        "email": "bianca.geriatra@gmail.com",
         "horario": "08:00/11:00",
-        "phone": "(54) 99982-3380",
+        "phone": "(54) 98103-8771",
         "pos_x": 3458,
-        "profissional": "Samantha de Aspiazu Damiani",
+        "profissional": "Bianca Valandro",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
@@ -845,6 +855,16 @@
       },
       {
         "data": "03 novembro 2026",
+        "email": "regianypaula@yahoo.com.br",
+        "horario": "13:00/17:00",
+        "phone": "(41) 98853-1590",
+        "pos_x": 9179,
+        "profissional": "Regiany Paula Gonçalves de Oliveira Carvalho da Silva",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
+      },
+      {
+        "data": "03 novembro 2026",
         "email": "debora_decesaro@unochapeco.edu.br",
         "horario": "07:00/13:00",
         "phone": "(49) 98812-1441",
@@ -964,10 +984,10 @@
         "tipo_turno": "Rotineiro Semanal"
       }
     ],
-    "total": 96
+    "total": 98
   },
   "data_atualizacao": "03/11/2026",
-  "hora_atualizacao": "13:27",
+  "hora_atualizacao": "14:18",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3218,21 +3238,21 @@
       },
       {
         "data": "04 novembro 2026",
-        "email": "bianca.geriatra@gmail.com",
-        "horario": "08:00/11:00",
-        "phone": "(54) 98103-8771",
-        "pos_x": 3458,
-        "profissional": "Bianca Valandro",
-        "setor": "Clínica Médica",
-        "tipo_turno": "Rotina Clínica Médica - Matutino"
-      },
-      {
-        "data": "04 novembro 2026",
         "email": "emanuelfelipe1@gmail.com",
         "horario": "08:00/11:00",
         "phone": "(49) 98900-6161",
         "pos_x": 3458,
         "profissional": "Emanuel Felipe Vieira Luz",
+        "setor": "Clínica Médica",
+        "tipo_turno": "Rotina Clínica Médica - Matutino"
+      },
+      {
+        "data": "04 novembro 2026",
+        "email": "bianca.geriatra@gmail.com",
+        "horario": "08:00/11:00",
+        "phone": "(54) 98103-8771",
+        "pos_x": 3458,
+        "profissional": "Bianca Valandro",
         "setor": "Clínica Médica",
         "tipo_turno": "Rotina Clínica Médica - Matutino"
       },
@@ -3495,6 +3515,26 @@
         "profissional": "Igor Barroca Maurer",
         "setor": "Ortopedia e Traumatologia",
         "tipo_turno": "Ortopedia Sobreaviso  - Equipe 2"
+      },
+      {
+        "data": "04 novembro 2026",
+        "email": "vitorbriese@gmail.com",
+        "horario": "07:00/23:59",
+        "phone": "(49) 99180-6096",
+        "pos_x": 7160,
+        "profissional": "Vitor Augusto Macedo Briese",
+        "setor": "Ortopedia e Traumatologia",
+        "tipo_turno": "Ortopedia Plantão"
+      },
+      {
+        "data": "04 novembro 2026",
+        "email": "maurerigor@gmail.com",
+        "horario": "07:00/23:59",
+        "phone": "(49) 99814-3791",
+        "pos_x": 7160,
+        "profissional": "Igor Barroca Maurer",
+        "setor": "Ortopedia e Traumatologia",
+        "tipo_turno": "Ortopedia Plantão"
       },
       {
         "data": "04 novembro 2026",
@@ -4017,6 +4057,6 @@
         "tipo_turno": "Sobreaviso Urologia"
       }
     ],
-    "total": 96
+    "total": 98
   }
 }
