@@ -325,16 +325,6 @@
       },
       {
         "data": "06 novembro 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 7836,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "06 novembro 2026",
         "email": "097790@aluno.uricer.edu.br",
         "horario": "09:00/18:00",
         "phone": "(49) 99186-4242",
@@ -342,6 +332,16 @@
         "profissional": "Anieli Batistela",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "06 novembro 2026",
+        "email": "francihoff@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 98138-9719",
+        "pos_x": 7836,
+        "profissional": "Francine Ehrhardt Hoffmann",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "06 novembro 2026",
@@ -705,13 +705,13 @@
       },
       {
         "data": "06 novembro 2026",
-        "email": "francihoff@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 98138-9719",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "13:00/18:00",
+        "phone": "(21) 99923-1486",
         "pos_x": 7836,
-        "profissional": "Francine Ehrhardt Hoffmann",
+        "profissional": "Maria Luiza Hensel",
         "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
       },
       {
         "data": "06 novembro 2026",
@@ -1954,5 +1954,5 @@
     "total": 99
   },
   "data_backup": "06/11/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
