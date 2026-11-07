@@ -355,16 +355,6 @@
       },
       {
         "data": "07 novembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "14:30/15:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9185,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "07 novembro 2026",
         "email": "seidlercesar@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98808-0201",
@@ -372,6 +362,16 @@
         "profissional": "Cesar Augusto Seidler Junior",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "07 novembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "15:30/16:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9522,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "07 novembro 2026",
@@ -562,16 +562,6 @@
         "profissional": "Matheus Antonio Baccin",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "07 novembro 2026",
-        "email": "thiagomuniz@msn.com",
-        "horario": "15:30/16:30",
-        "phone": "(49) 98402-6207",
-        "pos_x": 9522,
-        "profissional": "Thiago Muniz de Lima",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "07 novembro 2026",
@@ -812,6 +802,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "07 novembro 2026",
+        "email": "thiagomuniz@msn.com",
+        "horario": "14:30/15:30",
+        "phone": "(49) 98402-6207",
+        "pos_x": 9185,
+        "profissional": "Thiago Muniz de Lima",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "07 novembro 2026",
@@ -1844,5 +1844,5 @@
     "total": 94
   },
   "data_backup": "07/11/2026",
-  "hora_backup": "12:02"
+  "hora_backup": "12:54"
 }
