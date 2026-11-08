@@ -205,16 +205,6 @@
       },
       {
         "data": "08 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "08 novembro 2026",
         "email": "paulofilipemed@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99124-3160",
@@ -242,6 +232,16 @@
         "profissional": "Marciele Natali Franzosi",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "08 novembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 novembro 2026",
@@ -465,16 +465,6 @@
       },
       {
         "data": "08 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "08 novembro 2026",
         "email": "mspfaffenzeller@gmail.com",
         "horario": "19:00/07:00",
         "phone": "(48) 98415-0811",
@@ -682,6 +672,16 @@
         "profissional": "Eloisa Lehr Filippi Chiella",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
+      },
+      {
+        "data": "08 novembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "08 novembro 2026",
@@ -1744,5 +1744,5 @@
     "total": 89
   },
   "data_backup": "08/11/2026",
-  "hora_backup": "12:31"
+  "hora_backup": "13:16"
 }
