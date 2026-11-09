@@ -1007,7 +1007,7 @@
     "total": 100
   },
   "data_atualizacao": "09/11/2026",
-  "hora_atualizacao": "17:00",
+  "hora_atualizacao": "20:52",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
@@ -3618,11 +3618,11 @@
       },
       {
         "data": "10 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
+        "email": "laracomarellaf@gmail.com",
         "horario": "07:00/13:00",
-        "phone": "(51) 99820-8372",
+        "phone": "(49) 99161-2506",
         "pos_x": 8170,
-        "profissional": "Izadora Valdameri Sulzbacher",
+        "profissional": "Lara Comarella Friesen",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
       },
@@ -3698,11 +3698,11 @@
       },
       {
         "data": "10 novembro 2026",
-        "email": "laracomarellaf@gmail.com",
+        "email": "jmnegretto@hotmail.com",
         "horario": "18:00/00:00",
-        "phone": "(49) 99161-2506",
+        "phone": "(49) 99155-1711",
         "pos_x": 8170,
-        "profissional": "Lara Comarella Friesen",
+        "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO"
       },
