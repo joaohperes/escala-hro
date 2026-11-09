@@ -275,6 +275,16 @@
       },
       {
         "data": "09 novembro 2026",
+        "email": "luisastieler@gmail.com",
+        "horario": "20:00/07:00",
+        "phone": "(55) 99670-6933",
+        "pos_x": 7836,
+        "profissional": "Luisa Cancian Stieler",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P1 - EMERGÊNCIA"
+      },
+      {
+        "data": "09 novembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -392,16 +402,6 @@
         "profissional": "Vinicius Rubin",
         "setor": "Urologia Sobreaviso",
         "tipo_turno": "Sobreaviso Urologia"
-      },
-      {
-        "data": "09 novembro 2026",
-        "email": "luisastieler@gmail.com",
-        "horario": "20:00/07:00",
-        "phone": "(55) 99670-6933",
-        "pos_x": 7836,
-        "profissional": "Luisa Cancian Stieler",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P1 - EMERGÊNCIA"
       },
       {
         "data": "09 novembro 2026",
@@ -1884,5 +1884,5 @@
     "total": 87
   },
   "data_backup": "09/11/2026",
-  "hora_backup": "16:02"
+  "hora_backup": "17:00"
 }
