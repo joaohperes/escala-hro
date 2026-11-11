@@ -5,16 +5,6 @@
     "registros": [
       {
         "data": "11 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "11 novembro 2026",
         "email": "elaineforgiarini@gmail.com",
         "horario": "13:30/17:30",
         "phone": "(55) 98141-0589",
@@ -205,6 +195,16 @@
       },
       {
         "data": "11 novembro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 6823,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "11 novembro 2026",
         "email": "maurerigor@gmail.com",
         "horario": "07:00/19:00",
         "phone": "(49) 99814-3791",
@@ -345,16 +345,6 @@
       },
       {
         "data": "11 novembro 2026",
-        "email": "marciambergamo@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99977-7647",
-        "pos_x": 9179,
-        "profissional": "Marcia de Menezes Bergamo",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "11 novembro 2026",
         "email": "lisebeatriz@yahoo.com.br",
         "horario": "13:00/19:00",
         "phone": "(41) 99951-6066",
@@ -435,9 +425,9 @@
       },
       {
         "data": "11 novembro 2026",
-        "email": "macascaes@hotmail.com",
+        "email": "ocienygg@hotmail.com",
         "horario": "19:00/07:00",
-        "phone": "(48) 99115-1002",
+        "phone": "(49) 99930-2856",
         "pos_x": 1102,
         "profissional": "Tabata Simao Conrado",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
@@ -445,11 +435,11 @@
       },
       {
         "data": "11 novembro 2026",
-        "email": "macascaes@hotmail.com",
+        "email": "ocienygg@hotmail.com",
         "horario": "19:00/07:00",
-        "phone": "(48) 99115-1002",
+        "phone": "(49) 99930-2856",
         "pos_x": 4131,
-        "profissional": "Maisa Miranda Cascaes",
+        "profissional": "Ocieny Gonzaga Guimarães Ramírez",
         "setor": "Ginecologia e Obstetrícia - Plantão",
         "tipo_turno": "Plantão Noturno - P1"
       },
@@ -472,16 +462,6 @@
         "profissional": "Priscila Domingos",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "11 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 6823,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "11 novembro 2026",
@@ -652,6 +632,16 @@
         "profissional": "Patricia Carla De Lima",
         "setor": "Ambulatório De Oncologia Pediátrica",
         "tipo_turno": "Ambulatório de Oncologia - Matutino"
+      },
+      {
+        "data": "11 novembro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 429,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
       },
       {
         "data": "11 novembro 2026",
@@ -892,6 +882,16 @@
         "profissional": "Marcia de Menezes Bergamo",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "11 novembro 2026",
+        "email": "marciambergamo@gmail.com",
+        "horario": "13:00/17:00",
+        "phone": "(49) 99977-7647",
+        "pos_x": 9179,
+        "profissional": "Marcia de Menezes Bergamo",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "11 novembro 2026",
@@ -2044,5 +2044,5 @@
     "total": 102
   },
   "data_backup": "11/11/2026",
-  "hora_backup": "13:29"
+  "hora_backup": "14:25"
 }
