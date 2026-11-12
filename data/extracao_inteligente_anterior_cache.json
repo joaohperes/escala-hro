@@ -5,19 +5,9 @@
     "registros": [
       {
         "data": "12 novembro 2026",
-        "email": "elaineforgiarini@gmail.com",
-        "horario": "13:30/17:30",
-        "phone": "(55) 98141-0589",
-        "pos_x": 765,
-        "profissional": "Elaine Aparecida Forgiarini",
-        "setor": "Ambulatório Oncologia - Triagem",
-        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
-      },
-      {
-        "data": "12 novembro 2026",
-        "email": "elaineforgiarini@gmail.com",
+        "email": "fogaca@unochapeco.edu.br",
         "horario": "13:00/19:00",
-        "phone": "(55) 98141-0589",
+        "phone": "(49) 99987-7255",
         "pos_x": 1102,
         "profissional": "Tabata Simao Conrado",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
@@ -395,7 +385,7 @@
       },
       {
         "data": "12 novembro 2026",
-        "email": "elaineforgiarini@gmail.com",
+        "email": "fogaca@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(49) 98923-2332",
         "pos_x": 10862,
@@ -642,6 +632,16 @@
         "profissional": "Patricia Carla De Lima",
         "setor": "Ambulatório De Oncologia Pediátrica",
         "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "12 novembro 2026",
+        "email": "elaineforgiarini@gmail.com",
+        "horario": "13:30/17:30",
+        "phone": "(55) 98141-0589",
+        "pos_x": 765,
+        "profissional": "Elaine Aparecida Forgiarini",
+        "setor": "Ambulatório Oncologia - Triagem",
+        "tipo_turno": "Ambulatório Oncologia Triagem - Vespertino"
       },
       {
         "data": "12 novembro 2026",
@@ -2004,5 +2004,5 @@
     "total": 101
   },
   "data_backup": "12/11/2026",
-  "hora_backup": "14:01"
+  "hora_backup": "14:44"
 }
