@@ -5,19 +5,9 @@
     "registros": [
       {
         "data": "13 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "13:00/17:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 429,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Ambulatório De Oncologia Pediátrica",
-        "tipo_turno": "Ambulatório de Oncologia"
-      },
-      {
-        "data": "13 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
+        "email": "fogaca@unochapeco.edu.br",
         "horario": "13:00/19:00",
-        "phone": "(49) 99116-3404",
+        "phone": "(49) 99987-7255",
         "pos_x": 765,
         "profissional": "Tabata Simao Conrado",
         "setor": "Atendimento Pediátrico - Hospitalista e Enfermaria",
@@ -195,6 +185,16 @@
       },
       {
         "data": "13 novembro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "17:00/19:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 6489,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Oncologia Pediátrica - Sobreaviso",
+        "tipo_turno": "Sobreaviso Oncologia"
+      },
+      {
+        "data": "13 novembro 2026",
         "email": "diegonascimentomed@gmail.com",
         "horario": "07:00/19:00",
         "phone": "(54) 98118-8410",
@@ -325,16 +325,6 @@
       },
       {
         "data": "13 novembro 2026",
-        "email": "lisebeatriz@yahoo.com.br",
-        "horario": "13:00/17:00",
-        "phone": "(41) 99951-6066",
-        "pos_x": 8846,
-        "profissional": "Lisane Beatriz Giacomossi",
-        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
-        "tipo_turno": "Rotina UCIN - Vespertino"
-      },
-      {
-        "data": "13 novembro 2026",
         "email": "grazielafbatistel@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99128-5775",
@@ -385,7 +375,7 @@
       },
       {
         "data": "13 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
+        "email": "fogaca@unochapeco.edu.br",
         "horario": "13:00/19:00",
         "phone": "(95) 99135-6300",
         "pos_x": 10529,
@@ -452,16 +442,6 @@
         "profissional": "Eduardo Masiero Cola",
         "setor": "Hospitalista",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "13 novembro 2026",
-        "email": "Patricialima1407@gmail.com",
-        "horario": "17:00/19:00",
-        "phone": "(49) 99116-3404",
-        "pos_x": 6489,
-        "profissional": "Patricia Carla De Lima",
-        "setor": "Oncologia Pediátrica - Sobreaviso",
-        "tipo_turno": "Sobreaviso Oncologia"
       },
       {
         "data": "13 novembro 2026",
@@ -617,6 +597,16 @@
         "data": "13 novembro 2026",
         "email": "Patricialima1407@gmail.com",
         "horario": "08:00/12:00",
+        "phone": "(49) 99116-3404",
+        "pos_x": 429,
+        "profissional": "Patricia Carla De Lima",
+        "setor": "Ambulatório De Oncologia Pediátrica",
+        "tipo_turno": "Ambulatório de Oncologia"
+      },
+      {
+        "data": "13 novembro 2026",
+        "email": "Patricialima1407@gmail.com",
+        "horario": "13:00/17:00",
         "phone": "(49) 99116-3404",
         "pos_x": 429,
         "profissional": "Patricia Carla De Lima",
@@ -842,6 +832,16 @@
         "profissional": "Marcia de Menezes Bergamo",
         "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
         "tipo_turno": "Rotina UCIN - Matutino"
+      },
+      {
+        "data": "13 novembro 2026",
+        "email": "lisebeatriz@yahoo.com.br",
+        "horario": "13:00/17:00",
+        "phone": "(41) 99951-6066",
+        "pos_x": 8846,
+        "profissional": "Lisane Beatriz Giacomossi",
+        "setor": "Unidade de Cuidados Intermediários Neonatais - UCINCo E Sala de Parto",
+        "tipo_turno": "Rotina UCIN - Vespertino"
       },
       {
         "data": "13 novembro 2026",
@@ -1984,5 +1984,5 @@
     "total": 101
   },
   "data_backup": "13/11/2026",
-  "hora_backup": "13:42"
+  "hora_backup": "14:21"
 }
