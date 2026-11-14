@@ -225,16 +225,6 @@
       },
       {
         "data": "14 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "14 novembro 2026",
         "email": "biia.wolschick@hotmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99125-5659",
@@ -262,6 +252,16 @@
         "profissional": "Joao Marcos Negretto",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO FDS"
+      },
+      {
+        "data": "14 novembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "16:00/00:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
       },
       {
         "data": "14 novembro 2026",
@@ -345,16 +345,6 @@
       },
       {
         "data": "14 novembro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "14:30/15:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9185,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
-        "tipo_turno": "Rotina Vespertino- Final de Semana"
-      },
-      {
-        "data": "14 novembro 2026",
         "email": "thiagomuniz@msn.com",
         "horario": "13:00/19:00",
         "phone": "(49) 98402-6207",
@@ -362,6 +352,16 @@
         "profissional": "Thiago Muniz de Lima",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
         "tipo_turno": "Vespertino"
+      },
+      {
+        "data": "14 novembro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "15:30/16:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9522,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
+        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "14 novembro 2026",
@@ -485,16 +485,6 @@
       },
       {
         "data": "14 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "16:00/00:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 7501,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "14 novembro 2026",
         "email": "william.weber@hotmail.com",
         "horario": "19:00/07:00",
         "phone": "(49) 99165-3908",
@@ -542,16 +532,6 @@
         "profissional": "Eliana Iora Schneider",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
-      },
-      {
-        "data": "14 novembro 2026",
-        "email": "menegatvc@hotmail.com",
-        "horario": "15:30/16:30",
-        "phone": "(54) 99941-5847",
-        "pos_x": 9522,
-        "profissional": "Vinícius Colle Menegat",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto III",
-        "tipo_turno": "Rotina Vespertino - Final de Semana"
       },
       {
         "data": "14 novembro 2026",
@@ -715,6 +695,16 @@
       },
       {
         "data": "14 novembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 7501,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "14 novembro 2026",
         "email": "marciambergamo@gmail.com",
         "horario": "07:00/08:00",
         "phone": "(49) 99977-7647",
@@ -782,6 +772,16 @@
         "profissional": "Vinícius Colle Menegat",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Rotina Matutino - Final de Semana"
+      },
+      {
+        "data": "14 novembro 2026",
+        "email": "menegatvc@hotmail.com",
+        "horario": "14:30/15:30",
+        "phone": "(54) 99941-5847",
+        "pos_x": 9185,
+        "profissional": "Vinícius Colle Menegat",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
+        "tipo_turno": "Rotina Vespertino- Final de Semana"
       },
       {
         "data": "14 novembro 2026",
@@ -867,7 +867,7 @@
     "total": 86
   },
   "data_atualizacao": "14/11/2026",
-  "hora_atualizacao": "12:18",
+  "hora_atualizacao": "13:03",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
