@@ -255,26 +255,6 @@
       },
       {
         "data": "17 novembro 2026",
-        "email": "marialuizahensel@gmail.com",
-        "horario": "09:00/18:00",
-        "phone": "(21) 99923-1486",
-        "pos_x": 8170,
-        "profissional": "Maria Luiza Hensel",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "EMERGÊNCIA - LÍDER"
-      },
-      {
-        "data": "17 novembro 2026",
-        "email": "097790@aluno.uricer.edu.br",
-        "horario": "09:00/18:00",
-        "phone": "(49) 99186-4242",
-        "pos_x": 8170,
-        "profissional": "Anieli Batistela",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
-      },
-      {
-        "data": "17 novembro 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -305,6 +285,16 @@
       },
       {
         "data": "17 novembro 2026",
+        "email": "matheustoldok@hotmail.com",
+        "horario": "18:00/00:00",
+        "phone": "(49) 99978-3320",
+        "pos_x": 8170,
+        "profissional": "Matheus Toldo Kazerski",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P4 - REFORÇO"
+      },
+      {
+        "data": "17 novembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -332,6 +322,16 @@
         "profissional": "Juliano Ferneda",
         "setor": "Transplante - Sobreaviso Cirurgia",
         "tipo_turno": "Urologia"
+      },
+      {
+        "data": "17 novembro 2026",
+        "email": "vgrestelli@yahoo.com.br",
+        "horario": "18:30/07:30",
+        "phone": "(49) 99123-4545",
+        "pos_x": 8843,
+        "profissional": "Vicente Gregorio Restelli",
+        "setor": "Ultrassonografia - Sobreaviso",
+        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "17 novembro 2026",
@@ -485,16 +485,6 @@
       },
       {
         "data": "17 novembro 2026",
-        "email": "matheustoldok@hotmail.com",
-        "horario": "18:00/00:00",
-        "phone": "(49) 99978-3320",
-        "pos_x": 8170,
-        "profissional": "Matheus Toldo Kazerski",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P4 - REFORÇO"
-      },
-      {
-        "data": "17 novembro 2026",
         "email": "guiligomes@outlook.com",
         "horario": "19:00/07:00",
         "phone": "(54) 99198-4729",
@@ -512,16 +502,6 @@
         "profissional": "Walter Ferreira dos Santos",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P2 - PRONTO ATENDIMENTO"
-      },
-      {
-        "data": "17 novembro 2026",
-        "email": "vgrestelli@yahoo.com.br",
-        "horario": "18:30/07:30",
-        "phone": "(49) 99123-4545",
-        "pos_x": 8843,
-        "profissional": "Vicente Gregorio Restelli",
-        "setor": "Ultrassonografia - Sobreaviso",
-        "tipo_turno": "Ultrassonografia - Sobreaviso"
       },
       {
         "data": "17 novembro 2026",
@@ -835,6 +815,26 @@
       },
       {
         "data": "17 novembro 2026",
+        "email": "marialuizahensel@gmail.com",
+        "horario": "09:00/18:00",
+        "phone": "(21) 99923-1486",
+        "pos_x": 8170,
+        "profissional": "Maria Luiza Hensel",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "EMERGÊNCIA - LÍDER"
+      },
+      {
+        "data": "17 novembro 2026",
+        "email": "097790@aluno.uricer.edu.br",
+        "horario": "09:00/18:00",
+        "phone": "(49) 99186-4242",
+        "pos_x": 8170,
+        "profissional": "Anieli Batistela",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "RESIDENTE CLÍNICA MÉDICA"
+      },
+      {
+        "data": "17 novembro 2026",
         "email": "paulofilipemed@gmail.com",
         "horario": "10:00/16:00",
         "phone": "(49) 99124-3160",
@@ -997,7 +997,7 @@
     "total": 99
   },
   "data_atualizacao": "17/11/2026",
-  "hora_atualizacao": "14:48",
+  "hora_atualizacao": "15:45",
   "status_atualizacao": "sucesso",
   "ramais_hro": {
     "departments": [
