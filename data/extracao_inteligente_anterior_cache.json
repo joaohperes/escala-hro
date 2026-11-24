@@ -355,6 +355,16 @@
       },
       {
         "data": "24 novembro 2026",
+        "email": "izadoraasulzbacher@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(51) 99820-8372",
+        "pos_x": 8170,
+        "profissional": "Izadora Valdameri Sulzbacher",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "24 novembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -735,21 +745,11 @@
       },
       {
         "data": "24 novembro 2026",
-        "email": "izadoraasulzbacher@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(51) 99820-8372",
-        "pos_x": 8170,
-        "profissional": "Izadora Valdameri Sulzbacher",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "24 novembro 2026",
-        "email": "lkrasniak@gmail.com",
+        "email": "paulofilipemed@gmail.com",
         "horario": "13:00/19:00",
-        "phone": "(48) 99994-9854",
+        "phone": "(49) 99124-3160",
         "pos_x": 8170,
-        "profissional": "Lais Cristine Krasniak",
+        "profissional": "Paulo Filipe Pereira",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P1 - EMERGÊNCIA"
       },
@@ -1964,5 +1964,5 @@
     "total": 96
   },
   "data_backup": "24/11/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
