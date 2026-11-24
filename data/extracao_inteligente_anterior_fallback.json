@@ -785,6 +785,16 @@
       },
       {
         "data": "24 novembro 2026",
+        "email": "paulaeduardaboaretto@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 99138-0101",
+        "pos_x": 8504,
+        "profissional": "Paula Eduarda Dalmaz Boaretto",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "TRIAGEM"
+      },
+      {
+        "data": "24 novembro 2026",
         "email": "paulofilipemed@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(49) 99124-3160",
@@ -1024,7 +1034,7 @@
         "tipo_turno": "Plantão Vespertino"
       }
     ],
-    "total": 102
+    "total": 103
   },
   "anterior": {
     "data": "23 novembro 2026",
@@ -1994,5 +2004,5 @@
     "total": 96
   },
   "data_backup": "24/11/2026",
-  "hora_backup": "16:40"
+  "hora_backup": "17:20"
 }
