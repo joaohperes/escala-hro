@@ -335,6 +335,26 @@
       },
       {
         "data": "26 novembro 2026",
+        "email": "vane.kerkhoff@gmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(49) 98820-4697",
+        "pos_x": 8170,
+        "profissional": "Vanessa Vitoria Kerkhoff",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "P3 - REFORÇO"
+      },
+      {
+        "data": "26 novembro 2026",
+        "email": "gutocancian@hotmail.com",
+        "horario": "10:00/16:00",
+        "phone": "(55) 99970-0770",
+        "pos_x": 8170,
+        "profissional": "Augusto Cancian",
+        "setor": "Serviço de Urgência e Emergência",
+        "tipo_turno": "TRIAGEM"
+      },
+      {
+        "data": "26 novembro 2026",
         "email": "mariogoto@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 99989-0400",
@@ -735,26 +755,6 @@
       },
       {
         "data": "26 novembro 2026",
-        "email": "vane.kerkhoff@gmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(49) 98820-4697",
-        "pos_x": 8170,
-        "profissional": "Vanessa Vitoria Kerkhoff",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "P3 - REFORÇO"
-      },
-      {
-        "data": "26 novembro 2026",
-        "email": "gutocancian@hotmail.com",
-        "horario": "10:00/16:00",
-        "phone": "(55) 99970-0770",
-        "pos_x": 8170,
-        "profissional": "Augusto Cancian",
-        "setor": "Serviço de Urgência e Emergência",
-        "tipo_turno": "TRIAGEM"
-      },
-      {
-        "data": "26 novembro 2026",
         "email": "lkrasniak@gmail.com",
         "horario": "13:00/19:00",
         "phone": "(48) 99994-9854",
@@ -785,11 +785,11 @@
       },
       {
         "data": "26 novembro 2026",
-        "email": "brenda.capra@gmail.com",
+        "email": "marinacostella@icloud.com",
         "horario": "18:00/00:00",
-        "phone": "(55) 99673-6272",
+        "phone": "(49) 99126-9229",
         "pos_x": 8170,
-        "profissional": "Brenda Lesley Alves Capra",
+        "profissional": "Marina Costella Pasquali",
         "setor": "Serviço de Urgência e Emergência",
         "tipo_turno": "P4 - REFORÇO"
       },
@@ -895,11 +895,11 @@
       },
       {
         "data": "26 novembro 2026",
-        "email": "joaohperes@gmail.com",
+        "email": "toninicamila1@gmail.com",
         "horario": "19:00/07:00",
-        "phone": "(49) 99835-1563",
+        "phone": "(49) 99834-2129",
         "pos_x": 9853,
-        "profissional": "João Henrique Peres",
+        "profissional": "Camila Tonini",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto II",
         "tipo_turno": "Noturno"
       },
@@ -2064,5 +2064,5 @@
     "total": 104
   },
   "data_backup": "26/11/2026",
-  "hora_backup": "06:47"
+  "hora_backup": "07:47"
 }
