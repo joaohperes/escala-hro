@@ -385,16 +385,6 @@
       },
       {
         "data": "28 novembro 2026",
-        "email": "szepilowsk@gmail.com",
-        "horario": "16:30/17:30",
-        "phone": "(48) 98821-0652",
-        "pos_x": 10532,
-        "profissional": "Maiara Szepilowski Bampi",
-        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
-        "tipo_turno": "Rotineiro Final de Semana Tarde"
-      },
-      {
-        "data": "28 novembro 2026",
         "email": "japompermaier@gmail.com",
         "horario": "07:00/07:00",
         "phone": "(49) 98816-8017",
@@ -862,6 +852,16 @@
         "profissional": "Maiara Szepilowski Bampi",
         "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
         "tipo_turno": "Rotineiro Final de Semana"
+      },
+      {
+        "data": "28 novembro 2026",
+        "email": "szepilowsk@gmail.com",
+        "horario": "16:30/17:30",
+        "phone": "(48) 98821-0652",
+        "pos_x": 10532,
+        "profissional": "Maiara Szepilowski Bampi",
+        "setor": "Unidade de Terapia Intensiva (UTI) Adulto IV",
+        "tipo_turno": "Rotineiro Final de Semana Tarde"
       }
     ],
     "total": 86
@@ -1884,5 +1884,5 @@
     "total": 101
   },
   "data_backup": "28/11/2026",
-  "hora_backup": "14:07"
+  "hora_backup": "14:47"
 }
